@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Trakt translation file -->
+<!-- English (US) -->
+<!-- Note: English is the fallback for any strings not found in other languages -->
+<strings>
+	<!-- A -->
+	<string Field="AddForeignTitle">Add Foreign Title</string>
+	<string Field="AddForeignTitleDescription">Off = Keep title as-is
+On = Add the original title in parentheses
+
+Enabling this setting will allow you to see the original title in parentheses after the English title.
+
+Example: Black Book (Zwartboek)
+</string>
+
+	<!-- B -->
+
+	<!-- C -->
+	<string Field="CountryFilter">Country Filter</string>
+	<string Field="CountryFilterDescription">There are some English language based movies that have a foreign title. So to aid in the proper detection of English titles it was needed to also filter on the country in which the movie was produced.
+
+Default countries that do not use foreign titles are: 'us.ca.gb.ie.au.nz' (United States, Canada, Great Britain, Ireland, Australia and New Zealand)
+
+Note: The MediaPortal virtual keyboard does not support the '|' character, so a '.' was used instead to seperate the different languages. Be very careful in adjusting this setting as it can stop the function of the IMDb+ scraper.
+</string>
+
+	<!-- D -->
+	<string Field="DefaultDescription">Highlight any of the above options and a more detailed explanation will be shown here.</string>
+
+	<!-- E -->
+
+	<!-- F -->
+	<string Field="ForeignTitleFirst">Foreign Title First</string>
+	<string Field="ForeignTitleFirstDescription">Off = English (Foreign)
+On = Foreign (English)
+
+Enabling this setting shows the original foreign title first followed by the English title in parentheses.
+
+Example: Zwartboek (Black Book)
+</string>
+
+	<!-- G -->
+
+	<!-- H -->
+
+	<!-- I -->
+	<string Field="IMDbMetaScore">Metacritics Score</string>
+	<string Field="IMDbMetaScoreDescription">Off = Main imdb.com score is used
+On = Use Metacritics Metascore instead
+
+The imdb.com website also offers the Metacritics.com metascore. Enabling this setting will use that score, otherwise the IMDb score is used.
+
+Note: This setting requires that the 'IMDb Score' setting is also enabled and will therefore disable the RottenTomatoes method for missing summary and runtime info.
+</string>
+	<string Field="IMDbScore">IMDb Score</string>
+	<string Field="IMDbScoreDescription">Off = Use RottenTomatoes website
+On = Restrict to imdb.com website only
+
+RottenTomatoes offers additional info, but if you want to restrict yourself to imdb.com then enable this setting.
+
+Note: This also disables getting missing summary, runtime and scoreing.
+</string>
+
+	<!-- K -->
+
+	<!-- J -->
+
+	<!-- L -->
+	<string Field="LanguageFilter">Language Filter</string>
+	<string Field="LanguageFilterDescription">Special filter to include other language titles besides English (en). Use the imdb.com HTML source to find the ISO 639-1 code after /language/.
+
+Default language is English via: 'en'
+
+However if you are from Norway and you wish to have Norwegian movies use their original title and English titles for everything else, then use: 'en.no'
+
+Note: The MediaPortal virtual keyboard does not support the '|' character, so a '.' was used instead to seperate the different languages. Be very careful in adjusting this setting as it can stop the function of the IMDb+ scraper.
+</string>
+	<string Field="LongSummary">Long Summary</string>
+	<string Field="LongSummaryDescription">Off = Short summary to describe movie plot
+On = Long summary (might contain spoilers)
+
+Long summaries offer more information, but can sometimes have spoilers contained within them. This is why this setting is disabled by default, but you can of course enable it if you prefer them.
+</string>
+
+	<!-- M -->
+	<string Field="MinImdbVotes">Min. IMDb Votes</string>
+	<string Field="MinImdbVotesDescription">Off = Always use imdb.com score
+On = Only use imdb.com scores with 20+ votes
+
+The IMDb score is inflated a lot of times by the people who worked on the movie. This is why it is not uncommon for a movie with less then 20 votes to have a very high rating.
+
+If you enable this setting then the IMDb scores with less then 20 votes are ignored.
+</string>
+
+	<!-- N -->
+
+	<!-- O -->
+	<string Field="OriginalTitle">Original Title</string>
+	<string Field="OriginalTitleDescription">Off = Always force English title
+On = Use original title for foreign movies
+
+Foreign movies often have a non-English title.
+
+If you want all your movies to use an English title, then keep this setting disabled.
+</string>
+
+	<!-- P -->
+
+	<!-- R -->
+	<string Field="RefreshAllFields">Refresh All Fields</string>
+	<string Field="RefreshAllFieldsDescription">Off = Only update a few things
+On = Update everything
+
+The information at IMDb is constantly updated and completed. For this reason it makes sense to once in a while update movies in your collection.
+
+Enabling this setting will force everything to be updated. Otherwise only empty, certifications, score and votes fields are updated on a refresh.
+
+Note: This setting disables the rename system for existing movies.
+</string>
+	<string Field="RenameTitles">Rename &amp; Group</string>
+	<string Field="RenameTitlesDescription">Off = Use title as-is
+On = Rename title so that series will group together
+
+There are many movie series, and sometimes the titles do not start with the same prefix to group them together. To solve this, a rename database file is used that will rename a title based on the IMDb tt-ID number. The result is that movies are renamed so that they are easy to identify as being part of a series.
+
+Example: 'Batman VII: The Dark Knight Rises' will group nicely along with the other movies in the series.
+
+The default rename titles are placed in a file located at: 'C:\Rename dBase IMDb+ Scraper.xml'
+
+Any custom rename entries that you want should go into: 'C:\Rename dBase IMDb+ Scraper (Custom).xml'
+
+If those files do not exist on your system, please use the setting page of this plugin to reinstall them.
+
+You can use notepad to edit the XML files, but it is preferred to use the editor option of this plugin to make sure that the contents of the XML files remain compliant.
+</string>
+	<string Field="RottenMeter">RT TomatoMeter</string>
+	<string Field="RottenMeterDescription">Off = RottenTomatoes 'Audience' ratings
+On = RottenTomatoes 'TomatoMeter' ratings
+
+There are many different ratings available at the RottenTomatoes website.
+
+To use any of the TomatoMeter ratings you have to enable this setting, otherwise the 'Audience' one is used.
+</string>
+	<string Field="RottenAverage">RT Avg. Rating</string>
+	<string Field="RottenAverageDescription">Off = RottenTomatoes 'Percentage' rating
+On = RottenTomatoes 'Average' rating
+
+With this setting enabled the 'Average' rating value is used, otherwise the 'Percentage' value is.
+
+The 'Percentage' rating is a special kind, in that it counts the amount of RottenTomatoes users who voted a certain way.
+</string>
+	<string Field="RottenTopCritics">RT Top Critics</string>
+	<string Field="RottenTopCriticsDescription">Off = RottenTomatoes 'All' critics
+On = RottenTomatoes 'Top' critics
+
+There is a TomatoMeter rating available for all of the critics and a select group of 'Top' critics.
+
+Enabling this setting will limit your rating to just the top ones.
+</string>
+
+	<!-- S -->
+	<string Field="ScraperOptionsTitle">IMDb+ Scraper Options</string>
+	<string Field="SingleScore">Single Score</string>
+	<string Field="SingleScoreDescription">Off = Use average rating system
+On = Single rating value is used
+
+There is a big difference sometimes between all the different ratings that are available. To compensate for that, an average value is used based on the ratings from imdb, metacritics and rottentomatoes.
+
+Note: If the 'IMDb Score' is enabled then the average rating of only IMDb and Metacritics is used when this setting is active for an average rating result.
+</string>
+	<string Field="SpecialEditions">Special Editions</string>
+	<string Field="SpecialEditionsDescription">Off = Keep title as-is
+On = Add special editions tag to the title
+
+If you make the IMDb tt-ID number available inside filename or via NFO files, then you can enable this setting for special edition tagging.
+
+You can add the following terms to your filename inside parenthesis:
+
+ - 3D
+ - Extended
+ - Unrated
+ - Director's Cut
+ - Alternate Ending
+
+You can also have the term 'Edition' postfixed to the end of them if you wish.
+
+Example: "Avatar (tt0499549) (3D).mkv" will result in "Avatar (3D)"
+</string>
+
+	<!-- T -->
+
+	<!-- U -->
+	<string Field="UkRating">UK Rating</string>
+	<string Field="UkRatingDescription">Off = Use the American MPAA ratings
+On = Enable the British BBFC ratings
+
+Use this setting for UK movie certifications.
+
+This includes 'U' for Universal, 'PG' for Parental Guidance, 12A, 12, 15, 18 and finally 'R18' for Restricted 18.
+</string>
+
+	<!-- V -->
+
+	<!-- W -->
+
+	<!-- Y -->
+</strings>
