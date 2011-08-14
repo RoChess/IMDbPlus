@@ -1,0 +1,39 @@
+#summary Installation of scraper scripts in MovingPictures.
+#labels install,scraper,scripts
+
+=Installing the scraper script=
+
+Movie database sites adjust their code, so the scraper scripts have to be modified.
+
+MovingPictures gets the information regarding cast, summary and other details from internet movie websites, such as IMDb. This process is called scraping, and it is a seperate part of !MovingPictures. The reason for this is that you can update the scrapers without waiting for a new !MovingPictures release. A lot of scrapers are bundled by default, but there are many other scrapers available, including this IMDb+ one.
+
+
+In order to install and/or update a scraper, use the following steps:
+
+ * Open MovingPictures configuration, and go to the "Importer Settings" tab:
+
+	http://blixy.net/mp/FAQ.MovingPictures.1a_Importer.Settings.png
+
+ * Adjust the radio button to "Manually Manage" the data source scrapers:
+
+	http://blixy.net/mp/FAQ.MovingPictures.1b_Manually.Manage.png
+
+ * Use the "Movie Details Data Sources" button to open the following:
+
+	http://blixy.net/mp/FAQ.MovingPictures.1c_Movie.Details.Data.Sources.png
+
+ * This will show you the existing scrapers, their order in which they are used, and their current version. Click the little arrow next to the `[+]` to reveal the following menu:
+
+	http://blixy.net/mp/FAQ.MovingPictures.1d_Add.New.Data.Source.png
+
+ * Select "Add a New Data Source" and then browse to the location where you downloaded the scraper XML file. New scrapers will be added at the bottom, and you can use the green up and down arrows to adjust their position. If you did not adjust the default settings, then only the first scraper listed is used for auto-approval, so keep that in mind.
+
+-----
+
+*Debugging:* If you are the first to notice something is wrong with a scraper, then you can help the developers with proper debug logs. To enable the scraper debug mode, go back to the "Movie Details Data Sources" screen from before that lists all the scrapers. Then use the gear icon to select the following option:
+
+	http://blixy.net/mp/FAQ.MovingPictures.1e_Scraper.Enable.Debug.Mode.png
+
+This will activate the scraper debug mode, which you can verify via: http://blixy.net/mp/FAQ.MovingPictures.1f_Scraper.Debug.Enabled.png
+
+Your movingpictures.log file can now be zipped and given to the scraper developer to solve the problem you discovered. This can result in extremly large log files if you import a large amount of movies, so keep the steps needed to recreate the problem as short as possible. For example close !MovingPictures configuration, open it, and re-import a single movie that is causing problems.
