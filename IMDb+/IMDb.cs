@@ -8,6 +8,8 @@ using MediaPortal;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
 using MediaPortal.Dialogs;
+using MediaPortal.Plugins.MovingPictures;
+using MediaPortal.Plugins.MovingPictures.DataProviders;
 using Action = MediaPortal.GUI.Library.Action;
 
 namespace IMDb
@@ -171,8 +173,6 @@ namespace IMDb
 
         protected override void OnPageLoad()
         {
-            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.DefaultDescription);
-            
             // Load Options file
             Logger.Info("Loading IMDb+ options from file");
             XmlReader xmlReader = new XmlReader();
@@ -353,6 +353,36 @@ namespace IMDb
                         CountryFilter = output.Replace('.', '|');
                     }
                     break;
+                case 403: //update_Scraper
+                    // grab the contents of the file and try
+                    StreamReader reader = new StreamReader(@"C:\Scraper.IMDb+.xml");
+                    string script = reader.ReadToEnd();
+                    reader.Close();
+
+                    // and add it to the manager
+                    DataProviderManager.AddSourceResult addResult = MovingPicturesCore.DataProviderManager.AddSource(typeof(ScriptableProvider), script, true);
+
+                    if (addResult == DataProviderManager.AddSourceResult.FAILED_VERSION)
+                    {
+                        Logger.Error("Load Script Failed: A script with this Version and ID is already loaded.");
+                    }
+                    else if (addResult == DataProviderManager.AddSourceResult.FAILED_DATE)
+                    {
+                        Logger.Error("Load Script Failed: This script does not have a unique 'published' date.");
+                    }
+                    else if (addResult == DataProviderManager.AddSourceResult.FAILED)
+                    {
+                        Logger.Error("Load Script Failed: The script is malformed or not a Moving Pictures script.");
+                    }
+                    else if (addResult == DataProviderManager.AddSourceResult.SUCCESS_REPLACED)
+                    {
+                        Logger.Error("Load Script Warning: Scraper debug-mode enabled, so existing script was replaced.");
+                    }  
+                    else
+                    {
+                        Logger.Error("Load Script: last end-if.");
+                    }  
+                    break;
 
                 default:
                     break;
@@ -425,6 +455,12 @@ namespace IMDb
                     }
                     break;
                 }
+                case GUIMessage.MessageType.GUI_MSG_WINDOW_INIT:
+                {
+                    GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.DefaultDescription);
+                    break;
+                }
+
             }
             return base.OnMessage(message);
         }
