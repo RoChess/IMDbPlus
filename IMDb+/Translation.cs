@@ -185,13 +185,13 @@ namespace IMDb
 
         // A
         public static string AddForeignTitle = "Add Foreign Title";
-        public static string AddForeignTitleDescription = "Off = Keep title as-is\nOn = Add the original title in parentheses\n\nEnabling this setting will allow you to see the original title in parentheses after the English title.\n\nExample: Black Book (Zwartboek)";
+        public static string AddForeignTitleDescription = "Off = Keep title as-is" + "\n" + "On = Add the original title in parentheses" + "\n" + "" + "\n" + "Enabling this setting will allow you to see the original title in parentheses after the English title." + "\n" + "" + "\n" + "Example: Black Book (Zwartboek)";
 
         // B
 
         // C
         public static string CountryFilter = "Country Filter";
-        public static string CountryFilterDescription = "There are some English language based movies that have a foreign title. So to aid in the proper detection of English titles it was needed to also filter on the country in which the movie was produced.\n\nDefault countries that do not use foreign titles are: 'us.ca.gb.ie.au.nz' (United States, Canada, Great Britain, Ireland, Australia and New Zealand)\n\nNote: The MediaPortal virtual keyboard does not support the '|' character, so a '.' was used instead to seperate the different languages. Be very careful in adjusting this setting as it can stop the function of the IMDb+ scraper.";
+        public static string CountryFilterDescription = "There are some English language based movies that have a foreign title. So to aid in the proper detection of English titles it was needed to also filter on the country in which the movie was produced." + "\n" + "" + "\n" + "Default countries that do not use foreign titles are: 'us.ca.gb.ie.au.nz' (United States, Canada, Great Britain, Ireland, Australia and New Zealand)" + "\n" + "" + "\n" + "Note: The MediaPortal virtual keyboard does not support the '|' character, so a '.' was used instead to seperate the different languages. Be very careful in adjusting this setting as it can stop the function of the IMDb+ scraper.";
 
         // D
         public static string DefaultDescription = "Highlight any of the above options and a more detailed explanation will be shown here.";
@@ -200,7 +200,7 @@ namespace IMDb
        
         // F               
         public static string ForeignTitleFirst = "Foreign Title First";
-        public static string ForeignTitleFirstDescription = "Off = English (Foreign)\nOn = Foreign (English)\n\nEnabling this setting shows the original foreign title first followed by the English title in parentheses.\n\nExample: Zwartboek (Black Book)";
+        public static string ForeignTitleFirstDescription = "Off = English (Foreign)" + "\n" + "On = Foreign (English)" + "\n" + "" + "\n" + "Enabling this setting shows the original foreign title first followed by the English title in parentheses." + "\n" + "" + "\n" + "Example: Zwartboek (Black Book)";
 
         // G
       
@@ -208,54 +208,54 @@ namespace IMDb
        
         // I
         public static string IMDbMetaScore = "Metacritics Score";
-        public static string IMDbMetaScoreDescription = "Off = Main imdb.com score is used\nOn = Use Metacritics Metascore instead\n\nThe imdb.com website also offers the Metacritics.com metascore. Enabling this setting will use that score, otherwise the IMDb score is used.\n\nNote: This setting requires that the 'IMDb Score' setting is also enabled and will therefore disable the RottenTomatoes method for missing summary and runtime info.";
+        public static string IMDbMetaScoreDescription = "Off = Main imdb.com score is used" + "\n" + "On = Use Metacritics Metascore instead" + "\n" + "" + "\n" + "The imdb.com website also offers the Metacritics.com metascore. Enabling this setting will use that score, otherwise the IMDb score is used." + "\n" + "" + "\n" + "Note: This setting requires that the 'IMDb Score' setting is also enabled and will therefore disable the RottenTomatoes method for missing summary and runtime info.";
         public static string IMDbScore = "IMDb Score";
-        public static string IMDbScoreDescription = "Off = Use RottenTomatoes website\nOn = Restrict to imdb.com website only\n\nRottenTomatoes offers additional info, but if you want to restrict yourself to imdb.com then enable this setting.\n\nNote: This also disables getting missing summary, runtime and scoreing.";
+        public static string IMDbScoreDescription = "Off = Use RottenTomatoes website" + "\n" + "On = Restrict to imdb.com website only" + "\n" + "" + "\n" + "RottenTomatoes offers additional info, but if you want to restrict yourself to imdb.com then enable this setting." + "\n" + "" + "\n" + "Note: This also disables getting missing summary, runtime and scoreing.";
 
         // J
     
         // L
         public static string LanguageFilter = "Language Filter";
-        public static string LanguageFilterDescription = "Special filter to include other language titles besides English (en). Use the imdb.com HTML source to find the ISO 639-1 code after /language/.\n\nDefault language is English via: 'en'\n\nHowever if you are from Norway and you wish to have Norwegian movies use their original title and English titles for everything else, then use: 'en.no'\n\nNote: The MediaPortal virtual keyboard does not support the '|' character, so a '.' was used instead to seperate the different languages. Be very careful in adjusting this setting as it can stop the function of the IMDb+ scraper.";
+        public static string LanguageFilterDescription = "Special filter to include other language titles besides English (en). Use the imdb.com HTML source to find the ISO 639-1 code after /language/." + "\n" + "" + "\n" + "Default language is English via: 'en'" + "\n" + "" + "\n" + "However if you are from Norway and you wish to have Norwegian movies use their original title and English titles for everything else, then use: 'en.no'" + "\n" + "" + "\n" + "Note: The MediaPortal virtual keyboard does not support the '|' character, so a '.' was used instead to seperate the different languages. Be very careful in adjusting this setting as it can stop the function of the IMDb+ scraper.";
         public static string LongSummary = "Long Summary";
-        public static string LongSummaryDescription = "Off = Short summary to describe movie plot\nOn = Long summary (might contain spoilers)\n\nLong summaries offer more information, but can sometimes have spoilers contained within them. This is why this setting is disabled by default, but you can of course enable it if you prefer them.";
+        public static string LongSummaryDescription = "Off = Short summary to describe movie plot" + "\n" + "On = Long summary (might contain spoilers)" + "\n" + "" + "\n" + "Long summaries offer more information, but can sometimes have spoilers contained within them. This is why this setting is disabled by default, but you can of course enable it if you prefer them.";
 
         // M     
         public static string MinImdbVotes = "Min. IMDb Votes";
-        public static string MinImdbVotesDescription = "Off = Always use imdb.com score\nOn = Only use imdb.com scores with 20+ votes\n\nThe IMDb score is inflated a lot of times by the people who worked on the movie. This is why it is not uncommon for a movie with less then 20 votes to have a very high rating.\n\nIf you enable this setting then the IMDb scores with less then 20 votes are ignored.";
+        public static string MinImdbVotesDescription = "Off = Always use imdb.com score" + "\n" + "On = Only use imdb.com scores with 20+ votes" + "\n" + "" + "\n" + "The IMDb score is inflated a lot of times by the people who worked on the movie. This is why it is not uncommon for a movie with less then 20 votes to have a very high rating." + "\n" + "" + "\n" + "If you enable this setting then the IMDb scores with less then 20 votes are ignored.";
 
         // N      
 
         // O
         public static string OriginalTitle = "Original Title";
-        public static string OriginalTitleDescription = "Off = Always force English title\nOn = Use original title for foreign movies\n\nForeign movies often have a non-English title.\n\nIf you want all your movies to use an English title, then keep this setting disabled.";
+        public static string OriginalTitleDescription = "Off = Always force English title" + "\n" + "On = Use original title for foreign movies" + "\n" + "" + "\n" + "Foreign movies often have a non-English title." + "\n" + "" + "\n" + "If you want all your movies to use an English title, then keep this setting disabled.";
 
         // P
       
         // R
         public static string RefreshAllFields = "Refresh All Fields";
-        public static string RefreshAllFieldsDescription = "Off = Only update a few things\nOn = Update everything\n\nThe information at IMDb is constantly updated and completed. For this reason it makes sense to once in a while update movies in your collection.\n\nEnabling this setting will force everything to be updated. Otherwise only empty, certifications, score and votes fields are updated on a refresh.\n\nNote: This setting disables the rename system for existing movies.";
+        public static string RefreshAllFieldsDescription = "Off = Only update a few things" + "\n" + "On = Update everything" + "\n" + "" + "\n" + "The information at IMDb is constantly updated and completed. For this reason it makes sense to once in a while update movies in your collection." + "\n" + "" + "\n" + "Enabling this setting will force everything to be updated. Otherwise only empty, certifications, score and votes fields are updated on a refresh." + "\n" + "" + "\n" + "Note: This setting disables the rename system for existing movies.";
         public static string RenameTitles = "Rename & Group";
-        public static string RenameTitlesDescription = "Off = Use title as-is\nOn = Rename title so that series will group together\n\nThere are many movie series, and sometimes the titles do not start with the same prefix to group them together. To solve this, a rename database file is used that will rename a title based on the IMDb tt-ID number. The result is that movies are renamed so that they are easy to identify as being part of a series.\n\nExample: 'Batman VII: The Dark Knight Rises' will group nicely along with the other movies in the series.\n\nThe default rename titles are placed in a file located at: 'C:\\Rename dBase IMDb+ Scraper.xml'\n\nAny custom rename entries that you want should go into: 'C:\\Rename dBase IMDb+ Scraper (Custom).xml'\n\nIf those files do not exist on your system, please use the setting page of this plugin to reinstall them.\n\nYou can use notepad to edit the XML files, but it is preferred to use the editor option of this plugin to make sure that the contents of the XML files remain compliant.";
+        public static string RenameTitlesDescription = "Off = Use title as-is" + "\n" + "On = Rename title so that series will group together" + "\n" + "" + "\n" + "There are many movie series, and sometimes the titles do not start with the same prefix to group them together. To solve this, a rename database file is used that will rename a title based on the IMDb tt-ID number. The result is that movies are renamed so that they are easy to identify as being part of a series." + "\n" + "" + "\n" + "Example: 'Batman VII: The Dark Knight Rises' will group nicely along with the other movies in the series." + "\n" + "" + "\n" + "The default rename titles are placed in a file located at: 'C:\\Rename dBase IMDb+ Scraper.xml'" + "\n" + "" + "\n" + "Any custom rename entries that you want should go into: 'C:\\Rename dBase IMDb+ Scraper (Custom).xml'" + "\n" + "" + "\n" + "If those files do not exist on your system, please use the setting page of this plugin to reinstall them." + "\n" + "" + "\n" + "You can use notepad to edit the XML files, but it is preferred to use the editor option of this plugin to make sure that the contents of the XML files remain compliant.";
         public static string RottenMeter = "RT TomatoMeter";
-        public static string RottenMeterDescription = "Off = RottenTomatoes 'Audience' ratings\nOn = RottenTomatoes 'TomatoMeter' ratings\n\nThere are many different ratings available at the RottenTomatoes website.\n\nTo use any of the TomatoMeter ratings you have to enable this setting, otherwise the 'Audience' one is used.";
+        public static string RottenMeterDescription = "Off = RottenTomatoes 'Audience' ratings" + "\n" + "On = RottenTomatoes 'TomatoMeter' ratings" + "\n" + "" + "\n" + "There are many different ratings available at the RottenTomatoes website." + "\n" + "" + "\n" + "To use any of the TomatoMeter ratings you have to enable this setting, otherwise the 'Audience' one is used.";
         public static string RottenAverage = "RT Avg. Rating";
-        public static string RottenAverageDescription = "Off = RottenTomatoes 'Percentage' rating\nOn = RottenTomatoes 'Average' rating\n\nWith this setting enabled the 'Average' rating value is used, otherwise the 'Percentage' value is.\n\nThe 'Percentage' rating is a special kind, in that it counts the amount of RottenTomatoes users who voted a certain way.";
+        public static string RottenAverageDescription = "Off = RottenTomatoes 'Percentage' rating" + "\n" + "On = RottenTomatoes 'Average' rating" + "\n" + "" + "\n" + "With this setting enabled the 'Average' rating value is used, otherwise the 'Percentage' value is." + "\n" + "" + "\n" + "The 'Percentage' rating is a special kind, in that it counts the amount of RottenTomatoes users who voted a certain way.";
         public static string RottenTopCritics = "RT Top Critics";
-        public static string RottenTopCriticsDescription = "Off = RottenTomatoes 'All' critics\nOn = RottenTomatoes 'Top' critics\n\nThere is a TomatoMeter rating available for all of the critics and a select group of 'Top' critics.\n\nEnabling this setting will limit your rating to just the top ones.";
+        public static string RottenTopCriticsDescription = "Off = RottenTomatoes 'All' critics" + "\n" + "On = RottenTomatoes 'Top' critics" + "\n" + "" + "\n" + "There is a TomatoMeter rating available for all of the critics and a select group of 'Top' critics." + "\n" + "" + "\n" + "Enabling this setting will limit your rating to just the top ones.";
 
         // S
         public static string ScraperOptionsTitle = "IMDb+ Scraper Options";
         public static string SingleScore = "Single Score";
-        public static string SingleScoreDescription = "Off = Use average rating system\nOn = Single rating value is used\n\nThere is a big difference sometimes between all the different ratings that are available. To compensate for that, an average value is used based on the ratings from imdb, metacritics and rottentomatoes.\n\nNote: If the 'IMDb Score' is enabled then the average rating of only IMDb and Metacritics is used when this setting is active for an average rating result.";
+        public static string SingleScoreDescription = "Off = Use average rating system" + "\n" + "On = Single rating value is used" + "\n" + "" + "\n" + "There is a big difference sometimes between all the different ratings that are available. To compensate for that, an average value is used based on the ratings from imdb, metacritics and rottentomatoes." + "\n" + "" + "\n" + "Note: If the 'IMDb Score' is enabled then the average rating of only IMDb and Metacritics is used when this setting is active for an average rating result.";
         public static string SpecialEditions = "Special Editions";
-        public static string SpecialEditionsDescription = "Off = Keep title as-is\nOn = Add special editions tag to the title\n\nIf you make the IMDb tt-ID number available inside filename or via NFO files, then you can enable this setting for special edition tagging.\n\nYou can add the following terms to your filename inside parenthesis:\n\n - 3D\n - Extended\n - Unrated\n - Director's Cut\n - Alternate Ending\n\nYou can also have the term 'Edition' postfixed to the end of them if you wish.\n\nExample: \"Avatar (tt0499549) (3D).mkv\" will result in \"Avatar (3D)\"";
+        public static string SpecialEditionsDescription = "Off = Keep title as-is" + "\n" + "On = Add special editions tag to the title" + "\n" + "" + "\n" + "If you make the IMDb tt-ID number available inside filename or via NFO files, then you can enable this setting for special edition tagging." + "\n" + "" + "\n" + "You can add the following terms to your filename inside parenthesis:" + "\n" + "" + "\n" + " - 3D" + "\n" + " - Extended" + "\n" + " - Unrated" + "\n" + " - Director's Cut" + "\n" + " - Alternate Ending" + "\n" + "" + "\n" + "You can also have the term 'Edition' postfixed to the end of them if you wish." + "\n" + "" + "\n" + "Example: \"Avatar (tt0499549) (3D).mkv\" will result in \"Avatar (3D)\"";
 
         // T
        
         // U
         public static string UkRating = "UK Rating";
-        public static string UkRatingDescription = "Off = Use the American MPAA ratings\nOn = Enable the British BBFC ratings\n\nUse this setting for UK movie certifications.\n\nThis includes 'U' for Universal, 'PG' for Parental Guidance, 12A, 12, 15, 18 and finally 'R18' for Restricted 18.";
+        public static string UkRatingDescription = "Off = Use the American MPAA ratings" + "\n" + "On = Enable the British BBFC ratings" + "\n" + "" + "\n" + "Use this setting for UK movie certifications." + "\n" + "" + "\n" + "This includes 'U' for Universal, 'PG' for Parental Guidance, 12A, 12, 15, 18 and finally 'R18' for Restricted 18.";
 
         // V
       
