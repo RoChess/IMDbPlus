@@ -91,7 +91,7 @@ namespace IMDb
         /// <returns></returns>
         public bool GetHome(out string strButtonText, out string strButtonImage, out string strButtonImageFocus, out string strPictureImage)
         {
-            strButtonText = PluginName();
+            strButtonText = "IMDb+";
             strButtonImage = string.Empty;
             strButtonImageFocus = string.Empty;
             strPictureImage = "hover_imdb+.png";

@@ -20,7 +20,7 @@ namespace IMDb
 
         public static string PluginName()
         {
-            return "IMDb+";
+            return "IMDbPlus";
         }
 
         public static void SetProperty(string property, string value)
