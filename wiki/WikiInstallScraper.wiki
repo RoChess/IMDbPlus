@@ -10,6 +10,8 @@ MovingPictures gets the information regarding cast, summary and other details fr
 
 In order to install and/or update a scraper, use the following steps:
 
+ * Download the featured scraper script ZIP file via the 'Downloads' section. Unzip all the XML files in your 'C:\' root folder.
+
  * Open MovingPictures configuration, and go to the "Importer Settings" tab:
 
 	http://blixy.net/mp/FAQ.MovingPictures.1a_Importer.Settings.png
