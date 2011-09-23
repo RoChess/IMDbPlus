@@ -28,7 +28,7 @@ In order to install and/or update a scraper, use the following steps:
 
 	http://blixy.net/mp/FAQ.MovingPictures.1d_Add.New.Data.Source.png
 
- * Select "Add a New Data Source" and then browse to the location where you downloaded the scraper XML file. New scrapers will be added at the bottom, and you can use the green up and down arrows to adjust their position. If you did not adjust the default settings, then only the first scraper listed is used for auto-approval, so keep that in mind.
+ * Select "Add a New Data Source" and then browse to the 'C:\' location where you unzipped all the XML files and select the "IMDb+ (version).xml" file. New scrapers will be added at the bottom, and you can use the green up and down arrows to adjust their position. If you did not adjust the default settings, then only the first scraper listed is used for auto-approval, so keep that in mind.
 
 -----
 
