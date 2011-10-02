@@ -32,7 +32,9 @@ In order to install and/or update a scraper, use the following steps:
 
 -----
 
-*Debugging:* If you are the first to notice something is wrong with a scraper, then you can help the developers with proper debug logs. To enable the scraper debug mode, go back to the "Movie Details Data Sources" screen from before that lists all the scrapers. Then use the gear icon to select the following option:
+ = Debugging =
+
+If you are the first to notice something is wrong with a scraper, then you can help the developers with proper debug logs. To enable the scraper debug mode, go back to the "Movie Details Data Sources" screen from before that lists all the scrapers. Then use the gear icon to select the following option:
 
 	http://blixy.net/mp/FAQ.MovingPictures.1e_Scraper.Enable.Debug.Mode.png
 
