@@ -2,6 +2,6 @@
 
 = Introduction =
 
-Moving Pictures is a movies plug-in for the MediaPortal media center application. The goal of the plug-in is to create a very focused and refined experience that requires minimal user interaction. The plug-in emphasizes usability and ease of use in managing a movie collection consisting of ripped DVDs, and movies reencoded in common video formats supported by MediaPortal.
+Moving Pictures is a movies plug-in for the MediaPortal media center application. The goal of the plug-in is to create a very focused and refined experience that requires minimal user interaction. The plug-in emphasizes usability and ease of use in managing a movie collection consisting of ripped DVDs, and movies reencoded in common video formats supported by !MediaPortal.
 
 [http://code.google.com/p/moving-pictures/downloads/list Download Moving-Pictures for free!]
