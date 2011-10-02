@@ -1,6 +1,8 @@
 #summary Installation of scraper scripts in MovingPictures.
 #labels install,scraper,scripts
 
+<wiki:toc max_depth="1"/>
+
 =Installing the scraper script=
 
 Movie database sites adjust their code, so the scraper scripts have to be modified.
