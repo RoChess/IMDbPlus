@@ -1,6 +1,6 @@
 #MediaPortal  - a HTPC Media Center for free!
 
-= !MediaPortal: Everything else is just a media center =
+= Everything else is just a media center =
 
 !MediaPortal turns your HTPC into a very advanced media center, or Home Theater PC (HTPC)
 
