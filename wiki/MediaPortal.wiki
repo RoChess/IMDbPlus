@@ -1,4 +1,4 @@
-#symmary MediaPortal - a HTPC Media Center for free!
+#summary MediaPortal - a HTPC Media Center for free!
 
 = Everything else is just a media center =
 
