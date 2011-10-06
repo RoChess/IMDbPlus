@@ -14,7 +14,7 @@ In order to install and/or update a scraper, use the following steps:
 
  * Download the featured scraper script ZIP file via the 'Downloads' section.
 
-* Unzip all of the XML files to your desktop first and then move them into the 'C:\' location. The desktop step is needed to prevent creation of the "Mandatory Integrity Control" (MIC) flag that would mess things up with "User Access Control" (UAC) mode enabled.
+ * Unzip all of the XML files to your desktop first and then move them into the 'C:\' location. The desktop step is needed to prevent creation of the "Mandatory Integrity Control" (MIC) flag that would mess things up with "User Access Control" (UAC) mode enabled.
 
  * Open MovingPictures configuration, and go to the "Importer Settings" tab:
 
