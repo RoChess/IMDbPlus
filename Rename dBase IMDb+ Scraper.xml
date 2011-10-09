@@ -1,8 +1,8 @@
 ﻿<!--
-	IMDb+ Scraper Script Rename dBase v0.96
+	IMDb+ Scraper Script Rename dBase v0.97 (beta)
 	For use in MovingPictures plugin for MediaPortal
 	Author: Ron (RoChess)
-	Date: Sep 23rd 2011
+	Date: Oct 8th 2011
 
 	Syntax example for movie "Casino Royale":
 
@@ -80,7 +80,7 @@
 	<rename id="tt0145660" title="Austin Powers II: The Spy Who Shagged Me" />
 	<rename id="tt0295178" title="Austin Powers III: Goldmember" />
 	<rename id="tt1218992" title="Austin Powers IV" />
-	<rename id="tt0499549" title="Avatar" />
+	<rename id="tt0499549" title="Avatar" sortby="Avatar I" />
 	<rename id="tt1630029" title="Avatar II" />
 	<rename id="tt1757678" title="Avatar III" />
 	<rename id="tt0086927" title="Bachelor Party I" />
@@ -312,6 +312,7 @@
 	<rename id="tt1255916" title="Hostel III" />
 	<rename id="tt0091223" title="House I" />
 	<rename id="tt0097527" title="House III: The Horror Show" />
+	<rename id="tt1744776" title="How to Train Your Dragon: Legend of the BoneKnapper Dragon" />
 	<rename id="tt0268380" title="Ice Age I" />
 	<rename id="tt0438097" title="Ice Age II: The Meltdown" />
 	<rename id="tt1080016" title="Ice Age III: Dawn of the Dinosaurs" />
@@ -320,6 +321,9 @@
 	<rename id="tt0087469" title="Indiana Jones II: The Temple of Doom" />
 	<rename id="tt0097576" title="Indiana Jones III: The Last Crusade" />
 	<rename id="tt0367882" title="Indiana Jones IV: Kingdom of the Crystal Skull" />
+	<rename id="tt0116629" title="Independence Day" sortby="Independence Day I" />
+	<rename id="tt1628842" title="Independence Day II" />
+	<rename id="tt1628842" title="Independence Day III" />
 	<rename id="tt0338564" title="Internal Affairs I (Mou gaan dou)" />
 	<rename id="tt0369060" title="Internal Affairs II (Mou gaan dou II)" />
 	<rename id="tt0374339" title="Internal Affairs III: End Inferno (Mou gaan dou III: Jung gik mou gaan)" />
@@ -498,6 +502,7 @@
 	<rename id="tt0318627" title="Resident Evil II: Apocalypse" />
 	<rename id="tt0432021" title="Resident Evil III: Extinction" />
 	<rename id="tt1220634" title="Resident Evil IV: Afterlife" />
+	<rename id="tt1855325" title="Resident Evil V: Retribution" />
 	<rename id="tt0089907" title="Return of the Living Dead I" />
 	<rename id="tt0095990" title="Return of the Living Dead II" />
 	<rename id="tt0107953" title="Return of the Living Dead III" />
@@ -551,6 +556,10 @@
 	<rename id="tt0145487" title="Spider-Man I" />
 	<rename id="tt0316654" title="Spider-Man II" />
 	<rename id="tt0413300" title="Spider-Man III" />
+	<rename id="tt0227538" title="Spy Kids I" />
+	<rename id="tt0287717" title="Spy Kids II: Island of Lost Dreams" />
+	<rename id="tt0338459" title="Spy Kids III: Game Over" />
+	<rename id="tt1517489" title="Spy Kids IV: All the Time in the World in 4D" />
 	<rename id="tt0046766" title="St. Trinian's I: The Belles of..." />
 	<rename id="tt0051423" title="St. Trinian's II: Blue Murder at..." />
 	<rename id="tt0055342" title="St. Trinian's III: The Pure Hell of..." />
@@ -876,6 +885,8 @@
 	<rename id="tt0120903" title="X-Men I" />
 	<rename id="tt0290334" title="X-Men II: X-Men United (X2)" />
 	<rename id="tt0376994" title="X-Men III: The Last Stand" />
+	<rename id="tt1270798" title="X-Men: First Class" sortby="X-Men: First Class I" />
+	<rename id="tt1877832" title="X-Men: First Class II" />
 	<rename id="tt0295701" title="xXx I" />
 	<rename id="tt0329774" title="xXx II: State Of The Union" />
 	<rename id="tt1293847" title="xXx III: The Return of Xander Cage" />
