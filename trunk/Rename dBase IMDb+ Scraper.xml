@@ -1,8 +1,8 @@
 ﻿<!--
-	IMDb+ Scraper Script Rename dBase v0.9
+	IMDb+ Scraper Script Rename dBase v0.95
 	For use in MovingPictures plugin for MediaPortal
 	Author: Ron (RoChess)
-	Date: July 31st 2011
+	Date: Aug 30th 2011
 
 	Syntax example for movie "Casino Royale":
 
@@ -289,6 +289,8 @@
 	<rename id="tt0475293" title="High School Musical I" />
 	<rename id="tt0810900" title="High School Musical II" />
 	<rename id="tt0962726" title="High School Musical III: Senior Year" />
+	<rename id="tt0443536" title="Hoodwinked! I" />
+	<rename id="tt0844993" title="Hoodwinked! II: Hood VS. Evil" />
 	<rename id="tt0450278" title="Hostel I" />
 	<rename id="tt0498353" title="Hostel II" />
 	<rename id="tt1255916" title="Hostel III" />
@@ -386,6 +388,8 @@
 	<rename id="tt0097815" title="Major League I" />
 	<rename id="tt0110442" title="Major League II" />
 	<rename id="tt0120742" title="Major League III: Back to the Minors" />
+	<rename id="tt0822832" title="Marley &amp; Me I" />
+	<rename id="tt1704614" title="Marley &amp; Me II: The Puppy Years" />
 	<rename id="tt0212338" title="Meet the Parents I" />
 	<rename id="tt0290002" title="Meet the Parents II: Meet the Fockers" />
 	<rename id="tt0970866" title="Meet the Parents III: Little Fockers" />
@@ -687,6 +691,10 @@
 	<rename id="tt0133093" title="The Matrix I" />
 	<rename id="tt0234215" title="The Matrix II: Reloaded" />
 	<rename id="tt0242653" title="The Matrix III: Revolutions" />
+	<rename id="tt0104868" title="The Mighty Ducks I" />
+	<rename id="tt0109520" title="The Mighty Ducks II" />
+	<rename id="tt0116000" title="The Mighty Ducks III" />
+	<rename id="tt0179976" title="The Mighty Ducks IV: The First Face-Off" />
 	<rename id="tt0120616" title="The Mummy I" />
 	<rename id="tt0209163" title="The Mummy II: The Mummy Returns" />
 	<rename id="tt0859163" title="The Mummy III: Tomb of the Dragon Emperor" />
@@ -744,6 +752,13 @@
 	<rename id="tt0324216" title="The Texas Chainsaw Massacre I" />
 	<rename id="tt0420294" title="The Texas Chainsaw Massacre II: The Beginning" />
 	<rename id="tt1928299" title="The Texas Chainsaw Massacre (Remake) I" />
+	<rename id="tt0025878" title="The Thin Man I" />
+	<rename id="tt0027260" title="The Thin Man II: After the Thin Man" />
+	<rename id="tt0031047" title="The Thin Man III: Another Thin Man" />
+	<rename id="tt0034172" title="The Thin Man IV: Shadow of the Thin Man" />
+	<rename id="tt0037365" title="The Thin Man V: The Thin Man Goes Home" />
+	<rename id="tt0039853" title="The Thin Man VI: Song of the Thin Man" />
+	<rename id="tt1754720" title="The Thin Man (Remake) I" />
 	<rename id="tt0155267" title="The Thomas Crown Affair I" />
 	<rename id="tt0433100" title="The Thomas Crown Affair II" />
 	<rename id="tt0063688" title="The Thomas Crown Affair (Original)" />
@@ -754,6 +769,8 @@
 	<rename id="tt0111547" title="The Unborn II" />
 	<rename id="tt0120902" title="The X-Files I: Fight the Future" />
 	<rename id="tt0443701" title="The X-Files II: I Want to Believe" />
+	<rename id="tt0800369" title="Thor I" />
+	<rename id="tt1981115" title="Thor II" />
 	<rename id="tt0114709" title="Toy Story I" />
 	<rename id="tt0120363" title="Toy Story II" />
 	<rename id="tt0435761" title="Toy Story III" />

@@ -4,7 +4,7 @@
 <!-- Note: English is the fallback for any strings not found in other languages -->
 <strings>
 	<!-- A -->
-	<string Field="AddForeignTitle">Add Foreign Title</string>
+	<string Field="AddForeignTitle">Add the foreign title</string>
 	<string Field="AddForeignTitleDescription">Off = Keep title as-is
 On = Add the original title in parentheses
 
@@ -14,9 +14,11 @@ Example: Black Book (Zwartboek)
 </string>
 
 	<!-- B -->
+	<string Field="BoolOn">On</string>
+	<string Field="BoolOff">Off</string>
 
 	<!-- C -->
-	<string Field="CountryFilter">Country Filter</string>
+	<string Field="CountryFilter">Advanced: Country filter</string>
 	<string Field="CountryFilterDescription">There are some English language based movies that have a foreign title. So to aid in the proper detection of English titles it was needed to also filter on the country in which the movie was produced.
 
 Default countries that do not use foreign titles are: 'us.ca.gb.ie.au.nz' (United States, Canada, Great Britain, Ireland, Australia and New Zealand)
@@ -30,7 +32,7 @@ Note: The MediaPortal virtual keyboard does not support the '|' character, so a 
 	<!-- E -->
 
 	<!-- F -->
-	<string Field="ForeignTitleFirst">Foreign Title First</string>
+	<string Field="ForeignTitleFirst">Start the title with the foreign one first</string>
 	<string Field="ForeignTitleFirstDescription">Off = English (Foreign)
 On = Foreign (English)
 
@@ -44,7 +46,7 @@ Example: Zwartboek (Black Book)
 	<!-- H -->
 
 	<!-- I -->
-	<string Field="IMDbMetaScore">Metacritics Score</string>
+	<string Field="IMDbMetaScore">Metacritics MetaScore</string>
 	<string Field="IMDbMetaScoreDescription">Off = Main imdb.com score is used
 On = Use Metacritics Metascore instead
 
@@ -66,7 +68,7 @@ Note: This also disables getting missing summary, runtime and scoreing.
 	<!-- J -->
 
 	<!-- L -->
-	<string Field="LanguageFilter">Language Filter</string>
+	<string Field="LanguageFilter">Advanced: Language filter</string>
 	<string Field="LanguageFilterDescription">Special filter to include other language titles besides English (en). Use the imdb.com HTML source to find the ISO 639-1 code after /language/.
 
 Default language is English via: 'en'
@@ -75,7 +77,7 @@ However if you are from Norway and you wish to have Norwegian movies use their o
 
 Note: The MediaPortal virtual keyboard does not support the '|' character, so a '.' was used instead to seperate the different languages. Be very careful in adjusting this setting as it can stop the function of the IMDb+ scraper.
 </string>
-	<string Field="LongSummary">Long Summary</string>
+	<string Field="LongSummary">Use long summaries which may contain spoilers</string>
 	<string Field="LongSummaryDescription">Off = Short summary to describe movie plot
 On = Long summary (might contain spoilers)
 
@@ -83,7 +85,7 @@ Long summaries offer more information, but can sometimes have spoilers contained
 </string>
 
 	<!-- M -->
-	<string Field="MinImdbVotes">Min. IMDb Votes</string>
+	<string Field="MinImdbVotes">Minimum amount of IMDb votes required</string>
 	<string Field="MinImdbVotesDescription">Off = Always use imdb.com score
 On = Only use imdb.com scores with 20+ votes
 
@@ -95,7 +97,15 @@ If you enable this setting then the IMDb scores with less then 20 votes are igno
 	<!-- N -->
 
 	<!-- O -->
-	<string Field="OriginalTitle">Original Title</string>
+	<string Field="OneWriterDirector">Limit import to only one writer and director</string>
+	<string Field="OneWriterDirectorDescription">Off = Get all the names for writers and directors
+On = Only use first name for writers and directors
+
+Some skins do not allow much room for writers and directors. So if you want to prevent horizontal scrolling, then enable this setting to only import the first name for writers and directors.
+
+Keep in mind that this will affect your ability to search for movies done by a certain writer or director as only one name will be available per movie. On the other hand the amount of movies that feature multiple writers and/or directors are very limited.
+</string>
+	<string Field="OriginalTitle">Use the original title from the movie</string>
 	<string Field="OriginalTitleDescription">Off = Always force English title
 On = Use original title for foreign movies
 
@@ -107,7 +117,7 @@ If you want all your movies to use an English title, then keep this setting disa
 	<!-- P -->
 
 	<!-- R -->
-	<string Field="RefreshAllFields">Refresh All Fields</string>
+	<string Field="RefreshAllFields">Refresh all of the fields</string>
 	<string Field="RefreshAllFieldsDescription">Off = Only update a few things
 On = Update everything
 
@@ -117,7 +127,7 @@ Enabling this setting will force everything to be updated. Otherwise only empty,
 
 Note: This setting disables the rename system for existing movies.
 </string>
-	<string Field="RenameTitles">Rename &amp; Group</string>
+	<string Field="RenameTitles">Rename titles so that series are grouped together</string>
 	<string Field="RenameTitlesDescription">Off = Use title as-is
 On = Rename title so that series will group together
 
@@ -133,7 +143,7 @@ If those files do not exist on your system, please use the setting page of this 
 
 You can use notepad to edit the XML files, but it is preferred to use the editor option of this plugin to make sure that the contents of the XML files remain compliant.
 </string>
-	<string Field="RottenMeter">RT TomatoMeter</string>
+	<string Field="RottenMeter">RottenTomatoes TomatoMeter</string>
 	<string Field="RottenMeterDescription">Off = RottenTomatoes 'Audience' ratings
 On = RottenTomatoes 'TomatoMeter' ratings
 
@@ -141,7 +151,7 @@ There are many different ratings available at the RottenTomatoes website.
 
 To use any of the TomatoMeter ratings you have to enable this setting, otherwise the 'Audience' one is used.
 </string>
-	<string Field="RottenAverage">RT Avg. Rating</string>
+	<string Field="RottenAverage">RottenTomatoes average rating</string>
 	<string Field="RottenAverageDescription">Off = RottenTomatoes 'Percentage' rating
 On = RottenTomatoes 'Average' rating
 
@@ -149,7 +159,7 @@ With this setting enabled the 'Average' rating value is used, otherwise the 'Per
 
 The 'Percentage' rating is a special kind, in that it counts the amount of RottenTomatoes users who voted a certain way.
 </string>
-	<string Field="RottenTopCritics">RT Top Critics</string>
+	<string Field="RottenTopCritics">RottenTomatoes top critics</string>
 	<string Field="RottenTopCriticsDescription">Off = RottenTomatoes 'All' critics
 On = RottenTomatoes 'Top' critics
 
@@ -160,7 +170,23 @@ Enabling this setting will limit your rating to just the top ones.
 
 	<!-- S -->
 	<string Field="ScraperOptionsTitle">IMDb+ Scraper Options</string>
-	<string Field="SingleScore">Single Score</string>
+	<string Field="SecondaryDetails">Obtain additional information in the following language</string>
+	<string Field="SecondaryDetailsDescription">There is support to obtain certain information in a different language. This covers information such as Summary, Certification, Genres and wherever possible even more.
+
+Current support includes: French, German, Italian, Icelandic, Portugese, Spanish and Swedish.
+</string>
+	<string Field="SecondaryDetailsHeader">Secondary Language</string>
+	<string Field="SecondaryLanguage01">English</string>
+	<string Field="SecondaryLanguage02">German</string>
+	<string Field="SecondaryLanguage03">Spanish</string>
+	<string Field="SecondaryLanguage04">French</string>
+	<string Field="SecondaryLanguage05">Italian</string>
+	<string Field="SecondaryLanguage06">Portuguese</string>
+	<string Field="SecondaryLanguage07">Swedish</string>
+	<string Field="SecondaryLanguage08">Icelandic</string>
+	<string Field="SecondarySummary">Fallback to English summary if foreign one is missing";
+	<string Field="SecondarySummaryDescription">Off = Show nothing if foreign summary is missing" + "\n" + "On = Use English summary as a fallback when no foreign one exists" + "\n" + "" + "\n" + "Foreign movie websites are not always as extensive as imdb.com or have the same information available. This mainly affects the summary, so to prevent your collection from being empty, enable this option to then fallback on the English summary (if available). Ideally you would register at the foreign movie website and submit the missing information, but until then you can use English.";
+	<string Field="SingleScore">Single score rating system</string>
 	<string Field="SingleScoreDescription">Off = Use average rating system
 On = Single rating value is used
 
@@ -168,7 +194,7 @@ There is a big difference sometimes between all the different ratings that are a
 
 Note: If the 'IMDb Score' is enabled then the average rating of only IMDb and Metacritics is used when this setting is active for an average rating result.
 </string>
-	<string Field="SpecialEditions">Special Editions</string>
+	<string Field="SpecialEditions">Special editions rename tagging support</string>
 	<string Field="SpecialEditionsDescription">Off = Keep title as-is
 On = Add special editions tag to the title
 
@@ -190,7 +216,7 @@ Example: "Avatar (tt0499549) (3D).mkv" will result in "Avatar (3D)"
 	<!-- T -->
 
 	<!-- U -->
-	<string Field="UkRating">UK Rating</string>
+	<string Field="UkRating">British BBFC certification system</string>
 	<string Field="UkRatingDescription">Off = Use the American MPAA ratings
 On = Enable the British BBFC ratings
 
