@@ -15,7 +15,7 @@
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>..\IMDb+\bin\Release\IMDb+.dll</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{1e48b2f9-c28e-4c47-9f49-e8d1998e0018}-IMDb+.dll</ZipFileName>
-              <DestinationFilename>%Base%\IMDb+.dll</DestinationFilename>
+              <DestinationFilename>%Plugins%\Windows\IMDb+.dll</DestinationFilename>
             </FileItem>
           </Items>
         </Files>
@@ -207,7 +207,21 @@ Click Next to continue or Cancel to exit Setup.</Value>
     </Items>
   </Dependencies>
   <PluginDependencies>
-    <Items />
+    <Items>
+      <PluginDependencyItem AssemblyName="IMDb+.dll">
+        <CompatibleVersion>
+          <Items>
+            <CompatibleVersionItem>
+              <MinRequiredVersion>1.1.6.27644</MinRequiredVersion>
+              <DesignedForVersion>1.1.6.27644</DesignedForVersion>
+            </CompatibleVersionItem>
+          </Items>
+        </CompatibleVersion>
+        <SubSystemsUsed>
+          <Items />
+        </SubSystemsUsed>
+      </PluginDependencyItem>
+    </Items>
   </PluginDependencies>
   <GeneralInfo>
     <Name>IMDb+</Name>
@@ -268,7 +282,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\IMDb+\bin\Release\IMDb+.dll</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{1e48b2f9-c28e-4c47-9f49-e8d1998e0018}-IMDb+.dll</ZipFileName>
-        <DestinationFilename>%Base%\IMDb+.dll</DestinationFilename>
+        <DestinationFilename>%Plugins%\Windows\IMDb+.dll</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
