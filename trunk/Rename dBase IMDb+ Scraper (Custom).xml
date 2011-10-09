@@ -1,0 +1,19 @@
+﻿<!--
+	IMDb+ Scraper Script Rename dBase for Custom entries
+
+	Syntax example for movie "Casino Royale":
+
+		1. Rename only title:	<rename id="tt0381061" title="James Bond 21: Casino Royale" />
+
+		2. Rename only sortby:	<rename id="tt0381061" sortby="James Bond 21" />
+
+		3. Rename both:		<rename id="tt0381061" title="007: Casino Royale" sortby="James Bond 21" />
+
+	If you make any changes to this file yourself, be sure to run an XML syntax verificiation check.
+	You can use the following site for this: http://www.w3schools.com/Dom/dom_validate.asp
+
+	Enjoy.
+-->
+<imdbplus>
+	<rename id="tt0000000" title="Change the IMDb tt-ID and this example title to get started" />
+</imdbplus>

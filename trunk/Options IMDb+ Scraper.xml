@@ -1,0 +1,24 @@
+﻿<imdbplus>
+	<set id="01" name="global_options_original_title"	value="false" />
+	<set id="02" name="global_options_foreign_title"	value="false" />
+	<set id="03" name="global_options_foreign_first"	value="false" />
+	<set id="04" name="global_options_uk_rating"		value="false" />
+	<set id="05" name="global_options_imdb_score"		value="false" />
+	<set id="06" name="global_options_imdb_metascore"	value="false" />
+	<set id="07" name="global_options_long_summary"		value="false" />
+	<set id="08" name="global_options_rotten_meter"		value="false" />
+	<set id="09" name="global_options_rotten_average"	value="false" />
+	<set id="10" name="global_options_rotten_top_critics"	value="false" />
+	<set id="11" name="global_options_special_edition"	value="true" />
+	<set id="12" name="global_options_rename_titles"	value="true" />
+	<set id="13" name="global_options_single_score"		value="false" />
+	<set id="14" name="global_options_min_imdb_votes"	value="false" />
+	<set id="15" name="global_options_refresh_all_fields"	value="false" />
+	<set id="16" name="global_options_one_writer_director"	value="false" />
+
+	<set id="96" name="global_options_secondary_summary"	value="true" />
+	<set id="97" name="global_options_secondary_details"	value="01" />
+
+	<set id="98" name="global_options_country_filter"	value="us|ca|gb|ie|au|nz" />
+	<set id="99" name="global_options_language_filter"	value="en" />
+</imdbplus>

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using MediaPortal;
+using MediaPortal.Util;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
 using MediaPortal.Dialogs;
@@ -20,23 +22,11 @@ namespace IMDb
 
         int PluginID = 31415;
 
-        [SkinControlAttribute(101)] protected GUIToggleButtonControl btnOriginalTitle = null;
-        [SkinControlAttribute(102)] protected GUIToggleButtonControl btnForeignTitle = null;
-        [SkinControlAttribute(103)] protected GUIToggleButtonControl btnForeignFirst = null;
-        [SkinControlAttribute(104)] protected GUIToggleButtonControl btnSpecialEdition = null;
-        [SkinControlAttribute(105)] protected GUIToggleButtonControl btnRenameTitles = null;
-        [SkinControlAttribute(201)] protected GUIToggleButtonControl btnSingleScore = null;
-        [SkinControlAttribute(202)] protected GUIToggleButtonControl btnMinImdbVotes = null;
-        [SkinControlAttribute(203)] protected GUIToggleButtonControl btnLongSummary = null;
-        [SkinControlAttribute(204)] protected GUIToggleButtonControl btnUkRating = null;
-        [SkinControlAttribute(205)] protected GUIToggleButtonControl btnRefreshAllFields = null;
-        [SkinControlAttribute(301)] protected GUIToggleButtonControl btnImdbScore = null;
-        [SkinControlAttribute(302)] protected GUIToggleButtonControl btnImdbMetascore = null;
-        [SkinControlAttribute(303)] protected GUIToggleButtonControl btnRottenMeter = null;
-        [SkinControlAttribute(304)] protected GUIToggleButtonControl btnRottenAverage = null;
-        [SkinControlAttribute(305)] protected GUIToggleButtonControl btnRottenTopCritics = null;
-        [SkinControlAttribute(401)] protected GUIButtonControl btnLanguageFilter = null;
-        [SkinControlAttribute(402)] protected GUIButtonControl btnCountryFilter = null;
+        #region Skin Controls
+
+        [SkinControl(50)] protected GUIFacadeControl Facade = null;
+
+        #endregion
 
         string CountryFilter { get; set; }
         string LanguageFilter { get; set; }
@@ -181,32 +171,38 @@ namespace IMDb
                 Logger.Error("Error opening IMDb+ Options file, will restore defaults.");
             }
 
-            // Set GUI options to match the stored settings from XML file
-            btnOriginalTitle.Selected = xmlReader.GetOptionValueAsBool("global_options_original_title", false);
-            btnForeignTitle.Selected = xmlReader.GetOptionValueAsBool("global_options_foreign_title", false);
-            btnForeignFirst.Selected = xmlReader.GetOptionValueAsBool("global_options_foreign_first", false);
-            btnUkRating.Selected = xmlReader.GetOptionValueAsBool("global_options_uk_rating", false);
-            btnImdbScore.Selected = xmlReader.GetOptionValueAsBool("global_options_imdb_score", false);
-            btnImdbMetascore.Selected = xmlReader.GetOptionValueAsBool("global_options_imdb_metascore", false);
-            btnLongSummary.Selected = xmlReader.GetOptionValueAsBool("global_options_long_summary", false);
-            btnRottenMeter.Selected = xmlReader.GetOptionValueAsBool("global_options_rotten_meter", false);
-            btnRottenAverage.Selected = xmlReader.GetOptionValueAsBool("global_options_rotten_average", false);
-            btnRottenTopCritics.Selected = xmlReader.GetOptionValueAsBool("global_options_rotten_top_critics", false);
-            btnSpecialEdition.Selected = xmlReader.GetOptionValueAsBool("global_options_special_edition", true);
-            btnRenameTitles.Selected = xmlReader.GetOptionValueAsBool("global_options_rename_titles", true);
-            btnSingleScore.Selected = xmlReader.GetOptionValueAsBool("global_options_single_score", false);
-            btnMinImdbVotes.Selected = xmlReader.GetOptionValueAsBool("global_options_min_imdb_votes", false);
-            btnRefreshAllFields.Selected = xmlReader.GetOptionValueAsBool("global_options_refresh_all_fields", false);
+            GUIControl.ClearControl(GetID, Facade.GetID);
 
-            CountryFilter = xmlReader.GetOptionValueAsString("global_options_country_filter", "us|ca|gb|ie|au|nz");
-            LanguageFilter = xmlReader.GetOptionValueAsString("global_options_language_filter", "en");
+            int itemId = 0;
+            string listIndentation = "   ";
+            UpdateListItem(itemId++, Translation.OriginalTitle, (xmlReader.GetOptionValueAsBool("global_options_original_title", false)) ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, Translation.AddForeignTitle, (xmlReader.GetOptionValueAsBool("global_options_foreign_title", false)) ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, listIndentation + Translation.ForeignTitleFirst, (xmlReader.GetOptionValueAsBool("global_options_foreign_first", false)) ? Translation.BoolOn : Translation.BoolOff, string.Empty);
+            UpdateListItem(itemId++, Translation.SpecialEditions, (xmlReader.GetOptionValueAsBool("global_options_special_edition", true)) ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, Translation.RenameTitles, (xmlReader.GetOptionValueAsBool("global_options_rename_titles", true)) ? Translation.BoolOn : Translation.BoolOff, "folder");
 
-            // Disable buttons according to their sub-grouping
-            btnForeignFirst.Disabled = (!btnForeignTitle.Selected) ? true : false;
-            btnImdbMetascore.Disabled = (!btnSingleScore.Selected) ? true : false;
-            btnRottenMeter.Disabled = (!btnSingleScore.Selected) ? true : false;
-            btnRottenAverage.Disabled = (!btnSingleScore.Selected) ? true : false;
-            btnRottenTopCritics.Disabled = (!btnSingleScore.Selected) ? true : false;
+            UpdateListItem(itemId++, Translation.SingleScore, (xmlReader.GetOptionValueAsBool("global_options_single_score", false)) ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, listIndentation + Translation.IMDbScore, (xmlReader.GetOptionValueAsBool("global_options_imdb_score", false)) ? Translation.BoolOn : Translation.BoolOff, string.Empty);
+            UpdateListItem(itemId++, listIndentation + Translation.IMDbMetaScore, (xmlReader.GetOptionValueAsBool("global_options_imdb_metascore", false)) ? Translation.BoolOn : Translation.BoolOff, string.Empty);
+            UpdateListItem(itemId++, listIndentation + Translation.RottenMeter, (xmlReader.GetOptionValueAsBool("global_options_rotten_meter", false)) ? Translation.BoolOn : Translation.BoolOff, string.Empty);
+            UpdateListItem(itemId++, listIndentation + Translation.RottenAverage, (xmlReader.GetOptionValueAsBool("global_options_rotten_average", false)) ? Translation.BoolOn : Translation.BoolOff, string.Empty);
+            UpdateListItem(itemId++, listIndentation + Translation.RottenTopCritics, (xmlReader.GetOptionValueAsBool("global_options_rotten_top_critics", false)) ? Translation.BoolOn : Translation.BoolOff, string.Empty);
+
+            UpdateListItem(itemId++, Translation.MinImdbVotes, (xmlReader.GetOptionValueAsBool("global_options_min_imdb_votes", false)) ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, Translation.LongSummary, (xmlReader.GetOptionValueAsBool("global_options_long_summary", false)) ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, Translation.UkRating, (xmlReader.GetOptionValueAsBool("global_options_uk_rating", false)) ? Translation.BoolOn : Translation.BoolOff, "folder");
+
+            UpdateListItem(itemId++, Translation.OneWriterDirector, (xmlReader.GetOptionValueAsBool("global_options_one_writer_director", false)) ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, Translation.SecondaryDetails, GetCountryString(Convert.ToInt32(xmlReader.GetOptionValueAsString("global_options_secondary_details", "01"))), "folder");
+            UpdateListItem(itemId++, listIndentation + Translation.SecondarySummary, (xmlReader.GetOptionValueAsBool("global_options_secondary_summary", false)) ? Translation.BoolOn : Translation.BoolOff, string.Empty);
+
+            UpdateListItem(itemId++, Translation.RefreshAllFields, (xmlReader.GetOptionValueAsBool("global_options_refresh_all_fields", false)) ? Translation.BoolOn : Translation.BoolOff, "folder");
+
+            UpdateListItem(itemId++, Translation.CountryFilter, xmlReader.GetOptionValueAsString("global_options_country_filter", "us|ca|gb|ie|au|nz"), "folder");
+            UpdateListItem(itemId++, Translation.LanguageFilter, xmlReader.GetOptionValueAsString("global_options_language_filter", "en"), "folder");
+
+            // Set Facade Layout
+            GUIControl.FocusControl(GetID, Facade.GetID);
 
             base.OnPageLoad();
         }
@@ -239,29 +235,163 @@ namespace IMDb
                 xmlWriter.CreateXmlConfigFile(file);
             }
 
-            xmlWriter.SetOptionsEntry("global_options_original_title", "01", btnOriginalTitle.Selected.ToString());
-            xmlWriter.SetOptionsEntry("global_options_foreign_title", "02", btnForeignTitle.Selected.ToString());
-            xmlWriter.SetOptionsEntry("global_options_foreign_first", "03", btnForeignFirst.Selected.ToString());
-            xmlWriter.SetOptionsEntry("global_options_uk_rating", "04", btnUkRating.Selected.ToString());
-            xmlWriter.SetOptionsEntry("global_options_imdb_score", "05", btnImdbScore.Selected.ToString());
-            xmlWriter.SetOptionsEntry("global_options_imdb_metascore", "06", btnImdbMetascore.Selected.ToString());
-            xmlWriter.SetOptionsEntry("global_options_long_summary", "07", btnLongSummary.Selected.ToString());
-            xmlWriter.SetOptionsEntry("global_options_rotten_meter", "08", btnRottenMeter.Selected.ToString());
-            xmlWriter.SetOptionsEntry("global_options_rotten_average", "09", btnRottenAverage.Selected.ToString());
-            xmlWriter.SetOptionsEntry("global_options_rotten_top_critics", "10", btnRottenTopCritics.Selected.ToString());
-            xmlWriter.SetOptionsEntry("global_options_special_edition", "11", btnSpecialEdition.Selected.ToString());
-            xmlWriter.SetOptionsEntry("global_options_rename_titles", "12", btnRenameTitles.Selected.ToString());
-            xmlWriter.SetOptionsEntry("global_options_single_score", "13", btnSingleScore.Selected.ToString());
-            xmlWriter.SetOptionsEntry("global_options_min_imdb_votes", "14", btnMinImdbVotes.Selected.ToString());
-            xmlWriter.SetOptionsEntry("global_options_refresh_all_fields", "15", btnRefreshAllFields.Selected.ToString());
-            
-            xmlWriter.SetOptionsEntry("global_options_country_filter", "98", CountryFilter);
-            xmlWriter.SetOptionsEntry("global_options_language_filter", "99", LanguageFilter);
+            foreach (GUIListItem item in Facade.ListLayout.ListItems)
+            {
+                if (item.Label.Trim() == Translation.OriginalTitle)
+                    xmlWriter.SetOptionsEntry("global_options_original_title", "01", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                if (item.Label.Trim() == Translation.AddForeignTitle)
+                    xmlWriter.SetOptionsEntry("global_options_foreign_title", "02", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                if (item.Label.Trim() == Translation.ForeignTitleFirst)
+                    xmlWriter.SetOptionsEntry("global_options_foreign_first", "03", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                if (item.Label.Trim() == Translation.UkRating)
+                    xmlWriter.SetOptionsEntry("global_options_uk_rating", "04", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                if (item.Label.Trim() == Translation.IMDbScore)
+                    xmlWriter.SetOptionsEntry("global_options_imdb_score", "05", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                if (item.Label.Trim() == Translation.IMDbMetaScore)
+                    xmlWriter.SetOptionsEntry("global_options_imdb_metascore", "06", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                if (item.Label.Trim() == Translation.LongSummary)
+                    xmlWriter.SetOptionsEntry("global_options_long_summary", "07", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                if (item.Label.Trim() == Translation.RottenMeter)
+                    xmlWriter.SetOptionsEntry("global_options_rotten_meter", "08", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                if (item.Label.Trim() == Translation.RottenAverage)
+                    xmlWriter.SetOptionsEntry("global_options_rotten_average", "09", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                if (item.Label.Trim() == Translation.RottenTopCritics)
+                    xmlWriter.SetOptionsEntry("global_options_rotten_top_critics", "10", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                if (item.Label.Trim() == Translation.SpecialEditions)
+                    xmlWriter.SetOptionsEntry("global_options_special_edition", "11", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                if (item.Label.Trim() == Translation.RenameTitles)
+                    xmlWriter.SetOptionsEntry("global_options_rename_titles", "12", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                if (item.Label.Trim() == Translation.SingleScore)
+                    xmlWriter.SetOptionsEntry("global_options_single_score", "13", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                if (item.Label.Trim() == Translation.MinImdbVotes)
+                    xmlWriter.SetOptionsEntry("global_options_min_imdb_votes", "14", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                if (item.Label.Trim() == Translation.RefreshAllFields)
+                    xmlWriter.SetOptionsEntry("global_options_refresh_all_fields", "15", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                if (item.Label.Trim() == Translation.OneWriterDirector)
+                    xmlWriter.SetOptionsEntry("global_options_one_writer_director", "16", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+
+                if (item.Label.Trim() == Translation.SecondarySummary)
+                    xmlWriter.SetOptionsEntry("global_options_secondary_summary", "96", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                if (item.Label.Trim() == Translation.SecondaryDetails)
+                    xmlWriter.SetOptionsEntry("global_options_secondary_details", "97", GetCountryIntAsString(item.Label2));
+                if (item.Label.Trim() == Translation.CountryFilter)
+                    xmlWriter.SetOptionsEntry("global_options_country_filter", "98", item.Label2);
+                if (item.Label.Trim() == Translation.LanguageFilter)
+                    xmlWriter.SetOptionsEntry("global_options_language_filter", "99", item.Label2);
+            }
             
             // save file
             xmlWriter.Save(file);
 
             base.OnPageDestroy(new_windowId);
+        }
+
+        private void UpdateListItem(int itemId, string itemName, string itemValue, string itemIcon)
+        {
+            GUIListItem item = new GUIListItem(itemName);
+            item.Label2 = itemValue;
+            //Adjust color of item when option is turned off
+            item.IsPlayed = (itemValue == Translation.BoolOff) ? true : false;
+            //Adjust color on all the non-Bool options
+            if (itemValue != Translation.BoolOn && itemValue != Translation.BoolOff)
+                item.IsRemote = true;
+            item.ItemId = Int32.MaxValue - itemId;
+
+            // check-box.png + check-boxNF.png
+            // remote_blue.png + remote_yellow.png + remote_green.png + tvguide_record_button.png
+            if (itemIcon == "folder")
+            {
+                item.IconImage = "defaultFolder.png";
+                item.IconImageBig = "defaultFolderBig.png";
+                item.ThumbnailImage = "defaultFolderBig.png";
+            }
+            else
+            {
+                item.IconImage = itemIcon;
+                item.IconImageBig = itemIcon;
+                item.ThumbnailImage = itemIcon;
+            }
+            item.OnItemSelected += OnItemSelected;
+            Utils.SetDefaultIcons(item);
+            Facade.Add(item);
+        }
+
+        private string GetCountryString(int countryId)
+        {
+            switch (countryId)
+            {
+                case 1: return Translation.SecondaryLanguage01;
+                case 2: return Translation.SecondaryLanguage02;
+                case 3: return Translation.SecondaryLanguage03;
+                case 4: return Translation.SecondaryLanguage04;
+                case 5: return Translation.SecondaryLanguage05;
+                case 6: return Translation.SecondaryLanguage06;
+                case 7: return Translation.SecondaryLanguage07;
+                case 8: return Translation.SecondaryLanguage08;
+                default: return "ERROR";
+            }
+        }
+
+        private string GetCountryIntAsString(string countryString)
+        {
+            if (countryString == Translation.SecondaryLanguage01) return "01";
+            if (countryString == Translation.SecondaryLanguage02) return "02";
+            if (countryString == Translation.SecondaryLanguage03) return "03";
+            if (countryString == Translation.SecondaryLanguage04) return "04";
+            if (countryString == Translation.SecondaryLanguage05) return "05";
+            if (countryString == Translation.SecondaryLanguage06) return "06";
+            if (countryString == Translation.SecondaryLanguage07) return "07";
+            if (countryString == Translation.SecondaryLanguage08) return "08";
+            return "01";
+        }
+
+        private void OnItemSelected(GUIListItem item, GUIControl parent)
+        {
+            if (item.Label.Trim() == Translation.OriginalTitle)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.OriginalTitleDescription);
+            if (item.Label.Trim() == Translation.AddForeignTitle)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.AddForeignTitleDescription);
+            if (item.Label.Trim() == Translation.ForeignTitleFirst)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.ForeignTitleFirstDescription);
+            if (item.Label.Trim() == Translation.SpecialEditions)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.SpecialEditionsDescription);
+            if (item.Label.Trim() == Translation.RenameTitles)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.RenameTitlesDescription);
+
+            if (item.Label.Trim() == Translation.SingleScore)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.SingleScoreDescription);
+            if (item.Label.Trim() == Translation.IMDbScore)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.IMDbScoreDescription);
+            if (item.Label.Trim() == Translation.IMDbMetaScore)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.IMDbMetaScoreDescription);
+            if (item.Label.Trim() == Translation.RottenMeter)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.RottenMeterDescription);
+            if (item.Label.Trim() == Translation.RottenAverage)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.RottenAverageDescription);
+            if (item.Label.Trim() == Translation.RottenTopCritics)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.RottenTopCriticsDescription);
+
+            if (item.Label.Trim() == Translation.MinImdbVotes)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.MinImdbVotesDescription);
+            if (item.Label.Trim() == Translation.LongSummary)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.LongSummaryDescription);
+            if (item.Label.Trim() == Translation.UkRating)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.UkRatingDescription);
+
+            if (item.Label.Trim() == Translation.OneWriterDirector)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.OneWriterDirectorDescription);
+            if (item.Label.Trim() == Translation.SecondaryDetails)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.SecondaryDetailsDescription);
+            if (item.Label.Trim() == Translation.SecondarySummary)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.SecondarySummaryDescription);
+
+            if (item.Label.Trim() == Translation.RefreshAllFields)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.RefreshAllFieldsDescription);
+
+            if (item.Label.Trim() == Translation.CountryFilter)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.CountryFilterDescription);
+            if (item.Label.Trim() == Translation.LanguageFilter)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.LanguageFilterDescription);
         }
 
         protected override void OnClicked(int controlId, GUIControl control, Action.ActionType actionType)
@@ -270,118 +400,69 @@ namespace IMDb
 
             switch (controlId)
             {
-                case 101: //gOption_original_title
-                    break;
-                case 102: //gOption_foreign_title
-                    if (!btnForeignTitle.Selected)
+                // Facade
+                case (50):
+                    if (actionType == Action.ActionType.ACTION_SELECT_ITEM)
                     {
-                        // Foreign titles disabled, so clear Foreign title first setting
-                        btnForeignFirst.Selected = false;
-                    }
-                    btnForeignFirst.Disabled = (!btnForeignTitle.Selected) ? true : false;
-                    break;
-                case 103: //gOption_foreign_first
-                    break;
-                case 104: //gOption_special_edition
-                    break;
-                case 105: //gOption_rename_titles
-                    break;
-                case 201: //gOption_single_score
-                    if (!btnSingleScore.Selected)
-                    {
-                        // Single score disabled, so clear out individial score options
-                        btnImdbMetascore.Selected = false;
-                        btnRottenMeter.Selected = false;
-                        btnRottenAverage.Selected = false;
-                        btnRottenTopCritics.Selected = false;
-                    }
-                    btnImdbMetascore.Disabled = (!btnSingleScore.Selected) ? true : ((!btnImdbScore.Selected) ? true : false);
-                    btnRottenMeter.Disabled = (!btnSingleScore.Selected) ? true : ((btnImdbScore.Selected) ? true : false);
-                    btnRottenAverage.Disabled = (!btnSingleScore.Selected) ? true : ((btnImdbScore.Selected) ? true : false);
-                    btnRottenTopCritics.Disabled = (!btnSingleScore.Selected) ? true : ((!btnRottenMeter.Selected) ? true : false);
-                    break;
-                case 202: //gOption_min_imdb_votes
-                    break;
-                case 203: //gOption_long_summary
-                    break;
-                case 204: //gOption_uk_rating
-                    break;
-                case 205: //gOption_refresh_all_fields
-                    break;
-                case 301: //gOption_imdb_score
-                    if (btnImdbScore.Selected)
-                    {
-                        // IMDb Score selected, so clear out RT score options
-                        btnRottenMeter.Selected = false;
-                        btnRottenAverage.Selected = false;
-                        btnRottenTopCritics.Selected = false;
-                    }
-                    else
-                    {
-                        btnImdbMetascore.Selected = false;
-                    }
-                    btnImdbMetascore.Disabled = (!btnImdbScore.Selected) ? true : ((!btnSingleScore.Selected) ? true : false);
-                    btnRottenMeter.Disabled = (btnImdbScore.Selected) ? true : ((!btnSingleScore.Selected) ? true : false);
-                    btnRottenAverage.Disabled = (btnImdbScore.Selected) ? true : ((!btnSingleScore.Selected) ? true : false);
-                    btnRottenTopCritics.Disabled = (!btnImdbScore.Selected) ? true : ((!btnRottenMeter.Selected) ? true : false);
-                    break;
-                case 302: //gOption_imdb_metascore
-                    break;
-                case 303: //gOption_rotten_meter
-                    if (!btnRottenMeter.Selected)
-                    {
-                        btnRottenTopCritics.Selected = false;
-                    }
-                    btnRottenTopCritics.Disabled = (!btnRottenMeter.Selected) ? true : false;
-                    break;
-                case 304: //gOption_rotten_average
-                    break;
-                case 305: //gOption_rotten_top_critics
-                    if (btnRottenTopCritics.Selected) btnRottenMeter.Selected = true;
-                    break;
-                case 401: //gOption_language_filter
-                    string output = LanguageFilter.Replace('|', '.');
-                    if (GUIUtils.GetStringFromKeyboard(ref output))
-                    {
-                        LanguageFilter = output.Replace('.', '|');
-                    }
-                    break;
-                case 402: //gOption_country_filter
-                    output = CountryFilter.Replace('|', '.');
-                    if (GUIUtils.GetStringFromKeyboard(ref output))
-                    {
-                        CountryFilter = output.Replace('.', '|');
-                    }
-                    break;
-                case 403: //update_Scraper
-                    // grab the contents of the file and try
-                    StreamReader reader = new StreamReader(@"C:\Scraper.IMDb+.xml");
-                    string script = reader.ReadToEnd();
-                    reader.Close();
+                        GUIListItem selectedItem = this.Facade.SelectedListItem;
+                        if (selectedItem == null) return;
 
-                    // and add it to the manager
-                    DataProviderManager.AddSourceResult addResult = MovingPicturesCore.DataProviderManager.AddSource(typeof(ScriptableProvider), script, true);
+                        //Toggle the Boolean options that got clicked on
+                        selectedItem.Label2 = (selectedItem.Label2 == Translation.BoolOn) ? Translation.BoolOff : (selectedItem.Label2 == Translation.BoolOff) ? Translation.BoolOn : selectedItem.Label2;
+                        selectedItem.IsPlayed = (selectedItem.Label2 == Translation.BoolOff) ? true : false;
 
-                    if (addResult == DataProviderManager.AddSourceResult.FAILED_VERSION)
-                    {
-                        Logger.Error("Load Script Failed: A script with this Version and ID is already loaded.");
+                        if (selectedItem.Label == Translation.SecondaryDetails)
+                        {
+                            IDialogbox dlg = (IDialogbox)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_MENU);
+                            if (dlg == null) return;
+
+                            dlg.Reset();
+                            dlg.SetHeading(Translation.SecondaryDetailsHeader);
+
+                            // Create menu items
+                            string[] languageArray = {
+                                                         Translation.SecondaryLanguage02,
+                                                         Translation.SecondaryLanguage03,
+                                                         Translation.SecondaryLanguage04,
+                                                         Translation.SecondaryLanguage05,
+                                                         Translation.SecondaryLanguage06,
+                                                         Translation.SecondaryLanguage07,
+                                                         Translation.SecondaryLanguage08
+                                                     };
+                            //Add 'English' as first language to the dialog.
+                            GUIListItem listItem = new GUIListItem(Translation.SecondaryLanguage01);
+                            dlg.Add(listItem);
+                            //Sort the remaining languages and add them to the dialog as well
+                            Array.Sort(languageArray);
+                            for (int i = 0; i < languageArray.Count(); i++)
+                            {
+                                GUIListItem listArrayItem = new GUIListItem(languageArray[i]);
+                                dlg.Add(listArrayItem);
+                            }
+                            dlg.DoModal(GUIWindowManager.ActiveWindow);
+                            if (dlg.SelectedId <= 0) return;
+
+                            selectedItem.Label2 = dlg.SelectedLabelText;
+                        }
+
+                        string output;
+                        if (selectedItem.Label == Translation.CountryFilter)
+                        {
+                            output = selectedItem.Label2.Replace('|', '.');
+                            if (GUIUtils.GetStringFromKeyboard(ref output))
+                            {
+                                selectedItem.Label2 = output.Replace('.', '|');
+                            }
+                        }
+                        if (selectedItem.Label == Translation.LanguageFilter)
+                        {
+                            output = selectedItem.Label2.Replace('|', '.');
+                            if (GUIUtils.GetStringFromKeyboard(ref output))
+                            {
+                                selectedItem.Label2 = output.Replace('.', '|');
+                            }
+                        }
                     }
-                    else if (addResult == DataProviderManager.AddSourceResult.FAILED_DATE)
-                    {
-                        Logger.Error("Load Script Failed: This script does not have a unique 'published' date.");
-                    }
-                    else if (addResult == DataProviderManager.AddSourceResult.FAILED)
-                    {
-                        Logger.Error("Load Script Failed: The script is malformed or not a Moving Pictures script.");
-                    }
-                    else if (addResult == DataProviderManager.AddSourceResult.SUCCESS_REPLACED)
-                    {
-                        Logger.Error("Load Script Warning: Scraper debug-mode enabled, so existing script was replaced.");
-                    }  
-                    else
-                    {
-                        Logger.Error("Load Script: last end-if.");
-                    }  
                     break;
 
                 default:
@@ -393,71 +474,10 @@ namespace IMDb
         {
             switch (message.Message)
             {
-                case GUIMessage.MessageType.GUI_MSG_SETFOCUS:
-                {
-                    switch (message.TargetControlId)
-                    {
-                        case 101: //gOption_original_title
-                            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.OriginalTitleDescription);
-                            break;
-                        case 102: //gOption_foreign_title
-                            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.AddForeignTitleDescription);
-                            break;
-                        case 103: //gOption_foreign_first
-                            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.ForeignTitleFirstDescription);
-                            break;
-                        case 104: //gOption_special_edition
-                            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.SpecialEditionsDescription);
-                            break;
-                        case 105: //gOption_rename_titles
-                            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.RenameTitlesDescription);
-                            break;
-                        case 201: //gOption_single_score
-                            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.SingleScoreDescription);
-                            break;
-                        case 202: //gOption_min_imdb_votes
-                            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.MinImdbVotesDescription);
-                            break;
-                        case 203: //gOption_long_summary
-                            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.LongSummaryDescription);
-                            break;
-                        case 204: //gOption_uk_rating
-                            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.UkRatingDescription);
-                            break;
-                        case 205: //gOption_refresh_all_fields
-                            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.RefreshAllFieldsDescription);
-                            break;
-                        case 301: //gOption_imdb_score
-                            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.IMDbScoreDescription);
-                            break;
-                        case 302: //gOption_imdb_metascore
-                            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.IMDbMetaScoreDescription);
-                            break;
-                        case 303: //gOption_rotten_meter
-                            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.RottenMeterDescription);
-                            break;
-                        case 304: //gOption_rotten_average
-                            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.RottenAverageDescription);
-                            break;
-                        case 305: //gOption_rotten_top_critics
-                            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.RottenTopCriticsDescription);
-                            break;
-                        case 401: //gOption_language_filter
-                            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.LanguageFilterDescription);
-                            break;
-                        case 402: //gOption_country_filter
-                            GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.CountryFilterDescription);
-                            break;
-
-                        default:
-                            // No default message, so textbox scroll controls can be used without altering text.
-                            break;
-                    }
-                    break;
-                }
                 case GUIMessage.MessageType.GUI_MSG_WINDOW_INIT:
                 {
-                    GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.DefaultDescription);
+                    GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.OriginalTitleDescription);
+                    //GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.DefaultDescription);
                     break;
                 }
 
