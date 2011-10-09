@@ -21,17 +21,18 @@
         </Files>
       </GroupItem>
       <GroupItem Name="Language">
+        <ParentGroup />
         <DisplayName>Language</DisplayName>
         <DefaulChecked>true</DefaulChecked>
         <Description>Language</Description>
         <Files>
           <Items>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>..\IMDb+\Languages\en-US.xml</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{cec04eb0-2017-47d5-8840-8162846189da}-en-US.xml</ZipFileName>
-              <DestinationFilename>%Language%\Languages\en-US.xml</DestinationFilename>
+              <DestinationFilename>%Language%\IMDb+\en-US.xml</DestinationFilename>
             </FileItem>
           </Items>
         </Files>
@@ -284,12 +285,12 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <ZipFileName>Installer{CopyFile}\{1e48b2f9-c28e-4c47-9f49-e8d1998e0018}-IMDb+.dll</ZipFileName>
         <DestinationFilename>%Plugins%\Windows\IMDb+.dll</DestinationFilename>
       </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\IMDb+\Languages\en-US.xml</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{cec04eb0-2017-47d5-8840-8162846189da}-en-US.xml</ZipFileName>
-        <DestinationFilename>%Language%\Languages\en-US.xml</DestinationFilename>
+        <DestinationFilename>%Language%\IMDb+\en-US.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
@@ -337,16 +338,6 @@ Click Next to continue or Cancel to exit Setup.</Value>
   </UniqueFileList>
   <ProjectSettings>
     <FolderGroups>
-      <FolderGroup InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName />
-        <ZipFileName>Installer{CopyFile}\{addc7a2d-da5f-4cbb-9ab7-ffb47cf54887}-</ZipFileName>
-        <DestinationFilename>%Language%\Languages</DestinationFilename>
-        <Folder>..\IMDb+\Languages</Folder>
-        <Group>Language</Group>
-        <Recursive>true</Recursive>
-      </FolderGroup>
       <FolderGroup InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
