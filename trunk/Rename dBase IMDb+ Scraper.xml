@@ -1,8 +1,8 @@
 ﻿<!--
-	IMDb+ Scraper Script Rename dBase v0.95
+	IMDb+ Scraper Script Rename dBase v0.96
 	For use in MovingPictures plugin for MediaPortal
 	Author: Ron (RoChess)
-	Date: Aug 30th 2011
+	Date: Sep 23rd 2011
 
 	Syntax example for movie "Casino Royale":
 
@@ -80,6 +80,9 @@
 	<rename id="tt0145660" title="Austin Powers II: The Spy Who Shagged Me" />
 	<rename id="tt0295178" title="Austin Powers III: Goldmember" />
 	<rename id="tt1218992" title="Austin Powers IV" />
+	<rename id="tt0499549" title="Avatar" />
+	<rename id="tt1630029" title="Avatar II" />
+	<rename id="tt1757678" title="Avatar III" />
 	<rename id="tt0086927" title="Bachelor Party I" />
 	<rename id="tt0954541" title="Bachelor Party II: The Last Temptation" />
 	<rename id="tt0088763" title="Back to the Future I" />
@@ -144,6 +147,14 @@
 	<rename id="tt0144120" title="Child's Play III: Bride of Chucky" />
 	<rename id="tt0387575" title="Child's Play IV: Seed of Chucky" />
 	<rename id="tt1134807" title="Child's Play (Remake) I" />
+	<rename id="tt0087050" title="Children of the Corn I" />
+	<rename id="tt0106557" title="Children of the Corn II: The Final Sacrifice" />
+	<rename id="tt0109415" title="Children of the Corn III: Urban Harvest" />
+	<rename id="tt0115885" title="Children of the Corn IV: The Gathering" />
+	<rename id="tt0150111" title="Children of the Corn V: Fields of Terror" />
+	<rename id="tt0177625" title="Children of the Corn VI: Isaac's Return" />
+	<rename id="tt0279730" title="Children of the Corn VII: Revelation" />
+	<rename id="tt1745672" title="Children of the Corn VIII: Genesis" />
 	<rename id="tt0479884" title="Crank I" />
 	<rename id="tt1121931" title="Crank II: High Voltage" />
 	<rename id="tt0090887" title="Critters I" />
@@ -214,9 +225,14 @@
 	<rename id="tt0758746" title="Friday the 13th (Remake) I" />
 	<rename id="tt1525835" title="Gantz I" />
 	<rename id="tt1525836" title="Gantz II: Perfect Answer" />
+	<rename id="tt0259324" title="Ghost Rider I" />
+	<rename id="tt1071875" title="Ghost Rider II: Spirit of Vengeance" />
 	<rename id="tt0087332" title="Ghostbusters I" />
 	<rename id="tt0097428" title="Ghostbusters II" />
 	<rename id="tt1289401" title="Ghostbusters III" />
+	<rename id="tt1967502" title="G.I. Joe I: The Invasion of Cobra Island" />
+	<rename id="tt1046173" title="G.I. Joe I: The Rise of Cobra" />
+	<rename id="tt1583421" title="G.I. Joe II: Retaliation" />
 	<rename id="tt0591381" title="Goosebumps #2.14 - The Scarecrow Walks at Midnight" />
 	<rename id="tt1663633" title="Green Arrow (DC Showcase)" />
 	<rename id="tt1384590" title="Green Lantern (DC) I: First Flight" />
@@ -418,10 +434,14 @@
 	<rename id="tt0368891" title="National Treasure I" />
 	<rename id="tt0465234" title="National Treasure II: Book of Secrets" />
 	<rename id="tt1197627" title="National Treasure III" />
+	<rename id="tt1023111" title="Never Back Down I" />
+	<rename id="tt1754264" title="Never Back Down II" />
 	<rename id="tt0477347" title="Night at the Museum I" />
 	<rename id="tt1078912" title="Night at the Museum II: Battle of the Smithsonian" />
 	<rename id="tt0403358" title="Night Watch I (Nochnoy dozor)" />
 	<rename id="tt0409904" title="Night Watch II: Day Watch (Dnevnoy dozor)" />
+	<rename id="tt1290099" title="Ninjas vs. I: Zombies" />
+	<rename id="tt1748134" title="Ninjas vs. II: Vampires" />
 	<rename id="tt1509850" title="No Crossover: The Trial of Allen Iverson" />
 	<rename id="tt0240772" title="Ocean's I: Eleven" />
 	<rename id="tt0349903" title="Ocean's II: Twelve" />
@@ -433,6 +453,8 @@
 	<rename id="tt1536044" title="Paranormal Activity II" />
 	<rename id="tt1728179" title="Paranormal Activity II: Tokyo Night (Paranômaru akutibiti: Dai-2-shô)" />
 	<rename id="tt1778304" title="Paranormal Activity III" />
+	<rename id="tt0814255" title="Percy Jackson &amp; the Olympians I: The Lightning Thief" />
+	<rename id="tt1854564" title="Percy Jackson &amp; the Olympians II: The Sea of Monsters" />
 	<rename id="tt0079714" title="Phantasm I" />
 	<rename id="tt0325980" title="Pirates Of The Caribbean I: Curse Black Pearl" />
 	<rename id="tt0383574" title="Pirates Of The Caribbean II: Dead Man's Chest" />
@@ -471,6 +493,7 @@
 	<rename id="tt0089880" title="Rambo: First Blood II" />
 	<rename id="tt0095956" title="Rambo: First Blood III" />
 	<rename id="tt0462499" title="Rambo: First Blood IV" />
+	<rename id="tt0087985" title="Red Dawn (Original)" />
 	<rename id="tt0120804" title="Resident Evil I" />
 	<rename id="tt0318627" title="Resident Evil II: Apocalypse" />
 	<rename id="tt0432021" title="Resident Evil III: Extinction" />
@@ -561,6 +584,7 @@
 	<rename id="tt0462590" title="Step Up I" />
 	<rename id="tt1023481" title="Step Up II: Step Up 2 the Streets" />
 	<rename id="tt1193631" title="Step Up III: Step Up 3D" />
+	<rename id="tt0067800" title="Straw Dogs (Original)" />
 	<rename id="tt0421073" title="Street Kings I" />
 	<rename id="tt1707687" title="Street Kings II: Motor City" />
 	<rename id="tt0078346" title="Superman I" />
@@ -679,8 +703,8 @@
 	<rename id="tt0120737" title="The Lord of the Rings I: Fellowship of the Ring" />
 	<rename id="tt0167261" title="The Lord of the Rings II: The Two Towers" />
 	<rename id="tt0167260" title="The Lord of the Rings III: The Return of the King" />
-	<rename id="tt0903624" title="The Lord of the Rings IV: The Hobbit (Part 1)" />
-	<rename id="tt1170358" title="The Lord of the Rings IV: The Hobbit (Part 2)" />
+	<rename id="tt0903624" title="The Lord of the Rings IV: The Hobbit (An Unexpected Journey)" />
+	<rename id="tt1170358" title="The Lord of the Rings IV: The Hobbit (There and Back Again)" />
 	<rename id="tt0093437" title="The Lost Boys I" />
 	<rename id="tt1031254" title="The Lost Boys II: The Tribe" />
 	<rename id="tt1400526" title="The Lost Boys III: The Thirst" />
@@ -809,6 +833,7 @@
 	<rename id="tt0186655" title="Universal Soldier III: Unfinished Business" />
 	<rename id="tt0176269" title="Universal Soldier IV: The Return" />
 	<rename id="tt1288403" title="Universal Soldier V: Regeneration" />
+	<rename id="tt1659343" title="Universal Soldier VI: A New Dimension" />
 	<rename id="tt0146336" title="Urban Legend I" />
 	<rename id="tt0192731" title="Urban Legend II: Final Cut" />
 	<rename id="tt0451957" title="Urban Legend III: Bloody Mary" />
@@ -854,4 +879,6 @@
 	<rename id="tt0295701" title="xXx I" />
 	<rename id="tt0329774" title="xXx II: State Of The Union" />
 	<rename id="tt1293847" title="xXx III: The Return of Xander Cage" />
+	<rename id="tt0365957" title="You Got Served I" />
+	<rename id="tt1568139" title="You Got Served II: Beat the World" />
 </imdbplus>
