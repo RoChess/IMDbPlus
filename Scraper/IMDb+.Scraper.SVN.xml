@@ -9,12 +9,12 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="1" point="0" />
-		<published month="03" day="29" year="2011" />
+		<version major="3" minor="1" point="1" />
+		<published month="03" day="30" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
-  
+
 
 <!-- Global Options -->
 
@@ -49,7 +49,7 @@
 				Special filter to include other language titles besides English (en)
 				Use the imdb.com HTML source to find the ISO 639-1 code after /language/
 
-				example for English + Norwegian + Swedish would be value="en|no|sv"
+				Example: for English + Norwegian + Swedish use value="en|no|sv"
 
 				The country filter was added to avoid mistakes on foreign movies in English
 			-->
@@ -219,6 +219,50 @@
 			<parse name="tagline" input="${details_page}" regex="${rx_tagline}" />
 			<set name="movie.tagline" value="${tagline[0][0]:htmldecode}" />
 
+			<!-- Language -->
+			<set name="rx_language">
+				<![CDATA[
+				<a\shref=./Sections/Languages/[^/]+/?">\s*(?<movieLanguage>[^<]+)</a>|<a\shref=./language/[^"]+">(?<movieLanguage>[^<]+)</a>
+				]]>
+			</set>
+			<parse name="language" input="${details_page}" regex="${rx_language}" />
+			<set name="movie.language" value="${language[0][0]:htmldecode}" />
+
+		<!-- START: global_options_long_summary -->
+			<set name="rx_plot">
+				<![CDATA[
+				<p class="plotpar">\s*(?<moviePlotLong>.*?)<i>.*?</i>.*?</p>|<h5>Plot Synopsis:</h5>[^>]+>\s*(?<moviePlotLong>.*?)\s*<a
+				]]>
+			</set>
+			<set name="rx_plot2">
+				<![CDATA[
+				<h5>Plot:</h5>[^>]+>\s+?(?<moviePlotShort>.*?)(?: \|)?\s+?<a|Users:.*?<p>(?<moviePlotShort>[^<]+?)\s*</p>\s*</p>|<h2>Storyline</h2>\s*<p>(?<moviePlotShort>[^<]+?)\s*<
+				]]>
+			</set>
+
+			<!-- Long Plot Summary -->
+			<if test="${global_options_long_summary}=true">
+				<retrieve name="summary_page" url="${site}/plotsummary" />
+				<parse name="summary" input="${summary_page}" regex="${rx_plot}" />
+				<set name="summary_clean" value="${summary[0][0]:striptags}" />
+				<set name="movie.summary" value="${summary_clean:htmldecode}" />
+
+				<!-- Use short Plot Summary if no long plot exists -->
+				<if test="${movie.summary}=">
+					<parse name="summary2" input="${details_page}" regex="${rx_plot2}" />
+					<set name="summary_clean" value="${summary2[0][0]:striptags}" />
+					<set name="movie.summary" value="${summary_clean:htmldecode}" />
+				</if>
+			</if>
+
+			<!-- Short Plot Summary -->
+			<if test="${global_options_long_summary}=false">
+				<parse name="summary2" input="${details_page}" regex="${rx_plot2}" />
+				<set name="summary_clean" value="${summary2[0][0]:striptags}" />
+				<set name="movie.summary" value="${summary_clean:htmldecode}" />
+			</if>
+		<!-- END: global_options_long_summary -->
+
 		<!-- START: global_options_imdb_score -->
 			<!-- IMDb -->
 			<if test="${global_options_imdb_score}=true">
@@ -346,52 +390,19 @@
 					<replace name="votes_clean2" input="${votes_clean1}" pattern="\." with='' />
 					<set name="movie.popularity" value="${votes_clean2}" />
 				</if>
-			</if>
-		<!-- END: global_options_imdb_score -->
 
-			<!-- Language -->
-			<set name="rx_language">
-				<![CDATA[
-				<a\shref=./Sections/Languages/[^/]+/?">\s*(?<movieLanguage>[^<]+)</a>|<a\shref=./language/[^"]+">(?<movieLanguage>[^<]+)</a>
-				]]>
-			</set>
-			<parse name="language" input="${details_page}" regex="${rx_language}" />
-			<set name="movie.language" value="${language[0][0]:htmldecode}" />
-
-		<!-- START: global_options_long_summary -->
-			<set name="rx_plot">
-				<![CDATA[
-				<p class="plotpar">\s*(?<moviePlotLong>.*?)<i>.*?</i>.*?</p>|<h5>Plot Synopsis:</h5>[^>]+>\s*(?<moviePlotLong>.*?)\s*<a
-				]]>
-			</set>
-			<set name="rx_plot2">
-				<![CDATA[
-				<h5>Plot:</h5>[^>]+>\s+?(?<moviePlotShort>.*?)(?: \|)?\s+?<a|Users:.*?<p>(?<moviePlotShort>[^<]+?)\s*</p>\s*</p>|<h2>Storyline</h2>\s*<p>(?<moviePlotShort>[^<]+?)\s*<
-				]]>
-			</set>
-
-			<!-- Long Plot Summary -->
-			<if test="${global_options_long_summary}=true">
-				<retrieve name="summary_page" url="${site}/plotsummary" />
-				<parse name="summary" input="${summary_page}" regex="${rx_plot}" />
-				<set name="summary_clean" value="${summary[0][0]:striptags}" />
-				<set name="movie.summary" value="${summary_clean:htmldecode}" />
-
-				<!-- Use short Plot Summary if no long plot exists -->
+				<!-- Since we already have the RottenTomatoes results, lets use their summary if imdb.com did not have one -->
 				<if test="${movie.summary}=">
-					<parse name="summary2" input="${details_page}" regex="${rx_plot2}" />
-					<set name="summary_clean" value="${summary2[0][0]:striptags}" />
-					<set name="movie.summary" value="${summary_clean:htmldecode}" />
+					<set name="rx_rotten_summary">
+						<![CDATA[
+						<span\sid="movie_synopsis_all"\sstyle="display:\snone;">(?<rottenSummary>[^<]+)</span>
+						]]>
+					</set>
+					<parse name="rotten_summary" input="${rotten_details}" regex="${rx_rotten_summary}" />
+					<set name="movie.summary" value="${rotten_summary[0][0]:htmldecode}" />
 				</if>
 			</if>
-
-			<!-- Short Plot Summary -->
-			<if test="${global_options_long_summary}=false">
-				<parse name="summary2" input="${details_page}" regex="${rx_plot2}" />
-				<set name="summary_clean" value="${summary2[0][0]:striptags}" />
-				<set name="movie.summary" value="${summary_clean:htmldecode}" />
-			</if>
-		<!-- END: global_options_long_summary -->
+		<!-- END: global_options_imdb_score -->
 
 			<!-- AKA page -->
 			<set name="rx_aka">
@@ -443,7 +454,7 @@
 								]]>
 							</set>
 							<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
-	
+
 							<if test="${global_options_uk_rating}=true">
 								<if test="${title_year[0][0]}=">
 									<!-- Give USA title one last chance for UK users -->
@@ -464,7 +475,7 @@
 									]]>
 								</set>
 								<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
-	
+
 								<if test="${title_year[0][0]}=">
 									<!-- Giving up, and using the AKA title -->
 									<set name="rx_aka_english">
@@ -501,133 +512,138 @@
 
 
 <!-- Search Node -->
-  
+
 	<action name="search">
-	
-		<set name="offset" value="0" />
-		
+
 		<!-- Regular Expressions -->
-		<set name="rx_details_page_block">
+		<set name="rx_imdb_results">
 			<![CDATA[
-			<title>.+?\(\D*\d{4}[\/IVX]*\).*?</title>.+</body>
-			]]>
-		</set>
-		<set name="rx_title_year">
-			<![CDATA[
-			<title>(.+?)\(\D*(\d{4})[\/IVX]*\).*?</title>
+			<title>(.+?)\(\D*(\d{4})[\/IVX]*\).*?</title>.+?(tt\d{7})/fullcredits
 			]]>
 		</set>
 
 		<!-- Retrieve result using IMDB id (if provided) -->
 		<if test="${search.imdb_id}!=">
-			<retrieve name="imdb_page" url="http://akas.imdb.com/find?s=tt;q=${search.imdb_id}" />
-			<parse name="details_page_block" input="${imdb_page}" regex="${rx_details_page_block}" />
-			<loop name="imdb_page" on="details_page_block">
-				<parse name="title_year" input="${imdb_page}" regex="${rx_title_year}" />
-				<set name="movie[0].title" value="${title_year[0][0]:htmldecode}" />
-				<set name="movie[0].year" value="${title_year[0][1]:htmldecode}" />
-				<parse name="imdb" input="${imdb_page}" regex="(tt\d{7})/fullcredits" />
-				<set name="movie[0].imdb_id" value="${imdb[0][0]}" />
-				<set name="movie[0].site_id" value="${imdb[0][0]}" />
+			<retrieve name="imdb_page" url="http://akas.imdb.com/title/${search.imdb_id}" />
+			<parse name="imdb_results" input="${imdb_page}" regex="${rx_imdb_results}" />
+			<if test="${imdb_results[0][2]}!=">
+				<!-- Direct match found, let's get the results and be done with it -->
+				<set name="movie[0].title" value="${imdb_results[0][0]:htmldecode}" />
+				<set name="movie[0].year" value="${imdb_results[0][1]:htmldecode}" />
+				<set name="movie[0].imdb_id" value="${imdb_results[0][2]:htmldecode}" />
+				<set name="movie[0].site_id" value="${imdb_results[0][2]:htmldecode}" />
 				<set name="movie[0].popularity" value="100" />
-				<set name="offset" value="1" />
-			</loop>
+			</if>
 		</if>
 
-		<set name="rx_aka_details">
-			<![CDATA[
-			<tr>\s+?<td>(.+?)</td>\s+?<td>(.+?)</td>.*?</tr>
-			]]>
-		</set>
-		<set name="rx_aka">
-			<![CDATA[
-			aka "(.+?)"
-			]]>
-		</set>
+		<!-- No sense looking up any other movie if we have found a direct IMDb match -->
+		<if test="${movie[0].site_id}=">
 
-		<!-- Retrieve other results using "Title (year)" -->
+			<set name="offset" value="0" />
 
-		<set name="query_year" value='' />
-		<if test="${search.year}>1800">
-			<set name="query_year" value="+(${search.year})" />
-		</if>
-
-		<retrieve name="search_page" url="http://akas.imdb.com/find?s=tt;q=${search.title:safe(ISO-8859-1)}${query_year}" />
-
-		<!-- if we got a details page, this is used. if not, regex does not match so we dont process the loop-->
-		<parse name="details_page_block" input="${search_page}" regex="${rx_details_page_block}" />
-		<loop name="details_page_verified" on="details_page_block">
-			<add name="counter" value1="${count}" value2="${offset}" />
-			<parse name="title_year" input="${details_page_verified}" regex="${rx_title_year}" />
-			<set name="movie[${counter}].title" value="${title_year[0][0]:htmldecode}" />
-			<set name="movie[${counter}].year" value="${title_year[0][1]:htmldecode}" />
-			<parse name="imdb" input="${details_page_verified}" regex="(tt\d{7})/fullcredits" />
-			<set name="movie[${counter}].imdb_id" value="${imdb[0][0]}" />
-			<set name="movie[${counter}].site_id" value="${imdb[0][0]}" />
-
-			<!-- AKA page -->
-			<retrieve name="aka_page" url="http://akas.imdb.com/title/${imdb[0][0]}/releaseinfo" />
-			<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
-			<set name="movie[${counter}].alternate_titles" value="" />
-			<loop name="currAka" on="akas" limit="50">
-				<set name="movie[${counter}].alternate_titles" value="${movie[${counter}].alternate_titles}|${currAka[0]:htmldecode}" />
-			</loop>
-
-			<subtract name="movie[${counter}].popularity" value1="100" value2="${counter}" />
-		</loop>
-
-		<set name="rx_search_page">
-			<![CDATA[
-			<meta name="title" content="IMDb Title Search">.+</body>
-			]]>
-		</set>
-
-		<!-- if we got a search result page, this is used. if not, regex does not match so we dont process the outer loop. -->
-		<parse name="search_results_block" input="${search_page}" regex="${rx_search_page}" />
-		<if test="${search_results_block}!=">
-
-			<set name="rx_title_exact_match">
+			<set name="rx_details_page_block">
 				<![CDATA[
-				<p><b>Popular Titles</b> \(Displaying \d{2} Results\).*?<p><b>Titles \(Exact Matches\)</b>.*?>\d+\.<.*?><a href="/title/(tt\d{7})/".*?>(.+?)</a> \((\d{4})\)
+				<title>.+?\(\D*\d{4}[\/IVX]*\).*?</title>.+</body>
+				]]>
+			</set>
+			<set name="rx_aka_details">
+				<![CDATA[
+				<tr>\s+?<td>(.+?)</td>\s+?<td>(.+?)</td>.*?</tr>
+				]]>
+			</set>
+			<set name="rx_aka">
+				<![CDATA[
+				aka "(.+?)"
 				]]>
 			</set>
 
-			<!-- to prevent an exact title match from being burried by popular matches, lets grab the first exact title match result -->
-			<parse name="title_exact_match" input="${search_results_block}" regex="${rx_title_exact_match}" />
-			<if test="${title_exact_match}!=">
-				<set name="movie[0].imdb_id" value="${title_exact_match[0][0]:htmldecode}" />
-				<set name="movie[0].site_id" value="${title_exact_match[0][0]:htmldecode}" />
-				<set name="movie[0].title" value="${title_exact_match[0][1]:htmldecode}" />
-				<set name="movie[0].year" value="${title_exact_match[0][2]:htmldecode}" />
-				<set name="movie[0].popularity" value="100" />
-				<set name="offset" value="1" />
+			<!-- Retrieve other results using "Title (year)" -->
+
+			<set name="query_year" value='' />
+			<if test="${search.year}>1800">
+				<set name="query_year" value="+(${search.year})" />
 			</if>
 
-			<set name="rx_search_results">
-				<![CDATA[
-				><a href="/title/(tt\d{7})/"[^>]+>(?!&#34;)([^<]+)</a> \((\d{4})[\/IVX]*\)(?! \(VG\))(?:[^<].*?>(?=aka ")?(.+?)?</td>)?
-				]]>
-			</set>
+			<retrieve name="search_page" url="http://akas.imdb.com/find?s=tt;q=${search.title:safe(ISO-8859-1)}${query_year}" />
 
-			<!-- process the rest of the search page and obtain all the popular results -->
-			<loop name="search_results_verified" on="search_results_block">
-				<parse name="movie_details" input="${search_results_verified}" regex="${rx_search_results}" />
-				<loop name="curr_details" on="movie_details">
-					<add name="counter" value1="${count}" value2="${offset}" />
-					<set name="movie[${counter}].imdb_id" value="${curr_details[0]:htmldecode}" />
-					<set name="movie[${counter}].site_id" value="${curr_details[0]:htmldecode}" />
-					<set name="movie[${counter}].title" value="${curr_details[1]:htmldecode}" />
+			<!-- if we got a details page, this is used. if not, regex does not match so we dont process the loop-->
+			<parse name="details_page_block" input="${search_page}" regex="${rx_details_page_block}" />
+			<loop name="details_page_verified" on="details_page_block">
+				<add name="counter" value1="${count}" value2="${offset}" />
+				<parse name="imdb_results" input="${details_page_verified}" regex="${rx_imdb_results}" />
+				<set name="movie[${counter}].title" value="${imdb_results[0][0]:htmldecode}" />
+				<set name="movie[${counter}].year" value="${imdb_results[0][1]:htmldecode}" />
+				<set name="movie[${counter}].imdb_id" value="${imdb_results[0][2]}" />
+				<set name="movie[${counter}].site_id" value="${imdb_results[0][2]}" />
 
-					<parse name="akas" input="${curr_details[3]:htmldecode}" regex="${rx_aka}" />
-					<set name="movie[${counter}].alternate_titles" value="" />
-					<loop name="currAka" on="akas" limit="50">
-						<set name="movie[${counter}].alternate_titles" value="${movie[${counter}].alternate_titles}|${currAka[0]}" />
-					</loop>
-
-					<set name="movie[${counter}].year" value="${curr_details[2]:htmldecode}" />
-					<subtract name="movie[${counter}].popularity" value1="100" value2="${counter}" />
+				<!-- AKA page -->
+				<retrieve name="aka_page" url="http://akas.imdb.com/title/${imdb_results[0][2]}/releaseinfo" />
+				<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
+				<set name="movie[${counter}].alternate_titles" value="" />
+				<loop name="currAka" on="akas" limit="50">
+					<set name="movie[${counter}].alternate_titles" value="${movie[${counter}].alternate_titles}|${currAka[0]:htmldecode}" />
 				</loop>
+
+				<subtract name="movie[${counter}].popularity" value1="100" value2="${counter}" />
 			</loop>
+
+			<!-- No sense looking up any other movie if we found a details page already -->
+			<if test="${movie[0].site_id}=">
+
+				<set name="rx_search_page">
+					<![CDATA[
+					<meta name="title" content="IMDb Title Search">.+</body>
+					]]>
+				</set>
+
+				<!-- if we got a search result page, this is used. if not, regex does not match so we dont process the outer loop. -->
+				<parse name="search_results_block" input="${search_page}" regex="${rx_search_page}" />
+				<if test="${search_results_block}!=">
+
+					<set name="rx_title_exact_match">
+						<![CDATA[
+						<p><b>Popular Titles</b> \(Displaying \d{2} Results\).*?<p><b>Titles \(Exact Matches\)</b>.*?>\d+\.<.*?><a href="/title/(tt\d{7})/".*?>(.+?)</a> \((\d{4})\)
+						]]>
+					</set>
+
+					<!-- to prevent an exact title match from being burried by popular matches, lets grab the first exact title match result -->
+					<parse name="title_exact_match" input="${search_results_block}" regex="${rx_title_exact_match}" />
+					<if test="${title_exact_match}!=">
+						<set name="movie[0].imdb_id" value="${title_exact_match[0][0]:htmldecode}" />
+						<set name="movie[0].site_id" value="${title_exact_match[0][0]:htmldecode}" />
+						<set name="movie[0].title" value="${title_exact_match[0][1]:htmldecode}" />
+						<set name="movie[0].year" value="${title_exact_match[0][2]:htmldecode}" />
+						<set name="movie[0].popularity" value="100" />
+						<set name="offset" value="1" />
+					</if>
+
+					<set name="rx_search_results">
+						<![CDATA[
+						><a href="/title/(tt\d{7})/"[^>]+>(?!&#34;)([^<]+)</a> \((\d{4})[\/IVX]*\)(?! \(VG\))(?:[^<].*?>(?=aka ")?(.+?)?</td>)?
+						]]>
+					</set>
+
+					<!-- process the rest of the search page and obtain all the popular results -->
+					<loop name="search_results_verified" on="search_results_block">
+						<parse name="movie_details" input="${search_results_verified}" regex="${rx_search_results}" />
+						<loop name="curr_details" on="movie_details">
+							<add name="counter" value1="${count}" value2="${offset}" />
+							<set name="movie[${counter}].imdb_id" value="${curr_details[0]:htmldecode}" />
+							<set name="movie[${counter}].site_id" value="${curr_details[0]:htmldecode}" />
+							<set name="movie[${counter}].title" value="${curr_details[1]:htmldecode}" />
+
+							<parse name="akas" input="${curr_details[3]:htmldecode}" regex="${rx_aka}" />
+							<set name="movie[${counter}].alternate_titles" value="" />
+							<loop name="currAka" on="akas" limit="50">
+								<set name="movie[${counter}].alternate_titles" value="${movie[${counter}].alternate_titles}|${currAka[0]}" />
+							</loop>
+
+							<set name="movie[${counter}].year" value="${curr_details[2]:htmldecode}" />
+							<subtract name="movie[${counter}].popularity" value1="100" value2="${counter}" />
+						</loop>
+					</loop>
+				</if>
+			</if>
 		</if>
 	</action>
 
@@ -651,13 +667,13 @@
 			<!-- Get cover directly by manipulating details page thumbnail -->
 			<set name="rx_cover">
 				<![CDATA[
-				<a\s*onclick="[^>]+><img.+?src="([^@]+@@._V1)\.[^\.]+([^"]+)"\s*?style=".+"\s*?height=".+"\s*?alt=".+\sPoster"
+				<a\s*onclick="[^"]+"\s*href="/media/.+?/tt\d{7}"[^>]+><img.+?src="([^_]+_V1)\.[^\.]+([^"]+)".+?alt=".+?Poster"
 				]]>
 			</set>
 			<parse name="cover_src" input="${details_page}" regex="${rx_cover}" />
 
 			<!-- set cover -->
-			<set name="cover_art[0].url" value="${cover_src[0][0]}${cover_src[1][0]}" />
+			<set name="cover_art[0].url" value="${cover_src[0][0]}${cover_src[0][1]}" />
 		</if>
 	</action>
-</ScriptableScraper>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+</ScriptableScraper>
