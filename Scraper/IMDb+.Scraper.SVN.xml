@@ -9,8 +9,8 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="1" point="4" />
-		<published month="04" day="08" year="2011" />
+		<version major="3" minor="1" point="5" />
+		<published month="04" day="25" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -37,9 +37,10 @@
 		<!-- ### OPTIONS ### -->						<!--       TRUE		|         FALSE		-->
 			<set name="global_options_original_title" value="false" />	<!-- Original Title	| Always English Title	-->
 			<set name="global_options_foreign_title" value="false" />	<!-- English (Original)	| Main title only	-->
+			<set name="global_options_foreign_first" value="false" />	<!-- Original (English)	| English (Original)	-->
 			<set name="global_options_uk_rating" value="false" />		<!-- UK certification	| US certification	-->
 			<set name="global_options_imdb_score" value="false" />		<!-- Use IMDb.com	| RottenTomatoes.com	-->
-			<set name="global_options_imdb_metascore" value="false" />	<!-- IMDb score		| Metacritics metascore	-->
+			<set name="global_options_imdb_metascore" value="false" />	<!-- Metacritics score	| Use IMDb if enabled	-->
 			<set name="global_options_long_summary" value="false" /> 	<!-- Long summary	| Short summary		-->
 			<set name="global_options_rotten_meter" value="false" /> 	<!-- TomatoMeter	| Audience		-->
 			<set name="global_options_rotten_average" value="false" />	<!-- Average value	| Percentage value	-->
@@ -55,7 +56,7 @@
 
 				The country filter was added to avoid mistakes on foreign movies in English
 			-->
-			<set name="global_options_country_filter" value="us|gb|ie|au|nz" />
+			<set name="global_options_country_filter" value="us|ca|gb|ie|au|nz" />
 			<set name="global_options_language_filter" value="en" />
 		<!-- ### OPTIONS ### -->
 
@@ -460,10 +461,19 @@
 				<if test="${global_options_uk_rating}=false">
 					<set name="rx_aka_english">
 						<![CDATA[
-						<title>(?<movieTitleOriginal>[^\(]+?)\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA(?!\s*\(working title\)))[^<]*</td>.*?</table>
+						<title>(?<movieTitleOriginal>[^\(]+?)\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA\s*\(imdb display title\))[^<]*</td>.*?</table>
 						]]>
 					</set>
 					<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
+
+					<if test="${title_year[0][0]}=">
+						<set name="rx_aka_english">
+							<![CDATA[
+							<title>(?<movieTitleOriginal>[^\(]+?)\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA(?!\s*\(working title\)))[^<]*</td>.*?</table>
+							]]>
+						</set>
+						<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
+					</if>
 				</if>
 				<if test="${title_year[0][0]}=">
 					<!-- Checking for International English title -->
@@ -497,10 +507,19 @@
 									<!-- Give USA title one last chance for UK users -->
 									<set name="rx_aka_english">
 										<![CDATA[
-										<title>(?<movieTitleOriginal>[^\(]+?)\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA(?!\s*\(working title\)))[^<]*</td>.*?</table>
+										<title>(?<movieTitleOriginal>[^\(]+?)\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA\s*\(imdb display title\))[^<]*</td>.*?</table>
 										]]>
 									</set>
 									<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
+
+									<if test="${title_year[0][0]}=">
+										<set name="rx_aka_english">
+											<![CDATA[
+											<title>(?<movieTitleOriginal>[^\(]+?)\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA(?!\s*\(working title\)))[^<]*</td>.*?</table>
+											]]>
+										</set>
+										<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
+									</if>
 								</if>
 							</if>
 
@@ -527,17 +546,22 @@
 					</if>
 				</if>
 				<!-- the title_year array is in reverse on the AKA page -->
-				<if test="${global_options_foreign_title}=false">
-					<set name="movie.title" value="${title_year[0][2]:htmldecode}" />
-				</if>
 				<if test="${global_options_foreign_title}=true">
 					<!-- prevent title duplicate on some foreign movies with English titles -->
 					<if test="${title_year[0][2]:htmldecode}!=${title_year[0][0]:htmldecode}">
-						<set name="movie.title" value="${title_year[0][2]:htmldecode} (${title_year[0][0]:htmldecode})" />
+						<if test="${global_options_foreign_first}=true">
+							<set name="movie.title" value="${title_year[0][0]:htmldecode} (${title_year[0][2]:htmldecode})" />
+						</if>
+						<if test="${global_options_foreign_first}=false">
+							<set name="movie.title" value="${title_year[0][2]:htmldecode} (${title_year[0][0]:htmldecode})" />
+						</if>
 					</if>
 					<if test="${title_year[0][2]:htmldecode}=${title_year[0][0]:htmldecode}">
 						<set name="movie.title" value="${title_year[0][2]:htmldecode}" />
 					</if>
+				</if>
+				<if test="${global_options_foreign_title}=false">
+					<set name="movie.title" value="${title_year[0][2]:htmldecode}" />
 				</if>
 				<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
 			</if>
