@@ -9,8 +9,8 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="2" point="1" />
-		<published month="07" day="26" year="2011" />
+		<version major="3" minor="2" point="2" />
+		<published month="07" day="31" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -22,14 +22,14 @@
 	It is not yet possible to configure options for a scraper script.
 	So please star issue: http://code.google.com/p/moving-pictures/issues/detail?id=319
 
-	This means that you have to manually change the global_options... below.
+	This means that you have to manually change the global_options.
 
-	Adjust all of them to your liking *BEFORE* importing this scraper script
+	You can either adjust them below *BEFORE* importing this scraper script.
+
+	NEW:	Or you can now use the "C:\Options IMDb+ Scraper.xml" config file to adjust
+		the global options on the fly without having to re-import the scraper script.
 
 	Use *ONLY* value="true" or value="false" to make sure that everything works
-
-	NEW:	You can now use the "C:\Options IMDb+ Scraper.xml" config file to adjust
-		the global options on the fly without having to re-import the scraper script.
 	-->
 
 
@@ -51,7 +51,7 @@
 			<set name="global_options_special_edition" value="false" />	<!-- Modify title	| Keep title as-is	-->
 			<set name="global_options_rename_titles" value="false" />	<!-- Rename titles	| Keep title as-is	-->
 			<set name="global_options_single_score" value="false" />	<!-- Use only 1 score	| Average the scores	-->
-			<set name="global_options_min_imdb_votes" value="false" />	<!-- Min. of 50 votes	| Force imdb score	-->
+			<set name="global_options_min_imdb_votes" value="false" />	<!-- Min. of 20 votes	| Force imdb score	-->
 			<set name="global_options_refresh_all_fields" value="false" />	<!-- Update All	Fields	| Update A Few + Empty	-->
 
 			<!--
@@ -140,7 +140,79 @@
 			<!-- this is to ensure article removal when there is a forced English title change -->
 			<set name="movie.sortby" value='' />
 
+			<!-- Title is now done after directors, writers and actors, to be able to detect between new import and refresh -->
+
 			<!-- Verify conditional update. There is no AND or OR support, so this will have to do -->
+			<if test="${global_options_refresh_all_fields}=true"><set name="update_directors" value="true" /></if><if test="${movie.directors}="><set name="update_directors" value="true" /></if>
+			<if test="${update_directors}=true">
+				<!-- Directors -->
+				<set name="rx_directors_block">
+					<![CDATA[
+					<h5>Director[s]?:</h5>(?<directors_block>.*?)</div>|Director[s]?:\s*</h4>[^<]*(?<directors_block>.*?)</div>
+					]]>
+				</set>
+				<set name="rx_directors">
+					<![CDATA[
+					<a\s+href="/name/nm\d{7}/"[^>]*>(?<movieDirectors>[^<]+)</a>
+					]]>
+				</set>
+				<parse name="directors_block" input="${details_page}" regex="${rx_directors_block}" />
+				<parse name="directors" input="${directors_block}" regex="${rx_directors}" />
+				<set name="movie.directors" value='' />
+				<loop name="currDirector" on="directors">
+					<set name="movie.directors" value="${movie.directors}|${currDirector[0]:htmldecode}" />
+				</loop>
+
+				<set name="new_import" value="true" />
+			</if>
+
+			<if test="${global_options_refresh_all_fields}=true"><set name="update_writers" value="true" /></if><if test="${movie.writers}="><set name="update_writers" value="true" /></if>
+			<if test="${update_writers}=true">
+				<!-- Writers -->
+				<set name="rx_writers_block">
+					<![CDATA[
+					<h5>Writer[s]?.*?<div class="info-content">.*?(?<writers_block>.*?)</div>|Writer[s]?:\s*</h4>[^<]*(?<writers_block>.*?)</div>
+					]]>
+				</set>
+				<set name="rx_writers">
+					<![CDATA[
+					<a\s+href="/name/nm\d{7}/"[^>]*>(?<movieWriters>[^<]+)</a>
+					]]>
+				</set>
+				<parse name="writers_block" input="${details_page}" regex="${rx_writers_block}" />
+				<parse name="writers" input="${writers_block}" regex="${rx_writers}" />
+				<set name="movie.writers" value='' />
+				<loop name="currWriter" on="writers">
+					<set name="movie.writers" value="${movie.writers}|${currWriter[0]:htmldecode}" />
+				</loop>
+
+				<set name="new_import" value="true" />
+			</if>
+
+			<if test="${global_options_refresh_all_fields}=true"><set name="update_actors" value="true" /></if><if test="${movie.actors}="><set name="update_actors" value="true" /></if>
+			<if test="${update_actors}=true">
+				<!-- Actors -->
+				<set name="rx_actors_block">
+					<![CDATA[
+					<div class="headerinline"><h3>Cast</h3>(?<cast_block>.+?)<h3>Additional Details</h3>|<h2>Cast</h2>(?<cast_block>.+?)<h2>Details</h2>
+					]]>
+				</set>
+				<set name="rx_actors">
+					<![CDATA[
+					<td[^<]*<a\s+href="/name/nm\d{7}/"[^>]*>(?<movieActors>[^<]*)</a>
+					]]>
+				</set>
+				<parse name="actors_block" input="${details_page}" regex="${rx_actors_block}" />
+				<parse name="actors" input="${actors_block}" regex="${rx_actors}" />
+				<set name="movie.actors" value='' />
+				<loop name="currActor" on="actors">
+					<set name="movie.actors" value="${movie.actors}|${currActor[0]:htmldecode}" />
+				</loop>
+
+				<set name="new_import" value="true" />
+			</if>
+
+			<if test="${new_import}=true"><set name="update_title_and_year" value="true" /></if>
 			<if test="${global_options_refresh_all_fields}=true"><set name="update_title_and_year" value="true" /></if><if test="${movie.title}="><set name="update_title_and_year" value="true" /></if><if test="${movie.year}="><set name="update_title_and_year" value="true" /></if>
 			<if test="${update_title_and_year}=true">
 				<!-- Title and Year -->
@@ -173,70 +245,26 @@
 				<parse name="title_year" input="${details_page}" regex="${rx_title_year}" />
 				<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
 				<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
-
-				<set name="new_import" value="true" />
 			</if>
 
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_directors" value="true" /></if><if test="${movie.directors}="><set name="update_directors" value="true" /></if>
-			<if test="${update_directors}=true">
-				<!-- Directors -->
-				<set name="rx_directors_block">
+			<if test="${global_options_refresh_all_fields}=true"><set name="update_studios" value="true" /></if><if test="${movie.studios}="><set name="update_studios" value="true" /></if>
+			<if test="${update_studios}=true">
+				<!-- Studios -->
+				<set name="rx_studios_block">
 					<![CDATA[
-					<h5>Director[s]?:</h5>(?<directors_block>.*?)</div>|Director[s]?:\s*</h4>[^<]*(?<directors_block>.*?)</div>
+					<h4 class="inline">Production Co:</h4>(?<movieStudios>(?:[^<]*<a\s*href="[^"]+">[^<]+</a>)*)
 					]]>
 				</set>
-				<set name="rx_directors">
+				<set name="rx_studios">
 					<![CDATA[
-					<a\s+href="/name/nm\d{7}/"[^>]*>(?<movieDirectors>[^<]+)</a>
+					<a\s*href="[^"]+">(?<movieStudios>[^<]+)</a>
 					]]>
 				</set>
-				<parse name="directors_block" input="${details_page}" regex="${rx_directors_block}" />
-				<parse name="directors" input="${directors_block}" regex="${rx_directors}" />
-				<set name="movie.directors" value='' />
-				<loop name="currDirector" on="directors">
-					<set name="movie.directors" value="${movie.directors}|${currDirector[0]:htmldecode}" />
-				</loop>
-			</if>
-
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_writers" value="true" /></if><if test="${movie.writers}="><set name="update_writers" value="true" /></if>
-			<if test="${update_writers}=true">
-				<!-- Writers -->
-				<set name="rx_writers_block">
-					<![CDATA[
-					<h5>Writer[s]?.*?<div class="info-content">.*?(?<writers_block>.*?)</div>|Writer[s]?:\s*</h4>[^<]*(?<writers_block>.*?)</div>
-					]]>
-				</set>
-				<set name="rx_writers">
-					<![CDATA[
-					<a\s+href="/name/nm\d{7}/"[^>]*>(?<movieWriters>[^<]+)</a>
-					]]>
-				</set>
-				<parse name="writers_block" input="${details_page}" regex="${rx_writers_block}" />
-				<parse name="writers" input="${writers_block}" regex="${rx_writers}" />
-				<set name="movie.writers" value='' />
-				<loop name="currWriter" on="writers">
-					<set name="movie.writers" value="${movie.writers}|${currWriter[0]:htmldecode}" />
-				</loop>
-			</if>
-
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_actors" value="true" /></if><if test="${movie.actors}="><set name="update_actors" value="true" /></if>
-			<if test="${update_actors}=true">
-				<!-- Actors -->
-				<set name="rx_actors_block">
-					<![CDATA[
-					<div class="headerinline"><h3>Cast</h3>(?<cast_block>.+?)<h3>Additional Details</h3>|<h2>Cast</h2>(?<cast_block>.+?)<h2>Details</h2>
-					]]>
-				</set>
-				<set name="rx_actors">
-					<![CDATA[
-					<td[^<]*<a\s+href="/name/nm\d{7}/"[^>]*>(?<movieActors>[^<]*)</a>
-					]]>
-				</set>
-				<parse name="actors_block" input="${details_page}" regex="${rx_actors_block}" />
-				<parse name="actors" input="${actors_block}" regex="${rx_actors}" />
-				<set name="movie.actors" value='' />
-				<loop name="currActor" on="actors">
-					<set name="movie.actors" value="${movie.actors}|${currActor[0]:htmldecode}" />
+				<parse name="studios_block" input="${details_page}" regex="${rx_studios_block}" />
+				<parse name="studios" input="${studios_block}" regex="${rx_studios}" />
+				<set name="movie.studios" value='' />
+				<loop name="currStudio" on="studios">
+					<set name="movie.studios" value="${movie.studios}|${currStudio[0]:htmldecode}" />
 				</loop>
 			</if>
 
@@ -284,7 +312,7 @@
 				<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
 			</if>
 
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_runtime" value="true" /></if><if test="${movie.runtime}="><set name="update_runtime" value="true" /></if>
+			<if test="${global_options_refresh_all_fields}=true"><set name="update_runtime" value="true" /></if><if test="${movie.runtime}=0"><set name="update_runtime" value="true" /></if>
 			<if test="${update_runtime}=true">
 				<!-- Runtime -->
 				<set name="rx_runtime">
@@ -399,19 +427,19 @@
 					<if test="${global_options_min_imdb_votes}=true">
 						<if test="${metascore_score}>0">
 							<!-- Make sure that the imdb score has at least 100 votes -->
-							<if test="${imdb_votes_clean}>49">
+							<if test="${imdb_votes_clean}>19">
 								<add name="rating_total" value1="${imdb_score}" value2="${metascore_score}" result_type="float" />
 								<divide name="movie.score" value1="${rating_total}" value2="2" result_type="float" />
 							</if>
-							<if test="${imdb_votes_clean}&lt;=49">
+							<if test="${imdb_votes_clean}&lt;=19">
 								<set name="movie.score" value="${metascore_score}" />
 							</if>
 						</if>
 						<if test="${metascore_score}&lt;=0">
-							<if test="${imdb_votes_clean}>49">
+							<if test="${imdb_votes_clean}>19">
 								<set name="movie.score" value="${imdb_score}" />
 							</if>
-							<if test="${imdb_votes_clean}&lt;=49">
+							<if test="${imdb_votes_clean}&lt;=19">
 								<set name="movie.score" value="0" />
 							</if>
 						</if>
@@ -510,7 +538,7 @@
 					<set name="score_sub_total" value="0" />
 					<set name="score_sub_divider" value="0" />
 
-					<if test="${global_options_min_imdb_votes}=false"><set name="include_imdb_vote" value="true" /></if><if test="${global_options_min_imdb_votes}=true"><if test="${imdb_votes_clean}>49"><set name="include_imdb_vote" value="true" /></if></if>
+					<if test="${global_options_min_imdb_votes}=false"><set name="include_imdb_vote" value="true" /></if><if test="${global_options_min_imdb_votes}=true"><if test="${imdb_votes_clean}>19"><set name="include_imdb_vote" value="true" /></if></if>
 					<if test="${include_imdb_vote}=true">
 						<add name="score_sub_total" value1="${score_sub_total}" value2="${imdb_score}" result_type="float" />
 						<add name="score_sub_divider" value1="${score_sub_divider}" value2="1" />
@@ -527,10 +555,18 @@
 						<add name="score_sub_total" value1="${score_sub_total}" value2="${rotten_rating[0][4]:htmldecode}" result_type="float" />
 						<add name="score_sub_divider" value1="${score_sub_divider}" value2="1" />
 					</if>
-					<if test="${rotten_rating[0][6]:htmldecode}>0">
-						<divide name="rotten_rating_float" value1="${rotten_rating[0][6]:htmldecode}" value2="10" result_type="float" />
+					<if test="${rotten_rating[0][7]:htmldecode}>0">
+						<multiply name="rotten_rating_float" value1="${rotten_rating[0][7]:htmldecode}" value2="2" result_type="float" />
 						<add name="score_sub_total" value1="${score_sub_total}" value2="${rotten_rating_float}" result_type="float" />
 						<add name="score_sub_divider" value1="${score_sub_divider}" value2="1" />
+					</if>
+					<!-- Use RottenTomatoes Audience score if we do not have any score yet. -->
+					<if test="${score_sub_total}=0">
+						<if test="${rotten_rating[0][6]:htmldecode}>0">
+							<divide name="rotten_rating_float" value1="${rotten_rating[0][6]:htmldecode}" value2="10" result_type="float" />
+							<add name="score_sub_total" value1="${score_sub_total}" value2="${rotten_rating_float}" result_type="float" />
+							<add name="score_sub_divider" value1="${score_sub_divider}" value2="1" />
+						</if>
 					</if>
 					<if test="${score_sub_divider}>0">
 						<divide name="movie.score" value1="${score_sub_total}" value2="${score_sub_divider}" result_type="float" />
@@ -562,7 +598,7 @@
 					<set name="movie.summary" value="${rotten_summary[0][0]:htmldecode}" />
 				</if>
 				<!-- Might as well verify the runtime -->
-				<if test="${movie.runtime}=">
+				<if test="${movie.runtime}=0">
 					<set name="rx_rotten_runtime">
 						<![CDATA[
 						<span class="label">Running Time:</span>\s<span[^>]+>(?<runtimeHours>\d+) hr. (?<runtimeMinutes>\d+) min.</span>
