@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="3" minor="0" point="0" />
-		<published month="02" day="22" year="2011" />
+		<version major="3" minor="0" point="1" />
+		<published month="02" day="23" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -37,15 +37,6 @@
 			<set name="global_options_rotten_meter" value="false" /> 	<!-- true = TomatoMeter, false = Audience -->
 			<set name="global_options_rotten_average" value="false" />	<!-- true = use average value, false = use percentage value -->
 			<set name="global_options_rotten_top_critics" value="false" />	<!-- true = use top critics tomatometer, false = use all -->
-
-			<set name="global_uri_imdb" value="www.imdb.com" />
-			<set name="global_uri_imdb_ip" value="72.21.203.211" />
-
-			<set name="global_rx_imdb_html">
-				<![CDATA[
-				<meta name="application-name" content="IMDb" />
-				]]>
-			</set>
 		<!-- ### OPTIONS ### -->
 
 		<!-- if the site id is not set try to set it using the imdb id -->
@@ -58,20 +49,15 @@
 		<!-- if we have a site id (imdb id) we can continue -->
 		<if test="${movie.site_id}!=">
 
-			<set name="site" value="http://${global_uri_imdb_ip}/title/${movie.site_id}" />
-			<retrieve name="details_page" url="${site}" timeout="3" retries="1" />
-			<parse name="imdb_page_found" input="${details_page}" regex="${global_rx_imdb_html}" />
-			<if test="${imdb_page_found}=">
-				<set name="site" value="http://${global_uri_imdb}/title/${movie.site_id}" />
-				<retrieve name="details_page" url="${site}" />
-			</if>
+			<set name="site" value="http://www.imdb.com/title/${movie.site_id}" />
+			<retrieve name="details_page" url="${site}" />
 
 			<set name="movie.imdb_id" value="${movie.site_id}" />
 
 			<!-- Title and Year -->
 			<set name="rx_title_year">
 				<![CDATA[
-				<title>(?<movieTitle>[^\(]+?)\s?\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>
+				generic.monitoring.set_twilight_info\(\s*"title",\s*"(?:(?!US).+?)".+?<h1\s*class="header">.+?(?:<span\s*class="title-extra">\s*(?<movieTitleEnglish>[^<]+?)\s*<i>\(original\s*title\)</i>\s*</span>)?\s*</h1>.*?<h4\s*class="inline">Also\s*Known\s*As:</h4>\s*(?<movieTitleEnglish>[^<]+?)\s*<.+?>Discuss.+?\(\D*(?<movieYear>\d{4})[\/IVX]*\)|<title>(?<movieTitleEnglish>[^\(]+?)\s?\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?generic.monitoring.set_twilight_info\(\s*"title",\s*"US"
 				]]>
 			</set>
 			<parse name="title_year" input="${details_page}" regex="${rx_title_year}" />
@@ -317,7 +303,7 @@
 			</set>
 			<set name="rx_plot2">
 				<![CDATA[
-				<h5>Plot:</h5>[^>]+>\s+?(?<moviePlotShort>.*?)(?: \|)?\s+?<a|Users:.*?<p>(?<moviePlotShort>[^<]+?)\s*</p>|<h2>Storyline</h2>\s*<p>(?<moviePlotShort>[^<]+?)\s*<
+				<h5>Plot:</h5>[^>]+>\s+?(?<moviePlotShort>.*?)(?: \|)?\s+?<a|Users:.*?<p>(?<moviePlotShort>[^<]+?)\s*</p>\s*</p>|<h2>Storyline</h2>\s*<p>(?<moviePlotShort>[^<]+?)\s*<
 				]]>
 			</set>
 
@@ -367,20 +353,6 @@
   
 	<action name="search">
 	
-		<!-- ### OPTIONS ### -->
-			<set name="global_uri_imdb" value="www.imdb.com" />
-			<set name="global_uri_imdb_ip" value="72.21.203.211" />
-
-			<set name="global_uri_akas" value="akas.imdb.com" />
-			<set name="global_uri_akas_ip" value="207.171.162.180" />
-
-			<set name="global_rx_imdb_html">
-				<![CDATA[
-				<meta name="application-name" content="IMDb" />
-				]]>
-			</set>
-		<!-- ### OPTIONS ### -->
-
 		<set name="offset" value="0" />
 		
 		<!-- Regular Expressions -->
@@ -397,11 +369,7 @@
 
 		<!-- Retrieve result using IMDB id (if provided) -->
 		<if test="${search.imdb_id}!=">
-			<retrieve name="imdb_page" url="http://${global_uri_akas_ip}/find?s=tt;q=${search.imdb_id}" timeout="3" retries="1" />
-			<parse name="imdb_page_found" input="${imdb_page}" regex="${global_rx_imdb_html}" />
-			<if test="${imdb_page_found}=">
-				<retrieve name="imdb_page" url="http://${global_uri_akas}/find?s=tt;q=${search.imdb_id}" />
-			</if>
+			<retrieve name="imdb_page" url="http://akas.imdb.com/find?s=tt;q=${search.imdb_id}" />
 			<parse name="details_page_block" input="${imdb_page}" regex="${rx_details_page_block}" />
 			<loop name="imdb_page" on="details_page_block">
 				<parse name="title_year" input="${imdb_page}" regex="${rx_title_year}" />
@@ -433,11 +401,7 @@
 			<set name="query_year" value="+(${search.year})" />
 		</if>
 
-		<retrieve name="search_page" url="http://${global_uri_akas_ip}/find?s=tt;q=${search.title:safe(ISO-8859-1)}${query_year}" timeout="3" retries="1" />
-		<parse name="imdb_page_found" input="${search_page}" regex="${global_rx_imdb_html}" />
-		<if test="${imdb_page_found}=">
-			<retrieve name="search_page" url="http://${global_uri_akas}/find?s=tt;q=${search.title:safe(ISO-8859-1)}${query_year}" />
-		</if>
+		<retrieve name="search_page" url="http://akas.imdb.com/find?s=tt;q=${search.title:safe(ISO-8859-1)}${query_year}" />
 
 		<!-- if we got a details page, this is used. if not, regex does not match so we dont process the loop-->
 		<parse name="details_page_block" input="${search_page}" regex="${rx_details_page_block}" />
@@ -451,11 +415,7 @@
 			<set name="movie[${counter}].site_id" value="${imdb[0][0]}" />
 
 			<!-- AKA page -->
-			<retrieve name="aka_page" url="http://${global_uri_imdb_ip}/title/${imdb[0][0]}/releaseinfo" timeout="3" retries="1" />
-			<parse name="imdb_page_found" input="${aka_page}" regex="${global_rx_imdb_html}" />
-			<if test="${imdb_page_found}=">
-				<retrieve name="aka_page" url="http://${global_uri_imdb}/title/${imdb[0][0]}/releaseinfo" />
-			</if>
+			<retrieve name="aka_page" url="http://akas.imdb.com/title/${imdb[0][0]}/releaseinfo" />
 			<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
 			<set name="movie[${counter}].alternate_titles" value="" />
 			<loop name="currAka" on="akas" limit="50">
@@ -524,11 +484,6 @@
 <!-- Covers Node -->
 
 	<action name="get_cover_art">
-		
-		<!-- ### OPTIONS ### -->
-			<set name="global_uri_imdb" value="www.imdb.com" />
-		<!-- ### OPTIONS ### -->
-
 		<!-- if the site id is not set try to set it using the imdb id -->
 		<if test="${movie.site_id}=">
 			<if test="${movie.imdb_id}!=">
@@ -540,7 +495,7 @@
 		<if test="${movie.site_id}!=">
 
 			<!-- Retrieve details -->
-			<retrieve name="details_page" url="http://${global_uri_imdb}/title/${movie.site_id}/" />
+			<retrieve name="details_page" url="http://www.imdb.com/title/${movie.site_id}/" />
 
 			<!-- Get cover directly by manipulating details page thumbnail -->
 			<set name="rx_cover">
