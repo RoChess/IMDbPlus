@@ -30,8 +30,6 @@ namespace IMDb
 
         #endregion
 
-        string CountryFilter { get; set; }
-        string LanguageFilter { get; set; }
         DBSourceInfo ImdbPlusSource;
 
         #endregion
@@ -490,21 +488,6 @@ namespace IMDb
                 default:
                     break;
             }
-        }
-
-        public override bool OnMessage(GUIMessage message)
-        {
-            switch (message.Message)
-            {
-                case GUIMessage.MessageType.GUI_MSG_WINDOW_INIT:
-                {
-                    GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.OriginalTitleDescription);
-                    //GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.DefaultDescription);
-                    break;
-                }
-
-            }
-            return base.OnMessage(message);
         }
 
         #endregion
