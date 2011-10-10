@@ -9,8 +9,8 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="0" point="9" />
-		<published month="03" day="28" year="2011" />
+		<version major="3" minor="1" point="0" />
+		<published month="03" day="29" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -50,7 +50,10 @@
 				Use the imdb.com HTML source to find the ISO 639-1 code after /language/
 
 				example for English + Norwegian + Swedish would be value="en|no|sv"
+
+				The country filter was added to avoid mistakes on foreign movies in English
 			-->
+			<set name="global_options_country_filter" value="us|gb" />
 			<set name="global_options_language_filter" value="en" />
 		<!-- ### OPTIONS ### -->
 
@@ -77,22 +80,27 @@
 			<if test="${global_options_original_title}=true">
 				<set name="rx_title_year">
 					<![CDATA[
-					<title>(?<movieTitle>[^\(]+?)\s*\((?<movieYear>\d{4})[\/IVX]*\).*?</title>
+					<title>(?<movieTitle>.+?)\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>
 					]]>
 				</set>
 			</if>
 			<if test="${global_options_original_title}=false">
 				<set name="rx_tmp_prefix">
 					<![CDATA[
-					<title>(?<movieTitleEnglish>(?:(?=.+?<h4 class="inline">Language:</h4>\s*<a href="/language/
+					<title>(?<movieTitleEnglish>(?:(?=.+?<h4 class="inline">Country:</h4>\s*<a href="/country/
+					]]>
+				</set>
+				<set name="rx_tmp_infix">
+					<![CDATA[
+					".+?<h4 class="inline">Language:</h4>\s*<a href="/language/
 					]]>
 				</set>
 				<set name="rx_tmp_postfix">
 					<![CDATA[
-					")|(?!.+?<a href="releaseinfo#akas">))[^\(]+?)\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>
+					")|(?!.+?<a href="releaseinfo#akas">)).+?)\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>
 					]]>
 				</set>
-				<set name="rx_title_year" value="${rx_tmp_prefix}(?:${global_options_language_filter})${rx_tmp_postfix}" />
+				<set name="rx_title_year" value="${rx_tmp_prefix}(?:${global_options_country_filter})${rx_tmp_infix}(?:${global_options_language_filter})${rx_tmp_postfix}" />
 			</if>
 			<parse name="title_year" input="${details_page}" regex="${rx_title_year}" />
 			<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
@@ -475,7 +483,13 @@
 					<set name="movie.title" value="${title_year[0][2]:htmldecode}" />
 				</if>
 				<if test="${global_options_foreign_title}=true">
-					<set name="movie.title" value="${title_year[0][2]:htmldecode} (${title_year[0][0]:htmldecode})" />
+					<!-- prevent title duplicate on some foreign movies with English titles -->
+					<if test="${title_year[0][2]:htmldecode}!=${title_year[0][0]:htmldecode}">
+						<set name="movie.title" value="${title_year[0][2]:htmldecode} (${title_year[0][0]:htmldecode})" />
+					</if>
+					<if test="${title_year[0][2]:htmldecode}=${title_year[0][0]:htmldecode}">
+						<set name="movie.title" value="${title_year[0][2]:htmldecode}" />
+					</if>
 				</if>
 				<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
 			</if>
@@ -646,4 +660,4 @@
 			<set name="cover_art[0].url" value="${cover_src[0][0]}${cover_src[1][0]}" />
 		</if>
 	</action>
-</ScriptableScraper>
+</ScriptableScraper>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
