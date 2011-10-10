@@ -9,8 +9,8 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="2" point="4" />
-		<published month="08" day="30" year="2011" />
+		<version major="3" minor="2" point="5" />
+		<published month="09" day="23" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -76,42 +76,44 @@
 		</set>
 		<retrieve name="file" file="C:\Options IMDb+ Scraper.xml" encoding="UTF-8" />
 		<parse name="fileCheck" input="${file}" regex="${rx_file_check}" />
-		<if test="${fileCheck[0][0]}!=">
-			<parse name="xml_option" input="${file}" xpath="//set[@id=01]" />
-			<set name="global_options_original_title" value="${xml_option[0].@value}" />
-			<parse name="xml_option" input="${file}" xpath="//set[@id=02]" />
-			<set name="global_options_foreign_title" value="${xml_option[0].@value}" />
-			<parse name="xml_option" input="${file}" xpath="//set[@id=03]" />
-			<set name="global_options_foreign_first" value="${xml_option[0].@value}" />
-			<parse name="xml_option" input="${file}" xpath="//set[@id=04]" />
-			<set name="global_options_uk_rating" value="${xml_option[0].@value}" />
-			<parse name="xml_option" input="${file}" xpath="//set[@id=05]" />
-			<set name="global_options_imdb_score" value="${xml_option[0].@value}" />
-			<parse name="xml_option" input="${file}" xpath="//set[@id=06]" />
-			<set name="global_options_imdb_metascore" value="${xml_option[0].@value}" />
-			<parse name="xml_option" input="${file}" xpath="//set[@id=07]" />
-			<set name="global_options_long_summary" value="${xml_option[0].@value}" />
-			<parse name="xml_option" input="${file}" xpath="//set[@id=08]" />
-			<set name="global_options_rotten_meter" value="${xml_option[0].@value}" />
-			<parse name="xml_option" input="${file}" xpath="//set[@id=09]" />
-			<set name="global_options_rotten_average" value="${xml_option[0].@value}" />
-			<parse name="xml_option" input="${file}" xpath="//set[@id=10]" />
-			<set name="global_options_rotten_top_critics" value="${xml_option[0].@value}" />
-			<parse name="xml_option" input="${file}" xpath="//set[@id=11]" />
-			<set name="global_options_special_edition" value="${xml_option[0].@value}" />
-			<parse name="xml_option" input="${file}" xpath="//set[@id=12]" />
-			<set name="global_options_rename_titles" value="${xml_option[0].@value}" />
-			<parse name="xml_option" input="${file}" xpath="//set[@id=13]" />
-			<set name="global_options_single_score" value="${xml_option[0].@value}" />
-			<parse name="xml_option" input="${file}" xpath="//set[@id=14]" />
-			<set name="global_options_min_imdb_votes" value="${xml_option[0].@value}" />
-			<parse name="xml_option" input="${file}" xpath="//set[@id=15]" />
-			<set name="global_options_refresh_all_fields" value="${xml_option[0].@value}" />
+		<if test="${fileCheck.count}>0">
+			<if test="${fileCheck[0][0]}!=">
+				<parse name="xml_option" input="${file}" xpath="//set[@id=01]" />
+				<set name="global_options_original_title" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=02]" />
+				<set name="global_options_foreign_title" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=03]" />
+				<set name="global_options_foreign_first" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=04]" />
+				<set name="global_options_uk_rating" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=05]" />
+				<set name="global_options_imdb_score" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=06]" />
+				<set name="global_options_imdb_metascore" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=07]" />
+				<set name="global_options_long_summary" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=08]" />
+				<set name="global_options_rotten_meter" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=09]" />
+				<set name="global_options_rotten_average" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=10]" />
+				<set name="global_options_rotten_top_critics" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=11]" />
+				<set name="global_options_special_edition" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=12]" />
+				<set name="global_options_rename_titles" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=13]" />
+				<set name="global_options_single_score" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=14]" />
+				<set name="global_options_min_imdb_votes" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=15]" />
+				<set name="global_options_refresh_all_fields" value="${xml_option[0].@value}" />
 
-			<parse name="xml_option" input="${file}" xpath="//set[@id=98]" />
-			<set name="global_options_country_filter" value="${xml_option[0].@value}" />
-			<parse name="xml_option" input="${file}" xpath="//set[@id=99]" />
-			<set name="global_options_language_filter" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=98]" />
+				<set name="global_options_country_filter" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=99]" />
+				<set name="global_options_language_filter" value="${xml_option[0].@value}" />
+			</if>
 		</if>
 
 		<!-- if the site id is not set try to set it using the imdb id -->
@@ -125,8 +127,8 @@
 		<if test="${movie.site_id}!=">
 
 			<if test="${global_options_special_edition}=true">
-				<!-- Scan AKA field for presence of special edition title -->
-				<parse name="special_edition" input="${movie.alternate_titles}" regex="###(.+?)###" />
+				<!-- Check details_url for presence of special edition title -->
+				<parse name="special_edition" input="${movie.details_url}" regex="###(.+?)###" />
 				<!-- Backup existing special edition title, incase this is a refresh -->
 				<parse name="special_backup" input="${movie.title}" regex="([\(\[\{](?:3D|Extended|Unrated|Director's Cut|Alternate Ending)(?: Edition)?[\}\]\)])" />
 			</if>
@@ -293,14 +295,14 @@
 			<if test="${global_options_uk_rating}=true">
 				<set name="rx_certification">
 					<![CDATA[
-					(?:>\s*UK:|Rated\s*?)(?<movieCertification>(?:U)|(?:PG)|(?:12)|(?:12A)|(?:15)|(?:18)|(?:R18))(?:</a>|\s*?for)
+					(?:>\s*UK:|Rated\s*)(?<movieCertification>(?:U)|(?:PG)|(?:12)|(?:12A)|(?:15)|(?:18)|(?:R18))(?:</a>|\s*for)
 					]]>
 				</set>
 			</if>
 			<if test="${global_options_uk_rating}=false">
 				<set name="rx_certification">
 					<![CDATA[
-					(?:>\s*USA:|Rated\s*?)(?<movieCertification>(?:G)|(?:PG)|(?:PG-13)|(?:R)|(?:X)|(?:NC-17))(?:</a>|\s*?for)
+					(?:>\s*USA:|Rated\s*)(?<movieCertification>(?:G)|(?:PG)|(?:PG-13)|(?:R)|(?:X)|(?:NC-17))(?:</a>|\s*for)
 					]]>
 				</set>
 			</if>
@@ -473,7 +475,7 @@
 
 				<set name="rx_rotten_tomatometer">
 					<![CDATA[
-					(?:<span id="all-critics-meter"[^>]+>(?<rtAllPercentage>\d{1,3}?)</span>.+?<p class="critic_stats">\D*(?<rtAllAverage>\d+(?:\.\d+)?)/10\D*(?<rtAllVotes>\d+).+?<span id="all-critics-meter"[^>]+>(?<rtTopPercentage>\d{1,3}?)</span>.+?<p class="critic_stats">\D*(?<rtTopAverage>\d+(?:\.\d+)?)/10\D*(?<rtTopVotes>\d+).+?)?<span class="meter[^"]+">(?<rtPercentage>\d{1,3}?)</span>[^<]*<p class="critic_stats">(?:\D*(?<rtAverage>\d+(?:\.\d+)?)/5)?\D*(?<rtVotes>\d+[,.]?\d+)
+					(?:<span (?:itemprop="ratingValue" )?id="all-critics-meter"[^>]+>(?<rtAllPercentage>\d{1,3}?)</span>.+?<p class="critic_stats">\D*(?<rtAllAverage>\d+(?:\.\d+)?)/10\D*(?<rtAllVotes>\d+).+?<span id="all-critics-meter"[^>]+>(?<rtTopPercentage>\d{1,3}?)</span>.+?<p class="critic_stats">\D*(?<rtTopAverage>\d+(?:\.\d+)?)/10\D*(?<rtTopVotes>\d+).+?)?<span class="meter[^"]+">(?<rtPercentage>\d{1,3}?)</span>[^<]*<p class="critic_stats">(?:\D*(?<rtAverage>\d+(?:\.\d+)?)/5)?\D*(?<rtVotes>\d+[,.]?\d+)
 					]]>
 				</set>
 				<parse name="rotten_rating" input="${rotten_details}" regex="${rx_rotten_tomatometer}" />
@@ -776,6 +778,7 @@
 			</if>
 
 			<!-- Details URL -->
+			<!-- This overwrites any special edition title abuse from search node as well -->
 			<set name="movie.details_url" value="${site}" />
 
 			<if test="${new_import}=true">
@@ -788,19 +791,21 @@
 					</set>
 					<retrieve name="file" file="C:\Rename dBase IMDb+ Scraper.xml" encoding="UTF-8" />
 					<parse name="fileCheck" input="${file}" regex="${rx_file_check}" />
-					<if test="${fileCheck[0][0]}!=">
-						<parse name="rename_array" input="${file}" xpath="//rename" />
-						<loop name="rename_item" on="rename_array" limit="9999">
-							<if test="${rename_array[${count}].@id}=${movie.imdb_id}">
-								<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
-								<if test="${rename_array[${count}].@title}!=">
-									<set name="movie.title" value="${rename_array[${count}].@title}" />
+					<if test="${fileCheck.count}>0">
+						<if test="${fileCheck[0][0]}!=">
+							<parse name="rename_array" input="${file}" xpath="//rename" />
+							<loop name="rename_item" on="rename_array" limit="9999">
+								<if test="${rename_array[${count}].@id}=${movie.imdb_id}">
+									<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
+									<if test="${rename_array[${count}].@title}!=">
+										<set name="movie.title" value="${rename_array[${count}].@title}" />
+									</if>
+									<if test="${rename_array[${count}].@sortby}!=">
+										<set name="movie.sortby" value="${rename_array[${count}].@sortby}" />
+									</if>
 								</if>
-								<if test="${rename_array[${count}].@sortby}!=">
-									<set name="movie.sortby" value="${rename_array[${count}].@sortby}" />
-								</if>
-							</if>
-						</loop>
+							</loop>
+						</if>
 					</if>
 
 					<!-- Rename titles for purpose of grouping or title fixes, based on contents of custom XML file -->
@@ -811,19 +816,21 @@
 					</set>
 					<retrieve name="file" file="C:\Rename dBase IMDb+ Scraper (Custom).xml" encoding="UTF-8" />
 					<parse name="fileCheck" input="${file}" regex="${rx_file_check}" />
-					<if test="${fileCheck[0][0]}!=">
-						<parse name="rename_array_custom" input="${file}" xpath="//rename" />
-						<loop name="rename_item_custom" on="rename_array_custom" limit="9999">
-							<if test="${rename_array_custom[${count}].@id}=${movie.imdb_id}">
-								<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
-								<if test="${rename_array_custom[${count}].@title}!=">
-									<set name="movie.title" value="${rename_array_custom[${count}].@title}" />
+					<if test="${fileCheck.count}>0">
+						<if test="${fileCheck[0][0]}!=">
+							<parse name="rename_array_custom" input="${file}" xpath="//rename" />
+							<loop name="rename_item_custom" on="rename_array_custom" limit="9999">
+								<if test="${rename_array_custom[${count}].@id}=${movie.imdb_id}">
+									<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
+									<if test="${rename_array_custom[${count}].@title}!=">
+										<set name="movie.title" value="${rename_array_custom[${count}].@title}" />
+									</if>
+									<if test="${rename_array_custom[${count}].@sortby}!=">
+										<set name="movie.sortby" value="${rename_array_custom[${count}].@sortby}" />
+									</if>
 								</if>
-								<if test="${rename_array_custom[${count}].@sortby}!=">
-									<set name="movie.sortby" value="${rename_array_custom[${count}].@sortby}" />
-								</if>
-							</if>
-						</loop>
+							</loop>
+						</if>
 					</if>
 				</if>
 
@@ -835,11 +842,6 @@
 					<if test="${special_backup[0][0]}!=">
 						<set name="movie.title" value="${movie.title} ${special_backup}" />
 					</if>
-				</if>
-				<!-- Cleanup AKA title, if the movie has no alternative titles -->
-				<parse name="special_edition" input="${movie.alternate_titles}" regex="###(.+?)###" />
-				<if test="${special_edition[0][0]}!=">
-					<set name="movie.alternate_titles" value="..." />
 				</if>
 			</if>
 		</if>
@@ -857,6 +859,12 @@
 			]]>
 		</set>
 
+		<set name="rx_special_editions">
+			<![CDATA[
+			([\(\[\{](?:3D|Extended|Unrated|Director's Cut|Alternate Ending)(?: Edition)?[\}\]\)])
+			]]>
+		</set>
+
 		<!-- Retrieve result using IMDB id (if provided) -->
 		<if test="${search.imdb_id}!=">
 			<retrieve name="imdb_page" url="http://akas.imdb.com/title/${search.imdb_id}" />
@@ -868,12 +876,6 @@
 				<set name="movie[0].imdb_id" value="${imdb_results[0][2]:htmldecode}" />
 				<set name="movie[0].site_id" value="${imdb_results[0][2]:htmldecode}" />
 				<set name="movie[0].popularity" value="100" />
-
-				<!-- Using AKA field to pass special edition strings onto details node -->
-				<parse name="special_edition" input="${search.filename_noext}" regex="([\(\[\{](?:3D|Extended|Unrated|Director's Cut|Alternate Ending)(?: Edition)?[\}\]\)])" />
-				<if test="${special_edition[0][0]}!=">
-					<set name="movie[0].alternate_titles" value="${movie[0].alternate_titles}|###${special_edition}###" />
-				</if>
 			</if>
 		</if>
 
@@ -984,6 +986,19 @@
 						</loop>
 					</loop>
 				</if>
+			</if>
+		</if>
+
+		<!-- Using unused 'details_url' to pass special edition strings onto details node -->
+		<parse name="special_edition" input="${search.filename_noext}" regex="${rx_special_editions}" />
+		<if test="${special_edition[0][0]}!=">
+			<set name="movie[0].details_url" value="###${special_edition}###" />
+		</if>
+		<if test="${special_edition[0][0]}=">
+			<!-- Filename came up empty; lets try foldername before giving up -->
+			<parse name="special_edition" input="${search.foldername}" regex="${rx_special_editions}" />
+			<if test="${special_edition[0][0]}!=">
+				<set name="movie[0].details_url" value="###${special_edition}###" />
 			</if>
 		</if>
 	</action>
