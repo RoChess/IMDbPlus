@@ -9,8 +9,8 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="1" point="6" />
-		<published month="07" day="04" year="2011" />
+		<version major="3" minor="1" point="7" />
+		<published month="07" day="24" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -329,7 +329,7 @@
 				<if test="${global_options_rotten_meter}=true">
 					<set name="rx_rotten_tomatometer">
 						<![CDATA[
-						<span id="all-critics-meter"[^>]+>(?<rtPercentage>\d{1,3}?)</span>.+?<p class="critic_stats">\D*(?<rtAverage>\d+\.\d+)/10\D*(?<rtVotes>\d+)
+						<span id="all-critics-meter"[^>]+>(?<rtPercentage>\d{1,3}?)</span>.+?<p class="critic_stats">\D*(?<rtAverage>\d+(?:\.\d+)?)/10\D*(?<rtVotes>\d+)
 						]]>
 					</set>
 					<parse name="rotten_rating" input="${rotten_details}" regex="${rx_rotten_tomatometer}" />
@@ -374,7 +374,7 @@
 				<if test="${global_options_rotten_meter}=false">
 					<set name="rx_rotten_audience">
 						<![CDATA[
-						<span class="meter popcorn numeric ">(?<rtPercentage>\d{1,3}?)</span>.+?<p class="critic_stats">\D*(?<rtAverage>\d+\.\d+)/5\D*(?<rtVotes>\d+[,.]?\d+)
+						<span class="meter[^"]+">(?<rtPercentage>\d{1,3}?)</span>[^<]*<p class="critic_stats">(?:\D*(?<rtAverage>\d+(?:\.\d+)?)/5)?\D*(?<rtVotes>\d+[,.]?\d+)
 						]]>
 					</set>
 					<parse name="rotten_rating" input="${rotten_details}" regex="${rx_rotten_audience}" />
@@ -585,7 +585,7 @@
 			<if test="${global_options_rename_titles}=true">
 				<set name="rx_file_check">
 					<![CDATA[
-					<imdbplus[^>]*>
+					<imdbplus[^>]*>(?:[\r\n\t\s\v]*<rename[\t\s]+id="tt\d{7}"[\t\s]+(?:title="[^"]+")?(?:[\t\s]*sortby="[^"]+")?[\t\s]*/>)*[\r\n\t\s\v]*</imdbplus>
 					]]>
 				</set>
 				<retrieve name="file" file="C:\Rename dBase IMDb+ Scraper.xml" encoding="UTF-8" />
