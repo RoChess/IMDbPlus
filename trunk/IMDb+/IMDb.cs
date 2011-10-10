@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using MediaPortal;
@@ -32,6 +33,12 @@ namespace IMDb
         string CountryFilter { get; set; }
         string LanguageFilter { get; set; }
         DBSourceInfo ImdbPlusSource;
+
+        #endregion
+
+        #region Constants
+
+        const string UpdateFile = @"http://imdbplus.googlecode.com/svn/trunk/Scraper/IMDb+.Scraper.SVN.xml";
 
         #endregion
 
@@ -150,6 +157,9 @@ namespace IMDb
             // Get IMDb+ Data Provider
             ImdbPlusSource = DBSourceInfo.GetAll().Find(s => s.ToString() == "IMDb+");
             SetIMDbProperties();
+
+            // Check for Updates
+            CheckForUpdate();
 
             // Load main skin window
             // this is a launching pad to all other windows
@@ -513,6 +523,70 @@ namespace IMDb
             GUIUtils.SetProperty("#IMDb.Scraper.Description", ImdbPlusSource.Provider.Description);
             GUIUtils.SetProperty("#IMDb.Scraper.Author", ImdbPlusSource.Provider.Author);
             GUIUtils.SetProperty("#IMDb.Scraper.Published", ImdbPlusSource.SelectedScript.Provider.Published.ToString());
+        }
+
+        private void CheckForUpdate()
+        {
+            Thread updateThread = new Thread(delegate(object obj)
+            {
+                string localFile = GetTempFilename();
+                if (DownloadFile(UpdateFile, localFile))
+                {
+                    // if not installed, install and set as highest priority
+                    
+
+                    // compare version, if newer update
+                    
+
+                    // remove temp download file
+                    try { File.Delete(localFile); }
+                    catch { }
+                }
+            })
+            {
+                IsBackground = true,
+                Name = "Check for Updates"
+            };
+
+            updateThread.Start();
+        }
+
+        private bool DownloadFile(string url, string localFile)
+        {
+            WebClient webClient = new WebClient();
+          
+            try
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(localFile));
+                if (!File.Exists(localFile))
+                {
+                    Logger.Debug("Downloading file from: {0}", url);
+                    webClient.DownloadFile(url, localFile);
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                Logger.Info("Download failed from '{0}' to '{1}'", url, localFile);
+                try { if (File.Exists(localFile)) File.Delete(localFile); }
+                catch { }
+                return false;
+            }
+        }
+
+        private string GetTempFilename()
+        {
+            string localFile = string.Empty;
+            try
+            {
+                localFile = string.Format(@"{0}imdb_{1}.xml", Path.GetTempPath(), Guid.NewGuid());
+            }
+            catch(IOException)
+            {
+                // can happen if more than 65K temp files already
+                localFile = string.Format(@"C:\imdb_{0}.xml", Guid.NewGuid());
+            }
+            return localFile;
         }
     }
 }
