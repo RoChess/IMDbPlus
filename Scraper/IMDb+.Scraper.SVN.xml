@@ -9,8 +9,8 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="1" point="2" />
-		<published month="03" day="31" year="2011" />
+		<version major="3" minor="1" point="3" />
+		<published month="04" day="04" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -44,6 +44,8 @@
 			<set name="global_options_rotten_meter" value="false" /> 	<!-- TomatoMeter	| Audience		-->
 			<set name="global_options_rotten_average" value="false" />	<!-- Average value	| Percentage value	-->
 			<set name="global_options_rotten_top_critics" value="false" />	<!-- Top critics meter	| All critics meter	-->
+			<set name="global_options_special_edition" value="false" />	<!-- Modify title	| Keep title as-is	-->
+			<set name="global_options_rename_titles" value="false" />	<!-- Rename titles	| Keep title as-is	-->
 
 			<!--
 				Special filter to include other language titles besides English (en)
@@ -67,6 +69,13 @@
 		<!-- if we have a site id (imdb id) we can continue -->
 		<if test="${movie.site_id}!=">
 
+			<if test="${global_options_special_edition}=true">
+				<!-- Scan AKA field for presence of special edition title -->
+				<parse name="special_edition" input="${movie.alternate_titles}" regex="###(.+?)###" />
+				<!-- Backup existing special edition title, incase this is a refresh -->
+				<parse name="special_backup" input="${movie.title}" regex="([\(\[\{](?:3D|Extended|Unrated|Director's Cut)(?: Edition)?[\}\]\)])" />
+			</if>
+
 			<set name="site" value="http://akas.imdb.com/title/${movie.site_id}" />
 			<retrieve name="details_page" url="${site}" />
 
@@ -74,7 +83,7 @@
 
 			<!-- clear SortBy, so that it can be properly redone by the plugin afterwards -->
 			<!-- this is to ensure article removal when there is a forced English title change -->
-			<set name="movie.sortby" value="" />
+			<set name="movie.sortby" value='' />
 
 			<!-- Title and Year -->
 			<if test="${global_options_original_title}=true">
@@ -311,7 +320,7 @@
 			<!-- RottenTomatoes -->
 			<if test="${global_options_imdb_score}=false">
 				<!-- Adjust IMDb ID to be compatible with RottenTomatoes -->
-				<replace name="imdb_id_fixed" input="${movie.imdb_id}" pattern="tt" with="" />
+				<replace name="imdb_id_fixed" input="${movie.imdb_id}" pattern="tt" with='' />
 				<!-- Retrieve detail page from RottenTomatoes -->
 				<retrieve name="rotten_details" url="http://www.rottentomatoes.com/alias?type=imdbid&amp;s=${imdb_id_fixed}" />
 
@@ -425,7 +434,7 @@
 			</set>
 			<retrieve name="aka_page" url="${site}/releaseinfo" />
 			<parse name="akas" input="${aka_page}" regex="${rx_aka}" />
-			<set name="movie.alternate_titles" value="" />
+			<set name="movie.alternate_titles" value='' />
 			<loop name="currAka" on="akas" limit="50">
 				<set name="movie.alternate_titles" value="${movie.alternate_titles}|${currAka[0]:htmldecode}" />
 			</loop>
@@ -440,7 +449,7 @@
 				<parse name="rare_title_change" input="${aka_page}" regex="${rx_aka_english}" />
 				<if test="${rare_title_change[0][0]}!=">
 					<if test="${rare_title_change[0][0]}!=${title_year[0][0]}">
-						<set name="title_year[0][0]" value="" />
+						<set name="title_year[0][0]" value='' />
 					</if>
 				</if>
 			</if>
@@ -535,6 +544,40 @@
 
 			<!-- Details URL -->
 			<set name="movie.details_url" value="${site}" />
+
+			<!-- Rename titles for purpose of grouping, based on contents of XML file -->
+			<if test="${global_options_rename_titles}=true">
+				<set name="rx_file_check">
+					<![CDATA[
+					<imdbplus[^>]*>
+					]]>
+				</set>
+				<retrieve name="file" file="C:\Rename dBase IMDb+ Scraper.xml" encoding="UTF-8" />
+				<parse name="fileCheck" input="${file}" regex="${rx_file_check}" />
+				<if test="${fileCheck[0]}!=">
+					<parse name="rename_array" input="${file}" xpath="//rename" />
+					<loop name="rename_item" on="rename_array" limit="9999">
+						<if test="${rename_array[${count}].@id}=${movie.imdb_id}">
+							<set name="movie.title" value="${rename_array[${count}].@title}" />
+						</if>
+					</loop>
+				</if>
+			</if>
+
+			<!-- Adjust title if this is a special edition -->
+			<if test="${special_edition[0][0]}!=">
+				<set name="movie.title" value="${movie.title} ${special_edition[0][0]}" />
+			</if>
+			<if test="${special_edition[0][0]}=">
+				<if test="${special_backup[0][0]}!=">
+					<set name="movie.title" value="${movie.title} ${special_backup}" />
+				</if>
+			</if>
+			<!-- Cleanup AKA title, if the movie has no alternative titles -->
+			<parse name="special_edition" input="${movie.alternate_titles}" regex="###(.+?)###" />
+			<if test="${special_edition[0][0]}!=">
+				<set name="movie.alternate_titles" value="..." />
+			</if>
 		</if>
 	</action>
 
@@ -561,6 +604,12 @@
 				<set name="movie[0].imdb_id" value="${imdb_results[0][2]:htmldecode}" />
 				<set name="movie[0].site_id" value="${imdb_results[0][2]:htmldecode}" />
 				<set name="movie[0].popularity" value="100" />
+
+				<!-- Using AKA field to pass special edition strings onto details node -->
+				<parse name="special_edition" input="${search.filename_noext}" regex="([\(\[\{](?:3D|Extended|Unrated|Director's Cut)(?: Edition)?[\}\]\)])" />
+				<if test="${special_edition[0][0]}!=">
+					<set name="movie[0].alternate_titles" value="${movie[0].alternate_titles}|###${special_edition}###" />
+				</if>
 			</if>
 		</if>
 
@@ -607,7 +656,7 @@
 				<!-- AKA page -->
 				<retrieve name="aka_page" url="http://akas.imdb.com/title/${imdb_results[0][2]}/releaseinfo" />
 				<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
-				<set name="movie[${counter}].alternate_titles" value="" />
+				<set name="movie[${counter}].alternate_titles" value='' />
 				<loop name="currAka" on="akas" limit="50">
 					<set name="movie[${counter}].alternate_titles" value="${movie[${counter}].alternate_titles}|${currAka[0]:htmldecode}" />
 				</loop>
@@ -661,7 +710,7 @@
 							<set name="movie[${counter}].title" value="${curr_details[1]:htmldecode}" />
 
 							<parse name="akas" input="${curr_details[3]:htmldecode}" regex="${rx_aka}" />
-							<set name="movie[${counter}].alternate_titles" value="" />
+							<set name="movie[${counter}].alternate_titles" value='' />
 							<loop name="currAka" on="akas" limit="50">
 								<set name="movie[${counter}].alternate_titles" value="${movie[${counter}].alternate_titles}|${currAka[0]}" />
 							</loop>
