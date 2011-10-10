@@ -9,8 +9,8 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="1" point="1" />
-		<published month="03" day="30" year="2011" />
+		<version major="3" minor="1" point="2" />
+		<published month="03" day="31" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -53,7 +53,7 @@
 
 				The country filter was added to avoid mistakes on foreign movies in English
 			-->
-			<set name="global_options_country_filter" value="us|gb" />
+			<set name="global_options_country_filter" value="us|gb|ie|au|nz" />
 			<set name="global_options_language_filter" value="en" />
 		<!-- ### OPTIONS ### -->
 
@@ -87,7 +87,7 @@
 			<if test="${global_options_original_title}=false">
 				<set name="rx_tmp_prefix">
 					<![CDATA[
-					<title>(?<movieTitleEnglish>(?:(?=.+?<h4 class="inline">Country:</h4>\s*<a href="/country/
+					<title>(?<movieTitleEnglish>(?:(?=.+?<h4 class="inline">Country:</h4>.+?<a href="/country/
 					]]>
 				</set>
 				<set name="rx_tmp_infix">
@@ -401,6 +401,19 @@
 					<parse name="rotten_summary" input="${rotten_details}" regex="${rx_rotten_summary}" />
 					<set name="movie.summary" value="${rotten_summary[0][0]:htmldecode}" />
 				</if>
+				<!-- Might as well verify the runtime -->
+				<if test="${movie.runtime}=">
+					<set name="rx_rotten_runtime">
+						<![CDATA[
+						<span class="label">Running Time:</span>\s<span[^>]+>(?<runtimeHours>\d+) hr. (?<runtimeMinutes>\d+) min.</span>
+						]]>
+					</set>
+					<parse name="rotten_runtime" input="${rotten_details}" regex="${rx_rotten_runtime}" />
+					<!-- Time for some math to get runtime in minutes -->
+					<multiply name="runtime_minutes" value1="60" value2="${rotten_runtime[0][0]}" result_type="int" />
+					<add name="runtime_minutes" value1="${runtime_minutes}" value2="${rotten_runtime[0][1]}" />
+					<set name="movie.runtime" value="${runtime_minutes}" />
+				</if>
 			</if>
 		<!-- END: global_options_imdb_score -->
 
@@ -417,13 +430,28 @@
 				<set name="movie.alternate_titles" value="${movie.alternate_titles}|${currAka[0]:htmldecode}" />
 			</loop>
 
+			<!-- Test for rare case when an English movie gets a new title -->
+			<if test="${title_year[0][0]}!=">
+				<set name="rx_aka_english">
+					<![CDATA[
+					<h5><a name="akas">Also Known As \(AKA\)</a></h5>.*?<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*USA \(new title\)[^<]*</td>.*?</table>
+					]]>
+				</set>
+				<parse name="rare_title_change" input="${aka_page}" regex="${rx_aka_english}" />
+				<if test="${rare_title_change[0][0]}!=">
+					<if test="${rare_title_change[0][0]}!=${title_year[0][0]}">
+						<set name="title_year[0][0]" value="" />
+					</if>
+				</if>
+			</if>
+
 			<!-- Find English title on AKA page if we failed to get one at the beginning -->
 			<if test="${title_year[0][0]}=">
-				<!-- Checking for USA title first -->
+				<!-- Checking for 'last' added USA title first -->
 				<if test="${global_options_uk_rating}=false">
 					<set name="rx_aka_english">
 						<![CDATA[
-						<title>(?<movieTitleOriginal>[^\(]+?)\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.*?<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA(?!\s*\(working title\)))[^<]*</td>.*?</table>
+						<title>(?<movieTitleOriginal>[^\(]+?)\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA(?!\s*\(working title\)))[^<]*</td>.*?</table>
 						]]>
 					</set>
 					<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
@@ -460,7 +488,7 @@
 									<!-- Give USA title one last chance for UK users -->
 									<set name="rx_aka_english">
 										<![CDATA[
-										<title>(?<movieTitleOriginal>[^\(]+?)\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.*?<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA(?!\s*\(working title\)))[^<]*</td>.*?</table>
+										<title>(?<movieTitleOriginal>[^\(]+?)\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA(?!\s*\(working title\)))[^<]*</td>.*?</table>
 										]]>
 									</set>
 									<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
