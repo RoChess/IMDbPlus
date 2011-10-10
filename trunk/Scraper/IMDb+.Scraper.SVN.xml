@@ -4,9 +4,13 @@
 		<name>IMDb+</name>
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
+
+	<!-- Replace the following with <id>874902</id> to avoid having to re-import your collection. -->
 		<id>314159265</id>
-		<version major="3" minor="0" point="3" />
-		<published month="02" day="25" year="2011" />
+	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
+
+		<version major="3" minor="0" point="4" />
+		<published month="02" day="26" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -58,7 +62,7 @@
 			<!-- Title and Year -->
 			<set name="rx_title_year">
 				<![CDATA[
-				generic.monitoring.set_twilight_info\(\s*"title",\s*"(?:(?!US|UK|CA|AU|NZ).+?)".+?<h1\s*class="header">.+?(?:<span\s*class="title-extra">\s*(?<movieTitleEnglish>[^<]+?)\s*<i>\(original\s*title\)</i>\s*</span>)?\s*</h1>.*?<h4\s*class="inline">Also\s*Known\s*As:</h4>\s*(?<movieTitleEnglish>[^<]+?)\s*<.+?>Discuss.+?\(\D*(?<movieYear>\d{4})[\/IVX]*\)|<title>(?<movieTitleEnglish>[^\(]+?)\s?\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?generic.monitoring.set_twilight_info\(\s*"title",\s*"(?:US|UK|CA|AU|NZ)"
+				generic.monitoring.set_twilight_info\(\s*"title",\s*"(?:(?!US|GB|CA|AU|NZ|NO).+?)".+?<h1\s*class="header">.+?(?:<span\s*class="title-extra">\s*(?<movieTitleEnglish>[^<]+?)\s*<i>\(original\s*title\)</i>\s*</span>)?\s*</h1>.*?<h4\s*class="inline">Also\s*Known\s*As:</h4>\s*(?<movieTitleEnglish>[^<]+?)\s*<.+?>Discuss.+?\(\D*(?<movieYear>\d{4})[\/IVX]*\)|<title>(?<movieTitleEnglish>[^\(]+?)\s?\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?generic.monitoring.set_twilight_info\(\s*"title",\s*"(?:US|GB|CA|AU|NZ|NO)"
 				]]>
 			</set>
 			<parse name="title_year" input="${details_page}" regex="${rx_title_year}" />
