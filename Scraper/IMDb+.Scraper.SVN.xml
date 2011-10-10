@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="3" minor="0" point="1" />
-		<published month="02" day="23" year="2011" />
+		<version major="3" minor="0" point="2" />
+		<published month="02" day="24" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -57,7 +57,7 @@
 			<!-- Title and Year -->
 			<set name="rx_title_year">
 				<![CDATA[
-				generic.monitoring.set_twilight_info\(\s*"title",\s*"(?:(?!US).+?)".+?<h1\s*class="header">.+?(?:<span\s*class="title-extra">\s*(?<movieTitleEnglish>[^<]+?)\s*<i>\(original\s*title\)</i>\s*</span>)?\s*</h1>.*?<h4\s*class="inline">Also\s*Known\s*As:</h4>\s*(?<movieTitleEnglish>[^<]+?)\s*<.+?>Discuss.+?\(\D*(?<movieYear>\d{4})[\/IVX]*\)|<title>(?<movieTitleEnglish>[^\(]+?)\s?\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?generic.monitoring.set_twilight_info\(\s*"title",\s*"US"
+				generic.monitoring.set_twilight_info\(\s*"title",\s*"(?:(?!US|UK|CA|AU|NZ).+?)".+?<h1\s*class="header">.+?(?:<span\s*class="title-extra">\s*(?<movieTitleEnglish>[^<]+?)\s*<i>\(original\s*title\)</i>\s*</span>)?\s*</h1>.*?<h4\s*class="inline">Also\s*Known\s*As:</h4>\s*(?<movieTitleEnglish>[^<]+?)\s*<.+?>Discuss.+?\(\D*(?<movieYear>\d{4})[\/IVX]*\)|<title>(?<movieTitleEnglish>[^\(]+?)\s?\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?generic.monitoring.set_twilight_info\(\s*"title",\s*"(?:US|UK|CA|AU|NZ)"
 				]]>
 			</set>
 			<parse name="title_year" input="${details_page}" regex="${rx_title_year}" />
