@@ -9,8 +9,8 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="1" point="7" />
-		<published month="07" day="24" year="2011" />
+		<version major="3" minor="2" point="0" />
+		<published month="07" day="08" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -27,6 +27,9 @@
 	Adjust all of them to your liking *BEFORE* importing this scraper script
 
 	Use *ONLY* value="true" or value="false" to make sure that everything works
+
+	NEW:	You can now use the "C:\Options IMDb+ Scraper.xml" config file to adjust
+		the global options on the fly without having to re-import the scraper script.
 	-->
 
 
@@ -59,6 +62,47 @@
 			<set name="global_options_country_filter" value="us|ca|gb|ie|au|nz" />
 			<set name="global_options_language_filter" value="en" />
 		<!-- ### OPTIONS ### -->
+
+		<!-- Overwrite global_options based on the contents of XML file in (C) root folder -->
+		<!-- This makes it possible to retain custom changes across scraper updates -->
+		<!-- and try different settings without the need to reimport the script. -->
+		<set name="rx_file_check">
+			<![CDATA[
+			<imdbplus[^>]*>(?:[\r\n\t\s\v]*<set[\t\s]+id="\d+"[\t\s]+name="global_options_[^"]+"[\t\s]+value="(?:true|false)"[\t\s]*/>)*[\r\n\t\s\v]*<set[\t\s]+id="\d+"[\t\s]+name="global_options_country_filter"[^>]+>[\r\n\t\s\v]*<set[\t\s]+id="\d+"[\t\s]+name="global_options_language_filter"[^>]+>[\r\n\t\s\v]*</imdbplus>
+			]]>
+		</set>
+		<retrieve name="file" file="C:\Options IMDb+ Scraper.xml" encoding="UTF-8" />
+		<parse name="fileCheck" input="${file}" regex="${rx_file_check}" />
+		<if test="${fileCheck[0]}!=">
+			<parse name="xml_option" input="${file}" xpath="//set[@id=01]" />
+			<set name="global_options_original_title" value="${xml_option[0].@value}" />
+			<parse name="xml_option" input="${file}" xpath="//set[@id=02]" />
+			<set name="global_options_foreign_title" value="${xml_option[0].@value}" />
+			<parse name="xml_option" input="${file}" xpath="//set[@id=03]" />
+			<set name="global_options_foreign_first" value="${xml_option[0].@value}" />
+			<parse name="xml_option" input="${file}" xpath="//set[@id=04]" />
+			<set name="global_options_uk_rating" value="${xml_option[0].@value}" />
+			<parse name="xml_option" input="${file}" xpath="//set[@id=05]" />
+			<set name="global_options_imdb_score" value="${xml_option[0].@value}" />
+			<parse name="xml_option" input="${file}" xpath="//set[@id=06]" />
+			<set name="global_options_imdb_metascore" value="${xml_option[0].@value}" />
+			<parse name="xml_option" input="${file}" xpath="//set[@id=07]" />
+			<set name="global_options_long_summary" value="${xml_option[0].@value}" />
+			<parse name="xml_option" input="${file}" xpath="//set[@id=08]" />
+			<set name="global_options_rotten_meter" value="${xml_option[0].@value}" />
+			<parse name="xml_option" input="${file}" xpath="//set[@id=09]" />
+			<set name="global_options_rotten_average" value="${xml_option[0].@value}" />
+			<parse name="xml_option" input="${file}" xpath="//set[@id=10]" />
+			<set name="global_options_rotten_top_critics" value="${xml_option[0].@value}" />
+			<parse name="xml_option" input="${file}" xpath="//set[@id=11]" />
+			<set name="global_options_special_edition" value="${xml_option[0].@value}" />
+			<parse name="xml_option" input="${file}" xpath="//set[@id=12]" />
+			<set name="global_options_rename_titles" value="${xml_option[0].@value}" />
+			<parse name="xml_option" input="${file}" xpath="//set[@id=13]" />
+			<set name="global_options_country_filter" value="${xml_option[0].@value}" />
+			<parse name="xml_option" input="${file}" xpath="//set[@id=14]" />
+			<set name="global_options_language_filter" value="${xml_option[0].@value}" />
+		</if>
 
 		<!-- if the site id is not set try to set it using the imdb id -->
 		<if test="${movie.site_id}=">
