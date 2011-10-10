@@ -11,6 +11,7 @@ using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
 using MediaPortal.Dialogs;
 using MediaPortal.Plugins.MovingPictures;
+using MediaPortal.Plugins.MovingPictures.Database;
 using MediaPortal.Plugins.MovingPictures.DataProviders;
 using Action = MediaPortal.GUI.Library.Action;
 
@@ -30,6 +31,7 @@ namespace IMDb
 
         string CountryFilter { get; set; }
         string LanguageFilter { get; set; }
+        DBSourceInfo ImdbPlusSource;
 
         #endregion
 
@@ -144,6 +146,10 @@ namespace IMDb
 
             // Initialize translations
             Translation.Init();
+
+            // Get IMDb+ Data Provider
+            ImdbPlusSource = DBSourceInfo.GetAll().Find(s => s.ToString() == "IMDb+");
+            SetIMDbProperties();
 
             // Load main skin window
             // this is a launching pad to all other windows
@@ -492,5 +498,21 @@ namespace IMDb
         }
 
         #endregion
+
+        private void SetIMDbProperties()
+        {
+            // not installed
+            if (ImdbPlusSource == null)
+            {
+                GUIUtils.SetProperty("#IMDb.Scraper.IsInstalled", "false");
+                return;
+            }
+
+            GUIUtils.SetProperty("#IMDb.Scraper.IsInstalled", "true");
+            GUIUtils.SetProperty("#IMDb.Scraper.Version", ImdbPlusSource.Provider.Version);
+            GUIUtils.SetProperty("#IMDb.Scraper.Description", ImdbPlusSource.Provider.Description);
+            GUIUtils.SetProperty("#IMDb.Scraper.Author", ImdbPlusSource.Provider.Author);
+            GUIUtils.SetProperty("#IMDb.Scraper.Published", ImdbPlusSource.SelectedScript.Provider.Published.ToString());
+        }
     }
 }
