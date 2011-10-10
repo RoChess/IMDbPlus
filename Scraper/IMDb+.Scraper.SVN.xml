@@ -9,8 +9,8 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="2" point="3" />
-		<published month="08" day="03" year="2011" />
+		<version major="3" minor="2" point="4" />
+		<published month="08" day="30" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -71,7 +71,7 @@
 		<!-- and try different settings without the need to reimport the script. -->
 		<set name="rx_file_check">
 			<![CDATA[
-			(<imdbplus[^>]*>)(?:[\r\n\t\s\v]*<set[\t\s]+id="\d+"[\t\s]+name="global_options_[^"]+"[\t\s]+value="(?:true|false)"[\t\s]*/>)*[\r\n\t\s\v]*<set[\t\s]+id="98"[\t\s]+name="global_options_country_filter"[^>]+>[\r\n\t\s\v]*<set[\t\s]+id="99"[\t\s]+name="global_options_language_filter"[^>]+>[\r\n\t\s\v]*</imdbplus>
+			(<imdbplus[^>]*>)(?:[\r\n\t\s\v]*<set[\t\s]+id="\d+"[\t\s]+name="global_options_[^"]+"[\t\s]+value="(?:true|false)"[\t\s]*/>)*[\r\n\t\s\v]*<set[\t\s]+id="98"[\t\s]+name="global_options_country_filter"[^>]+>[\r\n\t\s\v]*<set[\t\s]+id="99"[\t\s]+name="global_options_language_filter"[^>]+>[^\x00]*</imdbplus>
 			]]>
 		</set>
 		<retrieve name="file" file="C:\Options IMDb+ Scraper.xml" encoding="UTF-8" />
@@ -148,7 +148,7 @@
 				<!-- Directors -->
 				<set name="rx_directors_block">
 					<![CDATA[
-					<h5>Director[s]?:</h5>(?<directors_block>.*?)</div>|Director[s]?:\s*</h4>[^<]*(?<directors_block>.*?)</div>
+					Director[s]?:\s*</h4>[^<]*(?<directors_block>.*?)</div>
 					]]>
 				</set>
 				<set name="rx_directors">
@@ -171,7 +171,7 @@
 				<!-- Writers -->
 				<set name="rx_writers_block">
 					<![CDATA[
-					<h5>Writer[s]?.*?<div class="info-content">.*?(?<writers_block>.*?)</div>|Writer[s]?:\s*</h4>[^<]*(?<writers_block>.*?)</div>
+					Writer[s]?:\s*</h4>[^<]*(?<writers_block>.*?)</div>
 					]]>
 				</set>
 				<set name="rx_writers">
@@ -194,7 +194,7 @@
 				<!-- Actors -->
 				<set name="rx_actors_block">
 					<![CDATA[
-					<div class="headerinline"><h3>Cast</h3>(?<cast_block>.+?)<h3>Additional Details</h3>|<h2>Cast</h2>(?<cast_block>.+?)<h2>Details</h2>
+					<h2>Cast</h2>(?<cast_block>.+?)<h2>Details</h2>
 					]]>
 				</set>
 				<set name="rx_actors">
@@ -273,7 +273,7 @@
 				<!-- Genres -->
 				<set name="rx_genres_block">
 					<![CDATA[
-					<h5>Genre:</h5>(?<genres_block>.+?)</div>|Genre[s]?:[^<]*</h4>(?<genres_block>.+?)</div>
+					Genre[s]?:[^<]*</h4>(?<genres_block>.+?)</div>
 					]]>
 				</set>
 				<set name="rx_genres">
@@ -317,7 +317,7 @@
 				<!-- Runtime -->
 				<set name="rx_runtime">
 					<![CDATA[
-					<h5>Runtime:</h5>.*?(?<movieRuntime>\d+) min\s+|(?<movieRuntime>\d+) min&nbsp;&nbsp;-&nbsp;&nbsp;
+					(?<movieRuntime>\d+) min&nbsp;&nbsp;-&nbsp;&nbsp;
 					]]>
 				</set>
 				<parse name="runtime" input="${details_page}" regex="${rx_runtime}" />
@@ -329,7 +329,7 @@
 				<!-- Tagline -->
 				<set name="rx_tagline">
 					<![CDATA[
-					<h5>Tagline.</h5>[^>]+>[^\r]?(?<movieTagline>[^<]+)|Tagline[s]?:</h4>[\s\f\r]*(?<movieTagline>[^<]+)
+					Tagline[s]?:</h4>[\s\f\r]*(?<movieTagline>[^<]+)
 					]]>
 				</set>
 				<parse name="tagline" input="${details_page}" regex="${rx_tagline}" />
@@ -341,7 +341,7 @@
 				<!-- Language -->
 				<set name="rx_language">
 					<![CDATA[
-					<a\shref=./Sections/Languages/[^/]+/?">\s*(?<movieLanguage>[^<]+)</a>|<a\shref=./language/[^"]+">(?<movieLanguage>[^<]+)</a>
+					<a\shref=./language/[^"]+"[^>]*>(?<movieLanguage>[^<]+)</a>
 					]]>
 				</set>
 				<parse name="language" input="${details_page}" regex="${rx_language}" />
@@ -358,7 +358,7 @@
 				</set>
 				<set name="rx_plot2">
 					<![CDATA[
-					<h5>Plot:</h5>[^>]+>\s+?(?<moviePlotShort>.*?)(?: \|)?\s+?<a|Users:.*?<p>(?<moviePlotShort>[^<]+?)\s*</p>\s*</p>|<h2>Storyline</h2>\s*<p>(?<moviePlotShort>[^<]+?)\s*<
+					<p itemprop="description">\s*(?<moviePlotShort>[^<]+?)\s*<
 					]]>
 				</set>
 
@@ -392,7 +392,9 @@
 			<parse name="imdb_votes" input="${details_page}" regex="${rx_imdb_votes}" />
 			<set name="imdb_score" value="${imdb_votes[0][1]:htmldecode}" />
 			<replace name="imdb_votes_clean" input="${imdb_votes[0][0]:htmldecode}" pattern="[\,\.]" with='' />
-			<divide name="metascore_score" value1="${imdb_votes[0][2]:htmldecode}" value2="10" result_type="float" />
+			<if test="${imdb_votes[0][2]:htmldecode}>0">
+				<divide name="metascore_score" value1="${imdb_votes[0][2]:htmldecode}" value2="10" result_type="float" />
+			</if>
 			<replace name="metascore_votes_clean" input="${imdb_votes[0][3]:htmldecode}" pattern="[\,\.]" with='' />
 
 			<!-- Fix empty votes to make the math 'add' node for popularity not freak out later on -->
@@ -429,7 +431,9 @@
 							<!-- Make sure that the imdb score has at least 100 votes -->
 							<if test="${imdb_votes_clean}>19">
 								<add name="rating_total" value1="${imdb_score}" value2="${metascore_score}" result_type="float" />
-								<divide name="movie.score" value1="${rating_total}" value2="2" result_type="float" />
+								<if test="${rating_total}>0">
+									<divide name="movie.score" value1="${rating_total}" value2="2" result_type="float" />
+								</if>
 							</if>
 							<if test="${imdb_votes_clean}&lt;=19">
 								<set name="movie.score" value="${metascore_score}" />
@@ -448,7 +452,9 @@
 						<!-- Before we average lets make sure that there is a Metacritics metascore -->
 						<if test="${metascore_score}>0">
 							<add name="rating_total" value1="${imdb_score}" value2="${metascore_score}" result_type="float" />
-							<divide name="movie.score" value1="${rating_total}" value2="2" result_type="float" />
+							<if test="${rating_total}>0">
+								<divide name="movie.score" value1="${rating_total}" value2="2" result_type="float" />
+							</if>
 						</if>
 						<if test="${metascore_score}&lt;=0">
 							<set name="movie.score" value="${imdb_score}" />
@@ -540,8 +546,10 @@
 
 					<if test="${global_options_min_imdb_votes}=false"><set name="include_imdb_vote" value="true" /></if><if test="${global_options_min_imdb_votes}=true"><if test="${imdb_votes_clean}>19"><set name="include_imdb_vote" value="true" /></if></if>
 					<if test="${include_imdb_vote}=true">
-						<add name="score_sub_total" value1="${score_sub_total}" value2="${imdb_score}" result_type="float" />
-						<add name="score_sub_divider" value1="${score_sub_divider}" value2="1" />
+						<if test="${imdb_score}>0">
+							<add name="score_sub_total" value1="${score_sub_total}" value2="${imdb_score}" result_type="float" />
+							<add name="score_sub_divider" value1="${score_sub_divider}" value2="1" />
+						</if>
 					</if>
 					<if test="${metascore_score}>0">
 						<add name="score_sub_total" value1="${score_sub_total}" value2="${metascore_score}" result_type="float" />
