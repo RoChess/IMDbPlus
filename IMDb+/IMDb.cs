@@ -204,6 +204,12 @@ namespace IMDb
             // Set Facade Layout
             GUIControl.FocusControl(GetID, Facade.GetID);
 
+            // Set Current Selected Item
+            Facade.SelectedListItemIndex = 0;
+
+            // Update standard Facade properties
+            GUIUtils.SetProperty("#itemcount", Facade.Count.ToString());
+
             base.OnPageLoad();
         }
 
