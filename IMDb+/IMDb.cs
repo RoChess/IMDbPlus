@@ -571,5 +571,57 @@ namespace IMDb
             }
             return localFile;
         }
+
+        private void ScraperScriptModify(string scraperFile, string regexReplace)
+        {
+            // Adjust scraper script before installing it, so that scraper name and ID can be modified if needed
+            // This allows IMDb+ scraper to be installed as "imdb.com (IMDb+ Edition)" for existing collections
+        }
+
+        private bool ScraperScriptInstallation(string xmlFile)
+        {
+            // Grab the contents of the scraper script file
+            StreamReader reader = new StreamReader(xmlFile);
+            string script = reader.ReadToEnd();
+            reader.Close();
+
+            // Add it to the scraper script manager
+            DataProviderManager.AddSourceResult addResult = MovingPicturesCore.DataProviderManager.AddSource(typeof(ScriptableProvider), script, true);
+
+            if (addResult == DataProviderManager.AddSourceResult.FAILED_VERSION)
+            {
+                Logger.Error("Load Script Failed: A script with this Version and ID is already loaded.");
+            }
+            else if (addResult == DataProviderManager.AddSourceResult.FAILED_DATE)
+            {
+                Logger.Error("Load Script Failed: This script does not have a unique 'published' date.");
+            }
+            else if (addResult == DataProviderManager.AddSourceResult.FAILED)
+            {
+                Logger.Error("Load Script Failed: The script is malformed or not a Moving Pictures script.");
+            }
+            else if (addResult == DataProviderManager.AddSourceResult.SUCCESS_REPLACED)
+            {
+                Logger.Error("Load Script Warning: Scraper debug-mode enabled, so existing script was replaced.");
+                return true;
+            }
+            else if (addResult == DataProviderManager.AddSourceResult.SUCCESS)
+            {
+                // Scraper script has been added successfully
+                return true;
+            }
+            else
+            {
+                Logger.Error("Load Script Warning: Unknown failure");
+            }
+            // Scraper installation failed
+            return false;
+        }
+
+        private void ScraperScriptPositioning(int position, string scraperID)
+        {
+            // Re-Position the scraper-script
+            // position = 0 being top of the list
+        }
     }
 }
