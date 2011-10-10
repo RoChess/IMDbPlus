@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="3" minor="0" point="2" />
-		<published month="02" day="24" year="2011" />
+		<version major="3" minor="0" point="3" />
+		<published month="02" day="25" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -30,13 +30,14 @@
 
 	<action name="get_details">
 
-		<!-- ### OPTIONS ### -->
-			<set name="global_options_uk_rating" value="false" />		<!-- true = use UK certification, false = use US rating -->
-			<set name="global_options_imdb_score" value="false" />		<!-- true = imdb, false = rottentomatoes -->
-			<set name="global_options_long_summary" value="false" /> 	<!-- true = long, false = short -->
-			<set name="global_options_rotten_meter" value="false" /> 	<!-- true = TomatoMeter, false = Audience -->
-			<set name="global_options_rotten_average" value="false" />	<!-- true = use average value, false = use percentage value -->
-			<set name="global_options_rotten_top_critics" value="false" />	<!-- true = use top critics tomatometer, false = use all -->
+		<!-- ### OPTIONS ### -->						<!--       TRUE		|         FALSE		-->
+			<set name="global_options_uk_rating" value="false" />		<!-- UK certification	| US certification	-->
+			<set name="global_options_imdb_score" value="false" />		<!-- Use IMDb.com	| RottenTomatoes.com	-->
+			<set name="global_options_imdb_metascore" value="false" />	<!-- IMDb score		| Metacritics metascore	-->
+			<set name="global_options_long_summary" value="false" /> 	<!-- Long summary	| Short summary		-->
+			<set name="global_options_rotten_meter" value="false" /> 	<!-- TomatoMeter	| Audience		-->
+			<set name="global_options_rotten_average" value="false" />	<!-- Average value	| Percentage value	-->
+			<set name="global_options_rotten_top_critics" value="false" />	<!-- Top critics meter	| All critics meter	-->
 		<!-- ### OPTIONS ### -->
 
 		<!-- if the site id is not set try to set it using the imdb id -->
@@ -180,21 +181,42 @@
 		<!-- START: global_options_imdb_score -->
 			<!-- IMDb -->
 			<if test="${global_options_imdb_score}=true">
-				<!-- Score -->
-				<set name="rx_score">
-					<![CDATA[
-					<b>(?<movieScore>\d+.\d+)/10</b>|<span[^<]*>(?<movieScore>\d+.\d+)<span>/10</span>
-					]]>
-				</set>
-				<parse name="score" input="${details_page}" regex="${rx_score}" />
-				<set name="movie.score" value="${score[0][0]:htmldecode}" />
+				<!-- metacritics.com metascore + votes -->
+				<if test="${global_options_imdb_metascore}=true">
+					<set name="rx_score">
+						<![CDATA[
+						<span class="nobr">Metascore:\s*<strong>(?<movieScore>\d+)</strong><span class="mellow">/100</span>
+						]]>
+					</set>
+					<!-- Fix metascore to scale of 10 -->
+					<parse name="score" input="${details_page}" regex="${rx_score}" />
+					<divide name="metascore_rating_float" value1="${score[0][0]:htmldecode}" value2="10" result_type="float" />
+					<set name="movie.score" value="${metascore_rating_float}" />
+
+					<set name="rx_popularity">
+						<![CDATA[
+						"criticreviews"[^>]+>(?<moviePopularity>[^\s]+) reviews</a>
+						]]>
+					</set>
+				</if>
+				<!-- imdb.com score + votes -->
+				<if test="${global_options_imdb_metascore}=false">
+					<set name="rx_score">
+						<![CDATA[
+						<b>(?<movieScore>\d+.\d+)/10</b>|<span[^<]*>(?<movieScore>\d+.\d+)<span>/10</span>
+						]]>
+					</set>
+					<parse name="score" input="${details_page}" regex="${rx_score}" />
+					<set name="movie.score" value="${score[0][0]:htmldecode}" />
+
+					<set name="rx_popularity">
+						<![CDATA[
+						"ratings"[^>]+>(?<moviePopularity>[^\s]+) votes</a>
+						]]>
+					</set>
+				</if>
 
 				<!-- Popularity -->
-				<set name="rx_popularity">
-					<![CDATA[
-					"ratings"[^>]+>(?<moviePopularity>[^\s]+) votes</a>
-					]]>
-				</set>
 				<parse name="votes" input="${details_page}" regex="${rx_popularity}" />
 				<replace name="votes_clean1" input="${votes[0][0]:htmldecode}" pattern="\," with='' />
 				<replace name="votes_clean2" input="${votes_clean1}" pattern="\." with='' />
