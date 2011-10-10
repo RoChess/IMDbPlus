@@ -38,6 +38,9 @@
     <Reference Include="Core">
       <HintPath>..\Externals\Core.dll</HintPath>
     </Reference>
+    <Reference Include="Cornerstone">
+      <HintPath>..\Externals\Cornerstone.dll</HintPath>
+    </Reference>
     <Reference Include="Dialogs">
       <HintPath>..\Externals\Dialogs.dll</HintPath>
     </Reference>
