@@ -9,8 +9,8 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="1" point="3" />
-		<published month="04" day="04" year="2011" />
+		<version major="3" minor="1" point="4" />
+		<published month="04" day="08" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -558,7 +558,13 @@
 					<parse name="rename_array" input="${file}" xpath="//rename" />
 					<loop name="rename_item" on="rename_array" limit="9999">
 						<if test="${rename_array[${count}].@id}=${movie.imdb_id}">
-							<set name="movie.title" value="${rename_array[${count}].@title}" />
+							<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
+							<if test="${rename_array[${count}].@title}!=">
+								<set name="movie.title" value="${rename_array[${count}].@title}" />
+							</if>
+							<if test="${rename_array[${count}].@sortby}!=">
+								<set name="movie.sortby" value="${rename_array[${count}].@sortby}" />
+							</if>
 						</if>
 					</loop>
 				</if>
