@@ -9,8 +9,8 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="0" point="7" />
-		<published month="03" day="01" year="2011" />
+		<version major="3" minor="0" point="8" />
+		<published month="03" day="10" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -68,6 +68,10 @@
 
 			<set name="movie.imdb_id" value="${movie.site_id}" />
 
+			<!-- clear SortBy, so that it can be properly redone by the plugin afterwards -->
+			<!-- this is to ensure article removal when there is a forced English title change -->
+			<set name="movie.sortby" value="" />
+
 			<!-- Title and Year -->
 			<if test="${global_options_original_title}=true">
 				<set name="rx_title_year">
@@ -91,7 +95,6 @@
 			</if>
 			<parse name="title_year" input="${details_page}" regex="${rx_title_year}" />
 			<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
-			<set name="movie.sortby" value="${title_year[0][0]:htmldecode}" />
 			<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
 
 			<!-- Directors -->
@@ -468,7 +471,6 @@
 				</if>
 				<!-- the title_year array is in reverse on the AKA page -->
 				<set name="movie.title" value="${title_year[0][1]:htmldecode}" />
-				<set name="movie.sortby" value="${title_year[0][1]:htmldecode}" />
 				<set name="movie.year" value="${title_year[0][0]:htmldecode}" />
 			</if>
 
