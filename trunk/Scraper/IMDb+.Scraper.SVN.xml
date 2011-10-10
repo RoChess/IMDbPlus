@@ -9,8 +9,8 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="0" point="6" />
-		<published month="02" day="28" year="2011" />
+		<version major="3" minor="0" point="7" />
+		<published month="03" day="01" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -43,6 +43,14 @@
 			<set name="global_options_rotten_meter" value="false" /> 	<!-- TomatoMeter	| Audience		-->
 			<set name="global_options_rotten_average" value="false" />	<!-- Average value	| Percentage value	-->
 			<set name="global_options_rotten_top_critics" value="false" />	<!-- Top critics meter	| All critics meter	-->
+
+			<!--
+				Special filter to include other language titles besides English (en)
+				Use the imdb.com HTML source to find the ISO 639-1 code after /language/
+
+				example for English + Norwegian + Swedish would be value="en|no|sv"
+			-->
+			<set name="global_options_language_filter" value="en" />
 		<!-- ### OPTIONS ### -->
 
 		<!-- if the site id is not set try to set it using the imdb id -->
@@ -69,11 +77,17 @@
 				</set>
 			</if>
 			<if test="${global_options_original_title}=false">
-				<set name="rx_title_year">
+				<set name="rx_tmp_prefix">
 					<![CDATA[
-					<title>(?<movieTitleEnglish>(?:(?=.+?<h4 class="inline">Language:</h4>\s*<a href="/language/en")|(?!.+?<a href="releaseinfo#akas">))[^\(]+?)\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>
+					<title>(?<movieTitleEnglish>(?:(?=.+?<h4 class="inline">Language:</h4>\s*<a href="/language/
 					]]>
 				</set>
+				<set name="rx_tmp_postfix">
+					<![CDATA[
+					")|(?!.+?<a href="releaseinfo#akas">))[^\(]+?)\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>
+					]]>
+				</set>
+				<set name="rx_title_year" value="${rx_tmp_prefix}(?:${global_options_language_filter})${rx_tmp_postfix}" />
 			</if>
 			<parse name="title_year" input="${details_page}" regex="${rx_title_year}" />
 			<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
