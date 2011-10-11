@@ -22,15 +22,15 @@ namespace IMDb
     {
         #region Private Variables
 
-        int PluginID = 31415;
-
         #region Skin Controls
 
         [SkinControl(50)] protected GUIFacadeControl Facade = null;
 
         #endregion
 
+        int PluginID = 31415;
         DBSourceInfo ImdbPlusSource;
+        Timer syncLibraryTimer;      
 
         #endregion
 
@@ -152,13 +152,19 @@ namespace IMDb
             // Initialize translations
             Translation.Init();
 
+            // Load Settings
+            PluginSettings.LoadSettings();
+
             // Get IMDb+ Data Provider
             ImdbPlusSource = DBSourceInfo.GetFromScriptID(scriptId);
             SetIMDbProperties();
 
-            // Check for Updates
-            CheckForUpdate();
-
+            // start update timer, passing along configured parameters
+            // add small 3sec delay if syncing on startup.
+            int syncInterval = PluginSettings.SyncInterval * 60 * 60 * 1000;
+            int startTime = GetSyncStartTime();
+            syncLibraryTimer = new Timer(new TimerCallback((o) => { CheckForUpdate(); }), null, startTime, syncInterval);
+            
             // Load main skin window
             // this is a launching pad to all other windows
             string xmlSkin = GUIGraphicsContext.Skin + @"\IMDb+.xml";
@@ -171,49 +177,43 @@ namespace IMDb
         /// </summary>
         public override void DeInit()
         {
+            PluginSettings.SaveSettings();
+
             Logger.Info("Goodbye");
             base.DeInit();
         }
 
         protected override void OnPageLoad()
         {
-            // Load Options file
-            Logger.Info("Loading IMDb+ options from file");
-            XmlReader xmlReader = new XmlReader();
-            if (!xmlReader.Load(@"C:\Options IMDb+ Scraper.xml"))
-            {
-                Logger.Error("Error opening IMDb+ Options file, will restore defaults.");
-            }
-
             GUIControl.ClearControl(GetID, Facade.GetID);
-
+            
             int itemId = 0;
             string listIndentation = "   ";
-            UpdateListItem(itemId++, Translation.OriginalTitle, (xmlReader.GetOptionValueAsBool("global_options_original_title", false)) ? Translation.BoolOn : Translation.BoolOff, "folder");
-            UpdateListItem(itemId++, Translation.AddForeignTitle, (xmlReader.GetOptionValueAsBool("global_options_foreign_title", false)) ? Translation.BoolOn : Translation.BoolOff, "folder");
-            UpdateListItem(itemId++, listIndentation + Translation.ForeignTitleFirst, (xmlReader.GetOptionValueAsBool("global_options_foreign_first", false)) ? Translation.BoolOn : Translation.BoolOff, string.Empty);
-            UpdateListItem(itemId++, Translation.SpecialEditions, (xmlReader.GetOptionValueAsBool("global_options_special_edition", true)) ? Translation.BoolOn : Translation.BoolOff, "folder");
-            UpdateListItem(itemId++, Translation.RenameTitles, (xmlReader.GetOptionValueAsBool("global_options_rename_titles", true)) ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, Translation.OriginalTitle, PluginSettings.OriginalTitle ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, Translation.AddForeignTitle, PluginSettings.ForeignTitle ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, listIndentation + Translation.ForeignTitleFirst, PluginSettings.ForeignFirst ? Translation.BoolOn : Translation.BoolOff, string.Empty);
+            UpdateListItem(itemId++, Translation.SpecialEditions, PluginSettings.SpecialEdition ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, Translation.RenameTitles, PluginSettings.RenameTitles ? Translation.BoolOn : Translation.BoolOff, "folder");
 
-            UpdateListItem(itemId++, Translation.SingleScore, (xmlReader.GetOptionValueAsBool("global_options_single_score", false)) ? Translation.BoolOn : Translation.BoolOff, "folder");
-            UpdateListItem(itemId++, listIndentation + Translation.IMDbScore, (xmlReader.GetOptionValueAsBool("global_options_imdb_score", false)) ? Translation.BoolOn : Translation.BoolOff, string.Empty);
-            UpdateListItem(itemId++, listIndentation + Translation.IMDbMetaScore, (xmlReader.GetOptionValueAsBool("global_options_imdb_metascore", false)) ? Translation.BoolOn : Translation.BoolOff, string.Empty);
-            UpdateListItem(itemId++, listIndentation + Translation.RottenMeter, (xmlReader.GetOptionValueAsBool("global_options_rotten_meter", false)) ? Translation.BoolOn : Translation.BoolOff, string.Empty);
-            UpdateListItem(itemId++, listIndentation + Translation.RottenAverage, (xmlReader.GetOptionValueAsBool("global_options_rotten_average", false)) ? Translation.BoolOn : Translation.BoolOff, string.Empty);
-            UpdateListItem(itemId++, listIndentation + Translation.RottenTopCritics, (xmlReader.GetOptionValueAsBool("global_options_rotten_top_critics", false)) ? Translation.BoolOn : Translation.BoolOff, string.Empty);
+            UpdateListItem(itemId++, Translation.SingleScore, PluginSettings.SingleScore ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, listIndentation + Translation.IMDbScore, PluginSettings.ImdbScore ? Translation.BoolOn : Translation.BoolOff, string.Empty);
+            UpdateListItem(itemId++, listIndentation + Translation.IMDbMetaScore, PluginSettings.ImdbMetaScore ? Translation.BoolOn : Translation.BoolOff, string.Empty);
+            UpdateListItem(itemId++, listIndentation + Translation.RottenMeter, PluginSettings.RottenMeter ? Translation.BoolOn : Translation.BoolOff, string.Empty);
+            UpdateListItem(itemId++, listIndentation + Translation.RottenAverage, PluginSettings.RottenAverage ? Translation.BoolOn : Translation.BoolOff, string.Empty);
+            UpdateListItem(itemId++, listIndentation + Translation.RottenTopCritics, PluginSettings.RottenTopCritics ? Translation.BoolOn : Translation.BoolOff, string.Empty);
 
-            UpdateListItem(itemId++, Translation.MinImdbVotes, (xmlReader.GetOptionValueAsBool("global_options_min_imdb_votes", false)) ? Translation.BoolOn : Translation.BoolOff, "folder");
-            UpdateListItem(itemId++, Translation.LongSummary, (xmlReader.GetOptionValueAsBool("global_options_long_summary", false)) ? Translation.BoolOn : Translation.BoolOff, "folder");
-            UpdateListItem(itemId++, Translation.UkRating, (xmlReader.GetOptionValueAsBool("global_options_uk_rating", false)) ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, Translation.MinImdbVotes, PluginSettings.MinImdbVotes ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, Translation.LongSummary, PluginSettings.LongSummary ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, Translation.UkRating, PluginSettings.UkRating ? Translation.BoolOn : Translation.BoolOff, "folder");
 
-            UpdateListItem(itemId++, Translation.OneWriterDirector, (xmlReader.GetOptionValueAsBool("global_options_one_writer_director", false)) ? Translation.BoolOn : Translation.BoolOff, "folder");
-            UpdateListItem(itemId++, Translation.SecondaryDetails, GetCountryString(Convert.ToInt32(xmlReader.GetOptionValueAsString("global_options_secondary_details", "01"))), "folder");
-            UpdateListItem(itemId++, listIndentation + Translation.SecondarySummary, (xmlReader.GetOptionValueAsBool("global_options_secondary_summary", false)) ? Translation.BoolOn : Translation.BoolOff, string.Empty);
+            UpdateListItem(itemId++, Translation.OneWriterDirector, PluginSettings.OneWriterDirector ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, Translation.SecondaryDetails, GetCountryString(Convert.ToInt32(PluginSettings.SecondaryDetails)), "folder");
+            UpdateListItem(itemId++, listIndentation + Translation.SecondarySummary, PluginSettings.SecondarySummary ? Translation.BoolOn : Translation.BoolOff, string.Empty);
 
-            UpdateListItem(itemId++, Translation.RefreshAllFields, (xmlReader.GetOptionValueAsBool("global_options_refresh_all_fields", false)) ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, Translation.RefreshAllFields, PluginSettings.RefreshAllFields ? Translation.BoolOn : Translation.BoolOff, "folder");
 
-            UpdateListItem(itemId++, Translation.CountryFilter, xmlReader.GetOptionValueAsString("global_options_country_filter", "us|ca|gb|ie|au|nz"), "folder");
-            UpdateListItem(itemId++, Translation.LanguageFilter, xmlReader.GetOptionValueAsString("global_options_language_filter", "en"), "folder");
+            UpdateListItem(itemId++, Translation.CountryFilter, PluginSettings.CountryFilter, "folder");
+            UpdateListItem(itemId++, Translation.LanguageFilter, PluginSettings.LanguageFilter, "folder");            
 
             // Set Facade Layout
             GUIControl.FocusControl(GetID, Facade.GetID);
@@ -229,79 +229,54 @@ namespace IMDb
 
         protected override void OnPageDestroy(int new_windowId)
         {
-            // save settings
-            Logger.Info("Saving IMDb+ options to file");
-
-            XmlWriter xmlWriter = new XmlWriter();
-            string file = @"C:\Options IMDb+ Scraper.xml";
-            if (!xmlWriter.Load(file))
-            {
-                Logger.Error("Error opening IMDb+ Options file, re-creating...");
-                if (File.Exists(file))
-                {
-                    try
-                    {
-                        File.Delete(file);
-                    }
-                    catch (Exception e)
-                    {
-                        Logger.Error("Error deleting file: '{0}'", file);
-                        Logger.Error("Exception: {0}", e.Message);
-                        return;
-                    }
-                }
-            
-                // create it
-                xmlWriter.CreateXmlConfigFile(file);
-            }
-
+            // read settings
             foreach (GUIListItem item in Facade.ListLayout.ListItems)
             {
                 if (item.Label.Trim() == Translation.OriginalTitle)
-                    xmlWriter.SetOptionsEntry("global_options_original_title", "01", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                    PluginSettings.OriginalTitle = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.AddForeignTitle)
-                    xmlWriter.SetOptionsEntry("global_options_foreign_title", "02", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                    PluginSettings.ForeignTitle = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.ForeignTitleFirst)
-                    xmlWriter.SetOptionsEntry("global_options_foreign_first", "03", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                    PluginSettings.ForeignFirst = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.UkRating)
-                    xmlWriter.SetOptionsEntry("global_options_uk_rating", "04", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                    PluginSettings.UkRating = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.IMDbScore)
-                    xmlWriter.SetOptionsEntry("global_options_imdb_score", "05", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                    PluginSettings.ImdbScore = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.IMDbMetaScore)
-                    xmlWriter.SetOptionsEntry("global_options_imdb_metascore", "06", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                    PluginSettings.ImdbMetaScore = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.LongSummary)
-                    xmlWriter.SetOptionsEntry("global_options_long_summary", "07", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                    PluginSettings.LongSummary = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.RottenMeter)
-                    xmlWriter.SetOptionsEntry("global_options_rotten_meter", "08", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                    PluginSettings.RottenMeter = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.RottenAverage)
-                    xmlWriter.SetOptionsEntry("global_options_rotten_average", "09", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                    PluginSettings.RottenAverage = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.RottenTopCritics)
-                    xmlWriter.SetOptionsEntry("global_options_rotten_top_critics", "10", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                    PluginSettings.RottenTopCritics = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.SpecialEditions)
-                    xmlWriter.SetOptionsEntry("global_options_special_edition", "11", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                    PluginSettings.SpecialEdition = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.RenameTitles)
-                    xmlWriter.SetOptionsEntry("global_options_rename_titles", "12", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                    PluginSettings.RenameTitles = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.SingleScore)
-                    xmlWriter.SetOptionsEntry("global_options_single_score", "13", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                    PluginSettings.SingleScore = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.MinImdbVotes)
-                    xmlWriter.SetOptionsEntry("global_options_min_imdb_votes", "14", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                    PluginSettings.MinImdbVotes = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.RefreshAllFields)
-                    xmlWriter.SetOptionsEntry("global_options_refresh_all_fields", "15", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                    PluginSettings.RefreshAllFields = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.OneWriterDirector)
-                    xmlWriter.SetOptionsEntry("global_options_one_writer_director", "16", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                    PluginSettings.OneWriterDirector = (item.Label2 == Translation.BoolOn);
 
                 if (item.Label.Trim() == Translation.SecondarySummary)
-                    xmlWriter.SetOptionsEntry("global_options_secondary_summary", "96", (item.Label2 == Translation.BoolOn) ? "true" : "false");
+                    PluginSettings.SecondarySummary = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.SecondaryDetails)
-                    xmlWriter.SetOptionsEntry("global_options_secondary_details", "97", GetCountryIntAsString(item.Label2));
+                    PluginSettings.SecondaryDetails = GetCountryIntAsString(item.Label2);
                 if (item.Label.Trim() == Translation.CountryFilter)
-                    xmlWriter.SetOptionsEntry("global_options_country_filter", "98", item.Label2);
+                    PluginSettings.CountryFilter = item.Label2;
                 if (item.Label.Trim() == Translation.LanguageFilter)
-                    xmlWriter.SetOptionsEntry("global_options_language_filter", "99", item.Label2);
+                    PluginSettings.LanguageFilter = item.Label2;
             }
-            
-            // save file
-            xmlWriter.Save(file);
+
+            // save settings
+            PluginSettings.SaveSettings();
 
             base.OnPageDestroy(new_windowId);
         }
@@ -505,7 +480,7 @@ namespace IMDb
             GUIUtils.SetProperty("#IMDb.Scraper.Version", ImdbPlusSource.Provider.Version, true);
             GUIUtils.SetProperty("#IMDb.Scraper.Description", ImdbPlusSource.Provider.Description, true);
             GUIUtils.SetProperty("#IMDb.Scraper.Author", ImdbPlusSource.Provider.Author, true);
-            GUIUtils.SetProperty("#IMDb.Scraper.Published", ImdbPlusSource.SelectedScript.Provider.Published.ToString(), true);
+            GUIUtils.SetProperty("#IMDb.Scraper.Published", ImdbPlusSource.SelectedScript.Provider.Published.Value.ToShortDateString(), true);
             GUIUtils.SetProperty("#IMDb.Scraper.DetailsPriority", ImdbPlusSource.DetailsPriority.ToString(), true);
             GUIUtils.SetProperty("#IMDb.Scraper.CoverPriority", ImdbPlusSource.CoverPriority.ToString(), true);
         }
@@ -535,6 +510,9 @@ namespace IMDb
                     // remove temp download file
                     try { File.Delete(localFile); }
                     catch { }
+
+                    PluginSettings.SyncLastDateTime = DateTime.Now.ToString();
+                    GUIUtils.SetProperty("#IMDb.Scraper.LastUpdated", PluginSettings.SyncLastDateTime);
                 }
             })
             {
@@ -646,8 +624,24 @@ namespace IMDb
             }
 
             // now set highest priority to correct source
-            source.SetPriority(DataType.DETAILS, 0);            
+            source.SetPriority(DataType.DETAILS, 0);
             source.Commit();
+        }
+
+        private int GetSyncStartTime()
+        {
+            Logger.Info("Last script update time: {0}", PluginSettings.SyncLastDateTime);
+            GUIUtils.SetProperty("#IMDb.Scraper.LastUpdated", PluginSettings.SyncLastDateTime);
+
+            DateTime lastUpdate = DateTime.MinValue;
+            DateTime.TryParse(PluginSettings.SyncLastDateTime, out lastUpdate);
+            
+            bool startNow = PluginSettings.SyncOnStartup || DateTime.Now > lastUpdate.Add(new TimeSpan(PluginSettings.SyncInterval, 0, 0));
+
+            // start in short period (3secs)
+            if (startNow) return 3000;
+
+            return Convert.ToInt32(lastUpdate.Add(new TimeSpan(PluginSettings.SyncInterval, 0, 0)).Subtract(DateTime.Now).TotalMilliseconds);
         }
     }
 }
