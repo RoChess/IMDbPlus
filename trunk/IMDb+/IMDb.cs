@@ -30,13 +30,15 @@ namespace IMDb
 
         int PluginID = 31415;
         DBSourceInfo ImdbPlusSource;
-        Timer syncLibraryTimer;      
+        Timer syncLibraryTimer;
+        string ReplacementsFile = Path.Combine(Config.GetFolder(Config.Dir.Config), @"IMDb+\Rename dBase IMDb+ Scraper.xml");
 
         #endregion
 
         #region Constants
 
-        const string UpdateFile = @"http://imdbplus.googlecode.com/svn/trunk/Scraper/IMDb+.Scraper.SVN.xml";
+        const string ScraperUpdateFile = @"http://imdbplus.googlecode.com/svn/trunk/Scraper/IMDb+.Scraper.SVN.xml";
+        const string ReplacementsUpdateFile = @"http://imdbplus.googlecode.com/svn/trunk/Rename%20dBase%20IMDb+%20Scraper.xml";
         const int scriptId = 314159265;
         #endregion
 
@@ -495,7 +497,7 @@ namespace IMDb
                 Logger.Info("Checking for scraper update");
 
                 string localFile = GetTempFilename();
-                if (DownloadFile(UpdateFile, localFile))
+                if (DownloadFile(ScraperUpdateFile, localFile))
                 {
                     // try to install latest version
                     // will return false if already latest version
@@ -518,6 +520,23 @@ namespace IMDb
                     PluginSettings.SyncLastDateTime = DateTime.Now.ToString();
                     GUIUtils.SetProperty("#IMDb.Scraper.LastUpdated", PluginSettings.SyncLastDateTime);
                 }
+
+                // Update Replacements Database
+                localFile = GetTempFilename();
+                if (DownloadFile(ReplacementsUpdateFile, localFile))
+                {
+                    try
+                    { 
+                        // replace existing file
+                        Logger.Info("Updating Replacements Database");
+                        File.Copy(localFile, ReplacementsFile, true);
+   
+                        // remove temp download file
+                        File.Delete(localFile);
+                    }
+                    catch { }
+                }
+
             })
             {
                 IsBackground = true,
