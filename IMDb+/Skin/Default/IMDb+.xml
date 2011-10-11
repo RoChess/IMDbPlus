@@ -3,6 +3,7 @@
 	<id>31415</id>
 	<defaultcontrol>50</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
+	<define>#itemtext:#selectedindex / #itemcount #(L(496))</define>
 	<controls>
 		<import>common.time.xml</import>
 		<control>
@@ -11,8 +12,7 @@
 			<id>1</id>
 			<width>1280</width>
 			<height>1024</height>
-			<colordiffuse>60ffffff</colordiffuse>
-			<texture>Background_moving.png</texture>
+			<texture>Background.png</texture>
 		</control>
 		<control>
 			<description>Text Header</description>
@@ -71,12 +71,24 @@
 					<font2>font11</font2>
 					<font3>font10</font3>
 					<keepaspectratio>yes</keepaspectratio>
-					<spinPosX>650</spinPosX>
-					<spinPosY>250</spinPosY>
+					<spinPosX>1650</spinPosX>
+					<spinPosY>1250</spinPosY>
 					<spinCanFocus>no</spinCanFocus>
+					<spinColor>00ffffff</spinColor>
 					<suffix>|</suffix>
 				</control>
 			</control>
+		</control>
+		<control>
+			<description>Settings Counter</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>690</posX>
+			<posY>250</posY>
+			<label>#itemtext</label>
+			<font>font10</font>
+			<align>right</align>
+			<textcolor>ff888888</textcolor>
 		</control>
 		<control>
 			<description>List Option Description</description>
