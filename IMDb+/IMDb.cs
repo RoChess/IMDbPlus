@@ -506,6 +506,8 @@ namespace IMDb
             GUIUtils.SetProperty("#IMDb.Scraper.Description", ImdbPlusSource.Provider.Description, true);
             GUIUtils.SetProperty("#IMDb.Scraper.Author", ImdbPlusSource.Provider.Author, true);
             GUIUtils.SetProperty("#IMDb.Scraper.Published", ImdbPlusSource.SelectedScript.Provider.Published.ToString(), true);
+            GUIUtils.SetProperty("#IMDb.Scraper.DetailsPriority", ImdbPlusSource.DetailsPriority.ToString(), true);
+            GUIUtils.SetProperty("#IMDb.Scraper.CoverPriority", ImdbPlusSource.CoverPriority.ToString(), true);
         }
 
         private void CheckForUpdate()
@@ -617,7 +619,7 @@ namespace IMDb
             else if (addResult == DataProviderManager.AddSourceResult.SUCCESS)
             {
                 // Scraper script has been added successfully
-                Logger.Info("Scraper update successful, latest version already installed");
+                Logger.Info("Scraper updated to latest version successfully.");
                 return true;
             }
             else
@@ -636,6 +638,7 @@ namespace IMDb
             if (source == null) return;
             Logger.Info("Setting {0} script as highest priority", source.Provider.Name);
             source.DetailsPriority = 0;
+            source.Commit();
         }
     }
 }
