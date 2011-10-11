@@ -15,6 +15,9 @@ namespace IMDb
         {
             try
             {
+                if (!Directory.Exists(Path.GetDirectoryName(file)))
+                  Directory.CreateDirectory(Path.GetDirectoryName(file));
+
                 XmlTextWriter textWriter = new XmlTextWriter(file, Encoding.UTF8);
 
                 textWriter.WriteStartDocument();
