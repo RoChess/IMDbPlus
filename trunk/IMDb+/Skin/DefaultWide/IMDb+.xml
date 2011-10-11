@@ -3,6 +3,7 @@
 	<id>31415</id>
 	<defaultcontrol>50</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
+	<define>#itemtext:#selectedindex / #itemcount #(L(496))</define>
 	<controls>
 		<import>common.time.xml</import>
 		<control>
@@ -71,12 +72,24 @@
 					<font2>font11</font2>
 					<font3>font10</font3>
 					<keepaspectratio>yes</keepaspectratio>
-					<spinPosX>1155</spinPosX>
-					<spinPosY>325</spinPosY>
+					<spinPosX>11155</spinPosX>
+					<spinPosY>1325</spinPosY>
 					<spinCanFocus>no</spinCanFocus>
+					<spinColor>00ffffff</spinColor>
 					<suffix>|</suffix>
 				</control>
 			</control>
+		</control>
+		<control>
+			<description>Settings Counter</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>1220</posX>
+			<posY>325</posY>
+			<label>#itemtext</label>
+			<font>font10</font>
+			<align>right</align>
+			<textcolor>ff888888</textcolor>
 		</control>
 		<control>
 			<description>List Option Description</description>
