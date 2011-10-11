@@ -81,14 +81,11 @@ namespace IMDb
         /// </summary>
         public static void LoadSettings()
         {
-            bool createOptionsFile = false;
-
             Logger.Info("Loading IMDb+ options from file.");
             XmlReader xmlReader = new XmlReader();
             if (!xmlReader.Load(cOptionsFile))
             {
-                Logger.Error("Error opening IMDb+ Options file, will restore defaults.");
-                createOptionsFile = true;
+                Logger.Error("Error opening IMDb+ Options file, will restore defaults.");                
             }
 
             OriginalTitle = xmlReader.GetOptionValueAsBool(cOriginalTitle, false);
@@ -115,8 +112,8 @@ namespace IMDb
             SyncOnStartup = xmlReader.GetOptionValueAsBool(cSyncOnStartup, true);
             SyncLastDateTime = xmlReader.GetOptionValueAsString(cSyncLastDateTime, DateTime.MinValue.ToString());
 
-            if (createOptionsFile) SaveSettings();        
-
+            // save settings, might be some new settings added
+            SaveSettings();
         }
 
         /// <summary>
