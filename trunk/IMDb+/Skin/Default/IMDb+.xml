@@ -11,7 +11,8 @@
 			<id>1</id>
 			<width>1280</width>
 			<height>1024</height>
-			<texture>background.png</texture>
+			<colordiffuse>60ffffff</colordiffuse>
+			<texture>Background_moving.png</texture>
 		</control>
 		<control>
 			<description>Text Header</description>
