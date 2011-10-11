@@ -147,7 +147,7 @@ namespace IMDb
         /// </summary>
         public override bool Init()
         {
-            Logger.Info("Starting IMDb+ v{0}", System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());           
+            Logger.Info("Starting IMDb+ v{0}", PluginSettings.Version);           
 
             // Initialize translations
             Translation.Init();
@@ -168,7 +168,7 @@ namespace IMDb
             // Load main skin window
             // this is a launching pad to all other windows
             string xmlSkin = GUIGraphicsContext.Skin + @"\IMDb+.xml";
-            Logger.Info("Loading main skin window: " + xmlSkin);
+            Logger.Info("Plugin initialization complete.");
             return Load(xmlSkin);
         }
 
