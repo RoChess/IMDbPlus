@@ -637,7 +637,16 @@ namespace IMDb
 
             if (source == null) return;
             Logger.Info("Setting {0} script as highest priority", source.Provider.Name);
-            source.SetPriority(DataType.DETAILS, 0);
+            
+            // shift all enabled 'movie detail' sources down by one
+            foreach (var enabledSource in DBSourceInfo.GetAll().Where(s => s.DetailsPriority > -1))
+            {
+                enabledSource.DetailsPriority++;
+                enabledSource.Commit();
+            }
+
+            // now set highest priority to correct source
+            source.SetPriority(DataType.DETAILS, 0);            
             source.Commit();
         }
     }
