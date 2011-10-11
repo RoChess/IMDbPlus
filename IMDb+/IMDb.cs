@@ -37,7 +37,7 @@ namespace IMDb
         #region Constants
 
         const string UpdateFile = @"http://imdbplus.googlecode.com/svn/trunk/Scraper/IMDb+.Scraper.SVN.xml";
-
+        const int scriptId = 314159265;
         #endregion
 
         #region ISetupFrom
@@ -153,7 +153,7 @@ namespace IMDb
             Translation.Init();
 
             // Get IMDb+ Data Provider
-            ImdbPlusSource = DBSourceInfo.GetAll().Find(s => s.ToString() == "IMDb+");
+            ImdbPlusSource = DBSourceInfo.GetFromScriptID(scriptId);
             SetIMDbProperties();
 
             // Check for Updates
@@ -526,7 +526,7 @@ namespace IMDb
                         // set highest priority if not already installed
                         if (ImdbPlusSource == null)
                         {
-                            ImdbPlusSource = DBSourceInfo.GetAll().Find(s => s.ToString() == "IMDb+");
+                            ImdbPlusSource = DBSourceInfo.GetFromScriptID(scriptId);
                             ScraperScriptPositioning(0, ref ImdbPlusSource);
                         }
                         SetIMDbProperties();
@@ -637,7 +637,7 @@ namespace IMDb
 
             if (source == null) return;
             Logger.Info("Setting {0} script as highest priority", source.Provider.Name);
-            source.DetailsPriority = 0;
+            source.SetPriority(DataType.DETAILS, 0);
             source.Commit();
         }
     }
