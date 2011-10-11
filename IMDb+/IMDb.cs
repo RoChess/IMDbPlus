@@ -501,25 +501,34 @@ namespace IMDb
                 return;
             }
 
-            GUIUtils.SetProperty("#IMDb.Scraper.IsInstalled", "true");
-            GUIUtils.SetProperty("#IMDb.Scraper.Version", ImdbPlusSource.Provider.Version);
-            GUIUtils.SetProperty("#IMDb.Scraper.Description", ImdbPlusSource.Provider.Description);
-            GUIUtils.SetProperty("#IMDb.Scraper.Author", ImdbPlusSource.Provider.Author);
-            GUIUtils.SetProperty("#IMDb.Scraper.Published", ImdbPlusSource.SelectedScript.Provider.Published.ToString());
+            GUIUtils.SetProperty("#IMDb.Scraper.IsInstalled", "true", true);
+            GUIUtils.SetProperty("#IMDb.Scraper.Version", ImdbPlusSource.Provider.Version, true);
+            GUIUtils.SetProperty("#IMDb.Scraper.Description", ImdbPlusSource.Provider.Description, true);
+            GUIUtils.SetProperty("#IMDb.Scraper.Author", ImdbPlusSource.Provider.Author, true);
+            GUIUtils.SetProperty("#IMDb.Scraper.Published", ImdbPlusSource.SelectedScript.Provider.Published.ToString(), true);
         }
 
         private void CheckForUpdate()
         {
             Thread updateThread = new Thread(delegate(object obj)
             {
+                Logger.Info("Checking for scraper update");
+
                 string localFile = GetTempFilename();
                 if (DownloadFile(UpdateFile, localFile))
                 {
-                    // if not installed, install and set as highest priority
-                    
-
-                    // compare version, if newer update
-                    
+                    // try to install latest version
+                    // will return false if already latest version
+                    if (ScraperScriptInstallation(localFile))
+                    {
+                        // set highest priority if not already installed
+                        if (ImdbPlusSource == null)
+                        {
+                            ImdbPlusSource = DBSourceInfo.GetAll().Find(s => s.ToString() == "IMDb+");
+                            ScraperScriptPositioning(0, ref ImdbPlusSource);
+                        }
+                        SetIMDbProperties();
+                    }
 
                     // remove temp download file
                     try { File.Delete(localFile); }
@@ -550,7 +559,7 @@ namespace IMDb
             }
             catch (Exception)
             {
-                Logger.Info("Download failed from '{0}' to '{1}'", url, localFile);
+                Logger.Error("Download failed from '{0}' to '{1}'", url, localFile);
                 try { if (File.Exists(localFile)) File.Delete(localFile); }
                 catch { }
                 return false;
@@ -590,7 +599,7 @@ namespace IMDb
 
             if (addResult == DataProviderManager.AddSourceResult.FAILED_VERSION)
             {
-                Logger.Error("Load Script Failed: A script with this Version and ID is already loaded.");
+                Logger.Info("Skipping update, latest version already installed");
             }
             else if (addResult == DataProviderManager.AddSourceResult.FAILED_DATE)
             {
@@ -602,12 +611,13 @@ namespace IMDb
             }
             else if (addResult == DataProviderManager.AddSourceResult.SUCCESS_REPLACED)
             {
-                Logger.Error("Load Script Warning: Scraper debug-mode enabled, so existing script was replaced.");
+                Logger.Warning("Load Script Warning: Scraper debug-mode enabled, so existing script was replaced.");
                 return true;
             }
             else if (addResult == DataProviderManager.AddSourceResult.SUCCESS)
             {
                 // Scraper script has been added successfully
+                Logger.Info("Scraper update successful, latest version already installed");
                 return true;
             }
             else
@@ -618,10 +628,14 @@ namespace IMDb
             return false;
         }
 
-        private void ScraperScriptPositioning(int position, string scraperID)
+        private void ScraperScriptPositioning(int position, ref DBSourceInfo source)
         {
             // Re-Position the scraper-script
             // position = 0 being top of the list
+
+            if (source == null) return;
+            Logger.Info("Setting {0} script as highest priority", source.Provider.Name);
+            source.DetailsPriority = 0;
         }
     }
 }
