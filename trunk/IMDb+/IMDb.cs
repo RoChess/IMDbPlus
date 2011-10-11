@@ -148,7 +148,7 @@ namespace IMDb
         public override bool Init()
         {
             Logger.Info("Starting IMDb+ v{0}", PluginSettings.Version);           
-
+            
             // Initialize translations
             Translation.Init();
 
@@ -158,6 +158,9 @@ namespace IMDb
             // Get IMDb+ Data Provider
             ImdbPlusSource = DBSourceInfo.GetFromScriptID(scriptId);
             SetIMDbProperties();
+
+            // Update Script Paths
+            UpdateScriptPaths();
 
             // start update timer, passing along configured parameters
             // add small 3sec delay if syncing on startup.
@@ -504,6 +507,7 @@ namespace IMDb
                             ImdbPlusSource = DBSourceInfo.GetFromScriptID(scriptId);
                             ScraperScriptPositioning(0, ref ImdbPlusSource);
                         }
+                        UpdateScriptPaths();
                         SetIMDbProperties();
                     }
 
@@ -640,8 +644,38 @@ namespace IMDb
 
             // start in short period (3secs)
             if (startNow) return 3000;
-
+            
             return Convert.ToInt32(lastUpdate.Add(new TimeSpan(PluginSettings.SyncInterval, 0, 0)).Subtract(DateTime.Now).TotalMilliseconds);
         }
+
+        /// <summary>
+        /// Updates scraper script with correct installation paths after update
+        /// </summary>
+        private void UpdateScriptPaths()
+        {
+            // correct path to rename db and options file
+            // to point to install paths
+            if (ImdbPlusSource == null) return;
+
+            Logger.Info("Updating paths in scraper script");
+
+            string oldValue = @"C:\Rename dBase IMDb+ Scraper.xml";
+            string newValue = Path.Combine(Config.GetFolder(Config.Dir.Config), @"IMDb+\Rename dBase IMDb+ Scraper.xml");
+            ImdbPlusSource.SelectedScript.Contents = ImdbPlusSource.SelectedScript.Contents.Replace(oldValue, newValue);
+
+            oldValue = @"C:\Rename dBase IMDb+ Scraper (Custom).xml";
+            newValue = Path.Combine(Config.GetFolder(Config.Dir.Config), @"IMDb+\Rename dBase IMDb+ Scraper (Custom).xml");
+            ImdbPlusSource.SelectedScript.Contents = ImdbPlusSource.SelectedScript.Contents.Replace(oldValue, newValue);
+
+            oldValue = @"C:\Options IMDb+ Scraper.xml";
+            newValue = Path.Combine(Config.GetFolder(Config.Dir.Config), @"IMDb+\Options IMDb+ Scraper.xml");
+            ImdbPlusSource.SelectedScript.Contents = ImdbPlusSource.SelectedScript.Contents.Replace(oldValue, newValue);
+
+            ImdbPlusSource.SelectedScript.Commit();
+            ImdbPlusSource.Commit();
+
+            Logger.Info("Finished updating paths in scraper script");
+        }
+
     }
 }

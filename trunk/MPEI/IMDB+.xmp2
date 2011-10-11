@@ -74,6 +74,37 @@
           </Items>
         </Files>
       </GroupItem>
+      <GroupItem Name="Configuration">
+        <ParentGroup />
+        <DisplayName>Configuration</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>Configuration</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>NeverOverwrite</UpdateOption>
+              <LocalFileName>..\Rename dBase IMDb+ Scraper (Custom).xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{be4b08e0-0731-4ce6-8727-36a9daf0cfea}-Rename dBase IMDb+ Scraper (Custom).xml</ZipFileName>
+              <DestinationFilename>%Config%\IMDb+\Rename dBase IMDb+ Scraper (Custom).xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\Rename dBase IMDb+ Scraper.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{7e0632b5-5b0b-4513-9507-0377dac85f14}-Rename dBase IMDb+ Scraper.xml</ZipFileName>
+              <DestinationFilename>%Config%\IMDb+\Rename dBase IMDb+ Scraper.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>NeverOverwrite</UpdateOption>
+              <LocalFileName>..\Options IMDb+ Scraper.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{bb14fa6f-216c-4880-a3eb-adb0ef8f47cd}-Options IMDb+ Scraper.xml</ZipFileName>
+              <DestinationFilename>%Config%\IMDb+\Options IMDb+ Scraper.xml</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
     </Items>
   </Groups>
   <Sections>
@@ -144,6 +175,73 @@ Click Next to continue or Cancel to exit Setup.</Value>
               </Params>
               <ExecuteLocation>AfterPanelShow</ExecuteLocation>
             </ActionItem>
+            <ActionItem Name="Script" ActionType="Script" ConditionGroup="Configuration">
+              <Params>
+                <Items>
+                  <SectionParam Name="Script">
+                    <Value>//css_reference "MpeCore.dll";
+
+using MpeCore.Classes;
+using MpeCore;
+using System;
+using System.IO;
+using System.Windows.Forms;
+public class Script
+{
+    public static void Main(PackageClass packageClass, ActionItem actionItem)
+    {
+       // check if we have old configuration files to move to new directory
+       string source = @"C:\Options IMDb+ Scraper.xml";
+       string destination = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\Options IMDb+ Scraper.xml");
+       Upgrade(source, destination);
+ 
+       source = @"C:\Rename dBase IMDb+ Scraper (Custom).xml";
+       destination = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\Rename dBase IMDb+ Scraper (Custom).xml");
+       Upgrade(source, destination);
+
+        return;
+    }
+
+    static void Upgrade(string source, string destination)
+    {
+        try
+        {
+            if (File.Exists(source))
+            {
+                File.Copy(source, destination, true);
+                File.Delete(source);
+            }
+       }
+       catch { }
+   }
+
+}
+
+</Value>
+                    <ValueType>Script</ValueType>
+                    <Description />
+                  </SectionParam>
+                  <SectionParam Name="Uninstall Script">
+                    <Value>//css_reference "MpeCore.dll";
+
+using MpeCore.Classes;
+using MpeCore;
+
+public class Script
+{
+    public static void Main(PackageClass packageClass, UnInstallItem item)
+    {
+        return;
+    }
+}
+</Value>
+                    <ValueType>Script</ValueType>
+                    <Description />
+                  </SectionParam>
+                </Items>
+              </Params>
+              <ExecuteLocation>AfterPanelShow</ExecuteLocation>
+            </ActionItem>
           </Items>
         </Actions>
         <IncludedGroups />
@@ -202,7 +300,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <Revision>27644</Revision>
         </MaxVersion>
         <WarnOnly>false</WarnOnly>
-        <Message>requires MediaPortal version 1.1.6.27644 to 1.1.6.27644.</Message>
+        <Message>Minimum requirements not met! Please upgrade to MediaPortal 1.2 before installing IMDb+ plugin.</Message>
         <Name>MediaPortal</Name>
       </DependencyItem>
     </Items>
@@ -237,12 +335,12 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <Build>0</Build>
       <Revision>25</Revision>
     </Version>
-    <ExtensionDescription />
+    <ExtensionDescription>IMDb+ scraper enables English titles, RottenTomatoes ratings, title grouping and many other features.</ExtensionDescription>
     <VersionDescription />
     <DevelopmentStatus>Beta</DevelopmentStatus>
     <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v0.1.0.25.mpe1</OnlineLocation>
-    <ReleaseDate>2011-10-08T20:37:25.3223687-04:00</ReleaseDate>
-    <Tags />
+    <ReleaseDate>2011-10-09T11:37:25.3223687+11:00</ReleaseDate>
+    <Tags>moving pictures, movies, scraper</Tags>
     <Location>.\Release\imdbplus.plugin.v[Version].mpe1</Location>
     <Params>
       <Items>
@@ -264,12 +362,12 @@ Click Next to continue or Cancel to exit Setup.</Value>
  If have .dll extension used like MP plugin configuration</Description>
         </SectionParam>
         <SectionParam Name="Online Screenshots">
-          <Value />
+          <Value>http://blixy.net/mp/Plugin.IMDb+.jpg;http://blixy.net/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
           <ValueType>String</ValueType>
           <Description>Online stored screenshot urls separated by ; </Description>
         </SectionParam>
         <SectionParam Name="Force to uninstall on update">
-          <Value>yes</Value>
+          <Value>YES</Value>
           <ValueType>Bool</ValueType>
           <Description>Show dialog and force to uninstall previous version when updating an extension. Should only be disabled if you are using an NSIS/MSI installer.</Description>
         </SectionParam>
@@ -320,18 +418,39 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <ZipFileName>Installer{CopyFile}\{1dc1e704-ad04-4bd0-ac68-8b25c476724f}-hover_imdb+.png</ZipFileName>
         <DestinationFilename>%Skin%\DefaultWide\Media\hover_imdb+.png</DestinationFilename>
       </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>NeverOverwrite</UpdateOption>
+        <LocalFileName>..\Rename dBase IMDb+ Scraper (Custom).xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{be4b08e0-0731-4ce6-8727-36a9daf0cfea}-Rename dBase IMDb+ Scraper (Custom).xml</ZipFileName>
+        <DestinationFilename>%Config%\IMDb+\Rename dBase IMDb+ Scraper (Custom).xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\Rename dBase IMDb+ Scraper.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{7e0632b5-5b0b-4513-9507-0377dac85f14}-Rename dBase IMDb+ Scraper.xml</ZipFileName>
+        <DestinationFilename>%Config%\IMDb+\Rename dBase IMDb+ Scraper.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>NeverOverwrite</UpdateOption>
+        <LocalFileName>..\Options IMDb+ Scraper.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{bb14fa6f-216c-4880-a3eb-adb0ef8f47cd}-Options IMDb+ Scraper.xml</ZipFileName>
+        <DestinationFilename>%Config%\IMDb+\Options IMDb+ Scraper.xml</DestinationFilename>
+      </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Resources\sidebar.jpg</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{02354c6c-c6d9-4b18-ba0b-a2a8e5aa10a9}-sidebar.jpg</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{8fc42057-69e1-4af0-b9ca-f40f659b3c43}-sidebar.jpg</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Resources\header.jpg</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{2c4faf8c-5395-4c58-9e06-09c9916722f5}-header.jpg</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{01b48237-5d67-4562-b840-f5a27d39a33b}-header.jpg</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>

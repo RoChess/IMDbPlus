@@ -5,11 +5,14 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using MediaPortal.Profile;
+using MediaPortal.Configuration;
 
 namespace IMDb
 {
     public static class PluginSettings
     {
+        public static string OptionsFile = Path.Combine(Config.GetFolder(Config.Dir.Config), @"IMDb+\Options IMDb+ Scraper.xml");
+
         #region Settings
 
         public static bool OriginalTitle { get; set; }
@@ -39,8 +42,6 @@ namespace IMDb
         #endregion
 
         #region Constants
-
-        private const string cOptionsFile = @"C:\Options IMDb+ Scraper.xml";
 
         private const string cOriginalTitle = "global_options_original_title";
         private const string cForeignTitle = "global_options_foreign_title";
@@ -83,11 +84,11 @@ namespace IMDb
         {
             Logger.Info("Loading IMDb+ options from file.");
             XmlReader xmlReader = new XmlReader();
-            if (!xmlReader.Load(cOptionsFile))
+            if (!xmlReader.Load(OptionsFile))
             {
                 Logger.Error("Error opening IMDb+ Options file, will restore defaults.");                
             }
-
+            
             OriginalTitle = xmlReader.GetOptionValueAsBool(cOriginalTitle, false);
             ForeignTitle = xmlReader.GetOptionValueAsBool(cForeignTitle, false);
             ForeignFirst = xmlReader.GetOptionValueAsBool(cForeignFirst, false);
@@ -124,17 +125,17 @@ namespace IMDb
             Logger.Info("Saving IMDb+ options to file.");
 
             XmlWriter xmlWriter = new XmlWriter();
-            if (!xmlWriter.Load(cOptionsFile))
+            if (!xmlWriter.Load(OptionsFile))
             {
-                if (File.Exists(cOptionsFile))
+                if (File.Exists(OptionsFile))
                 {
                     try
                     {
-                        File.Delete(cOptionsFile);
+                        File.Delete(OptionsFile);
                     }
                     catch (Exception e)
                     {
-                        Logger.Error("Error deleting file: '{0}'", cOptionsFile);
+                        Logger.Error("Error deleting file: '{0}'", OptionsFile);
                         Logger.Error("Exception: {0}", e.Message);
                         return;
                     }
@@ -142,7 +143,7 @@ namespace IMDb
 
                 // create it
                 Logger.Info("Creating new IMDb+ options file.");
-                xmlWriter.CreateXmlConfigFile(cOptionsFile);
+                xmlWriter.CreateXmlConfigFile(OptionsFile);
             }
 
             xmlWriter.SetOptionsEntry(cOriginalTitle, "01", OriginalTitle.ToString());
@@ -172,7 +173,7 @@ namespace IMDb
             xmlWriter.SetOptionsEntry(cSyncLastDateTime, "202", SyncLastDateTime);
 
             // save file
-            xmlWriter.Save(cOptionsFile);
+            xmlWriter.Save(OptionsFile);
         }
     }
 }
