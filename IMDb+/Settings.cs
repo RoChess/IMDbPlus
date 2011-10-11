@@ -144,6 +144,7 @@ namespace IMDb
                 // create it
                 Logger.Info("Creating new IMDb+ options file.");
                 xmlWriter.CreateXmlConfigFile(OptionsFile);
+                xmlWriter.Load(OptionsFile);
             }
 
             xmlWriter.SetOptionsEntry(cOriginalTitle, "01", OriginalTitle.ToString());
