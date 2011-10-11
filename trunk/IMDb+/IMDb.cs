@@ -601,7 +601,7 @@ namespace IMDb
 
             if (addResult == DataProviderManager.AddSourceResult.FAILED_VERSION)
             {
-                Logger.Info("Skipping update, latest version already installed");
+                Logger.Info("Skipping update, latest version already installed.");
             }
             else if (addResult == DataProviderManager.AddSourceResult.FAILED_DATE)
             {
@@ -624,7 +624,7 @@ namespace IMDb
             }
             else
             {
-                Logger.Error("Load Script Warning: Unknown failure");
+                Logger.Error("Load Script Failed: Unknown error.");
             }
             // Scraper installation failed
             return false;
