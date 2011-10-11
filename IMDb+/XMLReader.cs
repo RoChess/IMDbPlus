@@ -51,6 +51,24 @@ namespace IMDb
                 return defaultvalue;
             }
         }
+
+        public int GetOptionValueAsInt(string name, int defaultvalue)
+        {
+            if (Document == null) return defaultvalue;
+
+            XmlNode node = null;
+            node = Document.DocumentElement.SelectSingleNode(string.Format("/imdbplus//set[@name='{0}']", name));
+            if (node == null) return defaultvalue;
+
+            try
+            {
+                return Convert.ToInt32(node.Attributes["value"].Value);
+            }
+            catch
+            {
+                return defaultvalue;
+            }
+        }
         #endregion
 
         public bool Load(string file)
