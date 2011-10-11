@@ -14,6 +14,7 @@ namespace IMDb
         private static string logFilename = Config.GetFile(Config.Dir.Log, "IMDb+.log");
         private static string backupFilename = Config.GetFile(Config.Dir.Log, "IMDb+.bak");
         private static int logLevel;
+        private static object lockObject = new object();
         
         static Logger()
         {
@@ -99,9 +100,12 @@ namespace IMDb
         {
             try
             {
-                StreamWriter sw = File.AppendText(logFilename);
-                sw.WriteLine(log);
-                sw.Close();
+                lock (lockObject)
+                {
+                    StreamWriter sw = File.AppendText(logFilename);
+                    sw.WriteLine(log);
+                    sw.Close();
+                }
             }
             catch
             {
