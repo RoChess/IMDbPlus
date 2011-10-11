@@ -185,7 +185,11 @@ Current support includes: French, German, Italian, Icelandic, Portugese, Spanish
 	<string Field="SecondaryLanguage07">Swedish</string>
 	<string Field="SecondaryLanguage08">Icelandic</string>
 	<string Field="SecondarySummary">Fallback to English summary if foreign one is missing";
-	<string Field="SecondarySummaryDescription">Off = Show nothing if foreign summary is missing" + "\n" + "On = Use English summary as a fallback when no foreign one exists" + "\n" + "" + "\n" + "Foreign movie websites are not always as extensive as imdb.com or have the same information available. This mainly affects the summary, so to prevent your collection from being empty, enable this option to then fallback on the English summary (if available). Ideally you would register at the foreign movie website and submit the missing information, but until then you can use English.";
+	<string Field="SecondarySummaryDescription">Off = Show nothing if foreign summary is missing
+On = Use English summary as a fallback when no foreign one exists
+
+Foreign movie websites are not always as extensive as imdb.com or have the same information available. This mainly affects the summary, so to prevent your collection from being empty, enable this option to then fallback on the English summary (if available). Ideally you would register at the foreign movie website and submit the missing information, but until then you can use English.
+</string>
 	<string Field="SingleScore">Single score rating system</string>
 	<string Field="SingleScoreDescription">Off = Use average rating system
 On = Single rating value is used
