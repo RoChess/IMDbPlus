@@ -195,6 +195,10 @@ public class Script
        string destination = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\Options IMDb+ Scraper.xml");
        Upgrade(source, destination);
  
+       source = @"C:\Rename dBase IMDb+ Scraper.xml";
+       destination = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\Rename dBase IMDb+ Scraper.xml");
+       Upgrade(source, destination);
+
        source = @"C:\Rename dBase IMDb+ Scraper (Custom).xml";
        destination = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\Rename dBase IMDb+ Scraper (Custom).xml");
        Upgrade(source, destination);
@@ -339,7 +343,7 @@ public class Script
     <VersionDescription />
     <DevelopmentStatus>Beta</DevelopmentStatus>
     <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v0.1.0.25.mpe1</OnlineLocation>
-    <ReleaseDate>2011-10-09T11:37:25.3223687+11:00</ReleaseDate>
+    <ReleaseDate>2011-10-08T20:37:25.3223687-04:00</ReleaseDate>
     <Tags>moving pictures, movies, scraper</Tags>
     <Location>.\Release\imdbplus.plugin.v[Version].mpe1</Location>
     <Params>
