@@ -21,12 +21,12 @@ namespace IMDb
         public static bool SpecialEdition { get; set; }
         public static bool RenameTitles { get; set; }
         public static bool SingleScore { get; set; }
-        public static bool ImdbScore { get; set; }
-        public static bool ImdbMetaScore { get; set; }
+        public static bool IMDbScore { get; set; }
+        public static bool IMDbMetaScore { get; set; }
         public static bool RottenMeter { get; set; }
         public static bool RottenAverage { get; set; }
         public static bool RottenTopCritics { get; set; }
-        public static bool MinImdbVotes { get; set; }
+        public static bool MinIMDbVotes { get; set; }
         public static bool LongSummary { get; set; }
         public static bool UkRating { get; set; }
         public static bool OneWriterDirector { get; set; }
@@ -49,12 +49,12 @@ namespace IMDb
         private const string cSpecialEdition = "global_options_special_edition";
         private const string cRenameTitles = "global_options_rename_titles";
         private const string cSingleScore = "global_options_single_score";
-        private const string cImdbScore = "global_options_imdb_score";
-        private const string cImdbMetaScore = "global_options_imdb_metascore";
+        private const string cIMDbScore = "global_options_imdb_score";
+        private const string cIMDbMetaScore = "global_options_imdb_metascore";
         private const string cRottenMeter = "global_options_rotten_meter";
         private const string cRottenAverage = "global_options_rotten_average";
         private const string cRottenTopCritics = "global_options_rotten_top_critics";
-        private const string cMinImdbVotes = "global_options_min_imdb_votes";
+        private const string cMinIMDbVotes = "global_options_min_imdb_votes";
         private const string cLongSummary = "global_options_long_summary";
         private const string cUkRating = "global_options_uk_rating";
         private const string cOneWriterDirector = "global_options_one_writer_director";
@@ -63,9 +63,9 @@ namespace IMDb
         private const string cRefreshAllFields = "global_options_refresh_all_fields";
         private const string cCountryFilter = "global_options_country_filter";
         private const string cLanguageFilter = "global_options_language_filter";
-        private const string cSyncInterval = "global_options_sync_interval";
-        private const string cSyncOnStartup = "global_options_sync_on_startup";
-        private const string cSyncLastDateTime = "global_options_sync_last_datetime";
+        private const string cSyncInterval = "plugin_options_sync_interval";
+        private const string cSyncOnStartup = "plugin_options_sync_on_startup";
+        private const string cSyncLastDateTime = "plugin_options_sync_last_datetime";
         
         #endregion
 
@@ -95,12 +95,12 @@ namespace IMDb
             SpecialEdition = xmlReader.GetOptionValueAsBool(cSpecialEdition, true);
             RenameTitles = xmlReader.GetOptionValueAsBool(cRenameTitles, true);
             SingleScore = xmlReader.GetOptionValueAsBool(cSingleScore, false);
-            ImdbScore = xmlReader.GetOptionValueAsBool(cImdbScore, false);
-            ImdbMetaScore = xmlReader.GetOptionValueAsBool(cImdbMetaScore, false);
+            IMDbScore = xmlReader.GetOptionValueAsBool(cIMDbScore, false);
+            IMDbMetaScore = xmlReader.GetOptionValueAsBool(cIMDbMetaScore, false);
             RottenMeter = xmlReader.GetOptionValueAsBool(cRottenMeter, false);
             RottenAverage = xmlReader.GetOptionValueAsBool(cRottenAverage, false);
             RottenTopCritics = xmlReader.GetOptionValueAsBool(cRottenTopCritics, false);
-            MinImdbVotes = xmlReader.GetOptionValueAsBool(cMinImdbVotes, false);
+            MinIMDbVotes = xmlReader.GetOptionValueAsBool(cMinIMDbVotes, false);
             LongSummary = xmlReader.GetOptionValueAsBool(cLongSummary, false);
             UkRating = xmlReader.GetOptionValueAsBool(cUkRating, false);
             OneWriterDirector = xmlReader.GetOptionValueAsBool(cOneWriterDirector, false);
@@ -151,8 +151,8 @@ namespace IMDb
             xmlWriter.SetOptionsEntry(cForeignTitle, "02", ForeignTitle.ToString());
             xmlWriter.SetOptionsEntry(cForeignFirst, "03", ForeignFirst.ToString());
             xmlWriter.SetOptionsEntry(cUkRating, "04", UkRating.ToString());
-            xmlWriter.SetOptionsEntry(cImdbScore, "05", ImdbScore.ToString());
-            xmlWriter.SetOptionsEntry(cImdbMetaScore, "06", ImdbMetaScore.ToString());
+            xmlWriter.SetOptionsEntry(cIMDbScore, "05", IMDbScore.ToString());
+            xmlWriter.SetOptionsEntry(cIMDbMetaScore, "06", IMDbMetaScore.ToString());
             xmlWriter.SetOptionsEntry(cLongSummary, "07", LongSummary.ToString());
             xmlWriter.SetOptionsEntry(cRottenMeter, "08", RottenMeter.ToString());
             xmlWriter.SetOptionsEntry(cRottenAverage, "09", RottenAverage.ToString());
@@ -160,7 +160,7 @@ namespace IMDb
             xmlWriter.SetOptionsEntry(cSpecialEdition, "11", SpecialEdition.ToString());
             xmlWriter.SetOptionsEntry(cRenameTitles, "12", RenameTitles.ToString());
             xmlWriter.SetOptionsEntry(cSingleScore, "13", SingleScore.ToString());
-            xmlWriter.SetOptionsEntry(cMinImdbVotes, "14", MinImdbVotes.ToString());
+            xmlWriter.SetOptionsEntry(cMinIMDbVotes, "14", MinIMDbVotes.ToString());
             xmlWriter.SetOptionsEntry(cRefreshAllFields, "15", RefreshAllFields.ToString());
             xmlWriter.SetOptionsEntry(cOneWriterDirector, "16", OneWriterDirector.ToString());
 

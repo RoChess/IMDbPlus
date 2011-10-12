@@ -85,8 +85,8 @@ Long summaries offer more information, but can sometimes have spoilers contained
 </string>
 
 	<!-- M -->
-	<string Field="MinImdbVotes">Minimum amount of IMDb votes required</string>
-	<string Field="MinImdbVotesDescription">Off = Always use imdb.com score
+	<string Field="MinIMDbVotes">Minimum amount of IMDb votes required</string>
+	<string Field="MinIMDbVotesDescription">Off = Always use imdb.com score
 On = Only use imdb.com scores with 20+ votes
 
 The IMDb score is inflated a lot of times by the people who worked on the movie. This is why it is not uncommon for a movie with less then 20 votes to have a very high rating.

@@ -29,7 +29,7 @@ namespace IMDb
         #endregion
 
         int PluginID = 31415;
-        DBSourceInfo ImdbPlusSource;
+        DBSourceInfo IMDbPlusSource;
         Timer syncLibraryTimer;
         string ReplacementsFile = Path.Combine(Config.GetFolder(Config.Dir.Config), @"IMDb+\Rename dBase IMDb+ Scraper.xml");
 
@@ -158,7 +158,7 @@ namespace IMDb
             PluginSettings.LoadSettings();
 
             // Get IMDb+ Data Provider
-            ImdbPlusSource = DBSourceInfo.GetFromScriptID(scriptId);
+            IMDbPlusSource = DBSourceInfo.GetFromScriptID(scriptId);
             SetIMDbProperties();
 
             // Update Script Paths
@@ -201,13 +201,13 @@ namespace IMDb
             UpdateListItem(itemId++, Translation.RenameTitles, PluginSettings.RenameTitles ? Translation.BoolOn : Translation.BoolOff, "folder");
 
             UpdateListItem(itemId++, Translation.SingleScore, PluginSettings.SingleScore ? Translation.BoolOn : Translation.BoolOff, "folder");
-            UpdateListItem(itemId++, listIndentation + Translation.IMDbScore, PluginSettings.ImdbScore ? Translation.BoolOn : Translation.BoolOff, string.Empty);
-            UpdateListItem(itemId++, listIndentation + Translation.IMDbMetaScore, PluginSettings.ImdbMetaScore ? Translation.BoolOn : Translation.BoolOff, string.Empty);
+            UpdateListItem(itemId++, listIndentation + Translation.IMDbScore, PluginSettings.IMDbScore ? Translation.BoolOn : Translation.BoolOff, string.Empty);
+            UpdateListItem(itemId++, listIndentation + Translation.IMDbMetaScore, PluginSettings.IMDbMetaScore ? Translation.BoolOn : Translation.BoolOff, string.Empty);
             UpdateListItem(itemId++, listIndentation + Translation.RottenMeter, PluginSettings.RottenMeter ? Translation.BoolOn : Translation.BoolOff, string.Empty);
             UpdateListItem(itemId++, listIndentation + Translation.RottenAverage, PluginSettings.RottenAverage ? Translation.BoolOn : Translation.BoolOff, string.Empty);
             UpdateListItem(itemId++, listIndentation + Translation.RottenTopCritics, PluginSettings.RottenTopCritics ? Translation.BoolOn : Translation.BoolOff, string.Empty);
 
-            UpdateListItem(itemId++, Translation.MinImdbVotes, PluginSettings.MinImdbVotes ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, Translation.MinIMDbVotes, PluginSettings.MinIMDbVotes ? Translation.BoolOn : Translation.BoolOff, "folder");
             UpdateListItem(itemId++, Translation.LongSummary, PluginSettings.LongSummary ? Translation.BoolOn : Translation.BoolOff, "folder");
             UpdateListItem(itemId++, Translation.UkRating, PluginSettings.UkRating ? Translation.BoolOn : Translation.BoolOff, "folder");
 
@@ -246,9 +246,9 @@ namespace IMDb
                 if (item.Label.Trim() == Translation.UkRating)
                     PluginSettings.UkRating = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.IMDbScore)
-                    PluginSettings.ImdbScore = (item.Label2 == Translation.BoolOn);
+                    PluginSettings.IMDbScore = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.IMDbMetaScore)
-                    PluginSettings.ImdbMetaScore = (item.Label2 == Translation.BoolOn);
+                    PluginSettings.IMDbMetaScore = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.LongSummary)
                     PluginSettings.LongSummary = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.RottenMeter)
@@ -263,8 +263,8 @@ namespace IMDb
                     PluginSettings.RenameTitles = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.SingleScore)
                     PluginSettings.SingleScore = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.MinImdbVotes)
-                    PluginSettings.MinImdbVotes = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.MinIMDbVotes)
+                    PluginSettings.MinIMDbVotes = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.RefreshAllFields)
                     PluginSettings.RefreshAllFields = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.OneWriterDirector)
@@ -285,6 +285,8 @@ namespace IMDb
 
             base.OnPageDestroy(new_windowId);
         }
+
+        #endregion
 
         private void UpdateListItem(int itemId, string itemName, string itemValue, string itemIcon)
         {
@@ -371,8 +373,8 @@ namespace IMDb
             if (item.Label.Trim() == Translation.RottenTopCritics)
                 GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.RottenTopCriticsDescription);
 
-            if (item.Label.Trim() == Translation.MinImdbVotes)
-                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.MinImdbVotesDescription);
+            if (item.Label.Trim() == Translation.MinIMDbVotes)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.MinIMDbVotesDescription);
             if (item.Label.Trim() == Translation.LongSummary)
                 GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.LongSummaryDescription);
             if (item.Label.Trim() == Translation.UkRating)
@@ -470,24 +472,22 @@ namespace IMDb
             }
         }
 
-        #endregion
-
         private void SetIMDbProperties()
         {
             // not installed
-            if (ImdbPlusSource == null)
+            if (IMDbPlusSource == null)
             {
                 GUIUtils.SetProperty("#IMDb.Scraper.IsInstalled", "false");
                 return;
             }
 
             GUIUtils.SetProperty("#IMDb.Scraper.IsInstalled", "true", true);
-            GUIUtils.SetProperty("#IMDb.Scraper.Version", ImdbPlusSource.Provider.Version, true);
-            GUIUtils.SetProperty("#IMDb.Scraper.Description", ImdbPlusSource.Provider.Description, true);
-            GUIUtils.SetProperty("#IMDb.Scraper.Author", ImdbPlusSource.Provider.Author, true);
-            GUIUtils.SetProperty("#IMDb.Scraper.Published", ImdbPlusSource.SelectedScript.Provider.Published.Value.ToShortDateString(), true);
-            GUIUtils.SetProperty("#IMDb.Scraper.DetailsPriority", ImdbPlusSource.DetailsPriority.ToString(), true);
-            GUIUtils.SetProperty("#IMDb.Scraper.CoverPriority", ImdbPlusSource.CoverPriority.ToString(), true);
+            GUIUtils.SetProperty("#IMDb.Scraper.Version", IMDbPlusSource.Provider.Version, true);
+            GUIUtils.SetProperty("#IMDb.Scraper.Description", IMDbPlusSource.Provider.Description, true);
+            GUIUtils.SetProperty("#IMDb.Scraper.Author", IMDbPlusSource.Provider.Author, true);
+            GUIUtils.SetProperty("#IMDb.Scraper.Published", IMDbPlusSource.SelectedScript.Provider.Published.Value.ToShortDateString(), true);
+            GUIUtils.SetProperty("#IMDb.Scraper.DetailsPriority", IMDbPlusSource.DetailsPriority.ToString(), true);
+            GUIUtils.SetProperty("#IMDb.Scraper.CoverPriority", IMDbPlusSource.CoverPriority.ToString(), true);
         }
 
         private void CheckForUpdate()
@@ -504,14 +504,14 @@ namespace IMDb
                     if (ScraperScriptInstallation(localFile))
                     {
                         // set highest priority if not already installed
-                        if (ImdbPlusSource == null)
+                        if (IMDbPlusSource == null)
                         {
-                            ImdbPlusSource = DBSourceInfo.GetFromScriptID(scriptId);
-                            ScraperScriptPositioning(0, ref ImdbPlusSource);
+                            IMDbPlusSource = DBSourceInfo.GetFromScriptID(scriptId);
+                            ScraperScriptPositioning(0, ref IMDbPlusSource);
                         }
                         UpdateScriptPaths();
                         SetIMDbProperties();
-                        GUIUtils.ShowNotifyDialog(Translation.Update, string.Format(Translation.UpdatedScraperScript, ImdbPlusSource.Provider.Version));
+                        GUIUtils.ShowNotifyDialog(Translation.Update, string.Format(Translation.UpdatedScraperScript, IMDbPlusSource.Provider.Version));
                     }
 
                     // remove temp download file
@@ -675,24 +675,24 @@ namespace IMDb
         {
             // correct path to rename db and options file
             // to point to install paths
-            if (ImdbPlusSource == null) return;
+            if (IMDbPlusSource == null) return;
 
             Logger.Info("Updating paths in scraper script");
 
             string oldValue = @"C:\Rename dBase IMDb+ Scraper.xml";
             string newValue = Path.Combine(Config.GetFolder(Config.Dir.Config), @"IMDb+\Rename dBase IMDb+ Scraper.xml");
-            ImdbPlusSource.SelectedScript.Contents = ImdbPlusSource.SelectedScript.Contents.Replace(oldValue, newValue);
+            IMDbPlusSource.SelectedScript.Contents = IMDbPlusSource.SelectedScript.Contents.Replace(oldValue, newValue);
 
             oldValue = @"C:\Rename dBase IMDb+ Scraper (Custom).xml";
             newValue = Path.Combine(Config.GetFolder(Config.Dir.Config), @"IMDb+\Rename dBase IMDb+ Scraper (Custom).xml");
-            ImdbPlusSource.SelectedScript.Contents = ImdbPlusSource.SelectedScript.Contents.Replace(oldValue, newValue);
+            IMDbPlusSource.SelectedScript.Contents = IMDbPlusSource.SelectedScript.Contents.Replace(oldValue, newValue);
 
             oldValue = @"C:\Options IMDb+ Scraper.xml";
             newValue = Path.Combine(Config.GetFolder(Config.Dir.Config), @"IMDb+\Options IMDb+ Scraper.xml");
-            ImdbPlusSource.SelectedScript.Contents = ImdbPlusSource.SelectedScript.Contents.Replace(oldValue, newValue);
+            IMDbPlusSource.SelectedScript.Contents = IMDbPlusSource.SelectedScript.Contents.Replace(oldValue, newValue);
 
-            ImdbPlusSource.SelectedScript.Commit();
-            ImdbPlusSource.Commit();
+            IMDbPlusSource.SelectedScript.Commit();
+            IMDbPlusSource.Commit();
 
             Logger.Info("Finished updating paths in scraper script");
         }
