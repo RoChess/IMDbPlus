@@ -697,5 +697,35 @@ namespace IMDb
             Logger.Info("Finished updating paths in scraper script");
         }
 
+        /// <summary>
+        /// Updates all source info from IMDb -> IMDb+
+        /// </summary>
+        private void ForceIMDbSourceInfo()
+        {
+            var IMDbSource = DBSourceInfo.GetFromScriptID(874902);
+
+            if (IMDbPlusSource == null || IMDbSource == null)
+            {
+                Logger.Error("Unable to convert source info as IMDb+ and IMDb source not installed!");
+                return;
+            }
+
+            if (GUIUtils.ShowYesNoDialog(Translation.ForceIMDbPlus, Translation.ForceIMDbPlusDescription))
+            {
+                int movieCount = 0;
+
+                Logger.Info("Converting Source Info for the following movies...");
+                foreach (var movie in DBMovieInfo.GetAll().Where(m => m.PrimarySource == IMDbSource))
+                {
+                    Logger.Info(movie.ToString());
+                    movie.PrimarySource = IMDbPlusSource;
+                    movie.Commit();
+                    movieCount++;
+                }
+
+                GUIUtils.ShowOKDialog(Translation.ForceIMDbPlus, string.Format(Translation.ForceIMDbPlusComplete, movieCount, DBMovieInfo.GetAll().Count));
+            }
+        }
+
     }
 }
