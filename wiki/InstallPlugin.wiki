@@ -1,0 +1,84 @@
+#summary Installation of the IMDb+ plugin & scraper script
+#labels Featured,Phase-Deploy
+
+<wiki:toc max_depth="1"/>
+
+=MediaPortal=
+
+The IMDb+ plugin only works for MediaPortal v1.2+.
+
+You can update any older installation of !MediaPortal easy, so please make sure you have done so before proceeding.
+
+=MPEI package=
+
+To make it as easy as possible, the IMDb+ plugin has been put inside a MediaPortal Extension Installer package. You can manually download the latest package from the 'Downloads' tab above and proceed with the installation.
+
+Or open the MediaPortal Extension Installer shortcut on your desktop and look for the IMDb+ plugin in the list to add. If you have the MPEI GUI plugin installed, you can do it all from the comfort of your couch inside the MediaPortal GUI.
+
+=What about the IMDb+ scraper script?=
+
+The IMDb+ plugin does everything automatic now. If it is the first time you use it, it will detect if the IMDb+ scraper script is installed, and if not it will grab the latest version automatic and add it to MovingPictures.
+
+When you open MediaPortal for the first time, you will be greeted by the following message to notify you of this:
+
+	http://blixy.net/mp/IMDb+/MePo.IMDb+.1.png
+
+(version number shown is just an example)
+
+=What to do for an existing collection=
+
+If this is your first time to use the IMDb+ scraper, then you might have a collection already most likely imported via the default IMDb scraper. The scraper script that was used originally to import the movie with is forever tied to the movie. So to get the benefits of the IMDb+ scraper to work for your entire collection, you have to 'Force' all your existing movies to switch over to the IMDb+ scraper script.
+
+To make this easy, simply open the hidden menu on the left side, and use the "Force IMDb+..." option as per:
+
+	http://blixy.net/mp/IMDb+/MePo.IMDb+.2.png
+
+You will then get the following confirmation message:
+
+	http://blixy.net/mp/IMDb+/MePo.IMDb+.3.png
+
+Select 'Yes' and in a relative short time, depending on the size of your movie collection, you will be greeted by:
+
+	http://blixy.net/mp/IMDb+/MePo.IMDb+.4.png
+
+Unfortunatly that is not the end.
+
+All your existing movies not rely on the IMDb+ scraper script to get all the information, but they all still rely on the old information that was obtained by the default IMDb one.
+
+You can update each movie manually inside MovingPictures via the context menu, but this is a painstaking process if you have a large collection.
+
+So good thing there is a quicker way. This is done via the MovingPictures configuration screen. So close !MediaPortal GUI, and open the !MediaPortal configuration. Then click on the 'Plugins' entry and right click the 'MovingPictures' icon and open the configuration screen.
+
+Switch to the "Movie Manager" tab, so you get a result such as:
+
+	http://blixy.net/mp/IMDb+/MovPic.Config.Manager.1.png
+
+Click on the first movie in the list on the left side, as per step #1 below. Then hold down the SHIFT button on your keyboard and hit the END key. You will then see all your movies highlighted as per step #2 below.
+
+	http://blixy.net/mp/IMDb+/MovPic.Config.Manager.Select.All.png
+
+Now click on the refresh icon as shown per step #3 and you will get the following warning:
+
+	http://blixy.net/mp/IMDb+/MovPic.Config.Manager.Update.Confirm.png
+
+Confirm this message, and sit back as your entire collection is being updated via the IMDb+ scraper.
+
+	http://blixy.net/mp/IMDb+/MovPic.Config.Manager.Update.Working.gif
+
+After the 'Working' progressbar has reached the end, you will be able to enjoy the results. Unfortunatly !MovingPictures does not yet update the list when you adjust the title or sortby order, so you would have to close it first and re-open to see the new list or simply close all the configuration screens and launch the !MovingPictures GUI.
+
+You can also close and re-open the MovingPictures configuration screen, and to show you the differences, here is a before and after of a test-collection:
+
+|| *Before* || *After* ||
+|| http://blixy.net/mp/IMDb+/MovPic.Config.Manager.List.1.png || http://blixy.net/mp/IMDb+/MovPic.Config.Manager.List.2.png ||
+
+
+=Foreign Users=
+
+There is now support for foreign information for summary, language, genres and certifications for German (imdb.de), French (imdb.fr), Italian (imdb.it), Portugese (imdb.pt), Spanish (imdb.es), Icelandic (kvikmyndir.is), and Swedish (filmtipset.se).
+
+You can adjust the option for this inside the IMDb+ plugin near the bottom. But by default !MovingPictures will be using a scraper that auto matches your language, so please adjust the option to force a Manual scraper source at the Importer tab. And do not yet add an import path on a new installation. Otherwise the moment you would start !MediaPortal to change the IMDb+ options, the !MovingPictures plugin will immediatly start importing movies, and the default IMDb+ language is 'English'.
+
+It is easy to correct the movies that got imported wrong afterwards, but if you take the few extra steps to adjust the IMDb+ options first before you add your import path, it will all go a lot easier.
+
+-----
