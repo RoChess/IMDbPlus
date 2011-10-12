@@ -3,7 +3,7 @@
 
 <wiki:toc max_depth="1"/>
 
-=MediaPortal=
+=!MediaPortal=
 
 The IMDb+ plugin only works for MediaPortal v1.2+.
 
