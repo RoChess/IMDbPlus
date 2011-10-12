@@ -17,7 +17,7 @@ Or open the !MediaPortal Extension Installer shortcut on your desktop and look f
 
 =What about the IMDb+ scraper script?=
 
-The IMDb+ plugin does everything automatic now. If it is the first time you use it, it will detect if the IMDb+ scraper script is installed, and if not it will grab the latest version automatic and add it to !MovingPictures.
+The IMDb+ plugin does everything automatic now. If it is the first time you use it, it will detect if the IMDb+ scraper script is installed, and if not it will grab the latest version automatic and add it to MovingPictures.
 
 When you open !MediaPortal for the first time, you will be greeted by the following message to notify you of this:
 
