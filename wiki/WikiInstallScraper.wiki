@@ -1,5 +1,5 @@
 #summary Installation of scraper scripts in MovingPictures.
-#labels install,scraper,scripts
+#labels Deprecated
 
 <wiki:toc max_depth="1"/>
 
