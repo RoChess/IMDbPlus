@@ -232,7 +232,7 @@ Use this setting for UK movie certifications.
 
 This includes 'U' for Universal, 'PG' for Parental Guidance, 12A, 12, 15, 18 and finally 'R18' for Restricted 18.
 </string>
-  <string Field="UpdatedScraperScript">Installation is not possible\nUnknown file type detected!</string>
+  <string Field="UpdatedScraperScript">MovingPictures has been updated with IMDb+ Scraper script v{0}</string>
   <string Field="Update">Update</string>
   
 	<!-- V -->
