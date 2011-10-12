@@ -110,7 +110,7 @@ namespace IMDb
             CountryFilter = xmlReader.GetOptionValueAsString(cCountryFilter, "us|ca|gb|ie|au|nz");
             LanguageFilter = xmlReader.GetOptionValueAsString(cLanguageFilter, "en");
             SyncInterval = xmlReader.GetOptionValueAsInt(cSyncInterval, 24);
-            SyncOnStartup = xmlReader.GetOptionValueAsBool(cSyncOnStartup, true);
+            SyncOnStartup = xmlReader.GetOptionValueAsBool(cSyncOnStartup, false);
             SyncLastDateTime = xmlReader.GetOptionValueAsString(cSyncLastDateTime, DateTime.MinValue.ToString());
 
             // save settings, might be some new settings added
