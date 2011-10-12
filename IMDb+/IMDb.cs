@@ -24,7 +24,11 @@ namespace IMDb
 
         #region Skin Controls
 
-        [SkinControl(50)] protected GUIFacadeControl Facade = null;
+        [SkinControl(2)]
+        protected GUIButtonControl forceIMDbPlusButton = null;
+        
+        [SkinControl(50)]
+        protected GUIFacadeControl Facade = null;
 
         #endregion
 
@@ -286,6 +290,87 @@ namespace IMDb
             base.OnPageDestroy(new_windowId);
         }
 
+        protected override void OnClicked(int controlId, GUIControl control, Action.ActionType actionType)
+        {
+            base.OnClicked(controlId, control, actionType);
+
+            switch (controlId)
+            {
+                // Force IMDb+
+                case (2):
+                    ForceIMDbSourceInfo();
+                    break;
+
+                // Facade
+                case (50):
+                    if (actionType == Action.ActionType.ACTION_SELECT_ITEM)
+                    {
+                        GUIListItem selectedItem = this.Facade.SelectedListItem;
+                        if (selectedItem == null) return;
+
+                        //Toggle the Boolean options that got clicked on
+                        selectedItem.Label2 = (selectedItem.Label2 == Translation.BoolOn) ? Translation.BoolOff : (selectedItem.Label2 == Translation.BoolOff) ? Translation.BoolOn : selectedItem.Label2;
+                        selectedItem.IsPlayed = (selectedItem.Label2 == Translation.BoolOff) ? true : false;
+
+                        if (selectedItem.Label == Translation.SecondaryDetails)
+                        {
+                            IDialogbox dlg = (IDialogbox)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_MENU);
+                            if (dlg == null) return;
+
+                            dlg.Reset();
+                            dlg.SetHeading(Translation.SecondaryDetailsHeader);
+
+                            // Create menu items
+                            string[] languageArray = {
+                                                         Translation.SecondaryLanguage02,
+                                                         Translation.SecondaryLanguage03,
+                                                         Translation.SecondaryLanguage04,
+                                                         Translation.SecondaryLanguage05,
+                                                         Translation.SecondaryLanguage06,
+                                                         Translation.SecondaryLanguage07,
+                                                         Translation.SecondaryLanguage08
+                                                     };
+                            //Add 'English' as first language to the dialog.
+                            GUIListItem listItem = new GUIListItem(Translation.SecondaryLanguage01);
+                            dlg.Add(listItem);
+                            //Sort the remaining languages and add them to the dialog as well
+                            Array.Sort(languageArray);
+                            for (int i = 0; i < languageArray.Count(); i++)
+                            {
+                                GUIListItem listArrayItem = new GUIListItem(languageArray[i]);
+                                dlg.Add(listArrayItem);
+                            }
+                            dlg.DoModal(GUIWindowManager.ActiveWindow);
+                            if (dlg.SelectedId <= 0) return;
+
+                            selectedItem.Label2 = dlg.SelectedLabelText;
+                        }
+
+                        string output;
+                        if (selectedItem.Label == Translation.CountryFilter)
+                        {
+                            output = selectedItem.Label2.Replace('|', '.');
+                            if (GUIUtils.GetStringFromKeyboard(ref output))
+                            {
+                                selectedItem.Label2 = output.Replace('.', '|');
+                            }
+                        }
+                        if (selectedItem.Label == Translation.LanguageFilter)
+                        {
+                            output = selectedItem.Label2.Replace('|', '.');
+                            if (GUIUtils.GetStringFromKeyboard(ref output))
+                            {
+                                selectedItem.Label2 = output.Replace('.', '|');
+                            }
+                        }
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
         #endregion
 
         private void UpdateListItem(int itemId, string itemName, string itemValue, string itemIcon)
@@ -394,83 +479,7 @@ namespace IMDb
                 GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.CountryFilterDescription);
             if (item.Label.Trim() == Translation.LanguageFilter)
                 GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.LanguageFilterDescription);
-        }
-
-        protected override void OnClicked(int controlId, GUIControl control, Action.ActionType actionType)
-        {
-            base.OnClicked(controlId, control, actionType);
-
-            switch (controlId)
-            {
-                // Facade
-                case (50):
-                    if (actionType == Action.ActionType.ACTION_SELECT_ITEM)
-                    {
-                        GUIListItem selectedItem = this.Facade.SelectedListItem;
-                        if (selectedItem == null) return;
-
-                        //Toggle the Boolean options that got clicked on
-                        selectedItem.Label2 = (selectedItem.Label2 == Translation.BoolOn) ? Translation.BoolOff : (selectedItem.Label2 == Translation.BoolOff) ? Translation.BoolOn : selectedItem.Label2;
-                        selectedItem.IsPlayed = (selectedItem.Label2 == Translation.BoolOff) ? true : false;
-
-                        if (selectedItem.Label == Translation.SecondaryDetails)
-                        {
-                            IDialogbox dlg = (IDialogbox)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_MENU);
-                            if (dlg == null) return;
-
-                            dlg.Reset();
-                            dlg.SetHeading(Translation.SecondaryDetailsHeader);
-
-                            // Create menu items
-                            string[] languageArray = {
-                                                         Translation.SecondaryLanguage02,
-                                                         Translation.SecondaryLanguage03,
-                                                         Translation.SecondaryLanguage04,
-                                                         Translation.SecondaryLanguage05,
-                                                         Translation.SecondaryLanguage06,
-                                                         Translation.SecondaryLanguage07,
-                                                         Translation.SecondaryLanguage08
-                                                     };
-                            //Add 'English' as first language to the dialog.
-                            GUIListItem listItem = new GUIListItem(Translation.SecondaryLanguage01);
-                            dlg.Add(listItem);
-                            //Sort the remaining languages and add them to the dialog as well
-                            Array.Sort(languageArray);
-                            for (int i = 0; i < languageArray.Count(); i++)
-                            {
-                                GUIListItem listArrayItem = new GUIListItem(languageArray[i]);
-                                dlg.Add(listArrayItem);
-                            }
-                            dlg.DoModal(GUIWindowManager.ActiveWindow);
-                            if (dlg.SelectedId <= 0) return;
-
-                            selectedItem.Label2 = dlg.SelectedLabelText;
-                        }
-
-                        string output;
-                        if (selectedItem.Label == Translation.CountryFilter)
-                        {
-                            output = selectedItem.Label2.Replace('|', '.');
-                            if (GUIUtils.GetStringFromKeyboard(ref output))
-                            {
-                                selectedItem.Label2 = output.Replace('.', '|');
-                            }
-                        }
-                        if (selectedItem.Label == Translation.LanguageFilter)
-                        {
-                            output = selectedItem.Label2.Replace('|', '.');
-                            if (GUIUtils.GetStringFromKeyboard(ref output))
-                            {
-                                selectedItem.Label2 = output.Replace('.', '|');
-                            }
-                        }
-                    }
-                    break;
-
-                default:
-                    break;
-            }
-        }
+        }        
 
         private void SetIMDbProperties()
         {

@@ -71,6 +71,7 @@ Note: This also disables getting missing summary, runtime and scoreing.
 	<!-- J -->
 
 	<!-- L -->
+  <string Field="LastScraperUpdate">Last Scraper Update</string>
 	<string Field="LanguageFilter">Advanced: Language filter</string>
 	<string Field="LanguageFilterDescription">Special filter to include other language titles besides English (en). Use the imdb.com HTML source to find the ISO 639-1 code after /language/.
 

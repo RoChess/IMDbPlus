@@ -226,6 +226,7 @@ namespace IMDb
         public static string LanguageFilterDescription = "Special filter to include other language titles besides English (en). Use the imdb.com HTML source to find the ISO 639-1 code after /language/." + "\n" + "" + "\n" + "Default language is English via: 'en'" + "\n" + "" + "\n" + "However if you are from Norway and you wish to have Norwegian movies use their original title and English titles for everything else, then use: 'en.no'" + "\n" + "" + "\n" + "Note: The MediaPortal virtual keyboard does not support the '|' character, so a '.' was used instead to seperate the different languages. Be very careful in adjusting this setting as it can stop the function of the IMDb+ scraper.";
         public static string LongSummary = "Use long summaries which may contain spoilers";
         public static string LongSummaryDescription = "Off = Short summary to describe movie plot" + "\n" + "On = Long summary (might contain spoilers)" + "\n" + "" + "\n" + "Long summaries offer more information, but can sometimes have spoilers contained within them. This is why this setting is disabled by default, but you can of course enable it if you prefer them.";
+        public static string LastScraperUpdate = "Last Scraper Update";
 
         // M
         public static string MinIMDbVotes = "Minimum amount of IMDb votes required";
