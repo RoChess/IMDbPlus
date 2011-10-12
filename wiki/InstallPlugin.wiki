@@ -67,7 +67,7 @@ Confirm this message, and sit back as your entire collection is being updated vi
 
 After the 'Working' progressbar has reached the end, you will be able to enjoy the results. Unfortunatly !MovingPictures does not yet update the list when you adjust the title or sortby order, so you would have to close it first and re-open to see the new list or simply close all the configuration screens and launch the !MovingPictures GUI.
 
-You can also close and re-open the !MovingPictures configuration screen, and to show you the differences, here is a before and after of a test-collection:
+To show you the differences, here is a before and after of a test-collection:
 
 || *Before* || *After* ||
 || http://blixy.net/mp/IMDb+/MovPic.Config.Manager.List.1.png || http://blixy.net/mp/IMDb+/MovPic.Config.Manager.List.2.png ||
