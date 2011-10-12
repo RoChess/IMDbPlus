@@ -511,6 +511,7 @@ namespace IMDb
                         }
                         UpdateScriptPaths();
                         SetIMDbProperties();
+                        GUIUtils.ShowNotifyDialog(Translation.Update, string.Format(Translation.UpdatedScraperScript, ImdbPlusSource.Provider.Version), 10);
                     }
 
                     // remove temp download file

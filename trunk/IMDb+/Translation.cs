@@ -277,6 +277,8 @@ namespace IMDb
         // U
         public static string UkRating = "British BBFC certification system";
         public static string UkRatingDescription = "Off = Use the American MPAA ratings" + "\n" + "On = Enable the British BBFC ratings" + "\n" + "" + "\n" + "Use this setting for UK movie certifications." + "\n" + "" + "\n" + "This includes 'U' for Universal, 'PG' for Parental Guidance, 12A, 12, 15, 18 and finally 'R18' for Restricted 18.";
+        public static string UpdatedScraperScript = "MovingPictures has been updated with IMDb+ Scraper script v{0}";
+        public static string Update = "Update";
 
         // V
 
