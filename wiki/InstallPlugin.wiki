@@ -43,7 +43,7 @@ Select 'Yes' and in a relative short time, depending on the size of your movie c
 
 Unfortunatly that is not the end.
 
-All your existing movies not rely on the IMDb+ scraper script to get all the information, but they all still rely on the old information that was obtained by the default IMDb one.
+All your existing movies now rely on the IMDb+ scraper script to get all the information, but they all still rely on the old information that was obtained by the default IMDb one.
 
 You can update each movie manually inside !MovingPictures via the context menu, but this is a painstaking process if you have a large collection.
 
