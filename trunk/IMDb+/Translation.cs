@@ -203,7 +203,7 @@ namespace IMDb
         // F
         public static string ForceIMDbPlus = "Force IMDb+";
         public static string ForceIMDbPlusDescription = "Do you want to convert primary source of all\nIMDb imported movies to IMDb+ source.";
-        public static string ForceIMDbPlusComplete = "Successfully converted {0}/{1} movies to new\nIMDb+ source.";
+        public static string ForceIMDbPlusComplete = "Successfully converted {0}/{1} movies\nto new IMDb+ source.";
         public static string ForeignTitleFirst = "Start the title with the foreign one first";
         public static string ForeignTitleFirstDescription = "Off = English (Foreign)" + "\n" + "On = Foreign (English)" + "\n" + "" + "\n" + "Enabling this setting shows the original foreign title first followed by the English title in parentheses." + "\n" + "" + "\n" + "Example: Zwartboek (Black Book)";
 
