@@ -38,7 +38,7 @@ movies, imported with the default IMDb
 scraper, to start using the IMDb+ one?
 </string>
 	<string Field="ForceIMDbPlusComplete">Successfully switched {0}/{1} movies,
-that where imported with the default IMDb
+that were imported with the default IMDb
 scraper, over to the IMDb+ scraper.
 </string>
 	<string Field="ForeignTitleFirst">Start the title with the foreign one first</string>
