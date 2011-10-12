@@ -225,8 +225,8 @@ namespace IMDb
         public static string LongSummaryDescription = "Off = Short summary to describe movie plot" + "\n" + "On = Long summary (might contain spoilers)" + "\n" + "" + "\n" + "Long summaries offer more information, but can sometimes have spoilers contained within them. This is why this setting is disabled by default, but you can of course enable it if you prefer them.";
 
         // M
-        public static string MinImdbVotes = "Minimum amount of IMDb votes required";
-        public static string MinImdbVotesDescription = "Off = Always use imdb.com score" + "\n" + "On = Only use imdb.com scores with 20+ votes" + "\n" + "" + "\n" + "The IMDb score is inflated a lot of times by the people who worked on the movie. This is why it is not uncommon for a movie with less then 20 votes to have a very high rating." + "\n" + "" + "\n" + "If you enable this setting then the IMDb scores with less then 20 votes are ignored.";
+        public static string MinIMDbVotes = "Minimum amount of IMDb votes required";
+        public static string MinIMDbVotesDescription = "Off = Always use imdb.com score" + "\n" + "On = Only use imdb.com scores with 20+ votes" + "\n" + "" + "\n" + "The IMDb score is inflated a lot of times by the people who worked on the movie. This is why it is not uncommon for a movie with less then 20 votes to have a very high rating." + "\n" + "" + "\n" + "If you enable this setting then the IMDb scores with less then 20 votes are ignored.";
 
         // N
 
