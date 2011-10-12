@@ -32,9 +32,15 @@ Note: The MediaPortal virtual keyboard does not support the '|' character, so a 
 	<!-- E -->  
   
 	<!-- F -->
-  <string Field="ForceIMDbPlus">Force IMDb+</string>
-  <string Field="ForceIMDbPlusDescription">Do you want to convert primary source of all\nIMDb imported movies to IMDb+ source.</string>
-  <string Field="ForceIMDbPlusComplete">Successfully converted {0}/{1} movies\nto new IMDb+ source.</string>
+	<string Field="ForceIMDbPlus">Force IMDb+</string>
+	<string Field="ForceIMDbPlusDescription">Are you ready to force all your existing
+movies, imported with the default IMDb
+scraper, to start using the IMDb+ one?
+</string>
+	<string Field="ForceIMDbPlusComplete">Successfully switched {0}/{1} movies,
+that where imported with the default IMDb
+scraper, over to the IMDb+ scraper.
+</string>
 	<string Field="ForeignTitleFirst">Start the title with the foreign one first</string>
 	<string Field="ForeignTitleFirstDescription">Off = English (Foreign)
 On = Foreign (English)
@@ -71,7 +77,7 @@ Note: This also disables getting missing summary, runtime and scoreing.
 	<!-- J -->
 
 	<!-- L -->
-  <string Field="LastScraperUpdate">Last Scraper Update</string>
+	<string Field="LastScraperUpdate">Last Scraper Update</string>
 	<string Field="LanguageFilter">Advanced: Language filter</string>
 	<string Field="LanguageFilterDescription">Special filter to include other language titles besides English (en). Use the imdb.com HTML source to find the ISO 639-1 code after /language/.
 
@@ -232,8 +238,8 @@ Use this setting for UK movie certifications.
 
 This includes 'U' for Universal, 'PG' for Parental Guidance, 12A, 12, 15, 18 and finally 'R18' for Restricted 18.
 </string>
-  <string Field="UpdatedScraperScript">MovingPictures has been updated with IMDb+ Scraper script v{0}</string>
-  <string Field="Update">Update</string>
+	<string Field="UpdatedScraperScript">MovingPictures has been updated with IMDb+ Scraper script v{0}</string>
+	<string Field="Update">Update</string>
   
 	<!-- V -->
 
