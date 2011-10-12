@@ -334,14 +334,14 @@ public class Script
     <ForumPage>http://forum.team-mediaportal.com/moving-pictures-284/imdb-scraper--98978/</ForumPage>
     <UpdateUrl>http://imdbplus.googlecode.com/svn/trunk/MPEI/update.xml</UpdateUrl>
     <Version>
-      <Major>0</Major>
-      <Minor>1</Minor>
+      <Major>1</Major>
+      <Minor>0</Minor>
       <Build>0</Build>
-      <Revision>25</Revision>
+      <Revision>99</Revision>
     </Version>
     <ExtensionDescription>IMDb+ scraper enables English titles, RottenTomatoes ratings, title grouping and many other features.</ExtensionDescription>
-    <VersionDescription />
-    <DevelopmentStatus>Beta</DevelopmentStatus>
+    <VersionDescription>Auto-update system for the IMDb+ scraper script</VersionDescription>
+    <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v0.1.0.25.mpe1</OnlineLocation>
     <ReleaseDate>2011-10-08T20:37:25.3223687-04:00</ReleaseDate>
     <Tags>moving pictures, movies, scraper</Tags>
@@ -447,14 +447,14 @@ public class Script
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Resources\sidebar.jpg</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{8fc42057-69e1-4af0-b9ca-f40f659b3c43}-sidebar.jpg</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{fb1cee77-9308-492b-b8de-6c697e1940f3}-sidebar.jpg</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Resources\header.jpg</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{01b48237-5d67-4562-b840-f5a27d39a33b}-header.jpg</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{9a259e22-ef94-447e-ab65-77377b991195}-header.jpg</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
