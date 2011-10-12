@@ -12,7 +12,9 @@
 			<id>1</id>
 			<width>1280</width>
 			<height>1024</height>
-			<texture>Background.png</texture>
+			<posY>-150</posY>
+			<colordiffuse>60ffffff</colordiffuse>
+			<texture>..\..\DefaultWide\Media\Background_moving.png</texture>
 		</control>
 		<control>
 			<description>Text Header</description>

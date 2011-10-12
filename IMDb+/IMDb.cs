@@ -516,7 +516,7 @@ namespace IMDb
                         if (IMDbPlusSource == null)
                         {
                             IMDbPlusSource = DBSourceInfo.GetFromScriptID(scriptId);
-                            ScraperScriptPositioning(0, ref IMDbPlusSource);
+                            ScraperScriptPositioning(ref IMDbPlusSource);
                         }
                         UpdateScriptPaths();
                         SetIMDbProperties();
@@ -641,13 +641,12 @@ namespace IMDb
             return false;
         }
 
-        private void ScraperScriptPositioning(int position, ref DBSourceInfo source)
+        private void ScraperScriptPositioning(ref DBSourceInfo source)
         {
-            // Re-Position the scraper-script
-            // position = 0 being top of the list
+            // Re-Position the IMDb+ scraper-script to become primary source
 
             if (source == null) return;
-            Logger.Info("Setting {0} script as highest priority", source.Provider.Name);
+            Logger.Info("Repositioning {0} script to become the new primary details source.", source.Provider.Name);
             
             // shift all enabled 'movie detail' sources down by one
             foreach (var enabledSource in DBSourceInfo.GetAll().Where(s => s.DetailsPriority > -1))
@@ -656,7 +655,7 @@ namespace IMDb
                 enabledSource.Commit();
             }
 
-            // now set highest priority to correct source
+            // now set highest priority to the IMDb+ source
             source.SetPriority(DataType.DETAILS, 0);
             source.Commit();
         }
