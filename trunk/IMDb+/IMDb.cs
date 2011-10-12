@@ -34,6 +34,7 @@ namespace IMDb
 
         int PluginID = 31415;
         DBSourceInfo IMDbPlusSource;
+        DBSourceInfo IMDbSource;
         Timer syncLibraryTimer;
         string ReplacementsFile = Path.Combine(Config.GetFolder(Config.Dir.Config), @"IMDb+\Rename dBase IMDb+ Scraper.xml");
 
@@ -43,7 +44,8 @@ namespace IMDb
 
         const string ScraperUpdateFile = @"http://imdbplus.googlecode.com/svn/trunk/Scraper/IMDb+.Scraper.SVN.xml";
         const string ReplacementsUpdateFile = @"http://imdbplus.googlecode.com/svn/trunk/Rename%20dBase%20IMDb+%20Scraper.xml";
-        const int scriptId = 314159265;
+        const int IMDbPlusScriptId = 314159265;
+        const int IMDbScriptId = 874902;
         #endregion
 
         #region ISetupFrom
@@ -162,8 +164,11 @@ namespace IMDb
             PluginSettings.LoadSettings();
 
             // Get IMDb+ Data Provider
-            IMDbPlusSource = DBSourceInfo.GetFromScriptID(scriptId);
+            IMDbPlusSource = DBSourceInfo.GetFromScriptID(IMDbPlusScriptId);
             SetIMDbProperties();
+
+            // Get IMDB Data Provider
+            IMDbSource = DBSourceInfo.GetFromScriptID(IMDbScriptId);
 
             // Update Script Paths
             UpdateScriptPaths();
@@ -194,6 +199,7 @@ namespace IMDb
 
         protected override void OnPageLoad()
         {
+            HideShowForceIMDbPlusButton();
             GUIControl.ClearControl(GetID, Facade.GetID);
             
             int itemId = 0;
@@ -515,11 +521,12 @@ namespace IMDb
                         // set highest priority if not already installed
                         if (IMDbPlusSource == null)
                         {
-                            IMDbPlusSource = DBSourceInfo.GetFromScriptID(scriptId);
+                            IMDbPlusSource = DBSourceInfo.GetFromScriptID(IMDbPlusScriptId);
                             ScraperScriptPositioning(ref IMDbPlusSource);
                         }
                         UpdateScriptPaths();
                         SetIMDbProperties();
+                        HideShowForceIMDbPlusButton();
                         GUIUtils.ShowNotifyDialog(Translation.Update, string.Format(Translation.UpdatedScraperScript, IMDbPlusSource.Provider.Version));
                     }
 
@@ -710,30 +717,65 @@ namespace IMDb
         /// </summary>
         private void ForceIMDbSourceInfo()
         {
-            var IMDbSource = DBSourceInfo.GetFromScriptID(874902);
+            Thread forceThread = new Thread(delegate(object obj)
+            {
+                // focus back to main facade
+                GUIControl.FocusControl(GetID, Facade.GetID);
 
+                if (GUIUtils.ShowYesNoDialog(Translation.ForceIMDbPlus, Translation.ForceIMDbPlusDescription))
+                {
+                    // disable repeated attempts
+                    GUIUtils.SetProperty("#IMDb.ForceIMDbPlus.Visible", "false", false);
+                    GUIWindowManager.Process();
+
+                    int movieCount = 0;
+
+                    Logger.Info("Converting Source Info for the following movies...");
+                    foreach (var movie in DBMovieInfo.GetAll().Where(m => m.PrimarySource == IMDbSource))
+                    {
+                        Logger.Info(movie.ToString());
+                        movie.PrimarySource = IMDbPlusSource;
+                        movie.Commit();
+                        movieCount++;
+                    }
+
+                    GUIUtils.ShowOKDialog(Translation.ForceIMDbPlus, string.Format(Translation.ForceIMDbPlusComplete, movieCount, DBMovieInfo.GetAll().Count));
+                    HideShowForceIMDbPlusButton();
+                }
+            })
+            {
+                IsBackground = true,
+                Name = "Force IMDb+"
+            };
+
+            forceThread.Start();
+        }
+
+
+        private void HideShowForceIMDbPlusButton()
+        {
+            // skin may not have implemented button
+            if (forceIMDbPlusButton == null) return;
+
+            // if no applicable sources disable
             if (IMDbPlusSource == null || IMDbSource == null)
             {
-                Logger.Error("Unable to convert source info as IMDb+ and IMDb source not installed!");
+                Logger.Debug("IMDb+ and/or IMDb source not installed!");
+                GUIUtils.SetProperty("#IMDb.ForceIMDbPlus.Visible", "false", false);
                 return;
             }
 
-            if (GUIUtils.ShowYesNoDialog(Translation.ForceIMDbPlus, Translation.ForceIMDbPlusDescription))
+            // if there is a movie with imdb as primary source, show button
+            if (DBMovieInfo.GetAll().Find(m => m.PrimarySource == IMDbSource) != null)
             {
-                int movieCount = 0;
-
-                Logger.Info("Converting Source Info for the following movies...");
-                foreach (var movie in DBMovieInfo.GetAll().Where(m => m.PrimarySource == IMDbSource))
-                {
-                    Logger.Info(movie.ToString());
-                    movie.PrimarySource = IMDbPlusSource;
-                    movie.Commit();
-                    movieCount++;
-                }
-
-                GUIUtils.ShowOKDialog(Translation.ForceIMDbPlus, string.Format(Translation.ForceIMDbPlusComplete, movieCount, DBMovieInfo.GetAll().Count));
+                GUIUtils.SetProperty("#IMDb.ForceIMDbPlus.Visible", "true", true);
             }
+            else
+            {
+                GUIUtils.SetProperty("#IMDb.ForceIMDbPlus.Visible", "false", true);
+            }
+            
+            GUIWindowManager.Process();
         }
-
     }
 }
