@@ -34,7 +34,7 @@ Note: The MediaPortal virtual keyboard does not support the '|' character, so a 
 	<!-- F -->
   <string Field="ForceIMDbPlus">Force IMDb+</string>
   <string Field="ForceIMDbPlusDescription">Do you want to convert primary source of all\nIMDb imported movies to IMDb+ source.</string>
-  <string Field="ForceIMDbPlusComplete">Successfully converted {0}/{1} movies to new\nIMDb+ source.</string>
+  <string Field="ForceIMDbPlusComplete">Successfully converted {0}/{1} movies\nto new IMDb+ source.</string>
 	<string Field="ForeignTitleFirst">Start the title with the foreign one first</string>
 	<string Field="ForeignTitleFirstDescription">Off = English (Foreign)
 On = Foreign (English)
