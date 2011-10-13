@@ -73,6 +73,8 @@
     <Compile Include="XMLWriter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Images\imdb_icon.png" />
+    <EmbeddedResource Include="Images\imdb_icon_disabled.png" />
     <Content Include="Languages\en-US.xml" />
     <Content Include="Skin\DefaultWide\IMDb+.xml" />
     <Content Include="Skin\DefaultWide\Media\hover_imdb+.png" />

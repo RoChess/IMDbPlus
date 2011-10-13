@@ -18,6 +18,7 @@ using Action = MediaPortal.GUI.Library.Action;
 
 namespace IMDb
 {
+    [PluginIcons("IMDb.Images.imdb_icon.png", "IMDb.Images.imdb_icon_disabled.png")]
     public class IMDb : GUIWindow, ISetupForm
     {
         #region Private Variables
