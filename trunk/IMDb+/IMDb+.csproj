@@ -68,6 +68,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Translation.cs" />
+    <Compile Include="Properties\VersionInfo.cs" />
     <Compile Include="XMLReader.cs" />
     <Compile Include="XMLWriter.cs" />
   </ItemGroup>
@@ -76,10 +77,16 @@
     <Content Include="Skin\DefaultWide\IMDb+.xml" />
     <Content Include="Skin\DefaultWide\Media\hover_imdb+.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\VersionInfo.cs.tmpl" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
     </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
