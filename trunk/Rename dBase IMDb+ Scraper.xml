@@ -1,8 +1,8 @@
 ﻿<!--
-	IMDb+ Scraper Script Rename dBase v0.97 (beta)
+	IMDb+ Scraper Script Rename dBase v107
 	For use in MovingPictures plugin for MediaPortal
 	Author: Ron (RoChess)
-	Date: Oct 8th 2011
+	Date: Oct 13th 2011
 
 	Syntax example for movie "Casino Royale":
 
@@ -200,6 +200,9 @@
 	<rename id="tt0111512" title="Drunken Master II (Jui Kuen II)" />
 	<rename id="tt0190374" title="Dungeons &amp; Dragons I" />
 	<rename id="tt0406728" title="Dungeons &amp; Dragons II: Wrath of the Dragon God" />
+	<rename id="tt0104815" title="El mariachi I" />
+	<rename id="tt0112851" title="El mariachi II: Desperado" />
+	<rename id="tt0285823" title="El mariachi III: Once Upon a Time in Mexico" />
 	<rename id="tt0120667" title="Fantastic Four I" />
 	<rename id="tt0486576" title="Fantastic Four II: Rise of the Silver Surfer" />
 	<rename id="tt0195714" title="Final Destination I" />
@@ -324,9 +327,9 @@
 	<rename id="tt0116629" title="Independence Day" sortby="Independence Day I" />
 	<rename id="tt1628842" title="Independence Day II" />
 	<rename id="tt1628842" title="Independence Day III" />
-	<rename id="tt0338564" title="Internal Affairs I (Mou gaan dou)" />
-	<rename id="tt0369060" title="Internal Affairs II (Mou gaan dou II)" />
-	<rename id="tt0374339" title="Internal Affairs III: End Inferno (Mou gaan dou III: Jung gik mou gaan)" />
+	<rename id="tt0338564" title="Infernal Affairs I (Mou gaan dou)" />
+	<rename id="tt0369060" title="Infernal Affairs II (Mou gaan dou II)" />
+	<rename id="tt0374339" title="Infernal Affairs III: End Inferno (Mou gaan dou III: Jung gik mou gaan)" />
 	<rename id="tt0378109" title="Into the Blue I" />
 	<rename id="tt0865907" title="Into the Blue II: The Reef " />
 	<rename id="tt1220719" title="Ip Man I (Yip Man)" />
@@ -339,6 +342,10 @@
 	<rename id="tt0371746" title="Iron Man I" />
 	<rename id="tt1228705" title="Iron Man II" />
 	<rename id="tt1300854" title="Iron Man III" />
+	<rename id="tt0099810" title="Jack Ryan I: The Hunt for Red October" />
+	<rename id="tt0105112" title="Jack Ryan II: Patriot Games" />
+	<rename id="tt0109444" title="Jack Ryan III: Clear and Present Danger" />
+	<rename id="tt0164184" title="Jack Ryan IV: The Sum of All Fears" />
 	<rename id="tt0322802" title="Jackass I: The Movie" />
 	<rename id="tt0493430" title="Jackass II: Number Two" />
 	<rename id="tt1117523" sortby="Jackass II: Number Two and a Half" />
@@ -428,6 +435,11 @@
 	<rename id="tt0071853" title="Monthy Python's I: The Holy Grail" />
 	<rename id="tt0079470" title="Monthy Python's II: Life of Brian" />
 	<rename id="tt0085959" title="Monthy Python's III: The Meaning of Life" />
+	<rename id="tt0134119" title="Mr. Ripley I: The Talented Mr. Ripley" />
+	<rename id="tt0265651" title="Mr. Ripley II: Ripley's Game" />
+	<rename id="tt0219171" title="Mr. Ripley III: Ripley Under Ground" />
+	<rename id="tt0054189" title="Mr. Ripley (Original) I: Purple Noon (Plein soleil)" />
+	<rename id="tt0054189" title="Mr. Ripley (Original) II: The American Friend (Der amerikanische Freund)" />
 	<rename id="tt0396752" title="Nanny McPhee I" />
 	<rename id="tt1415283" title="Nanny McPhee II: Returns" />
 	<rename id="tt0476680" title="Naruto I: Ninja Clash in the Land of Snow (Gekijô-ban Naruto: Daikatsugeki! Yukihime ninpôchô dattebayo!!)" />
@@ -462,7 +474,7 @@
 	<rename id="tt0079714" title="Phantasm I" />
 	<rename id="tt0325980" title="Pirates Of The Caribbean I: Curse Black Pearl" />
 	<rename id="tt0383574" title="Pirates Of The Caribbean II: Dead Man's Chest" />
-	<rename id="tt0449088" title="Pirates Of The Caribbean III: At Worlds End" />
+	<rename id="tt0449088" title="Pirates Of The Caribbean III: At World's End" />
 	<rename id="tt1298650" title="Pirates Of The Caribbean IV: On Stranger Tides" />
 	<rename id="tt1790809" title="Pirates Of The Caribbean V" />
 	<rename id="tt1790810" title="Pirates Of The Caribbean VI" />
@@ -636,7 +648,7 @@
 	<rename id="tt0082136" title="The Cannonball Run I" />
 	<rename id="tt0087032" title="The Cannonball Run II" />
 	<rename id="tt0098369" title="The Cannonball Run III: Speed Zone!" />
-	<rename id="tt0363771" title="The Chronicles of Narnia I" />
+	<rename id="tt0363771" title="The Chronicles of Narnia I: The Lion, the Witch and the Wardrobe" />
 	<rename id="tt0499448" title="The Chronicles of Narnia II: Prince Caspian" />
 	<rename id="tt0980970" title="The Chronicles of Narnia III: The Voyage of the Dawn Treader" />
 	<rename id="tt1872184" title="The Chronicles of Narnia IV: The Magician's Nephew" />
@@ -701,7 +713,8 @@
 	<rename id="tt0091326" title="The Karate Kid II" />
 	<rename id="tt0097647" title="The Karate Kid III" />
 	<rename id="tt0110657" title="The Karate Kid IV: The Next Karate Kid" />
-	<rename id="tt1155076" title="The Karate Kid V: The Kung Fu Kid" />
+	<rename id="tt1155076" title="The Karate Kid (Remake) I" />
+	<rename id="tt1674782" title="The Karate Kid (Remake) II" />
 	<rename id="tt0412915" title="The Librarian I: Quest For the Spear" />
 	<rename id="tt0455596" title="The Librarian II: Return to King Solomon's Mines" />
 	<rename id="tt1146438" title="The Librarian III: The Curse of the Judas Chalice" />
