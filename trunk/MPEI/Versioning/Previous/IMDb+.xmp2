@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>2.0</Version>
+  <Groups>
+    <Items>
+      <GroupItem Name="Default">
+        <ParentGroup />
+        <DisplayName>Plugin</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>Plugin</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\bin\Release\IMDb+.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{1e48b2f9-c28e-4c47-9f49-e8d1998e0018}-IMDb+.dll</ZipFileName>
+              <DestinationFilename>%Plugins%\Windows\IMDb+.dll</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
+      <GroupItem Name="Language">
+        <ParentGroup />
+        <DisplayName>Language</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>Language</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\en-US.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{cec04eb0-2017-47d5-8840-8162846189da}-en-US.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\en-US.xml</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
+      <GroupItem Name="Skins">
+        <DisplayName>Skins</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>Skins</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Skin\Default\IMDb+.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{1843cb84-de1b-40ca-aaca-450b338d4ab0}-IMDb+.xml</ZipFileName>
+              <DestinationFilename>%Skin%\Default\IMDb+.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Skin\Default\Media\hover_imdb+.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{ae1897e5-7f51-4a99-848e-89c8400f0f49}-hover_imdb+.png</ZipFileName>
+              <DestinationFilename>%Skin%\Default\Media\hover_imdb+.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Skin\DefaultWide\IMDb+.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{905f4f5d-3b64-44d5-98ff-5c62b7c1405b}-IMDb+.xml</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\IMDb+.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Skin\DefaultWide\Media\hover_imdb+.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{1dc1e704-ad04-4bd0-ac68-8b25c476724f}-hover_imdb+.png</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\Media\hover_imdb+.png</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
+      <GroupItem Name="Configuration">
+        <ParentGroup />
+        <DisplayName>Configuration</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>Configuration</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>NeverOverwrite</UpdateOption>
+              <LocalFileName>..\Rename dBase IMDb+ Scraper (Custom).xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{be4b08e0-0731-4ce6-8727-36a9daf0cfea}-Rename dBase IMDb+ Scraper (Custom).xml</ZipFileName>
+              <DestinationFilename>%Config%\IMDb+\Rename dBase IMDb+ Scraper (Custom).xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\Rename dBase IMDb+ Scraper.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{7e0632b5-5b0b-4513-9507-0377dac85f14}-Rename dBase IMDb+ Scraper.xml</ZipFileName>
+              <DestinationFilename>%Config%\IMDb+\Rename dBase IMDb+ Scraper.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>NeverOverwrite</UpdateOption>
+              <LocalFileName>..\Options IMDb+ Scraper.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{bb14fa6f-216c-4880-a3eb-adb0ef8f47cd}-Options IMDb+ Scraper.xml</ZipFileName>
+              <DestinationFilename>%Config%\IMDb+\Options IMDb+ Scraper.xml</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
+    </Items>
+  </Groups>
+  <Sections>
+    <Items>
+      <SectionItem Guid="e83e8700-87f3-45ea-8b1a-4a47fb30a664" Name="Welcome Screen" ConditionGroup="">
+        <Params>
+          <Items>
+            <SectionParam Name="Header text">
+              <Value>Welcome to the Extension Installer for the [Name] plugin.</Value>
+              <ValueType>String</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Description">
+              <Value>This will install the [Name] v[Version] plugin on your computer.
+
+
+It is recommended that you close all other applications before continuing.
+
+
+Click Next to continue or Cancel to exit Setup.</Value>
+              <ValueType>String</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Left part image">
+              <Value>Resources\sidebar.jpg</Value>
+              <ValueType>File</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Header image">
+              <Value>Resources\header.jpg</Value>
+              <ValueType>File</ValueType>
+              <Description>Image in upper right part</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+        <Actions>
+          <Items />
+        </Actions>
+        <IncludedGroups />
+        <PanelName>Welcome Screen</PanelName>
+        <WizardButtonsEnum>NextCancel</WizardButtonsEnum>
+      </SectionItem>
+      <SectionItem Guid="0c9e930e-8075-4eeb-8a7b-da016180427c" Name="Install Section" ConditionGroup="">
+        <Params>
+          <Items>
+            <SectionParam Name="Header Title">
+              <Value>Installing the IMDb+ plugin</Value>
+              <ValueType>String</ValueType>
+              <Description>Header title</Description>
+            </SectionParam>
+            <SectionParam Name="Header description">
+              <Value>The IMDb+ plugin is being installed into the MediaPortal plugins section right now. You can adjust this to the Home menu later.</Value>
+              <ValueType>String</ValueType>
+              <Description>Description of section, shown in under section title</Description>
+            </SectionParam>
+            <SectionParam Name="Header image">
+              <Value>Resources\header.jpg</Value>
+              <ValueType>File</ValueType>
+              <Description>Image in upper right part</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+        <Actions>
+          <Items>
+            <ActionItem Name="InstallFiles" ActionType="InstallFiles" ConditionGroup="">
+              <Params>
+                <Items />
+              </Params>
+              <ExecuteLocation>AfterPanelShow</ExecuteLocation>
+            </ActionItem>
+            <ActionItem Name="Script" ActionType="Script" ConditionGroup="Configuration">
+              <Params>
+                <Items>
+                  <SectionParam Name="Script">
+                    <Value>//css_reference "MpeCore.dll";
+
+using MpeCore.Classes;
+using MpeCore;
+using System;
+using System.IO;
+using System.Windows.Forms;
+public class Script
+{
+    public static void Main(PackageClass packageClass, ActionItem actionItem)
+    {
+       // check if we have old configuration files to move to new directory
+       string source = @"C:\Options IMDb+ Scraper.xml";
+       string destination = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\Options IMDb+ Scraper.xml");
+       Upgrade(source, destination);
+ 
+       source = @"C:\Rename dBase IMDb+ Scraper.xml";
+       destination = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\Rename dBase IMDb+ Scraper.xml");
+       Upgrade(source, destination);
+
+       source = @"C:\Rename dBase IMDb+ Scraper (Custom).xml";
+       destination = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\Rename dBase IMDb+ Scraper (Custom).xml");
+       Upgrade(source, destination);
+
+        return;
+    }
+
+    static void Upgrade(string source, string destination)
+    {
+        try
+        {
+            if (File.Exists(source))
+            {
+                File.Copy(source, destination, true);
+                File.Delete(source);
+            }
+       }
+       catch { }
+   }
+
+}
+
+</Value>
+                    <ValueType>Script</ValueType>
+                    <Description />
+                  </SectionParam>
+                  <SectionParam Name="Uninstall Script">
+                    <Value>//css_reference "MpeCore.dll";
+
+using MpeCore.Classes;
+using MpeCore;
+
+public class Script
+{
+    public static void Main(PackageClass packageClass, UnInstallItem item)
+    {
+        return;
+    }
+}
+</Value>
+                    <ValueType>Script</ValueType>
+                    <Description />
+                  </SectionParam>
+                </Items>
+              </Params>
+              <ExecuteLocation>AfterPanelShow</ExecuteLocation>
+            </ActionItem>
+          </Items>
+        </Actions>
+        <IncludedGroups />
+        <PanelName>Install Section</PanelName>
+        <WizardButtonsEnum>Next</WizardButtonsEnum>
+      </SectionItem>
+      <SectionItem Guid="d9dca7ff-ce13-437d-bc60-a9cff5fe9e19" Name="Setup Complete" ConditionGroup="">
+        <Params>
+          <Items>
+            <SectionParam Name="Header text">
+              <Value>The Extension Installer Wizard has successfully installed the [Name] plugin.</Value>
+              <ValueType>String</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Left part image">
+              <Value>Resources\sidebar.jpg</Value>
+              <ValueType>File</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Show radio buttons">
+              <Value>NO</Value>
+              <ValueType>Bool</ValueType>
+              <Description>Use radiobutton in place of combobox</Description>
+            </SectionParam>
+            <SectionParam Name="Header image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description>Image in upper right part</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+        <Actions>
+          <Items />
+        </Actions>
+        <IncludedGroups />
+        <PanelName>Setup Complete</PanelName>
+        <WizardButtonsEnum>Finish</WizardButtonsEnum>
+      </SectionItem>
+    </Items>
+  </Sections>
+  <Dependencies>
+    <Items>
+      <DependencyItem>
+        <Type>MediaPortal</Type>
+        <Id />
+        <MinVersion>
+          <Major>1</Major>
+          <Minor>1</Minor>
+          <Build>6</Build>
+          <Revision>27644</Revision>
+        </MinVersion>
+        <MaxVersion>
+          <Major>1</Major>
+          <Minor>1</Minor>
+          <Build>6</Build>
+          <Revision>27644</Revision>
+        </MaxVersion>
+        <WarnOnly>false</WarnOnly>
+        <Message>Minimum requirements not met! Please upgrade to MediaPortal 1.2 before installing IMDb+ plugin.</Message>
+        <Name>MediaPortal</Name>
+      </DependencyItem>
+    </Items>
+  </Dependencies>
+  <PluginDependencies>
+    <Items>
+      <PluginDependencyItem AssemblyName="IMDb+.dll">
+        <CompatibleVersion>
+          <Items>
+            <CompatibleVersionItem>
+              <MinRequiredVersion>1.1.6.27644</MinRequiredVersion>
+              <DesignedForVersion>1.1.6.27644</DesignedForVersion>
+            </CompatibleVersionItem>
+          </Items>
+        </CompatibleVersion>
+        <SubSystemsUsed>
+          <Items />
+        </SubSystemsUsed>
+      </PluginDependencyItem>
+    </Items>
+  </PluginDependencies>
+  <GeneralInfo>
+    <Name>IMDb+</Name>
+    <Id>9d064213-0b4d-4cee-96a5-405812422b58</Id>
+    <Author>RoChess</Author>
+    <HomePage>http://code.google.com/p/imdbplus/</HomePage>
+    <ForumPage>http://forum.team-mediaportal.com/moving-pictures-284/imdb-scraper--98978/</ForumPage>
+    <UpdateUrl>http://imdbplus.googlecode.com/svn/trunk/MPEI/update.xml</UpdateUrl>
+    <Version>
+      <Major>1</Major>
+      <Minor>0</Minor>
+      <Build>1</Build>
+      <Revision>105</Revision>
+    </Version>
+    <ExtensionDescription>The IMDb+ plugin &amp; scraper for MovingPictures will make your movie collection easier to use. The plugin will keep the scraper script up-to-date, and add powerful features such as rename and grouping of movie series. It also corrects English titles, allows RottenTomatoes ratings, and many other features.</ExtensionDescription>
+    <VersionDescription>Auto-update system for the IMDb+ scraper script</VersionDescription>
+    <DevelopmentStatus>Stable</DevelopmentStatus>
+    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.0.1.105.mpe1</OnlineLocation>
+    <ReleaseDate>2011-10-08T20:37:25.3223687-04:00</ReleaseDate>
+    <Tags>moving pictures, movies, scraper</Tags>
+    <Location>.\Release\imdbplus.plugin.v[Version].mpe1</Location>
+    <Params>
+      <Items>
+        <SectionParam Name="Icon">
+          <Value />
+          <ValueType>File</ValueType>
+          <Description>The icon file of the package (jpg,png,bmp)</Description>
+        </SectionParam>
+        <SectionParam Name="Online Icon">
+          <Value />
+          <ValueType>String</ValueType>
+          <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
+        </SectionParam>
+        <SectionParam Name="Configuration file">
+          <Value />
+          <ValueType>Template</ValueType>
+          <Description>The file used to configure the extension.
+ If have .exe extension the will be executed
+ If have .dll extension used like MP plugin configuration</Description>
+        </SectionParam>
+        <SectionParam Name="Online Screenshots">
+          <Value>http://blixy.net/mp/Plugin.IMDb+.jpg;http://blixy.net/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
+          <ValueType>String</ValueType>
+          <Description>Online stored screenshot urls separated by ; </Description>
+        </SectionParam>
+        <SectionParam Name="Force to uninstall on update">
+          <Value>YES</Value>
+          <ValueType>Bool</ValueType>
+          <Description>Show dialog and force to uninstall previous version when updating an extension. Should only be disabled if you are using an NSIS/MSI installer.</Description>
+        </SectionParam>
+      </Items>
+    </Params>
+  </GeneralInfo>
+  <UniqueFileList>
+    <Items>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\bin\Release\IMDb+.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{1e48b2f9-c28e-4c47-9f49-e8d1998e0018}-IMDb+.dll</ZipFileName>
+        <DestinationFilename>%Plugins%\Windows\IMDb+.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\en-US.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{cec04eb0-2017-47d5-8840-8162846189da}-en-US.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\en-US.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Skin\Default\IMDb+.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{1843cb84-de1b-40ca-aaca-450b338d4ab0}-IMDb+.xml</ZipFileName>
+        <DestinationFilename>%Skin%\Default\IMDb+.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Skin\Default\Media\hover_imdb+.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{ae1897e5-7f51-4a99-848e-89c8400f0f49}-hover_imdb+.png</ZipFileName>
+        <DestinationFilename>%Skin%\Default\Media\hover_imdb+.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Skin\DefaultWide\IMDb+.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{905f4f5d-3b64-44d5-98ff-5c62b7c1405b}-IMDb+.xml</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\IMDb+.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Skin\DefaultWide\Media\hover_imdb+.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{1dc1e704-ad04-4bd0-ac68-8b25c476724f}-hover_imdb+.png</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\Media\hover_imdb+.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>NeverOverwrite</UpdateOption>
+        <LocalFileName>..\Rename dBase IMDb+ Scraper (Custom).xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{be4b08e0-0731-4ce6-8727-36a9daf0cfea}-Rename dBase IMDb+ Scraper (Custom).xml</ZipFileName>
+        <DestinationFilename>%Config%\IMDb+\Rename dBase IMDb+ Scraper (Custom).xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\Rename dBase IMDb+ Scraper.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{7e0632b5-5b0b-4513-9507-0377dac85f14}-Rename dBase IMDb+ Scraper.xml</ZipFileName>
+        <DestinationFilename>%Config%\IMDb+\Rename dBase IMDb+ Scraper.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>NeverOverwrite</UpdateOption>
+        <LocalFileName>..\Options IMDb+ Scraper.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{bb14fa6f-216c-4880-a3eb-adb0ef8f47cd}-Options IMDb+ Scraper.xml</ZipFileName>
+        <DestinationFilename>%Config%\IMDb+\Options IMDb+ Scraper.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>Resources\sidebar.jpg</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{fb1cee77-9308-492b-b8de-6c697e1940f3}-sidebar.jpg</ZipFileName>
+        <DestinationFilename />
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>Resources\header.jpg</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{9a259e22-ef94-447e-ab65-77377b991195}-header.jpg</ZipFileName>
+        <DestinationFilename />
+      </FileItem>
+    </Items>
+  </UniqueFileList>
+  <ProjectSettings>
+    <FolderGroups>
+      <FolderGroup InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName />
+        <ZipFileName>Installer{CopyFile}\{e3714c63-9d2a-482c-8ef9-7c081c98b727}-</ZipFileName>
+        <DestinationFilename>%Skin%\Default</DestinationFilename>
+        <Folder>..\IMDb+\Skin\Default</Folder>
+        <Group>Skins</Group>
+        <Recursive>true</Recursive>
+      </FolderGroup>
+      <FolderGroup InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName />
+        <ZipFileName>Installer{CopyFile}\{5357a2ad-81c9-4c22-8df3-7ab43515321d}-</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide</DestinationFilename>
+        <Folder>..\IMDb+\Skin\DefaultWide</Folder>
+        <Group>Skins</Group>
+        <Recursive>true</Recursive>
+      </FolderGroup>
+    </FolderGroups>
+    <ProjectFilename>IMDB+.xmp2</ProjectFilename>
+    <UpdatePath1>./update.xml</UpdatePath1>
+    <UpdatePath2 />
+    <UpdatePath3 />
+  </ProjectSettings>
+  <IsSkin>false</IsSkin>
+</PackageClass>
