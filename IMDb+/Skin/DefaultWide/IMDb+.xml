@@ -122,6 +122,7 @@
 			<width>568</width>
 			<height>900</height>
 			<dimColor>00ffffff</dimColor>
+      <animation effect="slide" time="70" end="-300,0" reversible="false">windowclose</animation>
 			<control>
 				<type>image</type>
 				<posX>26</posX>
