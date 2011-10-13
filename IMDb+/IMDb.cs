@@ -717,6 +717,8 @@ namespace IMDb
         /// </summary>
         private void ForceIMDbSourceInfo()
         {
+            if (forceIMDbPlusButton == null || !forceIMDbPlusButton.VisibleFromSkinCondition) return;
+
             Thread forceThread = new Thread(delegate(object obj)
             {
                 // focus back to main facade
