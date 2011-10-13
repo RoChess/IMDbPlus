@@ -161,7 +161,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
               <Description>Description of section, shown in under section title</Description>
             </SectionParam>
             <SectionParam Name="Header image">
-              <Value>Resources\header.jpg</Value>
+              <Value>..\IMDb+\Images\imdb_icon.png</Value>
               <ValueType>File</ValueType>
               <Description>Image in upper right part</Description>
             </SectionParam>
@@ -349,12 +349,12 @@ public class Script
     <Params>
       <Items>
         <SectionParam Name="Icon">
-          <Value />
+          <Value>..\IMDb+\Images\imdb_icon.png</Value>
           <ValueType>File</ValueType>
           <Description>The icon file of the package (jpg,png,bmp)</Description>
         </SectionParam>
         <SectionParam Name="Online Icon">
-          <Value />
+          <Value>http://imdbplus.googlecode.com/svn/trunk/IMDb+/Images/imdb_icon.png</Value>
           <ValueType>String</ValueType>
           <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
         </SectionParam>
@@ -457,6 +457,13 @@ public class Script
         <ZipFileName>Installer{CopyFile}\{9a259e22-ef94-447e-ab65-77377b991195}-header.jpg</ZipFileName>
         <DestinationFilename />
       </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Images\imdb_icon.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{8a617e97-0ff0-4f87-8cd8-99a9f7a021a1}-imdb_icon.png</ZipFileName>
+        <DestinationFilename />
+      </FileItem>
     </Items>
   </UniqueFileList>
   <ProjectSettings>
@@ -482,7 +489,7 @@ public class Script
         <Recursive>true</Recursive>
       </FolderGroup>
     </FolderGroups>
-    <ProjectFilename>IMDB+.xmp2</ProjectFilename>
+    <ProjectFilename>IMDb+.xmp2</ProjectFilename>
     <UpdatePath1>./update.xml</UpdatePath1>
     <UpdatePath2 />
     <UpdatePath3 />
