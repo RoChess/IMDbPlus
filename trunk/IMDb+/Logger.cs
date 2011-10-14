@@ -53,7 +53,7 @@ namespace IMDb
                 writeToFile(String.Format(createPrefix(), "Info", log));
         }
 
-        public static void Info(String format, params String[] args)
+        public static void Info(String format, params Object[] args)
         {
             Info(String.Format(format, args));
         }
@@ -64,7 +64,7 @@ namespace IMDb
                 writeToFile(String.Format(createPrefix(), "Debug", log));
         }
 
-        public static void Debug(String format, params String[] args)
+        public static void Debug(String format, params Object[] args)
         {
             Debug(String.Format(format, args));
         }
@@ -75,7 +75,7 @@ namespace IMDb
                 writeToFile(String.Format(createPrefix(), "Error", log));
         }
 
-        public static void Error(String format, params String[] args)
+        public static void Error(String format, params Object[] args)
         {
             Error(String.Format(format, args));
         }
@@ -86,7 +86,7 @@ namespace IMDb
                 writeToFile(String.Format(createPrefix(), "Warning", log));
         }
 
-        public static void Warning(String format, params String[] args)
+        public static void Warning(String format, params Object[] args)
         {
             Warning(String.Format(format, args));
         }

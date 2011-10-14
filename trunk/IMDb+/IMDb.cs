@@ -21,23 +21,28 @@ namespace IMDb
     [PluginIcons("IMDb.Images.imdb_icon.png", "IMDb.Images.imdb_icon_disabled.png")]
     public class IMDb : GUIWindow, ISetupForm
     {
-        #region Private Variables
-
         #region Skin Controls
 
         [SkinControl(2)]
         protected GUIButtonControl forceIMDbPlusButton = null;
-        
+
+        [SkinControl(3)]
+        protected GUIButtonControl refreshMoviesButton = null;
+
         [SkinControl(50)]
         protected GUIFacadeControl Facade = null;
 
         #endregion
+
+        #region Private Variables
 
         int PluginID = 31415;
         DBSourceInfo IMDbPlusSource;
         DBSourceInfo IMDbSource;
         Timer syncLibraryTimer;
         string ReplacementsFile = Path.Combine(Config.GetFolder(Config.Dir.Config), @"IMDb+\Rename dBase IMDb+ Scraper.xml");
+        bool moviesRefreshing;
+        bool cancelRefreshing;
 
         #endregion
 
@@ -174,12 +179,14 @@ namespace IMDb
             // Update Script Paths
             UpdateScriptPaths();
 
+            SetMovieRefreshProperties(null, -1, -1, true);
+
             // start update timer, passing along configured parameters
             // add small 3sec delay if syncing on startup.
             int syncInterval = PluginSettings.SyncInterval * 60 * 60 * 1000;
             int startTime = GetSyncStartTime();
             syncLibraryTimer = new Timer(new TimerCallback((o) => { CheckForUpdate(); }), null, startTime, syncInterval);
-            
+
             // Load main skin window
             // this is a launching pad to all other windows
             string xmlSkin = GUIGraphicsContext.Skin + @"\IMDb+.xml";
@@ -200,6 +207,9 @@ namespace IMDb
 
         protected override void OnPageLoad()
         {
+            // set refresh movie state
+            SetButtonLabels();
+            
             HideShowForceIMDbPlusButton();
             GUIControl.ClearControl(GetID, Facade.GetID);
             
@@ -306,6 +316,11 @@ namespace IMDb
                 // Force IMDb+
                 case (2):
                     ForceIMDbSourceInfo();
+                    break;
+
+                // Refresh IMDb+ Movies
+                case (3):
+                    RefreshIMDbPlusMovies();
                     break;
 
                 // Facade
@@ -823,6 +838,100 @@ namespace IMDb
             }
 
             return true;
+        }
+
+        private void RefreshIMDbPlusMovies()
+        {
+            if (IMDbPlusSource == null) return;
+
+            if (moviesRefreshing)
+            {
+                Logger.Info("Cancelling Movie Refresh...");
+                GUIControl.DisableControl(GetID, refreshMoviesButton.GetID);
+                cancelRefreshing = true;
+                return;
+            }
+
+            Thread refreshThread = new Thread(delegate(object obj)
+            {
+                // focus back to main facade
+                GUIControl.FocusControl(GetID, Facade.GetID);
+
+                if (GUIUtils.ShowYesNoDialog(Translation.RefreshMovies, Translation.RefreshMoviesDescription))
+                {
+                    moviesRefreshing = true;
+                    cancelRefreshing = false;
+                    SetButtonLabels();
+                   
+                    // get IMDb+ movies for refresh
+                    var movies = DBMovieInfo.GetAll().Where(m => m.PrimarySource == IMDbPlusSource);
+
+                    int moviesUpdated = 0;
+                    int moviesTotal = movies.Count();
+
+                    Logger.Info("Refreshing {0} Movies...", moviesTotal);
+                    foreach (var movie in movies)
+                    {
+                        if (cancelRefreshing)
+                        {
+                            Logger.Info("Movie refresh cancelled");
+                            GUIControl.EnableControl(GetID, refreshMoviesButton.GetID);
+                            SetMovieRefreshProperties(null, -1, -1, true);
+                            moviesRefreshing = false;
+                            SetButtonLabels();
+                            return;
+                        }
+                        
+                        SetMovieRefreshProperties(movie, ++moviesUpdated, moviesTotal, false);
+                        MovingPicturesCore.DataProviderManager.Update(movie);
+                        movie.Commit();
+                    }
+
+                    moviesRefreshing = false;
+                    SetButtonLabels();
+                    
+                    GUIUtils.ShowNotifyDialog(Translation.RefreshMovies, Translation.RefreshMoviesNotification);
+                }
+            })
+            {
+                IsBackground = true,
+                Name = "Refresh Movies"
+            };
+
+            refreshThread.Start();
+        }
+
+        private void SetMovieRefreshProperties(DBMovieInfo movie, int progress, int total, bool cancelled)
+        {
+            if (cancelled)
+            {
+                GUIUtils.SetProperty("#IMDb.Movie.Refresh.Active", "false");
+                GUIUtils.SetProperty("#IMDb.Movie.Refresh.Movie", string.Empty);
+                GUIUtils.SetProperty("#IMDb.Movie.Refresh.ProgressPercent", string.Empty);
+                GUIUtils.SetProperty("#IMDb.Movie.Refresh.CurrentItem", string.Empty);
+                GUIUtils.SetProperty("#IMDb.Movie.Refresh.MovieCount", string.Empty);
+                return;
+            }
+
+            int percent = (int)(((decimal)progress / total) * 100);
+
+            Logger.Info("Refreshing movie information [{0}/{1}] '{2}'", progress, total, movie.ToString());
+
+            GUIUtils.SetProperty("#IMDb.Movie.Refresh.Active", "true");
+            GUIUtils.SetProperty("#IMDb.Movie.Refresh.Movie", movie.ToString());
+            GUIUtils.SetProperty("#IMDb.Movie.Refresh.ProgressPercent", percent.ToString());
+            GUIUtils.SetProperty("#IMDb.Movie.Refresh.CurrentItem", progress.ToString());
+            GUIUtils.SetProperty("#IMDb.Movie.Refresh.MovieCount", total.ToString());
+        }
+
+        private void SetButtonLabels()
+        {
+            if (GUIWindowManager.ActiveWindow != GetID) return;
+
+            if (refreshMoviesButton != null)
+            {
+                GUIControl.SetControlLabel(GetID, refreshMoviesButton.GetID, moviesRefreshing ? Translation.RefreshCancel : Translation.RefreshMovies + "...");
+            }
         }
 
     }
