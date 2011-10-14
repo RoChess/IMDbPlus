@@ -887,9 +887,10 @@ namespace IMDb
                         movie.Commit();
                     }
 
+                    SetMovieRefreshProperties(null, -1, -1, true);
                     moviesRefreshing = false;
                     SetButtonLabels();
-                    
+
                     GUIUtils.ShowNotifyDialog(Translation.RefreshMovies, Translation.RefreshMoviesNotification);
                 }
             })
