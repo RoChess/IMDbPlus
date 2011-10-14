@@ -128,6 +128,11 @@ If you want all your movies to use an English title, then keep this setting disa
 	<!-- P -->
 
 	<!-- R -->
+  <string Field="RefreshMovies">Refresh Movies</string>
+  <string Field="RefreshingMovies">Refreshing Movies</string>
+  <string Field="RefreshCancel">Cancel Refresh</string>
+  <string Field="RefreshMoviesDescription">Are you sure you want to refresh all movies\nthat have IMDb+ as primary source?</string>
+  <string Field="RefreshMoviesNotification">IMDb+ movie refresh is now complete.</string>
 	<string Field="RefreshAllFields">Refresh all of the fields</string>
 	<string Field="RefreshAllFieldsDescription">Off = Only update a few things
 On = Update everything

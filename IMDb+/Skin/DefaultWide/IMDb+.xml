@@ -55,7 +55,7 @@
 					<posY>85</posY>
 					<height>280</height>
 					<width>1130</width>
-					<onleft>2</onleft>
+					<onleft>96742</onleft>
 					<onright>50</onright>
 					<scrollOffset>5</scrollOffset>
 					<itemWidth>20</itemWidth>
@@ -111,7 +111,7 @@
     <control>
 			<type>actiongroup</type>
 			<description>action menu</description>
-			<defaultcontrol>2</defaultcontrol>
+			<defaultcontrol>96742</defaultcontrol>
 			<onexit>50</onexit>
 			<buttonX>0</buttonX>
 			<buttonY>-130</buttonY>
@@ -152,36 +152,46 @@
 					<animation effect="slide" time="70" start="-300,0" reversible="false">visible</animation>
 					<animation effect="slide" time="70" end="-300,0" reversible="false">hidden</animation>
 					<control>
-						<description>Force IMDb+</description>
-						<type>button</type>
-						<id>2</id>
-						<label>#IMDb.Translation.ForceIMDbPlus.Label...</label>
-						<onleft>50</onleft>
-						<onright>50</onright>
-						<onup>2</onup>
-						<ondown>96742</ondown>
-						<width>300</width>
-						<visible allowhiddenfocus="true">string.equals(#IMDb.ForceIMDbPlus.Visible,true)</visible>
-					</control>
-          <control>
 						<description>MovingPictures</description>
 						<id>96742</id>
 						<type>button</type>
 						<label>Moving Pictures</label>
 						<hyperlink>96742</hyperlink>
 						<onleft>50</onleft>
+						<onup>99999</onup>
+						<ondown>2</ondown>
+						<width>300</width>
+					</control>
+          <control>
+						<description>Force IMDb+</description>
+						<type>button</type>
+						<id>2</id>
+						<label>#IMDb.Translation.ForceIMDbPlus.Label...</label>
+						<onleft>50</onleft>
+						<onright>50</onright>
+						<onup>96742</onup>
+						<ondown>3</ondown>
+						<width>300</width>
+						<visible>string.equals(#IMDb.ForceIMDbPlus.Visible,true)</visible>
+					</control>
+          <control>
+						<description>Refresh Movies</description>
+						<type>button</type>
+						<id>3</id>
+						<label>-</label>
+						<onleft>50</onleft>
+						<onright>50</onright>
 						<onup>2</onup>
 						<ondown>99999</ondown>
 						<width>300</width>
-						<visible>plugin.isenabled(Moving Pictures)</visible>
 					</control>
           <control>
 						<description>MPEIUPDATE:9d064213_0b4d_4cee_96a5_405812422b58</description>
 						<type>button</type>
 						<id>99999</id>
 						<label>#MPEI.Translation.UpdateAvailable.Label</label>
-						<onup>96742</onup>
-						<ondown>2</ondown>
+						<onup>3</onup>
+						<ondown>96742</ondown>
 						<onleft>50</onleft>
 						<width>300</width>
 						<visible>string.equals(#mpei.9d064213_0b4d_4cee_96a5_405812422b58.haveupdate,true)</visible>
@@ -208,5 +218,20 @@
 				</control>
 			</control>
 		</control>
+       <control>
+      <description>Item Count Label</description>
+      <type>label</type>
+      <label>#IMDb.Translation.RefreshingMovies.Label: #IMDb.Movie.Refresh.ProgressPercent%</label>
+      <id>0</id>
+      <width>300</width>
+      <posX>1244</posX>
+      <posY>2</posY>
+      <align>right</align>
+      <font>font10</font>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>string.equals(#IMDb.Movie.Refresh.Active,true)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
 	</controls>
 </window>
