@@ -1,0 +1,10 @@
+<extension_settings>
+	<disable_entry>
+		<setting entryname="plugins" name="IMDbPlus" displayname="Plugin Enabled" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="Yes|No"/> 
+	</disable_entry>
+	<settings section="#IMDb.Translation.Plugin.Label">
+    <setting entryname="plugins" name="IMDbPlus" displayname="#IMDb.Translation.SettingPluginEnabledName.Label" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="#IMDb.Translation.Yes.Label|#IMDb.Translation.No.Label" description="#IMDb.Translation.SettingPluginEnabledDescription.Label" configfile="MediaPortal.xml" /> 
+    <setting entryname="home" name="IMDbPlus" displayname="#IMDb.Translation.SettingListedHomeName.Label" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="#IMDb.Translation.Yes.Label|#IMDb.Translation.No.Label" description="#IMDb.Translation.SettingListedHomeDescription.Label" configfile="MediaPortal.xml" /> 
+    <setting entryname="myplugins" name="IMDbPlus" displayname="#IMDb.Translation.SettingListedPluginsName.Label" defaultvalue="no" type="string" listvalues="yes|no" displaylistvalues="#IMDb.Translation.Yes.Label|#IMDb.Translation.No.Label" description="#IMDb.Translation.SettingListedPluginsDescription.Label" configfile="MediaPortal.xml" /> 
+	</settings>
+</extension_settings>

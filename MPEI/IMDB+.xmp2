@@ -105,6 +105,22 @@
           </Items>
         </Files>
       </GroupItem>
+      <GroupItem Name="Settings">
+        <DisplayName>Settings</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>Settings</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>Setting\extension_settings.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{d5e50c6c-40e3-419a-b452-b44516361ce2}-extension_settings.xml</ZipFileName>
+              <DestinationFilename>%Base%\extension_settings.xml</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
     </Items>
   </Groups>
   <Sections>
@@ -442,6 +458,13 @@ public class Script
         <LocalFileName>..\Options IMDb+ Scraper.xml</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{bb14fa6f-216c-4880-a3eb-adb0ef8f47cd}-Options IMDb+ Scraper.xml</ZipFileName>
         <DestinationFilename>%Config%\IMDb+\Options IMDb+ Scraper.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>Setting\extension_settings.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{d5e50c6c-40e3-419a-b452-b44516361ce2}-extension_settings.xml</ZipFileName>
+        <DestinationFilename>%Base%\extension_settings.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />

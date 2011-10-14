@@ -233,6 +233,7 @@ namespace IMDb
         public static string MinIMDbVotesDescription = "Off = Always use imdb.com score" + "\n" + "On = Only use imdb.com scores with 20+ votes" + "\n" + "" + "\n" + "The IMDb score is inflated a lot of times by the people who worked on the movie. This is why it is not uncommon for a movie with less then 20 votes to have a very high rating." + "\n" + "" + "\n" + "If you enable this setting then the IMDb scores with less then 20 votes are ignored.";
 
         // N
+        public static string No = "No";
 
         // O
         public static string OneWriterDirector = "Limit import to only one writer and director";
@@ -275,6 +276,12 @@ namespace IMDb
         public static string SingleScoreDescription = "Off = Use average rating system" + "\n" + "On = Single rating value is used" + "\n" + "" + "\n" + "There is a big difference sometimes between all the different ratings that are available. To compensate for that, an average value is used based on the ratings from imdb, metacritics and rottentomatoes." + "\n" + "" + "\n" + "Note: If the 'IMDb Score' is enabled then the average rating of only IMDb and Metacritics is used when this setting is active for an average rating result.";
         public static string SpecialEditions = "Special editions rename tagging support";
         public static string SpecialEditionsDescription = "Off = Keep title as-is" + "\n" + "On = Add special editions tag to the title" + "\n" + "" + "\n" + "If you make the IMDb tt-ID number available inside filename or via NFO files, then you can enable this setting for special edition tagging." + "\n" + "" + "\n" + "You can add the following terms to your filename inside parenthesis:" + "\n" + "" + "\n" + " - 3D" + "\n" + " - Extended" + "\n" + " - Unrated" + "\n" + " - Director's Cut" + "\n" + " - Alternate Ending" + "\n" + "" + "\n" + "You can also have the term 'Edition' postfixed to the end of them if you wish." + "\n" + "" + "\n" + "Example: \"Avatar (tt0499549) (3D).mkv\" will result in \"Avatar (3D)\"";
+        public static string SettingPluginEnabledName = "Plugin Enabled";
+        public static string SettingPluginEnabledDescription = "Enable / Disable this setting to control if IMDb+ plugin is loaded with MediaPortal.";
+        public static string SettingListedHomeName = "Listed in Home";
+        public static string SettingListedHomeDescription = "Enable this setting for IMDb+ plugin to appear in the main Home screen menu items.";
+        public static string SettingListedPluginsName = "Listed in My Plugins";
+        public static string SettingListedPluginsDescription = "Enable this setting for IMDb+ plugin to appear in the My Plugins screen menu items.";
 
         // T
 
@@ -291,6 +298,7 @@ namespace IMDb
         // X
 
         // Y
+        public static string Yes = "Yes";
 
         // Z
 
