@@ -105,7 +105,8 @@ If you enable this setting then the IMDb scores with less then 20 votes are igno
 </string>
 
 	<!-- N -->
-
+  <string Field="No">No</string>
+  
 	<!-- O -->
 	<string Field="OneWriterDirector">Limit import to only one writer and director</string>
 	<string Field="OneWriterDirectorDescription">Off = Get all the names for writers and directors
@@ -226,7 +227,13 @@ You can also have the term 'Edition' postfixed to the end of them if you wish.
 
 Example: "Avatar (tt0499549) (3D).mkv" will result in "Avatar (3D)"
 </string>
-
+  <string Field="SettingPluginEnabledName">Plugin Enabled</string>
+  <string Field="SettingPluginEnabledDescription">Enable / Disable this setting to control if IMDb+ plugin is loaded with MediaPortal.</string>
+  <string Field="SettingListedHomeName">Listed in Home</string>
+  <string Field="SettingListedHomeDescription">Enable this setting for IMDb+ plugin to appear in the main Home screen menu items.</string>
+  <string Field="SettingListedPluginsName">Listed in My Plugins</string>
+  <string Field="SettingListedPluginsDescription">Enable this setting for IMDb+ plugin to appear in the My Plugins screen menu items.</string>
+  
 	<!-- T -->
 
 	<!-- U -->
@@ -246,4 +253,6 @@ This includes 'U' for Universal, 'PG' for Parental Guidance, 12A, 12, 15, 18 and
 	<!-- W -->
 
 	<!-- Y -->
+  <string Field="Yes">Yes</string>
+  
 </strings>
