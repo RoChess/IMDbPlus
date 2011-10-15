@@ -9,8 +9,8 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="3" point="2" />
-		<published month="10" day="15" year="2011" />
+		<version major="3" minor="3" point="3" />
+		<published month="10" day="16" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -1138,11 +1138,11 @@
 				<if test="${fileRename.count}=1">
 					<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
 					<if test="${fileRename[0][0]}!=">
-						<set name="movie.title" value="${fileRename[0][0]}" />
+						<set name="movie.title" value="${fileRename[0][0]:htmldecode}" />
 						<log LogLevel="Info" Message="IMDb+ Scraper: Title adjusted via Default Rename XML for: ${movie.imdb_id}" />
 					</if>
 					<if test="${fileRename[0][1]}!=">
-						<set name="movie.sortby" value="${fileRename[0][1]}" />
+						<set name="movie.sortby" value="${fileRename[0][1]:htmldecode}" />
 						<log LogLevel="Info" Message="IMDb+ Scraper: SortBy adjusted via Default Rename XML for: ${movie.imdb_id}" />
 					</if>
 				</if>
@@ -1166,11 +1166,11 @@
 				<if test="${fileRename.count}=1">
 					<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
 					<if test="${fileRename[0][0]}!=">
-						<set name="movie.title" value="${fileRename[0][0]}" />
+						<set name="movie.title" value="${fileRename[0][0]:htmldecode}" />
 						<log LogLevel="Info" Message="IMDb+ Scraper: Title adjusted via Custom Rename XML for: ${movie.imdb_id}" />
 					</if>
 					<if test="${fileRename[0][1]}!=">
-						<set name="movie.sortby" value="${fileRename[0][1]}" />
+						<set name="movie.sortby" value="${fileRename[0][1]:htmldecode}" />
 						<log LogLevel="Info" Message="IMDb+ Scraper: SortBy adjusted via Custom Rename XML for: ${movie.imdb_id}" />
 					</if>
 				</if>
