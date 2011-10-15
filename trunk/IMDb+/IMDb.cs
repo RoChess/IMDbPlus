@@ -866,6 +866,10 @@ namespace IMDb
                     // get IMDb+ movies for refresh
                     var movies = DBMovieInfo.GetAll().Where(m => m.PrimarySource == IMDbPlusSource);
 
+                    // we only want to update from primary source.
+                    int dataProviderReqLimit = MovingPicturesCore.Settings.DataProviderRequestLimit;
+                    MovingPicturesCore.Settings.DataProviderRequestLimit = -1;                    
+
                     int moviesUpdated = 0;
                     int moviesTotal = movies.Count();
 
@@ -876,6 +880,7 @@ namespace IMDb
                         {
                             Logger.Info("Movie refresh cancelled");
                             GUIControl.EnableControl(GetID, refreshMoviesButton.GetID);
+                            MovingPicturesCore.Settings.DataProviderRequestLimit = dataProviderReqLimit;
                             SetMovieRefreshProperties(null, -1, -1, true);
                             moviesRefreshing = false;
                             SetButtonLabels();
@@ -887,6 +892,7 @@ namespace IMDb
                         movie.Commit();
                     }
 
+                    MovingPicturesCore.Settings.DataProviderRequestLimit = dataProviderReqLimit;
                     SetMovieRefreshProperties(null, -1, -1, true);
                     moviesRefreshing = false;
                     SetButtonLabels();
