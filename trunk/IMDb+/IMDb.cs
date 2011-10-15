@@ -43,7 +43,6 @@ namespace IMDb
         DBSourceInfo IMDbPlusSource;
         DBSourceInfo IMDbSource;
         Timer syncLibraryTimer;
-        string ReplacementsFile = Path.Combine(Config.GetFolder(Config.Dir.Config), @"IMDb+\Rename dBase IMDb+ Scraper.xml");
         bool moviesRefreshing;
         bool cancelRefreshing;
 
@@ -182,6 +181,10 @@ namespace IMDb
             // Update Script Paths
             UpdateScriptPaths();
 
+            // Get Replacements and set properties
+            SetReplacementProperties();            
+
+            // Init refresh properties
             SetMovieRefreshProperties(null, -1, -1, true);
 
             // start update timer, passing along configured parameters
@@ -508,7 +511,18 @@ namespace IMDb
                 GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.CountryFilterDescription);
             if (item.Label.Trim() == Translation.LanguageFilter)
                 GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.LanguageFilterDescription);
-        }        
+        }
+
+        private void SetReplacementProperties()
+        {
+            var replacements = Replacements.GetAll(false);
+            var customReplacements = Replacements.GetAll(true);
+
+            GUIUtils.SetProperty("#IMDb.Replacements.Count", replacements != null ? replacements.Count().ToString() : "0", true);
+            GUIUtils.SetProperty("#IMDb.Replacements.Custom.Count", customReplacements != null ? customReplacements.Count().ToString() : "0", true);
+            GUIUtils.SetProperty("#IMDb.Replacements.Version", Replacements.Version, true);
+            GUIUtils.SetProperty("#IMDb.Replacements.Published", Replacements.Published.ToShortDateString(), true);
+        }
 
         private void SetIMDbProperties()
         {
@@ -568,12 +582,15 @@ namespace IMDb
                 if (DownloadFile(ReplacementsUpdateFile, localFile))
                 {
                     // only update replacements if they differ
-                    if (!FilesAreEqual(localFile, ReplacementsFile))
+                    if (!FilesAreEqual(localFile, Replacements.ReplacementsFile))
                     {
                         // replace existing file
                         Logger.Info("Updating Replacements Database");
-                        try { File.Copy(localFile, ReplacementsFile, true); }
+                        try { File.Copy(localFile, Replacements.ReplacementsFile, true); }
                         catch { }
+
+                        Replacements.ClearCache(false);
+                        SetReplacementProperties();
                     }
                     else
                     {
@@ -813,6 +830,9 @@ namespace IMDb
 
         private bool FilesAreEqual(string f1, string f2)
         {
+            if (!File.Exists(f1)) return false;
+            if (!File.Exists(f2)) return false;
+
             // get file length and make sure lengths are identical
             long length = new FileInfo(f1).Length;
             if (length != new FileInfo(f2).Length)

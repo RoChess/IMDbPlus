@@ -66,6 +66,7 @@
     <Compile Include="IMDb.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Replacements.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Translation.cs" />
     <Compile Include="Properties\VersionInfo.cs" />
