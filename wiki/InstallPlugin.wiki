@@ -17,6 +17,10 @@ To make it as easy as possible, the IMDb+ plugin has been put inside a !MediaPor
 
 Or open the !MediaPortal Extension Installer shortcut on your desktop and look for the IMDb+ plugin in the list of "Known extensions". If you have the MPEI GUI plugin installed, you can do it all from the comfort of your couch inside the !MediaPortal GUI.
 
+*ALERT:* If you do not find the IMDb+ plugin inside the list of plugins within !MediaPortal GUI, then I'm sorry, but you have just encountered a small bug in MediaPortal. It is being worked on to get it fixed, but in the meantime; simply open MediaPortal configuration and then press 'OK' to properly close the configuration. This should then correctly update the mediaportal.xml file to show the IMDb+ plugin.
+
+-----
+
 =What about the IMDb+ scraper script?=
 
 The IMDb+ plugin does everything automatic now. If it is the first time you use it, it will detect if the IMDb+ scraper script is installed, and if not it will grab the latest version automatic and add it to MovingPictures.
