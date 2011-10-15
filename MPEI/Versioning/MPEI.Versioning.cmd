@@ -57,16 +57,19 @@ FOR /F "tokens=1,2,1-4 delims=." %%a IN (%version%) DO (
  ::  </GeneralInfo>
 
 
- :: Making Backup first
+ :: Move existing XMP2 project file first
  ::
-IF NOT EXIST Previous mkdir Previous
-move /Y "..\%MPEFile%" "Previous\%MPEFile%" > nul
+move /Y "..\%MPEFile%" "%MPEFile%" > nul
 
  :: Building XMP2 file with new versioning
  ::
-sfk filter "Previous\%MPEFile%" -inc- "*" to "<GeneralInfo>" > "..\%MPEFile%"
-sfk filter "Previous\%MPEFile%" -inc "<GeneralInfo>" to "</GeneralInfo>" -replace "_<Major>*</Major>_<Major>%major%</Major>_" -replace "_<Minor>*</Minor>_<Minor>%minor%</Minor>_" -replace "_<Build>*</Build>_<Build>%build%</Build>_" -replace "_<Revision>*</Revision>_<Revision>%revision%</Revision>_" -replace "_<OnlineLocation>%MPELink%*.mpe1</OnlineLocation>_<OnlineLocation>%MPELink%%major%.%minor%.%build%.%revision%.mpe1</OnlineLocation>_" >> "..\%MPEFile%"
-sfk filter "Previous\%MPEFile%" -inc- "</GeneralInfo>" to "*" >> "..\%MPEFile%"
+sfk filter "%MPEFile%" -inc- "*" to "<GeneralInfo>" > "..\%MPEFile%"
+sfk filter "%MPEFile%" -inc "<GeneralInfo>" to "</GeneralInfo>" -replace "_<Major>*</Major>_<Major>%major%</Major>_" -replace "_<Minor>*</Minor>_<Minor>%minor%</Minor>_" -replace "_<Build>*</Build>_<Build>%build%</Build>_" -replace "_<Revision>*</Revision>_<Revision>%revision%</Revision>_" -replace "_<OnlineLocation>%MPELink%*.mpe1</OnlineLocation>_<OnlineLocation>%MPELink%%major%.%minor%.%build%.%revision%.mpe1</OnlineLocation>_" >> "..\%MPEFile%"
+sfk filter "%MPEFile%" -inc- "</GeneralInfo>" to "*" >> "..\%MPEFile%"
+
+ :: Cleanup on isle 4
+ ::
+del "%MPEFile%" > nul
 
  :: All done, clearing ERRORLEVEL set by sfk :o)
  ::
