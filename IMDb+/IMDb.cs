@@ -584,10 +584,16 @@ namespace IMDb
                     // only update replacements if they differ
                     if (!FilesAreEqual(localFile, Replacements.ReplacementsFile))
                     {
-                        // replace existing file
-                        Logger.Info("Updating Replacements Database");
-                        try { File.Copy(localFile, Replacements.ReplacementsFile, true); }
-                        catch { }
+                        try 
+                        {
+                            // replace existing file
+                            File.Copy(localFile, Replacements.ReplacementsFile, true); 
+                            Logger.Info("Replacements updated to latest version successfully.");
+                        }
+                        catch (Exception e)
+                        {
+                            Logger.Error("Replacements update failed: {0}", e.Message);
+                        }
 
                         Replacements.ClearCache(false);
                         SetReplacementProperties();
