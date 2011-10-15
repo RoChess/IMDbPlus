@@ -978,6 +978,9 @@ namespace IMDb
         {
             if (IMDbPlusSource == null) return;
 
+            var replacements = Replacements.GetAll(false);
+            var customReplacements = Replacements.GetAll(true);
+
             List<string> textList = new List<string>();
 
             // IMdb Scraper Description
@@ -991,6 +994,10 @@ namespace IMDb
             textList.Add(string.Format(Translation.InfoScraperLastUpdateCheck, PluginSettings.SyncLastDateTime));
             textList.Add(string.Format(Translation.InfoMoviesIMDbPlusPrimary, DBMovieInfo.GetAll().Where(m => m.PrimarySource == IMDbPlusSource).Count()));
             textList.Add(string.Format(Translation.InfoMoviesOtherPlusPrimary, DBMovieInfo.GetAll().Where(m => m.PrimarySource != IMDbPlusSource).Count()));
+            textList.Add(string.Format(Translation.InfoReplacementsVersion, Replacements.Version));
+            textList.Add(string.Format(Translation.InfoReplacementsPublished, Replacements.Published.ToShortDateString()));
+            textList.Add(string.Format(Translation.InfoReplacementEntries, replacements != null ? replacements.Count() : 0));
+            textList.Add(string.Format(Translation.InfoCustomReplacementEntries, customReplacements != null ? customReplacements.Count() : 0));
 
             // show text dialog of information about plugin / scraper
             GUIUtils.ShowTextDialog(Translation.IMDbInfo, textList);
