@@ -69,10 +69,10 @@ namespace IMDb
         {
             if (Document == null) return false;
 
-            value = value.ToLower();
-
             try
             {
+                value = string.IsNullOrEmpty(value) ? string.Empty : value.ToLower();
+
                 XmlNode node = null;
                 node = Document.SelectSingleNode(string.Format("/imdbplus//set[@name='{0}']", name));
                 if (node == null)
