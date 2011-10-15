@@ -9,8 +9,8 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="3" point="1" />
-		<published month="10" day="12" year="2011" />
+		<version major="3" minor="3" point="2" />
+		<published month="10" day="15" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -1121,73 +1121,71 @@
 			<!-- This overwrites any special edition title abuse from search node as well -->
 			<set name="movie.details_url" value="${site}" />
 
-			<if test="${new_import}=true">
-				<!-- Rename titles for purpose of grouping, based on contents of default XML file -->
-				<if test="${global_options_rename_titles}=true">
-					<set name="rx_rename_check_prefix">
-						<![CDATA[
-						(?<=<imdbplus>.*)<rename[\t\s]+id="
-						]]>
-					</set>
-					<set name="rx_rename_check_postfix">
-						<![CDATA[
-						"[\t\s]+(?:title="(?<renameTitle>[^"]+)")?(?:[\t\s]*sortby="(?<renameSortBy>[^"]+)")?[\t\s]*/>
-						]]>
-					</set>
-					<retrieve name="file" file="C:\Rename dBase IMDb+ Scraper.xml" encoding="UTF-8" />
-					<parse name="fileRename" input="${file}" regex="${rx_rename_check_prefix}${movie.imdb_id}${rx_rename_check_postfix}" />
-					<if test="${fileRename.count}=1">
-						<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
-						<if test="${fileRename[0][0]}!=">
-							<set name="movie.title" value="${fileRename[0][0]}" />
-							<log LogLevel="Info" Message="IMDb+ Scraper: Title adjusted via Default Rename XML for: ${movie.imdb_id}" />
-						</if>
-						<if test="${fileRename[0][1]}!=">
-							<set name="movie.sortby" value="${fileRename[0][1]}" />
-							<log LogLevel="Info" Message="IMDb+ Scraper: SortBy adjusted via Default Rename XML for: ${movie.imdb_id}" />
-						</if>
+			<!-- Rename titles for purpose of grouping, based on contents of default XML file -->
+			<if test="${global_options_rename_titles}=true">
+				<set name="rx_rename_check_prefix">
+					<![CDATA[
+					(?<=<imdbplus>.*)<rename[\t\s]+id="
+					]]>
+				</set>
+				<set name="rx_rename_check_postfix">
+					<![CDATA[
+					"[\t\s]+(?:title="(?<renameTitle>[^"]+)")?(?:[\t\s]*sortby="(?<renameSortBy>[^"]+)")?[\t\s]*/>
+					]]>
+				</set>
+				<retrieve name="file" file="C:\Rename dBase IMDb+ Scraper.xml" encoding="UTF-8" />
+				<parse name="fileRename" input="${file}" regex="${rx_rename_check_prefix}${movie.imdb_id}${rx_rename_check_postfix}" />
+				<if test="${fileRename.count}=1">
+					<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
+					<if test="${fileRename[0][0]}!=">
+						<set name="movie.title" value="${fileRename[0][0]}" />
+						<log LogLevel="Info" Message="IMDb+ Scraper: Title adjusted via Default Rename XML for: ${movie.imdb_id}" />
 					</if>
-					<if test="${fileRename.count}&gt;1">
-						<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Default Rename XML file has more then one entry for: ${movie.imdb_id}" />
-					</if>
-
-					<!-- Rename titles for purpose of grouping or title fixes, based on contents of custom XML file -->
-					<set name="rx_rename_check_prefix">
-						<![CDATA[
-						(?<=<imdbplus>.*)<rename[\t\s]+id="
-						]]>
-					</set>
-					<set name="rx_rename_check_postfix">
-						<![CDATA[
-						"[\t\s]+(?:title="(?<renameTitle>[^"]+)")?(?:[\t\s]*sortby="(?<renameSortBy>[^"]+)")?[\t\s]*/>
-						]]>
-					</set>
-					<retrieve name="file" file="C:\Rename dBase IMDb+ Scraper (Custom).xml" encoding="UTF-8" />
-					<parse name="fileRename" input="${file}" regex="${rx_rename_check_prefix}${movie.imdb_id}${rx_rename_check_postfix}" />
-					<if test="${fileRename.count}=1">
-						<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
-						<if test="${fileRename[0][0]}!=">
-							<set name="movie.title" value="${fileRename[0][0]}" />
-							<log LogLevel="Info" Message="IMDb+ Scraper: Title adjusted via Custom Rename XML for: ${movie.imdb_id}" />
-						</if>
-						<if test="${fileRename[0][1]}!=">
-							<set name="movie.sortby" value="${fileRename[0][1]}" />
-							<log LogLevel="Info" Message="IMDb+ Scraper: SortBy adjusted via Custom Rename XML for: ${movie.imdb_id}" />
-						</if>
-					</if>
-					<if test="${fileRename.count}&gt;1">
-						<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Custom Rename XML file has more then one entry for: ${movie.imdb_id}" />
+					<if test="${fileRename[0][1]}!=">
+						<set name="movie.sortby" value="${fileRename[0][1]}" />
+						<log LogLevel="Info" Message="IMDb+ Scraper: SortBy adjusted via Default Rename XML for: ${movie.imdb_id}" />
 					</if>
 				</if>
-
-				<!-- Adjust title if this is a special edition -->
-				<if test="${special_edition[0][0]}!=">
-					<set name="movie.title" value="${movie.title} ${special_edition[0][0]}" />
+				<if test="${fileRename.count}&gt;1">
+					<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Default Rename XML file has more then one entry for: ${movie.imdb_id}" />
 				</if>
-				<if test="${special_edition[0][0]}=">
-					<if test="${special_backup[0][0]}!=">
-						<set name="movie.title" value="${movie.title} ${special_backup}" />
+
+				<!-- Rename titles for purpose of grouping or title fixes, based on contents of custom XML file -->
+				<set name="rx_rename_check_prefix">
+					<![CDATA[
+					(?<=<imdbplus>.*)<rename[\t\s]+id="
+					]]>
+				</set>
+				<set name="rx_rename_check_postfix">
+					<![CDATA[
+					"[\t\s]+(?:title="(?<renameTitle>[^"]+)")?(?:[\t\s]*sortby="(?<renameSortBy>[^"]+)")?[\t\s]*/>
+					]]>
+				</set>
+				<retrieve name="file" file="C:\Rename dBase IMDb+ Scraper (Custom).xml" encoding="UTF-8" />
+				<parse name="fileRename" input="${file}" regex="${rx_rename_check_prefix}${movie.imdb_id}${rx_rename_check_postfix}" />
+				<if test="${fileRename.count}=1">
+					<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
+					<if test="${fileRename[0][0]}!=">
+						<set name="movie.title" value="${fileRename[0][0]}" />
+						<log LogLevel="Info" Message="IMDb+ Scraper: Title adjusted via Custom Rename XML for: ${movie.imdb_id}" />
 					</if>
+					<if test="${fileRename[0][1]}!=">
+						<set name="movie.sortby" value="${fileRename[0][1]}" />
+						<log LogLevel="Info" Message="IMDb+ Scraper: SortBy adjusted via Custom Rename XML for: ${movie.imdb_id}" />
+					</if>
+				</if>
+				<if test="${fileRename.count}&gt;1">
+					<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Custom Rename XML file has more then one entry for: ${movie.imdb_id}" />
+				</if>
+			</if>
+
+			<!-- Adjust title if this is a special edition -->
+			<if test="${special_edition[0][0]}!=">
+				<set name="movie.title" value="${movie.title} ${special_edition[0][0]}" />
+			</if>
+			<if test="${special_edition[0][0]}=">
+				<if test="${special_backup[0][0]}!=">
+					<set name="movie.title" value="${movie.title} ${special_backup}" />
 				</if>
 			</if>
 		</if>
