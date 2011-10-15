@@ -32,6 +32,7 @@ Note: The MediaPortal virtual keyboard does not support the '|' character, so a 
 	<!-- E -->  
   
 	<!-- F -->
+  <string Field="First">First</string>
 	<string Field="ForceIMDbPlus">Force IMDb+</string>
 	<string Field="ForceIMDbPlusDescription">Are you ready to force all your existing
 movies, imported with the default IMDb
@@ -71,8 +72,17 @@ RottenTomatoes offers additional info, but if you want to restrict yourself to i
 
 Note: This also disables getting missing summary, runtime and scoreing.
 </string>
+  <string Field="IMDbInfo">IMDb+ Info</string>
+  <string Field="InfoPluginVersion">Plugin Version: v{0}</string>
+  <string Field="InfoScraperAuthor">Scraper Author: {0}</string>
+  <string Field="InfoScraperVersion">Scraper Version: v{0}</string>
+  <string Field="InfoScraperPriority">Scraper Priority: {0}</string>
+  <string Field="InfoScraperPublished">Scraper Published: {0}</string>
+  <string Field="InfoScraperLastUpdateCheck">Scraper Last Update Check: {0}</string>
+  <string Field="InfoMoviesIMDbPlusPrimary">Movies with IMDb+ as Primary Source: {0}</string>
+  <string Field="InfoMoviesOtherPlusPrimary">Movies with other Primary Source: {0}</string>  
 
-	<!-- K -->
+  <!-- K -->
 
 	<!-- J -->
 

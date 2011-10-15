@@ -201,6 +201,7 @@ namespace IMDb
         // E        
 
         // F
+        public static string First = "First";
         public static string ForceIMDbPlus = "Force IMDb+";
         public static string ForceIMDbPlusDescription = "Are you ready to force all your existing" + "\n" + "movies, imported with the default IMDb" + "\n" + "scraper, to start using the IMDb+ one?";
         public static string ForceIMDbPlusComplete = "Successfully switched {0}/{1} movies," + "\n" + "that were imported with the default IMDb" + "\n" + "scraper, over to the IMDb+ scraper.";
@@ -216,6 +217,14 @@ namespace IMDb
         public static string IMDbMetaScoreDescription = "Off = Main imdb.com score is used" + "\n" + "On = Use Metacritics Metascore instead" + "\n" + "" + "\n" + "The imdb.com website also offers the Metacritics.com metascore. Enabling this setting will use that score, otherwise the IMDb score is used." + "\n" + "" + "\n" + "Note: This setting requires that the 'IMDb Score' setting is also enabled and will therefore disable the RottenTomatoes method for missing summary and runtime info.";
         public static string IMDbScore = "IMDb Score";
         public static string IMDbScoreDescription = "Off = Use RottenTomatoes website" + "\n" + "On = Restrict to imdb.com website only" + "\n" + "" + "\n" + "RottenTomatoes offers additional info, but if you want to restrict yourself to imdb.com then enable this setting." + "\n" + "" + "\n" + "Note: This also disables getting missing summary, runtime and scoreing.";
+        public static string InfoPluginVersion = "Plugin Version: v{0}";
+        public static string InfoScraperAuthor = "Scraper Author: {0}";
+        public static string InfoScraperVersion = "Scraper Version: v{0}";
+        public static string InfoScraperPriority = "Scraper Priority: {0}";
+        public static string InfoScraperPublished = "Scraper Published: {0}";
+        public static string InfoScraperLastUpdateCheck = "Scraper Last Update Check: {0}";
+        public static string InfoMoviesIMDbPlusPrimary = "Movies with IMDb+ as Primary Source: {0}";
+        public static string InfoMoviesOtherPlusPrimary = "Movies with other Primary Source: {0}";
 
         // J
 
@@ -241,7 +250,7 @@ namespace IMDb
         public static string OriginalTitle = "Use the original title from the movie";
         public static string OriginalTitleDescription = "Off = Always force English title" + "\n" + "On = Use original title for foreign movies" + "\n" + "" + "\n" + "Foreign movies often have a non-English title." + "\n" + "" + "\n" + "If you want all your movies to use an English title, then keep this setting disabled.";
 
-        // P
+        // P        
 
         // Q
 
@@ -289,6 +298,8 @@ namespace IMDb
         public static string SettingListedPluginsDescription = "Enable this setting for IMDb+ plugin to appear in the My Plugins screen menu items.";
 
         // T
+        public static string IMDbInfo = "IMDb+ Info";
+
 
         // U
         public static string UkRating = "British BBFC certification system";
