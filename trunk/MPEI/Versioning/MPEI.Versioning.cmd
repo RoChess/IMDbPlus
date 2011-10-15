@@ -41,6 +41,12 @@ FOR /F "tokens=1,2,1-4 delims=." %%a IN (%version%) DO (
 	SET revision=%%d
 )
 
+ :: Getting region-fixed date+timestamp for updating <ReleaseDate>
+ ::
+FOR /F "tokens=*" %%T IN ('date.exe +"%%Y-%%m-%%dT%%H:%%M:%%S"') DO (
+	SET timestamp=%%T
+)
+
  :: Section of the XMP2 file that is going to be modified:
  ::
  ::  <GeneralInfo>
@@ -53,6 +59,7 @@ FOR /F "tokens=1,2,1-4 delims=." %%a IN (%version%) DO (
  ::    </Version>
  ::  (snip)
  ::  <OnlineLocation>http://(...).mpe1</OnlineLocation>
+ ::  <ReleaseDate>...T...</ReleaseDate>
  ::  (snip)
  ::  </GeneralInfo>
 
@@ -64,7 +71,7 @@ move /Y "..\%MPEFile%" "%MPEFile%" > nul
  :: Building XMP2 file with new versioning
  ::
 sfk filter "%MPEFile%" -inc- "*" to "<GeneralInfo>" > "..\%MPEFile%"
-sfk filter "%MPEFile%" -inc "<GeneralInfo>" to "</GeneralInfo>" -replace "_<Major>*</Major>_<Major>%major%</Major>_" -replace "_<Minor>*</Minor>_<Minor>%minor%</Minor>_" -replace "_<Build>*</Build>_<Build>%build%</Build>_" -replace "_<Revision>*</Revision>_<Revision>%revision%</Revision>_" -replace "_<OnlineLocation>%MPELink%*.mpe1</OnlineLocation>_<OnlineLocation>%MPELink%%major%.%minor%.%build%.%revision%.mpe1</OnlineLocation>_" >> "..\%MPEFile%"
+sfk filter "%MPEFile%" -inc "<GeneralInfo>" to "</GeneralInfo>" -replace "_<Major>*</Major>_<Major>%major%</Major>_" -replace "_<Minor>*</Minor>_<Minor>%minor%</Minor>_" -replace "_<Build>*</Build>_<Build>%build%</Build>_" -replace "_<Revision>*</Revision>_<Revision>%revision%</Revision>_" -replace "_<OnlineLocation>%MPELink%*.mpe1</OnlineLocation>_<OnlineLocation>%MPELink%%major%.%minor%.%build%.%revision%.mpe1</OnlineLocation>_" -replace "_<ReleaseDate>*</ReleaseDate>_<ReleaseDate>%timestamp%</ReleaseDate>_" >> "..\%MPEFile%"
 sfk filter "%MPEFile%" -inc- "</GeneralInfo>" to "*" >> "..\%MPEFile%"
 
  :: Cleanup on isle 4
