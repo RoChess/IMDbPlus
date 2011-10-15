@@ -29,6 +29,9 @@ namespace IMDb
         [SkinControl(3)]
         protected GUIButtonControl refreshMoviesButton = null;
 
+        [SkinControl(4)]
+        protected GUIButtonControl infoButton = null;
+
         [SkinControl(50)]
         protected GUIFacadeControl Facade = null;
 
@@ -321,6 +324,10 @@ namespace IMDb
                 // Refresh IMDb+ Movies
                 case (3):
                     RefreshIMDbPlusMovies();
+                    break;
+
+                case (4):
+                    ShowIMDbPlusInformation();
                     break;
 
                 // Facade
@@ -939,6 +946,28 @@ namespace IMDb
             {
                 GUIControl.SetControlLabel(GetID, refreshMoviesButton.GetID, moviesRefreshing ? Translation.RefreshCancel : Translation.RefreshMovies + "...");
             }
+        }
+
+        private void ShowIMDbPlusInformation()
+        {
+            if (IMDbPlusSource == null) return;
+
+            List<string> textList = new List<string>();
+
+            // IMdb Scraper Description
+            textList.Add(IMDbPlusSource.Provider.Description);
+            textList.Add(string.Empty);
+            textList.Add(string.Format(Translation.InfoPluginVersion, PluginSettings.Version));
+            textList.Add(string.Format(Translation.InfoScraperAuthor, IMDbPlusSource.Provider.Author));
+            textList.Add(string.Format(Translation.InfoScraperVersion, IMDbPlusSource.Provider.Version));            
+            textList.Add(string.Format(Translation.InfoScraperPriority, IMDbPlusSource.DetailsPriority == 0 ? Translation.First : IMDbPlusSource.DetailsPriority.ToString()));
+            textList.Add(string.Format(Translation.InfoScraperPublished, IMDbPlusSource.SelectedScript.Provider.Published.Value.ToShortDateString()));
+            textList.Add(string.Format(Translation.InfoScraperLastUpdateCheck, PluginSettings.SyncLastDateTime));
+            textList.Add(string.Format(Translation.InfoMoviesIMDbPlusPrimary, DBMovieInfo.GetAll().Where(m => m.PrimarySource == IMDbPlusSource).Count()));
+            textList.Add(string.Format(Translation.InfoMoviesOtherPlusPrimary, DBMovieInfo.GetAll().Where(m => m.PrimarySource != IMDbPlusSource).Count()));
+
+            // show text dialog of information about plugin / scraper
+            GUIUtils.ShowTextDialog(Translation.IMDbInfo, textList);
         }
 
     }

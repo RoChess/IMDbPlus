@@ -182,6 +182,17 @@
 						<onleft>50</onleft>
 						<onright>50</onright>
 						<onup>2</onup>
+						<ondown>4</ondown>
+						<width>300</width>
+					</control>
+					<control>
+						<description>IMDb+ Info</description>
+						<type>button</type>
+						<id>4</id>
+						<label>#IMDb.Translation.IMDbInfo.Label...</label>
+						<onleft>50</onleft>
+						<onright>50</onright>
+						<onup>3</onup>
 						<ondown>99999</ondown>
 						<width>300</width>
 					</control>
@@ -190,7 +201,7 @@
 						<type>button</type>
 						<id>99999</id>
 						<label>#MPEI.Translation.UpdateAvailable.Label</label>
-						<onup>3</onup>
+						<onup>4</onup>
 						<ondown>96742</ondown>
 						<onleft>50</onleft>
 						<width>300</width>
