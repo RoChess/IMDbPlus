@@ -31,6 +31,22 @@ When you open !MediaPortal for the first time, you will be greeted by the follow
 
 (version number shown is just an example)
 
+=Which version do I have now?=
+
+You might not always notice the update message shown above, so you can look at all the details of the IMDb+ plugin and scraper via the "IMDb Info..." option in the hidden menu on the left side. Some skins might be able to show all the information in a single view, but for the !DefaultWide skin it is spread over two pages.
+
+	http://blixy.net/mp/IMDb+/MePo.IMDb+.Info.1.png	http://blixy.net/mp/IMDb+/MePo.IMDb+.Info.2.png
+
+Use the up and down arrows on your remote or keyboard to switch between the screens. 
+
+=Update notifications=
+
+If you have the MPEI Extension plugin installed, then when there is an update to the IMDb+ plugin you will be notified as per:
+
+	http://blixy.net/mp/IMDb+/MePo.IMDb+.MPEI.Update.png
+
+There is also a notification button in the hidden menu on the left side. In the future this might be used to link directly to the MPEI GUI plugin.
+
 =What to do for an existing collection=
 
 If this is your first time to use the IMDb+ scraper, then you might have a collection already most likely imported via the default IMDb scraper. The scraper script that was used originally to import the movie with is forever tied to the movie. So to get the benefits of the IMDb+ scraper to work for your entire collection, you have to 'Force' all your existing movies to switch over to the IMDb+ scraper script.
@@ -47,19 +63,36 @@ Select 'Yes' and in a relative short time, depending on the size of your movie c
 
 	http://blixy.net/mp/IMDb+/MePo.IMDb+.4.png
 
-Unfortunatly that is not the end.
+=Refreshing your collection with IMDb+=
 
-All your existing movies now rely on the IMDb+ scraper script to get all the information, but they all still have the old information that was obtained by the default IMDb one.
+So now that you have switched your collection over to use the IMDb+ scraper, you probably want to see the results it offers. This means your existing movie details have to be updated. Simply open up the hidden left-sided menu and use the "Refresh Movies..." option. You are then greeted by the following choices:
 
-You can update each movie manually inside !MovingPictures via the context menu, but this is a painstaking process if you have a large collection.
+	http://blixy.net/mp/IMDb+/MePo.IMDb+.Refresh.1.png
 
-So good thing there is a quicker way. This is done via the !MovingPictures configuration screen. So close !MediaPortal GUI, and open the !MediaPortal configuration. Then click on the 'Plugins' entry and right click the '!MovingPictures' icon and open the configuration screen.
+This will allow you to not only refresh all the movies assigned to the IMDb+ scraper, but restrict the update to only the movies with an entry in the rename databases. Once you pick a choice you are brought back to the main view and you will see an animation on the left side and the top right will show you the progress.
+
+	http://blixy.net/mp/IMDb+/MePo.IMDb+.Refresh.2.png
+
+If you wish to cancel the refresh, then at any time bring back the hidden menu again and use:
+
+	http://blixy.net/mp/IMDb+/MePo.IMDb+.Refresh.3.png
+
+Or wait till everything is done.
+
+	http://blixy.net/mp/IMDb+/MePo.IMDb+.Refresh.4.png
+
+
+=Manual Update via !MovingPictures config=
+
+For even more control in refreshing your movie collection, you can use the !MovingPictures configuration.
+
+So close !MediaPortal GUI, and open the !MediaPortal configuration. Then click on the 'Plugins' entry and right click the '!MovingPictures' icon and open the configuration screen.
 
 Switch to the "Movie Manager" tab, so you get a result such as:
 
 	http://blixy.net/mp/IMDb+/MovPic.Config.Manager.1.png
 
-Click on the first movie in the list on the left side, as per step #1 below. Then hold down the SHIFT button on your keyboard and hit the END key. You will then see all your movies highlighted as per step #2 below.
+You can hold down the CTRL key and multi-select individual movies from the list. Or if you just want to refresh your entire collection, click on the first movie in the list on the left side, as per step #1 below. Then hold down the SHIFT button on your keyboard and hit the END key. You will then see all your movies highlighted as per step #2 below.
 
 	http://blixy.net/mp/IMDb+/MovPic.Config.Manager.Select.All.png
 
