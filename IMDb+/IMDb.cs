@@ -890,48 +890,58 @@ namespace IMDb
                 // focus back to main facade
                 GUIControl.FocusControl(GetID, Facade.GetID);
 
-                if (GUIUtils.ShowYesNoDialog(Translation.RefreshMovies, Translation.RefreshMoviesDescription))
-                {
-                    moviesRefreshing = true;
-                    cancelRefreshing = false;
-                    SetButtonLabels();
+                // add choices to menu
+                List<GUIListItem> items = new List<GUIListItem>();
+                
+                GUIListItem item = new GUIListItem(Translation.UpdateAll);
+                items.Add(item);
+                item = new GUIListItem(Translation.UpdateReplacementOnly);
+                items.Add(item);
+                item = new GUIListItem(Translation.Cancel);
+                items.Add(item);
+
+                int selectedItem = GUIUtils.ShowMenuDialog(Translation.RefreshingMovies, items);
+                if (selectedItem < 0 || selectedItem == 2) return;
+
+                moviesRefreshing = true;
+                cancelRefreshing = false;
+                SetButtonLabels();
                    
-                    // get IMDb+ movies for refresh
-                    var movies = DBMovieInfo.GetAll().Where(m => m.PrimarySource == IMDbPlusSource);
+                // get IMDb+ movies for refresh
+                var movies = GetFilteredMovieListFromChoice(selectedItem);
 
-                    // we only want to update from primary source.
-                    int dataProviderReqLimit = MovingPicturesCore.Settings.DataProviderRequestLimit;
-                    MovingPicturesCore.Settings.DataProviderRequestLimit = -1;                    
+                // we only want to update from primary source.
+                int dataProviderReqLimit = MovingPicturesCore.Settings.DataProviderRequestLimit;
+                MovingPicturesCore.Settings.DataProviderRequestLimit = -1;                    
 
-                    int moviesUpdated = 0;
-                    int moviesTotal = movies.Count();
+                int moviesUpdated = 0;
+                int moviesTotal = movies.Count();
 
-                    Logger.Info("Refreshing {0} Movies...", moviesTotal);
-                    foreach (var movie in movies)
+                Logger.Info("Refreshing {0} Movies...", moviesTotal);
+                foreach (var movie in movies)
+                {
+                    if (cancelRefreshing)
                     {
-                        if (cancelRefreshing)
-                        {
-                            Logger.Info("Movie refresh cancelled");
-                            GUIControl.EnableControl(GetID, refreshMoviesButton.GetID);
-                            MovingPicturesCore.Settings.DataProviderRequestLimit = dataProviderReqLimit;
-                            SetMovieRefreshProperties(null, -1, -1, true);
-                            moviesRefreshing = false;
-                            SetButtonLabels();
-                            return;
-                        }
-                        
-                        SetMovieRefreshProperties(movie, ++moviesUpdated, moviesTotal, false);
-                        MovingPicturesCore.DataProviderManager.Update(movie);
-                        movie.Commit();
+                        Logger.Info("Movie refresh cancelled");
+                        GUIControl.EnableControl(GetID, refreshMoviesButton.GetID);
+                        MovingPicturesCore.Settings.DataProviderRequestLimit = dataProviderReqLimit;
+                        SetMovieRefreshProperties(null, -1, -1, true);
+                        moviesRefreshing = false;
+                        SetButtonLabels();
+                        return;
                     }
-
-                    MovingPicturesCore.Settings.DataProviderRequestLimit = dataProviderReqLimit;
-                    SetMovieRefreshProperties(null, -1, -1, true);
-                    moviesRefreshing = false;
-                    SetButtonLabels();
-
-                    GUIUtils.ShowNotifyDialog(Translation.RefreshMovies, Translation.RefreshMoviesNotification);
+                        
+                    SetMovieRefreshProperties(movie, ++moviesUpdated, moviesTotal, false);
+                    MovingPicturesCore.DataProviderManager.Update(movie);
+                    movie.Commit();
                 }
+
+                MovingPicturesCore.Settings.DataProviderRequestLimit = dataProviderReqLimit;
+                SetMovieRefreshProperties(null, -1, -1, true);
+                moviesRefreshing = false;
+                SetButtonLabels();
+
+                GUIUtils.ShowNotifyDialog(Translation.RefreshMovies, Translation.RefreshMoviesNotification);
             })
             {
                 IsBackground = true,
@@ -939,6 +949,45 @@ namespace IMDb
             };
 
             refreshThread.Start();
+        }
+
+        private List<DBMovieInfo> GetFilteredMovieListFromChoice(int choice)
+        {
+            List<DBMovieInfo> result = new List<DBMovieInfo>();
+            List<DBMovieInfo> movies = DBMovieInfo.GetAll().Where(m => m.PrimarySource == IMDbPlusSource).ToList();
+            
+            switch (choice)
+            {
+                // update all
+                case 0:
+                    result = movies;
+                    break;
+                
+                // replacements only
+                case 1:
+                    Logger.Info("Filtering movie list...");
+                    var coreReplacements = Replacements.GetAll(false);
+                    if (coreReplacements != null)
+                    {
+                        // filter using core replacements
+                        result = movies.Where(m => coreReplacements.Any(r => m.ImdbID == r.Id)).ToList();
+
+                        var customReplacements = Replacements.GetAll(true);
+                        if (customReplacements != null)
+                        {
+                            // add filter for custom replacements
+                            result = result.Concat(movies.Where(m => customReplacements.Any(r => m.ImdbID == r.Id))).ToList();
+                        }
+                    }
+                    Logger.Info("Filtered out {0} movies from {1} total.", movies.Count - result.Count, movies.Count);
+                    break;
+            }
+
+            // sort by default sort comparer
+            result.Sort();
+
+            // return filtered list
+            return result;
         }
 
         private void SetMovieRefreshProperties(DBMovieInfo movie, int progress, int total, bool cancelled)
