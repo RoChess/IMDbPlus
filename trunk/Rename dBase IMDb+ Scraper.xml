@@ -3,8 +3,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="0" point="0" />
-		<published month="10" day="15" year="2011" />
+		<version major="1" minor="0" point="1" />
+		<published month="10" day="16" year="2011" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -136,6 +136,8 @@
 	<rename id="tt0103919" title="Candyman I" />
 	<rename id="tt0112625" title="Candyman II: Farewell to the Flesh" />
 	<rename id="tt0165662" title="Candyman III: Day of the Dead" />
+	<rename id="tt0317219" title="Cars I" />
+	<rename id="tt1216475" title="Cars II" />
 	<rename id="tt0892255" title="Che I: The Argentine" />
 	<rename id="tt0374569" title="Che II: Guerrilla" />
 	<rename id="tt0078446" title="Cheech &amp; Chong I: Up in Smoke" />
@@ -874,6 +876,8 @@
 	<rename id="tt0804551" title="Walking Tall III: Lone Justice" />
 	<rename id="tt0094291" title="Wall Street I" />
 	<rename id="tt1027718" title="Wall Street II: Money Never Sleeps" />
+	<rename id="tt0449040" title="War of the Worlds I" />
+	<rename id="tt1183733" title="War of the Worlds II: The Next Wave" />
 	<rename id="tt0098622" title="Warlock I" />
 	<rename id="tt0108517" title="Warlock II: The Armageddon" />
 	<rename id="tt0157171" title="Warlock III: The End of Innocence" />

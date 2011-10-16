@@ -268,7 +268,7 @@
 			<width>115</width>
 			<height>122</height>
 			<texture>extension_update.png</texture>
-			<visible>!string.equals(#mpei.9d064213_0b4d_4cee_96a5_405812422b58.haveupdate,false)</visible>
+			<visible>string.equals(#mpei.9d064213_0b4d_4cee_96a5_405812422b58.haveupdate,true)</visible>
 		</control>
 	</controls>
 </window>
