@@ -80,8 +80,8 @@ Note: This also disables getting missing summary, runtime and scoreing.
   <string Field="InfoScraperPriority">Scraper Priority: {0}</string>
   <string Field="InfoScraperPublished">Scraper Published: {0}</string>
   <string Field="InfoScraperLastUpdateCheck">Scraper Last Update Check: {0}</string>
-  <string Field="InfoMoviesIMDbPlusPrimary">Movies with IMDb+ as Primary Source: {0}</string>
-  <string Field="InfoMoviesOtherPlusPrimary">Movies with other Primary Source: {0}</string>
+  <string Field="InfoMoviesIMDbPlusPrimary">Movies using IMDb+ as scraper source: {0}</string>
+  <string Field="InfoMoviesOtherPlusPrimary">Movies that use a different scraper: {0}</string>
   <string Field="InfoReplacementsVersion">Replacements Version: v{0}</string>  
   <string Field="InfoReplacementsPublished">Replacements Published: {0}</string>  
   <string Field="InfoReplacementEntries">Replacement Entries: {0}</string>  
