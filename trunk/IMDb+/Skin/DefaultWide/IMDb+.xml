@@ -232,7 +232,7 @@
        <control>
       <description>Item Count Label</description>
       <type>label</type>
-      <label>#IMDb.Translation.RefreshingMovies.Label: #IMDb.Movie.Refresh.ProgressPercent%</label>
+      <label>#IMDb.Movie.Refresh.Status</label>
       <id>0</id>
       <width>300</width>
       <posX>1244</posX>
