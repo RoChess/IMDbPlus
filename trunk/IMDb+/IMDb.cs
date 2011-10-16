@@ -1007,7 +1007,7 @@ namespace IMDb
 
             Logger.Info("Refreshing movie information [{0}/{1}] '{2}'", progress, total, movie.ToString());
 
-            GUIUtils.SetProperty("#IMDb.Movie.Refresh.Status", string.Format(Translation.RefreshMovieStatus, total, progress));
+            GUIUtils.SetProperty("#IMDb.Movie.Refresh.Status", string.Format(Translation.RefreshMovieStatus, total, percent));
             GUIUtils.SetProperty("#IMDb.Movie.Refresh.Active", "true");
             GUIUtils.SetProperty("#IMDb.Movie.Refresh.Movie", movie.ToString());
             GUIUtils.SetProperty("#IMDb.Movie.Refresh.ProgressPercent", percent.ToString());
