@@ -351,15 +351,15 @@ public class Script
     <UpdateUrl>http://imdbplus.googlecode.com/svn/trunk/MPEI/update.xml</UpdateUrl>
     <Version>
       <Major>1</Major>
-      <Minor>0</Minor>
+      <Minor>2</Minor>
       <Build>0</Build>
-      <Revision>99</Revision>
+      <Revision>133</Revision>
     </Version>
     <ExtensionDescription>The IMDb+ plugin &amp; scraper for MovingPictures will make your movie collection easier to use. The plugin will keep the scraper script up-to-date, and add powerful features such as rename and grouping of movie series. It also corrects English titles, allows RottenTomatoes ratings, and many other features.</ExtensionDescription>
     <VersionDescription>Auto-update system for the IMDb+ scraper script</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
-    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.0.0.99.mpe1</OnlineLocation>
-    <ReleaseDate>2011-10-08T20:37:25.3223687-04:00</ReleaseDate>
+    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.2.0.133.mpe1</OnlineLocation>
+    <ReleaseDate>2011-10-16T06:08:44</ReleaseDate>
     <Tags>moving pictures, movies, scraper</Tags>
     <Location>.\Release\imdbplus.plugin.v[Version].mpe1</Location>
     <Params>
