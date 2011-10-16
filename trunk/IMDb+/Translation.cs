@@ -224,8 +224,8 @@ namespace IMDb
         public static string InfoScraperPriority = "Scraper Priority: {0}";
         public static string InfoScraperPublished = "Scraper Published: {0}";
         public static string InfoScraperLastUpdateCheck = "Scraper Last Update Check: {0}";
-        public static string InfoMoviesIMDbPlusPrimary = "Movies with IMDb+ as Primary Source: {0}";
-        public static string InfoMoviesOtherPlusPrimary = "Movies with other Primary Source: {0}";
+        public static string InfoMoviesIMDbPlusPrimary = "Movies using IMDb+ as scraper source: {0}";
+        public static string InfoMoviesOtherPlusPrimary = "Movies that use a different scraper: {0}";
         public static string InfoReplacementsVersion = "Replacements Version: v{0}";
         public static string InfoReplacementsPublished = "Replacements Published: {0}";
         public static string InfoReplacementEntries = "Replacement Entries: {0}";
