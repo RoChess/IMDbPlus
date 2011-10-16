@@ -192,6 +192,7 @@ namespace IMDb
         public static string BoolOff = "Off";
 
         // C
+        public static string Cancel = "Cancel";
         public static string CountryFilter = "Advanced: Country filter";
         public static string CountryFilterDescription = "There are some English language based movies that have a foreign title. So to aid in the proper detection of English titles it was needed to also filter on the country in which the movie was produced." + "\n" + "" + "\n" + "Default countries that do not use foreign titles are: 'us.ca.gb.ie.au.nz' (United States, Canada, Great Britain, Ireland, Australia and New Zealand)" + "\n" + "" + "\n" + "Note: The MediaPortal virtual keyboard does not support the '|' character, so a '.' was used instead to seperate the different languages. Be very careful in adjusting this setting as it can stop the function of the IMDb+ scraper.";
 
@@ -310,6 +311,8 @@ namespace IMDb
         public static string UkRatingDescription = "Off = Use the American MPAA ratings" + "\n" + "On = Enable the British BBFC ratings" + "\n" + "" + "\n" + "Use this setting for UK movie certifications." + "\n" + "" + "\n" + "This includes 'U' for Universal, 'PG' for Parental Guidance, 12A, 12, 15, 18 and finally 'R18' for Restricted 18.";
         public static string UpdatedScraperScript = "MovingPictures has been updated with IMDb+ Scraper script v{0}";
         public static string Update = "Update";
+        public static string UpdateAll = "Update All";
+        public static string UpdateReplacementOnly = "Update Replacements Only";
 
         // V
 

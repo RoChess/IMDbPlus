@@ -18,6 +18,7 @@ Example: Black Book (Zwartboek)
 	<string Field="BoolOff">Off</string>
 
 	<!-- C -->
+  <string Field="Cancel">Cancel</string>
 	<string Field="CountryFilter">Advanced: Country filter</string>
 	<string Field="CountryFilterDescription">There are some English language based movies that have a foreign title. So to aid in the proper detection of English titles it was needed to also filter on the country in which the movie was produced.
 
@@ -266,6 +267,8 @@ This includes 'U' for Universal, 'PG' for Parental Guidance, 12A, 12, 15, 18 and
 </string>
 	<string Field="UpdatedScraperScript">MovingPictures has been updated with IMDb+ Scraper script v{0}</string>
 	<string Field="Update">Update</string>
+  <string Field="UpdateAll">Update All</string>
+  <string Field="UpdateReplacements">Update Replacements Only</string>
   
 	<!-- V -->
 
