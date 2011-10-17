@@ -245,9 +245,10 @@ namespace IMDb
             UpdateListItem(itemId++, Translation.RefreshAllFields, PluginSettings.RefreshAllFields ? Translation.BoolOn : Translation.BoolOff, "folder");
 
             UpdateListItem(itemId++, Translation.CountryFilter, PluginSettings.CountryFilter, "folder");
-            UpdateListItem(itemId++, Translation.LanguageFilter, PluginSettings.LanguageFilter, "folder");            
+            UpdateListItem(itemId++, Translation.LanguageFilter, PluginSettings.LanguageFilter, "folder");
 
             // Set Facade Layout
+            Facade.CurrentLayout = GUIFacadeControl.Layout.List;
             GUIControl.FocusControl(GetID, Facade.GetID);
 
             // Set Current Selected Item
@@ -782,7 +783,7 @@ namespace IMDb
                 {
                     // disable repeated attempts
                     GUIUtils.SetProperty("#IMDb.ForceIMDbPlus.Visible", "false", false);
-                    GUIWindowManager.Process();
+                    //GUIWindowManager.Process();
 
                     int movieCount = 0;
 
@@ -831,7 +832,8 @@ namespace IMDb
                 GUIUtils.SetProperty("#IMDb.ForceIMDbPlus.Visible", "false", true);
             }
             
-            GUIWindowManager.Process();
+            // avoid "flashing" of window during page load (GUIWindowManager.Process() called before base.OnPageLoad())
+            //GUIWindowManager.Process();
         }
 
         private bool FilesAreEqual(string f1, string f2)
