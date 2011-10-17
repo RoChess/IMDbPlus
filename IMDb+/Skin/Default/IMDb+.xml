@@ -56,7 +56,7 @@
 					<posY>55</posY>
 					<height>250</height>
 					<width>660</width>
-					<onleft>50</onleft>
+					<onleft>96742</onleft>
 					<onright>50</onright>
 					<scrollOffset>5</scrollOffset>
 					<itemWidth>12</itemWidth>
@@ -91,6 +91,8 @@
 			<font>font10</font>
 			<align>right</align>
 			<textcolor>ff888888</textcolor>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+			<animation effect="fade" time="250" delay="0">WindowOpen</animation>
 		</control>
 		<control>
 			<description>List Option Description</description>
@@ -106,6 +108,169 @@
 			<scrollStartDelaySec>4</scrollStartDelaySec>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 			<animation effect="fade" time="250" delay="0">WindowOpen</animation>
+		</control>
+		<control>
+			<type>actiongroup</type>
+			<description>action menu</description>
+			<defaultcontrol>96742</defaultcontrol>
+			<onexit>50</onexit>
+			<buttonX>0</buttonX>
+			<buttonY>-130</buttonY>
+			<buttonwidth>106</buttonwidth>
+			<buttonheight>900</buttonheight>
+			<textureFocus>-</textureFocus>
+			<textureNoFocus>Action_nofocus.png</textureNoFocus>
+			<width>297</width>
+			<height>576</height>
+			<dimColor>00ffffff</dimColor>
+			<animation effect="slide" time="70" end="-300,0" reversible="false">windowclose</animation>
+			<control>
+				<type>image</type>
+				<posX>26</posX>
+				<posY>25</posY>
+				<width>267</width>
+				<height>526</height>
+				<texture>Backslide.png</texture>
+				<colorDiffuse>fffffffff</colorDiffuse>
+				<visible>!Control.HasFocus(50)</visible>
+				<animation effect="slide" time="70" start="-300,0" reversible="false">visible</animation>
+				<animation effect="slide" time="70" end="-300,0" reversible="false">hidden</animation>
+			</control>
+			<control>
+				<description>group element</description>
+				<type>group</type>
+				<animation effect="slide" time="70" start="-300,0" reversible="false">visible</animation>
+				<animation effect="slide" time="70" end="-300,0" reversible="false">hidden</animation>
+				<visible>!Control.HasFocus(50)</visible>
+				<control>
+					<description>button group</description>
+					<type>group</type>
+					<posX>50</posX>
+					<posY>70</posY>
+					<width>200</width>
+					<layout>StackLayout(0, Vertical, true)</layout>
+					<visible>!Control.HasFocus(50)</visible>
+					<animation effect="slide" time="70" start="-300,0" reversible="false">visible</animation>
+					<animation effect="slide" time="70" end="-300,0" reversible="false">hidden</animation>
+					<control>
+						<description>MovingPictures</description>
+						<id>96742</id>
+						<type>button</type>
+						<label>Moving Pictures</label>
+						<hyperlink>96742</hyperlink>
+						<onleft>50</onleft>
+						<onright>50</onright>
+						<onup>99999</onup>
+						<ondown>2</ondown>
+						<width>200</width>
+					</control>
+					<control>
+						<description>Force IMDb+</description>
+						<type>button</type>
+						<id>2</id>
+						<label>#IMDb.Translation.ForceIMDbPlus.Label...</label>
+						<onleft>50</onleft>
+						<onright>50</onright>
+						<onup>96742</onup>
+						<ondown>3</ondown>
+						<width>200</width>
+						<visible>string.equals(#IMDb.ForceIMDbPlus.Visible,true)</visible>
+					</control>
+					<control>
+						<description>Refresh Movies</description>
+						<type>button</type>
+						<id>3</id>
+						<label>-</label>
+						<onleft>50</onleft>
+						<onright>50</onright>
+						<onup>2</onup>
+						<ondown>4</ondown>
+						<width>200</width>
+					</control>
+					<control>
+						<description>IMDb+ Info</description>
+						<type>button</type>
+						<id>4</id>
+						<label>#IMDb.Translation.IMDbInfo.Label...</label>
+						<onleft>50</onleft>
+						<onright>50</onright>
+						<onup>3</onup>
+						<ondown>99999</ondown>
+						<width>200</width>
+					</control>
+					<control>
+						<description>MPEIUPDATE:9d064213_0b4d_4cee_96a5_405812422b58</description>
+						<type>button</type>
+						<id>99999</id>
+						<label>#MPEI.Translation.UpdateAvailable.Label</label>
+						<onup>4</onup>
+						<ondown>96742</ondown>
+						<onleft>50</onleft>
+						<width>200</width>
+						<visible>string.equals(#mpei.9d064213_0b4d_4cee_96a5_405812422b58.haveupdate,true)</visible>
+					</control>
+				</control>
+				<control>
+					<id>0</id>
+					<description>Last Scraper Update Time Label</description>
+					<label>#IMDb.Translation.LastScraperUpdate.Label</label>
+					<type>label</type>
+					<font>font10</font>
+					<posX>71</posX>
+					<posY>500</posY>
+					<textcolor>ffffffff</textcolor>
+				</control>
+				<control>
+					<id>0</id>
+					<description>Last Scraper Update Time</description>
+					<label>#IMDb.Scraper.LastUpdated</label>
+					<type>label</type>
+					<font>font10</font>
+					<posX>71</posX>
+					<posY>518</posY>
+				</control>
+			</control>
+		</control>
+		<control>
+			<description>Item Count Label</description>
+			<type>label</type>
+			<label>#IMDb.Movie.Refresh.Status</label>
+			<id>0</id>
+			<width>300</width>
+			<posX>700</posX>
+			<posY>2</posY>
+			<align>right</align>
+			<font>font11</font>
+			<textcolor>ffFFFFFF</textcolor>
+			<visible>string.equals(#IMDb.Movie.Refresh.Active,true)</visible>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Progress Indicator Animation</description>
+			<type>animation</type>
+			<id>13</id>
+			<posX>34</posX>
+			<posY>304</posY>
+			<width>72</width>
+			<height>72</height>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<visible>string.equals(#IMDb.Movie.Refresh.Active,true)</visible>
+			<textures>common.waiting.1.png;common.waiting.2.png;common.waiting.3.png;common.waiting.4.png;common.waiting.5.png;common.waiting.6.png;common.waiting.7.png;common.waiting.8.png</textures>
+			<Duration>0:0:01.5</Duration>
+			<keepaspectratio>yes</keepaspectratio>
+		</control>
+		<control>
+			<description>MPEIUPDATE:9d064213_0b4d_4cee_96a5_405812422b58</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>30</posX>
+			<posY>300</posY>
+			<width>83</width>
+			<height>92</height>
+			<texture>extension_update.png</texture>
+			<visible>string.equals(#mpei.9d064213_0b4d_4cee_96a5_405812422b58.haveupdate,true)</visible>
 		</control>
 	</controls>
 </window>

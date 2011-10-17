@@ -119,7 +119,7 @@
 			<buttonheight>720</buttonheight>
 			<textureFocus>-</textureFocus>
 			<textureNoFocus>Action_nofocus.png</textureNoFocus>
-			<width>568</width>
+			<width>397</width>
 			<height>900</height>
 			<dimColor>00ffffff</dimColor>
 			<animation effect="slide" time="70" end="-300,0" reversible="false">windowclose</animation>
@@ -158,6 +158,7 @@
 						<label>Moving Pictures</label>
 						<hyperlink>96742</hyperlink>
 						<onleft>50</onleft>
+						<onright>50</onright>
 						<onup>99999</onup>
 						<ondown>2</ondown>
 						<width>300</width>
