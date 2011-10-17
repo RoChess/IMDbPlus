@@ -167,13 +167,11 @@ There are many movie series, and sometimes the titles do not start with the same
 
 Example: 'Batman VII: The Dark Knight Rises' will group nicely along with the other movies in the series.
 
-The default rename titles are placed in a file located at: 'C:\Rename dBase IMDb+ Scraper.xml'
+The default rename titles are placed in a file 'IMDb+\Rename dBase IMDb+ Scraper.xml' which resides in your MediaPortal User folder.
 
-Any custom rename entries that you want should go into: 'C:\Rename dBase IMDb+ Scraper (Custom).xml'
+Any custom rename entries that you want should go into 'IMDb+\Rename dBase IMDb+ Scraper (Custom).xml'
 
-If those files do not exist on your system, please use the setting page of this plugin to reinstall them.
-
-You can use notepad to edit the XML files, but it is preferred to use the editor option of this plugin to make sure that the contents of the XML files remain compliant.
+You can use notepad to edit the custom one, as the default one will be automatically updated at times, please make sure that the contents of the XML files remain compliant.
 </string>
 	<string Field="RottenMeter">RottenTomatoes TomatoMeter</string>
 	<string Field="RottenMeterDescription">Off = RottenTomatoes 'Audience' ratings
