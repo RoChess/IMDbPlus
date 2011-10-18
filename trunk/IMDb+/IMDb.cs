@@ -656,12 +656,6 @@ namespace IMDb
             return localFile;
         }
 
-        private void ScraperScriptModify(string scraperFile, string regexReplace)
-        {
-            // Adjust scraper script before installing it, so that scraper name and ID can be modified if needed
-            // This allows IMDb+ scraper to be installed as "imdb.com (IMDb+ Edition)" for existing collections
-        }
-
         private bool ScraperScriptInstallation(string xmlFile)
         {
             // Grab the contents of the scraper script file
