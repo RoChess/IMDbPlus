@@ -9,8 +9,8 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="3" point="3" />
-		<published month="10" day="16" year="2011" />
+		<version major="3" minor="3" point="4" />
+		<published month="10" day="19" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -164,10 +164,12 @@
 				<parse name="special_backup" input="${movie.title}" regex="([\(\[\{](?:3D|Extended|Unrated|Director's Cut|Alternate Ending)(?: Edition)?[\}\]\)])" />
 			</if>
 
-			<set name="site" value="http://akas.imdb.com/title/${movie.site_id}" />
-			<retrieve name="details_page" url="${site}" />
-
+			<if test="${global_options_secondary_details}&lt;=1">
+				<set name="site" value="http://akas.imdb.com/title/${movie.site_id}" />
+			</if>
 			<if test="${global_options_secondary_details}>1">
+				<set name="site" value="http://www.imdb.com/title/${movie.site_id}" />
+
 				<if test="${global_options_secondary_details}=2">
 					<!-- Avatar = http://www.imdb.de/title/tt0499549 -->
 					<set name="alt_site" value="http://www.imdb.de/title/${movie.site_id}" />
@@ -286,6 +288,7 @@
 				</if>
 				<retrieve name="foreign_page" url="${alt_site}" />
 			</if>
+			<retrieve name="details_page" url="${site}" />
 
 			<set name="movie.imdb_id" value="${movie.site_id}" />
 
