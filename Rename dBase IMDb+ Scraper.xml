@@ -3,8 +3,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="0" point="1" />
-		<published month="10" day="16" year="2011" />
+		<version major="1" minor="0" point="2" />
+		<published month="10" day="19" year="2011" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -126,6 +126,8 @@
 	<rename id="tt0357507" title="Boogeyman I" />
 	<rename id="tt0900357" title="Boogeyman II" />
 	<rename id="tt1204883" title="Boogeyman III" />
+	<rename id="tt0086998" title="Breakin' I" />
+	<rename id="tt0086999" title="Breakin' II: Electric Boogaloo" />
 	<rename id="tt0204946" title="Bring It On I" />
 	<rename id="tt0334965" title="Bring It On II: Again" />
 	<rename id="tt0490822" title="Bring It On III: All Or Nothing" />
@@ -814,6 +816,12 @@
 	<rename id="tt0155267" title="The Thomas Crown Affair I" />
 	<rename id="tt0433100" title="The Thomas Crown Affair II" />
 	<rename id="tt0063688" title="The Thomas Crown Affair (Original)" />
+	<rename id="tt0090190" title="The Toxic Avenger I" />
+	<rename id="tt0098503" title="The Toxic Avenger II" />
+	<rename id="tt0098502" title="The Toxic Avenger III: The Last Temptation of Toxie" />
+	<rename id="tt0212879" title="The Toxic Avenger IV: Citizen Toxie" />
+	<rename id="tt1507003" title="The Toxic Avenger V: Toxic Twins" />
+	<rename id="tt1633359" title="The Toxic Avenger (Remake) I" />
 	<rename id="tt0293662" title="The Transporter I" />
 	<rename id="tt0388482" title="The Transporter II: Transporter 2" />
 	<rename id="tt1129442" title="The Transporter III: Transporter 3" />
