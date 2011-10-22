@@ -13,6 +13,36 @@ namespace IMDb
     {
         public static string OptionsFile = Path.Combine(Config.GetFolder(Config.Dir.Config), @"IMDb+\Options IMDb+ Scraper.xml");
 
+        #region Constants
+        public const string cSection = "IMDbPlus";
+
+        private const string cOriginalTitle = "global_options_original_title";
+        private const string cForeignTitle = "global_options_foreign_title";
+        private const string cForeignFirst = "global_options_foreign_first";
+        private const string cSpecialEdition = "global_options_special_edition";
+        private const string cRenameTitles = "global_options_rename_titles";
+        private const string cSingleScore = "global_options_single_score";
+        private const string cIMDbScore = "global_options_imdb_score";
+        private const string cIMDbMetaScore = "global_options_imdb_metascore";
+        private const string cRottenMeter = "global_options_rotten_meter";
+        private const string cRottenAverage = "global_options_rotten_average";
+        private const string cRottenTopCritics = "global_options_rotten_top_critics";
+        private const string cMinIMDbVotes = "global_options_min_imdb_votes";
+        private const string cLongSummary = "global_options_long_summary";
+        private const string cUkRating = "global_options_uk_rating";
+        private const string cOneWriterDirector = "global_options_one_writer_director";
+        private const string cSecondaryDetails = "global_options_secondary_details";
+        private const string cSecondarySummary = "global_options_secondary_summary";
+        private const string cRefreshAllFields = "global_options_refresh_all_fields";
+        private const string cCountryFilter = "global_options_country_filter";
+        private const string cLanguageFilter = "global_options_language_filter";
+
+        private const string cSyncInterval = "plugin_options_sync_interval";
+        private const string cSyncOnStartup = "plugin_options_sync_on_startup";
+        private const string cSyncLastDateTime = "plugin_options_sync_last_datetime";
+
+        #endregion
+
         #region Settings
 
         public static bool OriginalTitle { get; set; }
@@ -40,38 +70,6 @@ namespace IMDb
         public static bool SyncOnStartup { get; set; }
         public static string SyncLastDateTime { get; set; }
 
-        #endregion
-
-        #region Constants
-        public const string cSection = "IMDbPlus";
-
-        private const string cOriginalTitle = "global_options_original_title";
-        private const string cForeignTitle = "global_options_foreign_title";
-        private const string cForeignFirst = "global_options_foreign_first";
-        private const string cSpecialEdition = "global_options_special_edition";
-        private const string cRenameTitles = "global_options_rename_titles";
-        private const string cSingleScore = "global_options_single_score";
-        private const string cIMDbScore = "global_options_imdb_score";
-        private const string cIMDbMetaScore = "global_options_imdb_metascore";
-        private const string cRottenMeter = "global_options_rotten_meter";
-        private const string cRottenAverage = "global_options_rotten_average";
-        private const string cRottenTopCritics = "global_options_rotten_top_critics";
-        private const string cMinIMDbVotes = "global_options_min_imdb_votes";
-        private const string cLongSummary = "global_options_long_summary";
-        private const string cUkRating = "global_options_uk_rating";
-        private const string cOneWriterDirector = "global_options_one_writer_director";
-        private const string cSecondaryDetails = "global_options_secondary_details";
-        private const string cSecondarySummary = "global_options_secondary_summary";
-        private const string cRefreshAllFields = "global_options_refresh_all_fields";
-        private const string cCountryFilter = "global_options_country_filter";
-        private const string cLanguageFilter = "global_options_language_filter";
-        
-        private const string cSyncInterval = "plugin_options_sync_interval";
-        private const string cSyncOnStartup = "plugin_options_sync_on_startup";
-        private const string cSyncLastDateTime = "plugin_options_sync_last_datetime";
-        
-        #endregion
-
         public static string Version
         {
             get
@@ -79,6 +77,8 @@ namespace IMDb
                 return Assembly.GetCallingAssembly().GetName().Version.ToString();
             }
         }
+
+        #endregion
 
         /// <summary>
         /// Loads the Settings
