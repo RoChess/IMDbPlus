@@ -35,6 +35,7 @@ namespace IMDb
         public static bool RefreshAllFields { get; set; }
         public static string CountryFilter { get; set; }
         public static string LanguageFilter { get; set; }
+        
         public static int SyncInterval { get; set; }
         public static bool SyncOnStartup { get; set; }
         public static string SyncLastDateTime { get; set; }
@@ -42,6 +43,7 @@ namespace IMDb
         #endregion
 
         #region Constants
+        public const string cSection = "IMDbPlus";
 
         private const string cOriginalTitle = "global_options_original_title";
         private const string cForeignTitle = "global_options_foreign_title";
@@ -63,6 +65,7 @@ namespace IMDb
         private const string cRefreshAllFields = "global_options_refresh_all_fields";
         private const string cCountryFilter = "global_options_country_filter";
         private const string cLanguageFilter = "global_options_language_filter";
+        
         private const string cSyncInterval = "plugin_options_sync_interval";
         private const string cSyncOnStartup = "plugin_options_sync_on_startup";
         private const string cSyncLastDateTime = "plugin_options_sync_last_datetime";
@@ -82,7 +85,9 @@ namespace IMDb
         /// </summary>
         public static void LoadSettings()
         {
-            Logger.Info("Loading IMDb+ options from file.");
+            Logger.Debug("Loading IMDb+ options from file.");
+
+            #region Scraper
             XmlReader xmlReader = new XmlReader();
             if (!xmlReader.Load(OptionsFile))
             {
@@ -109,9 +114,16 @@ namespace IMDb
             RefreshAllFields = xmlReader.GetOptionValueAsBool(cRefreshAllFields, false);
             CountryFilter = xmlReader.GetOptionValueAsString(cCountryFilter, "us|ca|gb|ie|au|nz");
             LanguageFilter = xmlReader.GetOptionValueAsString(cLanguageFilter, "en");
-            SyncInterval = xmlReader.GetOptionValueAsInt(cSyncInterval, 24);
-            SyncOnStartup = xmlReader.GetOptionValueAsBool(cSyncOnStartup, false);
-            SyncLastDateTime = xmlReader.GetOptionValueAsString(cSyncLastDateTime, DateTime.MinValue.ToString());
+            #endregion
+
+            #region Plugin
+            using (Settings xmlreader = new MPSettings())
+            {
+                SyncInterval = xmlreader.GetValueAsInt(cSection, cSyncInterval, 24);
+                SyncOnStartup = xmlreader.GetValueAsBool(cSection, cSyncOnStartup, false);
+                SyncLastDateTime = xmlreader.GetValueAsString(cSection, cSyncLastDateTime, DateTime.MinValue.ToString());
+            }
+            #endregion
 
             // save settings, might be some new settings added
             SaveSettings();
@@ -122,8 +134,9 @@ namespace IMDb
         /// </summary>
         public static void SaveSettings()
         {
-            Logger.Info("Saving IMDb+ options to file.");
+            Logger.Debug("Saving IMDb+ options to file.");
 
+            #region Scraper
             XmlWriter xmlWriter = new XmlWriter();
             if (!xmlWriter.Load(OptionsFile))
             {
@@ -169,12 +182,20 @@ namespace IMDb
             xmlWriter.SetOptionsEntry(cCountryFilter, "98", CountryFilter);
             xmlWriter.SetOptionsEntry(cLanguageFilter, "99", LanguageFilter);
 
-            xmlWriter.SetOptionsEntry(cSyncInterval, "200", SyncInterval.ToString());
-            xmlWriter.SetOptionsEntry(cSyncOnStartup, "201", SyncOnStartup.ToString());
-            xmlWriter.SetOptionsEntry(cSyncLastDateTime, "202", SyncLastDateTime);
-
             // save file
             xmlWriter.Save(OptionsFile);
+            #endregion
+
+            #region Plugin
+            using (Settings xmlwriter = new MPSettings())
+            {
+                xmlwriter.SetValue(cSection, cSyncInterval, SyncInterval.ToString());
+                xmlwriter.SetValueAsBool(cSection, cSyncOnStartup, SyncOnStartup);
+                xmlwriter.SetValue(cSection, cSyncLastDateTime, SyncLastDateTime.ToString());
+            }
+            Settings.SaveCache();
+            #endregion
+
         }
     }
 }
