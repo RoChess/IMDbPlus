@@ -192,7 +192,7 @@ namespace IMDb
             int syncInterval = PluginSettings.SyncInterval * 60 * 60 * 1000;
             int startTime = GetSyncStartTime();
             syncLibraryTimer = new Timer(new TimerCallback((o) => { CheckForUpdate(); }), null, startTime, syncInterval);
-
+            GetSourceSelectItems();
             // Load main skin window
             // this is a launching pad to all other windows
             string xmlSkin = GUIGraphicsContext.Skin + @"\IMDb+.xml";
@@ -773,26 +773,38 @@ namespace IMDb
                 // focus back to main facade
                 GUIControl.FocusControl(GetID, Facade.GetID);
 
-                if (GUIUtils.ShowYesNoDialog(Translation.ForceIMDbPlus, Translation.ForceIMDbPlusDescription))
+                // create menu select dialog with all sources used in movie collection
+                // display number of movies that have an imdb id as we are only interested in these
+                List<MultiSelectionItem> listItems = GetSourceSelectItems();
+                if (listItems.Count == 0)
                 {
-                    // disable repeated attempts
-                    GUIUtils.SetProperty("#IMDb.ForceIMDbPlus.Visible", "false", false);
-                    //GUIWindowManager.Process();
+                    GUIUtils.ShowOKDialog(Translation.ForceIMDbPlus, Translation.NoSourcesFound);
+                    GUIControl.EnableControl(GetID, forceIMDbPlusButton.GetID);
+                    return;
+                }
 
-                    int movieCount = 0;
+                List<MultiSelectionItem> selectedItems = GUIUtils.ShowMultiSelectionDialog(Translation.SelectSources, listItems);
+                if (selectedItems == null) return;
 
-                    Logger.Info("Converting Source Info for the following movies...");
-                    foreach (var movie in DBMovieInfo.GetAll().Where(m => m.PrimarySource == IMDbSource))
+                // disable repeated attempts
+                GUIControl.DisableControl(GetID, forceIMDbPlusButton.GetID);
+
+                int movieCount = 0;
+
+                Logger.Info("Converting Source Info for the following movies...");
+                foreach (var item in selectedItems)
+                {
+                    foreach (var movie in DBMovieInfo.GetAll().Where(m => m.PrimarySource == item.Tag && IsValidIMDb(m.ImdbID)))
                     {
-                        Logger.Info(movie.ToString());
+                        Logger.Info("{0}: {1}", item.ItemTitle, movie.ToString());
                         movie.PrimarySource = IMDbPlusSource;
                         movie.Commit();
                         movieCount++;
                     }
-
-                    GUIUtils.ShowOKDialog(Translation.ForceIMDbPlus, string.Format(Translation.ForceIMDbPlusComplete, movieCount, DBMovieInfo.GetAll().Count));
-                    HideShowForceIMDbPlusButton();
                 }
+
+                GUIUtils.ShowOKDialog(Translation.ForceIMDbPlus, string.Format(Translation.ForceIMDbPlusComplete, movieCount, DBMovieInfo.GetAll().Count));
+                GUIControl.EnableControl(GetID, forceIMDbPlusButton.GetID);
             })
             {
                 IsBackground = true,
@@ -802,6 +814,35 @@ namespace IMDb
             forceThread.Start();
         }
 
+        /// <summary>
+        /// Return a list of select items for each unique DBSourceInfo that has movies with valid IMDb ids
+        /// </summary>
+        /// <returns></returns>
+        private List<MultiSelectionItem> GetSourceSelectItems()
+        {
+            List<MultiSelectionItem> result = new List<MultiSelectionItem>();
+
+            // Create a new select item for each unique DBSourceInfo that has movies
+            // Ignore IMDb+ as we cant do anything more with those
+            foreach (var sourceInfo in DBMovieInfo.GetAll().Where(s => s.PrimarySource != IMDbPlusSource).Select(s => s.PrimarySource).Distinct())
+            {
+                int totalMovies = DBMovieInfo.GetAll().Where(m => m.PrimarySource == sourceInfo).Count();
+                int imdbMovies = DBMovieInfo.GetAll().Where(m => m.PrimarySource == sourceInfo && IsValidIMDb(m.ImdbID)).Count();
+                if (imdbMovies == 0) continue;
+
+                Logger.Info("Adding source '{0}' to select dialog", sourceInfo.ToString());
+                MultiSelectionItem multiSelectionItem = new MultiSelectionItem
+                {
+                    ItemTitle = sourceInfo.ToString(),
+                    ItemTitle2 = string.Format(Translation.NumberOfMovies, imdbMovies, totalMovies),
+                    Selected = false,
+                    Tag = sourceInfo
+                };
+                result.Add(multiSelectionItem);
+            }
+
+            return result;
+        }
 
         private void HideShowForceIMDbPlusButton()
         {
@@ -815,19 +856,8 @@ namespace IMDb
                 GUIUtils.SetProperty("#IMDb.ForceIMDbPlus.Visible", "false", false);
                 return;
             }
-
-            // if there is a movie with imdb as primary source, show button
-            if (DBMovieInfo.GetAll().Find(m => m.PrimarySource == IMDbSource) != null)
-            {
-                GUIUtils.SetProperty("#IMDb.ForceIMDbPlus.Visible", "true", true);
-            }
-            else
-            {
-                GUIUtils.SetProperty("#IMDb.ForceIMDbPlus.Visible", "false", true);
-            }
-            
-            // avoid "flashing" of window during page load (GUIWindowManager.Process() called before base.OnPageLoad())
-            //GUIWindowManager.Process();
+            // enable for skin compatibility
+            GUIUtils.SetProperty("#IMDb.ForceIMDbPlus.Visible", "true", false);
         }
 
         private bool FilesAreEqual(string f1, string f2)
@@ -1048,6 +1078,16 @@ namespace IMDb
 
             // show text dialog of information about plugin / scraper
             GUIUtils.ShowTextDialog(Translation.IMDbInfo, textList);
+        }
+
+        private bool IsValidIMDb(string imdbid)
+        {
+            // do some simple checks
+            if (string.IsNullOrEmpty(imdbid)) return false;
+            if (string.IsNullOrEmpty(imdbid.Trim())) return false;
+            if (!imdbid.StartsWith("tt")) return false;
+            if (imdbid.Length != 9) return false;
+            return true;
         }
 
     }

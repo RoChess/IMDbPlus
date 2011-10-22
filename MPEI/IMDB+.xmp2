@@ -71,6 +71,20 @@
               <ZipFileName>Installer{CopyFile}\{1dc1e704-ad04-4bd0-ac68-8b25c476724f}-hover_imdb+.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\hover_imdb+.png</DestinationFilename>
             </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Skin\Default\DialogMultiSelect.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{a9618c1e-e3dd-4198-94b4-6f4dc372a195}-DialogMultiSelect.xml</ZipFileName>
+              <DestinationFilename>%Skin%\Default\DialogMultiSelect.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Skin\DefaultWide\DialogMultiSelect.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{76e5f811-c4e3-4aa7-b87a-3b70a15ebfff}-DialogMultiSelect.xml</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\DialogMultiSelect.xml</DestinationFilename>
+            </FileItem>
           </Items>
         </Files>
       </GroupItem>
@@ -326,21 +340,7 @@ public class Script
     </Items>
   </Dependencies>
   <PluginDependencies>
-    <Items>
-      <PluginDependencyItem AssemblyName="IMDb+.dll">
-        <CompatibleVersion>
-          <Items>
-            <CompatibleVersionItem>
-              <MinRequiredVersion>1.1.6.27644</MinRequiredVersion>
-              <DesignedForVersion>1.1.6.27644</DesignedForVersion>
-            </CompatibleVersionItem>
-          </Items>
-        </CompatibleVersion>
-        <SubSystemsUsed>
-          <Items />
-        </SubSystemsUsed>
-      </PluginDependencyItem>
-    </Items>
+    <Items />
   </PluginDependencies>
   <GeneralInfo>
     <Name>IMDb+</Name>
@@ -353,13 +353,13 @@ public class Script
       <Major>1</Major>
       <Minor>2</Minor>
       <Build>0</Build>
-      <Revision>133</Revision>
+      <Revision>142</Revision>
     </Version>
     <ExtensionDescription>The IMDb+ plugin &amp; scraper for MovingPictures will make your movie collection easier to use. The plugin will keep the scraper script up-to-date, and add powerful features such as rename and grouping of movie series. It also corrects English titles, allows RottenTomatoes ratings, and many other features.</ExtensionDescription>
     <VersionDescription>Auto-update system for the IMDb+ scraper script</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
-    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.2.0.133.mpe1</OnlineLocation>
-    <ReleaseDate>2011-10-16T06:08:44</ReleaseDate>
+    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.2.0.142.mpe1</OnlineLocation>
+    <ReleaseDate>2011-10-23T00:13:15</ReleaseDate>
     <Tags>moving pictures, movies, scraper</Tags>
     <Location>.\Release\imdbplus.plugin.v[Version].mpe1</Location>
     <Params>
@@ -437,6 +437,20 @@ public class Script
         <LocalFileName>..\IMDb+\Skin\DefaultWide\Media\hover_imdb+.png</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{1dc1e704-ad04-4bd0-ac68-8b25c476724f}-hover_imdb+.png</ZipFileName>
         <DestinationFilename>%Skin%\DefaultWide\Media\hover_imdb+.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Skin\Default\DialogMultiSelect.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{a9618c1e-e3dd-4198-94b4-6f4dc372a195}-DialogMultiSelect.xml</ZipFileName>
+        <DestinationFilename>%Skin%\Default\DialogMultiSelect.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Skin\DefaultWide\DialogMultiSelect.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{76e5f811-c4e3-4aa7-b87a-3b70a15ebfff}-DialogMultiSelect.xml</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\DialogMultiSelect.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />

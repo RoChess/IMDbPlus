@@ -39,9 +39,8 @@ Note: The MediaPortal virtual keyboard does not support the '|' character, so a 
 movies, imported with the default IMDb
 scraper, to start using the IMDb+ one?
 </string>
-	<string Field="ForceIMDbPlusComplete">Successfully switched {0}/{1} movies,
-that were imported with the default IMDb
-scraper, over to the IMDb+ scraper.
+	<string Field="ForceIMDbPlusComplete">Successfully switched {0}/{1} movies
+over to the IMDb+ scraper.
 </string>
 	<string Field="ForeignTitleFirst">Start the title with the foreign one first</string>
 	<string Field="ForeignTitleFirstDescription">Off = English (Foreign)
@@ -118,11 +117,14 @@ The IMDb score is inflated a lot of times by the people who worked on the movie.
 
 If you enable this setting then the IMDb scores with less then 20 votes are ignored.
 </string>
-
+  <string Field="MultiSelectDialog">Multi-Select Dialog</string>
+  
 	<!-- N -->
   <string Field="No">No</string>
-  
-	<!-- O -->
+  <string Field="NumberOfMovies">{0}/{1} Movies</string>
+  <string Field="NoSourcesFound">No Movies found to convert to IMDb+\nsource!</string>
+
+    <!-- O -->
 	<string Field="OneWriterDirector">Limit import to only one writer and director</string>
 	<string Field="OneWriterDirectorDescription">Off = Get all the names for writers and directors
 On = Only use first name for writers and directors
@@ -252,6 +254,7 @@ Example: "Avatar (tt0499549) (3D).mkv" will result in "Avatar (3D)"
   <string Field="SettingListedHomeDescription">Enable this setting for IMDb+ plugin to appear in the main Home screen menu items.</string>
   <string Field="SettingListedPluginsName">Listed in My Plugins</string>
   <string Field="SettingListedPluginsDescription">Enable this setting for IMDb+ plugin to appear in the My Plugins screen menu items.</string>
+  <string Field="SelectSources">Select Sources to Convert to IMDb+</string>
   
 	<!-- T -->
 
