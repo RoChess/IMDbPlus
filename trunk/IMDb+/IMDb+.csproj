@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUIDialogMultiSelect.cs" />
     <Compile Include="GUIUtils.cs" />
     <Compile Include="IMDb.cs" />
     <Compile Include="Logger.cs" />
@@ -74,9 +75,13 @@
     <Compile Include="XMLWriter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Skin\Default\DialogMultiSelect.xml" />
+    <Content Include="Skin\Default\IMDb+.xml" />
+    <Content Include="Skin\Default\Media\hover_imdb+.png" />
     <EmbeddedResource Include="Images\imdb_icon.png" />
     <EmbeddedResource Include="Images\imdb_icon_disabled.png" />
     <Content Include="Languages\en-US.xml" />
+    <Content Include="Skin\DefaultWide\DialogMultiSelect.xml" />
     <Content Include="Skin\DefaultWide\IMDb+.xml" />
     <Content Include="Skin\DefaultWide\Media\hover_imdb+.png" />
   </ItemGroup>

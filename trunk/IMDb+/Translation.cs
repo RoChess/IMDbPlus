@@ -205,7 +205,7 @@ namespace IMDb
         public static string First = "First";
         public static string ForceIMDbPlus = "Force IMDb+";
         public static string ForceIMDbPlusDescription = "Are you ready to force all your existing" + "\n" + "movies, imported with the default IMDb" + "\n" + "scraper, to start using the IMDb+ one?";
-        public static string ForceIMDbPlusComplete = "Successfully switched {0}/{1} movies," + "\n" + "that were imported with the default IMDb" + "\n" + "scraper, over to the IMDb+ scraper.";
+        public static string ForceIMDbPlusComplete = "Successfully switched {0}/{1} movies" + "\n" + "over to the IMDb+ scraper.";
         public static string ForeignTitleFirst = "Start the title with the foreign one first";
         public static string ForeignTitleFirstDescription = "Off = English (Foreign)" + "\n" + "On = Foreign (English)" + "\n" + "" + "\n" + "Enabling this setting shows the original foreign title first followed by the English title in parentheses." + "\n" + "" + "\n" + "Example: Zwartboek (Black Book)";
 
@@ -245,9 +245,12 @@ namespace IMDb
         // M
         public static string MinIMDbVotes = "Minimum amount of IMDb votes required";
         public static string MinIMDbVotesDescription = "Off = Always use imdb.com score" + "\n" + "On = Only use imdb.com scores with 20+ votes" + "\n" + "" + "\n" + "The IMDb score is inflated a lot of times by the people who worked on the movie. This is why it is not uncommon for a movie with less then 20 votes to have a very high rating." + "\n" + "" + "\n" + "If you enable this setting then the IMDb scores with less then 20 votes are ignored.";
+        public static string MultiSelectDialog = "Multi-Select Dialog";
 
         // N
         public static string No = "No";
+        public static string NumberOfMovies = "{0}/{1} Movies";
+        public static string NoSourcesFound = "No Movies found to convert to IMDb+\nsource!";
 
         // O
         public static string OneWriterDirector = "Limit import to only one writer and director";
@@ -302,6 +305,7 @@ namespace IMDb
         public static string SettingListedHomeDescription = "Enable this setting for IMDb+ plugin to appear in the main Home screen menu items.";
         public static string SettingListedPluginsName = "Listed in My Plugins";
         public static string SettingListedPluginsDescription = "Enable this setting for IMDb+ plugin to appear in the My Plugins screen menu items.";
+        public static string SelectSources = "Select Sources to Convert to IMDb+";
 
         // T
         public static string IMDbInfo = "IMDb+ Info";
