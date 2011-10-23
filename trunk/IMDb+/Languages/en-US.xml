@@ -253,7 +253,11 @@ Example: "Avatar (tt0499549) (3D).mkv" will result in "Avatar (3D)"
   <string Field="SettingListedHomeName">Listed in Home</string>
   <string Field="SettingListedHomeDescription">Enable this setting for IMDb+ plugin to appear in the main Home screen menu items.</string>
   <string Field="SettingListedPluginsName">Listed in My Plugins</string>
-  <string Field="SettingListedPluginsDescription">Enable this setting for IMDb+ plugin to appear in the My Plugins screen menu items.</string>
+  <string Field="SettingListedPluginsDescription">Enable this setting for IMDb+ plugin to appear in the My Plugins screen menu items.</string>  
+  <string Field="SettingsSyncIntervalName">Number of hours until next update check</string>
+  <string Field="SettingsSyncIntervalDescription">This setting controls how often the plugin will check online for an updated scraper script and replacements database.</string>
+  <string Field="SettingsSyncOnStartupName">Select Sources to Convert to IMDb+</string>
+  <string Field="SettingsSyncOnStartupDescription">This setting will force the plugin to check online for an updated scraper script and replacements database every time MediaPortal starts.</string>
   <string Field="SelectSources">Select Sources to Convert to IMDb+</string>
   
 	<!-- T -->

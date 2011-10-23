@@ -42,9 +42,10 @@ namespace IMDb
         int PluginID = 31415;
         DBSourceInfo IMDbPlusSource;
         DBSourceInfo IMDbSource;
-        Timer syncLibraryTimer;
+        static Timer syncUpdateTimer;
         bool moviesRefreshing;
         bool cancelRefreshing;
+        ExtensionSettings extensionSettings = new ExtensionSettings();
 
         #endregion
 
@@ -171,6 +172,9 @@ namespace IMDb
             // Load Settings
             PluginSettings.LoadSettings();
 
+            // Init Extension Settings
+            extensionSettings.Init();
+            
             // Get IMDb+ Data Provider
             IMDbPlusSource = DBSourceInfo.GetFromScriptID(IMDbPlusScriptId);
             SetIMDbProperties();
@@ -191,8 +195,8 @@ namespace IMDb
             // add small 3sec delay if syncing on startup.
             int syncInterval = PluginSettings.SyncInterval * 60 * 60 * 1000;
             int startTime = GetSyncStartTime();
-            syncLibraryTimer = new Timer(new TimerCallback((o) => { CheckForUpdate(); }), null, startTime, syncInterval);
-            GetSourceSelectItems();
+            syncUpdateTimer = new Timer(new TimerCallback((o) => { CheckForUpdate(); }), null, startTime, syncInterval);
+         
             // Load main skin window
             // this is a launching pad to all other windows
             string xmlSkin = GUIGraphicsContext.Skin + @"\IMDb+.xml";
@@ -716,7 +720,7 @@ namespace IMDb
             source.Commit();
         }
 
-        private int GetSyncStartTime()
+        static int GetSyncStartTime()
         {
             Logger.Info("Last script update time: {0}", PluginSettings.SyncLastDateTime);
             GUIUtils.SetProperty("#IMDb.Scraper.LastUpdated", PluginSettings.SyncLastDateTime);
@@ -1088,6 +1092,16 @@ namespace IMDb
             if (!imdbid.StartsWith("tt")) return false;
             if (imdbid.Length != 9) return false;
             return true;
+        }
+
+        public static void UpdateTimer()
+        {
+            if (syncUpdateTimer == null) return;
+
+            int syncInterval = PluginSettings.SyncInterval * 60 * 60 * 1000;
+            int startTime = GetSyncStartTime();
+
+            syncUpdateTimer.Change(startTime, syncInterval);
         }
 
     }

@@ -305,6 +305,10 @@ namespace IMDb
         public static string SettingListedHomeDescription = "Enable this setting for IMDb+ plugin to appear in the main Home screen menu items.";
         public static string SettingListedPluginsName = "Listed in My Plugins";
         public static string SettingListedPluginsDescription = "Enable this setting for IMDb+ plugin to appear in the My Plugins screen menu items.";
+        public static string SettingsSyncIntervalName = "Number of hours until next update check";
+        public static string SettingsSyncIntervalDescription = "This setting controls how often the plugin will check online for an updated scraper script and replacements database.";
+        public static string SettingsSyncOnStartupName = "Check for updates on startup";
+        public static string SettingsSyncOnStartupDescription = "This setting will force the plugin to check online for an updated scraper script and replacements database every time MediaPortal starts.";
         public static string SelectSources = "Select Sources to Convert to IMDb+";
 
         // T
