@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading;
+using System.Runtime.Serialization.Json;
 using MediaPortal.Profile;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
@@ -44,6 +45,7 @@ namespace IMDb
         private const string cSyncOnStartup = "plugin_options_sync_on_startup";
         private const string cSyncLastDateTime = "plugin_options_sync_last_datetime";
         private const string cDisableNotifications = "plugin_options_disable_notifications";
+        private const string cMoviesRefreshed = "plugin_options_movies_refreshed";
 
         #endregion
 
@@ -74,6 +76,7 @@ namespace IMDb
         public static bool SyncOnStartup { get; set; }
         public static string SyncLastDateTime { get; set; }
         public static bool DisableNotifications { get; set; }
+        public static List<string> MoviesRefreshed { get; set; }
 
         public static string Version
         {
@@ -128,6 +131,7 @@ namespace IMDb
                 SyncOnStartup = xmlreader.GetValueAsBool(cSection, cSyncOnStartup, false);
                 SyncLastDateTime = xmlreader.GetValueAsString(cSection, cSyncLastDateTime, DateTime.MinValue.ToString());
                 DisableNotifications = xmlreader.GetValueAsBool(cSection, cDisableNotifications, false);
+                MoviesRefreshed = xmlreader.GetValueAsString(cSection, cMoviesRefreshed, string.Empty).FromJSONArray<string>().ToList();
             }
             #endregion
 
@@ -199,10 +203,56 @@ namespace IMDb
                 xmlwriter.SetValueAsBool(cSection, cSyncOnStartup, SyncOnStartup);
                 xmlwriter.SetValue(cSection, cSyncLastDateTime, SyncLastDateTime.ToString());
                 xmlwriter.SetValueAsBool(cSection, cDisableNotifications, DisableNotifications);
+                xmlwriter.SetValue(cSection, cMoviesRefreshed, MoviesRefreshed.ToJSON());
             }
             Settings.SaveCache();
             #endregion
+        }        
+    }
+
+    public static class ExtensionMethods
+    {
+        #region Extensions Methods
+
+        public static string ToJSON(this object obj)
+        {
+            if (obj == null) return string.Empty;
+            using (var ms = new MemoryStream())
+            {
+                var ser = new DataContractJsonSerializer(obj.GetType());
+                ser.WriteObject(ms, obj);
+                return Encoding.UTF8.GetString(ms.ToArray());
+            }
         }
+
+        public static IEnumerable<T> FromJSONArray<T>(this string jsonArray)
+        {
+            if (string.IsNullOrEmpty(jsonArray)) return new List<T>();
+
+            try
+            {
+                using (var ms = new MemoryStream(Encoding.UTF8.GetBytes(jsonArray)))
+                {
+                    var ser = new DataContractJsonSerializer(typeof(IEnumerable<T>));
+                    var result = (IEnumerable<T>)ser.ReadObject(ms);
+
+                    if (result == null)
+                    {
+                        return new List<T>();
+                    }
+                    else
+                    {
+                        return result;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return new List<T>();
+            }
+        }
+
+        #endregion
     }
 
     public class ExtensionSettings

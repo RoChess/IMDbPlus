@@ -950,6 +950,8 @@ namespace IMDb
                 int moviesUpdated = 0;
                 int moviesTotal = movies.Count();
 
+                List<string> movieIMDbs = new List<string>(PluginSettings.MoviesRefreshed);
+
                 Logger.Info("Refreshing {0} Movies...", moviesTotal);
                 foreach (var movie in movies)
                 {
@@ -961,18 +963,28 @@ namespace IMDb
                         SetMovieRefreshProperties(null, -1, -1, true);
                         moviesRefreshing = false;
                         SetButtonLabels();
+
+                        // remember what movies refreshed for next time since we cancelled
+                        PluginSettings.MoviesRefreshed = movieIMDbs;
                         return;
                     }
-                        
+                    
                     SetMovieRefreshProperties(movie, ++moviesUpdated, moviesTotal, false);
+                    // skip over previous refreshed
+                    if (movieIMDbs.Contains(movie.ImdbID)) continue;
+
+                    movieIMDbs.Add(movie.ImdbID);
                     MovingPicturesCore.DataProviderManager.Update(movie);
-                    movie.Commit();
+                    movie.Commit();      
                 }
 
                 MovingPicturesCore.Settings.DataProviderRequestLimit = dataProviderReqLimit;
                 SetMovieRefreshProperties(null, -1, -1, true);
                 moviesRefreshing = false;
                 SetButtonLabels();
+
+                // clear previous refreshed movies on successful finish
+                PluginSettings.MoviesRefreshed.Clear();
 
                 Logger.Info("Movie refresh completed");
                 if (!PluginSettings.DisableNotifications)
