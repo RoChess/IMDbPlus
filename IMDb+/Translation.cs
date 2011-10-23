@@ -280,6 +280,7 @@ namespace IMDb
         public static string RottenAverageDescription = "Off = RottenTomatoes 'Percentage' rating" + "\n" + "On = RottenTomatoes 'Average' rating" + "\n" + "" + "\n" + "With this setting enabled the 'Average' rating value is used, otherwise the 'Percentage' value is." + "\n" + "" + "\n" + "The 'Percentage' rating is a special kind, in that it counts the amount of RottenTomatoes users who voted a certain way.";
         public static string RottenTopCritics = "RottenTomatoes top critics";
         public static string RottenTopCriticsDescription = "Off = RottenTomatoes 'All' critics" + "\n" + "On = RottenTomatoes 'Top' critics" + "\n" + "" + "\n" + "There is a TomatoMeter rating available for all of the critics and a select group of 'Top' critics." + "\n" + "" + "\n" + "Enabling this setting will limit your rating to just the top ones.";
+        public static string Resume = "(Resume)";
 
         // S
         public static string ScraperOptionsTitle = "IMDb+ Scraper Options";
