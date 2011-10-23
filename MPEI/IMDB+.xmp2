@@ -329,9 +329,9 @@ public class Script
         </MinVersion>
         <MaxVersion>
           <Major>1</Major>
-          <Minor>1</Minor>
-          <Build>6</Build>
-          <Revision>27644</Revision>
+          <Minor>2</Minor>
+          <Build>*</Build>
+          <Revision>*</Revision>
         </MaxVersion>
         <WarnOnly>false</WarnOnly>
         <Message>Minimum requirements not met! Please upgrade to MediaPortal 1.2 before installing IMDb+ plugin.</Message>
@@ -340,7 +340,21 @@ public class Script
     </Items>
   </Dependencies>
   <PluginDependencies>
-    <Items />
+    <Items>
+      <PluginDependencyItem AssemblyName="IMDb+.dll">
+        <CompatibleVersion>
+          <Items>
+            <CompatibleVersionItem>
+              <MinRequiredVersion>1.1.6.27644</MinRequiredVersion>
+              <DesignedForVersion>1.1.6.27644</DesignedForVersion>
+            </CompatibleVersionItem>
+          </Items>
+        </CompatibleVersion>
+        <SubSystemsUsed>
+          <Items />
+        </SubSystemsUsed>
+      </PluginDependencyItem>
+    </Items>
   </PluginDependencies>
   <GeneralInfo>
     <Name>IMDb+</Name>
@@ -353,13 +367,13 @@ public class Script
       <Major>1</Major>
       <Minor>2</Minor>
       <Build>0</Build>
-      <Revision>142</Revision>
+      <Revision>150</Revision>
     </Version>
     <ExtensionDescription>The IMDb+ plugin &amp; scraper for MovingPictures will make your movie collection easier to use. The plugin will keep the scraper script up-to-date, and add powerful features such as rename and grouping of movie series. It also corrects English titles, allows RottenTomatoes ratings, and many other features.</ExtensionDescription>
     <VersionDescription>Auto-update system for the IMDb+ scraper script</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
-    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.2.0.142.mpe1</OnlineLocation>
-    <ReleaseDate>2011-10-23T00:13:15</ReleaseDate>
+    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.2.0.150.mpe1</OnlineLocation>
+    <ReleaseDate>2011-10-23T00:34:39</ReleaseDate>
     <Tags>moving pictures, movies, scraper</Tags>
     <Location>.\Release\imdbplus.plugin.v[Version].mpe1</Location>
     <Params>
@@ -484,21 +498,21 @@ public class Script
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Resources\sidebar.jpg</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{fb1cee77-9308-492b-b8de-6c697e1940f3}-sidebar.jpg</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{bfe7bbb4-72ce-480d-aa60-61ef9e3a00da}-sidebar.jpg</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Resources\header.jpg</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{9a259e22-ef94-447e-ab65-77377b991195}-header.jpg</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{28ac2b58-4d58-4f26-a327-afe5d067c07a}-header.jpg</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\IMDb+\Images\imdb_icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{8a617e97-0ff0-4f87-8cd8-99a9f7a021a1}-imdb_icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{a56e2233-6ba8-4f6f-b1e2-d40051572e54}-imdb_icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
