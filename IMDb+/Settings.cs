@@ -4,17 +4,20 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using MediaPortal.Profile;
 using MediaPortal.Configuration;
+using MediaPortal.GUI.Library;
 
 namespace IMDb
 {
-    public static class PluginSettings
+    public class PluginSettings
     {
         public static string OptionsFile = Path.Combine(Config.GetFolder(Config.Dir.Config), @"IMDb+\Options IMDb+ Scraper.xml");
 
         #region Constants
         public const string cSection = "IMDbPlus";
+        public const string cGuid = "9d064213-0b4d-4cee-96a5-405812422b58";
 
         private const string cOriginalTitle = "global_options_original_title";
         private const string cForeignTitle = "global_options_foreign_title";
@@ -195,7 +198,58 @@ namespace IMDb
             }
             Settings.SaveCache();
             #endregion
+        }
+    }
 
+    public class ExtensionSettings
+    {
+        public void Init()
+        {
+            Thread hookThread = new Thread(delegate()
+            {
+                try
+                {
+                    Logger.Info("Adding hooks to MPEI Settings");
+                    AddHooksIntoMPEISettings();
+                }
+                catch
+                {
+                    Logger.Warning("Unable to add hooks into MPEI Settings, Extensions plugin not installed or out of date!");
+                }
+            })
+            {
+                Name = "Extension Settings",
+                IsBackground = true
+            };
+
+            hookThread.Start();
+        }
+
+        private void AddHooksIntoMPEISettings()
+        {
+            // sleep until we know that there has been enough time
+            // for window manager to have loaded extension settings window
+            // todo: find a better way...
+            Thread.Sleep(10000);
+
+            // get a reference to the extension settings window
+            MPEIPlugin.GUISettings extensionSettings = (MPEIPlugin.GUISettings)GUIWindowManager.GetWindow(803);
+            extensionSettings.OnSettingsChanged += new MPEIPlugin.GUISettings.SettingsChangedHandler(Extensions_OnSettingsChanged);
+        }
+
+        private void Extensions_OnSettingsChanged(string guid)
+        {
+            // settings change occured
+            if (guid == PluginSettings.cGuid)
+            {
+                Logger.Info("Settings updated externally");
+
+                // re-load settings
+                PluginSettings.LoadSettings();
+                
+                // Update Timer settings
+                IMDb.UpdateTimer();
+            }
         }
     }
 }
