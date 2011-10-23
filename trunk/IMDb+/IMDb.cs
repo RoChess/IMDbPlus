@@ -966,6 +966,10 @@ namespace IMDb
 
                         // remember what movies refreshed for next time since we cancelled
                         PluginSettings.MoviesRefreshed = movieIMDbs;
+                        if (!PluginSettings.DisableNotifications)
+                        {
+                            GUIUtils.ShowNotifyDialog(Translation.RefreshMovies, string.Format(Translation.RefreshMoviesCancelNotification, movieIMDbs.Count));
+                        }
                         return;
                     }
                     
