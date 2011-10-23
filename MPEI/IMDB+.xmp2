@@ -85,6 +85,20 @@
               <ZipFileName>Installer{CopyFile}\{76e5f811-c4e3-4aa7-b87a-3b70a15ebfff}-DialogMultiSelect.xml</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\DialogMultiSelect.xml</DestinationFilename>
             </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Skin\Default\Media\Logos\imdb+.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{d5783314-d701-42c9-a764-691a38fa6a1c}-imdb+.png</ZipFileName>
+              <DestinationFilename>%Skin%\Default\Media\Logos\imdb+.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Skin\DefaultWide\Media\Logos\imdb+.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{bd8a53c7-db6c-429a-9d50-7cafaaabf42f}-imdb+.png</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\Media\Logos\imdb+.png</DestinationFilename>
+            </FileItem>
           </Items>
         </Files>
       </GroupItem>
@@ -120,8 +134,9 @@
         </Files>
       </GroupItem>
       <GroupItem Name="Settings">
+        <ParentGroup />
         <DisplayName>Settings</DisplayName>
-        <DefaulChecked>true</DefaulChecked>
+        <DefaulChecked>false</DefaulChecked>
         <Description>Settings</Description>
         <Files>
           <Items>
@@ -465,6 +480,20 @@ public class Script
         <LocalFileName>..\IMDb+\Skin\DefaultWide\DialogMultiSelect.xml</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{76e5f811-c4e3-4aa7-b87a-3b70a15ebfff}-DialogMultiSelect.xml</ZipFileName>
         <DestinationFilename>%Skin%\DefaultWide\DialogMultiSelect.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Skin\Default\Media\Logos\imdb+.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{d5783314-d701-42c9-a764-691a38fa6a1c}-imdb+.png</ZipFileName>
+        <DestinationFilename>%Skin%\Default\Media\Logos\imdb+.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Skin\DefaultWide\Media\Logos\imdb+.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{bd8a53c7-db6c-429a-9d50-7cafaaabf42f}-imdb+.png</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\Media\Logos\imdb+.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
