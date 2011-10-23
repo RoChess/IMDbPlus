@@ -3,8 +3,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="0" point="2" />
-		<published month="10" day="19" year="2011" />
+		<version major="1" minor="0" point="3" />
+		<published month="10" day="22" year="2011" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -625,7 +625,6 @@
 	<rename id="tt1398941" title="Superman/Batman I: Public Enemies" />
 	<rename id="tt1673430" title="Superman/Batman II: Apocalypse" />
 	<rename id="tt1701223" title="Superman/Shazam!: The Return of Black Adam (DC Showcase)" />
-	<rename id="tt1486190" title="Tamara Drewe" />
 	<rename id="tt0152930" title="Taxi I" />
 	<rename id="tt0183869" title="Taxi II" />
 	<rename id="tt0295721" title="Taxi III" />
@@ -911,6 +910,7 @@
 	<rename id="tt0295700" title="Wrong Turn I" />
 	<rename id="tt0804555" title="Wrong Turn II: Dead End" />
 	<rename id="tt1261978" title="Wrong Turn III: Left For Dead" />
+	<rename id="tt1865567" title="Wrong Turn IV: Bloody Beginnings" />
 	<rename id="tt0120903" title="X-Men I" />
 	<rename id="tt0290334" title="X-Men II: X-Men United (X2)" />
 	<rename id="tt0376994" title="X-Men III: The Last Stand" />
