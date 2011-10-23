@@ -268,6 +268,7 @@ namespace IMDb
         public static string RefreshCancel = "Cancel Refresh";
         public static string RefreshMoviesDescription = "Are you sure you want to refresh all movies\nthat have IMDb+ as primary source?";
         public static string RefreshMoviesNotification = "IMDb+ movie refresh is now complete.";
+        public static string RefreshMoviesCancelNotification = "Refresh has been cancelled. {0} movies updated, press refresh to resume.";
         public static string RefreshMovieStatus = "Refreshing {0} Movies: {1}%";
         public static string RefreshAllFields = "Refresh all of the fields";
         public static string RefreshAllFieldsDescription = "Off = Only update a few things" + "\n" + "On = Update everything" + "\n" + "" + "\n" + "The information at IMDb is constantly updated and completed. For this reason it makes sense to once in a while update movies in your collection." + "\n" + "" + "\n" + "Enabling this setting will force everything to be updated. Otherwise only empty, certifications, score and votes fields are updated on a refresh." + "\n" + "" + "\n" + "Note: This setting disables the rename system for existing movies.";
