@@ -923,12 +923,14 @@ namespace IMDb
                 // focus back to main facade
                 GUIControl.FocusControl(GetID, Facade.GetID);
 
+                bool resume = PluginSettings.MoviesRefreshed.Count > 0;
+
                 // add choices to menu
                 List<GUIListItem> items = new List<GUIListItem>();
-                
-                GUIListItem item = new GUIListItem(Translation.UpdateAll);
+
+                GUIListItem item = new GUIListItem(string.Format("{0} {1}", Translation.Update, resume ? Translation.Resume : string.Empty));
                 items.Add(item);
-                item = new GUIListItem(Translation.UpdateReplacementOnly);
+                item = new GUIListItem(string.Format("{0} {1}", Translation.UpdateReplacementOnly, resume ? Translation.Resume : string.Empty));
                 items.Add(item);
                 item = new GUIListItem(Translation.Cancel);
                 items.Add(item);

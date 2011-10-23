@@ -200,7 +200,8 @@ There is a TomatoMeter rating available for all of the critics and a select grou
 
 Enabling this setting will limit your rating to just the top ones.
 </string>
-
+  <string Field="Resume">(Resume)</string>
+  
 	<!-- S -->
 	<string Field="ScraperOptionsTitle">IMDb+ Scraper Options</string>
 	<string Field="SecondaryDetails">Obtain additional information in the following language</string>
