@@ -1,30 +1,30 @@
-﻿<imdbplus>
+﻿<!--
+	Syntax example for movie "Casino Royale":
+
+		1. Rename only title:	<rename id="tt0381061" title="James Bond 21: Casino Royale" />
+
+		2. Rename only sortby:	<rename id="tt0381061" sortby="James Bond 21" />
+
+		3. Rename both:		<rename id="tt0381061" title="007: Casino Royale" sortby="James Bond 21" />
+
+	The rename on both is now done by default on all series that have 9 or more entries in the collection,
+	because	Roman Numerals stop sorting correct after VIII (8), since IX (9) would get sorted after IV (4).
+
+	If you make any changes to this file yourself, be sure to run an XML syntax verificiation check.
+	You can use the following site for this: http://www.w3schools.com/Dom/dom_validate.asp
+
+	Enjoy.
+-->
+<imdbplus>
 	<details>
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="0" point="3" />
-		<published month="10" day="22" year="2011" />
+		<version major="1" minor="0" point="4" />
+		<published month="10" day="23" year="2011" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
-	<!--
-		Syntax example for movie "Casino Royale":
-
-			1. Rename only title:	<rename id="tt0381061" title="James Bond 21: Casino Royale" />
-
-			2. Rename only sortby:	<rename id="tt0381061" sortby="James Bond 21" />
-
-			3. Rename both:		<rename id="tt0381061" title="007: Casino Royale" sortby="James Bond 21" />
-
-		The rename on both is now done by default on all series that have 9 or more entries in the collection,
-		because	Roman Numerals stop sorting correct after VIII (8), since IX (9) would get sorted after IV (4).
-
-		If you make any changes to this file yourself, be sure to run an XML syntax verificiation check.
-		You can use the following site for this: http://www.w3schools.com/Dom/dom_validate.asp
-
-		Enjoy.
-	-->
 	<rename id="tt0443424" title="9 (Original)" />
 	<rename id="tt0062622" title="2001 I: A Space Odyssey" />
 	<rename id="tt0086837" title="2001 II: 2010" />
