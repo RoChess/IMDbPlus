@@ -43,6 +43,7 @@ namespace IMDb
         private const string cSyncInterval = "plugin_options_sync_interval";
         private const string cSyncOnStartup = "plugin_options_sync_on_startup";
         private const string cSyncLastDateTime = "plugin_options_sync_last_datetime";
+        private const string cDisableNotifications = "plugin_options_disable_notifications";
 
         #endregion
 
@@ -72,6 +73,7 @@ namespace IMDb
         public static int SyncInterval { get; set; }
         public static bool SyncOnStartup { get; set; }
         public static string SyncLastDateTime { get; set; }
+        public static bool DisableNotifications { get; set; }
 
         public static string Version
         {
@@ -125,6 +127,7 @@ namespace IMDb
                 SyncInterval = xmlreader.GetValueAsInt(cSection, cSyncInterval, 24);
                 SyncOnStartup = xmlreader.GetValueAsBool(cSection, cSyncOnStartup, false);
                 SyncLastDateTime = xmlreader.GetValueAsString(cSection, cSyncLastDateTime, DateTime.MinValue.ToString());
+                DisableNotifications = xmlreader.GetValueAsBool(cSection, cDisableNotifications, false);
             }
             #endregion
 
@@ -195,6 +198,7 @@ namespace IMDb
                 xmlwriter.SetValue(cSection, cSyncInterval, SyncInterval.ToString());
                 xmlwriter.SetValueAsBool(cSection, cSyncOnStartup, SyncOnStartup);
                 xmlwriter.SetValue(cSection, cSyncLastDateTime, SyncLastDateTime.ToString());
+                xmlwriter.SetValueAsBool(cSection, cDisableNotifications, DisableNotifications);
             }
             Settings.SaveCache();
             #endregion

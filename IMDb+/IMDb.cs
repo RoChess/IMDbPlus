@@ -569,7 +569,10 @@ namespace IMDb
                         UpdateScriptPaths();
                         SetIMDbProperties();
                         HideShowForceIMDbPlusButton();
-                        GUIUtils.ShowNotifyDialog(Translation.Update, string.Format(Translation.UpdatedScraperScript, IMDbPlusSource.Provider.Version));
+                        if (!PluginSettings.DisableNotifications)
+                        {
+                            GUIUtils.ShowNotifyDialog(Translation.Update, string.Format(Translation.UpdatedScraperScript, IMDbPlusSource.Provider.Version));
+                        }
                     }
 
                     // remove temp download file
@@ -972,7 +975,10 @@ namespace IMDb
                 SetButtonLabels();
 
                 Logger.Info("Movie refresh completed");
-                GUIUtils.ShowNotifyDialog(Translation.RefreshMovies, Translation.RefreshMoviesNotification);
+                if (!PluginSettings.DisableNotifications)
+                {
+                    GUIUtils.ShowNotifyDialog(Translation.RefreshMovies, Translation.RefreshMoviesNotification);
+                }
             })
             {
                 IsBackground = true,

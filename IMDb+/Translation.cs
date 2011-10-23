@@ -309,6 +309,8 @@ namespace IMDb
         public static string SettingsSyncIntervalDescription = "This setting controls how often the plugin will check online for an updated scraper script and replacements database.";
         public static string SettingsSyncOnStartupName = "Check for updates on startup";
         public static string SettingsSyncOnStartupDescription = "This setting will force the plugin to check online for an updated scraper script and replacements database every time MediaPortal starts.";
+        public static string SettingsDisableNotificationsName = "Disable notifications";
+        public static string SettingsDisableNotificationsDescription = "This setting will allow you to disable notifications that appear such as when any scraper updates have been applied to your system.";
         public static string SelectSources = "Select Sources to Convert to IMDb+";
 
         // T
