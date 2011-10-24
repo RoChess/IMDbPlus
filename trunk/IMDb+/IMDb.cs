@@ -822,6 +822,48 @@ namespace IMDb
         }
 
         /// <summary>
+        /// Return a list of Alphas that movies 'start with' in users collection
+        /// </summary>
+        /// <returns></returns>
+        private List<MultiSelectionItem> GetAlphaItems()
+        {
+            List<MultiSelectionItem> result = new List<MultiSelectionItem>();
+
+            // get all movies with IMDb+ source
+            var movies = DBMovieInfo.GetAll().Where(s => s.PrimarySource == IMDbPlusSource);
+            if (movies.Count() == 0) return result;
+
+            // get list of movies starting with numeral for '#' entry
+            var numberMovies = movies.Where(m => Char.IsDigit(m.SortBy, 0));
+            if (numberMovies.Count() > 0)
+            {
+                MultiSelectionItem multiSelectionItem = new MultiSelectionItem
+                {
+                    ItemTitle = string.Format(Translation.StartsWith, "#"),
+                    ItemTitle2 = string.Format(Translation.NumberOfMovies2, numberMovies.Count()),
+                    Tag = numberMovies.ToList()
+                };
+                result.Add(multiSelectionItem);
+            }
+
+            // get list of unique starting letters from collection
+            foreach (var alpha in movies.Where(m => !Char.IsDigit(m.SortBy, 0)).Select(m => m.SortBy.ToUpperInvariant()[0]).Distinct().OrderBy(m => m))
+            {
+                var alphaMovies = movies.Where(m => m.SortBy.StartsWith(alpha.ToString(), StringComparison.InvariantCultureIgnoreCase));
+
+                MultiSelectionItem multiSelectionItem = new MultiSelectionItem
+                {
+                    ItemTitle = string.Format(Translation.StartsWith, alpha.ToString()),
+                    ItemTitle2 = string.Format(Translation.NumberOfMovies2, alphaMovies.Count()),
+                    Tag = alphaMovies.ToList()
+                };
+                result.Add(multiSelectionItem);
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Return a list of select items for each unique DBSourceInfo that has movies with valid IMDb ids
         /// </summary>
         /// <returns></returns>
@@ -932,18 +974,31 @@ namespace IMDb
                 items.Add(item);
                 item = new GUIListItem(string.Format("{0} {1}", Translation.UpdateReplacementOnly, resume ? Translation.Resume : string.Empty));
                 items.Add(item);
+                item = new GUIListItem(string.Format("{0} {1}", Translation.UpdateAlphas, resume ? Translation.Resume : string.Empty));
+                items.Add(item);
                 item = new GUIListItem(Translation.Cancel);
                 items.Add(item);
 
                 int selectedItem = GUIUtils.ShowMenuDialog(Translation.RefreshingMovies, items);
-                if (selectedItem < 0 || selectedItem == 2) return;
+                if (selectedItem < 0 || selectedItem == 3) return;
+
+                // Update Alphas
+                var selectedItems = new List<MultiSelectionItem>();
+                if (selectedItem == 2)
+                {
+                    // show multi-select dialog for user to choose
+                    // which set of movies to refresh
+                    var listItems = GetAlphaItems();
+                    selectedItems = GUIUtils.ShowMultiSelectionDialog(Translation.SelectAlphas, listItems);
+                    if (selectedItems == null) return;
+                }
 
                 moviesRefreshing = true;
                 cancelRefreshing = false;
                 SetButtonLabels();
                    
                 // get IMDb+ movies for refresh
-                var movies = GetFilteredMovieListFromChoice(selectedItem);
+                var movies = GetFilteredMovieListFromChoice(selectedItem, selectedItems);
 
                 // we only want to update from primary source.
                 int dataProviderReqLimit = MovingPicturesCore.Settings.DataProviderRequestLimit;
@@ -1006,7 +1061,7 @@ namespace IMDb
             refreshThread.Start();
         }
 
-        private List<DBMovieInfo> GetFilteredMovieListFromChoice(int choice)
+        private List<DBMovieInfo> GetFilteredMovieListFromChoice(int choice, List<MultiSelectionItem> alphaList)
         {
             List<DBMovieInfo> result = new List<DBMovieInfo>();
             List<DBMovieInfo> movies = DBMovieInfo.GetAll().Where(m => m.PrimarySource == IMDbPlusSource).ToList();
@@ -1035,6 +1090,14 @@ namespace IMDb
                         }
                     }
                     Logger.Info("Filtered out {0} movies from {1} total.", movies.Count - result.Count, movies.Count);
+                    break;
+
+                // Alpha list
+                case 2:                    
+                    foreach (var alpha in alphaList.Where(i => i.Selected))
+                    {
+                        result.AddRange(alpha.Tag as IEnumerable<DBMovieInfo>);
+                    }
                     break;
             }
 

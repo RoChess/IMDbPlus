@@ -250,6 +250,7 @@ namespace IMDb
         // N
         public static string No = "No";
         public static string NumberOfMovies = "{0}/{1} Movies";
+        public static string NumberOfMovies2 = "{0} Movies";
         public static string NoSourcesFound = "No Movies found to convert to IMDb+\nsource!";
 
         // O
@@ -314,6 +315,8 @@ namespace IMDb
         public static string SettingsDisableNotificationsName = "Disable notifications";
         public static string SettingsDisableNotificationsDescription = "This setting will allow you to disable notifications that appear such as when any scraper updates have been applied to your system.";
         public static string SelectSources = "Select Sources to Convert to IMDb+";
+        public static string StartsWith = "Starts With {0}";
+        public static string SelectAlphas = "Select Movies Starting With";
 
         // T
         public static string IMDbInfo = "IMDb+ Info";
@@ -326,6 +329,7 @@ namespace IMDb
         public static string Update = "Update";
         public static string UpdateAll = "Update All";
         public static string UpdateReplacementOnly = "Update Replacements Only";
+        public static string UpdateAlphas = "Update Movies Starting With...";
 
         // V
 
