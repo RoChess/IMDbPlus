@@ -206,10 +206,11 @@ Enabling this setting will limit your rating to just the top ones.
 	<!-- S -->
 	<string Field="ScraperOptionsTitle">IMDb+ Scraper Options</string>
 	<string Field="SecondaryDetails">Obtain additional information in the following language</string>
-	<string Field="SecondaryDetailsDescription">There is support to obtain certain information in a different language. This covers information such as Summary, Certification, Genres and wherever possible even more.
+	<string Field="SecondaryDetailsDescription">
+    There is support to obtain certain information in a different language. This covers information such as Summary, Certification, Genres and wherever possible even more.
 
-Current support includes: French, German, Italian, Icelandic, Portugese, Spanish and Swedish.
-</string>
+    Current support includes: Dutch, French, German, Icelandic, Italian, Portugese, Spanish and Swedish.
+  </string>
 	<string Field="SecondaryDetailsHeader">Secondary Language</string>
 	<string Field="SecondaryLanguage01">English</string>
 	<string Field="SecondaryLanguage02">German</string>
@@ -219,7 +220,8 @@ Current support includes: French, German, Italian, Icelandic, Portugese, Spanish
 	<string Field="SecondaryLanguage06">Portuguese</string>
 	<string Field="SecondaryLanguage07">Swedish</string>
 	<string Field="SecondaryLanguage08">Icelandic</string>
-	<string Field="SecondarySummary">Fallback to English summary if foreign one is missing</string>
+  <string Field="SecondaryLanguage09">Dutch</string>
+  <string Field="SecondarySummary">Fallback to English summary if foreign one is missing</string>
 	<string Field="SecondarySummaryDescription">Off = Show nothing if foreign summary is missing
 On = Use English summary as a fallback when no foreign one exists
 

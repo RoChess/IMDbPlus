@@ -365,7 +365,8 @@ namespace IMDb
                                                          Translation.SecondaryLanguage05,
                                                          Translation.SecondaryLanguage06,
                                                          Translation.SecondaryLanguage07,
-                                                         Translation.SecondaryLanguage08
+                                                         Translation.SecondaryLanguage08,
+                                                         Translation.SecondaryLanguage09
                                                      };
                             //Add 'English' as first language to the dialog.
                             GUIListItem listItem = new GUIListItem(Translation.SecondaryLanguage01);
@@ -452,6 +453,7 @@ namespace IMDb
                 case 6: return Translation.SecondaryLanguage06;
                 case 7: return Translation.SecondaryLanguage07;
                 case 8: return Translation.SecondaryLanguage08;
+                case 9: return Translation.SecondaryLanguage09;
                 default: return "ERROR";
             }
         }
@@ -466,6 +468,7 @@ namespace IMDb
             if (countryString == Translation.SecondaryLanguage06) return "06";
             if (countryString == Translation.SecondaryLanguage07) return "07";
             if (countryString == Translation.SecondaryLanguage08) return "08";
+            if (countryString == Translation.SecondaryLanguage09) return "09";
             return "01";
         }
 
