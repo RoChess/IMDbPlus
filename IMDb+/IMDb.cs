@@ -178,11 +178,8 @@ namespace IMDb
             IMDbPlusSource = DBSourceInfo.GetFromScriptID(IMDbPlusScriptId);
             SetIMDbProperties();
 
-            // Update Script Paths
-            UpdateScriptPaths();
-
             // Get Replacements and set properties
-            SetReplacementProperties();            
+            SetReplacementProperties();
 
             // Init refresh properties
             SetMovieRefreshProperties(null, -1, -1, true);
