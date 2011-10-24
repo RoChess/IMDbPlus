@@ -902,7 +902,7 @@ namespace IMDb
             // if no applicable sources disable
             if (IMDbPlusSource == null)
             {
-                Logger.Debug("IMDb+ and/or IMDb source not installed!");
+                Logger.Debug("IMDb+ source not installed!");
                 GUIUtils.SetProperty("#IMDb.ForceIMDbPlus.Visible", "false", false);
                 return;
             }
