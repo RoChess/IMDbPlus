@@ -995,7 +995,7 @@ namespace IMDb
                     // which set of movies to refresh
                     var listItems = GetAlphaItems();
                     selectedItems = GUIUtils.ShowMultiSelectionDialog(Translation.SelectAlphas, listItems);
-                    if (selectedItems == null) return;
+                    if (selectedItems == null || selectedItems.Where(i => i.Selected).Count() == 0) return;
                 }
 
                 moviesRefreshing = true;
