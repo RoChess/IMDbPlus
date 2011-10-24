@@ -1001,6 +1001,9 @@ namespace IMDb
                 moviesRefreshing = true;
                 cancelRefreshing = false;
                 SetButtonLabels();
+
+                // Save options incase they have been updated
+                PluginSettings.SaveSettings();
                    
                 // get IMDb+ movies for refresh
                 var movies = GetFilteredMovieListFromChoice(selectedItem, selectedItems);
