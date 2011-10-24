@@ -122,6 +122,7 @@ If you enable this setting then the IMDb scores with less then 20 votes are igno
 	<!-- N -->
   <string Field="No">No</string>
   <string Field="NumberOfMovies">{0}/{1} Movies</string>
+  <string Field="NumberOfMovies2">{0} Movies</string>
   <string Field="NoSourcesFound">No Movies found to convert to IMDb+\nsource!</string>
 
     <!-- O -->
@@ -263,6 +264,8 @@ Example: "Avatar (tt0499549) (3D).mkv" will result in "Avatar (3D)"
   <string Field="SettingsDisableNotificationsName">Disable notifications</string>
   <string Field="SettingsDisableNotificationsDescription">This setting will allow you to disable notifications that appear such as when any scraper updates have been applied to your system.</string>
   <string Field="SelectSources">Select Sources to Convert to IMDb+</string>
+  <string Field="StartsWith">Starts With {0}</string>
+  <string Field="SelectAlphas">Select Movies Starting With</string>
   
 	<!-- T -->
 
@@ -279,6 +282,7 @@ This includes 'U' for Universal, 'PG' for Parental Guidance, 12A, 12, 15, 18 and
 	<string Field="Update">Update</string>
   <string Field="UpdateAll">Update All</string>
   <string Field="UpdateReplacementOnly">Update Replacements Only</string>
+  <string Field="UpdateAlphas">Update Movies Starting With...</string>
   
 	<!-- V -->
 
