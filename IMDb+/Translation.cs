@@ -286,7 +286,7 @@ namespace IMDb
         // S
         public static string ScraperOptionsTitle = "IMDb+ Scraper Options";
         public static string SecondaryDetails = "Obtain additional information in the following language";
-        public static string SecondaryDetailsDescription = "There is support to obtain certain information in a different language. This covers information such as Summary, Certification, Genres and wherever possible even more." + "\n" + "" + "\n" + "Current support includes: French, German, Italian, Icelandic, Portugese, Spanish and Swedish.";
+        public static string SecondaryDetailsDescription = "There is support to obtain certain information in a different language. This covers information such as Summary, Certification, Genres and wherever possible even more." + "\n" + "" + "\n" + "Current support includes: Dutch, French, German, Italian, Icelandic, Portugese, Spanish and Swedish.";
         public static string SecondaryDetailsHeader = "Secondary Language";
         public static string SecondaryLanguage01 = "English";
         public static string SecondaryLanguage02 = "German";
@@ -296,6 +296,7 @@ namespace IMDb
         public static string SecondaryLanguage06 = "Portuguese";
         public static string SecondaryLanguage07 = "Swedish";
         public static string SecondaryLanguage08 = "Icelandic";
+        public static string SecondaryLanguage09 = "Dutch";
         public static string SecondarySummary = "Fallback to English summary if foreign one is missing";
         public static string SecondarySummaryDescription = "Off = Show nothing if foreign summary is missing" + "\n" + "On = Use English summary as a fallback when no foreign one exists" + "\n" + "" + "\n" + "Foreign movie websites are not always as extensive as imdb.com or have the same information available. This mainly affects the summary, so to prevent your collection from being empty, enable this option to then fallback on the English summary (if available). Ideally you would register at the foreign movie website and submit the missing information, but until then you can use English.";
         public static string SingleScore = "Single score rating system";
