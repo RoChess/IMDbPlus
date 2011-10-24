@@ -574,6 +574,8 @@ namespace IMDb
                         HideShowForceIMDbPlusButton();
                         if (!PluginSettings.DisableNotifications)
                         {
+                            // give some time for mediaportal to load if updated on startup
+                            Thread.Sleep(10000);
                             GUIUtils.ShowNotifyDialog(Translation.Update, string.Format(Translation.UpdatedScraperScript, IMDbPlusSource.Provider.Version));
                         }
                     }
