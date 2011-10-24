@@ -189,7 +189,10 @@ namespace IMDb
             int syncInterval = PluginSettings.SyncInterval * 60 * 60 * 1000;
             int startTime = GetSyncStartTime();
             syncUpdateTimer = new Timer(new TimerCallback((o) => { CheckForUpdate(); }), null, startTime, syncInterval);
-         
+
+            // listen to resume/standby events
+            Microsoft.Win32.SystemEvents.PowerModeChanged += new Microsoft.Win32.PowerModeChangedEventHandler(SystemEvents_PowerModeChanged);
+
             // Load main skin window
             // this is a launching pad to all other windows
             string xmlSkin = GUIGraphicsContext.Skin + @"\IMDb+.xml";
@@ -202,6 +205,8 @@ namespace IMDb
         /// </summary>
         public override void DeInit()
         {
+            ShutDownPhase();
+
             PluginSettings.SaveSettings();
 
             Logger.Info("Goodbye");
@@ -403,6 +408,8 @@ namespace IMDb
         }
 
         #endregion
+
+        #region Private Methods
 
         private void UpdateListItem(int itemId, string itemName, string itemValue, string itemIcon)
         {
@@ -1008,8 +1015,6 @@ namespace IMDb
                 int moviesUpdated = 0;
                 int moviesTotal = movies.Count();
 
-                List<string> movieIMDbs = new List<string>(PluginSettings.MoviesRefreshed);
-
                 Logger.Info("Refreshing {0} Movies...", moviesTotal);
                 foreach (var movie in movies)
                 {
@@ -1022,20 +1027,18 @@ namespace IMDb
                         moviesRefreshing = false;
                         SetButtonLabels();
 
-                        // remember what movies refreshed for next time since we cancelled
-                        PluginSettings.MoviesRefreshed = movieIMDbs;
                         if (!PluginSettings.DisableNotifications)
                         {
-                            GUIUtils.ShowNotifyDialog(Translation.RefreshMovies, string.Format(Translation.RefreshMoviesCancelNotification, movieIMDbs.Count));
+                            GUIUtils.ShowNotifyDialog(Translation.RefreshMovies, string.Format(Translation.RefreshMoviesCancelNotification, PluginSettings.MoviesRefreshed.Count));
                         }
                         return;
                     }
                     
                     SetMovieRefreshProperties(movie, ++moviesUpdated, moviesTotal, false);
                     // skip over previous refreshed
-                    if (movieIMDbs.Contains(movie.ImdbID)) continue;
+                    if (PluginSettings.MoviesRefreshed.Contains(movie.ImdbID)) continue;
 
-                    movieIMDbs.Add(movie.ImdbID);
+                    PluginSettings.MoviesRefreshed.Add(movie.ImdbID);
                     MovingPicturesCore.DataProviderManager.Update(movie);
                     movie.Commit();      
                 }
@@ -1182,6 +1185,23 @@ namespace IMDb
             return true;
         }
 
+        private void ShutDownPhase()
+        {
+            if (moviesRefreshing)
+            {
+                // stop it gracefully
+                RefreshIMDbPlusMovies();
+                while (moviesRefreshing)
+                {
+                    Thread.Sleep(500);
+                }
+            }
+        }
+
+        #endregion
+
+        #region Public Methods
+
         public static void UpdateTimer()
         {
             if (syncUpdateTimer == null) return;
@@ -1191,6 +1211,26 @@ namespace IMDb
 
             syncUpdateTimer.Change(startTime, syncInterval);
         }
+
+        #endregion
+
+        #region Event Handlers
+
+        void SystemEvents_PowerModeChanged(object sender, Microsoft.Win32.PowerModeChangedEventArgs e)
+        {
+            if (e.Mode == Microsoft.Win32.PowerModes.Resume)
+            {
+                Logger.Info("MediaPortal resuming from Standby");
+            }
+            else if (e.Mode == Microsoft.Win32.PowerModes.Suspend)
+            {
+                Logger.Info("MediaPortal entering Standby");
+                ShutDownPhase();
+                PluginSettings.SaveSettings();
+            }
+        }
+
+        #endregion
 
     }
 }
