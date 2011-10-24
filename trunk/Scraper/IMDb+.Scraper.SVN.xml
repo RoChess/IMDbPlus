@@ -9,8 +9,8 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="3" point="5" />
-		<published month="10" day="22" year="2011" />
+		<version major="3" minor="3" point="6" />
+		<published month="10" day="23" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -70,6 +70,7 @@
 					06 = imdb.pt for Portuguese
 					07 = filmtipset.se for Swedish
 					08 = kvikmyndir.is for Icelandic
+					09 = moviemeter.nl for Dutch
 			-->
 			<set name="global_options_secondary_summary" value="false" />	<!-- English if empty	| Only foreign summary	-->
 			<set name="global_options_secondary_details" value="01" />
@@ -91,7 +92,7 @@
 		<!-- and try different settings without the need to reimport the script. -->
 		<set name="rx_file_check">
 			<![CDATA[
-			(<imdbplus[^>]*>)(?:[\r\n\t\s\v]*<set[\t\s]+id="\d+"[\t\s]+name="global_options_[^"]+"[\t\s]+value="(?:true|false)"[\t\s]*/>)*[\r\n\t\s\v]*<set[\t\s]+id="97"[\t\s]+name="global_options_secondary_details"[\t\s]+value="\d{2}"[\t\s]*/>[\r\n\t\s\v]*<set[\t\s]+id="98"[\t\s]+name="global_options_country_filter"[^>]+>[\r\n\t\s\v]*<set[\t\s]+id="99"[\t\s]+name="global_options_language_filter"[^>]+>[^\x00]*</imdbplus>
+			(<imdbplus[^>]*>)(?:[\r\n\t\s\v]*(?:<set[\t\s]+id="\d+"[\t\s]+name="global_options_[^"]+"[\t\s]+value="(?:true|false)"[\t\s]*/>|<set[\t\s]+id="97"[\t\s]+name="global_options_secondary_details"[\t\s]+value="\d{2}"[\t\s]*/>|<set[\t\s]+id="9[89]"[\t\s]+name="global_options_(?:country|language)_filter"[\t\s]+value="(?:\w{2}[|]?)*"[\t\s]*/>|<set[\t\s]+id="\d+"[\t\s]+name="[^_]+_options_sync_[^"]+"[^>]+>))*[\r\n\t\s\v]*</imdbplus>
 			]]>
 		</set>
 		<retrieve name="file" file="C:\Options IMDb+ Scraper.xml" encoding="UTF-8" />
@@ -285,6 +286,19 @@
 						]]>
 					</set>
 					<log LogLevel="Info" Message="IMDb+ Scraper: Icelandic (kvikmyndir.is) used for some data on: ${movie.site_id}" />
+				</if>
+				<if test="${global_options_secondary_details}=9">
+					<!-- Avatar = http://blixy.net/mp/moviemeter/proxy.php?imdb=tt0499549 -->
+					<set name="alt_site" value="http://blixy.net/mp/moviemeter/proxy.php?imdb=${movie.site_id}" />
+					<set name="rx_genres_block" value="&lt;genres&gt;(.+?)&lt;/genres&gt;" />
+					<set name="rx_genres" value="([^\|]+)" />
+					<set name="rx_plot2">
+						<![CDATA[
+						<plot>(?<moviePlotShort>[^<]+)</plot>
+						]]>
+					</set>
+					<!-- Use imdb.com language info -->
+					<log LogLevel="Info" Message="IMDb+ Scraper: Dutch (moviemeter.nl) used for some data on: ${movie.site_id}" />
 				</if>
 				<retrieve name="foreign_page" url="${alt_site}" />
 			</if>
@@ -487,20 +501,18 @@
 
 			<if test="${global_options_refresh_all_fields}=true"><set name="update_language" value="true" /></if><if test="${movie.language}="><set name="update_language" value="true" /></if>
 			<if test="${update_language}=true">
-				<!-- imdb.com (USA) + filmtipset.se (Swedish) -->
-				<if test="${global_options_secondary_details}&lt;=1"><set name="grab_usa_language" value="true" /></if>
-				<if test="${global_options_secondary_details}=7"><set name="grab_usa_language" value="true" /></if>
-				<if test="${grab_usa_language}=true">
+				<!-- Foreign page language -->
+				<if test="${rx_language}!=">
+					<parse name="language" input="${foreign_page}" regex="${rx_language}" />
+				</if>
+				<!-- Use imdb.com (USA) language is RegExp is not defined -->
+				<if test="${rx_language}=">
 					<set name="rx_language">
 						<![CDATA[
 						<a\shref=./language/[^"]+"[^>]*>(?<movieLanguage>[^<]+)</a>
 						]]>
 					</set>
 					<parse name="language" input="${details_page}" regex="${rx_language}" />
-				</if>
-				<!-- Foreign page language -->
-				<if test="${grab_usa_language}!=true">
-					<parse name="language" input="${foreign_page}" regex="${rx_language}" />
 				</if>
 				<set name="movie.language" value="${language[0][0]:htmldecode}" />
 			</if>
@@ -652,18 +664,7 @@
 					<if test="${global_options_secondary_details}&lt;=1">
 						<parse name="summary2" input="${details_page}" regex="${rx_plot2}" />
 					</if>
-					<if test="${global_options_secondary_details}&lt;=6">
-						<if test="${global_options_secondary_details}>1">
-							<!-- imdb.de + imdb.es + imdb.fr + imdb.it + imdb.pt -->
-							<parse name="summary2" input="${foreign_page}" regex="${rx_plot2}" />
-						</if>
-					</if>
-					<!-- filmtipset.se (Swedish) -->
-					<if test="${global_options_secondary_details}=7">
-						<parse name="summary2" input="${foreign_page}" regex="${rx_plot2}" />
-					</if>
-					<!-- kvikmyndir.is (Icelandic) -->
-					<if test="${global_options_secondary_details}=8">
+					<if test="${global_options_secondary_details}>1">
 						<parse name="summary2" input="${foreign_page}" regex="${rx_plot2}" />
 					</if>
 					<!-- Fallback to English if no foreign summary exists -->
