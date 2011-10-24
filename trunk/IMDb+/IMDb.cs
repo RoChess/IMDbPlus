@@ -41,7 +41,6 @@ namespace IMDb
 
         int PluginID = 31415;
         DBSourceInfo IMDbPlusSource;
-        DBSourceInfo IMDbSource;
         static Timer syncUpdateTimer;
         bool moviesRefreshing;
         bool cancelRefreshing;
@@ -178,9 +177,6 @@ namespace IMDb
             // Get IMDb+ Data Provider
             IMDbPlusSource = DBSourceInfo.GetFromScriptID(IMDbPlusScriptId);
             SetIMDbProperties();
-
-            // Get IMDB Data Provider
-            IMDbSource = DBSourceInfo.GetFromScriptID(IMDbScriptId);
 
             // Update Script Paths
             UpdateScriptPaths();
@@ -904,7 +900,7 @@ namespace IMDb
             if (forceIMDbPlusButton == null) return;
 
             // if no applicable sources disable
-            if (IMDbPlusSource == null || IMDbSource == null)
+            if (IMDbPlusSource == null)
             {
                 Logger.Debug("IMDb+ and/or IMDb source not installed!");
                 GUIUtils.SetProperty("#IMDb.ForceIMDbPlus.Visible", "false", false);
