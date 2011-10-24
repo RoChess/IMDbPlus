@@ -195,15 +195,26 @@
 						<onleft>50</onleft>
 						<onright>50</onright>
 						<onup>3</onup>
-						<ondown>99999</ondown>
+						<ondown>99998</ondown>
 						<width>200</width>
+					</control>
+          <control>
+						<description>MPEICONFIGURE:9d064213_0b4d_4cee_96a5_405812422b58</description>
+						<type>button</type>
+						<id>99998</id>
+						<label>#MPEI.Translation.Settings.Label</label>
+						<onup>4</onup>
+						<ondown>99999</ondown>
+						<onleft>50</onleft>
+						<width>200</width>
+						<visible>string.equals(#mpei.9d064213_0b4d_4cee_96a5_405812422b58.isinstalled,true)</visible>
 					</control>
 					<control>
 						<description>MPEIUPDATE:9d064213_0b4d_4cee_96a5_405812422b58</description>
 						<type>button</type>
 						<id>99999</id>
 						<label>#MPEI.Translation.UpdateAvailable.Label</label>
-						<onup>4</onup>
+						<onup>99998</onup>
 						<ondown>96742</ondown>
 						<onleft>50</onleft>
 						<width>200</width>
