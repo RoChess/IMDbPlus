@@ -973,7 +973,7 @@ namespace IMDb
                 // add choices to menu
                 List<GUIListItem> items = new List<GUIListItem>();
 
-                GUIListItem item = new GUIListItem(string.Format("{0} {1}", Translation.Update, resume ? Translation.Resume : string.Empty));
+                GUIListItem item = new GUIListItem(string.Format("{0} {1}", Translation.UpdateAll, resume ? Translation.Resume : string.Empty));
                 items.Add(item);
                 item = new GUIListItem(string.Format("{0} {1}", Translation.UpdateReplacementOnly, resume ? Translation.Resume : string.Empty));
                 items.Add(item);
