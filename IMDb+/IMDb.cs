@@ -877,10 +877,10 @@ namespace IMDb
                 int imdbMovies = DBMovieInfo.GetAll().Where(m => m.PrimarySource == sourceInfo && IsValidIMDb(m.ImdbID)).Count();
                 if (imdbMovies == 0) continue;
 
-                Logger.Info("Adding source '{0}' to select dialog", sourceInfo.ToString());
+                Logger.Info("Adding source '{0}' to select dialog", (sourceInfo == null) ? "null" : sourceInfo.ToString());
                 MultiSelectionItem multiSelectionItem = new MultiSelectionItem
                 {
-                    ItemTitle = sourceInfo.ToString(),
+                    ItemTitle = (sourceInfo == null) ? "null" : sourceInfo.ToString(),
                     ItemTitle2 = string.Format(Translation.NumberOfMovies, imdbMovies, totalMovies),
                     Selected = false,
                     Tag = sourceInfo
