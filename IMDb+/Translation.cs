@@ -230,6 +230,14 @@ namespace IMDb
         public static string InfoReplacementsPublished = "Replacements Published: {0}";
         public static string InfoReplacementEntries = "Replacement Entries: {0}";
         public static string InfoCustomReplacementEntries = "Replacement Entries (Custom): {0}";
+        public static string IntervalSixHours = "6 Hours";
+        public static string IntervalTwelveHours = "12 Hours";
+        public static string IntervalTwentyFourHours = "24 Hours";
+        public static string IntervalTwoDays = "2 Days";
+        public static string IntervalThreeDays = "3 Days";
+        public static string IntervalFourDays = "4 Days";
+        public static string IntervalSevenDays = "7 Days";
+
 
         // J
 

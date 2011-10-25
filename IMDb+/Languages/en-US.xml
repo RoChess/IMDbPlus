@@ -84,8 +84,15 @@ Note: This also disables getting missing summary, runtime and scoreing.
   <string Field="InfoReplacementsVersion">Replacements Version: v{0}</string>  
   <string Field="InfoReplacementsPublished">Replacements Published: {0}</string>  
   <string Field="InfoReplacementEntries">Replacement Entries: {0}</string>  
-  <string Field="InfoCustomReplacementEntries">Replacement Entries (Custom): {0}</string>  
-
+  <string Field="InfoCustomReplacementEntries">Replacement Entries (Custom): {0}</string>
+  <string Field="IntervalSixHours">6 Hours</string>
+  <string Field="IntervalTwelveHours">12 Hours</string>
+  <string Field="IntervalTwentyFourHours">24 Hours</string>
+  <string Field="IntervalTwoDays">2 Days</string>
+  <string Field="IntervalThreeDays">3 Days</string>
+  <string Field="IntervalFourDays">4 Days</string>
+  <string Field="IntervalSevenDays">7 Days</string>
+  
   <!-- K -->
 
 	<!-- J -->
