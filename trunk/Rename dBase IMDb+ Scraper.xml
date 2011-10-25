@@ -20,8 +20,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="0" point="4" />
-		<published month="10" day="23" year="2011" />
+		<version major="1" minor="0" point="5" />
+		<published month="10" day="25" year="2011" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -232,7 +232,6 @@
 	<rename id="tt0097388" title="Friday the 13th VIII: Jason Takes Manhattan" sortby="Friday the 13th 08" />
 	<rename id="tt0107254" title="Friday the 13th IX: Jason Goes to Hell - The Final Friday" sortby="Friday the 13th 09" />
 	<rename id="tt0211443" title="Friday the 13th X: Jason X" sortby="Friday the 13th 10" />
-	<rename id="tt0329101" title="Friday the 13th XI: Freddy vs. Jason" sortby="Friday the 13th 11" />
 	<rename id="tt0758746" title="Friday the 13th (Remake) I" />
 	<rename id="tt1525835" title="Gantz I" />
 	<rename id="tt1525836" title="Gantz II: Perfect Answer" />
