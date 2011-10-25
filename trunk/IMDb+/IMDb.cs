@@ -796,7 +796,7 @@ namespace IMDb
                 }
 
                 List<MultiSelectionItem> selectedItems = GUIUtils.ShowMultiSelectionDialog(Translation.SelectSources, listItems);
-                if (selectedItems == null) return;
+                if (selectedItems == null || selectedItems.Where(i => i.Selected).Count() == 0) return;
 
                 // disable repeated attempts
                 GUIControl.DisableControl(GetID, forceIMDbPlusButton.GetID);
@@ -887,7 +887,7 @@ namespace IMDb
                 Logger.Info("Adding source '{0}' to select dialog", (sourceInfo == null) ? "null" : sourceInfo.ToString());
                 MultiSelectionItem multiSelectionItem = new MultiSelectionItem
                 {
-                    ItemTitle = (sourceInfo == null) ? "null" : sourceInfo.ToString(),
+                    ItemTitle = (sourceInfo == null) ? Translation.NullSource : sourceInfo.ToString(),
                     ItemTitle2 = string.Format(Translation.NumberOfMovies, imdbMovies, totalMovies),
                     Selected = false,
                     Tag = sourceInfo
