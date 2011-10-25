@@ -1034,6 +1034,10 @@ namespace IMDb
                         return;
                     }
                     
+                    // disable refresh of movie browser whilst updating
+                    // movingpics re-activates this on page load so we don't need to re-enable
+                    MovingPicturesCore.Browser.AutoRefresh = false;
+
                     SetMovieRefreshProperties(movie, ++moviesUpdated, moviesTotal, false);
                     // skip over previous refreshed
                     if (PluginSettings.MoviesRefreshed.Contains(movie.ImdbID)) continue;
