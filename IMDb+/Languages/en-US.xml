@@ -124,6 +124,7 @@ If you enable this setting then the IMDb scores with less then 20 votes are igno
   <string Field="NumberOfMovies">{0}/{1} Movies</string>
   <string Field="NumberOfMovies2">{0} Movies</string>
   <string Field="NoSourcesFound">No Movies found to convert to IMDb+\nsource!</string>
+  <string Field="NullSource">No scraper source, but usable IMDb id</string>
 
     <!-- O -->
 	<string Field="OneWriterDirector">Limit import to only one writer and director</string>

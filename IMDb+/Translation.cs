@@ -252,6 +252,7 @@ namespace IMDb
         public static string NumberOfMovies = "{0}/{1} Movies";
         public static string NumberOfMovies2 = "{0} Movies";
         public static string NoSourcesFound = "No Movies found to convert to IMDb+\nsource!";
+        public static string NullSource = "No scraper source, but usable IMDb id";
 
         // O
         public static string OneWriterDirector = "Limit import to only one writer and director";
