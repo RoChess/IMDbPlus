@@ -344,9 +344,9 @@ public class Script
         </MinVersion>
         <MaxVersion>
           <Major>1</Major>
-          <Minor>2</Minor>
-          <Build>*</Build>
-          <Revision>*</Revision>
+          <Minor>1</Minor>
+          <Build>6</Build>
+          <Revision>27644</Revision>
         </MaxVersion>
         <WarnOnly>false</WarnOnly>
         <Message>Minimum requirements not met! Please upgrade to MediaPortal 1.2 before installing IMDb+ plugin.</Message>
@@ -380,15 +380,18 @@ public class Script
     <UpdateUrl>http://imdbplus.googlecode.com/svn/trunk/MPEI/update.xml</UpdateUrl>
     <Version>
       <Major>1</Major>
-      <Minor>2</Minor>
+      <Minor>3</Minor>
       <Build>0</Build>
-      <Revision>150</Revision>
+      <Revision>180</Revision>
     </Version>
-    <ExtensionDescription>The IMDb+ plugin &amp; scraper for MovingPictures will make your movie collection easier to use. The plugin will keep the scraper script up-to-date, and add powerful features such as rename and grouping of movie series. It also corrects English titles, allows RottenTomatoes ratings, and many other features.</ExtensionDescription>
-    <VersionDescription>Auto-update system for the IMDb+ scraper script</VersionDescription>
+    <ExtensionDescription>The IMDb+ plugin and scraper for MovingPictures will make your movie collection easier to use. The plugin will keep the scraper script up-to-date, and add powerful features such as rename and grouping of movie series. It also corrects English titles, allows RottenTomatoes ratings, and many other features.</ExtensionDescription>
+    <VersionDescription>Force IMDb+ support for any scraper script that uses IMDb-IDs.
+More methods to refresh the collection, and ability to resume.
+IMDb+ plugin settings can now be adjusted via MPEI plugin.
+Dutch language support for secondary scraper-script data.</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
-    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.2.0.150.mpe1</OnlineLocation>
-    <ReleaseDate>2011-10-23T00:34:39</ReleaseDate>
+    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.3.0.180.mpe1</OnlineLocation>
+    <ReleaseDate>2011-10-26T12:50:06</ReleaseDate>
     <Tags>moving pictures, movies, scraper</Tags>
     <Location>.\Release\imdbplus.plugin.v[Version].mpe1</Location>
     <Params>
