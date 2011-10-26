@@ -1039,7 +1039,14 @@ namespace IMDb
                     
                     // disable refresh of movie browser whilst updating
                     // movingpics re-activates this on page load so we don't need to re-enable
-                    MovingPicturesCore.Browser.AutoRefresh = false;
+                    try
+                    {
+                        MovingPicturesCore.Browser.AutoRefresh = false;
+                    }
+                    catch
+                    {
+                        Logger.Debug("Error setting MovingPicturesCore.Browser.AutoRefresh to false");
+                    }
 
                     SetMovieRefreshProperties(movie, ++moviesUpdated, moviesTotal, false);
                     // skip over previous refreshed
@@ -1047,7 +1054,7 @@ namespace IMDb
 
                     PluginSettings.MoviesRefreshed.Add(movie.ImdbID);
                     MovingPicturesCore.DataProviderManager.Update(movie);
-                    movie.Commit();      
+                    movie.Commit();
                 }
 
                 MovingPicturesCore.Settings.DataProviderRequestLimit = dataProviderReqLimit;
