@@ -970,6 +970,9 @@ namespace IMDb
                 // focus back to main facade
                 GUIControl.FocusControl(GetID, Facade.GetID);
 
+                if (PluginSettings.MoviesRefreshed == null)
+                    PluginSettings.MoviesRefreshed = new List<string>();
+
                 bool resume = PluginSettings.MoviesRefreshed.Count > 0;
 
                 // add choices to menu
