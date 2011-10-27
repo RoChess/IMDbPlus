@@ -20,8 +20,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="0" point="5" />
-		<published month="10" day="25" year="2011" />
+		<version major="1" minor="0" point="6" />
+		<published month="10" day="26" year="2011" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -315,6 +315,10 @@
 	<rename id="tt0475293" title="High School Musical I" />
 	<rename id="tt0810900" title="High School Musical II" />
 	<rename id="tt0962726" title="High School Musical III: Senior Year" />
+	<rename id="tt0097523" title="Honey, I Shrunk the Kids" sortby="Honey, I Shrunk the Kids 01" />
+	<rename id="tt0104437" title="Honey, I Blew Up the Kid" sortby="Honey, I Shrunk the Kids 02" />
+	<rename id="tt0113325" title="Honey, I Shrunk the Audience" sortby="Honey, I Shrunk the Kids 02b" />
+	<rename id="tt0119310" title="Honey, We Shrunk Ourselves" sortby="Honey, I Shrunk the Kids 03" />
 	<rename id="tt0443536" title="Hoodwinked! I" />
 	<rename id="tt0844993" title="Hoodwinked! II: Hood VS. Evil" />
 	<rename id="tt0450278" title="Hostel I" />
@@ -478,6 +482,10 @@
 	<rename id="tt1778304" title="Paranormal Activity III" />
 	<rename id="tt0814255" title="Percy Jackson &amp; the Olympians I: The Lightning Thief" />
 	<rename id="tt1854564" title="Percy Jackson &amp; the Olympians II: The Sea of Monsters" />
+	<rename id="tt0046183" title="Peter Pan (Cartoon)" />
+	<rename id="tt0015224" title="Peter Pan (Original)" />
+	<rename id="tt1632586" title="Peter Pan (Musical/Original)" />
+	<rename id="tt1711375" title="Peter Pan (Musical)" />
 	<rename id="tt0079714" title="Phantasm I" />
 	<rename id="tt0325980" title="Pirates Of The Caribbean I: Curse Black Pearl" />
 	<rename id="tt0383574" title="Pirates Of The Caribbean II: Dead Man's Chest" />
