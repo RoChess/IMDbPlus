@@ -9,8 +9,8 @@
 		<id>314159265</id>
 	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
 
-		<version major="3" minor="3" point="6" />
-		<published month="10" day="23" year="2011" />
+		<version major="3" minor="3" point="7" />
+		<published month="10" day="29" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -1012,7 +1012,7 @@
 							<!-- Checking for 'last' added USA title first -->
 							<set name="rx_aka_english">
 								<![CDATA[
-								<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA(?!\s*\((?:working title|literal English title|promotional title|IMAX version)\)))[^<]*</td>.*?</table>
+								<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA(?!\s*\((?:working title|literal English title|poster title|promotional title|IMAX version)\)))[^<]*</td>.*?</table>
 								]]>
 							</set>
 							<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
@@ -1032,7 +1032,7 @@
 							<!-- Checking for International English title -->
 							<set name="rx_aka_english">
 								<![CDATA[
-								<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.*?<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:International(?!\s*\((?:working title|literal English title|promotional title|IMAX version)\)))[^<]*</td>.*?</table>
+								<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.*?<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:International(?!\s*(?:\(imdb display title\)\s\(Spanish title\)|\((?:working title|literal English title|poster title|promotional title|IMAX version)\))))[^<]*</td>
 								]]>
 							</set>
 							<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
@@ -1068,7 +1068,7 @@
 											<if test="${title_year[0][0]}=">
 												<set name="rx_aka_english">
 													<![CDATA[
-													<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA(?!\s*\((?:working title|literal English title|promotional title|IMAX version)\)))[^<]*</td>.*?</table>
+													<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA(?!\s*\((?:working title|literal English title|poster title|promotional title|IMAX version)\)))[^<]*</td>.*?</table>
 													]]>
 												</set>
 												<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
