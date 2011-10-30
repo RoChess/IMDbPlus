@@ -259,7 +259,7 @@ namespace IMDb
         public static string No = "No";
         public static string NumberOfMovies = "{0}/{1} Movies";
         public static string NumberOfMovies2 = "{0} Movies";
-        public static string NoSourcesFound = "No movies found that can be forced\ninto using the IMDb+ scraper script!";
+        public static string NoSourcesFound = "No movies found that can be forced" + "\n" + "into using the IMDb+ scraper script!";
         public static string NullSource = "No source, but usable IMDb-ID";
 
         // O
@@ -276,9 +276,9 @@ namespace IMDb
         public static string RefreshMovies = "Refresh Movies";
         public static string RefreshingMovies = "Refreshing Movies";
         public static string RefreshCancel = "Cancel Refresh";
-        public static string RefreshMoviesDescription = "Are you sure you want to refresh all movies\nthat have IMDb+ as primary source?";
-        public static string RefreshMoviesNotification = "IMDb+ movie refresh is done.\nPlease enjoy the results.";
-        public static string RefreshMoviesCancelNotification = "Refresh has been cancelled.\n{0} movies done so far.\nRefresh again to resume.";
+        public static string RefreshMoviesDescription = "Are you sure you want to refresh all movies" + "\n" + "that have IMDb+ as primary source?";
+        public static string RefreshMoviesNotification = "IMDb+ movie refresh is done." + "\n" + "Please enjoy the results.";
+        public static string RefreshMoviesCancelNotification = "Refresh has been cancelled." + "\n" + "{0} movies done so far." + "\n" + "Refresh again to resume.";
         public static string RefreshMovieStatus = "Refreshing {0}/{1} Movies: {2}%";
         public static string RefreshAllFields = "Refresh all of the fields";
         public static string RefreshAllFieldsDescription = "Off = Only update a few things" + "\n" + "On = Update everything" + "\n" + "" + "\n" + "The information at IMDb is constantly updated and completed. For this reason it makes sense to once in a while update movies in your collection." + "\n" + "" + "\n" + "Enabling this setting will force everything to be updated. Otherwise only empty, certifications, score and votes fields are updated on a refresh." + "\n" + "" + "\n" + "Note: This setting disables the rename system for existing movies.";
