@@ -382,13 +382,13 @@ public class Script
       <Major>1</Major>
       <Minor>3</Minor>
       <Build>0</Build>
-      <Revision>183</Revision>
+      <Revision>188</Revision>
     </Version>
     <ExtensionDescription>The IMDb+ plugin and scraper for MovingPictures will make your movie collection easier to use. The plugin will keep the scraper script up-to-date, and add powerful features such as rename and grouping of movie series. It also corrects English titles, allows RottenTomatoes ratings, and many other features.</ExtensionDescription>
-    <VersionDescription>Fixed crash on non-English MediaPortal language setting that occured with previous v1.3.0.180 plugin.</VersionDescription>
+    <VersionDescription>Fixed: The "Force IMDb+" option would not respect the selection made on what non-IMDb+ sources to convert, and did them all.</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
-    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.3.0.183.mpe1</OnlineLocation>
-    <ReleaseDate>2011-10-26T18:01:50</ReleaseDate>
+    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.3.0.188.mpe1</OnlineLocation>
+    <ReleaseDate>2011-10-30T17:10:24</ReleaseDate>
     <Tags>moving pictures, movies, scraper</Tags>
     <Location>.\Release\imdbplus.plugin.v[Version].mpe1</Location>
     <Params>
