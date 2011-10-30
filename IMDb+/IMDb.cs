@@ -804,7 +804,7 @@ namespace IMDb
                 int movieCount = 0;
 
                 Logger.Info("Converting Source Info for the following movies...");
-                foreach (var item in selectedItems)
+                foreach (var item in selectedItems.Where(i => i.Selected))
                 {
                     foreach (var movie in DBMovieInfo.GetAll().Where(m => m.PrimarySource == item.Tag && IsValidIMDb(m.ImdbID)))
                     {
