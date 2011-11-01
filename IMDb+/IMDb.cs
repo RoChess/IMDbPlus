@@ -726,6 +726,23 @@ namespace IMDb
             // now set highest priority to the IMDb+ source
             source.SetPriority(DataType.DETAILS, 0);
             source.Commit();
+
+            // set IMDb+ cover source higher than default IMDb source
+            var IMDbSource = DBSourceInfo.GetFromScriptID(IMDbScriptId);
+            if (IMDbSource != null && IMDbSource.CoverPriority != null)
+            {
+                int coverPriority = (int)IMDbSource.CoverPriority;
+                // shift down the rest, leave anything else in place
+                foreach (var enabledSource in DBSourceInfo.GetAll().Where(s => s.CoverPriority >= coverPriority))
+                {
+                    enabledSource.CoverPriority++;
+                    enabledSource.Commit();
+                }
+
+                // now replace IMDb cover priority with IMDb+ source
+                source.SetPriority(DataType.COVERS, coverPriority);
+                source.Commit();
+            }
         }
 
         static int GetSyncStartTime()
