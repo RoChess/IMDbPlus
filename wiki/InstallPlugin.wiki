@@ -11,8 +11,6 @@ You can update any older installation of !MediaPortal easy, so please make sure 
 
 =MPEI package=
 
-*ALERT:* If you manually setup scraper script v3.2.5 or older, then please remove the "C:\Options IMDb+ Scraper.xml" file before you install the new plugin. You will loose your old settings, but you can re-configure them very easy via the plugin later. Sorry for the inconvenience, but this alert was easier then rewriting a lot of code in the plugin.
-
 To make it as easy as possible, the IMDb+ plugin has been put inside a !MediaPortal Extension Installer package. You can manually download the latest package from the 'Downloads' tab above and proceed with the installation.
 
 Or open the !MediaPortal Extension Installer shortcut on your desktop and look for the IMDb+ plugin in the list of "Known extensions". If you have the MPEI GUI plugin installed, you can do it all from the comfort of your couch inside the !MediaPortal GUI.
@@ -81,6 +79,7 @@ Or wait till everything is done.
 
 	http://blixy.net/mp/IMDb+/MePo.IMDb+.Refresh.4.png
 
+!MovingPictures only updates the movie list when it starts for the first time, so you would have to restart !MediaPortal to see the new results correct.
 
 =Manual Update via !MovingPictures config=
 
