@@ -4,13 +4,9 @@
 		<name>IMDb+</name>
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
-
-	<!-- Replace the following with <id>874902</id> to avoid having to re-import your collection. -->
 		<id>314159265</id>
-	<!-- This will fool MovingPictures into thinking this scraper is the new imdb.com scraper. -->
-
-		<version major="3" minor="3" point="7" />
-		<published month="10" day="29" year="2011" />
+		<version major="3" minor="3" point="8" />
+		<published month="11" day="09" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -19,17 +15,12 @@
 <!-- Global Options -->
 
 	<!--
-	It is not yet possible to configure options for a scraper script.
-	So please star issue: http://code.google.com/p/moving-pictures/issues/detail?id=319
+	To adjust the IMDb+ scraper-script options below, use the IMDb+ plugin available at:
 
-	This means that you have to manually change the global_options.
+		http://code.google.com/p/imdbplus/
 
-	You can either adjust them below *BEFORE* importing this scraper script.
-
-	NEW:	Or you can now use the "C:\Options IMDb+ Scraper.xml" config file to adjust
-		the global options on the fly without having to re-import the scraper script.
-
-	Use *ONLY* value="true" or value="false" to make sure that everything works
+	The plugin not only allows you an easy way to control the options of this scraper,
+	but it also installs and keeps it up-to-date and offers additional features.
 	-->
 
 
@@ -394,6 +385,8 @@
 
 			<if test="${new_import}=true"><set name="update_title_and_year" value="true" /></if>
 			<if test="${global_options_refresh_all_fields}=true"><set name="update_title_and_year" value="true" /></if><if test="${movie.title}="><set name="update_title_and_year" value="true" /></if><if test="${movie.year}="><set name="update_title_and_year" value="true" /></if>
+			<!-- If UK certifications are enabled, we want UK title; so need to rely on the AKA title and skip this one -->
+			<if test="${global_options_uk_rating}=false"><set name="update_title_and_year" value="false" /></if>
 			<if test="${update_title_and_year}=true">
 				<!-- Title and Year -->
 				<if test="${global_options_original_title}=true">
@@ -1216,6 +1209,15 @@
 			]]>
 		</set>
 
+		<!-- If 'prefer foldername' is enabled the filename is skipped, so double checking for IMDb tt-ID -->
+		<if test="${search.imdb_id}=">
+			<parse name="search.imdb_id" input="${search.filename_noext}" regex="tt\d{7}" />
+			<if test="${search.imdb_id}!=">
+				<set name="force_imdb_match" value="true" />
+				<log LogLevel="Debug" Message="IMDb+ Scraper: Forcing match via the IMDb tt-ID found in filename: [${search.imdb_id}]" />
+			</if>
+		</if>
+
 		<!-- Retrieve result using IMDB id (if provided) -->
 		<if test="${search.imdb_id}!=">
 			<retrieve name="imdb_page" url="http://akas.imdb.com/title/${search.imdb_id}" />
@@ -1227,6 +1229,12 @@
 				<set name="movie[0].imdb_id" value="${imdb_results[0][2]:htmldecode}" />
 				<set name="movie[0].site_id" value="${imdb_results[0][2]:htmldecode}" />
 				<set name="movie[0].popularity" value="100" />
+
+				<log LogLevel="Debug" Message="IMDb+ Scraper: Direct match found for [${search.imdb_id}] as: '${movie[0].title} (${movie[0].year})'" />
+				<if test="${force_imdb_match}=true">
+					<set name="movie[0].title" value="${search.title}" />
+					<log LogLevel="Debug" Message="IMDb+ Scraper: Forcing title as '${search.title}' to make auto-approve work and then we fix title later" />
+				</if>
 			</if>
 		</if>
 
