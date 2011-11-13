@@ -259,6 +259,16 @@ namespace IMDb
             // Update standard Facade properties
             GUIUtils.SetProperty("#itemcount", Facade.Count.ToString());
 
+            // Check if scraper is first, if not
+            // prompt user to change it
+            if (CheckIMDbScraperScriptPriorityIsFirst() == false)
+            {
+                if (GUIUtils.ShowYesNoDialog("IMDb+", Translation.ScraperNotFirstPrompt, true))
+                {
+                    ScraperScriptPositioning(ref IMDbPlusSource);
+                }
+            }
+
             base.OnPageLoad();
         }
 
@@ -707,6 +717,12 @@ namespace IMDb
             }
             // Scraper installation failed
             return false;
+        }
+
+        private bool? CheckIMDbScraperScriptPriorityIsFirst()
+        {
+            if (IMDbPlusSource == null) return null;
+            return IMDbPlusSource.DetailsPriority == 0;
         }
 
         private void ScraperScriptPositioning(ref DBSourceInfo source)
