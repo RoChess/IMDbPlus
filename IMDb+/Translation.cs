@@ -327,6 +327,7 @@ namespace IMDb
         public static string SelectSources = "Select Sources to Convert to IMDb+";
         public static string StartsWith = "Starts with {0}";
         public static string SelectAlphas = "Select Movies Starting With...";
+        public static string ScraperNotFirstPrompt = "The IMDb+ scraper is not first!\nThis will cause problems.\nWould you like to correct this?";
 
         // T
         public static string IMDbInfo = "IMDb+ Info";
