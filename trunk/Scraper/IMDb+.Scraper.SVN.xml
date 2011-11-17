@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="3" minor="3" point="8" />
-		<published month="11" day="09" year="2011" />
+		<version major="3" minor="3" point="9" />
+		<published month="11" day="16" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en</language>
 	</details>
@@ -386,7 +386,7 @@
 			<if test="${new_import}=true"><set name="update_title_and_year" value="true" /></if>
 			<if test="${global_options_refresh_all_fields}=true"><set name="update_title_and_year" value="true" /></if><if test="${movie.title}="><set name="update_title_and_year" value="true" /></if><if test="${movie.year}="><set name="update_title_and_year" value="true" /></if>
 			<!-- If UK certifications are enabled, we want UK title; so need to rely on the AKA title and skip this one -->
-			<if test="${global_options_uk_rating}=false"><set name="update_title_and_year" value="false" /></if>
+			<if test="${global_options_uk_rating}=true"><set name="update_title_and_year" value="false" /></if>
 			<if test="${update_title_and_year}=true">
 				<!-- Title and Year -->
 				<if test="${global_options_original_title}=true">
