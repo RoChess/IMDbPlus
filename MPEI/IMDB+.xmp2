@@ -268,9 +268,7 @@ public class Script
       string xmlFile = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\IMDb+.Scraper.SVN.xml");
 
       // Check if already installed.
-      bool scraperInstalled = DBSourceInfo.GetFromScriptID(314159265) != null;
-    
-      if (!scraperInstalled)
+      if (!IsScraperInstalled())
       {
         if (ScraperScriptInstallation(xmlFile))
         {
@@ -377,7 +375,12 @@ public class Script
     }
   }
   
-}</Value>
+  static bool IsScraperInstalled()
+  {
+    return DBSourceInfo.GetFromScriptID(314159265) != null;
+  }
+}
+</Value>
                     <ValueType>Script</ValueType>
                     <Description />
                   </SectionParam>
@@ -687,7 +690,7 @@ public class Script
         <Recursive>true</Recursive>
       </FolderGroup>
     </FolderGroups>
-    <ProjectFilename>IMDb+.xmp2</ProjectFilename>
+    <ProjectFilename>IMDB+.xmp2</ProjectFilename>
     <UpdatePath1>./update.xml</UpdatePath1>
     <UpdatePath2 />
     <UpdatePath3 />
