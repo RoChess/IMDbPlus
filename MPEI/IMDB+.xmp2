@@ -267,10 +267,16 @@ public class Script
       // Instal Scraper Script
       string xmlFile = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\IMDb+.Scraper.SVN.xml");
 
-      if (ScraperScriptInstallation(xmlFile))
+      // Check if already installed.
+      bool scraperInstalled = DBSourceInfo.GetFromScriptID(314159265) != null;
+    
+      if (!scraperInstalled)
       {
-        // Make script first priority
-        SetScriptPositioning();
+        if (ScraperScriptInstallation(xmlFile))
+        {
+          // Make script first priority
+          SetScriptPositioning();
+        }
       }
       File.Delete(xmlFile);
       
