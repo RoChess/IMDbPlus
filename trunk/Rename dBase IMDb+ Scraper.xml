@@ -20,8 +20,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="0" point="6" />
-		<published month="10" day="26" year="2011" />
+		<version major="1" minor="0" point="7" />
+		<published month="11" day="25" year="2011" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -31,7 +31,25 @@
 	<rename id="tt0050086" title="3:10 to Yuma (Original)" />
 	<rename id="tt0389722" title="30 Days of Night I" />
 	<rename id="tt1320304" title="30 Days of Night II: Dark Days" />
+	<rename id="tt0006333" title="20,000 Leagues Under the Sea (Original)" />
+	<rename id="tt0118247" title="20,000 Leagues Under the Sea (TV I)" />
+	<rename id="tt0118248" title="20,000 Leagues Under the Sea (TV II)" />
+	<rename id="tt0498755" title="20,000 Leagues Under the Sea (Cartoon)" />
+	<rename id="tt0029992" title="A Christmas Carol (Original)" />
+	<rename id="tt0087056" title="A Christmas Carol (TV I)" />
+	<rename id="tt0216621" title="A Christmas Carol (TV II)" />
+	<rename id="tt0406649" title="A Christmas Carol (TV III)" />
+	<rename id="tt0112668" title="A Christmas Carol (Cartoon)" />
 	<rename id="tt1519929" title="A Dog Named Christmas" />
+	<rename id="tt0422748" title="A Midsummer Night's Dream (Musical)" />
+	<rename id="tt0255374" title="A Midsummer Night's Dream (Opera)" />
+	<rename id="tt0026714" title="A Midsummer Night's Dream (Original)" />
+	<rename id="tt0063297" title="A Midsummer Night's Dream (UK)" />
+	<rename id="tt0082746" title="A Midsummer Night's Dream (TV I)" />
+	<rename id="tt0084328" title="A Midsummer Night's Dream (TV II)" />
+	<rename id="tt0117043" title="A Midsummer Night's Dream (TV III)" />
+	<rename id="tt0026778" title="A Night at the Opera (Original)" />
+	<rename id="tt0211184" title="A Night at the Opera (Cartoon)" />
 	<rename id="tt0087800" title="A Nightmare on Elm Street I" />
 	<rename id="tt0089686" title="A Nightmare on Elm Street II: Freddy's Revenge" />
 	<rename id="tt0093629" title="A Nightmare on Elm Street III: Dream Warriors" />
@@ -42,11 +60,25 @@
 	<rename id="tt0329101" title="A Nightmare on Elm Street VIII: Freddy vs. Jason" />
 	<rename id="tt1179056" title="A Nightmare on Elm Street (Remake) I" />
 	<rename id="tt1650038" title="A Nightmare on Elm Street (Remake) II" />
+	<rename id="tt1025103" title="A Room with a View (TV)" />
+	<rename id="tt0029606" title="A Star Is Born (Original)" />
+	<rename id="tt0047522" title="A Star Is Born (Musical/Original)" />
+	<rename id="tt0075265" title="A Star Is Born (Musical/Remake)" />
+	<rename id="tt0088193" title="A Streetcar Named Desire (TV I)" />
+	<rename id="tt0114565" title="A Streetcar Named Desire (TV II)" />
+	<rename id="tt0027075" title="A Tale of Two Cities (Original)" />
+	<rename id="tt0081595" title="A Tale of Two Cities (TV)" />
+	<rename id="tt1330978" title="Ace in the Hole: Sadaam Hussein" />
+	<rename id="tt1441232" title="Ace in the Hole (TV)" />
 	<rename id="tt0313911" title="Agent Cody Banks I" />
 	<rename id="tt0358349" title="Agent Cody Banks II: Destination London" />
 	<rename id="tt0080339" title="Airplane! I" />
 	<rename id="tt0083530" title="Airplane! II: The Sequel" />
 	<rename id="tt0457495" title="Alex Rider: Operation Stormbreaker" />
+	<rename id="tt0326725" title="Alexander the Great (TV)" />
+	<rename id="tt0848619" title="Alexander the Great (Docu)" />
+	<rename id="tt0480507" title="Alexander the Great (Cartoon)" />
+	<rename id="tt0060086" title="Alfie (Original)" />
 	<rename id="tt0023753" title="Alice in Wonderland (Original)" />
 	<rename id="tt0043274" title="Alice in Wonderland (Cartoon)" />
 	<rename id="tt0164993" title="Alice in Wonderland (TV)" />
@@ -54,9 +86,16 @@
 	<rename id="tt0090605" title="Alien II: Aliens" />
 	<rename id="tt0103644" title="Alien III: Alien³" />
 	<rename id="tt0118583" title="Alien IV: Alien Resurrection" />
+	<rename id="tt0400150" title="Alive (Musical)" />
+	<rename id="tt0331834" title="Alive (Japan)" />
+	<rename id="tt0020629" title="All Quiet on the Western Front (Original)" />
+	<rename id="tt0041113" title="All the King's Men (Original)" />
+	<rename id="tt0216534" title="All the King's Men (TV)" />
+	<rename id="tt0220969" title="All the King's Men (UK)" />
 	<rename id="tt0952640" title="Alvin and the Chipmunks I" />
 	<rename id="tt1231580" title="Alvin and the Chipmunks II: The Squeakquel" />
 	<rename id="tt1615918" title="Alvin and the Chipmunks III: Chip-Wrecked" />
+	<rename id="tt0088701" title="Always, But Not Forever" />
 	<rename id="tt0772152" title="Amateur Porn Star Killer I" />
 	<rename id="tt1161951" title="Amateur Porn Star Killer II" />
 	<rename id="tt1316577" title="Amateur Porn Star Killer III: The Final Chapter" />
@@ -73,10 +112,17 @@
 	<rename id="tt0366174" title="Anaconda II: The Hunt for the Blood Orchid" />
 	<rename id="tt1137996" title="Anaconda III: The Offspring" />
 	<rename id="tt1150934" title="Anaconda IV: Trail of Blood" />
+	<rename id="tt0043286" title="Angels in the Outfield (Original)" />
+	<rename id="tt0026071" title="Anna Karenina (Original)" />
+	<rename id="tt0040098" title="Anna Karenina (Classic)" />
+	<rename id="tt0267267" title="Anna Karenina (TV I)" />
+	<rename id="tt0088726" title="Anna Karenina (TV II)" />
+	<rename id="tt0118623" title="Anna Karenina (Remake)" />
 	<rename id="tt0368578" sortby="Are We There Yet 1" />
 	<rename id="tt0422774" sortby="Are We There Yet 2" />
 	<rename id="tt0091431" title="Armour Of God I (Long Xiong Hu Di)" />
 	<rename id="tt0099558" title="Armour Of God II (Fei Ying Gai Wak)" />
+	<rename id="tt0254136" title="Around the World in 80 Days (Cartoon)" />
 	<rename id="tt0344854" title="Arthur I: The Invisibles" />
 	<rename id="tt0940657" title="Arthur II: The Revenge of Maltazard" />
 	<rename id="tt0940656" title="Arthur III: The War of the Two Worlds" />
@@ -84,6 +130,11 @@
 	<rename id="tt0145660" title="Austin Powers II: The Spy Who Shagged Me" />
 	<rename id="tt0295178" title="Austin Powers III: Goldmember" />
 	<rename id="tt1218992" title="Austin Powers IV" />
+	<rename id="tt0027311" title="As You Like It (Original)" />
+	<rename id="tt0077180" title="As You Like It (TV)" />
+	<rename id="tt0103723" title="As You Like It (UK)" />
+	<rename id="tt0074156" title="Assault on Precinct 13 (Original)" />
+	<rename id="tt0051380" title="Attack of the 50 Ft. Woman (Original)" />
 	<rename id="tt0499549" title="Avatar" sortby="Avatar I" />
 	<rename id="tt1630029" title="Avatar II" />
 	<rename id="tt1757678" title="Avatar III" />
@@ -95,6 +146,9 @@
 	<rename id="tt0112442" title="Bad Boys I" />
 	<rename id="tt0172156" title="Bad Boys II" />
 	<rename id="tt1502397" title="Bad Boys III" />
+	<rename id="tt1334515" title="Bad Company (UK)" />
+	<rename id="tt0068245" title="Bad Company (Western)" />
+	<rename id="tt0112443" title="Bad Company (Thriller)" />
 	<rename id="tt0034492" title="Bambi I" />
 	<rename id="tt0103772" title="Basic Instinct I" />
 	<rename id="tt0430912" title="Basic Instinct II" />
@@ -107,6 +161,10 @@
 	<rename id="tt0372784" title="Batman V: Batman Begins" sortby="Batman 05" />
 	<rename id="tt0468569" title="Batman VI: The Dark Knight" sortby="Batman 06" />
 	<rename id="tt1345836" title="Batman VII: The Dark Knight Rises" sortby="Batman 07" />
+	<rename id="tt0055781" title="Beauty and the Beast (Original)" />
+	<rename id="tt0101414" title="Beauty and the Beast (Cartoon)" />
+	<rename id="tt0338769" title="Beauty and the Beast: Blood of Beasts" />
+	<rename id="tt1410295" title="Beauty and the Beasts: A Dark Tale" />
 	<rename id="tt0159273" title="Behind Enemy Lines I" />
 	<rename id="tt0497329" title="Behind Enemy Lines II: Axis of Evil" />
 	<rename id="tt1208647" title="Behind Enemy Lines III: Colombia" />
@@ -117,12 +175,22 @@
 	<rename id="tt1464174" title="Big Momma's House III: Like Father, Like Son" />
 	<rename id="tt0096928" title="Bill &amp; Ted's I: Excellent Adventure" />
 	<rename id="tt0101452" title="Bill &amp; Ted's II: Bogus Journey" />
+	<rename id="tt0071222" title="Black Christmas (Original)" />
 	<rename id="tt0120611" title="Blade I" />
 	<rename id="tt0187738" title="Blade II" />
 	<rename id="tt0359013" title="Blade III: Trinity" />
+	<rename id="tt0078879" title="Bloodline (Classic)" />
+	<rename id="tt0488967" title="Bloodline (Cult)" />
+	<rename id="tt0462201" title="Bloodline (Urban)" />
+	<rename id="tt1190537" title="Bloodline (Docu)" />
+	<rename id="tt0434805" title="Bloodlines (TV)" />
 	<rename id="tt0383222" title="BloodRayne I" />
 	<rename id="tt0896036" title="BloodRayne II: Deliverance" />
 	<rename id="tt1153546" title="BloodRayne III: The Third Reich" />
+	<rename id="tt0106438" title="Blue (UK)" />
+	<rename id="tt1223922" title="Blue (India)" />
+	<rename id="tt0326773" title="Blue (Japan)" />
+	<rename id="tt1148198" title="Blue (Urban)" />
 	<rename id="tt0357507" title="Boogeyman I" />
 	<rename id="tt0900357" title="Boogeyman II" />
 	<rename id="tt1204883" title="Boogeyman III" />
@@ -135,13 +203,80 @@
 	<rename id="tt1349482" title="Bring It On V: Fight To The Finish" />
 	<rename id="tt0328880" title="Brother Bear I" />
 	<rename id="tt0465925" title="Brother Bear II" />
+	<rename id="tt0301078" title="Camelot (TV)" />
+	<rename id="tt0237068" title="Camelot (Cartoon)" />
+	<rename id="tt1125860" title="Camelot: Enchanted Tales" />
 	<rename id="tt0103919" title="Candyman I" />
 	<rename id="tt0112625" title="Candyman II: Farewell to the Flesh" />
 	<rename id="tt0165662" title="Candyman III: Day of the Dead" />
+	<rename id="tt0055824" title="Cape Fear (Original)" />
+	<rename id="tt0074285" title="Carrie I" />
+	<rename id="tt0144814" title="Carrie II: The Rage" />
+	<rename id="tt1351632" title="Carrie (TV)" />
+	<rename id="tt0319970" title="Carrie (Remake)" />
+	<rename id="tt1939659" title="Carrie (Reboot)" />
 	<rename id="tt0317219" title="Cars I" />
 	<rename id="tt1216475" title="Cars II" />
+	<rename id="tt0449472" title="Champion (Docu)" />
+	<rename id="tt0325165" title="Champion (Korea)" />
+	<rename id="tt0405977" title="Chaos (Cult)" />
+	<rename id="tt0265116" title="Chaos (France)" />
+	<rename id="tt0015930" title="Charlie Chan I: The House Without a Key" sortby="Charlie Chan 01" />
+	<rename id="tt0017752" title="Charlie Chan II: The Chinese Parrot" sortby="Charlie Chan 02" />
+	<rename id="tt0019684" title="Charlie Chan III: Behind That Curtain" sortby="Charlie Chan 03" />
+	<rename id="tt0021733" title="Charlie Chan IV: Charlie Chan Carries On" sortby="Charlie Chan 04" />
+	<rename id="tt0021668" title="Charlie Chan V: The Black Camel" sortby="Charlie Chan 05" />
+	<rename id="tt0022755" title="Charlie Chan VI: Charlie Chan's Chance" sortby="Charlie Chan 06" />
+	<rename id="tt0023881" title="Charlie Chan VII: Charlie Chan's Greatest Case" sortby="Charlie Chan 07" />
+	<rename id="tt0024969" title="Charlie Chan VIII: Charlie Chan's Courage" sortby="Charlie Chan 08" />
+	<rename id="tt0024968" title="Charlie Chan IX: Charlie Chan in London" sortby="Charlie Chan 09" />
+	<rename id="tt0026198" title="Charlie Chan X: Charlie Chan in Paris" sortby="Charlie Chan 10" />
+	<rename id="tt0026197" title="Charlie Chan XI: Charlie Chan in Egypt" sortby="Charlie Chan 11" />
+	<rename id="tt0026199" title="Charlie Chan XII: Charlie Chan in Shanghai" sortby="Charlie Chan 12" />
+	<rename id="tt0027442" title="Charlie Chan XIII: Charlie Chan's Secret" sortby="Charlie Chan 13" />
+	<rename id="tt0027439" title="Charlie Chan XIV: Charlie Chan at the Circus" sortby="Charlie Chan 14" />
+	<rename id="tt0027441" title="Charlie Chan XV: Charlie Chan at the Race Track" sortby="Charlie Chan 15" />
+	<rename id="tt0027440" title="Charlie Chan XVI: Charlie Chan at the Opera" sortby="Charlie Chan 16" />
+	<rename id="tt0028708" title="Charlie Chan XVII: Charlie Chan at the Olympics" sortby="Charlie Chan 17" />
+	<rename id="tt0028709" title="Charlie Chan XVIII: Charlie Chan on Broadway" sortby="Charlie Chan 18" />
+	<rename id="tt0028707" title="Charlie Chan XIX: Charlie Chan at Monte Carlo" sortby="Charlie Chan 19" />
+	<rename id="tt0029984" title="Charlie Chan XX: Charlie Chan in Honolulu" sortby="Charlie Chan 20" />
+	<rename id="tt0031147" title="Charlie Chan XXI: Charlie Chan at Treasure Island" sortby="Charlie Chan 21" />
+	<rename id="tt0031149" title="Charlie Chan XXII: Charlie Chan in Reno" sortby="Charlie Chan 22" />
+	<rename id="tt0031148" title="Charlie Chan XXIII: Charlie Chan in City in Darkness" sortby="Charlie Chan 23" />
+	<rename id="tt0032325" title="Charlie Chan XXIV: Charlie Chan in Panama" sortby="Charlie Chan 24" />
+	<rename id="tt0032326" title="Charlie Chan XXV: Charlie Chan's Murder Cruise" sortby="Charlie Chan 25" />
+	<rename id="tt0032324" title="Charlie Chan XXVI: Charlie Chan at the Wax Museum" sortby="Charlie Chan 26" />
+	<rename id="tt0032819" title="Charlie Chan XXVII: Murder Over New York" sortby="Charlie Chan 27" />
+	<rename id="tt0033519" title="Charlie Chan XXVIII: Dead Men Tell" sortby="Charlie Chan 28" />
+	<rename id="tt0033458" title="Charlie Chan XXIX: Charlie Chan in Rio" sortby="Charlie Chan 29" />
+	<rename id="tt0034586" title="Charlie Chan XXX: Castle in the Desert" sortby="Charlie Chan 30" />
+	<rename id="tt0036706" title="Charlie Chan XXXI: Charlie Chan in the Secret Service" sortby="Charlie Chan 31" />
+	<rename id="tt0036709" title="Charlie Chan XXXII: Charlie Chan in The Chinese Cat" sortby="Charlie Chan 32" />
+	<rename id="tt0036705" title="Charlie Chan XXXIII: Black Magic" sortby="Charlie Chan 33" />
+	<rename id="tt0037826" title="Charlie Chan XXXIV: The Jade Mask" sortby="Charlie Chan 34" />
+	<rename id="tt0038056" title="Charlie Chan XXXV: The Scarlet Clue" sortby="Charlie Chan 35" />
+	<rename id="tt0038080" title="Charlie Chan XXXVI: The Shanghai Cobra" sortby="Charlie Chan 36" />
+	<rename id="tt0038017" title="Charlie Chan XXXVII: The Red Dragon" sortby="Charlie Chan 37" />
+	<rename id="tt0038452" title="Charlie Chan XXXVIII: Dark Alibi" sortby="Charlie Chan 38" />
+	<rename id="tt0038929" title="Charlie Chan XXXIX: Shadows Over Chinatown" sortby="Charlie Chan 39" />
+	<rename id="tt0038449" title="Charlie Chan XL: Dangerous Money" sortby="Charlie Chan 40" />
+	<rename id="tt0039912" title="Charlie Chan XLI: The Trap" sortby="Charlie Chan 41" />
+	<rename id="tt0039262" title="Charlie Chan XLII: The Chinese Ring" sortby="Charlie Chan 42" />
+	<rename id="tt0040296" title="Charlie Chan XLIII: Docks of New Orleans" sortby="Charlie Chan 43" />
+	<rename id="tt0040778" title="Charlie Chan XLIV: Shanghai Chest" sortby="Charlie Chan 44" />
+	<rename id="tt0040394" title="Charlie Chan XLV: The Golden Eye" sortby="Charlie Chan 45" />
+	<rename id="tt0040347" title="Charlie Chan XLVI: The Feathered Serpent" sortby="Charlie Chan 46" />
+	<rename id="tt0041882" title="Charlie Chan XLVII: The Sky Dragon" sortby="Charlie Chan 47" />
+	<rename id="tt0067670" title="Charlie Chan XLVIII: The Return of Charlie Chan (TV)" sortby="Charlie Chan 48" />
+	<rename id="tt0082159" title="Charlie Chan XLIX: Charlie Chan and the Curse of the Dragon Queen" sortby="Charlie Chan 49" />
+	<rename id="tt0070016" title="Charlotte's Web (Original) I" />
+	<rename id="tt0355315" title="Charlotte's Web (Original) II: Wilbur's Great Adventure" />
 	<rename id="tt0892255" title="Che I: The Argentine" />
 	<rename id="tt0374569" title="Che II: Guerrilla" />
+	<rename id="tt0349205" title="Cheaper by the Dozen I" />
+	<rename id="tt0452598" title="Cheaper by the Dozen II" />
+	<rename id="tt0042327" title="Cheaper by the Dozen (Original)" />
 	<rename id="tt0078446" title="Cheech &amp; Chong I: Up in Smoke" />
 	<rename id="tt0080520" title="Cheech &amp; Chong II: Next Movie" />
 	<rename id="tt0082163" title="Cheech &amp; Chong III: Nice Dreams" />
@@ -163,8 +298,33 @@
 	<rename id="tt0177625" title="Children of the Corn VI: Isaac's Return" />
 	<rename id="tt0279730" title="Children of the Corn VII: Revelation" />
 	<rename id="tt1745672" title="Children of the Corn VIII: Genesis" />
+	<rename id="tt0094868" title="Chocolat (France)" />
+	<rename id="tt0251637" title="Choke (Docu)" />
+	<rename id="tt0265118" title="Choke (Cult)" />
+	<rename id="tt0003772" title="Cinderella (Original)" />
+	<rename id="tt0845442" title="Cinderella (Korea)" />
+	<rename id="tt0128996" title="Cinderella (TV)" />
+	<rename id="tt0129672" title="Cinderella (TV/Original)" />
+	<rename id="tt0057950" title="Cinderella (TV/Remake)" />
+	<rename id="tt0910852" title="Cinderella (Video)" />
+	<rename id="tt0082186" title="Clash of the Titans (Original)" />
+	<rename id="tt0007801" title="Cleopatra (Classic)" />
+	<rename id="tt0024991" title="Cleopatra (Original)" />
+	<rename id="tt0346765" title="Cleopatra (Argentina)" />
+	<rename id="tt0017765" title="College (Classic)" />
+	<rename id="tt0082198" title="Conan the Barbarian (Original)" />
+	<rename id="tt0266425" title="Conspiracy (TV)" />
+	<rename id="tt1884274" title="Conspiracy (Cult)" />
 	<rename id="tt0479884" title="Crank I" />
 	<rename id="tt1121931" title="Crank II: High Voltage" />
+	<rename id="tt0115964" title="Crash (Classic)" />
+	<rename id="tt0035763" title="Crash Dive (Classic)" />
+	<rename id="tt0092794" title="Crazy Love (Belgium)" />
+	<rename id="tt0156205" title="Creature (TV)" />
+	<rename id="tt0088961" title="Creature (Cult)" />
+	<rename id="tt0144041" title="Crime and Punishment (TV)" />
+	<rename id="tt0307734" title="Crime and Punishment (UK)" />
+	<rename id="tt0026246" title="Crime and Punishment (Original)" />
 	<rename id="tt0090887" title="Critters I" />
 	<rename id="tt0094919" title="Critters II: The Main Course" />
 	<rename id="tt0101627" title="Critters III: You Are What They Eat" />
@@ -175,9 +335,19 @@
 	<rename id="tt0123755" title="Cube I" />
 	<rename id="tt0285492" title="Cube II: Hypercube" />
 	<rename id="tt0377713" title="Cube III: Cube Zero" />
+	<rename id="tt0178361" title="Cyrano de Bergerac (TV)" />
+	<rename id="tt0472301" title="Cyrano de Bergerac (UK)" />
+	<rename id="tt0042367" title="Cyrano de Bergerac (Original)" />
+	<rename id="tt0021775" title="Daddy Long Legs (Original)" />
+	<rename id="tt0163596" title="Dark Water (Canada)" />
+	<rename id="tt1677677" title="Dark Waters (UK)" />
+	<rename id="tt0391908" title="Dark Waters (Video)" />
 	<rename id="tt0076786" title="Dario Argento's I: Suspiria" />
 	<rename id="tt0080923" title="Dario Argento's II: Inferno" />
 	<rename id="tt0804507" title="Dario Argento's III: Mother of Tears - The Third Mother" />
+	<rename id="tt0238768" title="David Copperfield (TV)" />
+	<rename id="tt0106547" title="David Copperfield (Cartoon)" />
+	<rename id="tt0065615" title="David Copperfield (Original)" />
 	<rename id="tt0795368" title="Death at a Funeral (UK)" />
 	<rename id="tt1321509" title="Death at a Funeral (US)" />
 	<rename id="tt1196141" title="Diary of a Wimpy Kid I" />
@@ -189,11 +359,18 @@
 	<rename id="tt0089003" title="Death Wish III" />
 	<rename id="tt0092857" title="Death Wish IV: The Crackdown" />
 	<rename id="tt0109578" title="Death Wish V: The Face Of Death" />
+	<rename id="tt0038462" title="Decoy (Classic)" />
+	<rename id="tt0089065" title="Déjà Vu (UK)" />
+	<rename id="tt0839788" title="Déjà Vu (TV)" />
+	<rename id="tt0101701" title="Delirious (Classic)" />
+	<rename id="tt0037638" title="Detour (Original)" />
+	<rename id="tt0104093" title="Detour (Remake)" />
+	<rename id="tt0319495" title="Detour (Video)" />
 	<rename id="tt0095016" title="Die Hard I" />
 	<rename id="tt0099423" title="Die Hard II: Die Harder" />
 	<rename id="tt0112864" title="Die Hard III: Die Hard with a Vengeance" />
 	<rename id="tt0337978" title="Die Hard IV: Live Free or Die Hard" />
-	<rename id="tt1606378" title="Die Hard V" />
+	<rename id="tt1606378" title="Die Hard V: A Good Day to Die Hard" />
 	<rename id="tt0066999" title="Dirty Harry I" />
 	<rename id="tt0070355" title="Dirty Harry II: Magnum Force" />
 	<rename id="tt0074483" title="Dirty Harry III: The Enforcer" />
@@ -204,20 +381,84 @@
 	<rename id="tt0481513" title="Doctor Dolittle III" />
 	<rename id="tt1024724" title="Doctor Dolittle IV: Tail to the Chief" />
 	<rename id="tt1080926" title="Doctor Dolittle V: Million Dollar Mutts" />
+	<rename id="tt0324937" title="Doctor Zhivago (TV)" />
+	<rename id="tt0330229" title="Dolls (Japan)" />
+	<rename id="tt0798780" title="Don (NL)" />
+	<rename id="tt0077451" title="Don (Original)" />
+	<rename id="tt0461936" title="Don I" />
+	<rename id="tt1285241" title="Don II" />
+	<rename id="tt0064247" title="Don't Drink the Water (Original)" />
+	<rename id="tt0033547" title="Double Cross (Classic)" />
+	<rename id="tt0486968" title="Double Cross (TV)" />
+	<rename id="tt0007873" title="Down to Earth (Rare)" />
+	<rename id="tt0039337" title="Down to Earth (Classic)" />
+	<rename id="tt0821767" title="Dr. Jekyll and Mr. Hyde (Cartoon)" />
+	<rename id="tt0070002" title="Dr. Jekyll and Mr. Hyde (Musical)" />
+	<rename id="tt0011130" title="Dr. Jekyll and Mr. Hyde (Rare)" />
+	<rename id="tt0022835" title="Dr. Jekyll and Mr. Hyde (Original)" />
+	<rename id="tt0033553" title="Dr. Jekyll and Mr. Hyde (Classic)" />
+	<rename id="tt1159984" title="Dr. Jekyll and Mr. Hyde (TV)" />
+	<rename id="tt0346899" title="Dr. Jekyll and Mr. Hyde (Video)" />
+	<rename id="tt0340083" title="Dr. Jekyll and Mr. Hyde (UK)" />
+	<rename id="tt0079073" title="Dracula (Remake)" />
+	<rename id="tt0070003" title="Dracula (TV/Original)" />
+	<rename id="tt0287846" title="Dracula (TV/Remake)" />
+	<rename id="tt0847161" title="Dracula (TV)" />
+	<rename id="tt0021814" title="Dracula I" sortby="Dracula (Original) 01" />
+	<rename id="tt0027545" title="Dracula II: Dracula's Daughter" sortby="Dracula (Original) 02" />
+	<rename id="tt0036376" title="Dracula III: Son of Dracula" sortby="Dracula (Original) 03" />
+	<rename id="tt0036931" title="Dracula IV: House of Frankenstein" sortby="Dracula (Original) 04" />
+	<rename id="tt0037793" title="Dracula V: House of Dracula" sortby="Dracula (Original) 05" />
+	<rename id="tt0040068" title="Dracula VI: Bud Abbott Lou Costello Meet Frankenstein" sortby="Dracula (Original) 06" />
+	<rename id="tt0051554" title="Dracula I" sortby="Dracula 01" />
+	<rename id="tt0053677" title="Dracula II: The Brides of Dracula" sortby="Dracula 02" />
+	<rename id="tt0059127" title="Dracula III: Prince of Darkness" sortby="Dracula 03" />
+	<rename id="tt0062909" title="Dracula IV: Risen from the Grave" sortby="Dracula 04" />
+	<rename id="tt0065073" title="Dracula V: Taste the Blood of Dracula" sortby="Dracula 05" />
+	<rename id="tt0067713" title="Dracula VI: Scars of Dracula" sortby="Dracula 06" />
+	<rename id="tt0068505" title="Dracula VII: Dracula A.D. 1972" sortby="Dracula 07" />
+	<rename id="tt0070634" title="Dracula VIII: The Satanic Rites of Dracula" sortby="Dracula 08" />
+	<rename id="tt0070297" title="Dracula IX: The Legend of the 7 Golden Vampires" sortby="Dracula 09" />
+	<rename id="tt0090970" title="Dream Lover (Classic)" />
+	<rename id="tt0018851" title="Dressed to Kill (Rare)" />
+	<rename id="tt0033558" title="Dressed to Kill (Classic)" />
 	<rename id="tt0080179" title="Drunken Master I (Jui Kuen)" />
 	<rename id="tt0111512" title="Drunken Master II (Jui Kuen II)" />
 	<rename id="tt0190374" title="Dungeons &amp; Dragons I" />
 	<rename id="tt0406728" title="Dungeons &amp; Dragons II: Wrath of the Dragon God" />
+	<rename id="tt0119040" title="East Side Story (Docu)" />
 	<rename id="tt0104815" title="El mariachi I" />
 	<rename id="tt0112851" title="El mariachi II: Desperado" />
 	<rename id="tt0285823" title="El mariachi III: Once Upon a Time in Mexico" />
+	<rename id="tt0283332" title="Elizabeth (TV)" />
+	<rename id="tt0022854" title="Emma (Classic)" />
+	<rename id="tt0118308" title="Emma (TV)" />
+	<rename id="tt0362590" title="Employee of the Month (Cult)" />
 	<rename id="tt0120667" title="Fantastic Four I" />
 	<rename id="tt0486576" title="Fantastic Four II: Rise of the Silver Surfer" />
+	<rename id="tt0042451" title="Father of the Bride (Original) I" />
+	<rename id="tt0043526" title="Father of the Bride (Original) II: Father's Little Dividend" />
+	<rename id="tt0101862" title="Father of the Bride I" />
+	<rename id="tt0113041" title="Father of the Bride II" />
+	<rename id="tt0099557" title="Fear (Cult)" />
+	<rename id="tt0095143" title="Fear (Honor Betrayed)" />
+	<rename id="tt0050397" title="Fire Down Below (Classic)" />
+	<rename id="tt1137455" title="Fire Down Below (Cult)" />
 	<rename id="tt0195714" title="Final Destination I" />
 	<rename id="tt0309593" title="Final Destination II" />
 	<rename id="tt0414982" title="Final Destination III" />
 	<rename id="tt1144884" title="Final Destination IV: The Final Destination" />
 	<rename id="tt1622979" title="Final Destination V" />
+	<rename id="tt0780516" title="Flawless (UK)" />
+	<rename id="tt0062979" title="Flesh I" />
+	<rename id="tt0066482" title="Flesh II: Trash" />
+	<rename id="tt0068688" title="Flesh III: Heat" />
+	<rename id="tt0087277" title="Footloose (Original)" />
+	<rename id="tt0076054" title="Freaky Friday (Original)" />
+	<rename id="tt0113112" title="Freaky Friday (TV)" />
+	<rename id="tt0497619" title="Freeway (Docu)" />
+	<rename id="tt0095177" title="Freeway (Cult)" />
+	<rename id="tt0076059" title="Fun with Dick and Jane (Original)" />
 	<rename id="tt0471711" title="Futurama I: Bender's Big Score!" />
 	<rename id="tt1054485" title="Futurama II: The Beast with a Billion Backs" />
 	<rename id="tt1054486" title="Futurama III: Bender's Game" />
@@ -235,6 +476,10 @@
 	<rename id="tt0758746" title="Friday the 13th (Remake) I" />
 	<rename id="tt1525835" title="Gantz I" />
 	<rename id="tt1525836" title="Gantz II: Perfect Answer" />
+	<rename id="tt0263372" title="Gaslight (TV)" />
+	<rename id="tt0031359" title="Gaslight (Classic)" />
+	<rename id="tt0067128" title="Get Carter (Original)" />
+	<rename id="tt0104346" title="Gladiator (Cult)" />
 	<rename id="tt0259324" title="Ghost Rider I" />
 	<rename id="tt1071875" title="Ghost Rider II: Spirit of Vengeance" />
 	<rename id="tt0087332" title="Ghostbusters I" />
@@ -243,7 +488,13 @@
 	<rename id="tt1967502" title="G.I. Joe I: The Invasion of Cobra Island" />
 	<rename id="tt1046173" title="G.I. Joe I: The Rise of Cobra" />
 	<rename id="tt1583421" title="G.I. Joe II: Retaliation" />
+	<rename id="tt0031385" title="Goodbye, Mr. Chips (UK)" />
+	<rename id="tt0327804" title="Goodbye, Mr. Chips (TV)" />
 	<rename id="tt0591381" title="Goosebumps #2.14 - The Scarecrow Walks at Midnight" />
+	<rename id="tt0038574" title="Great Expectations (Classic)" />
+	<rename id="tt0025202" title="Great Expectations (Original)" />
+	<rename id="tt0071576" title="Great Expectations (TV)" />
+	<rename id="tt0167187" title="Great Expectations (UK)" />
 	<rename id="tt1663633" title="Green Arrow (DC Showcase)" />
 	<rename id="tt1384590" title="Green Lantern (DC) I: First Flight" />
 	<rename id="tt1683043" title="Green Lantern (DC) II: Emerald Knights" />
@@ -253,12 +504,23 @@
 	<rename id="tt0099700" title="Gremlins II: The New Batch" />
 	<rename id="tt1028528" title="Grindhouse I: Death Proof" />
 	<rename id="tt1077258" title="Grindhouse II: Planet Terror" />
+	<rename id="tt0031397" title="Gulliver's Travels (Original)" />
+	<rename id="tt0489718" title="Gulliver's Travels (Cartoon)" />
+	<rename id="tt0115195" title="Gulliver's Travels (TV)" />
+	<rename id="tt0076119" title="Gulliver's Travels (UK)" />
+	<rename id="tt1125862" title="Gulliver's Travels (Video)" />
 	<rename id="tt0093130" title="Gunsmoke I: Return to Dodge" />
 	<rename id="tt0099721" title="Gunsmoke II: The Last Apache" />
 	<rename id="tt0104379" title="Gunsmoke III: To the Last Man" />
 	<rename id="tt0107062" title="Gunsmoke IV: The Long Ride" />
 	<rename id="tt0109961" title="Gunsmoke V: One Man's Justice" />
+	<rename id="tt0028972" title="Gypsy (Rare)" />
+	<rename id="tt0056048" title="Gypsy (Original)" />
+	<rename id="tt0107065" title="Gypsy (TV)" />
+	<rename id="tt1847602" title="Gypsy (Video)" />
+	<rename id="tt0471729" title="Gypsy (Mexico)" />
 	<rename id="tt0491603" title="H2O: Just Add Water - The Movie" />
+	<rename id="tt0095270" title="Hairspray (Original)" />
 	<rename id="tt0077651" title="Halloween I" />
 	<rename id="tt0082495" title="Halloween II: The Nightmare Isn't Over!" />
 	<rename id="tt0085636" title="Halloween III: Season of the Witch" />
@@ -274,6 +536,13 @@
 	<rename id="tt0212985" title="Hannibal III: Hannibal" />
 	<rename id="tt0289765" title="Hannibal IV: Red Dragon" />
 	<rename id="tt0367959" title="Hannibal V: Hannibal Rising" />
+	<rename id="tt0892763" title="Hansel &amp; Gretel (Remake)" />
+	<rename id="tt1460002" title="Hansel &amp; Gretel (Cartoon)" />
+	<rename id="tt0193995" title="Hansel and Gretel (Cartoon)" />
+	<rename id="tt0270398" title="Hansel and Gretel (Opera)" />
+	<rename id="tt0365302" title="Hansel and Gretel (UK)" />
+	<rename id="tt1380833" title="Hansel and Gretel (Musical)" />
+	<rename id="tt0032572" title="Haunted House (Rare)" />
 	<rename id="tt0308353" title="Happily N'Ever After I" />
 	<rename id="tt1235837" title="Happily N'Ever After II" />
 	<rename id="tt0366551" title="Harold &amp; Kumar I: Go to White Castle" />
@@ -293,6 +562,7 @@
 	<rename id="tt0417741" title="Harry Potter VI: The Half-Blood Prince" />
 	<rename id="tt0926084" title="Harry Potter VII: The Deathly Hallows (Part 1)" />
 	<rename id="tt1201607" title="Harry Potter VII: The Deathly Hallows (Part 2)" />
+	<rename id="tt0093164" title="Heat (Cult)" />
 	<rename id="tt0424755" title="Hellboy Documentary: The Seeds of Creation" />
 	<rename id="tt0810895" title="Hellboy Animated I: Sword of Storms" />
 	<rename id="tt0817910" title="Hellboy Animated II: Blood &amp; Iron" />
@@ -321,16 +591,35 @@
 	<rename id="tt0119310" title="Honey, We Shrunk Ourselves" sortby="Honey, I Shrunk the Kids 03" />
 	<rename id="tt0443536" title="Hoodwinked! I" />
 	<rename id="tt0844993" title="Hoodwinked! II: Hood VS. Evil" />
+	<rename id="tt0020985" title="Holiday (Rare)" />
+	<rename id="tt1651084" title="Holiday (France)" />
+	<rename id="tt0116550" title="Homecoming (TV)" />
+	<rename id="tt0392121" title="Homecoming (Philippines)" />
+	<rename id="tt0040446" title="Homecoming (Classic)" />
+	<rename id="tt1618376" title="Homecoming (Indie)" />
+	<rename id="tt0418735" title="Homecoming (Drama)" />
 	<rename id="tt0450278" title="Hostel I" />
 	<rename id="tt0498353" title="Hostel II" />
 	<rename id="tt1255916" title="Hostel III" />
+	<rename id="tt0415855" title="Hotel (Cult)" />
+	<rename id="tt0371733" title="Hotel (TV)" />
+	<rename id="tt0278487" title="Hotel (UK)" />
 	<rename id="tt0091223" title="House I" />
 	<rename id="tt0097527" title="House III: The Horror Show" />
+	<rename id="tt0837796" title="House (Cult)" />
+	<rename id="tt0113342" title="House (Canada)" />
+	<rename id="tt0045888" title="House of Wax (Original)" />
+	<rename id="tt0051744" title="House on Haunted Hill (Original)" />
+	<rename id="tt0185371" title="House on Haunted Hill I" />
+	<rename id="tt0827782" title="House on Haunted Hill II: Return to House on Haunted Hill" />
+	<rename id="tt1646971" title="How to Train Your Dragon II" />
+	<rename id="tt2065968" title="How to Train Your Dragon: Gift of the Night Fury" />
 	<rename id="tt1744776" title="How to Train Your Dragon: Legend of the BoneKnapper Dragon" />
 	<rename id="tt0268380" title="Ice Age I" />
 	<rename id="tt0438097" title="Ice Age II: The Meltdown" />
 	<rename id="tt1080016" title="Ice Age III: Dawn of the Dinosaurs" />
 	<rename id="tt1667889" title="Ice Age IV: Continental Drift" />
+	<rename id="tt0025301" title="Imitation of Life (Rare)" />
 	<rename id="tt0082971" title="Indiana Jones I: The Raiders of the Lost Ark" />
 	<rename id="tt0087469" title="Indiana Jones II: The Temple of Doom" />
 	<rename id="tt0097576" title="Indiana Jones III: The Last Crusade" />
@@ -341,8 +630,13 @@
 	<rename id="tt0338564" title="Infernal Affairs I (Mou gaan dou)" />
 	<rename id="tt0369060" title="Infernal Affairs II (Mou gaan dou II)" />
 	<rename id="tt0374339" title="Infernal Affairs III: End Inferno (Mou gaan dou III: Jung gik mou gaan)" />
+	<rename id="tt0116640" title="Inside (TV)" />
+	<rename id="tt1773499" title="Inside (Italy)" />
 	<rename id="tt0378109" title="Into the Blue I" />
 	<rename id="tt0865907" title="Into the Blue II: The Reef " />
+	<rename id="tt0216487" title="Invincible (TV)" />
+	<rename id="tt0080932" title="Invincible (HK)" />
+	<rename id="tt0245171" title="Invincible (Classic)" />
 	<rename id="tt1220719" title="Ip Man I (Yip Man)" />
 	<rename id="tt1386932" title="Ip Man II (Yip Man II)" />
 	<rename id="tt1641638" title="Ip Man III: Ip Man Zero (Yip Man chinchyun)" />
@@ -353,6 +647,12 @@
 	<rename id="tt0371746" title="Iron Man I" />
 	<rename id="tt1228705" title="Iron Man II" />
 	<rename id="tt1300854" title="Iron Man III" />
+	<rename id="tt0044760" title="Ivanhoe (Original)" />
+	<rename id="tt0821787" title="Ivanhoe (Cartoon)" />
+	<rename id="tt0084157" title="Ivanhoe (TV)" />
+	<rename id="tt0116671" title="Jack Frost I" />
+	<rename id="tt0239496" title="Jack Frost II: Revenge of the Mutant Killer Snowman" />
+	<rename id="tt0079357" title="Jack Frost (TV)" />
 	<rename id="tt0099810" title="Jack Ryan I: The Hunt for Red October" />
 	<rename id="tt0105112" title="Jack Ryan II: Patriot Games" />
 	<rename id="tt0109444" title="Jack Ryan III: Clear and Present Danger" />
@@ -376,7 +676,7 @@
 	<rename id="tt0082398" title="James Bond XII: For Your Eyes Only" sortby="James Bond 12" />
 	<rename id="tt0086034" title="James Bond XIII: Octopussy" sortby="James Bond 13" />
 	<rename id="tt0090264" title="James Bond XIV: A View to a Kill" sortby="James Bond 14" />
-	<rename id="tt0086006" title="James Bond Unofficial: Never Say Never Again" sortby="James Bond 14b" />
+	<rename id="tt0086006" title="James Bond XIV: Never Say Never Again (Unofficial)" sortby="James Bond 14b" />
 	<rename id="tt0093428" title="James Bond XV: The Living Daylights" sortby="James Bond 15" />
 	<rename id="tt0097742" title="James Bond XVI: Licence to Kill" sortby="James Bond 16" />
 	<rename id="tt0113189" title="James Bond XVII: GoldenEye" sortby="James Bond 17" />
@@ -385,7 +685,7 @@
 	<rename id="tt0246460" title="James Bond XX: Die Another Day" sortby="James Bond 20" />
 	<rename id="tt0381061" title="James Bond XXI: Casino Royale" sortby="James Bond 21" />
 	<rename id="tt0830515" title="James Bond XXII: Quantum Of Solace" sortby="James Bond 22" />
-	<rename id="tt1074638" title="James Bond XXIII" sortby="James Bond 23" />
+	<rename id="tt1074638" title="James Bond XXIII: Skyfall" sortby="James Bond 23" />
 	<rename id="tt0073195" title="Jaws I" />
 	<rename id="tt0077766" title="Jaws II" />
 	<rename id="tt0085750" title="Jaws III" />
@@ -399,6 +699,27 @@
 	<rename id="tt0163025" title="Jurassic Park III: Return to the Island" />
 	<rename id="tt0266697" title="Kill Bill: Volume I" />
 	<rename id="tt0378194" title="Kill Bill: Volume II" />
+	<rename id="tt0256858" title="Killers (Classic)" />
+	<rename id="tt0116771" title="Killers (Cult)" />
+	<rename id="tt0367931" title="Killers (Indie)" />
+	<rename id="tt0024216" title="King Kong (Original)" />
+	<rename id="tt0074751" title="King Kong (Classic)" />
+	<rename id="tt0242576" title="King Kong (India)" />
+	<rename id="tt1959437" title="King Kong (Remake)" />
+	<rename id="tt0093349" title="King Lear (Woody Allen)" />
+	<rename id="tt0045960" title="King Lear (Original)" />
+	<rename id="tt0067306" title="King Lear (Rare)" />
+	<rename id="tt0084208" title="King Lear (TV)" />
+	<rename id="tt0302691" title="King Lear (UK)" />
+	<rename id="tt1371129" title="King Lear (Remake)" />
+	<rename id="tt0029081" title="King Solomon's Mines (Original)" />
+	<rename id="tt0397501" title="King Solomon's Mines (TV)" />
+	<rename id="tt0462384" title="King Solomon's Mines (Cartoon)" />
+	<rename id="tt0045963" title="Kiss Me Kate (Original)" />
+	<rename id="tt1018737" title="Kiss Me Kate (UK)" />
+	<rename id="tt0970862" title="Kiss Me Kate (Belgium)" />
+	<rename id="tt0312875" title="Kiss Me Kate (Remake)" />
+	<rename id="tt1871303" title="Kiss Me Kate (NL)" />
 	<rename id="tt0441773" title="Kung Fu Panda I" />
 	<rename id="tt1302011" title="Kung Fu Panda II" />
 	<rename id="tt1287845" title="Kung Fu Panda (Short) I: Secrets of the Furious Five" />
@@ -446,6 +767,7 @@
 	<rename id="tt0071853" title="Monthy Python's I: The Holy Grail" />
 	<rename id="tt0079470" title="Monthy Python's II: Life of Brian" />
 	<rename id="tt0085959" title="Monthy Python's III: The Meaning of Life" />
+	<rename id="tt0033922" title="Mr. &amp; Mrs. Smith (Original)" />
 	<rename id="tt0134119" title="Mr. Ripley I: The Talented Mr. Ripley" />
 	<rename id="tt0265651" title="Mr. Ripley II: Ripley's Game" />
 	<rename id="tt0219171" title="Mr. Ripley III: Ripley Under Ground" />
@@ -473,9 +795,20 @@
 	<rename id="tt0240772" title="Ocean's I: Eleven" />
 	<rename id="tt0349903" title="Ocean's II: Twelve" />
 	<rename id="tt0496806" title="Ocean's III: Thirteen" />
+	<rename id="tt0216048" title="Oklahoma! (UK)" />
+	<rename id="tt2048823" title="Oklahoma! (TV)" />
+	<rename id="tt0366292" title="One Missed Call I (Chakushin ari)" />
+	<rename id="tt0451010" title="One Missed Call II (Chakushin ari II)" />
+	<rename id="tt0978797" title="One Missed Call III: Final Call (Chakushin ari final)" />
 	<rename id="tt0368909" title="Ong Bak I: Ong-Bak" />
 	<rename id="tt0785035" title="Ong Bak II: The Beginning" />
 	<rename id="tt1653690" title="Ong Bak III: The Final Battle" />
+	<rename id="tt0081290" title="Our Town (Remake)" />
+	<rename id="tt0353849" title="Our Town (TV)" />
+	<rename id="tt0141699" title="Out of the Past (Docu)" />
+	<rename id="tt0250635" title="Out of Time (Canada)" />
+	<rename id="tt0095802" title="Out of Time (TV)" />
+	<rename id="tt1951212" title="Out of Time (Drama)" />
 	<rename id="tt1179904" title="Paranormal Activity I" />
 	<rename id="tt1536044" title="Paranormal Activity II" />
 	<rename id="tt1728179" title="Paranormal Activity II: Tokyo Night (Paranômaru akutibiti: Dai-2-shô)" />
@@ -520,6 +853,9 @@
 	<rename id="tt0093773" title="Predator I" />
 	<rename id="tt0100403" title="Predator II" />
 	<rename id="tt1424381" title="Predator III" />
+	<rename id="tt0089421" title="Quatermain I: King Solomon's Mines" />
+	<rename id="tt0092534" title="Quatermain II: Allan Quatermain and the Lost City of Gold" />
+	<rename id="tt0295989" title="Quatermain III: High Adventure" />
 	<rename id="tt0083944" title="Rambo: First Blood I" />
 	<rename id="tt0089880" title="Rambo: First Blood II" />
 	<rename id="tt0095956" title="Rambo: First Blood III" />
@@ -546,6 +882,16 @@
 	<rename id="tt1620655" title="RoboCop IV: Crash and Burn" sortby="RoboCop 4d" />
 	<rename id="tt1234721" title="RoboCop (Remake) I" />
 	<rename id="tt0479143" title="Rocky VI: Rocky Balboa" />
+	<rename id="tt0063350" title="Romero's Zombies I: Night of the Living Dead" />
+	<rename id="tt0077402" title="Romero's Zombies II: Dawn of the Dead" />
+	<rename id="tt0088993" title="Romero's Zombies III: Day of the Dead" />
+	<rename id="tt0418819" title="Romero's Zombies IV: Land of the Dead" />
+	<rename id="tt0848557" title="Romero's Zombies V: Diary of the Dead" />
+	<rename id="tt1134854" title="Romero's Zombies VI: Survival of the Dead" />
+	<rename id="tt0100258" title="Romero's Zombies (Remake) I: Night of the Living Dead" />
+	<rename id="tt0489244" title="Romero's Zombies (Remake) I: Night of the Living Dead 3D" />
+	<rename id="tt0363547" title="Romero's Zombies (Remake) II: Dawn of the Dead" />
+	<rename id="tt0489018" title="Romero's Zombies (Remake) III: Day of the Dead" />
 	<rename id="tt0120812" title="Rush Hour I" />
 	<rename id="tt0266915" title="Rush Hour II" />
 	<rename id="tt0293564" title="Rush Hour III" />
@@ -554,6 +900,22 @@
 	<rename id="tt1477076" title="Saw VII: The Final Chapter" />
 	<rename id="tt0184894" title="Shanghai Noon I" />
 	<rename id="tt0300471" title="Shanghai Noon II: Shanghai Knights" />
+	<rename id="tt0031448" title="Sherlock Holmes I: The Hound of the Baskervilles" sortby="Sherlock Holmes (Original) 01" />
+	<rename id="tt0035318" title="Sherlock Holmes II: The Adventures of..." sortby="Sherlock Holmes (Original) 02" />
+	<rename id="tt0035318" title="Sherlock Holmes III: ...and the Voice of Terror" sortby="Sherlock Holmes (Original) 03" />
+	<rename id="tt0035317" title="Sherlock Holmes IV: ...and the Secret Weapon" sortby="Sherlock Holmes (Original) 04" />
+	<rename id="tt0036349" title="Sherlock Holmes V: ...in Washington" sortby="Sherlock Holmes (Original) 05" />
+	<rename id="tt0036348" title="Sherlock Holmes VI: ...Faces Death" sortby="Sherlock Holmes (Original) 06" />
+	<rename id="tt0037303" title="Sherlock Holmes VII: The Spider Woman" sortby="Sherlock Holmes (Original) 07" />
+	<rename id="tt0037248" title="Sherlock Holmes VIII: The Scarlet Claw" sortby="Sherlock Holmes (Original) 08" />
+	<rename id="tt0037168" title="Sherlock Holmes IX: The Pearl of Death" sortby="Sherlock Holmes (Original) 09" />
+	<rename id="tt0037794" title="Sherlock Holmes X: The House of Fear" sortby="Sherlock Holmes (Original) 10" />
+	<rename id="tt0038259" title="Sherlock Holmes XI: The Woman in Green" sortby="Sherlock Holmes (Original) 11" />
+	<rename id="tt0038008" title="Sherlock Holmes XII: Pursuit to Algiers" sortby="Sherlock Holmes (Original) 12" />
+	<rename id="tt0039017" title="Sherlock Holmes XIII: Terror by Night" sortby="Sherlock Holmes (Original) 13" />
+	<rename id="tt0038494" title="Sherlock Holmes XIV: Dressed to Kill" sortby="Sherlock Holmes (Original) 14" />
+	<rename id="tt0988045" title="Sherlock Holmes I" />
+	<rename id="tt1515091" title="Sherlock Holmes II: A Game of Shadows" />
 	<rename id="tt0175142" title="Scary Movie I" />
 	<rename id="tt0257106" title="Scary Movie II" />
 	<rename id="tt0306047" title="Scary Movie III" />
@@ -568,6 +930,11 @@
 	<rename id="tt0298148" title="Shrek II" />
 	<rename id="tt0413267" title="Shrek III: The Third" />
 	<rename id="tt0892791" title="Shrek IV: Forever After" />
+	<rename id="tt0360985" title="Shrek (Short): 4-D" sortby="Shrek (Short) 01" />
+	<rename id="tt0307461" title="Shrek (Short): Shrek in the Swamp Karaoke Dance Party" sortby="Shrek (Short) 02" />
+	<rename id="tt0897387" title="Shrek (Short): Shrek The Halls" sortby="Shrek (Short) 03" />
+	<rename id="tt1830577" title="Shrek (Short): Donkey's Christmas Shrektacular" sortby="Shrek (Short) 04" />
+	<rename id="tt1725156" title="Shrek (Short): Scared Shrekless" sortby="Shrek (Short) 05" />
 	<rename id="tt0475394" title="Smokin' Aces I" />
 	<rename id="tt1319743" title="Smokin' Aces II: Assassins' Ball" />
 	<rename id="tt0108171" title="Sniper I" />
@@ -606,12 +973,12 @@
 	<rename id="tt0253754" title="Star Trek X: Nemesis" sortby="Star Trek 10" />
 	<rename id="tt0796366" title="Star Trek XI: Star Trek" sortby="Star Trek 11" />
 	<rename id="tt1408101" title="Star Trek XII" sortby="Star Trek 12" />
-	<rename id="tt0120915" title="Star Wars I: The Phantom Menace" />
-	<rename id="tt0121765" title="Star Wars II: Attack of the Clones" />
-	<rename id="tt0121766" title="Star Wars III: Revenge of the Sith" />
-	<rename id="tt0076759" title="Star Wars IV: A New Hope" />
-	<rename id="tt0080684" title="Star Wars V: The Empire Strikes Back" />
-	<rename id="tt0086190" title="Star Wars VI: Return of the Jedi" />
+	<rename id="tt0120915" title="Star Wars I: The Phantom Menace" sortby="Star Wars 01" />
+	<rename id="tt0121765" title="Star Wars II: Attack of the Clones" sortby="Star Wars 02" />
+	<rename id="tt0121766" title="Star Wars III: Revenge of the Sith" sortby="Star Wars 03" />
+	<rename id="tt0076759" title="Star Wars IV: A New Hope" sortby="Star Wars 04" />
+	<rename id="tt0080684" title="Star Wars V: The Empire Strikes Back" sortby="Star Wars 05" />
+	<rename id="tt0086190" title="Star Wars VI: Return of the Jedi" sortby="Star Wars 06" />
 	<rename id="tt0942903" title="Stargate SG-1 #1: The Ark Of Truth" />
 	<rename id="tt0929629" title="Stargate SG-1 #2: Continuum" />
 	<rename id="tt0120201" title="Starship Troopers I" />
@@ -632,6 +999,12 @@
 	<rename id="tt1398941" title="Superman/Batman I: Public Enemies" />
 	<rename id="tt1673430" title="Superman/Batman II: Apocalypse" />
 	<rename id="tt1701223" title="Superman/Shazam!: The Return of Black Adam (DC Showcase)" />
+	<rename id="tt0208495" title="Taken (Classic)" />
+	<rename id="tt0361038" title="Taken (Horror)" />
+	<rename id="tt0293627" title="Taken (Cult)" />
+	<rename id="tt0466338" title="Taken (Video)" />
+	<rename id="tt1486820" title="Taken (Docu)" />
+	<rename id="tt0053335" title="Tarzan the Ape Man (Remake)" />
 	<rename id="tt0152930" title="Taxi I" />
 	<rename id="tt0183869" title="Taxi II" />
 	<rename id="tt0295721" title="Taxi III" />
@@ -696,6 +1069,7 @@
 	<rename id="tt1013752" title="The Fast and the Furious IV: Fast &amp; Furious" />
 	<rename id="tt1538503" title="The Fast and the Furious IV: Los Bandoleros" />
 	<rename id="tt1596343" title="The Fast and the Furious V: Fast Five" />
+	<rename id="tt0059183" title="The Flight of the Phoenix (Original)" />
 	<rename id="tt0091064" title="The Fly I" />
 	<rename id="tt0097368" title="The Fly II" />
 	<rename id="tt0082406" title="The Fox and the Hound I" />
@@ -723,6 +1097,9 @@
 	<rename id="tt0089274" title="The Hills Have Eyes II" />
 	<rename id="tt0454841" title="The Hills Have Eyes (Remake) I" />
 	<rename id="tt0800069" title="The Hills Have Eyes (Remake) II" />
+	<rename id="tt1467304" title="The Human Centipede I: First Sequence" />
+	<rename id="tt1530509" title="The Human Centipede II: Full Sequence" />
+	<rename id="tt1883367" title="The Human Centipede III: Final Sequence" />
 	<rename id="tt0087538" title="The Karate Kid I" />
 	<rename id="tt0091326" title="The Karate Kid II" />
 	<rename id="tt0097647" title="The Karate Kid III" />
@@ -777,6 +1154,11 @@
 	<rename id="tt0091721" title="The Parent Trap II" />
 	<rename id="tt0098066" title="The Parent Trap III" />
 	<rename id="tt0098065" title="The Parent Trap IV: Hawaiian Honeymoon" />
+	<rename id="tt0057413" title="The Pink Panther I" sortby="The Pink Panther (Sellers) 01" />
+	<rename id="tt0058586" title="The Pink Panther II: A Shot in the Dark" sortby="The Pink Panther (Sellers) 02" />
+	<rename id="tt0072081" title="The Pink Panther III: The Return of the Pink Panther" sortby="The Pink Panther (Sellers) 03" />
+	<rename id="tt0075066" title="The Pink Panther IV: The Pink Panther Strikes Again" sortby="The Pink Panther (Sellers) 04" />
+	<rename id="tt0078163" title="The Pink Panther V: Revenge of the Pink Panther" sortby="The Pink Panther (Sellers) 05" />
 	<rename id="tt0383216" title="The Pink Panther I" />
 	<rename id="tt0838232" title="The Pink Panther II" />
 	<rename id="tt0337697" title="The Prince &amp; Me I" />
@@ -863,13 +1245,26 @@
 	<rename id="tt0195366" title="U.S. Seals III: Dead or Alive" />
 	<rename id="tt0491703" title="Ultimate Avengers I: The Movie" />
 	<rename id="tt0803093" title="Ultimate Avengers II: Rise of the Panther" />
+	<rename id="tt0105681" title="Ultraviolet (Cult)" />
 	<rename id="tt0105690" title="Under Siege I" />
 	<rename id="tt0114781" title="Under Siege II: Dark Territory" />
+	<rename id="tt0114787" title="Underground (Classic)" />
+	<rename id="tt1577111" title="Underground (Cult)" />
+	<rename id="tt0075367" title="Underground (Docu)" />
+	<rename id="tt0100846" title="Underground (Urban)" />
+	<rename id="tt0034337" title="Underground (Propaganda)" />
+	<rename id="tt0211087" title="Underground (TV)" />
+	<rename id="tt0202644" title="Underground (UK)" />
+	<rename id="tt0870209" title="Underground (UK/Cult)" />
+	<rename id="tt1811371" title="Underground (Horror)" />
+	<rename id="tt0066505" title="Underground (War)" />
 	<rename id="tt0320691" title="Underworld I" />
 	<rename id="tt0401855" title="Underworld II: Evolution" />
 	<rename id="tt0834001" title="Underworld III: Rise of the Lycans" />
 	<rename id="tt0443676" title="Undisputed II: Last Man Standing" />
 	<rename id="tt1156466" title="Undisputed III: Redemption" />
+	<rename id="tt0808519" title="Unknown (Cult)" />
+	<rename id="tt0450340" title="Unknown (Urban)" />
 	<rename id="tt0105698" title="Universal Soldier I" />
 	<rename id="tt0186654" title="Universal Soldier II: Brothers in Arms" />
 	<rename id="tt0186655" title="Universal Soldier III: Unfinished Business" />
@@ -884,19 +1279,35 @@
 	<rename id="tt0283111" title="Van Wilder I" />
 	<rename id="tt0480271" title="Van Wilder II: The Rise of Taj" />
 	<rename id="tt1276434" title="Van Wilder III: Freshman Year" />
+	<rename id="tt0120430" title="Vanishing Point (TV)" />
+	<rename id="tt0023652" title="Vanity Fair (Original)" />
+	<rename id="tt1931601" title="Venom (Cult)" />
+	<rename id="tt0416287" title="Venom (Indie)" />
+	<rename id="tt0084854" title="Venom (UK)" />
+	<rename id="tt0067934" title="Venom (UK/Cult)" />
 	<rename id="tt0070895" title="Walking Tall (Original)" />
 	<rename id="tt0351977" title="Walking Tall I" />
 	<rename id="tt0804550" title="Walking Tall II: The Payback" />
 	<rename id="tt0804551" title="Walking Tall III: Lone Justice" />
 	<rename id="tt0094291" title="Wall Street I" />
 	<rename id="tt1027718" title="Wall Street II: Money Never Sleeps" />
+	<rename id="tt0420313" title="Wanderlust (Docu)" />
+	<rename id="tt0281144" title="Wanderlust (Cult)" />
+	<rename id="tt0371388" title="War and Peace (TV)" />
 	<rename id="tt0449040" title="War of the Worlds I" />
 	<rename id="tt1183733" title="War of the Worlds II: The Next Wave" />
 	<rename id="tt0098622" title="Warlock I" />
 	<rename id="tt0108517" title="Warlock II: The Armageddon" />
 	<rename id="tt0157171" title="Warlock III: The End of Innocence" />
+	<rename id="tt1663702" title="Water (Docu)" />
+	<rename id="tt0090297" title="Water (UK)" />
+	<rename id="tt0096426" title="Waxwork I" />
+	<rename id="tt0105792" title="Waxwork II: Lost in Time" />
 	<rename id="tt0375210" title="White Noise I" />
 	<rename id="tt0496436" title="White Noise II: The Light" />
+	<rename id="tt0840040" title="Why Did I Get Married? (Video)" />
+	<rename id="tt0906108" title="Why Did I Get Married?" sortby="Why Did I Get Married 01" />
+	<rename id="tt1391137" title="Why Did I Get Married Too?" sortby="Why Did I Get Married 02" />
 	<rename id="tt0120890" title="Wild Things I" />
 	<rename id="tt0365270" title="Wild Things II: The Glades" />
 	<rename id="tt0448179" title="Wild Things III: Diamonds in the Rough" />
@@ -911,6 +1322,12 @@
 	<rename id="tt1086789" title="Wire in the Blood: Prayer of the Bone" />
 	<rename id="tt0364751" title="Without a Paddle I" />
 	<rename id="tt1276107" title="Without a Paddle II: Nature's Calling" />
+	<rename id="tt0032145" title="Wuthering Heights (Original)" />
+	<rename id="tt0367245" title="Wuthering Heights (Remake)" />
+	<rename id="tt1181614" title="Wuthering Heights (UK)" />
+	<rename id="tt0066585" title="Wuthering Heights (UK/Original)" />
+	<rename id="tt0204744" title="Wuthering Heights (TV)" />
+	<rename id="tt1238834" title="Wuthering Heights (TV II)" />
 	<rename id="tt1247704" title="Women in Trouble I" />
 	<rename id="tt1340773" title="Women in Trouble II: Elektra Luxx" />
 	<rename id="tt1341342" title="Women in Trouble III: Women in Ecstasy" />
@@ -928,4 +1345,5 @@
 	<rename id="tt1293847" title="xXx III: The Return of Xander Cage" />
 	<rename id="tt0365957" title="You Got Served I" />
 	<rename id="tt1568139" title="You Got Served II: Beat the World" />
+	<rename id="tt0063829" title="Yours, Mine and Ours (Original)" />
 </imdbplus>
