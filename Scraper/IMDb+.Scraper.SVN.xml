@@ -5,10 +5,10 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="3" minor="3" point="9" />
-		<published month="11" day="16" year="2011" />
+		<version major="4" minor="0" point="1" />
+		<published month="11" day="27" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
-		<language>en</language>
+		<language>en|de|es|fr|it|pt|se|is|nl</language>
 	</details>
 
 
@@ -45,6 +45,8 @@
 			<set name="global_options_min_imdb_votes" value="false" />	<!-- Min. of 20 votes	| Force imdb score	-->
 			<set name="global_options_refresh_all_fields" value="false" />	<!-- Update All Fields	| Update A Few + Empty	-->
 			<set name="global_options_one_writer_director" value="false" />	<!-- Only use one name	| Get all the names	-->
+			<set name="global_options_remove_first_roman" value="false" />	<!-- Remove 'I' numeral	| Rename title as-is	-->
+			<set name="global_options_fix_missing_summary" value="false" />	<!-- Try to use reviews	| Keep summary as-is	-->
 
 			<!--
 				Because IMDb offers their site in five other languages and they use the same tt-ID,
@@ -63,6 +65,7 @@
 					08 = kvikmyndir.is for Icelandic
 					09 = moviemeter.nl for Dutch
 			-->
+			<set name="global_options_secondary_en_title" value="false" />	<!-- Use English title	| Use foreign title	-->
 			<set name="global_options_secondary_summary" value="false" />	<!-- English if empty	| Only foreign summary	-->
 			<set name="global_options_secondary_details" value="01" />
 
@@ -122,7 +125,13 @@
 				<set name="global_options_refresh_all_fields" value="${xml_option[0].@value}" />
 				<parse name="xml_option" input="${file}" xpath="//set[@id=16]" />
 				<set name="global_options_one_writer_director" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=17]" />
+				<set name="global_options_remove_first_roman" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=18]" />
+				<set name="global_options_fix_missing_summary" value="${xml_option[0].@value}" />
 
+				<parse name="xml_option" input="${file}" xpath="//set[@id=95]" />
+				<set name="global_options_secondary_en_title" value="${xml_option[0].@value}" />
 				<parse name="xml_option" input="${file}" xpath="//set[@id=96]" />
 				<set name="global_options_secondary_summary" value="${xml_option[0].@value}" />
 				<parse name="xml_option" input="${file}" xpath="//set[@id=97]" />
@@ -161,6 +170,13 @@
 			</if>
 			<if test="${global_options_secondary_details}>1">
 				<set name="site" value="http://www.imdb.com/title/${movie.site_id}" />
+
+				<!-- Reuse expression for all the foreign IMDb sites, and overwrite it for the non-IMDb ones -->
+				<set name="rx_title_year">
+					<![CDATA[
+					<a\s*href="/">IMDb</a>\s*&gt;[^<]+<b>(?<movieTitle>[^\(]+?)\s*\((?<movieYear>\d{4})\)</b>
+					]]>
+				</set>
 
 				<if test="${global_options_secondary_details}=2">
 					<!-- Avatar = http://www.imdb.de/title/tt0499549 -->
@@ -250,6 +266,11 @@
 				<if test="${global_options_secondary_details}=7">
 					<!-- Avatar = http://www.nyheter24.se/filmtipset/imdb/tt0499549 -->
 					<set name="alt_site" value="http://www.nyheter24.se/filmtipset/imdb/${movie.site_id}" />
+					<set name="rx_title_year">
+						<![CDATA[
+						<h1>(?<movieTitle>[^<]+)</h1>.+?<b>Utgivnings&aring;r:</b></td><td class="list" align="left" valign="top">(?<movieYear>\d{4})</td>
+						]]>
+					</set>
 					<set name="rx_genres_block" value="Genre:(.+?)&lt;/tr&gt;" />
 					<set name="rx_genres" value="'&gt;(.*?)&lt;/a&gt;" />
 					<set name="rx_plot2">
@@ -264,6 +285,11 @@
 					<!-- Avatar = http://kvikmyndir.is/xml/movingpictures/?id=0499549 -->
 					<replace name="imdb_id_fixed" input="${movie.imdb_id}" pattern="tt" with='' />
 					<set name="alt_site" value="http://kvikmyndir.is/xml/movingpictures/?id=${imdb_id_fixed}" />
+					<set name="rx_title_year">
+						<![CDATA[
+						<name>(?<movieTitle>[^<]+)</name>.*<PremiereDateIS>(?<movieYear>\d{4})\-\d+\-\d+</PremiereDateIS>
+						]]>
+					</set>
 					<set name="rx_genres_block" value="&lt;genre&gt;(.+?)&lt;/genre&gt;" />
 					<set name="rx_genres" value="&lt;item&gt;(.+?)&lt;/item&gt;" />
 					<set name="rx_plot2">
@@ -281,6 +307,11 @@
 				<if test="${global_options_secondary_details}=9">
 					<!-- Avatar = http://blixy.net/mp/moviemeter/proxy.php?imdb=tt0499549 -->
 					<set name="alt_site" value="http://blixy.net/mp/moviemeter/proxy.php?imdb=${movie.site_id}" />
+					<set name="rx_title_year">
+						<![CDATA[
+						<title>(?<movieTitle>[^<]+)</title>[^<]+<year>(?<movieYear>\d{4})</year>
+						]]>
+					</set>
 					<set name="rx_genres_block" value="&lt;genres&gt;(.+?)&lt;/genres&gt;" />
 					<set name="rx_genres" value="([^\|]+)" />
 					<set name="rx_plot2">
@@ -299,12 +330,14 @@
 
 			<!-- clear SortBy, so that it can be properly redone by the plugin afterwards -->
 			<!-- this is to ensure article removal when there is a forced English title change -->
+			<set name="sortby_backup" value="${movie.sortby}" />
 			<set name="movie.sortby" value='' />
 
 			<!-- Title is now done after directors, writers and actors, to be able to detect between new import and refresh -->
 
 			<!-- Verify conditional update. There is no AND or OR support, so this will have to do -->
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_directors" value="true" /></if><if test="${movie.directors}="><set name="update_directors" value="true" /></if>
+			<if test="${movie.directors}="><set name="update_directors" value="true" /><set name="new_import" value="true" /></if>
+			<if test="${global_options_refresh_all_fields}=true"><set name="update_directors" value="true" /></if>
 			<if test="${update_directors}=true">
 				<!-- Directors -->
 				<set name="rx_directors_block">
@@ -328,11 +361,10 @@
 						<set name="movie.directors" value="${movie.directors}|${currDirector[0]:htmldecode}" />
 					</loop>
 				</if>
-
-				<set name="new_import" value="true" />
 			</if>
 
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_writers" value="true" /></if><if test="${movie.writers}="><set name="update_writers" value="true" /></if>
+			<if test="${movie.writers}="><set name="update_writers" value="true" /><set name="new_import" value="true" /></if>
+			<if test="${global_options_refresh_all_fields}=true"><set name="update_writers" value="true" /></if>
 			<if test="${update_writers}=true">
 				<!-- Writers -->
 				<set name="rx_writers_block">
@@ -356,11 +388,10 @@
 						<set name="movie.writers" value="${movie.writers}|${currWriter[0]:htmldecode}" />
 					</loop>
 				</if>
-
-				<set name="new_import" value="true" />
 			</if>
 
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_actors" value="true" /></if><if test="${movie.actors}="><set name="update_actors" value="true" /></if>
+			<if test="${movie.actors}="><set name="update_actors" value="true" /><set name="new_import" value="true" /></if>
+			<if test="${global_options_refresh_all_fields}=true"><set name="update_actors" value="true" /></if>
 			<if test="${update_actors}=true">
 				<!-- Actors -->
 				<set name="rx_actors_block">
@@ -379,8 +410,6 @@
 				<loop name="currActor" on="actors" limit="30">
 					<set name="movie.actors" value="${movie.actors}|${currActor[0]:htmldecode}" />
 				</loop>
-
-				<set name="new_import" value="true" />
 			</if>
 
 			<if test="${new_import}=true"><set name="update_title_and_year" value="true" /></if>
@@ -389,33 +418,42 @@
 			<if test="${global_options_uk_rating}=true"><set name="update_title_and_year" value="false" /></if>
 			<if test="${update_title_and_year}=true">
 				<!-- Title and Year -->
-				<if test="${global_options_original_title}=true">
-					<set name="rx_title_year">
-						<![CDATA[
-						<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitle>.+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>
-						]]>
-					</set>
+				<if test="${global_options_secondary_details}&lt;=1"><set name="get_english_title" value="true" /></if>
+				<if test="${global_options_secondary_en_title}=true"><set name="get_english_title" value="true" /></if>
+				<if test="${get_english_title}=true">
+					<if test="${global_options_original_title}=true">
+						<set name="rx_title_year">
+							<![CDATA[
+							<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitle>.+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>
+							]]>
+						</set>
+					</if>
+					<if test="${global_options_original_title}=false">
+						<set name="rx_tmp_prefix">
+							<![CDATA[
+							<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleEnglish>(?:(?=.+?<h4 class="inline">Country:</h4>.+?<a href="/country/
+							]]>
+						</set>
+						<set name="rx_tmp_infix">
+							<![CDATA[
+							".+?<h4 class="inline">Language:</h4>\s*<a href="/language/
+							]]>
+						</set>
+						<set name="rx_tmp_postfix">
+							<![CDATA[
+							")|(?!.+?<a href="releaseinfo#akas">)).+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>
+							]]>
+						</set>
+						<set name="rx_title_year" value="${rx_tmp_prefix}(?:${global_options_country_filter})${rx_tmp_infix}(?:${global_options_language_filter})${rx_tmp_postfix}" />
+					</if>
+					<parse name="title_year" input="${details_page}" regex="${rx_title_year}" />
 				</if>
-				<if test="${global_options_original_title}=false">
-					<set name="rx_tmp_prefix">
-						<![CDATA[
-						<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleEnglish>(?:(?=.+?<h4 class="inline">Country:</h4>.+?<a href="/country/
-						]]>
-					</set>
-					<set name="rx_tmp_infix">
-						<![CDATA[
-						".+?<h4 class="inline">Language:</h4>\s*<a href="/language/
-						]]>
-					</set>
-					<set name="rx_tmp_postfix">
-						<![CDATA[
-						")|(?!.+?<a href="releaseinfo#akas">)).+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>
-						]]>
-					</set>
-					<set name="rx_title_year" value="${rx_tmp_prefix}(?:${global_options_country_filter})${rx_tmp_infix}(?:${global_options_language_filter})${rx_tmp_postfix}" />
+				<if test="${global_options_secondary_details}>1">
+					<if test="${get_english_title}!=true">
+						<parse name="title_year" input="${foreign_page}" regex="${rx_title_year}" />
+					</if>
 				</if>
 
-				<parse name="title_year" input="${details_page}" regex="${rx_title_year}" />
 				<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
 				<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
 			</if>
@@ -960,6 +998,19 @@
 			</if>
 		<!-- END: global_options_imdb_score -->
 
+			<if test="${global_options_fix_missing_summary}=true">
+				<if test="${movie.summary}=">
+					<set name="rx_user_reviews">
+						<![CDATA[
+						<p>(?<movieReview>.+?)</p>
+						]]>
+					</set>
+					<retrieve name="footer_page" url="${site}/_ajax/iframe?component=footer" />
+					<parse name="user_reviews" input="${footer_page}" regex="${rx_user_reviews}" />
+					<set name="movie.summary" value="${user_reviews[0][0]:htmldecode}" />
+				</if>
+			</if>
+
 			<if test="${global_options_refresh_all_fields}=true"><set name="update_this" value="true" /></if><if test="${movie.alternate_titles}="><set name="update_this" value="true" /></if><if test="${movie.title}="><set name="update_this" value="true" /></if><if test="${movie.year}="><set name="update_this" value="true" /></if>
 			<if test="${update_this}=true">
 				<!-- AKA page -->
@@ -1043,7 +1094,7 @@
 									<!-- Accepting any remaining English title -->
 									<set name="rx_aka_english">
 										<![CDATA[
-										<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.+?<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*English[^<]*</td>.*?</table>
+										<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>.+?<h5><a name="akas">Also Known As \(AKA\)</a></h5>.+?<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>(?!Japan)[^<]*English[^<]*</td>.*?</table>
 										]]>
 									</set>
 									<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
@@ -1137,6 +1188,16 @@
 					<if test="${fileRename[0][0]}!=">
 						<set name="movie.title" value="${fileRename[0][0]:htmldecode}" />
 						<log LogLevel="Info" Message="IMDb+ Scraper: Title adjusted via Default Rename XML for: ${movie.imdb_id}" />
+						<if test="${new_import}!=true">
+							<if test="${global_options_remove_first_roman}=true">
+								<parse name="strip_first_roman" input="${movie.title}" regex="^(.+?)(\sI)$" />
+								<if test="${strip_first_roman[0][0]}!=">
+									<set name="movie.title" value="${strip_first_roman[0][0]}" />
+									<set name="movie.sortby" value="${sortby_backup}" />
+									<log LogLevel="Debug" Message="IMDb+ Scraper: Roman Numeral stripped for '${strip_first_roman[0][0]}' being first movie in the series" />
+								</if>
+							</if>
+						</if>
 					</if>
 					<if test="${fileRename[0][1]}!=">
 						<set name="movie.sortby" value="${fileRename[0][1]:htmldecode}" />
