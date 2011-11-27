@@ -319,7 +319,7 @@ public class Script
 		string script = reader.ReadToEnd();
 		reader.Close();
 
-		// Add it to the scraper script manager
+		// Add it to the scraper script manager
 		DataProviderManager.AddSourceResult addResult = MovingPicturesCore.DataProviderManager.AddSource(typeof(ScriptableProvider), script, true);
 
 		if (addResult == DataProviderManager.AddSourceResult.SUCCESS_REPLACED)
@@ -359,7 +359,7 @@ public class Script
 
 		// set IMDb+ cover source higher than default IMDb source
 		DBSourceInfo IMDbSource = DBSourceInfo.GetFromScriptID(874902);
-		if (IMDbSource != null &amp;&amp; IMDbSource.CoverPriority != null)
+		if (IMDbSource != null &amp;&amp; IMDbSource.CoverPriority != null)
 		{
 			int coverPriority = (int)IMDbSource.CoverPriority;
 			// shift down the rest, leave anything else in place
@@ -525,13 +525,13 @@ public class Script
       <Major>1</Major>
       <Minor>4</Minor>
       <Build>0</Build>
-      <Revision>201</Revision>
+      <Revision>202</Revision>
     </Version>
     <ExtensionDescription>The IMDb+ plugin and scraper for MovingPictures will make your movie collection easier to use. The plugin will keep the scraper script up-to-date, and add powerful features such as rename and grouping of movie series. It also corrects English titles, allows RottenTomatoes ratings, and many other features.</ExtensionDescription>
     <VersionDescription>Added initial IMDb+ scraper-script installation to make it easier for first time users. Cover priority is now also adjusted and new IMDb+ scraper-script v4.0.x options are supported.</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
-    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.4.0.201.mpe1</OnlineLocation>
-    <ReleaseDate>2011-11-27T15:39:21</ReleaseDate>
+    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.4.0.202.mpe1</OnlineLocation>
+    <ReleaseDate>2011-11-27T16:33:11</ReleaseDate>
     <Tags>moving pictures, movies, scraper</Tags>
     <Location>.\Release\imdbplus.plugin.v[Version].mpe1</Location>
     <Params>
