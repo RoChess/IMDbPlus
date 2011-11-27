@@ -241,7 +241,10 @@ namespace IMDb
             UpdateListItem(itemId++, Translation.UkRating, PluginSettings.UkRating ? Translation.BoolOn : Translation.BoolOff, "folder");
 
             UpdateListItem(itemId++, Translation.OneWriterDirector, PluginSettings.OneWriterDirector ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, Translation.RemoveFirstRoman, PluginSettings.RemoveFirstRoman ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, Translation.FixMissingSummary, PluginSettings.FixMissingSummary ? Translation.BoolOn : Translation.BoolOff, "folder");
             UpdateListItem(itemId++, Translation.SecondaryDetails, GetCountryString(Convert.ToInt32(PluginSettings.SecondaryDetails)), "folder");
+            UpdateListItem(itemId++, Translation.SecondaryEnglishTitle, PluginSettings.SecondaryEnglishTitle ? Translation.BoolOn : Translation.BoolOff, "folder");
             UpdateListItem(itemId++, listIndentation + Translation.SecondarySummary, PluginSettings.SecondarySummary ? Translation.BoolOn : Translation.BoolOff, string.Empty);
 
             UpdateListItem(itemId++, Translation.RefreshAllFields, PluginSettings.RefreshAllFields ? Translation.BoolOn : Translation.BoolOff, "folder");
@@ -309,9 +312,15 @@ namespace IMDb
                     PluginSettings.RefreshAllFields = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.OneWriterDirector)
                     PluginSettings.OneWriterDirector = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.RemoveFirstRoman)
+                    PluginSettings.RemoveFirstRoman = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.FixMissingSummary)
+                    PluginSettings.FixMissingSummary = (item.Label2 == Translation.BoolOn);
 
                 if (item.Label.Trim() == Translation.SecondarySummary)
                     PluginSettings.SecondarySummary = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.SecondaryEnglishTitle)
+                    PluginSettings.SecondaryEnglishTitle = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.SecondaryDetails)
                     PluginSettings.SecondaryDetails = GetCountryIntAsString(item.Label2);
                 if (item.Label.Trim() == Translation.CountryFilter)
@@ -517,8 +526,14 @@ namespace IMDb
 
             if (item.Label.Trim() == Translation.OneWriterDirector)
                 GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.OneWriterDirectorDescription);
+            if (item.Label.Trim() == Translation.RemoveFirstRoman)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.RemoveFirstRomanDescription);
+            if (item.Label.Trim() == Translation.FixMissingSummary)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.FixMissingSummaryDescription);
             if (item.Label.Trim() == Translation.SecondaryDetails)
                 GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.SecondaryDetailsDescription);
+            if (item.Label.Trim() == Translation.SecondaryEnglishTitle)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.SecondaryEnglishTitleDescription);
             if (item.Label.Trim() == Translation.SecondarySummary)
                 GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.SecondarySummaryDescription);
 

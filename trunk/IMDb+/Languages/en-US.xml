@@ -34,6 +34,14 @@ Note: The MediaPortal virtual keyboard does not support the '|' character, so a 
 
 	<!-- F -->
 	<string Field="First">First</string>
+	<string Field="FixMissingSummary">FixMissingSummary</string>
+	<string Field="FixMissingSummaryDescription">Off = Keep summary empty
+On = Force user-review as summary
+    
+Not every movie has a summary available yet at the imdb.com website. In some cases, the same movie does however have a user-review. This setting allows you to use this user-review then instead of showing nothing.
+    
+Note: Be warned that user-reviews can contain spoilers.
+</string>
 	<string Field="ForceIMDbPlus">Force IMDb+</string>
 	<string Field="ForceIMDbPlusDescription">Are you ready to force all your existing
 movies, imported with the default IMDb
@@ -176,6 +184,14 @@ Enabling this setting will force everything to be updated. Otherwise only empty,
 
 Note: This setting disables the rename system for existing movies.
 </string>
+	<string Field="RemoveFirstRoman">Remove Roman numeral from first movie</string>
+	<string Field="RemoveFirstRomanDescription">Off = Keep renamed title as-is
+On = Strip Roman numeral from first movie
+
+If the rename system is enabled, then by default, series will be grouped by adding Roman numerals to the title. This is also done to the first movie in the series, so 'Avatar' becomes 'Avatar I'. Enabling this setting will still sort the first movie in the series correct, but it will remove the Roman numeral from the title.
+
+Keep in mind that this is only done when the first movie in the series does not have a subtitle. The movie 'Indiana Jones I: Raiders of the Lost Ark' will therefore keep its Roman numeral.
+</string>
 	<string Field="RenameTitles">Rename titles so that series are grouped together</string>
 	<string Field="RenameTitlesDescription">Off = Use title as-is
 On = Rename title so that series will group together
@@ -239,6 +255,14 @@ On = Use English summary as a fallback when no foreign one exists
 
 Foreign movie websites are not always as extensive as imdb.com or have the same information available. This mainly affects the summary, so to prevent your collection from being empty, enable this option to then fallback on the English summary (if available). Ideally you would register at the foreign movie website and submit the missing information, but until then you can use English.
 </string>
+	<string Field="SecondaryEnglishTitle">Secondary English title</string>
+	<string Field="SecondaryEnglishTitleDescription">Off = Use foreign title
+On = Force English title
+
+If a foreign language has been selected for certain details, the title will become foreign as well. This option can be used to keep the title in English.
+
+Note: This does not apply to the rename system. A translated entry is still required then to get a foreign title, even when this setting is disabled.
+</string>
 	<string Field="SingleScore">Single score rating system</string>
 	<string Field="SingleScoreDescription">Off = Use average rating system
 On = Single rating value is used
@@ -280,7 +304,7 @@ Example: "Avatar (tt0499549) (3D).mkv" will result in "Avatar (3D)"
 	<string Field="SelectSources">Select Sources to Convert to IMDb+</string>
 	<string Field="StartsWith">Starts with {0}</string>
 	<string Field="SelectAlphas">Select Movies Starting With...</string>
-  <string Field="SelectAlphas">The IMDb+ scraper is not first!\nThis will cause problems.\nWould you like to correct this?</string>
+	<string Field="SelectAlphas">The IMDb+ scraper is not first!\nThis will cause problems.\nWould you like to correct this?</string>
   
 	<!-- T -->
 
