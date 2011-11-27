@@ -244,8 +244,8 @@ namespace IMDb
             UpdateListItem(itemId++, Translation.RemoveFirstRoman, PluginSettings.RemoveFirstRoman ? Translation.BoolOn : Translation.BoolOff, "folder");
             UpdateListItem(itemId++, Translation.FixMissingSummary, PluginSettings.FixMissingSummary ? Translation.BoolOn : Translation.BoolOff, "folder");
             UpdateListItem(itemId++, Translation.SecondaryDetails, GetCountryString(Convert.ToInt32(PluginSettings.SecondaryDetails)), "folder");
-            UpdateListItem(itemId++, Translation.SecondaryEnglishTitle, PluginSettings.SecondaryEnglishTitle ? Translation.BoolOn : Translation.BoolOff, "folder");
             UpdateListItem(itemId++, listIndentation + Translation.SecondarySummary, PluginSettings.SecondarySummary ? Translation.BoolOn : Translation.BoolOff, string.Empty);
+            UpdateListItem(itemId++, listIndentation + Translation.SecondaryEnglishTitle, PluginSettings.SecondaryEnglishTitle ? Translation.BoolOn : Translation.BoolOff, string.Empty);
 
             UpdateListItem(itemId++, Translation.RefreshAllFields, PluginSettings.RefreshAllFields ? Translation.BoolOn : Translation.BoolOff, "folder");
 

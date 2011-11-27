@@ -203,7 +203,7 @@ namespace IMDb
 
         // F
         public static string First = "First";
-        public static string FixMissingSummary = "Force user-review to fix missing summary";
+        public static string FixMissingSummary = "Force user-review for empty summary";
         public static string FixMissingSummaryDescription = "Off = Keep summary empty" + "\n" + "On = Force user-review as summary" + "\n" + "" + "\n" + "Not every movie has a summary available yet at the imdb.com website. In some cases, the same movie does however have a user-review. This setting allows you to use this user-review then instead of showing nothing." + "\n" + "" + "\n" + "Note: Be warned that user-reviews can contain spoilers.";
         public static string ForceIMDbPlus = "Force IMDb+";
         public static string ForceIMDbPlusDescription = "Are you ready to force all your existing" + "\n" + "movies, imported with the default IMDb" + "\n" + "scraper, to start using the IMDb+ one?";
