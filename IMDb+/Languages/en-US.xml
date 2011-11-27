@@ -34,7 +34,7 @@ Note: The MediaPortal virtual keyboard does not support the '|' character, so a 
 
 	<!-- F -->
 	<string Field="First">First</string>
-	<string Field="FixMissingSummary">FixMissingSummary</string>
+	<string Field="FixMissingSummary">Force user-review for empty summary</string>
 	<string Field="FixMissingSummaryDescription">Off = Keep summary empty
 On = Force user-review as summary
     
