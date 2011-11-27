@@ -257,131 +257,131 @@ using System.Windows.Forms;
 
 public class Script
 {
-  public static void Main(PackageClass packageClass, ActionItem actionItem)
-  {
-    try
-    {
-      // Load Assemblies
-      Assembly.LoadFrom(Path.Combine(MpeInstaller.TransformInRealPath("%Plugins%"), @"Windows\MovingPictures.dll"));
+	public static void Main(PackageClass packageClass, ActionItem actionItem)
+	{
+		try
+		{
+			// Load Assemblies
+			Assembly.LoadFrom(Path.Combine(MpeInstaller.TransformInRealPath("%Plugins%"), @"Windows\MovingPictures.dll"));
       
-      // Instal Scraper Script
-      string xmlFile = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\IMDb+.Scraper.SVN.xml");
+			// Instal Scraper Script
+			string xmlFile = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\IMDb+.Scraper.SVN.xml");
 
-      // Check if already installed.
-      if (!IsScraperInstalled())
-      {
-        if (ScraperScriptInstallation(xmlFile))
-        {
-          // Make script first priority
-          SetScriptPositioning();
+			// Check if already installed.
+			if (!IsScraperInstalled())
+			{
+				if (ScraperScriptInstallation(xmlFile))
+				{
+					// Make script first priority
+					SetScriptPositioning();
 					
 					// Update Configuration Paths
 					UpdateScriptPaths();
-        }
-      }
-      File.Delete(xmlFile);
+				}
+			}
+			File.Delete(xmlFile);
       
-      // check if we have old configuration files to move to new directory
-      string source = @"C:\Options IMDb+ Scraper.xml";
-      string destination = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\Options IMDb+ Scraper.xml");
-      Upgrade(source, destination);
+			// check if we have old configuration files to move to new directory
+			string source = @"C:\Options IMDb+ Scraper.xml";
+			string destination = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\Options IMDb+ Scraper.xml");
+			Upgrade(source, destination);
 
-      source = @"C:\Rename dBase IMDb+ Scraper.xml";
-      destination = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\Rename dBase IMDb+ Scraper.xml");
-      Upgrade(source, destination);
+			source = @"C:\Rename dBase IMDb+ Scraper.xml";
+			destination = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\Rename dBase IMDb+ Scraper.xml");
+			Upgrade(source, destination);
 
-      source = @"C:\Rename dBase IMDb+ Scraper (Custom).xml";
-      destination = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\Rename dBase IMDb+ Scraper (Custom).xml");
-      Upgrade(source, destination);
-    }
-    catch {}
+			source = @"C:\Rename dBase IMDb+ Scraper (Custom).xml";
+			destination = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\Rename dBase IMDb+ Scraper (Custom).xml");
+			Upgrade(source, destination);
+		}
+		catch {}
     
-    return;
-  }
+		return;
+	}
 
-  static void Upgrade(string source, string destination)
-  {
-    try
-    {
-      if (File.Exists(source))
-      {
-        File.Copy(source, destination, true);
-        File.Delete(source);
-      }
-    }
-    catch { }
-  }
+	static void Upgrade(string source, string destination)
+	{
+		try
+		{
+			if (File.Exists(source))
+			{
+				File.Copy(source, destination, true);
+				File.Delete(source);
+			}
+		}
+		catch { }
+	}
 
-  static bool ScraperScriptInstallation(string xmlFile)
-  {
-    // Grab the contents of the scraper script file
-    StreamReader reader = new StreamReader(xmlFile);
-    string script = reader.ReadToEnd();
-    reader.Close();
+	static bool ScraperScriptInstallation(string xmlFile)
+	{
+		// Grab the contents of the scraper script file
+		StreamReader reader = new StreamReader(xmlFile);
+		string script = reader.ReadToEnd();
+		reader.Close();
 
-    // Add it to the scraper script manager
-    DataProviderManager.AddSourceResult addResult = MovingPicturesCore.DataProviderManager.AddSource(typeof(ScriptableProvider), script, true);
+		// Add it to the scraper script manager
+		DataProviderManager.AddSourceResult addResult = MovingPicturesCore.DataProviderManager.AddSource(typeof(ScriptableProvider), script, true);
 
-    if (addResult == DataProviderManager.AddSourceResult.SUCCESS_REPLACED)
-    {    
-      return true;
-    }
-    else if (addResult == DataProviderManager.AddSourceResult.SUCCESS)
-    {
-      // Scraper script has been added successfully    
-      return true;
-    }
-    else
-    {
-      // Scraper installation failed
-      return false;
-    }
-  }
+		if (addResult == DataProviderManager.AddSourceResult.SUCCESS_REPLACED)
+		{    
+			return true;
+		}
+		else if (addResult == DataProviderManager.AddSourceResult.SUCCESS)
+		{
+			// Scraper script has been added successfully    
+			return true;
+		}
+		else
+		{
+			// Scraper installation failed
+			return false;
+		}
+	}
   
-  static void SetScriptPositioning()
-  {    
-    DBSourceInfo source = DBSourceInfo.GetFromScriptID(314159265);    
-    if (source == null) return;
+	static void SetScriptPositioning()
+	{    
+		DBSourceInfo source = DBSourceInfo.GetFromScriptID(314159265);    
+		if (source == null) return;
 
-    // shift all enabled 'movie detail' sources down by one
-    foreach (DBSourceInfo enabledSource in DBSourceInfo.GetAll())
-    {
-      if (enabledSource.DetailsPriority &gt; -1)
-      {
-        enabledSource.DetailsPriority++;
-        enabledSource.Commit();
-      }
-    }
+		// shift all enabled 'movie detail' sources down by one
+		foreach (DBSourceInfo enabledSource in DBSourceInfo.GetAll())
+		{
+			if (enabledSource.DetailsPriority &gt; -1)
+			{
+				enabledSource.DetailsPriority++;
+				enabledSource.Commit();
+			}
+		}
 
-    // now set highest priority to the IMDb+ source
-    source.SetPriority(DataType.DETAILS, 0);
-    source.Commit();
+		// now set highest priority to the IMDb+ source
+		source.SetPriority(DataType.DETAILS, 0);
+		source.Commit();
 
-    // set IMDb+ cover source higher than default IMDb source
-    DBSourceInfo IMDbSource = DBSourceInfo.GetFromScriptID(874902);
-    if (IMDbSource != null &amp;&amp; IMDbSource.CoverPriority != null)
-    {
-      int coverPriority = (int)IMDbSource.CoverPriority;
-      // shift down the rest, leave anything else in place
-      foreach (DBSourceInfo enabledSource in DBSourceInfo.GetAll())
-      {
-        if (enabledSource.CoverPriority &gt;= coverPriority)
-        {
-          enabledSource.CoverPriority++;
-          enabledSource.Commit();
-        }
-      }
+		// set IMDb+ cover source higher than default IMDb source
+		DBSourceInfo IMDbSource = DBSourceInfo.GetFromScriptID(874902);
+		if (IMDbSource != null &amp;&amp; IMDbSource.CoverPriority != null)
+		{
+			int coverPriority = (int)IMDbSource.CoverPriority;
+			// shift down the rest, leave anything else in place
+			foreach (DBSourceInfo enabledSource in DBSourceInfo.GetAll())
+			{
+				if (enabledSource.CoverPriority &gt;= coverPriority)
+				{
+					enabledSource.CoverPriority++;
+					enabledSource.Commit();
+				}
+			}
 
-      // now replace IMDb cover priority with IMDb+ source
-      source.SetPriority(DataType.COVERS, coverPriority);
-      source.Commit();
-    }
-  }
+			// now replace IMDb cover priority with IMDb+ source
+			source.SetPriority(DataType.COVERS, coverPriority);
+			source.Commit();
+		}
+	}
   
-  static bool IsScraperInstalled()
-  {
-    return DBSourceInfo.GetFromScriptID(314159265) != null;
-  }
+	static bool IsScraperInstalled()
+	{
+		return DBSourceInfo.GetFromScriptID(314159265) != null;
+	}
 	
 	static void UpdateScriptPaths()
 	{
@@ -401,7 +401,7 @@ public class Script
 			source.SelectedScript.Contents = source.SelectedScript.Contents.Replace(oldValue, newValue);
 
 			oldValue = @"C:\Options IMDb+ Scraper.xml";
-			newValue = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\IMDb+\Options IMDb+ Scraper.xml");
+			newValue = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\Options IMDb+ Scraper.xml");
 			source.SelectedScript.Contents = source.SelectedScript.Contents.Replace(oldValue, newValue);
 
 			source.SelectedScript.Commit();
@@ -421,10 +421,10 @@ using MpeCore;
 
 public class Script
 {
-    public static void Main(PackageClass packageClass, UnInstallItem item)
-    {
-        return;
-    }
+	public static void Main(PackageClass packageClass, UnInstallItem item)
+	{
+		return;
+	}
 }
 </Value>
                     <ValueType>Script</ValueType>
@@ -523,15 +523,15 @@ public class Script
     <UpdateUrl>http://imdbplus.googlecode.com/svn/trunk/MPEI/update.xml</UpdateUrl>
     <Version>
       <Major>1</Major>
-      <Minor>3</Minor>
+      <Minor>4</Minor>
       <Build>0</Build>
-      <Revision>194</Revision>
+      <Revision>201</Revision>
     </Version>
     <ExtensionDescription>The IMDb+ plugin and scraper for MovingPictures will make your movie collection easier to use. The plugin will keep the scraper script up-to-date, and add powerful features such as rename and grouping of movie series. It also corrects English titles, allows RottenTomatoes ratings, and many other features.</ExtensionDescription>
-    <VersionDescription>Fixed: The "Force IMDb+" option would not respect the selection made on what non-IMDb+ sources to convert, and did them all.</VersionDescription>
+    <VersionDescription>Added initial IMDb+ scraper-script installation to make it easier for first time users. Cover priority is now also adjusted and new IMDb+ scraper-script v4.0.x options are supported.</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
-    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.3.0.194.mpe1</OnlineLocation>
-    <ReleaseDate>2011-11-21T11:01:33</ReleaseDate>
+    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.4.0.201.mpe1</OnlineLocation>
+    <ReleaseDate>2011-11-27T15:39:21</ReleaseDate>
     <Tags>moving pictures, movies, scraper</Tags>
     <Location>.\Release\imdbplus.plugin.v[Version].mpe1</Location>
     <Params>
@@ -719,7 +719,7 @@ public class Script
         <Recursive>true</Recursive>
       </FolderGroup>
     </FolderGroups>
-    <ProjectFilename>IMDB+.xmp2</ProjectFilename>
+    <ProjectFilename>IMDb+.xmp2</ProjectFilename>
     <UpdatePath1>./update.xml</UpdatePath1>
     <UpdatePath2 />
     <UpdatePath3 />
