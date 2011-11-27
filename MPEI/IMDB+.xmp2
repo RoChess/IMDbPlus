@@ -274,6 +274,9 @@ public class Script
         {
           // Make script first priority
           SetScriptPositioning();
+					
+					// Update Configuration Paths
+					UpdateScriptPaths();
         }
       }
       File.Delete(xmlFile);
@@ -379,8 +382,34 @@ public class Script
   {
     return DBSourceInfo.GetFromScriptID(314159265) != null;
   }
-}
-</Value>
+	
+	static void UpdateScriptPaths()
+	{
+		// correct path to rename db and options file
+		// to point to install paths
+		try
+		{
+			DBSourceInfo source = DBSourceInfo.GetFromScriptID(314159265);    
+			if (source == null) return;
+
+			string oldValue = @"C:\Rename dBase IMDb+ Scraper.xml";
+			string newValue = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\Rename dBase IMDb+ Scraper.xml");
+			source.SelectedScript.Contents = source.SelectedScript.Contents.Replace(oldValue, newValue);
+
+			oldValue = @"C:\Rename dBase IMDb+ Scraper (Custom).xml";
+			newValue = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\Rename dBase IMDb+ Scraper (Custom).xml");
+			source.SelectedScript.Contents = source.SelectedScript.Contents.Replace(oldValue, newValue);
+
+			oldValue = @"C:\Options IMDb+ Scraper.xml";
+			newValue = Path.Combine(MpeInstaller.TransformInRealPath("%Config%"), @"IMDb+\IMDb+\Options IMDb+ Scraper.xml");
+			source.SelectedScript.Contents = source.SelectedScript.Contents.Replace(oldValue, newValue);
+
+			source.SelectedScript.Commit();
+			source.Commit();
+		}
+		catch {}
+	}
+}</Value>
                     <ValueType>Script</ValueType>
                     <Description />
                   </SectionParam>
