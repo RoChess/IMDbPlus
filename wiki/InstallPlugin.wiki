@@ -9,6 +9,10 @@ The IMDb+ plugin only works for MediaPortal v1.2+.
 
 You can update any older installation of !MediaPortal easy, so please make sure you have done so before proceeding.
 
+=!MovingPictures=
+
+This plugin expands MovingPictures, so you need to have this installed already. If this is a fresh install then do not add any import path to !MovingPictures just yet. Wait till you are done with configurating all the options via the IMDb+ plugin, so that each new imported movie will use the settings you want. On an existing collection you can simply use the 'Force IMDb+' option to convert all the movies already imported into !MovingPictures and then via a refresh they will all be updated according to your IMDb+ preference. For more information on an existing collection please read more at [InstallPlugin#What_to_do_for_an_existing_collection]
+
 =MPEI package=
 
 To make it as easy as possible, the IMDb+ plugin has been put inside a !MediaPortal Extension Installer package. You can manually download the latest package from the 'Downloads' tab above and proceed with the installation.
@@ -19,9 +23,9 @@ Or open the !MediaPortal Extension Installer shortcut on your desktop and look f
 
 -----
 
-=What about the IMDb+ scraper script?=
+=What about the IMDb+ scraper script=
 
-The IMDb+ plugin does everything automatic now. If it is the first time you use it, it will detect if the IMDb+ scraper script is installed, and if not it will grab the latest version automatic and add it to MovingPictures.
+The IMDb+ plugin does everything automatic now. If it is the first time you use it, it will detect if the IMDb+ scraper script is installed, and if not it will grab the latest version automatic and add it to !MovingPictures.
 
 When you open !MediaPortal for the first time, you will be greeted by the following message to notify you of this:
 
@@ -29,7 +33,7 @@ When you open !MediaPortal for the first time, you will be greeted by the follow
 
 (version number shown is just an example)
 
-=Which version do I have now?=
+=Which version do I have now=
 
 You might not always notice the update message shown above, so you can look at all the details of the IMDb+ plugin and scraper via the "IMDb Info..." option in the hidden menu on the left side. Some skins might be able to show all the information in a single view, but for the !DefaultWide skin it is spread over two pages.
 
@@ -113,7 +117,7 @@ To show you the differences, here is a before and after of a test-collection:
 
 =Foreign Users=
 
-There is now support for foreign information for summary, language, genres and certifications for German (imdb.de), French (imdb.fr), Italian (imdb.it), Portugese (imdb.pt), Spanish (imdb.es), Icelandic (kvikmyndir.is), and Swedish (filmtipset.se).
+There is now support for foreign information for title, summary, language, genres and certifications for German (imdb.de), French (imdb.fr), Italian (imdb.it), Portugese (imdb.pt), Spanish (imdb.es), Icelandic (kvikmyndir.is), Swedish (filmtipset.se) and Dutch (moviemeter.nl).
 
 You can adjust the option for this inside the IMDb+ plugin near the bottom. But by default !MovingPictures will be using a scraper that auto matches your language, so please adjust the option to force a Manual scraper source at the Importer tab. And do not yet add an import path on a new installation. Otherwise the moment you would start !MediaPortal to change the IMDb+ options, the !MovingPictures plugin will immediatly start importing movies, and the default IMDb+ language is 'English'.
 
