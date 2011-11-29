@@ -243,7 +243,7 @@ namespace IMDb
             UpdateListItem(itemId++, Translation.OneWriterDirector, PluginSettings.OneWriterDirector ? Translation.BoolOn : Translation.BoolOff, "folder");
             UpdateListItem(itemId++, Translation.RemoveFirstRoman, PluginSettings.RemoveFirstRoman ? Translation.BoolOn : Translation.BoolOff, "folder");
             UpdateListItem(itemId++, Translation.FixMissingSummary, PluginSettings.FixMissingSummary ? Translation.BoolOn : Translation.BoolOff, "folder");
-            UpdateListItem(itemId++, Translation.SecondaryDetails, GetCountryString(Convert.ToInt32(PluginSettings.SecondaryDetails)), "folder");
+            UpdateListItem(itemId++, Translation.SecondaryDetails, GetCountryString(Convert.ToInt32(string.IsNullOrEmpty(PluginSettings.SecondaryDetails) ? "01" : PluginSettings.SecondaryDetails)), "folder");
             UpdateListItem(itemId++, listIndentation + Translation.SecondarySummary, PluginSettings.SecondarySummary ? Translation.BoolOn : Translation.BoolOff, string.Empty);
             UpdateListItem(itemId++, listIndentation + Translation.SecondaryEnglishTitle, PluginSettings.SecondaryEnglishTitle ? Translation.BoolOn : Translation.BoolOff, string.Empty);
 
