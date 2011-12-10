@@ -20,8 +20,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="0" point="7" />
-		<published month="11" day="25" year="2011" />
+		<version major="1" minor="0" point="8" />
+		<published month="12" day="10" year="2011" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1176,7 +1176,7 @@
 	<rename id="tt0452681" title="The Santa Clause III: The Escape Clause" />
 	<rename id="tt0277296" title="The Scorpion King I" />
 	<rename id="tt1104123" title="The Scorpion King II: Rise of a Warrior" />
-	<rename id="tt1781896" title="The Scorpion King III: Book of the Dead" />
+	<rename id="tt1781896" title="The Scorpion King III: Battle for Redemption" />
 	<rename id="tt0084649" title="The Secret of NIMH I" />
 	<rename id="tt0171725" title="The Secret of NIMH II: Timmy to the Rescue" />
 	<rename id="tt0403508" title="The Sisterhood of the Traveling Pants I" />
@@ -1201,6 +1201,7 @@
 	<rename id="tt0037365" title="The Thin Man V: The Thin Man Goes Home" />
 	<rename id="tt0039853" title="The Thin Man VI: Song of the Thin Man" />
 	<rename id="tt1754720" title="The Thin Man (Remake) I" />
+	<rename id="tt0905372" title="The Thing (Remake)" />
 	<rename id="tt0155267" title="The Thomas Crown Affair I" />
 	<rename id="tt0433100" title="The Thomas Crown Affair II" />
 	<rename id="tt0063688" title="The Thomas Crown Affair (Original)" />
@@ -1346,4 +1347,6 @@
 	<rename id="tt0365957" title="You Got Served I" />
 	<rename id="tt1568139" title="You Got Served II: Beat the World" />
 	<rename id="tt0063829" title="Yours, Mine and Ours (Original)" />
+	<rename id="tt0388556" title="Zebraman I" />
+	<rename id="tt1534568" title="Zebraman II: Attack on Zebra City" />
 </imdbplus>
