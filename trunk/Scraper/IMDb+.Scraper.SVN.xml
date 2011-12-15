@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="0" point="5" />
-		<published month="12" day="14" year="2011" />
+		<version major="4" minor="1" point="1" />
+		<published month="12" day="15" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en|de|es|fr|it|pt|se|is|nl</language>
 	</details>
@@ -49,6 +49,22 @@
 			<set name="global_options_fix_missing_summary" value="false" />	<!-- Try to use reviews	| Keep summary as-is	-->
 
 			<!--
+				There is now expanded support for other English based rating systems.
+				Before it was just USA/MPAA or UK/BBFC via the 'global_options_uk_rating' option.
+
+					01 = USA+UK (for backwards compatability with old system)
+					02 = UK (double for future switch to using only this option)
+					03 = Canada (Alberta)
+					04 = Canada (British Columbia)
+					05 = Canada (Manitoba)
+					06 = Canada (Nova Scotia)
+					07 = Canada (Ontario)
+					08 = Canada (Quebec)
+					09 = Australia
+					10 = New Zealand
+			-->
+			<set name="global_options_english_movie_rating" value="01" />
+			<!--
 				Because IMDb offers their site in five other languages and they use the same tt-ID,
 				the following setting was added to use available information from those sites.
 
@@ -86,7 +102,7 @@
 		<!-- and try different settings without the need to reimport the script. -->
 		<set name="rx_file_check">
 			<![CDATA[
-			(<imdbplus[^>]*>)(?:[\r\n\t\s\v]*(?:<set[\t\s]+id="\d+"[\t\s]+name="global_options_[^"]+"[\t\s]+value="(?:true|false)"[\t\s]*/>|<set[\t\s]+id="97"[\t\s]+name="global_options_secondary_details"[\t\s]+value="\d{2}"[\t\s]*/>|<set[\t\s]+id="9[89]"[\t\s]+name="global_options_(?:country|language)_filter"[\t\s]+value="(?:\w{2}[|]?)*"[\t\s]*/>|<set[\t\s]+id="\d+"[\t\s]+name="[^_]+_options_sync_[^"]+"[^>]+>))*[\r\n\t\s\v]*</imdbplus>
+			(<imdbplus[^>]*>)(?:[\r\n\t\s\v]*(?:<set[\t\s]+id="\d+"[\t\s]+name="global_options_[^"]+"[\t\s]+value="(?:true|false)"[\t\s]*/>|<set[\t\s]+id="9[47]"[\t\s]+name="global_options_(?:english_movie_rating|secondary_details)"[\t\s]+value="\d{2}"[\t\s]*/>|<set[\t\s]+id="9[89]"[\t\s]+name="global_options_(?:country|language)_filter"[\t\s]+value="(?:\w{2}[|]?)*"[\t\s]*/>|<set[\t\s]+id="\d+"[\t\s]+name="[^_]+_options_sync_[^"]+"[^>]+>))*[\r\n\t\s\v]*</imdbplus>
 			]]>
 		</set>
 		<retrieve name="file" file="C:\Options IMDb+ Scraper.xml" encoding="UTF-8" />
@@ -130,6 +146,8 @@
 				<parse name="xml_option" input="${file}" xpath="//set[@id=18]" />
 				<set name="global_options_fix_missing_summary" value="${xml_option[0].@value}" />
 
+				<parse name="xml_option" input="${file}" xpath="//set[@id=94]" />
+				<set name="global_options_english_movie_rating" value="${xml_option[0].@value}" />
 				<parse name="xml_option" input="${file}" xpath="//set[@id=95]" />
 				<set name="global_options_secondary_en_title" value="${xml_option[0].@value}" />
 				<parse name="xml_option" input="${file}" xpath="//set[@id=96]" />
@@ -549,19 +567,86 @@
 			</if>
 
 		<!-- START: Certification -->
-			<if test="${global_options_uk_rating}=true">
-				<set name="rx_certification">
-					<![CDATA[
-					(?:>\s*UK:|Rated\s*)(?<movieCertification>(?:U)|(?:PG)|(?:12)|(?:12A)|(?:15)|(?:18)|(?:R18))(?:</a>|\s*for)
-					]]>
-				</set>
+			<if test="${global_options_english_movie_rating}&lt;=1">
+				<if test="${global_options_uk_rating}=true">
+					<set name="rx_certification">
+						<![CDATA[
+						UK:(?<movieCertification>(?:U)|(?:PG)|(?:12)|(?:12A)|(?:15)|(?:18)|(?:R18))</a>
+						]]>
+					</set>
+				</if>
+				<if test="${global_options_uk_rating}=false">
+					<set name="rx_certification">
+						<![CDATA[
+						(?:>\s*USA:|Rated\s*)(?<movieCertification>(?:G)|(?:PG)|(?:PG-13)|(?:R)|(?:X)|(?:NC-17))(?:</a>|\s*for)
+						]]>
+					</set>
+				</if>
 			</if>
-			<if test="${global_options_uk_rating}=false">
-				<set name="rx_certification">
-					<![CDATA[
-					(?:>\s*USA:|Rated\s*)(?<movieCertification>(?:G)|(?:PG)|(?:PG-13)|(?:R)|(?:X)|(?:NC-17))(?:</a>|\s*for)
-					]]>
-				</set>
+			<if test="${global_options_english_movie_rating}>1">
+				<if test="${global_options_english_movie_rating}=2">
+					<set name="rx_certification">
+						<![CDATA[
+						UK:(?<movieCertification>(?:U)|(?:PG)|(?:12)|(?:12A)|(?:15)|(?:18)|(?:R18))</a>(?! <i>\(original rating\))
+						]]>
+					</set>
+				</if>
+				<if test="${global_options_english_movie_rating}=3">
+					<set name="rx_certification">
+						<![CDATA[
+						Canada:(?<movieCertification>(?:G)|(?:PG)|(?:AA)|(?:14A)|(?:18A)|(?:R))</a> <i>\([^(]*Alberta[^(]*\)
+						]]>
+					</set>
+				</if>
+				<if test="${global_options_english_movie_rating}=4">
+					<set name="rx_certification">
+						<![CDATA[
+						Canada:(?<movieCertification>(?:G)|(?:PG)|(?:14A)|(?:18A)|(?:R))</a> <i>\([^(]*British Columbia[^(]*\)
+						]]>
+					</set>
+				</if>
+				<if test="${global_options_english_movie_rating}=5">
+					<set name="rx_certification">
+						<![CDATA[
+						Canada:(?<movieCertification>(?:G)|(?:PG)|(?:14A)|(?:18A)|(?:R))</a> <i>\([^(]*Manitoba[^(]*\)
+						]]>
+					</set>
+				</if>
+				<if test="${global_options_english_movie_rating}=6">
+					<set name="rx_certification">
+						<![CDATA[
+						Canada:(?<movieCertification>(?:G)|(?:PG)|(?:1[48][A]?)|(?:R)|(?:A))</a> <i>\([^(]*Nova Scotia[^(]*\)
+						]]>
+					</set>
+				</if>
+				<if test="${global_options_english_movie_rating}=7">
+					<set name="rx_certification">
+						<![CDATA[
+						Canada:(?<movieCertification>(?:G)|(?:PG)|(?:AA)|(?:14A)|(?:18A)|(?:R))</a> <i>\([^(]*Ontario[^(]*\)
+						]]>
+					</set>
+				</if>
+				<if test="${global_options_english_movie_rating}=8">
+					<set name="rx_certification">
+						<![CDATA[
+						Canada:(?<movieCertification>(?:G)|(?:13[+]?)|(?:16[+]?)|(?:18[+]?))</a> <i>\([^(]*Quebec[^(]*\)
+						]]>
+					</set>
+				</if>
+				<if test="${global_options_english_movie_rating}=9">
+					<set name="rx_certification">
+						<![CDATA[
+						Australia:(?<movieCertification>(?:E)|(?:G)|(?:PG)|(?:M)|(?:MA15[+]?)|(?:R18[+]?)|(?:X18[+]?)|(?:RC))</a>(?! <i>\(original rating\))
+						]]>
+					</set>
+				</if>
+				<if test="${global_options_english_movie_rating}=10">
+					<set name="rx_certification">
+						<![CDATA[
+						New Zealand:(?<movieCertification>(?:G)|(?:PG)|(?:M)|(?:[RP]*1[3568])|(?:R))</a>(?! <i>\(original rating\))
+						]]>
+					</set>
+				</if>
 			</if>
 			<parse name="certification_usa" input="${details_page}" regex="${rx_certification}" />
 
@@ -1190,7 +1275,7 @@
 						<log LogLevel="Info" Message="IMDb+ Scraper: Title adjusted via Default Rename XML for: ${movie.imdb_id}" />
 						<if test="${new_import}!=true">
 							<if test="${global_options_remove_first_roman}=true">
-								<parse name="strip_first_roman" input="${movie.title}" regex="^(.+?)((?<!Part|Volume)\sI)$" />
+								<parse name="strip_first_roman" input="${movie.title}" regex="^(.+?)((?&lt;!Part|Volume)\sI)$" />
 								<if test="${strip_first_roman[0][0]}!=">
 									<set name="movie.title" value="${strip_first_roman[0][0]}" />
 									<set name="movie.sortby" value="${sortby_backup}" />
