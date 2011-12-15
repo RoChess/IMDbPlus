@@ -234,6 +234,7 @@ Enabling this setting will limit your rating to just the top ones.
 
 	<!-- S -->
 	<string Field="ScraperOptionsTitle">IMDb+ Scraper Options</string>
+	<string Field="ScraperNotFirstPrompt">The IMDb+ scraper is not first!\nThis will cause problems.\nWould you like to correct this?</string>
 	<string Field="SecondaryDetails">Obtain additional information in the following language</string>
 	<string Field="SecondaryDetailsDescription">There is support to obtain certain information in a different language. This covers information such as Summary, Certification, Genres and wherever possible even more.
 
@@ -304,7 +305,6 @@ Example: "Avatar (tt0499549) (3D).mkv" will result in "Avatar (3D)"
 	<string Field="SelectSources">Select Sources to Convert to IMDb+</string>
 	<string Field="StartsWith">Starts with {0}</string>
 	<string Field="SelectAlphas">Select Movies Starting With...</string>
-	<string Field="SelectAlphas">The IMDb+ scraper is not first!\nThis will cause problems.\nWould you like to correct this?</string>
   
 	<!-- T -->
 

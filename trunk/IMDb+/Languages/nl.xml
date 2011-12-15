@@ -227,6 +227,7 @@ Door deze instelling in te schakelen word je rating gelimiteerd tot de 'Top' cri
 
 	<!-- S -->
 	<string Field="ScraperOptionsTitle">IMDb+ Scraper Opties</string>
+	<string Field="ScraperNotFirstPrompt">De IMDb+ scraper is niet eerst!\nDit zal problemen veroorzaken.\nWil je dit corrigeren?</string>
 	<string Field="SecondaryDetails">Haal aanvullende informatie op in de volgende taal</string>
 	<string Field="SecondaryDetailsDescription">Er is ondersteuning om bepaalde informatie in een andere taal op te halen. Het gaat hier o.a. om de velden Samenvatting, Certificatie, Genres en meer indien mogelijk.
 
@@ -297,7 +298,6 @@ Voorbeeld: "Avatar (tt0499549) (3D).mkv" resulteert in "Avatar (3D)"
 	<string Field="SelectSources">Selecteer bronnen die omgezet moeten worden naar IMDb+</string>
 	<string Field="StartsWith">Start met {0}</string>
 	<string Field="SelectAlphas">Selecteer films die beginnen met...</string>
-	<string Field="SelectAlphas">De IMDb+ scraper is niet eerst!\nDit zal problemen veroorzaken.\nWil je dit corrigeren?</string>
   
 	<!-- T -->
 

@@ -231,6 +231,7 @@ Med denna inställning På kommer endast de i toppen att räknas.
 
 	<!-- S -->
 	<string Field="ScraperOptionsTitle">IMDb+ scraperinställningar</string>
+	<string Field="ScraperNotFirstPrompt">IMDB+ är inte det första scraper-scriptet i listan!\nDetta kan skapa problem.\nVill du rätta till detta?</string>
 	<string Field="SecondaryDetails">Hämta extra information på följande språk</string>
 	<string Field="SecondaryDetailsDescription">Det finns stöd för att hämta viss information på ytterligare ett annat språk. Denna information täcker Handling, Certifiering, Genrer och möjligtvis senare ännu mer.
 
@@ -301,7 +302,6 @@ Exempel: "Avatar (tt0499549) (3D).mkv" kommer att skrivas ut som "Avatar (3D)"
 	<string Field="SelectSources">Välj källor att konvertera till IMDB+</string>
 	<string Field="StartsWith">Börjar med {0}</string>
 	<string Field="SelectAlphas">Välj filmer som börjar på...</string>
-	<string Field="SelectAlphas">IMDB+ är inte det första scraper-scriptet i listan!\nDetta kan skapa problem.\nVill du rätta till detta?</string>
   
 	<!-- T -->
 
