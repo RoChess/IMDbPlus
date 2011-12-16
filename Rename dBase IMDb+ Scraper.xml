@@ -20,8 +20,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="0" point="8" />
-		<published month="12" day="10" year="2011" />
+		<version major="1" minor="0" point="9" />
+		<published month="12" day="16" year="2011" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -433,6 +433,7 @@
 	<rename id="tt0283332" title="Elizabeth (TV)" />
 	<rename id="tt0022854" title="Emma (Classic)" />
 	<rename id="tt0118308" title="Emma (TV)" />
+	<rename id="tt0112950" title="Empire Records" />
 	<rename id="tt0362590" title="Employee of the Month (Cult)" />
 	<rename id="tt0120667" title="Fantastic Four I" />
 	<rename id="tt0486576" title="Fantastic Four II: Rise of the Silver Surfer" />
@@ -999,6 +1000,8 @@
 	<rename id="tt1398941" title="Superman/Batman I: Public Enemies" />
 	<rename id="tt1673430" title="Superman/Batman II: Apocalypse" />
 	<rename id="tt1701223" title="Superman/Shazam!: The Return of Black Adam (DC Showcase)" />
+	<rename id="tt0936501" title="Taken" sortby="Taken I" />
+	<rename id="tt1397280" title="Taken II" />
 	<rename id="tt0208495" title="Taken (Classic)" />
 	<rename id="tt0361038" title="Taken (Horror)" />
 	<rename id="tt0293627" title="Taken (Cult)" />
