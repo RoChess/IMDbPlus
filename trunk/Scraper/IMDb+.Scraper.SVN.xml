@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="1" point="1" />
-		<published month="12" day="15" year="2011" />
+		<version major="4" minor="1" point="2" />
+		<published month="12" day="17" year="2011" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en|de|es|fr|it|pt|se|is|nl</language>
 	</details>
@@ -147,17 +147,25 @@
 				<set name="global_options_fix_missing_summary" value="${xml_option[0].@value}" />
 
 				<parse name="xml_option" input="${file}" xpath="//set[@id=94]" />
-				<set name="global_options_english_movie_rating" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1">
+					<set name="global_options_english_movie_rating" value="${xml_option[0].@value}" />
+				</if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=95]" />
 				<set name="global_options_secondary_en_title" value="${xml_option[0].@value}" />
 				<parse name="xml_option" input="${file}" xpath="//set[@id=96]" />
 				<set name="global_options_secondary_summary" value="${xml_option[0].@value}" />
 				<parse name="xml_option" input="${file}" xpath="//set[@id=97]" />
-				<set name="global_options_secondary_details" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1">
+					<set name="global_options_secondary_details" value="${xml_option[0].@value}" />
+				</if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=98]" />
-				<set name="global_options_country_filter" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1">
+					<set name="global_options_country_filter" value="${xml_option[0].@value}" />
+				</if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=99]" />
-				<set name="global_options_language_filter" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1">
+					<set name="global_options_language_filter" value="${xml_option[0].@value}" />
+				</if>
 
 				<log LogLevel="Info" Message="IMDb+ Scraper: Settings overruled via Options XML file" />
 			</if>
