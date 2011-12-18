@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Trakt translation file -->
+<!-- German (Deutsch) -->
+<!-- Note: English is the fallback for any strings not found in other languages -->
+<strings>
+	<!-- A -->
+	<string Field="AddForeignTitle">Den nicht-englischen Titel hinzufügen</string>
+	<string Field="AddForeignTitleDescription">Aus = Titel wie gehabt behalten
+An = Den nicht-englischen Titel in Klammern hinzufügen
+
+Das Anschalten dieser Funktion ermöglicht es, dass der nicht-englische Titel in Klammern nach dem englischen Titel erscheint.
+
+Beispiel: Black Book (Zwartboek)
+</string>
+
+	<!-- B -->
+	<string Field="BoolOn">An</string>
+	<string Field="BoolOff">Aus</string>
+
+	<!-- C -->
+	<string Field="Cancel">Abbrechen</string>
+	<string Field="CountryFilter">Fortgeschritten: Landesfilter</string>
+	<string Field="CountryFilterDescription">Es gibt einige Filme, die nicht-englische Titel haben. Um die erkennung der Titel zu verbessern war es nötig auch nach dem Land zu Filtern, in dem der Film prouziert wurde.
+
+Standardländer, die keine nicht-englischen Titel nutzen sind: 'us.ca.gb.ie.au.nz' (USA, Kanada, Gross Britannien, Irland, Australien und Neu Seeland)
+
+Achtung: Die virtuelle Tastatur von MediaPortal unterstützt das Schriftzeichen '|' nicht, so wurde stattdessen ein '.' benutzt um die verschiedenen Sprachen zu trennen. Vorsicht mit dieser Einstellung, da sie die Funktion des IMDB+ Scrapers stören kann.
+</string>
+
+	<!-- D -->
+	<string Field="DefaultDescription">Eine der obigen Optionen auswählen und eine detaillierte Erklärung erscheint an dieser Stelle.</string>
+
+	<!-- E -->
+
+	<!-- F -->
+	<string Field="First">Erste</string>
+	<string Field="FixMissingSummary">Nutzer-Kritik für leere Zusammenfassung erzwingen</string>
+	<string Field="FixMissingSummaryDescription">Aus = Zusammenfassung leer lassen
+An = Nutzer-Kritik als Zusammenfassung anzeigen
+    
+Nicht zu jedem Film steht bisher eine Zusammenfassung bei imdb.com zur Verfügung. In einigen Fällen gibt es jedoch eine Nutzer-Kritik. Diese Einstellung erlaubt es solche Nutzer-Kritiken anstatt einer lerren Zusammenfassung anzuzeigen.
+    
+Achtung: Nutzer-Kritiken können Spoiler enthalten.
+</string>
+	<string Field="ForceIMDbPlus">IMDb+ erzwingen</string>
+	<string Field="ForceIMDbPlusDescription">Sollen alle Filme, die mit dem standard 
+IMDB-Scraper importiert wurden, nun den 
+IMDB+-Scraper nutzen?
+</string>
+	<string Field="ForceIMDbPlusComplete">{0}/{1} wurden erfolgreich zum
+IMDB+-Scraper übertragen.
+</string>
+	<string Field="ForeignTitleFirst">Den nicht-englischen Titel zuerst anzeigen</string>
+	<string Field="ForeignTitleFirstDescription">Aus = Englisch (Nicht-englisch)
+An = Nicht-englisch (Englisch)
+
+Ist diese Option aktviert, so erscheint zuerst der nicht-englische Titel gefolgt von dem englischen Titel in Klammern.
+
+Beispiel: Zwartboek (Black Book)
+</string>
+
+	<!-- G -->
+
+	<!-- H -->
+
+	<!-- I -->
+	<string Field="IMDbMetaScore">Metacritics MetaScore</string>
+	<string Field="IMDbMetaScoreDescription">Aus = Eigentliche imdb.com-Bewertung wird genutzt
+An = Metacritics-Metascore-Bewertung wird genutzt
+
+Imdb.com bietet zusätzlich den Metacritics.com MetaScore als Bewertung. Bei Aktivierung dieser Option wird diese Bewertung genutzt; sonst wird die IMDB-Bewertung genutzt.
+
+Achtung: Diese Einstellung setzt voraus, dass die 'IMDB-Bewertung'-Option aktiviert ist und wird deshalb die RottenTomatoes Funktion für fehlende Zusammenfassungen und Laufzeit-Informationen deaktiviieren.
+</string>
+	<string Field="IMDbScore">IMDb-Bewertung</string>
+	<string Field="IMDbScoreDescription">Aus = RottenTomatoes Webseite nutzen
+An = Nur auf imdb.com beschränken
+
+RottenTomatoes bietet Zusatzinformationen, wenn man sich jedoch auf imdb.com beschränken möchte sollte man diese Option aktivieren.
+
+Achtung: Dies deaktiviert auch das Sammeln von fehlenden Zusammenfassungen, Laufzeiten und Bewetungen.
+</string>
+	<string Field="IMDbInfo">IMDb+-Info</string>
+	<string Field="InfoPluginVersion">Plugin-Version: v{0}</string>
+	<string Field="InfoScraperAuthor">Scraper-Autor: {0}</string>
+	<string Field="InfoScraperVersion">Scraper-Version: v{0}</string>
+	<string Field="InfoScraperPriority">Scraper-Priorität: {0}</string>
+	<string Field="InfoScraperPublished">Scraper veröffentlicht: {0}</string>
+	<string Field="InfoScraperLastUpdateCheck">Letze überprüfung auf ein Scraper-Update: {0}</string>
+	<string Field="InfoMoviesIMDbPlusPrimary">Filme, die IMDb+ als Scraper nutzen: {0}</string>
+	<string Field="InfoMoviesOtherPlusPrimary">Filme, die einen anderen Scraper nutzen: {0}</string>
+	<string Field="InfoReplacementsVersion">Replacements Version: v{0}</string>
+	<string Field="InfoReplacementsPublished">Replacements veröffentlicht: {0}</string>
+	<string Field="InfoReplacementEntries">Replacement Einträge: {0}</string>
+	<string Field="InfoCustomReplacementEntries">Replacement Einträge (Eigene): {0}</string>
+	<string Field="IntervalSixHours">6 Stunden</string>
+	<string Field="IntervalTwelveHours">12 Stunden</string>
+	<string Field="IntervalTwentyFourHours">24 Stunden</string>
+	<string Field="IntervalTwoDays">2 Tage</string>
+	<string Field="IntervalThreeDays">3 Tage</string>
+	<string Field="IntervalFourDays">4 Tage</string>
+	<string Field="IntervalSevenDays">7 Tage</string>
+
+	<!-- K -->
+
+	<!-- J -->
+
+	<!-- L -->
+	<string Field="LastScraperUpdate">Letztes Scraper-Update</string>
+	<string Field="LanguageFilter">Fortgeschritten: Sprachfilter</string>
+	<string Field="LanguageFilterDescription">Spezial-Filter um andere Titel nebst Englisch (en) einzubeziehen. Im imdb.com-HTML-Quellcode findet man den ISO 639-1-Code nach /language/.
+
+Standardsprache ist Englisch mittels: 'en'
+
+Ist man beipielsweise aus Norwegen und man möchte, dass norwegische Filme mit dem Originaltitel angezeigt werden und englische Titel für alle anderen Filme, dann gibt man 'en.no' ein.
+
+Achtung: Die virtuelle Tastatur von MediaPortal unterstützt das Schriftzeichen '|' nicht, so wurde stattdessen ein '.' benutzt um die verschiedenen Sprachen zu trennen. Vorsicht mit dieser Einstellung, da sie die Funktion des IMDB+ Scrapers stören kann.
+</string>
+	<string Field="LongSummary">Lange Zusammenfassung nutzen, die Spoiler enthalten kann</string>
+	<string Field="LongSummaryDescription">Aus = Kurze Zusammenfassung um Filmhandlung zu beschreiben
+An = Lange Zusammenfassung (kann Spoiler enthalten)
+
+Lange Zusammenfassungen bieten mehr Informationen, können jedoch manchmal Spoiler enthalten. Deshlab ist diese Einstallung standardmässig ausgestellt, kann aber bei Bedarf angestellt werden.
+</string>
+
+	<!-- M -->
+	<string Field="MinIMDbVotes">Minimale Menge an IMDb-Stimmen nötig</string>
+	<string Field="MinIMDbVotesDescription">Aus = Immer imdb.com-Bewertung nutzen
+An = Nur imdb.com-Bewertungen nutzen mit 20+ Stimmen
+
+Die IMDb-Bewertung ist oft durch Leute beeinflusst, die am Film mitgearbeitet haben. Deshalb ist es nicht unüblich für einen Film mit weniger als 20 Abstimmenungen eine sehr gute Bewertung zu haben.
+
+Bei aktivierung dieser Einstellung werden IMDb-Bewertungen mit weniger als 20 Stimmen ignoriert.
+</string>
+	<string Field="MultiSelectDialog">Multi-Auswahl-Dialog</string>
+
+	<!-- N -->
+	<string Field="No">Nein</string>
+	<string Field="NumberOfMovies">{0}/{1} Filme</string>
+	<string Field="NumberOfMovies2">{0} Filme</string>
+	<string Field="NoSourcesFound">Keine Filme gefunden, die gezwungen
+werden konnten den IMDb+-Scraper zu nutzen!</string>
+	<string Field="NullSource">Keine Quelle, aber nutzbare IMDb-ID</string>
+
+	<!-- O -->
+	<string Field="OneWriterDirector">Den Import auf nur einen Autor und Regisseur beschränken</string>
+	<string Field="OneWriterDirectorDescription">Aus = Alle Namen von Autoren und Regisseuren nutzen
+An = Nur die ersten Namen für Autor und Regisseur nutzen
+
+Einige Skins bieten nur wenig Platz für Autoren und Regisseure. Um horizontales Scrollen zu verhindern sollte man diese Funktion aktivieren und nur je einen Namen für Autor und Regisseur nutzen.
+
+Nicht vergessen, dass diese Einstellung die Möglichkeit nach einem bestimmten Autor oder Regisseur zu suchen einschränkt. Andererseits ist die Menge an Filmen mit mehreren Autoren und/oder Regisseuren sehr begrenzt.
+</string>
+	<string Field="OriginalTitle">Den Originatitel nutzen</string>
+	<string Field="OriginalTitleDescription">Aus = Immer englische Titel erzwingen
+An = Den Originaltitel für nicht-englische Filme nutzen
+
+Nicht-englische Filme haben oft nicht-englische Titel.
+
+Wenn alle Filme englische Titel haben sollen, dann muss diese Funktion deaktiviert bleiben.
+</string>
+
+	<!-- P -->
+
+	<!-- R -->
+	<string Field="RefreshMovies">Filme aktualisieren</string>
+	<string Field="RefreshingMovies">Aktualisiere Filme</string>
+	<string Field="RefreshCancel">Aktualisierung abbrechen</string>
+	<string Field="RefreshMoviesDescription">Sind Sie sicher, dass alle Filme, die IMDB+
+als Scraper nutzen aktualisiert werden sollen?</string>
+	<string Field="RefreshMovieStatus">Aktualisiere {0}/{1} Filme: {2}%</string>
+	<string Field="RefreshMoviesNotification">IMDb+-Filmaktualisierung ist beendet.
+Viel Spass mit dem Ergebnis.</string>
+	<string Field="RefreshMoviesCancelNotification">Aktualisierung abgebrochen.
+{0} Filme bisher aktualisiert.
+Erneut Aktualisieren um fortzufahren.</string>
+	<string Field="RefreshAllFields">Alle Felder aktualisieren</string>
+	<string Field="RefreshAllFieldsDescription">Aus = Nur einiges wird aktualisiert
+An = Alles aktualisieren
+
+Die Informationen bei IMDb werden konstant aktualisiert und komplettiert. Aus diesem Grund ist es sinnvoll von Zeit zu Zeit die Filme in Ihrer Kollektion zu aktualisieren.
+
+Diese Einstellung zu aktivieren führt dazu, dass alle Informationen aktualisiert werden, ansonsten werden nur leere Felder (Bewertungen, Altersfreigaben,...) aktualisiert.
+
+Achtung: Diese Einstellung deaktiviert das Umbenennungssystem für vorhandene Filme.
+</string>
+	<string Field="RemoveFirstRoman">Römische Ziffer bei erstem Film entfernen</string>
+	<string Field="RemoveFirstRomanDescription">Aus = Umbenannten Titel wie gehabt behalten
+An = Römische Ziffer vom ersten Film entfernen
+
+Wenn das Umbenennungssystem aktiviert ist, dann werden Film-Reihen standardmässig gruppiert, indem eine römische Ziffer dem Titel vorangestellt wird. Dies wird auch bei dem ersten Film einer Reihe gemacht, so wird aus 'Avatar' 'Avatar I'. Ist diese Einstellung aktiviert so wird der erste Film einer Reihe korrekt sortiert, jedoch wird die römische Ziffer aus dem Titel entfernt.
+
+Zu beachte ist, dass dies nur funktioniert, wenn der Film keinen Untertitel hat. Der Film 'Indiana Jones I: Raiders of the Lost Ark' wird daher seine römische Ziffer behalten.
+</string>
+	<string Field="RenameTitles">Titel umbenennen, so dass Reihen zusammen gruppiert werden</string>
+	<string Field="RenameTitlesDescription">Aus = Titel wie gehabt nutzen
+An = Titel umbenennen, so dass Reihen zusammen gruppiert werden
+
+Es gibt viele Filmreihen und bei manchen kommt es vor, dass sie nicht alle mit dem selben Präfix beginnen um sie zusammen zu gruppieren. Um dies zu lösen wird eine Umbenennungs-Datenbank genutzt, die die Filmtitel aufgrund ihrer IMDb-ID umbenennt. Das Ergebnis ist, dass Filme so umbenannt werden, dass sie einfach als Teil einer Reihe zu erkennen sind.
+
+Beispiel: 'Batman VII: The Dark Knight Rises' reiht sich sauber in die anderen Filme der Reihe ein.
+
+Die Standard-Umbenennungstitel sind in einer Datei platziert, 'IMDb+\Rename dBase IMDb+ Scraper.xml', welche im MediaPortal-Nutzerordner abgelegt ist.
+
+Jeder eigene Umbenennungseintrag, den Sie erstellen möchten, sollte hier eingetragen werden: 'IMDb+\Rename dBase IMDb+ Scraper (Custom).xml'
+
+Sie können Notepad nutzen um die 'Custom'-Datei zu bearbeiten - die Standard-Datei wird automatisch aktualisiert. Stellen Sie sicher, dass die Inhalte konform bleiben.
+</string>
+	<string Field="RottenMeter">RottenTomatoes TomatoMeter</string>
+	<string Field="RottenMeterDescription">Aus = RottenTomatoes 'Publikum'-Bewertung
+On = RottenTomatoes 'TomatoMeter'-Bewertung
+
+Es gibt viele verschiedene Bewertungen verfügbar auf der RottenTomatoes-Webseite.
+
+Für jede der TomatoMeter-Bewertungen müssen Sie diese Einstellung aktivieren, sonst wird die 'Publikum'-Bewertung genutzt.
+</string>
+	<string Field="RottenAverage">RottenTomatoes Durchschnittsbewertung</string>
+	<string Field="RottenAverageDescription">Aus = RottenTomatoes 'prozentuale' Bewertung
+On = RottenTomatoes Durchschnittsbewertung
+
+Mit dieser Einstellung wird die Durchschnittsbewertung genutzt, ansonsten wird die 'prozentuale' Bewertung genutzt.
+
+Die 'prozentuale' Bewertung ist eine besondere Art, bei der die prozentuale Verteilung der Bewertungen genutzt wird.
+</string>
+	<string Field="RottenTopCritics">RottenTomatoes 'Top'-Kritiken</string>
+	<string Field="RottenTopCriticsDescription">Aus = RottenTomatoes 'alle' Kritiken
+An = RottenTomatoes 'Top'-Kritiken
+
+Es gibt eine TomatoMeter-Bewertung für alle Kritiken und eine ausgewählte Gruppe von 'Top'-Kritiken.
+
+Ist diese Einstellung aktiviert wird die Bewertung auf diese 'Top'-Kritiken begrenzt.
+</string>
+	<string Field="Resume">(Fortfahren)</string>
+
+	<!-- S -->
+	<string Field="ScraperOptionsTitle">IMDb+-Scraper-Optionen</string>
+	<string Field="ScraperNotFirstPrompt">Der IMDb+-Scraper ist nicht an erster Stelle!\nDies wird Probleme verursachen.\nMöchten Sie das korrigieren?</string>
+	<string Field="SecondaryDetails">Zusätzliche Informationen in folgender Sprache beziehen</string>
+	<string Field="SecondaryDetailsDescription">Es gibt die Möglichkeit bestimmte Informationen in einer anderen Sprache als englisch zu beziehen. Dies inthält Informationen wie Zusammenfassungen, Altersfreigaben, Genres und wo immer möglich auch mehr.
+
+Derzeit unterstützt werden: Niederländisch, Französisch, Deutsch, Isländisch, Italienisch, Portugiesisch, Spanisch und Schwedisch.
+</string>
+	<string Field="SecondaryDetailsHeader">Zweitsprache</string>
+	<string Field="SecondaryLanguage01">Englisch</string>
+	<string Field="SecondaryLanguage02">Deutsch</string>
+	<string Field="SecondaryLanguage03">Spanisch</string>
+	<string Field="SecondaryLanguage04">Französisch</string>
+	<string Field="SecondaryLanguage05">Italienisch</string>
+	<string Field="SecondaryLanguage06">Portugiesisch</string>
+	<string Field="SecondaryLanguage07">Schwedisch</string>
+	<string Field="SecondaryLanguage08">Isländisch</string>
+	<string Field="SecondaryLanguage09">Niederländisch</string>
+	<string Field="SecondarySummary">Enlisch als Ersatz benutzen, falls Zusammenfassung in zweitsprache fehlt</string>
+	<string Field="SecondarySummaryDescription">Aus = Nichts anzeigen, falls nicht-englische Zusammenfassung fehlt
+An = Englische Zusammenfassung als Ersatz bei fehlender Zusammenfassung in Zweitsprache
+
+Nicht-englische Film-Webseiten sind nicht immer so umfassend wie imdb.com. Dies betrifft hauptsächlich die Zusammenfassung; um also keine leeren Filmdetails zu haben kann man diese Einstellung aktivieren um dann auf die englische Zusammenfassung zurückzugreifen (falls verfügbar). Idealerweise sollte man sich bei der Webseite in Zweitsprache anmelden und die fehlende Information selbst eintragen.
+</string>
+	<string Field="SecondaryEnglishTitle">Zweiter englischer Titel</string>
+	<string Field="SecondaryEnglishTitleDescription">Aus = Nicht-englischen Titel nutzen
+An = Englischen Titel erzwingen
+
+Wenn eine nicht-englische Sprache für bestimmte Details gewählt wurde, so wird der Titel auch in dieser Sprache angezeigt. Diese Einstellung kann genutzt werden um den Titel auf englisch zu erhalten.
+
+Achtung: Dies gilt nicht für das Umbenennungssystem. Ein übersetzter Eintrag braucht dann immer noch einen nicht-englischen Titel, selbst wenn diese Einstellung deaktiviert ist.
+</string>
+	<string Field="SingleScore">Ein-Bewertungssystem</string>
+	<string Field="SingleScoreDescription">Aus = Durchschnittsbewertungssystem nutzn
+An = Eine einzelne Bewertung wird genutzt
+
+Oft gibt es grosse Unterschiede zwischen allen verfügbaren Bewertungen. Umd dies zu kompensieren wird ein Durchschnitt genutzt, der auf den Bewertungen von IMDb, metacritics und rottentomatoes basiert.
+
+Achtung: Wenn die 'IMDb-Bewertung' aktiviert ist, dann wird nur der Durchschnitt von IMDb und Metacritics genutzt, solange diese Einstellung aktiviert ist.
+</string>
+	<string Field="SpecialEditions">Spezialeditionsumbenennung</string>
+	<string Field="SpecialEditionsDescription">Aus = Titel wie gehabt behalten
+An = Spezialeditions Zeichen zum Titel hinzufügen
+
+Wenn die IMDb-ID-Nummer im Dateinamen oder per NFO-Datei verfügbar ist, dann kann diese Einstellung aktiviert werden um Spezialeditionen zu kennzeichnen.
+
+Folgedes kann in Klammern zum Dateinamen hinzugefügt werden:
+
+ - 3D
+ - Extended
+ - Unrated
+ - Director's Cut
+ - Alternate Ending
+
+Man kann auch ein 'Edition' dahinterschreiben.
+
+Beispiel: "Avatar (tt0499549) (3D).mkv" wird zu "Avatar (3D)"
+</string>
+	<string Field="SettingPluginEnabledName">Plugin aktiviert</string>
+	<string Field="SettingPluginEnabledDescription">Aktivieren / Deaktivieren dieser Option sorgt dafür, dass das IMDb+-Plugin mit MediaPortal geladen wird.</string>
+	<string Field="SettingListedHomeName">Im Home-Bildschirm anzeigen</string>
+	<string Field="SettingListedHomeDescription">Ist diese Option aktiviert, so erscheint das IMDb+-Plugin auf dem Home-Bildschirm.</string>
+	<string Field="SettingListedPluginsName">In Meine Plugins gelistet</string>
+	<string Field="SettingListedPluginsDescription">Ist diese Option aktiviert, so wird das IMDb+-Plugin im Meine-Plugins-Bildschim angezeigt.</string>
+	<string Field="SettingsSyncIntervalName">Stunden bis zum nächsten Aktualisierungsprüfung</string>
+	<string Field="SettingsSyncIntervalDescription">Diese Option steuert wie oft das Plugin online nach ein aktualisiertes Scraper-Script und eine Umbenennungs-Datenbank sucht.</string>
+	<string Field="SettingsSyncOnStartupName">Auf Aktualisierungen beim Start prüfen</string>
+	<string Field="SettingsSyncOnStartupDescription">Diese Option zwingt das Plugin dazu beim Start von MediaPortal nach Aktualisierungen zu suchen.</string>
+	<string Field="SettingsDisableNotificationsName">Benachrichigungen deaktivieren</string>
+	<string Field="SettingsDisableNotificationsDescription">Diese Option deaktiviert Benachrichtigungen, die erscheinen, wenn Aktualisierungen zum System hinzugefügt wurden.</string>
+	<string Field="SelectSources">Quellen für IMDb+-Konvertierung wählen</string>
+	<string Field="StartsWith">Beginnt mit {0}</string>
+	<string Field="SelectAlphas">Filme,die wie folgt beginnen wählen...</string>
+  
+	<!-- T -->
+
+	<!-- U -->
+	<string Field="UkRating">Britische BBFC-Altersfreigabe</string>
+	<string Field="UkRatingDescription">Aus = Die amerikanische MPAA-Altersfreigabe nutzen
+An = Die britische BBFC-Alterfreigabe nutzen
+
+Diese Einstellung regelt britische Altersfreigaben anstatt amerikanscher.
+
+Dies umschliesst 'U' für Universal, 'PG' für Parental Guidance, 12A, 12, 15, 18 und letzlich 'R18' für Restricted 18.
+</string>
+	<string Field="UpdatedScraperScript">MovingPictures wurde mit dem IMDb+-Scraper-Script v{0} aktualisiert</string>
+	<string Field="Update">Aktualisieren</string>
+	<string Field="UpdateAll">Alle aktualisieren</string>
+	<string Field="UpdateReplacementOnly">Nur umbenannte aktualisieren</string>
+	<string Field="UpdateAlphas">Filme, die wie folgt beginnen aktualisieren...</string>
+
+	<!-- V -->
+
+	<!-- W -->
+
+	<!-- Y -->
+	<string Field="Yes">Ja</string>
+</strings>
