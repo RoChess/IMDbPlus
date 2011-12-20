@@ -37,9 +37,9 @@ Note: The MediaPortal virtual keyboard does not support the '|' character, so a 
 	<string Field="FixMissingSummary">Force user-review for empty summary</string>
 	<string Field="FixMissingSummaryDescription">Off = Keep summary empty
 On = Force user-review as summary
-    
+
 Not every movie has a summary available yet at the imdb.com website. In some cases, the same movie does however have a user-review. This setting allows you to use this user-review then instead of showing nothing.
-    
+
 Note: Be warned that user-reviews can contain spoilers.
 </string>
 	<string Field="ForceIMDbPlus">Force IMDb+</string>
@@ -305,7 +305,7 @@ Example: "Avatar (tt0499549) (3D).mkv" will result in "Avatar (3D)"
 	<string Field="SelectSources">Select Sources to Convert to IMDb+</string>
 	<string Field="StartsWith">Starts with {0}</string>
 	<string Field="SelectAlphas">Select Movies Starting With...</string>
-  
+
 	<!-- T -->
 
 	<!-- U -->

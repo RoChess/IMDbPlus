@@ -37,9 +37,9 @@ Achtung: Die virtuelle Tastatur von MediaPortal unterstützt das Schriftzeichen '
 	<string Field="FixMissingSummary">Nutzer-Kritik für leere Zusammenfassung erzwingen</string>
 	<string Field="FixMissingSummaryDescription">Aus = Zusammenfassung leer lassen
 An = Nutzer-Kritik als Zusammenfassung anzeigen
-    
+
 Nicht zu jedem Film steht bisher eine Zusammenfassung bei imdb.com zur Verfügung. In einigen Fällen gibt es jedoch eine Nutzer-Kritik. Diese Einstellung erlaubt es solche Nutzer-Kritiken anstatt einer lerren Zusammenfassung anzuzeigen.
-    
+
 Achtung: Nutzer-Kritiken können Spoiler enthalten.
 </string>
 	<string Field="ForceIMDbPlus">IMDb+ erzwingen</string>
@@ -305,7 +305,7 @@ Beispiel: "Avatar (tt0499549) (3D).mkv" wird zu "Avatar (3D)"
 	<string Field="SelectSources">Quellen für IMDb+-Konvertierung wählen</string>
 	<string Field="StartsWith">Beginnt mit {0}</string>
 	<string Field="SelectAlphas">Filme,die wie folgt beginnen wählen...</string>
-  
+
 	<!-- T -->
 
 	<!-- U -->

@@ -37,9 +37,9 @@ Let op: Het virtuele toetsenbord van MediaPortal ondersteund het '|' karakter ni
 	<string Field="FixMissingSummary">Gebruikersrecensie voor lege samenvattingen gebruiken.</string>
 	<string Field="FixMissingSummaryDescription">Uit = Laat samenvatting leeg
 Aan = Stel gebruikersrecensie in als samenvatting
-    
+
 Niet alle films op imdb.com hebben een samenvatting. In sommige gevallen heeft zo'n film wel een gebruikersrecensie. Deze instelling geeft je de mogelijkheid om een gebruikersrecensie te gebruiken als samenvatting.
-    
+
 Let op: Gebruikersrecensies kunnen spoilers bevatten!
 </string>
 	<string Field="ForceIMDbPlus">Forceer IMDb+</string>
@@ -298,7 +298,7 @@ Voorbeeld: "Avatar (tt0499549) (3D).mkv" resulteert in "Avatar (3D)"
 	<string Field="SelectSources">Selecteer bronnen die omgezet moeten worden naar IMDb+</string>
 	<string Field="StartsWith">Start met {0}</string>
 	<string Field="SelectAlphas">Selecteer films die beginnen met...</string>
-  
+
 	<!-- T -->
 
 	<!-- U -->
