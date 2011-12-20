@@ -34,13 +34,13 @@ OBS: MediaPortal har en virtuell keyboard som inte stödjer '|' -tecknet, så ett 
 
 	<!-- F -->
 	<string Field="First">Första</string>
-	<string Field="FixMissingSummary">Hämta en användare-resension istället ifall beskrivning av handlingen saknas</string>
+	<string Field="FixMissingSummary">Hämta en användare-recension istället ifall beskrivning av handlingen saknas</string>
 	<string Field="FixMissingSummaryDescription">Av = Låt fältet för Handling vara tomt
 På = Hämta användare-recension att fylla fältet Handling
-    
+
 På IMDB.com saknas ibland en kort beskrivning av handlingen. I vissa fall har filmen i alla fall en recension skriven av en användare. Denna inställning möjliggör att en sådan hämtas istället för att lämna fältet tomt.
-    
-OBS: Användar-recensioner kan avslöja överraskningar i handlingen som kan förstöra upplevelsen för tittaren.
+
+OBS: Användare-recensioner kan avslöja överraskningar i handlingen som kan förstöra upplevelsen för tittaren.
 </string>
 	<string Field="ForceIMDbPlus">Tvinga IMDb+</string>
 	<string Field="ForceIMDbPlusDescription">Vill du välja att alla filmer som tidigare importerats med IMDB (förinställd hämtare av info) istället skall använda sig av IMDB+?
@@ -88,7 +88,7 @@ OBS: Detta stänger även av hämtning av saknad Handling, speltid samt rankning.
 	<string Field="InfoScraperLastUpdateCheck">Uppdatering av scraper senast kontrollerad: {0}</string>
 	<string Field="InfoMoviesIMDbPlusPrimary">Filmer som använt IMDb+ som källa: {0}</string>
 	<string Field="InfoMoviesOtherPlusPrimary">Filmer som använt en annan källa: {0}</string>
-	<string Field="InfoReplacementsVersion">Ersättareversion: v{0}</string>
+	<string Field="InfoReplacementsVersion">Ersättarversion: v{0}</string>
 	<string Field="InfoReplacementsPublished">Ersättare publicerad: {0}</string>
 	<string Field="InfoReplacementEntries">Ersatta poster: {0}</string>
 	<string Field="InfoCustomReplacementEntries">Ersatta poster(egna): {0}</string>
@@ -98,7 +98,7 @@ OBS: Detta stänger även av hämtning av saknad Handling, speltid samt rankning.
 	<string Field="IntervalTwoDays">2 dagar</string>
 	<string Field="IntervalThreeDays">3 dagar</string>
 	<string Field="IntervalFourDays">4 dagar</string>
-	<string Field="IntervalSevenDays">7 Days</string>
+	<string Field="IntervalSevenDays">7 dagar</string>
 
 	<!-- K -->
 
@@ -120,6 +120,7 @@ OBS: MediaPortal har en virtuell keyboard som inte stödjer '|' -tecknet, så ett 
 På = Lång beskrivning (kan avslöja eventuella överraskningar i filmen)
 
 Långa beskrivningar ger mer information om filmen men kan ibland innehålla oväntade och överraskande vändningar i handlingen. Därför är denna inställning förinställd till Av men går att ställa till På om du föredrar detta.
+
 </string>
 
 	<!-- M -->
@@ -169,7 +170,7 @@ Om du vill att samtliga filmer skall ha en Engelsk eller Svensk titel, låt denna
 	<string Field="RefreshMoviesNotification">Uppdatering av information för IMDb+ är klar.
 Njut av resultatet.</string>
 	<string Field="RefreshMoviesCancelNotification">Uppdatering har avbrutits.
-{0} filmer klara hittils.
+{0} filmer klara hittills.
 Uppdatera igen för att återuppta.</string>
 	<string Field="RefreshAllFields">Uppdatera samtliga fält</string>
 	<string Field="RefreshAllFieldsDescription">Av = Uppdatera endast vissa fält
@@ -199,7 +200,7 @@ Exempel: 'Batman VII: The Dark Knight Rises' kommer att passa in väl bland de an
 
 Den förvalda, nya titeln hamnar i en fil: 'IMDb+\Rename dBase IMDb+ Scraper.xml' som du kan finna i MediaPortals User-mapp.
 
-Andra specialtitlar du önska bör hamna i  'IMDb+\Rename dBase IMDb+ Scraper (Custom).xml'
+Andra specialtitlar du önska bör hamna i 'IMDb+\Rename dBase IMDb+ Scraper (Custom).xml'
 
 Du kan använda Notepad för att ändra i Custom-filen som sedan sparar dessa titlar, då den andra filen automatiskt kommer att skrivas över vid en uppdatering, var försiktig så att innehållet i xml-filen är kompatibelt.
 </string>
@@ -273,7 +274,7 @@ OBS: Om 'IMDb Rankning' är På kommer den genomsnittliga rankningen att vara base
 	<string Field="SpecialEditionsDescription">Av = Behåll titeln som den hämtats
 På = Lägg till att filmen är i en special-utgåva i titeln
 
-Om du har lagt till ett IMDb tt-ID nummer i filnmanet eller via en .nfo-fil kan denna inställning känna av om det är en speciell version av filmen.
+Om du har lagt till ett IMDb tt-ID nummer i filnamnet eller via en .nfo-fil kan denna inställning känna av om det är en speciell version av filmen.
 
 Följande kan användas inom parentes i filnamnet för att automatisk avkänning :
 
@@ -302,13 +303,13 @@ Exempel: "Avatar (tt0499549) (3D).mkv" kommer att skrivas ut som "Avatar (3D)"
 	<string Field="SelectSources">Välj källor att konvertera till IMDB+</string>
 	<string Field="StartsWith">Börjar med {0}</string>
 	<string Field="SelectAlphas">Välj filmer som börjar på...</string>
-  
+
 	<!-- T -->
 
 	<!-- U -->
 	<string Field="UkRating">Brittiska BBFC åldersgränser</string>
 	<string Field="UkRatingDescription">Av = Använd Amerikanska MPAA åldersgränser
-På = Använd Enable Brittiska BBFC åldersgränser
+På = Använd Brittiska BBFC åldersgränser
 
 Sätt denna inställning till På för att använda de Brittiska åldersgränserna.
 
