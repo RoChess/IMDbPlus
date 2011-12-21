@@ -277,61 +277,7 @@ namespace IMDb
 
         protected override void OnPageDestroy(int new_windowId)
         {
-            // read settings
-            foreach (GUIListItem item in Facade.ListLayout.ListItems)
-            {
-                if (item.Label.Trim() == Translation.OriginalTitle)
-                    PluginSettings.OriginalTitle = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.AddForeignTitle)
-                    PluginSettings.ForeignTitle = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.ForeignTitleFirst)
-                    PluginSettings.ForeignFirst = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.UkRating)
-                    PluginSettings.UkRating = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.IMDbScore)
-                    PluginSettings.IMDbScore = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.IMDbMetaScore)
-                    PluginSettings.IMDbMetaScore = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.LongSummary)
-                    PluginSettings.LongSummary = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.RottenMeter)
-                    PluginSettings.RottenMeter = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.RottenAverage)
-                    PluginSettings.RottenAverage = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.RottenTopCritics)
-                    PluginSettings.RottenTopCritics = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.SpecialEditions)
-                    PluginSettings.SpecialEdition = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.RenameTitles)
-                    PluginSettings.RenameTitles = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.SingleScore)
-                    PluginSettings.SingleScore = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.MinIMDbVotes)
-                    PluginSettings.MinIMDbVotes = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.RefreshAllFields)
-                    PluginSettings.RefreshAllFields = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.OneWriterDirector)
-                    PluginSettings.OneWriterDirector = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.RemoveFirstRoman)
-                    PluginSettings.RemoveFirstRoman = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.FixMissingSummary)
-                    PluginSettings.FixMissingSummary = (item.Label2 == Translation.BoolOn);
-
-                if (item.Label.Trim() == Translation.SecondarySummary)
-                    PluginSettings.SecondarySummary = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.SecondaryEnglishTitle)
-                    PluginSettings.SecondaryEnglishTitle = (item.Label2 == Translation.BoolOn);
-                if (item.Label.Trim() == Translation.SecondaryDetails)
-                    PluginSettings.SecondaryDetails = GetCountryIntAsString(item.Label2);
-                if (item.Label.Trim() == Translation.CountryFilter)
-                    PluginSettings.CountryFilter = item.Label2;
-                if (item.Label.Trim() == Translation.LanguageFilter)
-                    PluginSettings.LanguageFilter = item.Label2;
-            }
-
-            // save settings
-            PluginSettings.SaveSettings();
-
+            ReadAndSaveSettings();
             base.OnPageDestroy(new_windowId);
         }
 
@@ -1054,7 +1000,7 @@ namespace IMDb
                 SetButtonLabels();
 
                 // Save options incase they have been updated
-                PluginSettings.SaveSettings();
+                ReadAndSaveSettings();
                    
                 // get IMDb+ movies for refresh
                 var movies = GetFilteredMovieListFromChoice(selectedItem, selectedItems);
@@ -1251,6 +1197,64 @@ namespace IMDb
                     Thread.Sleep(500);
                 }
             }
+        }
+
+        private void ReadAndSaveSettings()
+        {
+            // read current settings in window and save to memory
+            foreach (GUIListItem item in Facade.ListLayout.ListItems)
+            {
+                if (item.Label.Trim() == Translation.OriginalTitle)
+                    PluginSettings.OriginalTitle = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.AddForeignTitle)
+                    PluginSettings.ForeignTitle = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.ForeignTitleFirst)
+                    PluginSettings.ForeignFirst = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.UkRating)
+                    PluginSettings.UkRating = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.IMDbScore)
+                    PluginSettings.IMDbScore = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.IMDbMetaScore)
+                    PluginSettings.IMDbMetaScore = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.LongSummary)
+                    PluginSettings.LongSummary = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.RottenMeter)
+                    PluginSettings.RottenMeter = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.RottenAverage)
+                    PluginSettings.RottenAverage = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.RottenTopCritics)
+                    PluginSettings.RottenTopCritics = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.SpecialEditions)
+                    PluginSettings.SpecialEdition = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.RenameTitles)
+                    PluginSettings.RenameTitles = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.SingleScore)
+                    PluginSettings.SingleScore = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.MinIMDbVotes)
+                    PluginSettings.MinIMDbVotes = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.RefreshAllFields)
+                    PluginSettings.RefreshAllFields = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.OneWriterDirector)
+                    PluginSettings.OneWriterDirector = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.RemoveFirstRoman)
+                    PluginSettings.RemoveFirstRoman = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.FixMissingSummary)
+                    PluginSettings.FixMissingSummary = (item.Label2 == Translation.BoolOn);
+
+                if (item.Label.Trim() == Translation.SecondarySummary)
+                    PluginSettings.SecondarySummary = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.SecondaryEnglishTitle)
+                    PluginSettings.SecondaryEnglishTitle = (item.Label2 == Translation.BoolOn);
+                if (item.Label.Trim() == Translation.SecondaryDetails)
+                    PluginSettings.SecondaryDetails = GetCountryIntAsString(item.Label2);
+                if (item.Label.Trim() == Translation.CountryFilter)
+                    PluginSettings.CountryFilter = item.Label2;
+                if (item.Label.Trim() == Translation.LanguageFilter)
+                    PluginSettings.LanguageFilter = item.Label2;
+            }
+
+            // now save to disk
+            PluginSettings.SaveSettings();
         }
 
         #endregion
