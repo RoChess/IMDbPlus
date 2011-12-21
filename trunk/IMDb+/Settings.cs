@@ -128,7 +128,7 @@ namespace IMDb
             SecondaryEnglishTitle = xmlReader.GetOptionValueAsBool(cSecondaryEnglishTitle, false);
             SecondaryDetails = xmlReader.GetOptionValueAsString(cSecondaryDetails, "01");
             SecondarySummary = xmlReader.GetOptionValueAsBool(cSecondarySummary, false);
-            RefreshAllFields = xmlReader.GetOptionValueAsBool(cRefreshAllFields, false);
+            RefreshAllFields = xmlReader.GetOptionValueAsBool(cRefreshAllFields, true);
             CountryFilter = xmlReader.GetOptionValueAsString(cCountryFilter, "us|ca|gb|ie|au|nz");
             LanguageFilter = xmlReader.GetOptionValueAsString(cLanguageFilter, "en");
             #endregion
