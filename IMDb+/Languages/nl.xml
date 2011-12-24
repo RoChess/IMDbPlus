@@ -65,7 +65,7 @@ Aan = Gebruik Metacritics Metascore
 
 De imdb.com website kan ook de Metacritic.com score weergeven. Door deze instelling aan te zetten, word deze score gebruikt, anders word de standaard imdb.com score gebruikt.
 
-Let op: Als deze instelling gebruikt word, moet de instelling voor 'IMDb Score' ook aan staan. Dit zorgt er dan indirect voor dat RottenTomatoes niet meer kan worden gebruikt voor missende samenvattingen & speelduur.
+Let op: Als deze instelling gebruikt word, moet de instelling voor 'IMDb Score' ook aan staan. Dit zorgt er dan indirect voor dat RottenTomatoes niet meer kan worden gebruikt voor missende samenvattingen &amp; speelduur.
 </string>
 	<string Field="IMDbScore">IMDb Score</string>
 	<string Field="IMDbScoreDescription">Uit = Gebruik RottenTomatoes website
@@ -137,11 +137,11 @@ Als je deze instelling inschakeld worden de IMDb scores met minder dan 20 stemme
 	<string Field="NullSource">Geen bron, maar bruikbare IMDb-ID</string>
 
 	<!-- O -->
-	<string Field="OneWriterDirector">Limiteer import tot schrijver & regisseur alleen</string>
-	<string Field="OneWriterDirectorDescription">Uit = Geef alle namen van de schrijvers & regisseurs weer
-Aan = Geef de naam van één schrijver & regisseur weer
+	<string Field="OneWriterDirector">Limiteer import tot schrijver &amp; regisseur alleen</string>
+	<string Field="OneWriterDirectorDescription">Uit = Geef alle namen van de schrijvers &amp; regisseurs weer
+Aan = Geef de naam van één schrijver &amp; regisseur weer
 
-Sommige skins hebben niet veel ruimte voor schrijvers & regisseurs. Als je horizontaal scrollen wilt voorkomen, schakel dan deze instelling in zodat slechts één naam voor schrijvers & regisseurs wordt weergegeven.
+Sommige skins hebben niet veel ruimte voor schrijvers &amp; regisseurs. Als je horizontaal scrollen wilt voorkomen, schakel dan deze instelling in zodat slechts één naam voor schrijvers &amp; regisseurs wordt weergegeven.
 
 Houd rekening met het feit dat het zoeken op schrijver of regisseur word beperkt, omdat er slechts één naam word weergegeven per film. Het aantal films met meerdere schrijvers en/of regisseurs is overigens erg gelimiteerd.
 </string>
@@ -173,7 +173,7 @@ Aan = Ververs alle velden
 
 De informatie op IMDb.com word continue ververst en aangevuld. Daarom is het begrijpbaar dat je de volledige filmcollectie soms wilt verversen.
 
-Door deze instelling in te schakelen word elke veld ververst. Anders worden alleen de lege velden en velden voor certificatie, score & stemmen ververst.
+Door deze instelling in te schakelen word elke veld ververst. Anders worden alleen de lege velden en velden voor certificatie, score &amp; stemmen ververst.
 
 Let op: Deze instelling schakelt het hernoem-systeem voor betaande films uit!
 </string>
@@ -261,9 +261,9 @@ Let op: Dit geld niet voor het hernoem-systeem. Een vertaalde invoering is nog s
 	<string Field="SingleScoreDescription">Uit = Gebruik de gemiddelde score
 Aan = Enkelvoudige score word gebruikt
 
-Soms zit er een groot verschil tussen de verschillende beoordelingen van verschillende websites. Om dit te compenseren word een gemiddelde score berekend op basis van de beoordelingen van imdb, metacrtic & rottentomatoes.
+Soms zit er een groot verschil tussen de verschillende beoordelingen van verschillende websites. Om dit te compenseren word een gemiddelde score berekend op basis van de beoordelingen van imdb, metacrtic &amp; rottentomatoes.
 
-Let op: Als de 'IMDb Score' instelling is ingeschakeld, word de gemiddelde score van ALLEEN IMDb & Metacritic gebruikt.
+Let op: Als de 'IMDb Score' instelling is ingeschakeld, word de gemiddelde score van ALLEEN IMDb &amp; Metacritic gebruikt.
 </string>
 	<string Field="SpecialEditions">Ondersteuning 'Speciale Editie' tag</string>
 	<string Field="SpecialEditionsDescription">Uit = Behoud orginele filmtitel
