@@ -20,11 +20,13 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="0" point="9" />
-		<published month="12" day="16" year="2011" />
+		<version major="1" minor="1" point="0" />
+		<published month="12" day="24" year="2011" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
+	<rename id="tt0103594" title="1492: Conquest of Paradise" />
+	<rename id="tt0112950" title="Empire Records" />
 	<rename id="tt0443424" title="9 (Original)" />
 	<rename id="tt0062622" title="2001 I: A Space Odyssey" />
 	<rename id="tt0086837" title="2001 II: 2010" />
@@ -433,7 +435,6 @@
 	<rename id="tt0283332" title="Elizabeth (TV)" />
 	<rename id="tt0022854" title="Emma (Classic)" />
 	<rename id="tt0118308" title="Emma (TV)" />
-	<rename id="tt0112950" title="Empire Records" />
 	<rename id="tt0362590" title="Employee of the Month (Cult)" />
 	<rename id="tt0120667" title="Fantastic Four I" />
 	<rename id="tt0486576" title="Fantastic Four II: Rise of the Silver Surfer" />
@@ -455,6 +456,8 @@
 	<rename id="tt0066482" title="Flesh II: Trash" />
 	<rename id="tt0068688" title="Flesh III: Heat" />
 	<rename id="tt0087277" title="Footloose (Original)" />
+	<rename id="tt0106950" title="Fortress I" />
+	<rename id="tt0179183" title="Fortress II: Re-Entry" />
 	<rename id="tt0076054" title="Freaky Friday (Original)" />
 	<rename id="tt0113112" title="Freaky Friday (TV)" />
 	<rename id="tt0497619" title="Freeway (Docu)" />
@@ -621,6 +624,8 @@
 	<rename id="tt1080016" title="Ice Age III: Dawn of the Dinosaurs" />
 	<rename id="tt1667889" title="Ice Age IV: Continental Drift" />
 	<rename id="tt0025301" title="Imitation of Life (Rare)" />
+	<rename id="tt0460780" title="In the Name of the King I: A Dungeon Siege Tale" />
+	<rename id="tt1767319" title="In the Name of the King II: Two Worlds" />
 	<rename id="tt0082971" title="Indiana Jones I: The Raiders of the Lost Ark" />
 	<rename id="tt0087469" title="Indiana Jones II: The Temple of Doom" />
 	<rename id="tt0097576" title="Indiana Jones III: The Last Crusade" />
