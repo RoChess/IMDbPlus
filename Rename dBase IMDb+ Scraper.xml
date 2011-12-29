@@ -20,7 +20,7 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="1" point="1" />
+		<version major="1" minor="1" point="2" />
 		<published month="12" day="29" year="2011" />
 		<type>RenameDefault</type>
 		<language>en</language>
@@ -1249,6 +1249,12 @@
 	<rename id="tt1325004" title="Twilight III: Eclipse" />
 	<rename id="tt1324999" title="Twilight IV: Breaking Dawn (Part 1)" />
 	<rename id="tt1673434" title="Twilight IV: Breaking Dawn (Part 2)" />
+	<rename id="tt0103285" title="Once Upon a Time in China I (Wong Fei Hung)" />
+	<rename id="tt0105839" title="Once Upon a Time in China II (Wong Fei Hung II: Nam yi dong ji keung)" />
+	<rename id="tt0108592" title="Once Upon a Time in China III (Wong Fei Hung ji saam: Si wong jaang ba)" />
+	<rename id="tt0107162" title="Once Upon a Time in China IV (Wong Fei Hung ji sei: Wong je ji fung)" />
+	<rename id="tt0110073" title="Once Upon a Time in China V (Wong Fei Hung chi neung: Lung shing chim pa)" />
+	<rename id="tt0120530" title="Once Upon a Time in China VI: ...and America (Wong Fei Hung: Chi sai wik hung see)" />
 	<rename id="tt0195366" title="U.S. Seals I" />
 	<rename id="tt0283652" title="U.S. Seals II: The Ultimate Force" />
 	<rename id="tt0195366" title="U.S. Seals III: Dead or Alive" />
