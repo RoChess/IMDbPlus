@@ -20,8 +20,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="1" point="0" />
-		<published month="12" day="24" year="2011" />
+		<version major="1" minor="1" point="1" />
+		<published month="12" day="29" year="2011" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1355,6 +1355,7 @@
 	<rename id="tt0365957" title="You Got Served I" />
 	<rename id="tt1568139" title="You Got Served II: Beat the World" />
 	<rename id="tt0063829" title="Yours, Mine and Ours (Original)" />
+	<rename id="tt0054494" title="Zazie in the Subway" />
 	<rename id="tt0388556" title="Zebraman I" />
 	<rename id="tt1534568" title="Zebraman II: Attack on Zebra City" />
 </imdbplus>
