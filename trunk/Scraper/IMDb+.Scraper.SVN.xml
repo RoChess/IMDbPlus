@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="1" point="4" />
-		<published month="12" day="19" year="2011" />
+		<version major="4" minor="1" point="5" />
+		<published month="01" day="02" year="2012" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en|de|es|fr|it|pt|se|is|nl</language>
 	</details>
@@ -1365,7 +1365,7 @@
 
 		<!-- If 'prefer foldername' is enabled the filename is skipped, so double checking for IMDb tt-ID -->
 		<if test="${search.imdb_id}=">
-			<parse name="search.imdb_id" input="${search.filename_noext}" regex="tt\d{7}" />
+			<parse name="search.imdb_id" input="${search.filename_noext}" regex="tt\d{6,7}" />
 			<if test="${search.imdb_id}!=">
 				<set name="force_imdb_match" value="true" />
 				<log LogLevel="Debug" Message="IMDb+ Scraper: Forcing match via the IMDb tt-ID found in filename: [${search.imdb_id}]" />
