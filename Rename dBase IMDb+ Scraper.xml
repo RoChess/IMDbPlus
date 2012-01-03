@@ -20,8 +20,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="1" point="2" />
-		<published month="12" day="29" year="2011" />
+		<version major="1" minor="1" point="3" />
+		<published month="01" day="02" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -770,9 +770,9 @@
 	<rename id="tt0317919" title="Mission: Impossible III" />
 	<rename id="tt1229238" title="Mission: Impossible IV - Ghost Protocol" />
 	<rename id="tt1542599" title="Monsters vs Aliens: B.O.B.'s Big Break" />
-	<rename id="tt0071853" title="Monthy Python's I: The Holy Grail" />
-	<rename id="tt0079470" title="Monthy Python's II: Life of Brian" />
-	<rename id="tt0085959" title="Monthy Python's III: The Meaning of Life" />
+	<rename id="tt0071853" title="Monty Python's I: The Holy Grail" />
+	<rename id="tt0079470" title="Monty Python's II: Life of Brian" />
+	<rename id="tt0085959" title="Monty Python's III: The Meaning of Life" />
 	<rename id="tt0033922" title="Mr. &amp; Mrs. Smith (Original)" />
 	<rename id="tt0134119" title="Mr. Ripley I: The Talented Mr. Ripley" />
 	<rename id="tt0265651" title="Mr. Ripley II: Ripley's Game" />
@@ -803,6 +803,7 @@
 	<rename id="tt0496806" title="Ocean's III: Thirteen" />
 	<rename id="tt0216048" title="Oklahoma! (UK)" />
 	<rename id="tt2048823" title="Oklahoma! (TV)" />
+	<rename id="tt0064116" title="Once Upon a Time in the West (C'era una volta il West)" />
 	<rename id="tt0366292" title="One Missed Call I (Chakushin ari)" />
 	<rename id="tt0451010" title="One Missed Call II (Chakushin ari II)" />
 	<rename id="tt0978797" title="One Missed Call III: Final Call (Chakushin ari final)" />
@@ -826,6 +827,12 @@
 	<rename id="tt1632586" title="Peter Pan (Musical/Original)" />
 	<rename id="tt1711375" title="Peter Pan (Musical)" />
 	<rename id="tt0079714" title="Phantasm I" />
+	<rename id="tt0078087" title="Piranha I" />
+	<rename id="tt0082910" title="Piranha II: The Spawning" />
+	<rename id="tt0464154" title="Piranha (Remake) I" />
+	<rename id="tt1714203" title="Piranha (Remake) II: 3DD" />
+	<rename id="tt0114137" title="Piranha (TV)" />
+	<rename id="tt0069091" title="Piranha, Piranha!" />
 	<rename id="tt0325980" title="Pirates Of The Caribbean I: Curse Black Pearl" />
 	<rename id="tt0383574" title="Pirates Of The Caribbean II: Dead Man's Chest" />
 	<rename id="tt0449088" title="Pirates Of The Caribbean III: At World's End" />
@@ -888,6 +895,14 @@
 	<rename id="tt1620655" title="RoboCop IV: Crash and Burn" sortby="RoboCop 4d" />
 	<rename id="tt1234721" title="RoboCop (Remake) I" />
 	<rename id="tt0479143" title="Rocky VI: Rocky Balboa" />
+	<rename id="tt0152225" title="Romeo &amp; Juliet (Canada)" />
+	<rename id="tt0111011" title="Romeo &amp; Juliet (TV)" />
+	<rename id="tt0028203" title="Romeo and Juliet (Original)" />
+	<rename id="tt0047029" title="Romeo and Juliet (Classic)" />
+	<rename id="tt0060911" title="Romeo and Juliet (Musical)" />
+	<rename id="tt0125480" title="Romeo and Juliet (TV)" />
+	<rename id="tt0167374" title="Romeo and Juliet (Ballet)" />
+	<rename id="tt0238562" title="Romeo and Juliet (Video)" />
 	<rename id="tt0063350" title="Romero's Zombies I: Night of the Living Dead" />
 	<rename id="tt0077402" title="Romero's Zombies II: Dawn of the Dead" />
 	<rename id="tt0088993" title="Romero's Zombies III: Day of the Dead" />
@@ -901,6 +916,7 @@
 	<rename id="tt0120812" title="Rush Hour I" />
 	<rename id="tt0266915" title="Rush Hour II" />
 	<rename id="tt0293564" title="Rush Hour III" />
+	<rename id="tt0114319" title="Sabrina (Remake)" />
 	<rename id="tt0206275" title="Save the Last Dance I" />
 	<rename id="tt0486656" title="Save the Last Dance II" />
 	<rename id="tt1477076" title="Saw VII: The Final Chapter" />
@@ -1228,6 +1244,10 @@
 	<rename id="tt0443701" title="The X-Files II: I Want to Believe" />
 	<rename id="tt0800369" title="Thor I" />
 	<rename id="tt1981115" title="Thor II" />
+	<rename id="tt0823671" title="Tinker Bell I" />
+	<rename id="tt1216516" title="Tinker Bell II: ...and the Lost Treasure" />
+	<rename id="tt1216515" title="Tinker Bell III: ...and the Great Fairy Rescue" />
+	<rename id="tt1217213" title="Tinker Bell IV: Secret of the Wings" />
 	<rename id="tt0114709" title="Toy Story I" />
 	<rename id="tt0120363" title="Toy Story II" />
 	<rename id="tt0435761" title="Toy Story III" />
@@ -1241,6 +1261,8 @@
 	<rename id="tt0084827" title="TRON I" />
 	<rename id="tt1104001" title="TRON II: Legacy" />
 	<rename id="tt1865543" title="TRON III: The Next Day" />
+	<rename id="tt0065126" title="True Grit (Original)" />
+	<rename id="tt0078422" title="True Grit (TV)" />
 	<rename id="tt0120390" title="Turbulence I" />
 	<rename id="tt0192701" title="Turbulence II: Fear of Flying" />
 	<rename id="tt0251448" title="Turbulence III: Heavy Metal" />
@@ -1306,6 +1328,12 @@
 	<rename id="tt0804551" title="Walking Tall III: Lone Justice" />
 	<rename id="tt0094291" title="Wall Street I" />
 	<rename id="tt1027718" title="Wall Street II: Money Never Sleeps" />
+	<rename id="tt0104361" title="Wallace &amp; Gromit I: A Grand Day Out" />
+	<rename id="tt0108598" title="Wallace &amp; Gromit II: The Wrong Trousers" />
+	<rename id="tt0112691" title="Wallace &amp; Gromit III: A Close Shave" />
+	<rename id="tt0339881" title="Wallace &amp; Gromit IV: Cracking Contraptions" />
+	<rename id="tt0312004" title="Wallace &amp; Gromit V: The Curse of the Were-Rabbit" />
+	<rename id="tt1118511" title="Wallace &amp; Gromit VI: A Matter of Loaf and Death" />
 	<rename id="tt0420313" title="Wanderlust (Docu)" />
 	<rename id="tt0281144" title="Wanderlust (Cult)" />
 	<rename id="tt0371388" title="War and Peace (TV)" />
