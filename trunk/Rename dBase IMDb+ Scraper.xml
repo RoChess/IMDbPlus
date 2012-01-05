@@ -20,8 +20,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="1" point="3" />
-		<published month="01" day="02" year="2012" />
+		<version major="1" minor="1" point="4" />
+		<published month="01" day="04" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -631,7 +631,7 @@
 	<rename id="tt0097576" title="Indiana Jones III: The Last Crusade" />
 	<rename id="tt0367882" title="Indiana Jones IV: Kingdom of the Crystal Skull" />
 	<rename id="tt0116629" title="Independence Day" sortby="Independence Day I" />
-	<rename id="tt1628842" title="Independence Day II" />
+	<rename id="tt1628841" title="Independence Day II" />
 	<rename id="tt1628842" title="Independence Day III" />
 	<rename id="tt0338564" title="Infernal Affairs I (Mou gaan dou)" />
 	<rename id="tt0369060" title="Infernal Affairs II (Mou gaan dou II)" />
@@ -743,6 +743,11 @@
 	<rename id="tt0116861" title="Leprechaun IV: In Space" />
 	<rename id="tt0209095" title="Leprechaun V: In the Hood" />
 	<rename id="tt0339294" title="Leprechaun VI: Back 2 tha Hood" />
+	<rename id="tt0096639" title="Lonesome Dove I: Lonesome Dove" />
+	<rename id="tt0106112" title="Lonesome Dove II: Return to Lonesome Dove" />
+	<rename id="tt0112041" title="Lonesome Dove III: Streets of Laredo" />
+	<rename id="tt0115238" title="Lonesome Dove IV: Dead Man's Walk" />
+	<rename id="tt0783328" title="Lonesome Dove V: Comanche Moon" />
 	<rename id="tt0351283" title="Madagascar I" />
 	<rename id="tt0479952" title="Madagascar II: Escape 2 Africa" />
 	<rename id="tt1277953" title="Madagascar III" />
@@ -778,7 +783,7 @@
 	<rename id="tt0265651" title="Mr. Ripley II: Ripley's Game" />
 	<rename id="tt0219171" title="Mr. Ripley III: Ripley Under Ground" />
 	<rename id="tt0054189" title="Mr. Ripley (Original) I: Purple Noon (Plein soleil)" />
-	<rename id="tt0054189" title="Mr. Ripley (Original) II: The American Friend (Der amerikanische Freund)" />
+	<rename id="tt0075675" title="Mr. Ripley (Original) II: The American Friend (Der amerikanische Freund)" />
 	<rename id="tt0396752" title="Nanny McPhee I" />
 	<rename id="tt1415283" title="Nanny McPhee II: Returns" />
 	<rename id="tt0476680" title="Naruto I: Ninja Clash in the Land of Snow (Gekijô-ban Naruto: Daikatsugeki! Yukihime ninpôchô dattebayo!!)" />
@@ -917,13 +922,16 @@
 	<rename id="tt0266915" title="Rush Hour II" />
 	<rename id="tt0293564" title="Rush Hour III" />
 	<rename id="tt0114319" title="Sabrina (Remake)" />
+	<rename id="tt0047444" title="Samurai I: Musashi Miyamoto" />
+	<rename id="tt0048579" title="Samurai II: Duel at Ichijoji Temple" />
+	<rename id="tt0049710" title="Samurai III: Duel at Ganryu Island" />
 	<rename id="tt0206275" title="Save the Last Dance I" />
 	<rename id="tt0486656" title="Save the Last Dance II" />
 	<rename id="tt1477076" title="Saw VII: The Final Chapter" />
 	<rename id="tt0184894" title="Shanghai Noon I" />
 	<rename id="tt0300471" title="Shanghai Noon II: Shanghai Knights" />
 	<rename id="tt0031448" title="Sherlock Holmes I: The Hound of the Baskervilles" sortby="Sherlock Holmes (Original) 01" />
-	<rename id="tt0035318" title="Sherlock Holmes II: The Adventures of..." sortby="Sherlock Holmes (Original) 02" />
+	<rename id="tt0031022" title="Sherlock Holmes II: The Adventures of..." sortby="Sherlock Holmes (Original) 02" />
 	<rename id="tt0035318" title="Sherlock Holmes III: ...and the Voice of Terror" sortby="Sherlock Holmes (Original) 03" />
 	<rename id="tt0035317" title="Sherlock Holmes IV: ...and the Secret Weapon" sortby="Sherlock Holmes (Original) 04" />
 	<rename id="tt0036349" title="Sherlock Holmes V: ...in Washington" sortby="Sherlock Holmes (Original) 05" />
@@ -1191,6 +1199,11 @@
 	<rename id="tt1340161" title="The Prince &amp; Me IV: The Elephant Adventure" />
 	<rename id="tt0247638" title="The Princess Diaries I" />
 	<rename id="tt0368933" title="The Princess Diaries II: Royal Engagement" />
+	<rename id="tt0114194" title="The Prophecy I" />
+	<rename id="tt0118643" title="The Prophecy II: Ashtown" />
+	<rename id="tt0183678" title="The Prophecy III: The Ascent" />
+	<rename id="tt0365658" title="The Prophecy IV: Uprising" />
+	<rename id="tt0439771" title="The Prophecy V: Forsaken" />
 	<rename id="tt0330793" title="The Punisher I" />
 	<rename id="tt0450314" title="The Punisher II: War Zone" />
 	<rename id="tt0098141" title="The Punisher (Original)" />
@@ -1203,6 +1216,7 @@
 	<rename id="tt1781896" title="The Scorpion King III: Battle for Redemption" />
 	<rename id="tt0084649" title="The Secret of NIMH I" />
 	<rename id="tt0171725" title="The Secret of NIMH II: Timmy to the Rescue" />
+	<rename id="tt0111190" title="The Silence of the Hams (Il silenzio dei prosciutti)" />
 	<rename id="tt0403508" title="The Sisterhood of the Traveling Pants I" />
 	<rename id="tt1018785" title="The Sisterhood of the Traveling Pants II" />
 	<rename id="tt0192614" title="The Skulls I" />
@@ -1279,7 +1293,7 @@
 	<rename id="tt0120530" title="Once Upon a Time in China VI: ...and America (Wong Fei Hung: Chi sai wik hung see)" />
 	<rename id="tt0195366" title="U.S. Seals I" />
 	<rename id="tt0283652" title="U.S. Seals II: The Ultimate Force" />
-	<rename id="tt0195366" title="U.S. Seals III: Dead or Alive" />
+	<rename id="tt0293166" title="U.S. Seals III: Dead or Alive" />
 	<rename id="tt0491703" title="Ultimate Avengers I: The Movie" />
 	<rename id="tt0803093" title="Ultimate Avengers II: Rise of the Panther" />
 	<rename id="tt0105681" title="Ultraviolet (Cult)" />
