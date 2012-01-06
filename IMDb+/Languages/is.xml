@@ -37,9 +37,9 @@ Aths: MediaPortal lyklaborði styður ekki '|', svo að '.' var notað til að skilja
 	<string Field="FixMissingSummary">Lýsingar frá notendum verði notaðar í söguþráð þar sem það hann er auður</string>
 	<string Field="FixMissingSummaryDescription">Af = Haldið söguþræði auðum
 Á = Skráðar upplýsingar frá notendum
-    
+
 Það hafa ekki allar kvikmyndir skráðan söguþráð hjá imdb.com. En það í nokkrum tilvikum hafa notendur skráð inn söguþráð. Þessi stilling leyfir þér að nota þær upplýsingar í stað þess að hafa engar.
-    
+
 Ath.: Hafið í huga að söguþráður sem notendur hafa skráð geta gefið of mikið upp.
 </string>
 	<string Field="ForceIMDbPlus">Virkja IMDb+</string>
@@ -267,7 +267,7 @@ Ath.: Þetta á ekki við endurnefningar. Það þarf að hafa þýddan titil til að fá e
 	<string Field="SingleScoreDescription">Af = Nota meðaltals einkunnagjöf
 Á = Nota staka einkunnagjöf
 
-Það getur verið stór munur á milli mismunandi einkunnagjafa.  Til að jafna það er notuð meðatals gildi einkunna frá imbd, metacritics og rottentomatoes.
+Það getur verið stór munur á milli mismunandi einkunnagjafa. Til að jafna það er notuð meðatals gildi einkunna frá imbd, metacritics og rottentomatoes.
 
 Ath.: Ef 'IMDb einkunnagjöf' er virkjuð, þá verður aðeins notuð meðtal af IMDb og Metacritics þegar þessi stilling er notuð fyrir meðatals einkunnagjöf.
 </string>
@@ -304,7 +304,7 @@ Dæmi: "Avatar (tt0499549) (3D).mkv" mun gefa heitið "Avatar (3D)"
 	<string Field="SelectSources">Velja sköfun sem á að IMDb+ á taka yfir og uppfæra</string>
 	<string Field="StartsWith">Byrjar á {0}</string>
 	<string Field="SelectAlphas">Velja kvikmyndir sem byrja á...</string>
-  
+
 	<!-- T -->
 
 	<!-- U -->
