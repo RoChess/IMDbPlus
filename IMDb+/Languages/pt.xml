@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- IMDb+ translation file -->
+<!-- Portuguese (PT) -->
+<!-- Note: English is the fallback for any strings not found in other languages -->
+<strings>
+	<!-- A -->
+	<string Field="AddForeignTitle">Adicionar o título estrangeiro</string>
+	<string Field="AddForeignTitleDescription">Desligar = Manter título como está
+Ligar = Adicionar o título original entre parênteses
+
+A activação desta opção permite ver o título original entre parênteses após o título Inglês.
+
+Exemplo: Black Book (Livro Negro)
+</string>
+
+	<!-- B -->
+	<string Field="BoolOn">Ligado</string>
+	<string Field="BoolOff">Desligar</string>
+
+	<!-- C -->
+	<string Field="Cancel">Cancelar</string>
+	<string Field="CountryFilter">Avançado: Filtro por país</string>
+	<string Field="CountryFilterDescription">Existem alguns filmes baseados no idioma Inglês que têm um título estrangeiro. Então, para auxiliar a detecção adequada de títulos Inglês será necessário também filtrar o país em que o filme foi produzido.
+
+Países que não usam títulos estrangeiros são: 'us.ca.gb.ie.au.nz' (Estado Unidos, Canada, Inglaterra, Irlanda, Austrália e Nova Zelândia)
+
+Nota: O teclado virtual do MediaPortal não suporta o carácter'|' então foi usado '.' para separar as diferentes línguas. Tenha muito cuidado ao usar esta configuração, pois pode interromper a funcionalidade do "scraper" do IMDb+.
+</string>
+
+	<!-- D -->
+	<string Field="DefaultDescription">Selecione qualquer uma das opções acima e uma explicação mais detalhada será mostrado aqui.</string>
+
+	<!-- E -->
+
+	<!-- F -->
+	<string Field="First">Primeiro</string>
+	<string Field="FixMissingSummary">Criar sinopse quando esta não existir</string>
+	<string Field="FixMissingSummaryDescription">Desligar = Manter sinopse vazia
+Ligar = Utilizar sinopse do utilizador
+
+Ainda nem todos os filmes tem uma sinopse disponível no site imdb.com. Em alguns casos, 
+o filme tem uma sinopse feita por um utilizador.
+Esta configuração permite que você use essa sinopse.
+
+Nota: Atenção que as sinopses feitas por utilizadores podem conter revelações importantes sobre o final do filme.
+</string>
+	<string Field="ForceIMDbPlus">Forçar IMDb+</string>
+	<string Field="ForceIMDbPlusDescription">Você quer atualizar todos os filmes
+ existentes importados com o "scraper"IMDB e
+começar a utilizar o IMDB+?
+</string>
+	<string Field="ForceIMDbPlusComplete">Atualizados com sucesso {0}/{1} filmes
+com o "scraper" do IMDB+.
+</string>
+	<string Field="ForeignTitleFirst">Iniciar o título com nome estrangeiro primeiro</string>
+	<string Field="ForeignTitleFirstDescription">Desligar = Inglés (Estrangeiro)
+Ligar = Estrangeiro (Inglés)
+
+Esta opção mostra o título original estrangeiro primeiro, seguido pelo título Inglês
+entre parênteses.
+
+Exemplo: Livro Negro (Black Book)
+</string>
+
+	<!-- G -->
+
+	<!-- H -->
+
+	<!-- I -->
+	<string Field="IMDbMetaScore">Metacritics MetaScore</string>
+	<string Field="IMDbMetaScoreDescription">Desligar = Resultado imdb.com é utilizado
+Ligar = Resultado Metacritics Metascore é utilizado em vez do imdb.com
+
+O site imdb.com também oferece o metascore Metacritics.com. Ligue esta opção e usara 
+esse resultado, caso contrario será usado o resultado do IMDB.
+
+Nota: Esta definição requer que a configuração do'Resultado IMDb'esteja ligado por isso desligue o método RottenTomatoes para a falta de sinopse e info da duração sobre o filme.
+</string>
+	<string Field="IMDbScore">Resultado IMDb</string>
+	<string Field="IMDbScoreDescription">Desligar = Utilizar o site RottenTomatoes
+Ligar = Utilizar somente o site imdb.com
+
+RottenTomatoes oferece informação adicional, mas se quiser restringir o resultado ao imdb.com 
+ligue esta opção.
+
+Nota: Esta opção também desativa a procura de resultados, sinopse e duração do filme. 
+</string>
+	<string Field="IMDbInfo">IMDb+ Info</string>
+	<string Field="InfoPluginVersion">Versão do Plugin: v{0}</string>
+	<string Field="InfoScraperAuthor">Autor do" Scraper": {0}</string>
+	<string Field="InfoScraperVersion">Versão do "Scraper": v{0}</string>
+	<string Field="InfoScraperPriority">Prioridade do "Scraper": {0}</string>
+	<string Field="InfoScraperPublished">"Scraper" Publicado: {0}</string>
+	<string Field="InfoScraperLastUpdateCheck">Verificação da ultima atualização do "scraper": {0}</string>
+	<string Field="InfoMoviesIMDbPlusPrimary">Filmes que usam o "scraper" do IMDb+ 
+como fonte: {0}</string>
+	<string Field="InfoMoviesOtherPlusPrimary">Filmes que usam um "scraper" diferente: {0}</string>
+	<string Field="InfoReplacementsVersion">Versão substituída: v{0}</string>
+	<string Field="InfoReplacementsPublished">Publicação substituída: {0}</string>
+	<string Field="InfoReplacementEntries">Entradas substituídas: {0}</string>
+	<string Field="InfoCustomReplacementEntries">Entradas substituídas 
+(personalizadas): {0}</string>
+
+	<string Field="IntervalSixHours">6 Horas</string>
+	<string Field="IntervalTwelveHours">12 Horas</string>
+	<string Field="IntervalTwentyFourHours">24 Horas</string>
+	<string Field="IntervalTwoDays">2 Dias</string>
+	<string Field="IntervalThreeDays">3 Dias</string>
+	<string Field="IntervalFourDays">4 Dias</string>
+	<string Field="IntervalSevenDays">7 Dias</string>
+
+	<!-- K -->
+
+	<!-- J -->
+
+	<!-- L -->
+	<string Field="LastScraperUpdate">Ultima verificação do "scraper"</string>
+	<string Field="LanguageFilter">Avançado: Filtro linguístico</string>
+	<string Field="LanguageFilterDescription">Filtro especial para incluir títulos em outros idiomas além do Inglês (en). Usar a fonte do imdb.com HTML para encontrar o código ISO 639-1 após /idioma/.
+
+Idioma por defeito é: 'en'
+
+No entanto se você for Português e quiser todos os filmes Portugueses usam o seu titulo original e os restantes títulos em Inglês, então use: 'en.pt'
+
+Nota: O teclado virtual do MediaPortal não suporta o carácter '|' então foi usado '.' para separar as diferentes línguas. Tenha muito cuidado ao usar esta configuração, pois pode interromper a funcionalidade do "scraper" do IMDb+.
+</string>
+	<string Field="LongSummary">Usar resumos longos podem conter revelações importantes sobre o final do filme</string>
+	<string Field="LongSummaryDescription">Desligar = Sinopses curtas que contenham resumo do filme
+Ligar = Resumos longos (pode conter revelações importantes sobre o final do filme)
+
+Sinopses longas oferecem mais informação, mas as vezes podem conter revelações importantes sobre o final do filme. Por isso esta opção por defeito esta desligada, claro que se quiser poder liga-la.
+</string>
+
+	<!-- M -->
+	<string Field="MinIMDbVotes">Quantidade mínima de votos necessários no IMDb</string>
+	<string Field="MinIMDbVotesDescription">Desligar = Usar sempre o imdb.com como resultado
+Ligar = Só usar o imdb.com como resultado com um mínimo de 20 votos
+
+Muita vezes o resultado do IMDB é inflacionado pelas pessoas que trabalharam no filme. É por isso que não é incomum um filme com menos de 20 votos ter uma grande classificação.
+
+Se utilizar esta opção resultados do IMDB com menos de 20 votos serão ignorados.
+</string>
+	<string Field="MultiSelectDialog">Multi-Select Dialog</string>
+
+	<!-- N -->
+	<string Field="No">Não</string>
+	<string Field="NumberOfMovies">{0}/{1} Filmes</string>
+	<string Field="NumberOfMovies2">{0} Filmes</string>
+	<string Field="NoSourcesFound">Nenhum filme encontrado pode ser forçado para usar o script do "scraper" do IMDB!</string>
+	<string Field="NullSource">Nenhuma fonte, mas pode usar o IMDb-ID</string>
+
+	<!-- O -->
+	<string Field="OneWriterDirector">Limitar importação a um autor e director</string>
+	<string Field="OneWriterDirectorDescription">Desligar = Obter todos os nomes para escritor e diretor
+Ligar = Só usar primeiro nome para o escritor e o diretor
+
+Muitas skins não deixam muito espaço para os escritores e diretores. Para evitar o deslocamento horizontal, ligue esta opção para importar somente o primeiro nome do escritor e do director.
+
+Tenha em mente que isso irá afetar a capacidade de procura de filmes feito por um determinado escritor ou diretor, apenas um nome estará disponível por filme. Por outro lado a quantidade de filmes que apresentam vários escritores e / ou diretores é muito limitada.
+</string>
+	<string Field="OriginalTitle">Use o título original do filme</string>
+	<string Field="OriginalTitleDescription">Desligar = Force sempre o titulo em Inglês
+Ligar = Use o título original para filmes estrangeiros
+
+Frequentemente filmes estrangeiros têm um título sem ser em Inglês.
+
+Se você quiser que todos os seus filmes usem um título Inglês, mantenha esta configuração desligada.
+</string>
+
+	<!-- P -->
+
+	<!-- R -->
+	<string Field="RefreshMovies">Atualizar filmes</string>
+	<string Field="RefreshingMovies">Atualizando os filmes</string>
+	<string Field="RefreshCancel">Cancelar atualização</string>
+	<string Field="RefreshMoviesDescription">Tem a certeza que quer atualizar todos os filmes
+que têm o IMDb+ como fonte principal?</string>
+	<string Field="RefreshMovieStatus">Atualizando {0}/{1} Filmes: {2}%</string>
+	<string Field="RefreshMoviesNotification">Atualização dos filmes com o IMDb+ concluída.
+Por favor, aproveite o resultado.</string>
+	<string Field="RefreshMoviesCancelNotification">Atualização foi cancelada.
+{0} filmes atualizados até agora.
+Atualizar novamente.</string>
+	<string Field="RefreshAllFields">Atualizar todos os campos</string>
+	<string Field="RefreshAllFieldsDescription">Desligar = Só atualiza alguns campos
+Ligar = Atualiza tudo
+
+As informações do IMDb são constantemente actualizadas e completadas. Por essa razão faz sentido de vez em quando atualizar os filmes da sua coleção.
+
+Ligando esta opção força a atualização de todos os campos. Caso contrário certificações, pontuações e o campo dos votos vazios são atualizados.
+
+Nota: Esta opção desliga o sistema de renomeação dos filmes existentes.
+</string>
+	<string Field="RemoveFirstRoman">Remover algarismo romano do primeiro filme</string>
+	<string Field="RemoveFirstRomanDescription">Desligar = Manter o título renomeado como está
+Ligar = Coloca algarismo romano no primeiro filme
+
+Se o sistema de renomeação estiver ativado, por defeito as séries serão agrupados por adição de algarismos romanos por título. Isto também é feito para o primeiro filme da série, exemplo 'Avatar ' torna se 'Avatar I'. A ativação desta configuração ainda classifica o primeiro filme na série correta, mas removerá o algarismo romano do título.
+
+Tenha em mente que isso só é feito quando o primeiro filme da série não tem um subtítulo. O filme 'Indiana Jones I: Os Caçadores da Arca Perdida', manteve número romano.
+</string>
+	<string Field="RenameTitles">Renomeie títulos, para que as séries sejam agrupadas</string>
+	<string Field="RenameTitlesDescription">Desligar = Use o título como está
+Ligar = Renomeie título de modo que a série se irá agrupar
+
+Há muitas séries de filmes em que às vezes os títulos não começam com o mesmo prefixo para poder agrupá-los. Para resolver isso, um ficheiro renomeado da base de dados ira ser usado para a renomeação utilizando o numero do IMDb tt-ID . O resultado é que os filmes são renomeados de forma que eles sejam facilmente identificados como sendo parte de uma série.
+
+Exemplo: 'Batman VII: The Dark Knight Rises "será perfeitamente agrupado com os outros filmes da série.
+
+Por defeito o titulo modificado será posto num ficheiro 'IMDb+\Rename dBase IMDb+ Scraper.xml' que esta situado na sua pasta de utilizador do MediaPortal.
+
+Todos os títulos personalizados que você deseja renomear devem ir para 'IMDb+\Rename dBase IMDb+ Scraper (Custom).xml'
+
+Poderá usar o bloco de notas para editar o titulo, como padrão será atualizado automaticamente por favor, certifique-se que o conteúdo dos arquivos XML permanecem em conformidade.
+</string>
+	<string Field="RottenMeter">RottenTomatoes TomatoMeter</string>
+	<string Field="RottenMeterDescription">Desligar = RottenTomatoes classificações do "público"
+Ligar = RottenTomatoes 'TomatoMeter' classificações
+
+Há varias avaliações disponiveis no site RottenTomatoes.
+
+Para usar qualquer uma das classificações Tomatometer você tem que ligar esta opção, caso contrário a classificação do 'Público' será usada.
+</string>
+	<string Field="RottenAverage">Media do RottenTomatoes</string>
+	<string Field="RottenAverageDescription">Off = Avaliação percentual do RottenTomatoes
+Ligar = Media do RottenTomatoes
+
+Quando esta configuração esta ligada a media dos votos é usada de outra maneira será usado a percentagem dos votos.
+
+A percentagem de votos é muito especial na mediada em que conta a quantidade de utilizadores do RottenTomatoes que votaram de uma determinada maneira.
+</string>
+	<string Field="RottenTopCritics">Melhores criticas do RottenTomatoes</string>
+	<string Field="RottenTopCriticsDescription">Desligar = Todas as criticas do RottenTomatoes
+Ligar = Melhores criticas do RottenTomatoes
+Existe uma classificação Tomatometer disponível para todos os críticos e um grupo seleto das melhores críticas.
+
+A ativação desta configuração irá limitar a sua classificação apenas para as melhores.
+</string>
+	<string Field="Resume">(Resumo)</string>
+
+	<!-- S -->
+	<string Field="ScraperOptionsTitle">Opções do "scraper" do IMDb+</string>
+	<string Field="ScraperNotFirstPrompt">o "scraper" do IMDb+ não é o primeiro!\Isso pode causar problemas.\Quer corrigir esta situação?</string>
+	<string Field="SecondaryDetails">Obter informação adicional no seguinte idioma</string>
+	<string Field="SecondaryDetailsDescription">Existe suporte para obter determinadas informações num idioma diferente. Tal inclui informações como resumo, certificação, géneros e sempre que possível ainda mais.
+
+Suporte atual inclui: Holandês, Francês, Alemão, Islandês, Italiano, Português, Espanhol e Sueco.
+</string>
+	<string Field="SecondaryDetailsHeader">Idioma secundario</string>
+	<string Field="SecondaryLanguage01">Inglês</string>
+	<string Field="SecondaryLanguage02">Alemão</string>
+	<string Field="SecondaryLanguage03">Espanhol</string>
+	<string Field="SecondaryLanguage04">Francês</string>
+	<string Field="SecondaryLanguage05">Italiano</string>
+	<string Field="SecondaryLanguage06">Portugues</string>
+	<string Field="SecondaryLanguage07">Sueco</string>
+	<string Field="SecondaryLanguage08">Islandês</string>
+	<string Field="SecondaryLanguage09">Holandês</string>
+	<string Field="SecondarySummary">Alternativa em Inglês se o sumario não existir noutra lingua</string>
+	<string Field="SecondarySummaryDescription">Desligar = Nada mostrar se sumário noutra língua estiver faltando
+Ligar =Usar em alternativa o Inglês se o sumario não existir noutra língua
+
+Sites sem ser em Inglês muitas vezes não são tão completos como o imdb.com ou contem as mesmas informações. Isto afeta principalmente o resumo, de modo a evitar que este campo fique vazio, habilitar esta opção para ficar disponível o resumo Inglês (se disponível). Idealmente, você iria deveria se registar no site de filmes estrangeiros e apresentar as informações em falta, mas até lá você pode usar as informações Inglês..
+</string>
+	<string Field="SecondaryEnglishTitle">Titulo secundário em Inglês</string>
+	<string Field="SecondaryEnglishTitleDescription">Desligar = Usar titulo em Inglês
+Ligar= Forçar titulo em Inglês
+
+Se uma outra língua for selecionado para certos detalhes, o título também vai mudar para essa mesma língua. Esta opção pode ser usada para manter o título em Inglês.
+
+Nota: Isto não se aplica ao sistema de renomear. A entrada traduzida ainda é necessária para obter um título estrangeiro, mesmo quando esta configuração está desativada.
+</string>
+	<string Field="SingleScore">Sistema de classificação única pontuação</string>
+	<string Field="SingleScoreDescription">Desligar = Utilização do sistema de média
+Ligar = Sistema de classificação única pontuação
+
+Por vezes há uma grande diferença entre todas as diferentes classificações que estão disponíveis. Para compensar isso, um valor médio é usado com base nas classificações de imdb, metacritics e RottenTomatoes.
+
+Nota: Se o "Pontuação IMDb" estiver ativada, a classificação média apenas do IMDb e Metacritics é usado quando essa configuração está ativa para um resultado média.
+</string>
+	<string Field="SpecialEditions">Edições especiais e suporte de renomeação</string>
+	<string Field="SpecialEditionsDescription">Desligar = Manter título como está
+Ligar = Adicionar edições especiais no título
+
+Se o número do IMDb tt-ID estiver disponível no nome do ficheiro ou através de um arquivo NFO, então você pode ligar esta configuração para adicionar edições especiais no título.
+
+Você pode adicionar os seguintes termos dentro de parênteses, no nome do seu ficheiro:
+
+ - 3D
+ - Extended
+ - Unrated
+ - Director's Cut
+ - Alternate Ending
+
+Se desejar também pode ter o termo 'Edition'.
+
+Exemplo: "Avatar (tt0499549) (3D) mkv" Resultará em "Avatar (3D)"
+</string>
+	<string Field="SettingPluginEnabledName"> Ligar Plugin</string>
+	<string Field="SettingPluginEnabledDescription">Ligar / Desligar esta configuração para controlar se Plugin IMDb é carregado com o MediaPortal.</string>
+	<string Field="SettingListedHomeName">Listados em Home</string>
+	<string Field="SettingListedHomeDescription">Ativar esta configuração para o plugin do IMDb aparecer nos principais itens no menu da Página Principal.</string>
+	<string Field="SettingListedPluginsName">Listado em "My Plugins"</string>
+	<string Field="SettingListedPluginsDescription">Ativar esta configuração para o plugin do IMDb aparecer na janela "My plugin".</string>
+	<string Field="SettingsSyncIntervalName">Numero de horas até a próxima atualização</string>
+	<string Field="SettingsSyncIntervalDescription">Esta configuração controla a frequência com que o plugin irá fazer uma verificação on-line do "scraper" de script e da base de dados.</string>
+	<string Field="SettingsSyncOnStartupName">Verificar se há atualizações no arranque</string>
+	<string Field="SettingsSyncOnStartupDescription">Esta configuração irá forçar o plugin a fazer uma verificação on-line por um script do "scraper" e pela base de dados atualizado e substituições de cada vez que iniciar o MediaPortal.</string>
+	<string Field="SettingsDisableNotificationsName">Desligar notificações</string>
+	<string Field="SettingsDisableNotificationsDescription">Esta configuração permite que você desative as notificações aquando as atualizações do "scraper" foram aplicadas no seu sistema.</string>
+	<string Field="SelectSources">Selecione Fontes para converter para o IMDb+</string>
+	<string Field="StartsWith">Começar com {0}</string>
+	<string Field="SelectAlphas">Selecionar filmes começados com...</string>
+
+	<!-- T -->
+
+	<!-- U -->
+	<string Field="UkRating">Sistema de certificação Inglesa BBFC</string>
+	<string Field="UkRatingDescription">Desligar = Usar certificação Americana MPAA
+Ligar = Usar a certificação Inglesa
+
+Usar esta configuração para as certificações de cinema do Reino Unido.
+
+Isto inclui 'U' para a Universal, 'PG' de Orientação Parental, 12A, 12, 15, 18 e, finalmente, 'R18' para limitado aos 18.
+</string>
+	<string Field="UpdatedScraperScript">MovingPictures foi atualizado com o script do scraper do IMDb+ v{0}</string>
+	<string Field="Update">Atualizar</string>
+	<string Field="UpdateAll">Atualizar tudo</string>
+	<string Field="UpdateReplacementOnly">Atualizar apenas as substituições</string>
+	<string Field="UpdateAlphas">Atualizar filmes começados com...</string>
+
+	<!-- V -->
+
+	<!-- W -->
+
+	<!-- Y -->
+	<string Field="Yes">Sim</string>
+</strings>
