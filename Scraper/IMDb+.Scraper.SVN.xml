@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="1" point="5" />
-		<published month="01" day="02" year="2012" />
+		<version major="4" minor="1" point="6" />
+		<published month="01" day="14" year="2012" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en|de|es|fr|it|pt|se|is|nl</language>
 	</details>
@@ -373,7 +373,7 @@
 				</set>
 				<set name="rx_directors">
 					<![CDATA[
-					<a\s+href="/name/nm\d{7}/"[^>]*>(?<movieDirectors>[^<]+)</a>
+					<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7}/"[^>]*>(?<movieDirectors>[^<]+)</a>
 					]]>
 				</set>
 				<parse name="directors_block" input="${details_page}" regex="${rx_directors_block}" />
@@ -400,7 +400,7 @@
 				</set>
 				<set name="rx_writers">
 					<![CDATA[
-					<a\s+href="/name/nm\d{7}/"[^>]*>(?<movieWriters>[^<]+)</a>
+					<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7}/"[^>]*>(?<movieWriters>[^<]+)</a>
 					]]>
 				</set>
 				<parse name="writers_block" input="${details_page}" regex="${rx_writers_block}" />
@@ -427,7 +427,7 @@
 				</set>
 				<set name="rx_actors">
 					<![CDATA[
-					<td[^<]*<a\s+href="/name/nm\d{7}/"[^>]*>(?<movieActors>[^<]*)</a>
+					<td[^<]*<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7}/"[^>]*>(?<movieActors>[^<]*)</a>
 					]]>
 				</set>
 				<parse name="actors_block" input="${details_page}" regex="${rx_actors_block}" />
@@ -516,7 +516,7 @@
 					</set>
 					<set name="rx_genres">
 						<![CDATA[
-						<a href="(?:/Sections)?/[Gg]enre[s]?/[^/]+/?">(?<movieGenres>.+?)</a>
+						<a\s+(?:onclick="[^"]+"\s*)?href="(?:/Sections)?/[Gg]enre[s]?/[^/]+/?"[^>]+>(?<movieGenres>.+?)</a>
 						]]>
 					</set>
 					<parse name="genres_block" input="${details_page}" regex="${rx_genres_block}" />
@@ -566,7 +566,7 @@
 				<if test="${rx_language}=">
 					<set name="rx_language">
 						<![CDATA[
-						<a\shref=./language/[^"]+"[^>]*>(?<movieLanguage>[^<]+)</a>
+						<a\s+(?:onclick="[^"]+"\s*)?href=./language/[^"]+"[^>]*>(?<movieLanguage>[^<]+)</a>
 						]]>
 					</set>
 					<parse name="language" input="${details_page}" regex="${rx_language}" />
