@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="1" point="7" />
-		<published month="01" day="17" year="2012" />
+		<version major="4" minor="1" point="8" />
+		<published month="01" day="18" year="2012" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en|de|es|fr|it|pt|se|is|nl</language>
 	</details>
@@ -467,7 +467,7 @@
 						</set>
 						<set name="rx_tmp_postfix">
 							<![CDATA[
-							")|(?!.+?<a href="releaseinfo#akas">)).+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>
+							")|(?!.+?<a[^>]+href="releaseinfo#akas"[^>]*>)).+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[\/IVX]*\).*?</title>
 							]]>
 						</set>
 						<set name="rx_title_year" value="${rx_tmp_prefix}(?:${global_options_country_filter})${rx_tmp_infix}(?:${global_options_language_filter})${rx_tmp_postfix}" />
@@ -1458,7 +1458,7 @@
 
 					<set name="rx_title_exact_match">
 						<![CDATA[
-						<p><b>Popular Titles</b> \(Displaying \d{2} Results\).*?<p><b>Titles \(Exact Matches\)</b>.*?>\d+\.<.*?><a href="/title/(tt\d{7})/"[^>]+>(?:&#x27;)?([^<]+?)(?:&#x27;)?</a> \((\d{4})\) (?!\(VG\)|<small>\(TV series\)</small>)
+						<p><b>Popular Titles</b> \(Displaying \d{2} Results\).*?<p><b>Titles \(Exact Matches\)</b>.*?>\d+\.<.*?><a[^>]+href="/title/(tt\d{7})/"[^>]+>(?:&#x27;)?([^<]+?)(?:&#x27;)?</a> \((\d{4})\) (?!\(VG\)|<small>\(TV series\)</small>)
 						]]>
 					</set>
 
@@ -1475,7 +1475,7 @@
 
 					<set name="rx_search_results">
 						<![CDATA[
-						><a href="/title/(tt\d{7})/"[^>]+>(?!&#x22;)(?:&#x27;)?([^<]+?)(?:&#x27;)?</a> \((\d{4})[\/IVX]*\)(?! \(VG\))(?:[^<].*?>(?=aka ")?(.+?)?</td>)?
+						><a[^>]+href="/title/(tt\d{7})/"[^>]+>(?!&#x22;)(?:&#x27;)?([^<]+?)(?:&#x27;)?</a> \((\d{4})[\/IVX]*\)(?! \(VG\))(?:[^<].*?>(?=aka ")?(.+?)?</td>)?
 						]]>
 					</set>
 
