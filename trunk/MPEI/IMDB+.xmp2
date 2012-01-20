@@ -525,13 +525,15 @@ public class Script
       <Major>1</Major>
       <Minor>4</Minor>
       <Build>0</Build>
-      <Revision>202</Revision>
+      <Revision>239</Revision>
     </Version>
     <ExtensionDescription>The IMDb+ plugin and scraper for MovingPictures will make your movie collection easier to use. The plugin will keep the scraper script up-to-date, and add powerful features such as rename and grouping of movie series. It also corrects English titles, allows RottenTomatoes ratings, and many other features.</ExtensionDescription>
-    <VersionDescription>Added initial IMDb+ scraper-script installation to make it easier for first time users. Cover priority is now also adjusted and new IMDb+ scraper-script v4.0.x options are supported.</VersionDescription>
+    <VersionDescription>Fixed bug in which scraper-script options were not saved before initiating the IMDb+ refresh system. Added AU/CA/NZ rating system option. The 'Refresh all fields' option is enabled by default now on new installations to make it less confusing for new users. All supported scraper languages now have their IMDb+ plugin language file include as well.
+
+This version includes IMDb+ scraper-script v4.1.8 by default which will auto update once IMDb+ plugin runs for the first time and a new version is available.</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
-    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.4.0.202.mpe1</OnlineLocation>
-    <ReleaseDate>2011-11-27T16:33:11</ReleaseDate>
+    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.4.0.239.mpe1</OnlineLocation>
+    <ReleaseDate>2012-01-20T15:06:46</ReleaseDate>
     <Tags>moving pictures, movies, scraper</Tags>
     <Location>.\Release\imdbplus.plugin.v[Version].mpe1</Location>
     <Params>
@@ -677,21 +679,21 @@ public class Script
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Resources\sidebar.jpg</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{c96179ea-e8a6-4696-9ae4-fef4a669b548}-sidebar.jpg</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{29460c1a-30b7-475e-b5de-1f13c0bd3054}-sidebar.jpg</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Resources\header.jpg</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{2ee70328-10b4-4417-aa91-83dd411f16f8}-header.jpg</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{160e1e60-284c-4b77-9973-9ba057de500c}-header.jpg</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\IMDb+\Images\imdb_icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{0e8bc1c3-80fa-4dc3-a956-019d2f555732}-imdb_icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{f0541227-670c-4436-bcd7-f0fdb45e98f1}-imdb_icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
