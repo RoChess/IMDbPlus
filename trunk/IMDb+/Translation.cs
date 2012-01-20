@@ -275,6 +275,19 @@ namespace IMDb
         // Q
 
         // R
+        public static string Ratings = "English Rating/Certification System";
+        public static string RatingsDescription = "There are multiple English based rating/certification systems throughout the world. The most famous one is the American based MPAA rating system with results such as PG-13, R, NC-17, etc." + "\n" + "" + "\n" + "Users in Australia, Canada, United Kingdom, and New Zealand can use this setting to switch to their localized rating system.";
+        public static string RatingsHeader = "Select Rating System";
+        public static string Rating01 = "USA";
+        public static string Rating02 = "UK";
+        public static string Rating03 = "Canada (Alberta)";
+        public static string Rating04 = "Canada (British Columbia)";
+        public static string Rating05 = "Canada (Manitoba)";
+        public static string Rating06 = "Canada (Nova Scotia)";
+        public static string Rating07 = "Canada (Ontario)";
+        public static string Rating08 = "Canada (Quebec)";
+        public static string Rating09 = "Australia";
+        public static string Rating10 = "New Zealand";
         public static string RefreshMovies = "Refresh Movies";
         public static string RefreshingMovies = "Refreshing Movies";
         public static string RefreshCancel = "Cancel Refresh";
@@ -340,8 +353,8 @@ namespace IMDb
 
 
         // U
-        public static string UkRating = "British BBFC certification system";
-        public static string UkRatingDescription = "Off = Use the American MPAA ratings" + "\n" + "On = Enable the British BBFC ratings" + "\n" + "" + "\n" + "Use this setting for UK movie certifications." + "\n" + "" + "\n" + "This includes 'U' for Universal, 'PG' for Parental Guidance, 12A, 12, 15, 18 and finally 'R18' for Restricted 18.";
+        public static string UkRating = "British-English Movie Titles";
+        public static string UkRatingDescription = "Off = Use American-English Movie Titles" + "\n" + "On = Use British-English Movie Titles" + "\n" + "" + "\n" + "Use this setting for British-English movie titles." + "\n" + "" + "\n" + "Famous example is the first Harry Potter movie. The original title is \"Harry Potter and the Philosopher's Stone\", which was Americanized into \"Harry Potter and the Sorcerer's Stone\". Since the IMDb website is focused towards an American audience that means all titles will use the American-English title if available. With this setting you can change that to the British-English title." + "\n" + "" + "\n" + "Note: There is currently no rename/replacement database support for British-English titles yet, so you will still end up with \"Harry Potter I: Sorcerer's Stone\", but you can overrule that via the custom rename/replacement database for the time being until proper support is added to the IMDb+ plugin.";
         public static string UpdatedScraperScript = "MovingPictures has been updated with IMDb+ Scraper script v{0}";
         public static string Update = "Update";
         public static string UpdateAll = "Update All";

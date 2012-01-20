@@ -37,6 +37,7 @@ namespace IMDb
         private const string cRemoveFirstRoman = "global_options_remove_first_roman";
         private const string cOneWriterDirector = "global_options_one_writer_director";
         private const string cFixMissingSummary = "global_options_fix_missing_summary";
+        private const string cRatings = "global_options_english_movie_rating";
         private const string cSecondaryEnglishTitle = "global_options_secondary_en_title";
         private const string cSecondaryDetails = "global_options_secondary_details";
         private const string cSecondarySummary = "global_options_secondary_summary";
@@ -71,6 +72,7 @@ namespace IMDb
         public static bool OneWriterDirector { get; set; }
         public static bool FixMissingSummary { get; set; }
         public static bool RemoveFirstRoman { get; set; }
+        public static string Ratings { get; set; }
         public static bool SecondaryEnglishTitle { get; set; }
         public static string SecondaryDetails { get; set; }
         public static bool SecondarySummary { get; set; }
@@ -125,6 +127,7 @@ namespace IMDb
             OneWriterDirector = xmlReader.GetOptionValueAsBool(cOneWriterDirector, false);
             FixMissingSummary = xmlReader.GetOptionValueAsBool(cFixMissingSummary, false);
             RemoveFirstRoman = xmlReader.GetOptionValueAsBool(cRemoveFirstRoman, false);
+            Ratings = xmlReader.GetOptionValueAsString(cRatings, "01");
             SecondaryEnglishTitle = xmlReader.GetOptionValueAsBool(cSecondaryEnglishTitle, false);
             SecondaryDetails = xmlReader.GetOptionValueAsString(cSecondaryDetails, "01");
             SecondarySummary = xmlReader.GetOptionValueAsBool(cSecondarySummary, false);
@@ -198,6 +201,7 @@ namespace IMDb
             xmlWriter.SetOptionsEntry(cRemoveFirstRoman, "17", RemoveFirstRoman.ToString());
             xmlWriter.SetOptionsEntry(cFixMissingSummary, "18", FixMissingSummary.ToString());
 
+            xmlWriter.SetOptionsEntry(cRatings, "94", Ratings);
             xmlWriter.SetOptionsEntry(cSecondaryEnglishTitle, "95", SecondaryEnglishTitle.ToString());
             xmlWriter.SetOptionsEntry(cSecondarySummary, "96", SecondarySummary.ToString());
             xmlWriter.SetOptionsEntry(cSecondaryDetails, "97", SecondaryDetails);
@@ -219,7 +223,7 @@ namespace IMDb
             }
             Settings.SaveCache();
             #endregion
-        }        
+        }
     }
 
     public static class ExtensionMethods
