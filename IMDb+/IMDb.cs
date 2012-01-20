@@ -248,6 +248,7 @@ namespace IMDb
             UpdateListItem(itemId++, listIndentation + Translation.SecondaryEnglishTitle, PluginSettings.SecondaryEnglishTitle ? Translation.BoolOn : Translation.BoolOff, string.Empty);
 
             UpdateListItem(itemId++, Translation.RefreshAllFields, PluginSettings.RefreshAllFields ? Translation.BoolOn : Translation.BoolOff, "folder");
+            UpdateListItem(itemId++, Translation.Ratings, GetRatingString(Convert.ToInt32(string.IsNullOrEmpty(PluginSettings.Ratings) ? "01" : PluginSettings.Ratings)), "folder");
 
             UpdateListItem(itemId++, Translation.CountryFilter, PluginSettings.CountryFilter, "folder");
             UpdateListItem(itemId++, Translation.LanguageFilter, PluginSettings.LanguageFilter, "folder");
@@ -312,6 +313,7 @@ namespace IMDb
                         selectedItem.Label2 = (selectedItem.Label2 == Translation.BoolOn) ? Translation.BoolOff : (selectedItem.Label2 == Translation.BoolOff) ? Translation.BoolOn : selectedItem.Label2;
                         selectedItem.IsPlayed = (selectedItem.Label2 == Translation.BoolOff) ? true : false;
 
+                        // Seconday Language has multiple options
                         if (selectedItem.Label == Translation.SecondaryDetails)
                         {
                             IDialogbox dlg = (IDialogbox)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_MENU);
@@ -339,6 +341,43 @@ namespace IMDb
                             for (int i = 0; i < languageArray.Count(); i++)
                             {
                                 GUIListItem listArrayItem = new GUIListItem(languageArray[i]);
+                                dlg.Add(listArrayItem);
+                            }
+                            dlg.DoModal(GUIWindowManager.ActiveWindow);
+                            if (dlg.SelectedId <= 0) return;
+
+                            selectedItem.Label2 = dlg.SelectedLabelText;
+                        }
+
+                        // Ratings system has multiple options
+                        if (selectedItem.Label == Translation.Ratings)
+                        {
+                            IDialogbox dlg = (IDialogbox)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_MENU);
+                            if (dlg == null) return;
+
+                            dlg.Reset();
+                            dlg.SetHeading(Translation.RatingsHeader);
+
+                            // Create menu items
+                            string[] ratingsArray = {
+                                                         Translation.Rating02,
+                                                         Translation.Rating03,
+                                                         Translation.Rating04,
+                                                         Translation.Rating05,
+                                                         Translation.Rating06,
+                                                         Translation.Rating07,
+                                                         Translation.Rating08,
+                                                         Translation.Rating09,
+                                                         Translation.Rating10
+                                                     };
+                            //Add 'USA' as first rating system to the dialog.
+                            GUIListItem listItem = new GUIListItem(Translation.Rating01);
+                            dlg.Add(listItem);
+                            //Sort the remaining rating systems and add them to the dialog as well
+                            Array.Sort(ratingsArray);
+                            for (int i = 0; i < ratingsArray.Count(); i++)
+                            {
+                                GUIListItem listArrayItem = new GUIListItem(ratingsArray[i]);
                                 dlg.Add(listArrayItem);
                             }
                             dlg.DoModal(GUIWindowManager.ActiveWindow);
@@ -437,6 +476,39 @@ namespace IMDb
             return "01";
         }
 
+        private string GetRatingString(int countryId)
+        {
+            switch (countryId)
+            {
+                case 1: return Translation.Rating01;
+                case 2: return Translation.Rating02;
+                case 3: return Translation.Rating03;
+                case 4: return Translation.Rating04;
+                case 5: return Translation.Rating05;
+                case 6: return Translation.Rating06;
+                case 7: return Translation.Rating07;
+                case 8: return Translation.Rating08;
+                case 9: return Translation.Rating09;
+                case 10: return Translation.Rating10;
+                default: return "ERROR";
+            }
+        }
+
+        private string GetRatingIntAsString(string countryString)
+        {
+            if (countryString == Translation.Rating01) return "01";
+            if (countryString == Translation.Rating02) return "02";
+            if (countryString == Translation.Rating03) return "03";
+            if (countryString == Translation.Rating04) return "04";
+            if (countryString == Translation.Rating05) return "05";
+            if (countryString == Translation.Rating06) return "06";
+            if (countryString == Translation.Rating07) return "07";
+            if (countryString == Translation.Rating08) return "08";
+            if (countryString == Translation.Rating09) return "09";
+            if (countryString == Translation.Rating10) return "10";
+            return "01";
+        }
+
         private void OnItemSelected(GUIListItem item, GUIControl parent)
         {
             if (item.Label.Trim() == Translation.OriginalTitle)
@@ -485,6 +557,8 @@ namespace IMDb
 
             if (item.Label.Trim() == Translation.RefreshAllFields)
                 GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.RefreshAllFieldsDescription);
+            if (item.Label.Trim() == Translation.Ratings)
+                GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.RatingsDescription);
 
             if (item.Label.Trim() == Translation.CountryFilter)
                 GUIPropertyManager.SetProperty("#IMDb.Option.Description", Translation.CountryFilterDescription);
@@ -1241,6 +1315,8 @@ namespace IMDb
                 if (item.Label.Trim() == Translation.FixMissingSummary)
                     PluginSettings.FixMissingSummary = (item.Label2 == Translation.BoolOn);
 
+                if (item.Label.Trim() == Translation.Ratings)
+                    PluginSettings.Ratings = GetRatingIntAsString(item.Label2);
                 if (item.Label.Trim() == Translation.SecondarySummary)
                     PluginSettings.SecondarySummary = (item.Label2 == Translation.BoolOn);
                 if (item.Label.Trim() == Translation.SecondaryEnglishTitle)

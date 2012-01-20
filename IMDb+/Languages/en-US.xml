@@ -163,6 +163,21 @@ If you want all your movies to use an English title, then keep this setting disa
 	<!-- P -->
 
 	<!-- R -->
+	<string Field="Ratings">English Rating/Certification System</string>
+	<string Field="RatingsDescription">There are multiple English based rating/certification systems throughout the world. The most famous one is the American based MPAA rating system with results such as PG-13, R, NC-17, etc.
+
+Users in Australia, Canada, United Kingdom, and New Zealand can use this setting to switch to their localized rating system.</string>
+	<string Field="RatingsHeader">Select Rating System</string>
+	<string Field="Rating01">USA</string>
+	<string Field="Rating02">UK</string>
+	<string Field="Rating03">Canada (Alberta)</string>
+	<string Field="Rating04">Canada (British Columbia)</string>
+	<string Field="Rating05">Canada (Manitoba)</string>
+	<string Field="Rating06">Canada (Nova Scotia)</string>
+	<string Field="Rating07">Canada (Ontario)</string>
+	<string Field="Rating08">Canada (Quebec)</string>
+	<string Field="Rating09">Australia</string>
+	<string Field="Rating10">New Zealand</string>
 	<string Field="RefreshMovies">Refresh Movies</string>
 	<string Field="RefreshingMovies">Refreshing Movies</string>
 	<string Field="RefreshCancel">Cancel Refresh</string>
@@ -309,13 +324,15 @@ Example: "Avatar (tt0499549) (3D).mkv" will result in "Avatar (3D)"
 	<!-- T -->
 
 	<!-- U -->
-	<string Field="UkRating">British BBFC certification system</string>
-	<string Field="UkRatingDescription">Off = Use the American MPAA ratings
-On = Enable the British BBFC ratings
+	<string Field="UkRating">British-English Movie Titles</string>
+	<string Field="UkRatingDescription">Off = Use American-English Movie Titles
+On = Use British-English Movie Titles
 
-Use this setting for UK movie certifications.
+Use this setting for British-English movie titles.
 
-This includes 'U' for Universal, 'PG' for Parental Guidance, 12A, 12, 15, 18 and finally 'R18' for Restricted 18.
+Famous example is the first Harry Potter movie. The original title is "Harry Potter and the Philosopher's Stone", which was Americanized into "Harry Potter and the Sorcerer's Stone". Since the IMDb website is focused towards an American audience that means all titles will use the American-English title if available. With this setting you can change that to the British-English title.
+
+Note: There is currently no rename/replacement database support for British-English titles yet, so you will still end up with ""Harry Potter I: Sorcerer's Stone", but you can overrule that via the custom rename/replacement database for the time being until proper support is added to the IMDb+ plugin.
 </string>
 	<string Field="UpdatedScraperScript">MovingPictures has been updated with IMDb+ Scraper script v{0}</string>
 	<string Field="Update">Update</string>
