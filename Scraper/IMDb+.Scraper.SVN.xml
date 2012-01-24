@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="1" point="8" />
-		<published month="01" day="18" year="2012" />
+		<version major="4" minor="1" point="9" />
+		<published month="01" day="24" year="2012" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en|de|es|fr|it|pt|se|is|nl</language>
 	</details>
@@ -489,12 +489,12 @@
 				<!-- Studios -->
 				<set name="rx_studios_block">
 					<![CDATA[
-					<h4 class="inline">Production Co:</h4>(?<movieStudios>(?:[^<]*<a\s*href="[^"]+">[^<]+</a>)*)
+					<h4 class="inline">Production Co:</h4>(?<movieStudios>(?:[^<]*<a[^>]+href="[^"]+"[^>]*>[^<]+</a>)*)
 					]]>
 				</set>
 				<set name="rx_studios">
 					<![CDATA[
-					<a\s*href="[^"]+">(?<movieStudios>[^<]+)</a>
+					<a[^>]+href="[^"]+"[^>]*>(?<movieStudios>[^<]+)</a>
 					]]>
 				</set>
 				<parse name="studios_block" input="${details_page}" regex="${rx_studios_block}" />
