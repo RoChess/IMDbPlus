@@ -20,8 +20,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="1" point="4" />
-		<published month="01" day="04" year="2012" />
+		<version major="1" minor="1" point="5" />
+		<published month="01" day="25" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -205,6 +205,8 @@
 	<rename id="tt1349482" title="Bring It On V: Fight To The Finish" />
 	<rename id="tt0328880" title="Brother Bear I" />
 	<rename id="tt0465925" title="Brother Bear II" />
+	<rename id="tt0080487" title="Caddyshack I" />
+	<rename id="tt0094824" title="Caddyshack II" />
 	<rename id="tt0301078" title="Camelot (TV)" />
 	<rename id="tt0237068" title="Camelot (Cartoon)" />
 	<rename id="tt1125860" title="Camelot: Enchanted Tales" />
@@ -310,6 +312,9 @@
 	<rename id="tt0057950" title="Cinderella (TV/Remake)" />
 	<rename id="tt0910852" title="Cinderella (Video)" />
 	<rename id="tt0082186" title="Clash of the Titans (Original)" />
+	<rename id="tt0800320" title="Clash of the Titans" sortby="Clash of the Titans I" />
+	<rename id="tt1646987" title="Clash of the Titans II: Wrath of the Titans" />
+	<rename id="tt2103167" title="Clash of the Titans III" />
 	<rename id="tt0007801" title="Cleopatra (Classic)" />
 	<rename id="tt0024991" title="Cleopatra (Original)" />
 	<rename id="tt0346765" title="Cleopatra (Argentina)" />
@@ -697,6 +702,8 @@
 	<rename id="tt0085750" title="Jaws III" />
 	<rename id="tt0093300" title="Jaws IV: The Revenge" />
 	<rename id="tt0112747" title="Jaws V: Cruel Jaws" />
+	<rename id="tt0274166" title="Johnny English I" />
+	<rename id="tt1634122" title="Johnny English II: Reborn" />
 	<rename id="tt1606600" title="Jonah Hex (DC Showcase)" />
 	<rename id="tt0206314" title="Joy Ride I" />
 	<rename id="tt1140941" title="Joy Ride II: Dead Ahead" />
@@ -878,6 +885,8 @@
 	<rename id="tt0089880" title="Rambo: First Blood II" />
 	<rename id="tt0095956" title="Rambo: First Blood III" />
 	<rename id="tt0462499" title="Rambo: First Blood IV" />
+	<rename id="tt0433035" title="Real Steel" sortby="Real Steal I" />
+	<rename id="tt1896804" title="Real Steel II" />
 	<rename id="tt0087985" title="Red Dawn (Original)" />
 	<rename id="tt0120804" title="Resident Evil I" />
 	<rename id="tt0318627" title="Resident Evil II: Apocalypse" />
