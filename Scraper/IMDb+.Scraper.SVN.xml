@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="1" point="9" />
-		<published month="01" day="24" year="2012" />
+		<version major="4" minor="2" point="1" />
+		<published month="01" day="25" year="2012" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en|de|es|fr|it|pt|se|is|nl</language>
 	</details>
@@ -185,10 +185,16 @@
 		<if test="${movie.site_id}!=">
 
 			<if test="${global_options_special_edition}=true">
+				<set name="rx_special_editions">
+					<![CDATA[
+					([\(\[\{](?:3D|Extended|Unrated|Director's Cut|Alternate Ending|(?<=\[)[^\]]+(?=\]))(?: Edition)?[\}\]\)])
+					]]>
+				</set>
+
 				<!-- Check details_url for presence of special edition title -->
 				<parse name="special_edition" input="${movie.details_url}" regex="###(.+?)###" />
 				<!-- Backup existing special edition title, incase this is a refresh -->
-				<parse name="special_backup" input="${movie.title}" regex="([\(\[\{](?:3D|Extended|Unrated|Director's Cut|Alternate Ending)(?: Edition)?[\}\]\)])" />
+				<parse name="special_backup" input="${movie.title}" regex="${rx_special_editions}" />
 			</if>
 
 			<if test="${global_options_secondary_details}&lt;=1">
@@ -1359,7 +1365,7 @@
 
 		<set name="rx_special_editions">
 			<![CDATA[
-			([\(\[\{](?:3D|Extended|Unrated|Director's Cut|Alternate Ending)(?: Edition)?[\}\]\)])
+			([\(\[\{](?:3D|Extended|Unrated|Director's Cut|Alternate Ending|(?<=\(\[)[^\]]+(?=\]\)))(?: Edition)?[\}\]\)])
 			]]>
 		</set>
 
