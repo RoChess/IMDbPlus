@@ -738,7 +738,8 @@ namespace IMDb
             else if (addResult == DataProviderManager.AddSourceResult.SUCCESS_REPLACED)
             {
                 Logger.Warning("Load Script Warning: Scraper debug-mode enabled, so existing script was replaced.");
-                return true;
+                // Not returning 'true', would otherwise always get IMDb+ GUI note that an update occured
+                //return true;
             }
             else if (addResult == DataProviderManager.AddSourceResult.SUCCESS)
             {
