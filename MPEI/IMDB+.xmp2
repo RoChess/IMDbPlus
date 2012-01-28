@@ -572,17 +572,21 @@ public class Script
     <UpdateUrl>http://imdbplus.googlecode.com/svn/trunk/MPEI/update.xml</UpdateUrl>
     <Version>
       <Major>1</Major>
-      <Minor>4</Minor>
+      <Minor>5</Minor>
       <Build>0</Build>
-      <Revision>239</Revision>
+      <Revision>250</Revision>
     </Version>
     <ExtensionDescription>The IMDb+ plugin and scraper for MovingPictures will make your movie collection easier to use. The plugin will keep the scraper script up-to-date, and add powerful features such as rename and grouping of movie series. It also corrects English titles, allows RottenTomatoes ratings, and many other features.</ExtensionDescription>
-    <VersionDescription>Fixed bug in which scraper-script options were not saved before initiating the IMDb+ refresh system. Added AU/CA/NZ rating system option. The 'Refresh all fields' option is enabled by default now on new installations to make it less confusing for new users. All supported scraper languages now have their IMDb+ plugin language file include as well.
+    <VersionDescription>* Fixed bug that caused MovPic to use wrong IMDb+ scraper-script path after update
+* Fixed bug on cover sources getting re-enabled
+* If scraper-debug mode is enabled IMDb+ GUI notification is off
 
-This version includes IMDb+ scraper-script v4.1.8 by default which will auto update once IMDb+ plugin runs for the first time and a new version is available.</VersionDescription>
+This version includes IMDb+ scraper-script v4.3.2 by default
+which will auto update once IMDb+ plugin runs for the first time
+and a new version is available.</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
-    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.4.0.239.mpe1</OnlineLocation>
-    <ReleaseDate>2012-01-20T15:06:46</ReleaseDate>
+    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.5.0.250.mpe1</OnlineLocation>
+    <ReleaseDate>2012-01-28T02:33:31</ReleaseDate>
     <Tags>moving pictures, movies, scraper</Tags>
     <Location>.\Release\imdbplus.plugin.v[Version].mpe1</Location>
     <Params>
@@ -777,21 +781,21 @@ This version includes IMDb+ scraper-script v4.1.8 by default which will auto upd
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Resources\sidebar.jpg</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{29460c1a-30b7-475e-b5de-1f13c0bd3054}-sidebar.jpg</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{1b6176a7-97fa-4cd8-8cb7-535b73479e85}-sidebar.jpg</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Resources\header.jpg</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{160e1e60-284c-4b77-9973-9ba057de500c}-header.jpg</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{f886a280-6a4c-48f1-b645-41f7dd6cd311}-header.jpg</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\IMDb+\Images\imdb_icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{f0541227-670c-4436-bcd7-f0fdb45e98f1}-imdb_icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{c74b537e-41f6-4b97-95e5-f246e57c5279}-imdb_icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
@@ -819,7 +823,7 @@ This version includes IMDb+ scraper-script v4.1.8 by default which will auto upd
         <Recursive>true</Recursive>
       </FolderGroup>
     </FolderGroups>
-    <ProjectFilename>IMDB+.xmp2</ProjectFilename>
+    <ProjectFilename>IMDb+.xmp2</ProjectFilename>
     <UpdatePath1>./update.xml</UpdatePath1>
     <UpdatePath2 />
     <UpdatePath3 />
