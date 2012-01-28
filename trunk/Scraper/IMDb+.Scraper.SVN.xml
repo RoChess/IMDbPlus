@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="3" point="1" />
-		<published month="01" day="27" year="2012" />
+		<version major="4" minor="3" point="2" />
+		<published month="01" day="28" year="2012" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>en|de|es|fr|it|pt|se|is|nl</language>
 	</details>
@@ -1272,7 +1272,7 @@
 			<if test="${global_options_rename_titles}=true">
 				<set name="rx_rename_check_prefix">
 					<![CDATA[
-					(?<=<imdbplus>.*)<rename[\t\s]+id="
+					<imdbplus>.+<rename[\t\s]+id="
 					]]>
 				</set>
 				<set name="rx_rename_check_postfix">
@@ -1325,7 +1325,7 @@
 				<!-- Rename titles for purpose of grouping or title fixes, based on contents of custom XML file -->
 				<set name="rx_rename_check_prefix">
 					<![CDATA[
-					(?<=<imdbplus>.*)<rename[\t\s]+id="
+					<imdbplus>.+<rename[\t\s]+id="
 					]]>
 				</set>
 				<set name="rx_rename_check_postfix">
