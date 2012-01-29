@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="2" point="0" />
-		<published month="01" day="27" year="2012" />
+		<version major="1" minor="2" point="1" />
+		<published month="01" day="29" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -514,6 +514,7 @@
 	<rename id="tt1967502" title="G.I. Joe I: The Invasion of Cobra Island" />
 	<rename id="tt1046173" title="G.I. Joe I: The Rise of Cobra" />
 	<rename id="tt1583421" title="G.I. Joe II: Retaliation" />
+	<rename id="tt0092593" title="Goodbye, Children" foreign="Au Revoir Les Enfants" />
 	<rename id="tt0031385" title="Goodbye, Mr. Chips (UK)" />
 	<rename id="tt0327804" title="Goodbye, Mr. Chips (TV)" />
 	<rename id="tt0591381" title="Goosebumps #2.14 - The Scarecrow Walks at Midnight" />
@@ -778,6 +779,7 @@
 	<rename id="tt0112041" title="Lonesome Dove III: Streets of Laredo" />
 	<rename id="tt0115238" title="Lonesome Dove IV: Dead Man's Walk" />
 	<rename id="tt0783328" title="Lonesome Dove V: Comanche Moon" />
+	<rename id="tt0245712" title="Love's a Bitch" foreign="Amores perros" />
 	<rename id="tt0351283" title="Madagascar I" />
 	<rename id="tt0479952" title="Madagascar II: Escape 2 Africa" />
 	<rename id="tt1277953" title="Madagascar III" />
@@ -880,9 +882,9 @@
 	<rename id="tt1790809" title="Pirates Of The Caribbean V" />
 	<rename id="tt1790810" title="Pirates Of The Caribbean VI" />
 	<rename id="tt0134847" title="Pitch Black I" />
+	<rename id="tt0407658" title="Pitch Black II: Dark Fury (Prequel)" sortby="Pitch Black Ib" />
 	<rename id="tt0296572" title="Pitch Black II: The Chronicles Of Riddick" />
-	<rename id="tt0407658" title="Pitch Black III: Dark Fury" />
-	<rename id="tt1411250" title="Pitch Black IV" />
+	<rename id="tt1411250" title="Pitch Black III: Dead Man Stalking" />
 	<rename id="tt0063442" title="Planet of the Apes I" />
 	<rename id="tt0065462" title="Planet of the Apes II: Beneath the..." />
 	<rename id="tt0067065" title="Planet of the Apes III: Escape from the..." />
@@ -926,6 +928,8 @@
 	<rename id="tt0432021" title="Resident Evil III: Extinction" />
 	<rename id="tt1220634" title="Resident Evil IV: Afterlife" />
 	<rename id="tt1855325" title="Resident Evil V: Retribution" />
+	<rename id="tt1174954" title="Resident Evil (CG) I: Degeneration" sortby="Resident Evil Zort (CG) I" />
+	<rename id="tt1753496" title="Resident Evil (CG) II: Damnation" sortby="Resident Evil Zort (CG) II" />
 	<rename id="tt0089907" title="Return of the Living Dead I" />
 	<rename id="tt0095990" title="Return of the Living Dead II" />
 	<rename id="tt0107953" title="Return of the Living Dead III" />
@@ -1167,6 +1171,7 @@
 	<rename id="tt1343097" title="The Girl III: Who Kicked the Hornet's Nest" foreign="Luftslottet som sprängdes" />
 	<rename id="tt1568346" title="The Girl (Remake) I: with the Dragon Tattoo" />
 	<rename id="tt1703246" title="The Girl (Remake) II: Who Played with Fire" />
+	<rename id="tt0047821" title="The Girlfriends" foreign="Le Amiche" />
 	<rename id="tt0068646" title="The Godfather: Part I" />
 	<rename id="tt0071562" title="The Godfather: Part II" />
 	<rename id="tt0099674" title="The Godfather: Part III" />
@@ -1372,6 +1377,7 @@
 	<rename id="tt0320691" title="Underworld I" />
 	<rename id="tt0401855" title="Underworld II: Evolution" />
 	<rename id="tt0834001" title="Underworld III: Rise of the Lycans" />
+	<rename id="tt1496025" title="Underworld IV: Awakening" />
 	<rename id="tt0443676" title="Undisputed II: Last Man Standing" />
 	<rename id="tt1156466" title="Undisputed III: Redemption" />
 	<rename id="tt0808519" title="Unknown (Cult)" />
