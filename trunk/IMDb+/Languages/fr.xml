@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- IMDb+ translation file -->
+<!-- French -->
+<!-- Note: English is the fallback for any strings not found in other languages -->
+<strings>
+	<!-- A -->
+	<string Field="AddForeignTitle">Ajouter le titre étranger</string>
+	<string Field="AddForeignTitleDescription">Off = Conserver le titre tel quel
+On = Ajoute le titre original entre parenthèses
+
+L'activation de ce paramètre permet de voir le titre original entre parenthèses après le titre Anglais.
+
+Example: Black Book (Le livre noir)
+</string>
+
+
+	<!-- B -->
+	<string Field="BoolOn">On</string>
+	<string Field="BoolOff">Off</string>
+
+	<!-- C -->
+	<string Field="Cancel">Annuler</string>
+	<string Field="CountryFilter">Avancé : Filtre par pays</string>
+	<string Field="CountryFilterDescription">Il y a de nombreux films en Anglais qui ont des titres étrangers. Pour aider la détection correcte des titres Anglais, il est nécessaire de filtrer aussi le pays dans lequel le film a été produit.
+
+Les pays par défaut qui n'utilise pas les titres étranger sont : 'us.ca.gb.ie.au.nz' (Etats-Unis, Canada, Grande Bretagne, Irlande, Australie et Nouvelle Zélande)
+
+Note: Le clavier virtuel de MediaPortal ne support pas le caractère '|' , le '.' est utilisé à la place pour séparé les différents langages. Soyez prudent en configurant ce réglage car il peut bloquer les fonctionnalités du scraper IMDb+
+</string>
+
+	<!-- D -->
+	<string Field="DefaultDescription">La mise en évidence des options ci-dessus et une explication détaillée est affichée ici.</string>
+
+	<!-- E -->
+
+	<!-- F -->
+	<string Field="First">Premier</string>
+	<string Field="FixMissingSummary">Force les commentaires des utilisateurs lorsque qu'il n'y a pas de résumé officiel</string>
+	<string Field="FixMissingSummaryDescription">Off = Conserve le résumé vide
+On = Force un commentaire utilisateur à la place d'un résumé officiel
+
+Tous les films n'ont pas encore de résumé disponible sur le site imdb.com. Dans certains cas, ce même film pourra avoir un commentaire fait par un utilisateur. Ce paramètre permet d'utiliser le texte du commentaire utilisateur à la place de ne rien afficher.
+
+Note: Attention que certains commentaires utilisateur contiennent de la publicité.
+</string>
+	<string Field="ForceIMDbPlus">Forcer IMDb+</string>
+	<string Field="ForceIMDbPlusDescription">Etes-vous prêt à forcer tous vos films 
+importés avec le scraper IMDb standard pour utiliser le scraper IMDb+?
+</string>
+	<string Field="ForceIMDbPlusComplete">Conversion réussie {0}/{1} des films
+vers le scraper IMDb+.
+</string>
+	<string Field="ForeignTitleFirst">Démarrer le titre avec le titre étranger en premier</string>
+	<string Field="ForeignTitleFirstDescription">Off = Anglais (Etranger)
+On = Etranger (Anglais)
+
+L'activation de ce paramètre permet de voir le titre original suivit par le titre Anglais entre parenthèses.
+
+Example: Le livre noir (Black Book)
+</string>
+
+	<!-- G -->
+
+	<!-- H -->
+
+	<!-- I -->
+	<string Field="IMDbMetaScore">Metacritics Notes</string>
+	<string Field="IMDbMetaScoreDescription">Off = La note principal imdb.com est utilisée
+On = Utiliser les notes de Metacritics Metascore à la place
+
+Le site imdb.com offre aussi les notes de Metacritics.com. Activer ce paramètre permet d'utiliser ces notes, sinon les notes IMDb sont utilisées.
+
+Note: Ce régagle nécessite que le paramètre 'Note IMDb' soit aussi activé et l'activation de ce réglage va désactiver les méthodes de RottenTomatoes pour les résumés manquants et les infos de durée.
+</string>
+	<string Field="IMDbScore">IMDb Notes</string>
+	<string Field="IMDbScoreDescription">Off = Utilise le site RottenTomatoes
+On = Utilise uniquement le site imdb.com
+
+RottenTomatoes offre des informations additionneles, mais si vous voulez restreindre uniquement au site imdb.com alors activez ce paramètre.
+
+Note: Cela désactive aussi la possibilité d'avoir par un autre moyen les résumés, durées et notes manquantes sur imdb.com.
+</string>
+	<string Field="IMDbInfo">IMDb+ Informations</string>
+	<string Field="InfoPluginVersion">Version du plugin: v{0}</string>
+	<string Field="InfoScraperAuthor">Auteur du scraper: {0}</string>
+	<string Field="InfoScraperVersion">Version du scraper: v{0}</string>
+	<string Field="InfoScraperPriority">Priorité du scraper: {0}</string>
+	<string Field="InfoScraperPublished">Scraper publié le: {0}</string>
+	<string Field="InfoScraperLastUpdateCheck">Dernière vérification de mise à jour: {0}</string>
+	<string Field="InfoMoviesIMDbPlusPrimary">Nombre de films utilisant IMDb+ comme source: {0}</string>
+	<string Field="InfoMoviesOtherPlusPrimary">Nombre de films utilisant une autre source: {0}</string>
+	<string Field="InfoReplacementsVersion">Cette version remplace: v{0}</string>
+	<string Field="InfoReplacementsPublished">Remplacement publié le: {0}</string>
+	<string Field="InfoReplacementEntries">Nombre d'entrées dans le remplacement: {0}</string>
+	<string Field="InfoCustomReplacementEntries">Nombre d'entrées dans le remplacement (Custom): {0}</string>
+	<string Field="IntervalSixHours">6 Heures</string>
+	<string Field="IntervalTwelveHours">12 Heures</string>
+	<string Field="IntervalTwentyFourHours">24 Heures</string>
+	<string Field="IntervalTwoDays">2 Jours</string>
+	<string Field="IntervalThreeDays">3 Jours</string>
+	<string Field="IntervalFourDays">4 Jours</string>
+	<string Field="IntervalSevenDays">7 Jours</string>
+
+	<!-- K -->
+
+	<!-- J -->
+
+	<!-- L -->
+	<string Field="LastScraperUpdate">Mise à jour du scraper</string>
+	<string Field="LanguageFilter">Avancé : filter de language</string>
+	<string Field="LanguageFilterDescription">Filtre spécial permettant d'introduire une autre langue à coté du titre Anglais (en). Utilisez le code HTML source de imdb.com HTML pour trouver le code ISO 639-1 correspondant après la balise /language/.
+
+Le langage par défaut est Anglais via : 'en'
+
+Néanmoins, si vous êtes de Norvège et que vous souhaitez avoir les films Norvégiens avec leurs titres originaux et les titres Anglais pour tout reste, alors utiliser : 'en.no'
+
+Note: Le clavier virtuel de MediaPortal ne support pas le caractère '|' , le '.' est utilisé à la place pour séparé les différents langages. Soyez prudent en configurant ce réglage car il peut bloquer les fonctionnalités du scraper IMDb+
+</string>
+	<string Field="LongSummary">Utilise les longs résumés. Ces résumés peuvent contenir des publicités</string>
+	<string Field="LongSummaryDescription">Off = Résumés courts
+On = Résumés longs (possibilité de publicités)
+
+Les résumés longs offrent plus d'information mais peuvent parfois contenir des publicités et révèles parfois l'intrigue du film. C'est pourquoi ce paramètre est désactivé par défaut mais vous pouvez bien sûr l'activer si vous préférez les longs résumés.
+</string>
+
+	<!-- M -->
+	<string Field="MinIMDbVotes">Un nombre minimum de votes IMDb est nécessaire</string>
+	<string Field="MinIMDbVotesDescription">Off = Utilise toujours les scores de imdb.com
+On = Utilise les scores de imdb.com seulement si il y a plus de 20 votes
+
+Les scores de IMBd sont souvent gonflés par des personnes qui ont travaillées sur le film. C'est pourquoi il est assez fréquent que les films avec moins de 20 votes aient un score très élevé.
+
+Si vous activez ce paramètre alors les scores IMDb avec moins de 20 votes seront ignorés.
+</string>
+	<string Field="MultiSelectDialog">Dialogue de sélection multiple</string>
+
+	<!-- N -->
+	<string Field="No">Non</string>
+	<string Field="NumberOfMovies">{0}/{1} Films</string>
+	<string Field="NumberOfMovies2">{0} Films</string>
+	<string Field="NoSourcesFound">Aucun films trouvé ne peut être forcé
+en utilisant le scraper IMDb+!</string>
+	<string Field="NullSource">Pas de source mais un ID IMDb utilisable</string>
+
+	<!-- O -->
+	<string Field="OneWriterDirector">Limiter les imports à seulement un auteur et un réalisateur</string>
+	<string Field="OneWriterDirectorDescription">Off = Avoir tous les noms des auteurs et réalisateurs
+On = Avoir uniquement le premier nom d'auteur et de réalisateur
+
+Certain skins n'offrent pas beaucoup de place pour les auteurs et réalisateurs. Donc pour prévenir un défilement horizontal, activez ce paramètre pour seulement importer le premier nom d'auteur et réalisateur.
+
+Gardez à l'esprit que ceci affectera les capacités de recherche des films par certains nom d'auteurs ou réalisateur car seulement un nom sera disponible par film. D'un autre coté, le nombre de films réalisé par plusieurs auteurs ou réalisateurs est très limité.
+</string>
+	<string Field="OriginalTitle">Utiliser le titre original du film</string>
+	<string Field="OriginalTitleDescription">Off = Toujours forcer le titre Anglais
+On = Utiliser le titre original pour les films étranger
+
+Les films étranger ont souvent un titre dans la langue du pays.
+
+Si vous souhaitez avoir tous vos films avec des titres Anglais, alors conserver le paramètre inactif.
+</string>
+
+	<!-- P -->
+
+	<!-- R -->
+	<string Field="Ratings">Système de certification Anglais</string>
+	<string Field="RatingsDescription">Il y a de nombreux système de certification basé sur le système Anglais à travers le monde. Le plus connu est le système Américain basé sur la certification MPAA avec des résultats tel que PG-13, R, NC-17, etc.
+
+Les utilisateurs en Australie, Canada, Angleterre et Nouvelle Zélande peuvent utiliser ce paramètre pour choisir leur système de certification locale.</string>
+	<string Field="RatingsHeader">Choisir un system de certification</string>
+	<string Field="Rating01">USA</string>
+	<string Field="Rating02">UK</string>
+	<string Field="Rating03">Canada (Alberta)</string>
+	<string Field="Rating04">Canada (British Columbia)</string>
+	<string Field="Rating05">Canada (Manitoba)</string>
+	<string Field="Rating06">Canada (Nova Scotia)</string>
+	<string Field="Rating07">Canada (Ontario)</string>
+	<string Field="Rating08">Canada (Quebec)</string>
+	<string Field="Rating09">Australie</string>
+	<string Field="Rating10">Nouvelle Zélande</string>
+	<string Field="RefreshMovies">Mettre à jour les films</string>
+	<string Field="RefreshingMovies">Films en cours de mise à jour</string>
+	<string Field="RefreshCancel">Annuler la mise à jour</string>
+	<string Field="RefreshMoviesDescription">Etes-vous sur de vouloir mettre tous les films à jour
+qui ont IMDb+ comme source primaire?</string>
+	<string Field="RefreshMovieStatus">Mise à jour {0}/{1} films: {2}%</string>
+	<string Field="RefreshMoviesNotification">La mise à jour IMDb+ est effectuée.
+Appréciez les résultats.</string>
+	<string Field="RefreshMoviesCancelNotification">La mise à jour a été annulée.
+{0} films fait jusque ici.
+Mettez à nouveau à jour pour reprendre.</string>
+	<string Field="RefreshAllFields">Mettre à jour tous les champs</string>
+	<string Field="RefreshAllFieldsDescription">Off = Mettre à jour seulement quelques points
+On = Mettre à jour l'ensemble
+
+Les informations sur IMDb sont constamment mise à jour et complétées. Pour cette raison il est sensé de mettre à jour votre collection de films de temps en temps.
+
+Activer ce paramètre va forcer l'ensemble à être mise à jour. Dans le cas contraire seulement les champs vides, les certifications, les scores et les votes seront mis à jour.
+
+Note: Ce paramètre désactive le remplacement des noms pour les films existants.
+</string>
+	<string Field="RemoveFirstRoman">Retirer les chiffres Romains du premier film d'un série</string>
+	<string Field="RemoveFirstRomanDescription">Off = Conserver le titre renommé tel quel
+On = Retirer les chiffres Romains du premier film
+
+Si le système pour renommer les films est actif, par défaut les séries seront groupées avec l'ajout un chiffre Romain dans le titre. Cela est aussi fait pour le premier film de la série. Donc 'Avatar' devient 'Avatar I'. Activer ce paramètre triera toujours le premier film de la série correctement mais retirera le chiffre Romain du titre.
+
+Gardez à l'esprit que ceci est seulement fait quand le premier film de la série n'a pas de sous titre. Le film 'Indiana Jones I: Les aventuriers de l'arche perdue' conservera son chiffre Romain.
+</string>
+	<string Field="RenameTitles">Renommer les titres pour que les séries soient groupées ensemble</string>
+	<string Field="RenameTitlesDescription">Off = Utiliser le titre tel quel
+On = Renommer le titre pour grouper les titres par séries
+
+Il y a beaucoup de séries de film et parfois le titre ne commence pas par le même préfixe pour les grouper. Pour résoudre cela, un fichier base de donnée est utilisé pour renommer les titres sur base des ID IMDb. Le résultat est que les films sont renommés pour qu'ils soient faciles à identifier comme faisant partie d'une série.
+
+Exemple: 'Batman VII: The Dark Knight Rises' se groupera joliment avec les autres films de la série.
+
+Les titres par défaut sont placés dans un fichier 'IMDb+\Rename dBase IMDb+ Scraper.xml' qui se trouve dans le répertoire User de MediaPortal.
+
+Toutes les données customisées par vous doivent être inscrites dans le fichier 'IMDb+\Rename dBase IMDb+ Scraper (Custom).xml'
+
+Vous pouvez utiliser un simple éditeur texte pour éditer le fichier customisable. Le fichier par défaut sera mis à jour avec le plugin. Vérifier que le contenu du fichier XML répond à la norme.
+</string>
+	<string Field="RottenMeter">RottenTomatoes TomatoMeter</string>
+	<string Field="RottenMeterDescription">Off = Résultats RottenTomatoes 'Audience' 
+On = Résultats RottenTomatoes 'TomatoMeter'
+
+Il y a de nombreux résultats différents disponibles sur le site RottenTomatoes.
+
+Pour utiliser les résultats du TomatoMeter, vous devez activer ce paramètre. Sinon les résultats 'Audience' seront utilisés.
+</string>
+	<string Field="RottenAverage">RottenTomatoes score moyen</string>
+	<string Field="RottenAverageDescription">Off = RottenTomatoes score en 'Pourcentage'
+On = RottenTomatoes score 'Moyen'
+
+Ce paramètre active l'utilisation du score 'moyen', dans le cas contraire le score 'pourcentage' est utilisé.
+
+Le score 'Pourcentage' est une chose spéciale, dans ce score est compté le nombre d'utilisateurs RottenTomatoes qui ont voté.
+</string>
+	<string Field="RottenTopCritics">RottenTomatoes meilleurs critiques</string>
+	<string Field="RottenTopCriticsDescription">Off = RottenTomatoes toute les critiques
+On = RottenTomatoes meilleurs critiques
+
+Il y a un score TomatoMeter disponible pour toutes les critiques et un certain groupe de 'meilleurs" critiques.
+
+Activer ce paramètre permet de limiter le score aux meilleurs critiques.
+</string>
+	<string Field="Resume">(Recommencer)</string>
+
+	<!-- S -->
+	<string Field="ScraperOptionsTitle">IMDb+ Options du scraper</string>
+	<string Field="ScraperNotFirstPrompt">Le scraper(script) IMDb+The IMDb+ n'est pas le premier!\nCela posera des problèmes.\nVoulez-vous corriger cela?</string>
+	<string Field="SecondaryDetails">Obtenir des informations supplémentaires dans le language suivant</string>
+	<string Field="SecondaryDetailsDescription">Il y a une possibilité d'obtenir certaines informations dans des langues différentes. Cela couvre les informations tel que le résumé, la certification, le genre et même d'autres si elles sont disponibles.
+
+Supports actuels inclus : Néerlandais, Français, Allemand, Islandais, Portugais, Italien, Espagnol et Suèdois.
+</string>
+	<string Field="SecondaryDetailsHeader">Seconde langue</string>
+	<string Field="SecondaryLanguage01">Anglais</string>
+	<string Field="SecondaryLanguage02">Allemand</string>
+	<string Field="SecondaryLanguage03">Espagnol</string>
+	<string Field="SecondaryLanguage04">Français</string>
+	<string Field="SecondaryLanguage05">Italien</string>
+	<string Field="SecondaryLanguage06">Portugais</string>
+	<string Field="SecondaryLanguage07">Suèdois</string>
+	<string Field="SecondaryLanguage08">Islandais</string>
+	<string Field="SecondaryLanguage09">Néerlandais</string>
+	<string Field="SecondarySummary">Prendre le résumé Anglais si le résumé étranger n'est pas disponible</string>
+	<string Field="SecondarySummaryDescription">Off = N'affiche rien si le résumé étranger n'est pas disponible
+On = Utilise le résumé Anglais sur l'étranger n'existe pas
+
+Les sites de film étranger ne sont pas toujours aussi complet que imdb.com. Cela affecte principalement le résumé. Donc pour ne pas avoir d'informations manquantes, activez ce paramètre pour récupérer le résumé Anglais (si il est disponible). Idéalement vous pouvez vous enregistrer sur le site étranger et compléter les informations manquantes mais en attendant, vous pouvez utiliser l'Anglais.
+</string>
+	<string Field="SecondaryEnglishTitle">Second titre Anglais</string>
+	<string Field="SecondaryEnglishTitleDescription">Off = Utiliser le titre étranger
+On = Forcer le titre Anglais
+
+Si un langage étranger a été sélectionné pour certains détails, le titre sera également étranger. Ce paramètre peut être utilisé pour conserver le titre Anglais.
+
+Note: Cela ne s'applique pas au system qui renomme les séries de films. Une entrée traduite est toujours nécessaire pour avoir le titre étranger, même si ce paramètre est inactif.
+</string>
+	<string Field="SingleScore">Système de score unique</string>
+	<string Field="SingleScoreDescription">Off = Utiliser un système de score moyen
+On = Utiliser un système de score unique
+
+Il y a parfois une grosse différence entre les différents scores disponibles. Pour compenser cela, une valeur moyenne est utilisée. Elle est basée sur imdb, metacritics et rottentomatoes.
+
+Note: Si le 'IMDb score' est actif alors seul les scores moyens de imdb et metacritics sont utilisés quand ce paramètre est actif pour un score moyen.
+</string>
+	<string Field="SpecialEditions">Support pour marquage des éditions spéciales</string>
+	<string Field="SpecialEditionsDescription">Off = Conserver le titre tel quel
+On = Ajouter le marquage édition spécial au titre
+
+Si vous rendez le numéro IMDb tt-ID disponible dans le fichier ou par un fichier NFO, alors vous pouvez activer ce paramètre pour marquer les éditions spéciales.
+
+Vous pouvez ajouter, entre parenthèses, les termes suivants au nom de fichier :
+
+ - 3D
+ - Extended (étendue)
+ - Unrated (non coté)
+ - Director's Cut (version réalisateur)
+ - Alternate Ending (fin alternative)
+
+Vous pouvez ausse ajouter le terme 'Edition' après ceux-ci si vous le désirez.
+
+Exemple: "Avatar (tt0499549) (3D).mkv" donnera "Avatar (3D)"
+</string>
+	<string Field="SettingPluginEnabledName">Plugin activé</string>
+	<string Field="SettingPluginEnabledDescription">Activer / Désactiver ce paramètre pour contrôler si le plugin IMDb+ est chargé avec MediaPortal.</string>
+	<string Field="SettingListedHomeName">Listé dans Home</string>
+	<string Field="SettingListedHomeDescription">Activer ce paramètre pour faire apparaître le plugin IMDb+ dans le menu Home.</string>
+	<string Field="SettingListedPluginsName">Listé dans My Plugins</string>
+	<string Field="SettingListedPluginsDescription">Activer ce paramètre pour faire apparaître le plugin IMDB+ dans le menu Plugins.</string>
+	<string Field="SettingsSyncIntervalName">Nombres d'heures avant la prochaine vérification de mise à jour</string>
+	<string Field="SettingsSyncIntervalDescription">Ce paramètre définit tous les combiens le plugin va vérifier l'existence d'une mise à jour en ligne pour le script et pour le fichier database de remplacements.</string>
+	<string Field="SettingsSyncOnStartupName">Vérifier les mises à jour au démarrage</string>
+	<string Field="SettingsSyncOnStartupDescription">Ce paramètre va forcer le plugin à vérifier l'existence d'une mise à jour en ligne pour le script et pour le fichier database de remplacements à chaque démarrage de MediaPortal.</string>
+	<string Field="SettingsDisableNotificationsName">Désactive les notifications</string>
+	<string Field="SettingsDisableNotificationsDescription">Ce paramètre permet de désactiver l'affichage des notifications signalant la mise à jour du scraper dans votre système.</string>
+	<string Field="SelectSources">Selectionner les sources à convertir à IMDb+</string>
+	<string Field="StartsWith">Commencer avec {0}</string>
+	<string Field="SelectAlphas">Choisir les films commencant par...</string>
+
+	<!-- T -->
+
+	<!-- U -->
+	<string Field="UkRating">Titres de films en Anglais Angleterre</string>
+	<string Field="UkRatingDescription">Off = Utilise les titres Américain
+On = Utilise les titres d'Angleterre
+
+Utiliser ce paramètre pour choisir les titres d'Angleterre.
+
+Un exemple connu est celui du premier Harry Potter. Le titre original est "Harry Potter and the Philosopher's Stone", qui a été Américanisé en "Harry Potter and the Sorcerer's Stone". Le site IMDb est focalisé sur l'audience Américain, cela signifie que tous les titres utilisent le titre Américain quand il est disponible. Avec ce paramètre, vous pouvez choisir le titre Angleterre.
+
+Note: Il n'y a pour l'instant aucun support par le fichier de remplacement pour les titres Angleterre, donc vous recevrez comme résultat "Harry Potter I: Sorcerer's Stone", mais vous pouvez toujours écraser la régle via le fichier de remplacement spécifique utilisateur.
+</string>
+	<string Field="UpdatedScraperScript">MovingPictures a été mis à jour avec le scraper IMDb+. Version de script v{0}</string>
+	<string Field="Update">Mettre à jour</string>
+	<string Field="UpdateAll">Tout mettre à jour</string>
+	<string Field="UpdateReplacementOnly">Mettre à jour uniquement les remplacements</string>
+	<string Field="UpdateAlphas">Mettre à jour les films commencent par...</string>
+
+	<!-- V -->
+
+	<!-- W -->
+
+	<!-- Y -->
+	<string Field="Yes">Oui</string>
+</strings>
