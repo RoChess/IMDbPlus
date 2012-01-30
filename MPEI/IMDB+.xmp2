@@ -27,60 +27,60 @@
         <Description>Language</Description>
         <Files>
           <Items>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>OverwriteIfOlder</UpdateOption>
-              <LocalFileName>..\IMDb+\Languages\en-US.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{cec04eb0-2017-47d5-8840-8162846189da}-en-US.xml</ZipFileName>
-              <DestinationFilename>%Language%\IMDb+\en-US.xml</DestinationFilename>
-            </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>..\IMDb+\Languages\de.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{c63877c0-16ea-4f4e-bdd5-3136b6c8bda5}-de.xml</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{be464787-4017-48c1-8cc2-29287c1cc15d}-de.xml</ZipFileName>
               <DestinationFilename>%Language%\IMDb+\de.xml</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\en-US.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{5ad6ca7f-9e7e-441a-9a88-89a9bcc6a307}-en-US.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\en-US.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>..\IMDb+\Languages\es.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{04f7b872-d74b-4bf9-b51f-049d3911e13f}-es.xml</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{7f085a78-4cdd-478c-8dee-9d43d9507d96}-es.xml</ZipFileName>
               <DestinationFilename>%Language%\IMDb+\es.xml</DestinationFilename>
             </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>..\IMDb+\Languages\is.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{296ecb71-f7af-48d5-9db4-43f4bcbaab68}-is.xml</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{75a5ab26-2af4-4962-bb02-a16ef03e1cdd}-is.xml</ZipFileName>
               <DestinationFilename>%Language%\IMDb+\is.xml</DestinationFilename>
             </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>..\IMDb+\Languages\nl.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{32cacfd6-449b-4644-b7c7-0d09d919c3f8}-nl.xml</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{d893410f-17da-40de-b72b-b0b726b9d4d9}-nl.xml</ZipFileName>
               <DestinationFilename>%Language%\IMDb+\nl.xml</DestinationFilename>
             </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>OverwriteIfOlder</UpdateOption>
-              <LocalFileName>..\IMDb+\Languages\pt.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{4ee66d57-09a6-452e-81c3-ed1c3726569c}-pt.xml</ZipFileName>
-              <DestinationFilename>%Language%\IMDb+\pt.xml</DestinationFilename>
-            </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>..\IMDb+\Languages\pt-BR.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{f895cfd6-2557-4efe-bce0-f5bbbd1b0630}-pt-BR.xml</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{b6c74399-8c31-437a-8193-877b2694a019}-pt-BR.xml</ZipFileName>
               <DestinationFilename>%Language%\IMDb+\pt-BR.xml</DestinationFilename>
             </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\pt.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{e6f63af3-135e-4181-8559-09489c703c57}-pt.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\pt.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>..\IMDb+\Languages\sv.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{7b420b6e-3de6-40be-9383-2a220a889cc1}-sv.xml</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{b512c8af-101b-4644-9a5d-3603aa1ec7fd}-sv.xml</ZipFileName>
               <DestinationFilename>%Language%\IMDb+\sv.xml</DestinationFilename>
             </FileItem>
           </Items>
@@ -216,6 +216,32 @@
           </Items>
         </Files>
       </GroupItem>
+      <GroupItem Name="MediaInfo">
+        <ParentGroup />
+        <DisplayName>MediaInfo v0.7.53.0</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>MediaInfo DLL library v0.7.53.0
+
+Fixes:
+  * MediaPortal TS crash
+  * Compressed QuickTime files
+  * Wrong channel count PCM
+
+Adds support for:
+  * Official DTS CodecIDs
+  * Audio only AVI files</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\MediaInfo\MediaInfo.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{f171fa1d-63a4-4bf8-a25f-d890fd04b8c2}-MediaInfo.dll</ZipFileName>
+              <DestinationFilename>%Base%\MediaInfo.dll</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
     </Items>
   </Groups>
   <Sections>
@@ -257,6 +283,40 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <IncludedGroups />
         <PanelName>Welcome Screen</PanelName>
         <WizardButtonsEnum>NextCancel</WizardButtonsEnum>
+      </SectionItem>
+      <SectionItem Guid="3062fa2c-11bc-4846-aae3-636214e8b01b" Name="MediaInfo" ConditionGroup="">
+        <Params>
+          <Items>
+            <SectionParam Name="Header Title">
+              <Value>Update the MediaInfo DLL Library</Value>
+              <ValueType>String</ValueType>
+              <Description>Header title</Description>
+            </SectionParam>
+            <SectionParam Name="Header description">
+              <Value>The MediaInfo DLL library is used by MediaPortal and many plugins such as Moving-Pictures to gather codec, runtime and other info from mediafiles.</Value>
+              <ValueType>String</ValueType>
+              <Description>Description of section, shown in under section title</Description>
+            </SectionParam>
+            <SectionParam Name="Header image">
+              <Value>..\IMDb+\Images\imdb_icon.png</Value>
+              <ValueType>File</ValueType>
+              <Description>Image in upper right part</Description>
+            </SectionParam>
+            <SectionParam Name="Description ">
+              <Value>The IMDb+ plugin will update this DLL if the version you have is an older one. This will then avoid possible issues when Moving-Pictures imports new movies via the IMDb+ scraper-script.</Value>
+              <ValueType>String</ValueType>
+              <Description>Description of this operation</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+        <Actions>
+          <Items />
+        </Actions>
+        <IncludedGroups>
+          <string>MediaInfo</string>
+        </IncludedGroups>
+        <PanelName>Tree View Selector</PanelName>
+        <WizardButtonsEnum>BackNextCancel</WizardButtonsEnum>
       </SectionItem>
       <SectionItem Guid="0c9e930e-8075-4eeb-8a7b-da016180427c" Name="Install Section" ConditionGroup="">
         <Params>
@@ -630,60 +690,60 @@ and a new version is available.</VersionDescription>
         <ZipFileName>Installer{CopyFile}\{1e48b2f9-c28e-4c47-9f49-e8d1998e0018}-IMDb+.dll</ZipFileName>
         <DestinationFilename>%Plugins%\Windows\IMDb+.dll</DestinationFilename>
       </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName>..\IMDb+\Languages\en-US.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{cec04eb0-2017-47d5-8840-8162846189da}-en-US.xml</ZipFileName>
-        <DestinationFilename>%Language%\IMDb+\en-US.xml</DestinationFilename>
-      </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\IMDb+\Languages\de.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{c63877c0-16ea-4f4e-bdd5-3136b6c8bda5}-de.xml</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{be464787-4017-48c1-8cc2-29287c1cc15d}-de.xml</ZipFileName>
         <DestinationFilename>%Language%\IMDb+\de.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\en-US.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{5ad6ca7f-9e7e-441a-9a88-89a9bcc6a307}-en-US.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\en-US.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\IMDb+\Languages\es.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{04f7b872-d74b-4bf9-b51f-049d3911e13f}-es.xml</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{7f085a78-4cdd-478c-8dee-9d43d9507d96}-es.xml</ZipFileName>
         <DestinationFilename>%Language%\IMDb+\es.xml</DestinationFilename>
       </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\IMDb+\Languages\is.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{296ecb71-f7af-48d5-9db4-43f4bcbaab68}-is.xml</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{75a5ab26-2af4-4962-bb02-a16ef03e1cdd}-is.xml</ZipFileName>
         <DestinationFilename>%Language%\IMDb+\is.xml</DestinationFilename>
       </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\IMDb+\Languages\nl.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{32cacfd6-449b-4644-b7c7-0d09d919c3f8}-nl.xml</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{d893410f-17da-40de-b72b-b0b726b9d4d9}-nl.xml</ZipFileName>
         <DestinationFilename>%Language%\IMDb+\nl.xml</DestinationFilename>
       </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName>..\IMDb+\Languages\pt.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{4ee66d57-09a6-452e-81c3-ed1c3726569c}-pt.xml</ZipFileName>
-        <DestinationFilename>%Language%\IMDb+\pt.xml</DestinationFilename>
-      </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\IMDb+\Languages\pt-BR.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{f895cfd6-2557-4efe-bce0-f5bbbd1b0630}-pt-BR.xml</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{b6c74399-8c31-437a-8193-877b2694a019}-pt-BR.xml</ZipFileName>
         <DestinationFilename>%Language%\IMDb+\pt-BR.xml</DestinationFilename>
       </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\pt.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{e6f63af3-135e-4181-8559-09489c703c57}-pt.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\pt.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\IMDb+\Languages\sv.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{7b420b6e-3de6-40be-9383-2a220a889cc1}-sv.xml</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{b512c8af-101b-4644-9a5d-3603aa1ec7fd}-sv.xml</ZipFileName>
         <DestinationFilename>%Language%\IMDb+\sv.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
@@ -777,6 +837,13 @@ and a new version is available.</VersionDescription>
         <ZipFileName>Installer{CopyFile}\{68b4d233-8c1e-4528-b2c8-705279877636}-IMDb+.Scraper.SVN.xml</ZipFileName>
         <DestinationFilename>%Config%\IMDb+\IMDb+.Scraper.SVN.xml</DestinationFilename>
       </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\MediaInfo\MediaInfo.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{f171fa1d-63a4-4bf8-a25f-d890fd04b8c2}-MediaInfo.dll</ZipFileName>
+        <DestinationFilename>%Base%\MediaInfo.dll</DestinationFilename>
+      </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
@@ -822,8 +889,18 @@ and a new version is available.</VersionDescription>
         <Group>Skins</Group>
         <Recursive>true</Recursive>
       </FolderGroup>
+      <FolderGroup InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName />
+        <ZipFileName>Installer{CopyFile}\{5440bf72-9c6d-4f96-9949-c66873568a07}-</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+</DestinationFilename>
+        <Folder>..\IMDb+\Languages</Folder>
+        <Group>Language</Group>
+        <Recursive>true</Recursive>
+      </FolderGroup>
     </FolderGroups>
-    <ProjectFilename>IMDb+.xmp2</ProjectFilename>
+    <ProjectFilename>IMDB+.xmp2</ProjectFilename>
     <UpdatePath1>./update.xml</UpdatePath1>
     <UpdatePath2 />
     <UpdatePath3 />
