@@ -13,6 +13,745 @@
 			</filter>
 		</category>
 		<category>
+			<name>Collections</name>
+			<category>
+				<name>Action</name>
+				<category>
+					<name>Bad Boys</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Bad Boys</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Behind Enemy Lines</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Behind Enemy Lines</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Bourne</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>The Bourne</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Die Hard</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Die Hard</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Dirty Harry</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Dirty Harry</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Jack Ryan</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Jack Ryan</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>James Bond</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>James Bond</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Mission: Impossible</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Mission: Impossible</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Rambo</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Rambo</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Rocky</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Rocky</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>The Fast and the Furious</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>The Fast and the Furious</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>The Transporter</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>The Transporter</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Universal Soldiers</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Universal Soldier</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>xXx</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>xXx</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>Adventure</name>
+				<category>
+					<name>Indiana Jones</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Indiana Jones</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>National Treasure</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>National Treasure</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Pirates Of The Caribbean</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Pirates Of The Caribbean</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>Animation/Kids</name>
+				<category>
+					<name>Ice Age</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Ice Age</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Shrek</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Shrek</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Spy Kids</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Spy Kids</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>The Karate Kid</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>The Karate Kid</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>The Lion King</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>The Lion King</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Toy Story</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Toy Story</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>Comedy</name>
+				<category>
+					<name>American Pie</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>American Pie</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Austin Powers</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Austin Powers</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Crocodile Dundee</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Crocodile Dundee</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Meet the Parents</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Meet the Parents</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Police Academy</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Police Academy</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>Crime</name>
+				<category>
+					<name>Ocean's Trilogy</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Ocean's</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>The Godfather</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>The Godfather</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>Fantasy</name>
+				<category>
+					<name>Highlander</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Highlander</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Harry Potter</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Harry Potter</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>The Chronicles of Narnia</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>The Chronicles of Narnia</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>The Lord of the Rings</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>The Lord of the Rings</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>The Mummy</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>The Mummy</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>Horror</name>
+				<category>
+					<name>A Nightmare on Elm Street</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>A Nightmare on Elm Street</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Final Destination</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Final Destination</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Friday the 13th</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Friday the 13th</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Halloween</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Halloween</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Hannibal</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Hannibal</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>Sci-Fi</name>
+				<category>
+					<name>Alien</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Alien</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Back to the Future</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Back to the Future</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Jurassic Park</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Jurassic Park</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Mad Max</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Mad Max</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Planet of the Apes</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Planet of the Apes</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>RoboCop</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>RoboCop</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Star Trek</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Star Trek</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Star Wars</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Star Wars</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Terminator</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Terminator</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>The Chronicles Of Riddick</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Pitch Black</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>The Matrix</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>The Matrix</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Transformers</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Transformers</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>Superheroes</name>
+				<category>
+					<name>Batman</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Batman</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Marvel's Avengers</name>
+					<filter>
+						<match>any</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Captain America</value>
+						</rule>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Hulk</value>
+						</rule>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Iron Man</value>
+						</rule>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Nick Fury</value>
+						</rule>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>The Avengers</value>
+						</rule>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>The Incredible Hulk</value>
+						</rule>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Thor</value>
+						</rule>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Ultimate Avengers</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Spider-Man</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Spider-Man</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Superman</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Superman</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>X-Men</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>X-Men</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>Vampires/Zombies</name>
+				<category>
+					<name>Blade</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Blade</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Resident Evil</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Resident Evil</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Twilight Saga</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Twilight</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>Underworld</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Title</field>
+							<operator>begins with</operator>
+							<value>Underworld</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+		</category>
+		<category>
 			<name>Movies from A-Z</name>
 			<category>
 				<name>#</name>
@@ -438,7 +1177,7 @@
 			</category>
 		</category>
 		<category>
-			<name>American Film Institute - Top 10s</name>
+			<name>Top 10s - American Film Institute</name>
 			<category>
 				<name>AFI: Top 10 Animation</name>
 				<category>
@@ -1684,229 +2423,6 @@
 			</category>
 		</category>
 		<category>
-			<name>Top 20 - Male Actors</name>
-			<category>
-				<name>Tom Hanks</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Tom Hanks</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Russell Crowe</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Russell Crowe</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Denzel Washington</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Denzel Washington</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Johnny Depp</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Johnny Depp</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Sean Penn</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Sean Penn</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Tom Cruise</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Tom Cruise</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Will Smith</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Will Smith</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>George Clooney</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>George Clooney</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Leonardo DiCaprio</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Leonardo DiCaprio</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Brad Pitt</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Brad Pitt</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Daniel Day-Lewis</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Daniel Day-Lewis</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Kevin Spacey</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Kevin Spacey</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Jim Carrey</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Jim Carrey</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Ian McKellen</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Ian McKellen</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Morgan Freeman</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Morgan Freeman</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Nicolas Cage</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Nicolas Cage</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Christian Bale</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Christian Bale</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Robert Downey Jr.</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Robert Downey Jr.</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Heath Ledger</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Heath Ledger</value>
-					</rule>
-				</filter>
-			</category>
-			<category>
-				<name>Jeff Bridges</name>
-				<filter>
-					<match>all</match>
-					<rule>
-						<field>Actors</field>
-						<operator>contains</operator>
-						<value>Jeff Bridges</value>
-					</rule>
-				</filter>
-			</category>
-		</category>
-		<category>
 			<name>Top 20 - Female Actors</name>
 			<category>
 				<name>Julia Roberts</name>
@@ -2125,6 +2641,229 @@
 						<field>Actors</field>
 						<operator>contains</operator>
 						<value>Judi Dench</value>
+					</rule>
+				</filter>
+			</category>
+		</category>
+		<category>
+			<name>Top 20 - Male Actors</name>
+			<category>
+				<name>Tom Hanks</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Tom Hanks</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Russell Crowe</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Russell Crowe</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Denzel Washington</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Denzel Washington</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Johnny Depp</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Johnny Depp</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Sean Penn</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Sean Penn</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Tom Cruise</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Tom Cruise</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Will Smith</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Will Smith</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>George Clooney</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>George Clooney</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Leonardo DiCaprio</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Leonardo DiCaprio</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Brad Pitt</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Brad Pitt</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Daniel Day-Lewis</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Daniel Day-Lewis</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Kevin Spacey</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Kevin Spacey</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Jim Carrey</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Jim Carrey</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Ian McKellen</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Ian McKellen</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Morgan Freeman</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Morgan Freeman</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Nicolas Cage</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Nicolas Cage</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Christian Bale</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Christian Bale</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Robert Downey Jr.</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Robert Downey Jr.</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Heath Ledger</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Heath Ledger</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Jeff Bridges</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Jeff Bridges</value>
 					</rule>
 				</filter>
 			</category>
