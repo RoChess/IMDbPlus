@@ -1,0 +1,2133 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<imdbplus>
+	<categories>
+		<category>
+			<name>Blockbusters</name>
+			<filter>
+				<match>all</match>
+				<rule>
+					<field>Popularity</field>
+					<operator>is greater than</operator>
+					<value>30000</value>
+				</rule>
+			</filter>
+		</category>
+		<category>
+			<name>Movies from A-Z</name>
+			<category>
+				<name>#</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>A</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>B</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>C</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>D</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>E</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>F</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>G</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>H</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>I</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>J</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>K</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>L</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>M</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>N</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>O</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>P</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>Q</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>R</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>S</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>T</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>U</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>V</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>W</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>X</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>Y</value>
+					</rule>
+					<rule>
+						<field>Title</field>
+						<operator>does not begin with</operator>
+						<value>Z</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>A</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>A</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>B</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>B</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>C</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>C</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>D</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>D</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>E</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>E</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>F</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>F</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>G</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>G</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>H</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>H</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>I</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>I</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>J</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>J</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>K</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>K</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>L</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>L</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>M</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>M</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>N</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>N</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>O</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>O</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>P</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>P</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Q</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>Q</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>R</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>R</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>S</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>S</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>T</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>T</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>U</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>U</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>V</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>V</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>W</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>W</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>X</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>X</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Y</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>Y</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Z</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Title</field>
+						<operator>begins with</operator>
+						<value>Z</value>
+					</rule>
+				</filter>
+			</category>
+		</category>
+		<category>
+			<name>American Film Institute - Top 10s</name>
+			<category>
+				<name>AFI: Top 10 Animation</name>
+				<category>
+					<name>#1</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0029583</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#2</name>
+					<filter>
+							<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0032910</value>
+						</rule>
+					</filter>
+				</category>
+					<category>
+					<name>#3</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0034492</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#4</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0110357</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#5</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0032455</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#6</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0114709</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#7</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0101414</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#8</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0126029</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#9</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0042332</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#10</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0266543</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>AFI: Top 10 Romantic Comedy</name>
+				<category>
+					<name>#1</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0021749</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#2</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0075686</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#3</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0025316</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#4</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0046250</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#5</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0032904</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#6</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0098635</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#7</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0041090</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#8</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0093565</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#9</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0067185</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#10</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0108160</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>AFI: Top 10 Western</name>
+				<category>
+					<name>#1</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0049730</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#2</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0044706</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#3</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0046303</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#4</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0105695</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#5</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0040724</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#6</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0065214</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#7</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0064115</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#8</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0067411</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#9</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0031971</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#10</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0059017</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>AFI: Top 10 Sports</name>
+				<category>
+					<name>#1</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0081398</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#2</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0075148</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#3</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0035211</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#4</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0091217</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#5</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0094812</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#6</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0054997</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#7</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0080487</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#8</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0078902</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#9</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0037120</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#10</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0116695</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>AFI: Top 10 Mystery</name>
+				<category>
+					<name>#1</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0052357</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#2</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0071315</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#3</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0047396</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#4</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0037008</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#5</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0041959</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#6</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0033870</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#7</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0053125</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#8</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0090756</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#9</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0046912</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#10</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0114814</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>AFI: Top 10 Fantasy</name>
+				<category>
+					<name>#1</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0032138</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#2</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0120737</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#3</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0038650</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#4</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0024216</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#5</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0039628</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#6</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0097351</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#7</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0042546</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#8</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0107048</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#9</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0015400</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#10</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0094737</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>AFI: Top 10 Sci-Fi</name>
+				<category>
+					<name>#1</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0062622</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#2</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0076759</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#3</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0083866</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#4</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0066921</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#5</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0043456</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#6</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0083658</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#7</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0078748</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#8</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0103064</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#9</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0049366</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#10</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0088763</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>AFI: Top 10 Gangster</name>
+				<category>
+					<name>#1</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0068646</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#2</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0099685</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#3</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0071562</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#4</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0042041</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#5</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0061418</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#6</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0023427</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#7</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0110912</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#8</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0022286</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#9</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0021079</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#10</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0086250</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>AFI: Top 10 Courtroom Drama</name>
+				<category>
+					<name>#1</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0056592</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#2</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0050083</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#3</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0079417</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#4</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0084855</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#5</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0104257</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#6</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0051201</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#7</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0052561</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#8</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0061809</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#9</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0094924</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#10</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0055031</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>AFI: Top 10 Epic</name>
+				<category>
+					<name>#1</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0056172</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#2</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0052618</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#3</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0108052</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#4</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0031381</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#5</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0054331</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#6</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0120338</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#7</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0020629</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#8</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0120815</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#9</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0082979</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#10</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0049833</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+			<category>
+				<name>AFI: Top 10 Funniest Movies</name>
+				<category>
+					<name>#1</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0053291</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#2</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0084805</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#3</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0057012</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#4</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0075686</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#5</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0023969</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#6</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0071230</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#7</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0066026</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#8</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0025316</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#9</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0061722</value>
+						</rule>
+					</filter>
+				</category>
+				<category>
+					<name>#10</name>
+					<filter>
+						<match>all</match>
+						<rule>
+							<field>Full Path</field>
+							<operator>contains</operator>
+							<value>tt0080339</value>
+						</rule>
+					</filter>
+				</category>
+			</category>
+		</category>
+		<category>
+			<name>Top 20 - Male Actors</name>
+			<category>
+				<name>Tom Hanks</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Tom Hanks</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Russell Crowe</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Russell Crowe</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Denzel Washington</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Denzel Washington</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Johnny Depp</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Johnny Depp</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Sean Penn</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Sean Penn</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Tom Cruise</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Tom Cruise</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Will Smith</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Will Smith</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>George Clooney</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>George Clooney</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Leonardo DiCaprio</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Leonardo DiCaprio</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Brad Pitt</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Brad Pitt</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Daniel Day-Lewis</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Daniel Day-Lewis</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Kevin Spacey</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Kevin Spacey</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Jim Carrey</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Jim Carrey</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Ian McKellen</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Ian McKellen</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Morgan Freeman</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Morgan Freeman</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Nicolas Cage</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Nicolas Cage</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Christian Bale</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Christian Bale</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Robert Downey Jr.</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Robert Downey Jr.</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Heath Ledger</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Heath Ledger</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Jeff Bridges</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Jeff Bridges</value>
+					</rule>
+				</filter>
+			</category>
+		</category>
+		<category>
+			<name>Top 20 - Female Actors</name>
+			<category>
+				<name>Julia Roberts</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Julia Roberts</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Meryl Streep</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Meryl Streep</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Cate Blanchett</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Cate Blanchett</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Kate Winslet</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Kate Winslet</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Jodie Foster</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Jodie Foster</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Nicole Kidman</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Nicole Kidman</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Sandra Bullock</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Sandra Bullock</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Halle Berry</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Halle Berry</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Emma Thompson</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Emma Thompson</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Angelina Jolie</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Angelina Jolie</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Julianne Moore</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Julianne Moore</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Susan Sarandon</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Susan Sarandon</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Helen Mirren</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Helen Mirren</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Gwyneth Paltrow</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Gwyneth Paltrow</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Hilary Swank</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Hilary Swank</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Cameron Diaz</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Cameron Diaz</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Renée Zellweger</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Renée Zellweger</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Meg Ryan</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Meg Ryan</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Jennifer Aniston</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Jennifer Aniston</value>
+					</rule>
+				</filter>
+			</category>
+			<category>
+				<name>Judi Dench</name>
+				<filter>
+					<match>all</match>
+					<rule>
+						<field>Actors</field>
+						<operator>contains</operator>
+						<value>Judi Dench</value>
+					</rule>
+				</filter>
+			</category>
+		</category>
+	</categories>
+</imdbplus>
