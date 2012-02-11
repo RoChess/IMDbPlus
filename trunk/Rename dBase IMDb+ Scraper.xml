@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="2" point="1" />
-		<published month="01" day="29" year="2012" />
+		<version major="1" minor="2" point="2" />
+		<published month="02" day="11" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -968,6 +968,7 @@
 	<rename id="tt0266915" title="Rush Hour II" />
 	<rename id="tt0293564" title="Rush Hour III" />
 	<rename id="tt0114319" title="Sabrina (Remake)" />
+	<rename id="tt0120051" title="Safe House (Original)" />
 	<rename id="tt0047444" title="Samurai I: Musashi Miyamoto" />
 	<rename id="tt0048579" title="Samurai II: Duel at Ichijoji Temple" />
 	<rename id="tt0049710" title="Samurai III: Duel at Ganryu Island" />
