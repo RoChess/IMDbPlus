@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="2" point="2" />
-		<published month="02" day="11" year="2012" />
+		<version major="1" minor="2" point="3" />
+		<published month="02" day="12" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -362,6 +362,9 @@
 	<rename id="tt0163596" title="Dark Water (Canada)" />
 	<rename id="tt1677677" title="Dark Waters (UK)" />
 	<rename id="tt0391908" title="Dark Waters (Video)" />
+	<rename id="tt0099365" title="Darkman I" />
+	<rename id="tt0109552" title="Darkman II: The Return of Durant" />
+	<rename id="tt0116033" title="Darkman III: Die Darkman Die" />
 	<rename id="tt0238768" title="David Copperfield (TV)" />
 	<rename id="tt0106547" title="David Copperfield (Cartoon)" />
 	<rename id="tt0065615" title="David Copperfield (Original)" />
@@ -482,6 +485,8 @@
 	<rename id="tt0179183" title="Fortress II: Re-Entry" />
 	<rename id="tt0076054" title="Freaky Friday (Original)" />
 	<rename id="tt0113112" title="Freaky Friday (TV)" />
+	<rename id="tt1595842" title="Fred I: The Movie" />
+	<rename id="tt1927093" title="Fred II: Night of the Living Fred" />
 	<rename id="tt0497619" title="Freeway (Docu)" />
 	<rename id="tt0095177" title="Freeway (Cult)" />
 	<rename id="tt0076059" title="Fun with Dick and Jane (Original)" />
@@ -723,6 +728,8 @@
 	<rename id="tt0274166" title="Johnny English I" />
 	<rename id="tt1634122" title="Johnny English II: Reborn" />
 	<rename id="tt1606600" title="Jonah Hex (DC Showcase)" />
+	<rename id="tt0373051" title="Journey I: To the Center of the Earth" />
+	<rename id="tt1397514" title="Journey II: The Mysterious Island" />
 	<rename id="tt0206314" title="Joy Ride I" />
 	<rename id="tt1140941" title="Joy Ride II: Dead Ahead" />
 	<rename id="tt0330500" title="Ju-on I: The Curse" foreign="Ju-on" />
