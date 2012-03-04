@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="2" point="3" />
-		<published month="02" day="12" year="2012" />
+		<version major="1" minor="2" point="4" />
+		<published month="02" day="13" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1111,6 +1111,9 @@
 	<rename id="tt0078243" title="The 36th Chamber I: ...of Shaolin" foreign="Shao Lin san shi liu fang" />
 	<rename id="tt0081494" title="The 36th Chamber II: Return to..." foreign="Shao Lin da peng da shi" />
 	<rename id="tt0089029" title="The 36th Chamber III: Disciples of..." foreign="Pi li shi jie" />
+	<rename id="tt0983193" sortby="The Adventures of Tintin I" />
+	<rename id="tt1037226" title="The Adventures of Tintin II: Prisoners of the Sun" />
+	<rename id="tt1204343" title="The Adventures of Tintin III" />
 	<rename id="tt0160009" title="The Art Of War I" />
 	<rename id="tt1233571" title="The Art Of War II: Betrayal" />
 	<rename id="tt0878647" title="The Art Of War III: Retribution" />
@@ -1335,6 +1338,8 @@
 	<rename id="tt1216516" title="Tinker Bell II: ...and the Lost Treasure" />
 	<rename id="tt1216515" title="Tinker Bell III: ...and the Great Fairy Rescue" />
 	<rename id="tt1217213" title="Tinker Bell IV: Secret of the Wings" />
+	<rename id="tt0808510" title="Tooth Fairy I" />
+	<rename id="tt1935929" title="Tooth Fairy II" />
 	<rename id="tt0114709" title="Toy Story I" />
 	<rename id="tt0120363" title="Toy Story II" />
 	<rename id="tt0435761" title="Toy Story III" />
