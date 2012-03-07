@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="2" point="4" />
-		<published month="02" day="13" year="2012" />
+		<version major="1" minor="2" point="5" />
+		<published month="03" day="07" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -505,6 +505,8 @@
 	<rename id="tt0107254" title="Friday the 13th IX: Jason Goes to Hell - The Final Friday" sortby="Friday the 13th 09" />
 	<rename id="tt0211443" title="Friday the 13th X: Jason X" sortby="Friday the 13th 10" />
 	<rename id="tt0758746" title="Friday the 13th (Remake) I" />
+	<rename id="tt0089118" title="F/X I" />
+	<rename id="tt0101846" title="F/X II" />
 	<rename id="tt1525835" title="Gantz I" />
 	<rename id="tt1525836" title="Gantz II: Perfect Answer" />
 	<rename id="tt0263372" title="Gaslight (TV)" />
@@ -944,6 +946,9 @@
 	<rename id="tt0411806" title="Return of the Living Dead V: Rave to the Grave" />
 	<rename id="tt0098206" title="Road House I" />
 	<rename id="tt0469965" title="Road House II: Last Call" />
+	<rename id="tt0013556" title="Robin Hood (Original)" />
+	<rename id="tt0070608" title="Robin Hood (Cartoon)" />
+	<rename id="tt0102797" title="Robin Hood (TV)" />
 	<rename id="tt0093870" title="RoboCop I" sortby="RoboCop 1" />
 	<rename id="tt0100502" title="RoboCop II" sortby="RoboCop 2" />
 	<rename id="tt0107978" title="RoboCop III" sortby="RoboCop 3" />
