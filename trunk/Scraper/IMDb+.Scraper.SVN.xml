@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="3" point="4" />
-		<published month="03" day="06" year="2012" />
+		<version major="4" minor="3" point="5" />
+		<published month="03" day="07" year="2012" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -764,7 +764,7 @@
 					</set>
 					<set name="rx_plot2">
 						<![CDATA[
-						<p itemprop="description">\s*(?<moviePlotShort>.+?)\s*</p>
+						<p itemprop="description">\s*(?<moviePlotShort>.+?)(?:\s*<a[^>]+>See full summary</a>(?:&\w+;)*)?\s*</p>
 						]]>
 					</set>
 				</if>
@@ -802,7 +802,7 @@
 						<if test="${global_options_secondary_summary}=true">
 							<set name="rx_plot2">
 								<![CDATA[
-								<p itemprop="description">\s*(?<moviePlotShort>.+?)\s*</p>
+								<p itemprop="description">\s*(?<moviePlotShort>.+?)(?:\s*<a[^>]+>See full summary</a>(?:&\w+;)*)?\s*</p>
 								]]>
 							</set>
 							<parse name="summary2" input="${details_page}" regex="${rx_plot2}" />
