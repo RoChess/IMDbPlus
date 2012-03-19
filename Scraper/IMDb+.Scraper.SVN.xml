@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="3" point="6" />
-		<published month="03" day="18" year="2012" />
+		<version major="4" minor="3" point="7" />
+		<published month="03" day="19" year="2012" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1106,7 +1106,8 @@
 					</set>
 					<retrieve name="footer_page" url="${site}/_ajax/iframe?component=footer" />
 					<parse name="user_reviews" input="${footer_page}" regex="${rx_user_reviews}" />
-					<set name="movie.summary" value="${user_reviews[0][0]:htmldecode}" />
+					<set name="summary_clean" value="${user_reviews[0][0]:striptags}" />
+					<set name="movie.summary" value="${summary_clean:htmldecode}" />
 				</if>
 			</if>
 
