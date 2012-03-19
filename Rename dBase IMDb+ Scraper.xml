@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="2" point="5" />
-		<published month="03" day="07" year="2012" />
+		<version major="1" minor="2" point="6" />
+		<published month="03" day="18" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -858,6 +858,9 @@
 	<rename id="tt0366292" title="One Missed Call I" foreign="Chakushin ari" />
 	<rename id="tt0451010" title="One Missed Call II" foreign="Chakushin ari II" />
 	<rename id="tt0978797" title="One Missed Call III: Final Call" foreign="Chakushin ari final" />
+	<rename id="tt0400717" title="Open Season I" />
+	<rename id="tt1107365" title="Open Season II" />
+	<rename id="tt1646926" title="Open Season III" />
 	<rename id="tt0368909" title="Ong Bak I: Ong-Bak" />
 	<rename id="tt0785035" title="Ong Bak II: The Beginning" />
 	<rename id="tt1653690" title="Ong Bak III: The Final Battle" />
@@ -987,6 +990,27 @@
 	<rename id="tt0206275" title="Save the Last Dance I" />
 	<rename id="tt0486656" title="Save the Last Dance II" />
 	<rename id="tt1477076" title="Saw VII: The Final Chapter" />
+	<rename id="tt0267913" title="Scooby-Doo I" />
+	<rename id="tt0331632" title="Scooby-Doo II: Monsters Unleashed" />
+	<rename id="tt1258157" title="Scooby-Doo III: The Mystery Begins" />
+	<rename id="tt1618435" title="Scooby-Doo IV: Curse of the Lake Monster" />
+	<rename id="tt0189070" title="Scooby-Doo! I: Meets the Boo Brothers" />
+	<rename id="tt0189071" title="Scooby-Doo! II: ...and the Ghoul School" />
+	<rename id="tt0189072" title="Scooby-Doo! III: ...and the Reluctant Werewolf" />
+	<rename id="tt0192578" title="Scooby-Doo! IV: ...in Arabian Nights" />
+	<rename id="tt0274804" title="Scooby-Doo! V: Mystery Mask Mix-Up" />
+	<rename id="tt0166792" title="Scooby-Doo! VI: ...on Zombie Island" />
+	<rename id="tt0196931" title="Scooby-Doo! VII: ...and the Witch's Ghost" />
+	<rename id="tt0253658" title="Scooby-Doo! VIII: ...and the Alien Invaders" />
+	<rename id="tt0290057" title="Scooby-Doo! IX: ...and the Cyber Chase" />
+	<rename id="tt0255581" title="Scooby-Doo! X: Creepiest Capers" />
+	<rename id="tt0357139" title="Scooby-Doo! XI: ...and the Legend of the Vampire" />
+	<rename id="tt0369903" title="Scooby-Doo! XII: ...and the Monster of Mexico" />
+	<rename id="tt0199003" title="Scooby-Doo! XIII: Greatest Mysteries" />
+	<rename id="tt0418141" title="Scooby-Doo! XIV: ...and the Loch Ness Monster" />
+	<rename id="tt0433771" title="Scooby-Doo! XV: Aloha, Scooby-Doo" />
+	<rename id="tt1097636" title="Scooby-Doo! XVI: Chill Out, Scooby-Doo!" />
+	<rename id="tt1295021" title="Scooby-Doo! XVII: ...and the Goblin King" />
 	<rename id="tt0184894" title="Shanghai Noon I" />
 	<rename id="tt0300471" title="Shanghai Noon II: Shanghai Knights" />
 	<rename id="tt0031448" title="Sherlock Holmes I: The Hound of the Baskervilles" sortby="Sherlock Holmes (Original) 01" />
