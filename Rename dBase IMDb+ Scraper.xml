@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="2" point="7" />
-		<published month="03" day="19" year="2012" />
+		<version major="1" minor="2" point="8" />
+		<published month="03" day="28" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -745,6 +745,7 @@
 	<rename id="tt0163025" title="Jurassic Park III: Return to the Island" />
 	<rename id="tt0266697" title="Kill Bill: Volume I" />
 	<rename id="tt0378194" title="Kill Bill: Volume II" />
+	<rename id="tt1521225" title="Kill Bill: Volume III" />
 	<rename id="tt0256858" title="Killers (Classic)" />
 	<rename id="tt0116771" title="Killers (Cult)" />
 	<rename id="tt0367931" title="Killers (Indie)" />
@@ -1011,6 +1012,7 @@
 	<rename id="tt0433771" title="Scooby-Doo! XV: Aloha, Scooby-Doo" sortby="Scooby-Doo! 05" />
 	<rename id="tt1097636" title="Scooby-Doo! XVI: Chill Out, Scooby-Doo!" sortby="Scooby-Doo! 16" />
 	<rename id="tt1295021" title="Scooby-Doo! XVII: ...and the Goblin King" sortby="Scooby-Doo! 17" />
+	<rename id="tt2162709" title="Scooby-Doo! XVIII: Music of the Vampire" sortby="Scooby-Doo! 18" />
 	<rename id="tt0184894" title="Shanghai Noon I" />
 	<rename id="tt0300471" title="Shanghai Noon II: Shanghai Knights" />
 	<rename id="tt0031448" title="Sherlock Holmes I: The Hound of the Baskervilles" sortby="Sherlock Holmes (Original) 01" />
@@ -1198,6 +1200,7 @@
 	<rename id="tt0059183" title="The Flight of the Phoenix (Original)" />
 	<rename id="tt0091064" title="The Fly I" />
 	<rename id="tt0097368" title="The Fly II" />
+	<rename id="tt0080749" title="The Fog (Original)" />
 	<rename id="tt0082406" title="The Fox and the Hound I" />
 	<rename id="tt0465997" title="The Fox and the Hound II" />
 	<rename id="tt0058135" title="The Gendarme I: ...of Saint-Tropez" />
@@ -1363,6 +1366,8 @@
 	<rename id="tt0443701" title="The X-Files II: I Want to Believe" />
 	<rename id="tt0800369" title="Thor I" />
 	<rename id="tt1981115" title="Thor II" />
+	<rename id="tt0111438" title="Timecop I" />
+	<rename id="tt0318763" title="Timecop II: The Berlin Decision" />
 	<rename id="tt0823671" title="Tinker Bell I" />
 	<rename id="tt1216516" title="Tinker Bell II: ...and the Lost Treasure" />
 	<rename id="tt1216515" title="Tinker Bell III: ...and the Great Fairy Rescue" />
