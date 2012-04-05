@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="2" point="8" />
-		<published month="03" day="28" year="2012" />
+		<version major="1" minor="2" point="9" />
+		<published month="04" day="04" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -647,6 +647,7 @@
 	<rename id="tt0185371" title="House on Haunted Hill I" />
 	<rename id="tt0827782" title="House on Haunted Hill II: Return to House on Haunted Hill" />
 	<rename id="tt1646971" title="How to Train Your Dragon II" />
+	<rename id="tt2113625" title="How to Train Your Dragon: Book of Dragons" />
 	<rename id="tt2065968" title="How to Train Your Dragon: Gift of the Night Fury" />
 	<rename id="tt1744776" title="How to Train Your Dragon: Legend of the BoneKnapper Dragon" />
 	<rename id="tt0268380" title="Ice Age I" />
