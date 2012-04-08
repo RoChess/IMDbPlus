@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="2" point="9" />
-		<published month="04" day="04" year="2012" />
+		<version major="1" minor="3" point="0" />
+		<published month="04" day="08" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -611,6 +611,11 @@
 	<rename id="tt0337636" title="Hellraiser VII: Deader" sortby="Hellraiser 07" />
 	<rename id="tt0354623" title="Hellraiser VIII: Hellworld" sortby="Hellraiser 08" />
 	<rename id="tt1716747" title="Hellraiser IX: Revelations" sortby="Hellraiser 09" />
+	<rename id="tt0079289" title="Henry V: The Life of Henry the Fifth" />
+	<rename id="tt0036910" title="Henry V (Original)" />
+	<rename id="tt0060502" title="Henry V (Canada)" />
+	<rename id="tt0097499" title="Henry V (UK)" />
+	<rename id="tt2150275" title="Henry V (TV)" />
 	<rename id="tt0091203" title="Highlander I" />
 	<rename id="tt0102034" title="Highlander II: The Quickening" />
 	<rename id="tt0110027" title="Highlander III: The Final Dimension" />
