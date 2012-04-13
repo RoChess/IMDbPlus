@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="3" point="0" />
-		<published month="04" day="08" year="2012" />
+		<version major="1" minor="3" point="1" />
+		<published month="04" day="13" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -782,6 +782,10 @@
 	<rename id="tt1499249" title="Lake Placid III" />
 	<rename id="tt0146316" title="Lara Croft: Tomb Raider I" />
 	<rename id="tt0325703" title="Lara Croft: Tomb Raider II (The Cradle of Life)" />
+	<rename id="tt0093409" title="Lethal Weapon I" />
+	<rename id="tt0097733" title="Lethal Weapon II" />
+	<rename id="tt0104714" title="Lethal Weapon III" />
+	<rename id="tt0122151" title="Lethal Weapon IV" />
 	<rename id="tt0250494" title="Legally Blonde I" />
 	<rename id="tt0333780" title="Legally Blonde II: Red, White &amp; Blonde" />
 	<rename id="tt0107387" title="Leprechaun I" />
@@ -926,7 +930,7 @@
 	<rename id="tt0116704" title="Police Story IV: First Strike" foreign="Ging chaat goo si 4: Ji gaan daan yam mo" />
 	<rename id="tt0093773" title="Predator I" />
 	<rename id="tt0100403" title="Predator II" />
-	<rename id="tt1424381" title="Predator III" />
+	<rename id="tt1424381" title="Predator III: Predators" />
 	<rename id="tt0093304" title="Prison on Fire I" foreign="Gam yuk fung wan" />
 	<rename id="tt0103044" title="Prison on Fire II" foreign="Jian yu feng yun II: Tao fan" />
 	<rename id="tt0085127" title="Project A I" foreign="'A' gai wak" />
