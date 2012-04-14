@@ -26,11 +26,14 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="3" point="1" />
-		<published month="04" day="13" year="2012" />
+		<version major="1" minor="3" point="2" />
+		<published month="04" day="14" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
+	<rename id="tt1038988" title="[Rec] I" />
+	<rename id="tt1245112" title="[Rec] II" />
+	<rename id="tt1649444" title="[Rec] III: Génesis" />
 	<rename id="tt0103594" title="1492: Conquest of Paradise" />
 	<rename id="tt0112950" title="Empire Records" />
 	<rename id="tt0443424" title="9 (Original)" />
@@ -72,8 +75,8 @@
 	<rename id="tt0101917" title="A Nightmare on Elm Street VI: The Final Nightmare" />
 	<rename id="tt0111686" title="A Nightmare on Elm Street VII: New Nightmare" />
 	<rename id="tt0329101" title="A Nightmare on Elm Street VIII: Freddy vs. Jason" />
-	<rename id="tt1179056" title="A Nightmare on Elm Street (Remake) I" />
-	<rename id="tt1650038" title="A Nightmare on Elm Street (Remake) II" />
+	<rename id="tt1179056" title="A Nightmare on Elm Street (Remake) I" sortby="A Nightmare on Elm Street X01" />
+	<rename id="tt1650038" title="A Nightmare on Elm Street (Remake) II" sortby="A Nightmare on Elm Street X02" />
 	<rename id="tt1025103" title="A Room with a View (TV)" />
 	<rename id="tt0029606" title="A Star Is Born (Original)" />
 	<rename id="tt0047522" title="A Star Is Born (Musical/Original)" />
@@ -84,6 +87,9 @@
 	<rename id="tt0081595" title="A Tale of Two Cities (TV)" />
 	<rename id="tt1330978" title="Ace in the Hole: Sadaam Hussein" />
 	<rename id="tt1441232" title="Ace in the Hole (TV)" />
+	<rename id="tt0109040" title="Ace Ventura I: Pet Detective" />
+	<rename id="tt0112281" title="Ace Ventura II: When Nature Calls" />
+	<rename id="tt0844029" title="Ace Ventura III: Pet Detective Jr." />
 	<rename id="tt0313911" title="Agent Cody Banks I" />
 	<rename id="tt0358349" title="Agent Cody Banks II: Destination London" />
 	<rename id="tt0080339" title="Airplane! I" />
@@ -184,6 +190,9 @@
 	<rename id="tt1208647" title="Behind Enemy Lines III: Colombia" />
 	<rename id="tt1037011" title="Ben 10 I: Race Against Time" />
 	<rename id="tt1327701" title="Ben 10 II: Alien Swarm" />
+	<rename id="tt0086960" title="Beverly Hills Cop I" />
+	<rename id="tt0092644" title="Beverly Hills Cop II" />
+	<rename id="tt0109254" title="Beverly Hills Cop III" />
 	<rename id="tt0208003" title="Big Momma's House I" />
 	<rename id="tt0421729" title="Big Momma's House II" />
 	<rename id="tt1464174" title="Big Momma's House III: Like Father, Like Son" />
@@ -331,6 +340,8 @@
 	<rename id="tt0007801" title="Cleopatra (Classic)" />
 	<rename id="tt0024991" title="Cleopatra (Original)" />
 	<rename id="tt0346765" title="Cleopatra (Argentina)" />
+	<rename id="tt0109445" title="Clerks I" />
+	<rename id="tt0424345" title="Clerks II" />
 	<rename id="tt0017765" title="College (Classic)" />
 	<rename id="tt0082198" title="Conan the Barbarian (Original)" />
 	<rename id="tt0266425" title="Conspiracy (TV)" />
@@ -504,7 +515,7 @@
 	<rename id="tt0097388" title="Friday the 13th VIII: Jason Takes Manhattan" sortby="Friday the 13th 08" />
 	<rename id="tt0107254" title="Friday the 13th IX: Jason Goes to Hell - The Final Friday" sortby="Friday the 13th 09" />
 	<rename id="tt0211443" title="Friday the 13th X: Jason X" sortby="Friday the 13th 10" />
-	<rename id="tt0758746" title="Friday the 13th (Remake) I" />
+	<rename id="tt0758746" title="Friday the 13th (Remake) I" sortby="Friday the 13th 11" />
 	<rename id="tt0089118" title="F/X I" />
 	<rename id="tt0101846" title="F/X II" />
 	<rename id="tt1525835" title="Gantz I" />
@@ -563,8 +574,8 @@
 	<rename id="tt0113253" title="Halloween VI: The Curse of Michael Myers" />
 	<rename id="tt0120694" title="Halloween VII: 20 Years Later (H20)" />
 	<rename id="tt0220506" title="Halloween VIII: Resurrection" />
-	<rename id="tt0373883" title="Halloween (Remake) I" />
-	<rename id="tt1311067" title="Halloween (Remake) II" />
+	<rename id="tt0373883" title="Halloween (Remake) I" sortby="Halloween X01" />
+	<rename id="tt1311067" title="Halloween (Remake) II" sortby="Halloween X02" />
 	<rename id="tt0091474" title="Hannibal I: Manhunter" />
 	<rename id="tt0102926" title="Hannibal II: The Silence of the Lambs" />
 	<rename id="tt0212985" title="Hannibal III: Hannibal" />
@@ -822,6 +833,8 @@
 	<rename id="tt0119654" title="Men in Black I" />
 	<rename id="tt1259014" title="Mesrine I: Killer Instinct" foreign="L'instinct de mort" />
 	<rename id="tt0411272" title="Mesrine II: Public Enemy #1" foreign="L'ennemi public n°1" />
+	<rename id="tt0790686" title="Mirrors I" />
+	<rename id="tt1576699" title="Mirrors II" />
 	<rename id="tt0087727" title="Missing in Action I" />
 	<rename id="tt0089604" title="Missing in Action II: The Beginning" />
 	<rename id="tt0094792" title="Missing in Action III: Braddock" />
@@ -913,8 +926,8 @@
 	<rename id="tt0067065" title="Planet of the Apes III: Escape from the..." />
 	<rename id="tt0068408" title="Planet of the Apes IV: Conquest of the..." />
 	<rename id="tt0069768" title="Planet of the Apes V: Battle for the..." />
-	<rename id="tt0133152" title="Planet of the Apes (Remake) I" />
-	<rename id="tt1318514" title="Planet of the Apes (Remake) II: Rise of the..." />
+	<rename id="tt0133152" title="Planet of the Apes (Remake) I" sortby="Planet of the Apes X01" />
+	<rename id="tt1318514" title="Planet of the Apes (Remake) II: Rise of the..." sortby="Planet of the Apes X02" />
 	<rename id="tt0087928" title="Police Academy I" />
 	<rename id="tt0089822" title="Police Academy II: Their First Assignment" />
 	<rename id="tt0091777" title="Police Academy III: Back in Training" />
@@ -935,6 +948,8 @@
 	<rename id="tt0103044" title="Prison on Fire II" foreign="Jian yu feng yun II: Tao fan" />
 	<rename id="tt0085127" title="Project A I" foreign="'A' gai wak" />
 	<rename id="tt0092501" title="Project A II" foreign="'A' gai wak juk jap" />
+	<rename id="tt1082868" title="Quarantine I" />
+	<rename id="tt1699231" title="Quarantine II: Terminal" />
 	<rename id="tt0089421" title="Quatermain I: King Solomon's Mines" />
 	<rename id="tt0092534" title="Quatermain II: Allan Quatermain and the Lost City of Gold" />
 	<rename id="tt0295989" title="Quatermain III: High Adventure" />
@@ -971,6 +986,11 @@
 	<rename id="tt1620658" title="RoboCop IV: Resurrection" sortby="RoboCop 4c" />
 	<rename id="tt1620655" title="RoboCop IV: Crash and Burn" sortby="RoboCop 4d" />
 	<rename id="tt1234721" title="RoboCop (Remake) I" />
+	<rename id="tt0075148" title="Rocky I" />
+	<rename id="tt0079817" title="Rocky II" />
+	<rename id="tt0084602" title="Rocky III" />
+	<rename id="tt0089927" title="Rocky IV" />
+	<rename id="tt0100507" title="Rocky V" />
 	<rename id="tt0479143" title="Rocky VI: Rocky Balboa" />
 	<rename id="tt0152225" title="Romeo &amp; Juliet (Canada)" />
 	<rename id="tt0111011" title="Romeo &amp; Juliet (TV)" />
@@ -986,10 +1006,10 @@
 	<rename id="tt0418819" title="Romero's Zombies IV: Land of the Dead" />
 	<rename id="tt0848557" title="Romero's Zombies V: Diary of the Dead" />
 	<rename id="tt1134854" title="Romero's Zombies VI: Survival of the Dead" />
-	<rename id="tt0100258" title="Romero's Zombies (Remake) I: Night of the Living Dead" />
-	<rename id="tt0489244" title="Romero's Zombies (Remake) I: Night of the Living Dead 3D" />
-	<rename id="tt0363547" title="Romero's Zombies (Remake) II: Dawn of the Dead" />
-	<rename id="tt0489018" title="Romero's Zombies (Remake) III: Day of the Dead" />
+	<rename id="tt0100258" title="Romero's Zombies (Remake) I: Night of the Living Dead" sortby="Romero's Zombies X01" />
+	<rename id="tt0489244" title="Romero's Zombies (Remake) I: Night of the Living Dead 3D" sortby="Romero's Zombies X02" />
+	<rename id="tt0363547" title="Romero's Zombies (Remake) II: Dawn of the Dead" sortby="Romero's Zombies X03" />
+	<rename id="tt0489018" title="Romero's Zombies (Remake) III: Day of the Dead" sortby="Romero's Zombies X04" />
 	<rename id="tt0120812" title="Rush Hour I" />
 	<rename id="tt0266915" title="Rush Hour II" />
 	<rename id="tt0293564" title="Rush Hour III" />
@@ -1000,6 +1020,12 @@
 	<rename id="tt0049710" title="Samurai III: Duel at Ganryu Island" />
 	<rename id="tt0206275" title="Save the Last Dance I" />
 	<rename id="tt0486656" title="Save the Last Dance II" />
+	<rename id="tt0387564" title="Saw I" />
+	<rename id="tt0432348" title="Saw II" />
+	<rename id="tt0489270" title="Saw III" />
+	<rename id="tt0890870" title="Saw IV" />
+	<rename id="tt1132626" title="Saw V" />
+	<rename id="tt1233227" title="Saw VI" />
 	<rename id="tt1477076" title="Saw VII: The Final Chapter" />
 	<rename id="tt0267913" title="Scooby-Doo I" />
 	<rename id="tt0331632" title="Scooby-Doo II: Monsters Unleashed" />
@@ -1023,6 +1049,10 @@
 	<rename id="tt1097636" title="Scooby-Doo! XVI: Chill Out, Scooby-Doo!" sortby="Scooby-Doo! 16" />
 	<rename id="tt1295021" title="Scooby-Doo! XVII: ...and the Goblin King" sortby="Scooby-Doo! 17" />
 	<rename id="tt2162709" title="Scooby-Doo! XVIII: Music of the Vampire" sortby="Scooby-Doo! 18" />
+	<rename id="tt0117571" title="Scream I" />
+	<rename id="tt0120082" title="Scream II" />
+	<rename id="tt0134084" title="Scream III" />
+	<rename id="tt1262416" title="Scream IV" />
 	<rename id="tt0184894" title="Shanghai Noon I" />
 	<rename id="tt0300471" title="Shanghai Noon II: Shanghai Knights" />
 	<rename id="tt0031448" title="Sherlock Holmes I: The Hound of the Baskervilles" sortby="Sherlock Holmes (Original) 01" />
@@ -1184,7 +1214,7 @@
 	<rename id="tt0353324" title="The Crow IV: Wicked Prayer" />
 	<rename id="tt0946992" title="The Crow V: Purgatory" />
 	<rename id="tt1347027" title="The Crow VI: Purgatory 2" />
-	<rename id="tt1340094" title="The Crow (Remake) I" />
+	<rename id="tt1340094" title="The Crow (Remake) I" title="The Crow X01"/>
 	<rename id="tt0382625" title="The Da Vinci Code I" />
 	<rename id="tt0808151" title="The Da Vinci Code II: Angels &amp; Demons" />
 	<rename id="tt1422137" title="The Da Vinci Code III: The Lost Symbol" />
@@ -1211,6 +1241,8 @@
 	<rename id="tt0091064" title="The Fly I" />
 	<rename id="tt0097368" title="The Fly II" />
 	<rename id="tt0080749" title="The Fog (Original)" />
+	<rename id="tt0312700" title="The Foreigner I" />
+	<rename id="tt0443450" title="The Foreigner II: Black Dawn" />
 	<rename id="tt0082406" title="The Fox and the Hound I" />
 	<rename id="tt0465997" title="The Fox and the Hound II" />
 	<rename id="tt0058135" title="The Gendarme I: ...of Saint-Tropez" />
@@ -1317,6 +1349,10 @@
 	<rename id="tt0450314" title="The Punisher II: War Zone" />
 	<rename id="tt0098141" title="The Punisher (Original)" />
 	<rename id="tt1797521" title="The Punisher (Remake) I" />
+	<rename id="tt0298130" title="The Ring I" sortby="The Ring 01" />
+	<rename id="tt0449092" title="The Ring II: Rings" sortby="The Ring 02" />
+	<rename id="tt0377109" title="The Ring II" sortby="The Ring 03" />
+	<rename id="tt0498381" title="The Ring III: 3D" sortby="The Ring 04" />
 	<rename id="tt0111070" title="The Santa Clause I" />
 	<rename id="tt0304669" title="The Santa Clause II: The Mrs. Clause" />
 	<rename id="tt0452681" title="The Santa Clause III: The Escape Clause" />
@@ -1350,7 +1386,7 @@
 	<rename id="tt0034172" title="The Thin Man IV: Shadow of the Thin Man" />
 	<rename id="tt0037365" title="The Thin Man V: The Thin Man Goes Home" />
 	<rename id="tt0039853" title="The Thin Man VI: Song of the Thin Man" />
-	<rename id="tt1754720" title="The Thin Man (Remake) I" />
+	<rename id="tt1754720" title="The Thin Man (Remake) I" sortby="The Thin Man X01" />
 	<rename id="tt0905372" title="The Thing (Remake)" />
 	<rename id="tt0155267" title="The Thomas Crown Affair I" />
 	<rename id="tt0433100" title="The Thomas Crown Affair II" />
@@ -1363,7 +1399,7 @@
 	<rename id="tt0098502" title="The Toxic Avenger III: The Last Temptation of Toxie" />
 	<rename id="tt0212879" title="The Toxic Avenger IV: Citizen Toxie" />
 	<rename id="tt1507003" title="The Toxic Avenger V: Toxic Twins" />
-	<rename id="tt1633359" title="The Toxic Avenger (Remake) I" />
+	<rename id="tt1633359" title="The Toxic Avenger (Remake) I" sortby="The Toxic Avenger X01" />
 	<rename id="tt0293662" title="The Transporter I" />
 	<rename id="tt0388482" title="The Transporter II: Transporter 2" />
 	<rename id="tt1129442" title="The Transporter III: Transporter 3" />
@@ -1525,6 +1561,8 @@
 	<rename id="tt0295701" title="xXx I" />
 	<rename id="tt0329774" title="xXx II: State Of The Union" />
 	<rename id="tt1293847" title="xXx III: The Return of Xander Cage" />
+	<rename id="tt0096487" title="Young Guns I" />
+	<rename id="tt0100994" title="Young Guns II" />
 	<rename id="tt0365957" title="You Got Served I" />
 	<rename id="tt1568139" title="You Got Served II: Beat the World" />
 	<rename id="tt0063829" title="Yours, Mine and Ours (Original)" />
