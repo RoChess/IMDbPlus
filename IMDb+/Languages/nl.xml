@@ -102,7 +102,7 @@ Let op: Hiermee schakel je het ophalen van missende samenvattingen, speelduur en
 
 	<!-- L -->
 	<string Field="LastScraperUpdate">Laatste Scraper Update</string>
-	<string Field="LanguageFilter">Geavanceerd: Landen filter</string>
+	<string Field="LanguageFilter">Geavanceerd: Talen filter</string>
 	<string Field="LanguageFilterDescription">Speciaal filter om andere talen naast Engels (en) te gebruiken. Gebruik de imdb.com paginabron om de ISO 639-1 code te vinden achter /language/.
 
 Standaardtaal is Engels middels: 'en'
@@ -157,16 +157,34 @@ Als je voor al je films een Engelse titel wilt gebruiken, laat deze instelling d
 	<!-- P -->
 
 	<!-- R -->
+	<string Field="Ratings">Engels Rating/Certificatie Systeem</string>
+	<string Field="RatingsDescription">Er zijn verschillende Engelse rating/certificatie systemen wereldwijd. Het meest bekende is het Amerikaanse MPAA rating systeem, welke resultaten geeft als PG-13, R, NC-17, enz.
+
+Gebruikers in Australie, Canada, Engeland en Nieuw-Zeeland kunnen deze instelling gebruiken om hun lokale rating systeem te gebruiken.
+</string>
+	<string Field="RatingsHeader">Selecteer Rating Systeem</string>
+	<string Field="Rating01">USA</string>
+	<string Field="Rating02">UK</string>
+	<string Field="Rating03">Canada (Alberta)</string>
+	<string Field="Rating04">Canada (British Columbia)</string>
+	<string Field="Rating05">Canada (Manitoba)</string>
+	<string Field="Rating06">Canada (Nova Scotia)</string>
+	<string Field="Rating07">Canada (Ontario)</string>
+	<string Field="Rating08">Canada (Quebec)</string>
+	<string Field="Rating09">Australie</string>
+	<string Field="Rating10">Nieuw-Zeeland</string>
 	<string Field="RefreshMovies">Ververs Films</string>
 	<string Field="RefreshingMovies">Films aan het verversen</string>
 	<string Field="RefreshCancel">Stop verversen</string>
 	<string Field="RefreshMoviesDescription">Weet je zeker dat je alle films wilt verversen die IMDb+ als primaire bron gebruiken?</string>
 	<string Field="RefreshMovieStatus">Ververs {0}/{1} Films: {2}%</string>
 	<string Field="RefreshMoviesNotification">IMDb+ films verversen is klaar.
-Geniet van het resultaat.</string>
+Geniet van het resultaat.
+</string>
 	<string Field="RefreshMoviesCancelNotification">Verversen is geannuleerd.
 {0} films tot nu toe ververst.
-Ververs opnieuw om te hervatten.</string>
+Ververs opnieuw om te hervatten.
+</string>
 	<string Field="RefreshAllFields">Ververs alle velden</string>
 	<string Field="RefreshAllFieldsDescription">Uit = Ververs slechts een paar velden
 Aan = Ververs alle velden
@@ -302,13 +320,15 @@ Voorbeeld: "Avatar (tt0499549) (3D).mkv" resulteert in "Avatar (3D)"
 	<!-- T -->
 
 	<!-- U -->
-	<string Field="UkRating">Brits BBFC certificatie systeem</string>
-	<string Field="UkRatingDescription">Uit = Gebruik de Amerikaanse MPAA ratings
-Aan = Gebruik de Britse BBFC ratings
+	<string Field="UkRating">Brits-Engelse Filmtitels</string>
+	<string Field="UkRatingDescription">Uit = Gebruik Engels-Amerikaane Filmtitels
+Aan = Gebruik Brits-Engelse Filmtitles
 
-Gebruik deze instelling voor Britse film certificaties.
+Gebruik deze instelling voor Brits-Engelse filmtitels.
 
-Dit omvat 'U' voor Universeel, 'PG' voor Ouderlijk toezicht, 12A, 12, 15, 18 en uiteindelijk 'R18' voor beperkt 18.
+Een goed voorbeeld is de eerste Harry Potter film. De orginele titel is "Harry Potter and the Philosopher's Stone", welke is geveramerikaniseerd in "Harry Potter and the Sorcerer's Stone". Aangezien de IMDb website zich richt op Amerikaans publiek betekend dit dat alle titels de Amerikaans-Engelse titel gebruiken, indien beschikbaar. Met deze instelling kan je dit veranderen in de Brits-Engelse titel.
+
+Let op: Er is momenteel geen hernoem/vervangings database ondersteuning voor Brits-Engelse titels, waardoor je nog steeds "Harry Potter I: Sorcerer's Stone" krijgt, maar dit kun je voorlopig aanpassen via de handmatige hernoem/vervangings database, tot er juiste ondersteuning is toegevoegd aan de IMDb+ plugin.
 </string>
 	<string Field="UpdatedScraperScript">MovingPictures is geupdate met IMDb+ Scraper script v{0}</string>
 	<string Field="Update">Update</string>

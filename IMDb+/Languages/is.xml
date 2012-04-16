@@ -162,17 +162,36 @@ Ef þú vilt að allar kvikmyndir noti enskan titil, afmerktu þennan möguleika.
 	<!-- P -->
 
 	<!-- R -->
+	<string Field="Ratings">English Rating/Certification System</string>
+	<string Field="RatingsDescription">Það eru til nokkrar tegundir af enskum aldurstakmörkunum í heiminum.  Það þekktasta er ameríska MPAA kerfið sem gefur niðurstöður eins og PG-13, R, NC-17, o.s.frv.
+
+Notendur í Ástralíu, Kanada, Stóra-Bretlandi og Nýja Sjálandi geta notað þessar stillingar til að velja þeirra eigin aldurstakmarkanir.
+</string>
+	<string Field="RatingsHeader">Veljið tegund aldurstakmarkana</string>
+	<string Field="Rating01">Bandaríkin</string>
+	<string Field="Rating02">Bretland</string>
+	<string Field="Rating03">Kanada (Alberta)</string>
+	<string Field="Rating04">Kanada (Breska Kolumbía)</string>
+	<string Field="Rating05">Kanada (Manitoba)</string>
+	<string Field="Rating06">Kanada (Nova Scotia)</string>
+	<string Field="Rating07">Kanada (Ontario)</string>
+	<string Field="Rating08">Kanada (Quebec)</string>
+	<string Field="Rating09">Ástralía</string>
+	<string Field="Rating10">Nýja Sjáland</string>
 	<string Field="RefreshMovies">Endurstilla kvikmyndir</string>
 	<string Field="RefreshingMovies">Endurstilli kvikmyndir</string>
 	<string Field="RefreshCancel">Hætta við endurstillingu</string>
 	<string Field="RefreshMoviesDescription">Ertu viss um að endurstilla allar kvikmyndir
-sem hafa IMDb+ sem sjálfgefna sköfun?</string>
+sem hafa IMDb+ sem sjálfgefna sköfun?
+</string>
 	<string Field="RefreshMovieStatus">Endurstilling {0}/{1} kvikmynda: {2}%</string>
 	<string Field="RefreshMoviesNotification">IMDb+ endurstilling er lokið.
-Njótið niðurstöðunnar.</string>
+Njótið niðurstöðunnar.
+</string>
 	<string Field="RefreshMoviesCancelNotification">Hætt var við endurstillingu kvikmynda.
 {0} kvikmyndir voru uppfærðar.
-Endurstillið aftur til að halda áfram.</string>
+Endurstillið aftur til að halda áfram.
+</string>
 	<string Field="RefreshAllFields">Endurstilla öll svæði</string>
 	<string Field="RefreshAllFieldsDescription">Af = Uppfæra nokkur svæði
 Á = Endurstilla allt
@@ -308,11 +327,20 @@ Dæmi: "Avatar (tt0499549) (3D).mkv" mun gefa heitið "Avatar (3D)"
 	<!-- T -->
 
 	<!-- U -->
+	<string Field="UkRating">Bresk-ensk kvikmyndaheiti</string>
+	<string Field="UkRatingDescription">Af = Nota amerískar-ensk kvikmyndaheiti
+Á = Nota breska-ensk kvikmyndaheiti
+
+Nota þessa stillingu fyrir breska-enska kvikmyndatitla.
+Þekkt dæmi er fyrsta Harry Potter kvikmyndin.  Upprunalegur titill er "Harry Potter and the Philosopher's Stone", sem var ameríkanserað í "Harry Potter and the Sorcerer's Stone".  Þar sem vefsíðan IMDb er stíluð á ameríska áhorfendur þýðir það að allar kvikmyndir nota ameríska-enska titla ef þeir eru til.  Með þessari stillingu getur þú breytt því í breska-enska titla.
+
+Ath.: Nú er ekki enn til endurnefningargagnagrunnur fyrir breska-enska titla, svo að þú endar með "Harry Potter I: Sorcerer's Stone", en þú getur breytt því í gegnum eigin endurnefningargagnagrunninn í bili þangað til stuðningur verður gerður í IMDb+ viðbótinni.
+</string>
 	<string Field="UkRating">Breska BBFC aldurstakmarkanir</string>
 	<string Field="UkRatingDescription">Af = Nota ameríska MPAA aldurstakmarkanir
 Á = Nota bresku BBFC aldurstakmarkanir
 
-Virkja þessa stillingu fyrir breska aldurstakmarkanir.
+Virkja þessa stillingu fyrir aldurstakmarkanir í Stóra-Bretlandi.
 
 Það inniheldur 'U' fyrir Universal, 'PG' fyrir Parental Guidance, 12A, 12, 15, 18 og að lokum 'R18' fyrir eldra en 18 ára.
 </string>
