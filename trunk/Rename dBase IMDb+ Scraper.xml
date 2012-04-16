@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="3" point="2" />
-		<published month="04" day="14" year="2012" />
+		<version major="1" minor="3" point="3" />
+		<published month="04" day="16" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -327,6 +327,9 @@
 	<rename id="tt0094868" title="Chocolat (France)" />
 	<rename id="tt0251637" title="Choke (Docu)" />
 	<rename id="tt0265118" title="Choke (Cult)" />
+	<rename id="tt0042332" title="Cinderella I" />
+	<rename id="tt0291082" title="Cinderella II: Dreams Come True" />
+	<rename id="tt0465940" title="Cinderella III: A Twist in Time" />
 	<rename id="tt0003772" title="Cinderella (Original)" />
 	<rename id="tt0845442" title="Cinderella (Korea)" />
 	<rename id="tt0128996" title="Cinderella (TV)" />
@@ -376,6 +379,7 @@
 	<rename id="tt0099365" title="Darkman I" />
 	<rename id="tt0109552" title="Darkman II: The Return of Durant" />
 	<rename id="tt0116033" title="Darkman III: Die Darkman Die" />
+	<rename id="tt0082096" title="Das Boot" />
 	<rename id="tt0238768" title="David Copperfield (TV)" />
 	<rename id="tt0106547" title="David Copperfield (Cartoon)" />
 	<rename id="tt0065615" title="David Copperfield (Original)" />
@@ -456,6 +460,7 @@
 	<rename id="tt0090970" title="Dream Lover (Classic)" />
 	<rename id="tt0018851" title="Dressed to Kill (Rare)" />
 	<rename id="tt0033558" title="Dressed to Kill (Classic)" />
+	<rename id="tt0116147" title="Drive (Classic)" />
 	<rename id="tt0080179" title="Drunken Master I" foreign="Jui Kuen" />
 	<rename id="tt0111512" title="Drunken Master II" foreign="Jui Kuen II" />
 	<rename id="tt0190374" title="Dungeons &amp; Dragons I" />
@@ -744,6 +749,9 @@
 	<rename id="tt0085750" title="Jaws III" />
 	<rename id="tt0093300" title="Jaws IV: The Revenge" />
 	<rename id="tt0112747" title="Jaws V: Cruel Jaws" />
+	<rename id="tt0263488" title="Jeepers Creepers I" />
+	<rename id="tt0301470" title="Jeepers Creepers II" />
+	<rename id="tt1139592" title="Jeepers Creepers III: Cathedral" />
 	<rename id="tt0274166" title="Johnny English I" />
 	<rename id="tt1634122" title="Johnny English II: Reborn" />
 	<rename id="tt1606600" title="Jonah Hex (DC Showcase)" />
@@ -793,6 +801,9 @@
 	<rename id="tt1499249" title="Lake Placid III" />
 	<rename id="tt0146316" title="Lara Croft: Tomb Raider I" />
 	<rename id="tt0325703" title="Lara Croft: Tomb Raider II (The Cradle of Life)" />
+	<rename id="tt0119345" title="Last Summer I: I Know What You Did..." sortby="I Know What You Did Last Summer 01" />
+	<rename id="tt0130018" title="Last Summer II: I Still Know What You Did..." sortby="I Know What You Did Last Summer 02" />
+	<rename id="tt0469111" title="Last Summer III: I'll Always Know What You Did..." sortby="I Know What You Did Last Summer 03" />
 	<rename id="tt0093409" title="Lethal Weapon I" />
 	<rename id="tt0097733" title="Lethal Weapon II" />
 	<rename id="tt0104714" title="Lethal Weapon III" />
@@ -1138,8 +1149,9 @@
 	<rename id="tt0076759" title="Star Wars IV: A New Hope" sortby="Star Wars 04" />
 	<rename id="tt0080684" title="Star Wars V: The Empire Strikes Back" sortby="Star Wars 05" />
 	<rename id="tt0086190" title="Star Wars VI: Return of the Jedi" sortby="Star Wars 06" />
-	<rename id="tt0942903" title="Stargate SG-1 #1: The Ark Of Truth" />
-	<rename id="tt0929629" title="Stargate SG-1 #2: Continuum" />
+	<rename id="tt0942903" title="Stargate SG-1 I: The Ark Of Truth" />
+	<rename id="tt0929629" title="Stargate SG-1 II: Continuum" />
+	<rename id="tt1483803" title="Stargate SG-1 III: Children of the Gods" />
 	<rename id="tt0120201" title="Starship Troopers I" />
 	<rename id="tt0367093" title="Starship Troopers II: Hero of the Federation" />
 	<rename id="tt0844760" title="Starship Troopers III: Marauder" />
