@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- IMDb+ translation file -->
 <!-- Portuguese (PT) -->
-<!-- Note: English is the fallback for any strings not found in other languages -->
+<!-- Note: English is the fallback for any strings not found in other languages  -->
 <strings>
 	<!-- A -->
 	<string Field="AddForeignTitle">Adicionar o título estrangeiro</string>
@@ -52,7 +52,7 @@ começar a utilizar o IMDB+?
 	<string Field="ForceIMDbPlusComplete">Atualizados com sucesso {0}/{1} filmes
 com o "scraper" do IMDB+.
 </string>
-	<string Field="ForeignTitleFirst">Iniciar o título com nome estrangeiro primeiro</string>
+	<string Field="ForeignTitleFirst">Iniciar o título com  nome estrangeiro primeiro</string>
 	<string Field="ForeignTitleFirstDescription">Desligar = Inglés (Estrangeiro)
 Ligar = Estrangeiro (Inglés)
 
@@ -87,14 +87,14 @@ Nota: Esta opção também desativa a procura de resultados, sinopse e duração do f
 </string>
 	<string Field="IMDbInfo">IMDb+ Info</string>
 	<string Field="InfoPluginVersion">Versão do Plugin: v{0}</string>
-	<string Field="InfoScraperAuthor">Autor do" Scraper": {0}</string>
-	<string Field="InfoScraperVersion">Versão do "Scraper": v{0}</string>
-	<string Field="InfoScraperPriority">Prioridade do "Scraper": {0}</string>
-	<string Field="InfoScraperPublished">"Scraper" Publicado: {0}</string>
-	<string Field="InfoScraperLastUpdateCheck">Verificação da ultima atualização do "scraper": {0}</string>
-	<string Field="InfoMoviesIMDbPlusPrimary">Filmes que usam o "scraper" do IMDb+ 
+	<string Field="InfoScraperAuthor">Autor do “Scraper”: {0}</string>
+	<string Field="InfoScraperVersion">Versão do “Scraper”: v{0}</string>
+	<string Field="InfoScraperPriority">Prioridade do “Scraper”: {0}</string>
+	<string Field="InfoScraperPublished">“Scraper” Publicado: {0}</string>
+	<string Field="InfoScraperLastUpdateCheck">Verificação da ultima atualização do “scraper”: {0}</string>
+	<string Field="InfoMoviesIMDbPlusPrimary">Filmes que usam o “scraper” do IMDb+ 
 como fonte: {0}</string>
-	<string Field="InfoMoviesOtherPlusPrimary">Filmes que usam um "scraper" diferente: {0}</string>
+	<string Field="InfoMoviesOtherPlusPrimary">Filmes que usam um “scraper” diferente: {0}</string>
 	<string Field="InfoReplacementsVersion">Versão substituída: v{0}</string>
 	<string Field="InfoReplacementsPublished">Publicação substituída: {0}</string>
 	<string Field="InfoReplacementEntries">Entradas substituídas: {0}</string>
@@ -114,7 +114,7 @@ como fonte: {0}</string>
 	<!-- J -->
 
 	<!-- L -->
-	<string Field="LastScraperUpdate">Ultima verificação do "scraper"</string>
+	<string Field="LastScraperUpdate">Ultima verificação do “scraper”</string>
 	<string Field="LanguageFilter">Avançado: Filtro linguístico</string>
 	<string Field="LanguageFilterDescription">Filtro especial para incluir títulos em outros idiomas além do Inglês (en). Usar a fonte do imdb.com HTML para encontrar o código ISO 639-1 após /idioma/.
 
@@ -146,7 +146,7 @@ Se utilizar esta opção resultados do IMDB com menos de 20 votos serão ignorados.
 	<string Field="No">Não</string>
 	<string Field="NumberOfMovies">{0}/{1} Filmes</string>
 	<string Field="NumberOfMovies2">{0} Filmes</string>
-	<string Field="NoSourcesFound">Nenhum filme encontrado pode ser forçado para usar o script do "scraper" do IMDB!</string>
+	<string Field="NoSourcesFound">Nenhum filme encontrado pode ser forçado para usar o script do “scraper” do IMDB!</string>
 	<string Field="NullSource">Nenhuma fonte, mas pode usar o IMDb-ID</string>
 
 	<!-- O -->
@@ -170,17 +170,36 @@ Se você quiser que todos os seus filmes usem um título Inglês, mantenha esta con
 	<!-- P -->
 
 	<!-- R -->
+	<string Field="Ratings">Classificação Inglêsa/Sistema de Certificação</string>
+	<string Field="RatingsDescription">Existem várias classificações / sistemas de certificação baseadas no Inglês em todo o mundo. O mais utilizado é o sistema de classificação norte-americano baseado no MPAA com resultados tais como PG-13, R, NC-17, etc.
+
+Utilizadores da Austrália, Canadá, Reino Unido e Nova Zelândia podem usar esta configuração para mudar para o seu sistema de classificação.
+</string>
+	<string Field="RatingsHeader">Select Rating System</string>
+	<string Field="Rating01">EUA</string>
+	<string Field="Rating02">Reino Unido</string>
+	<string Field="Rating03">Canadá (Alberta)</string>
+	<string Field="Rating04">Canadá (Columbia Britânica)</string>
+	<string Field="Rating05">Canadá (Manitoba)</string>
+	<string Field="Rating06">Canadá (Nova Escocia)</string>
+	<string Field="Rating07">Canadá (Ontario)</string>
+	<string Field="Rating08">Canadá (Quebec)</string>
+	<string Field="Rating09">Austrália</string>
+	<string Field="Rating10">Nova Zelândia</string>
 	<string Field="RefreshMovies">Atualizar filmes</string>
 	<string Field="RefreshingMovies">Atualizando os filmes</string>
 	<string Field="RefreshCancel">Cancelar atualização</string>
 	<string Field="RefreshMoviesDescription">Tem a certeza que quer atualizar todos os filmes
-que têm o IMDb+ como fonte principal?</string>
+que têm o IMDb+ como fonte principal?
+</string>
 	<string Field="RefreshMovieStatus">Atualizando {0}/{1} Filmes: {2}%</string>
 	<string Field="RefreshMoviesNotification">Atualização dos filmes com o IMDb+ concluída.
-Por favor, aproveite o resultado.</string>
+Por favor, aproveite o resultado.
+</string>
 	<string Field="RefreshMoviesCancelNotification">Atualização foi cancelada.
 {0} filmes atualizados até agora.
-Atualizar novamente.</string>
+Atualizar novamente.
+</string>
 	<string Field="RefreshAllFields">Atualizar todos os campos</string>
 	<string Field="RefreshAllFieldsDescription">Desligar = Só atualiza alguns campos
 Ligar = Atualiza tudo
@@ -201,7 +220,7 @@ Tenha em mente que isso só é feito quando o primeiro filme da série não tem um s
 </string>
 	<string Field="RenameTitles">Renomeie títulos, para que as séries sejam agrupadas</string>
 	<string Field="RenameTitlesDescription">Desligar = Use o título como está
-Ligar = Renomeie título de modo que a série se irá agrupar
+Ligar = Renomeie título de modo que  a série se irá agrupar
 
 Há muitas séries de filmes em que às vezes os títulos não começam com o mesmo prefixo para poder agrupá-los. Para resolver isso, um ficheiro renomeado da base de dados ira ser usado para a renomeação utilizando o numero do IMDb tt-ID . O resultado é que os filmes são renomeados de forma que eles sejam facilmente identificados como sendo parte de uma série.
 
@@ -239,8 +258,8 @@ A ativação desta configuração irá limitar a sua classificação apenas para as mel
 	<string Field="Resume">(Resumo)</string>
 
 	<!-- S -->
-	<string Field="ScraperOptionsTitle">Opções do "scraper" do IMDb+</string>
-	<string Field="ScraperNotFirstPrompt">o "scraper" do IMDb+ não é o primeiro!\Isso pode causar problemas.\Quer corrigir esta situação?</string>
+	<string Field="ScraperOptionsTitle">Opções do “scraper” do IMDb+</string>
+	<string Field="ScraperNotFirstPrompt">o “scraper” do IMDb+ não é o primeiro!\Isso pode causar problemas.\Quer corrigir esta situação?</string>
 	<string Field="SecondaryDetails">Obter informação adicional no seguinte idioma</string>
 	<string Field="SecondaryDetailsDescription">Existe suporte para obter determinadas informações num idioma diferente. Tal inclui informações como resumo, certificação, géneros e sempre que possível ainda mais.
 
@@ -260,7 +279,7 @@ Suporte atual inclui: Holandês, Francês, Alemão, Islandês, Italiano, Português, 
 	<string Field="SecondarySummaryDescription">Desligar = Nada mostrar se sumário noutra língua estiver faltando
 Ligar =Usar em alternativa o Inglês se o sumario não existir noutra língua
 
-Sites sem ser em Inglês muitas vezes não são tão completos como o imdb.com ou contem as mesmas informações. Isto afeta principalmente o resumo, de modo a evitar que este campo fique vazio, habilitar esta opção para ficar disponível o resumo Inglês (se disponível). Idealmente, você iria deveria se registar no site de filmes estrangeiros e apresentar as informações em falta, mas até lá você pode usar as informações Inglês..
+Sites sem ser em Inglês muitas vezes não são tão completos como o imdb.com ou contem as mesmas informações. Isto afeta principalmente o resumo, de modo a evitar que  este campo fique vazio, habilitar esta opção para ficar disponível o resumo Inglês (se disponível). Idealmente, você iria deveria se registar no site de filmes estrangeiros e apresentar as informações em falta, mas até  lá você pode usar as informações Inglês..
 </string>
 	<string Field="SecondaryEnglishTitle">Titulo secundário em Inglês</string>
 	<string Field="SecondaryEnglishTitleDescription">Desligar = Usar titulo em Inglês
@@ -271,18 +290,18 @@ Se uma outra língua for selecionado para certos detalhes, o título também vai mu
 Nota: Isto não se aplica ao sistema de renomear. A entrada traduzida ainda é necessária para obter um título estrangeiro, mesmo quando esta configuração está desativada.
 </string>
 	<string Field="SingleScore">Sistema de classificação única pontuação</string>
-	<string Field="SingleScoreDescription">Desligar = Utilização do sistema de média
+	<string Field="SingleScoreDescription">Desligar = Utilização do sistema  de média
 Ligar = Sistema de classificação única pontuação
 
 Por vezes há uma grande diferença entre todas as diferentes classificações que estão disponíveis. Para compensar isso, um valor médio é usado com base nas classificações de imdb, metacritics e RottenTomatoes.
 
-Nota: Se o "Pontuação IMDb" estiver ativada, a classificação média apenas do IMDb e Metacritics é usado quando essa configuração está ativa para um resultado média.
+Nota: Se o "Pontuação IMDb" estiver ativada, a classificação média apenas do IMDb e Metacritics é usado quando essa configuração está ativa para um resultado médio.
 </string>
 	<string Field="SpecialEditions">Edições especiais e suporte de renomeação</string>
 	<string Field="SpecialEditionsDescription">Desligar = Manter título como está
 Ligar = Adicionar edições especiais no título
 
-Se o número do IMDb tt-ID estiver disponível no nome do ficheiro ou através de um arquivo NFO, então você pode ligar esta configuração para adicionar edições especiais no título.
+Se o número do IMDb tt-ID  estiver disponível no nome do ficheiro ou através de um arquivo NFO, então você pode ligar esta configuração para adicionar edições especiais no título.
 
 Você pode adicionar os seguintes termos dentro de parênteses, no nome do seu ficheiro:
 
@@ -294,7 +313,7 @@ Você pode adicionar os seguintes termos dentro de parênteses, no nome do seu fic
 
 Se desejar também pode ter o termo 'Edition'.
 
-Exemplo: "Avatar (tt0499549) (3D) mkv" Resultará em "Avatar (3D)"
+Exemplo: "Avatar (tt0499549) (3D) mkv. "Resultará em" Avatar (3D) "
 </string>
 	<string Field="SettingPluginEnabledName"> Ligar Plugin</string>
 	<string Field="SettingPluginEnabledDescription">Ligar / Desligar esta configuração para controlar se Plugin IMDb é carregado com o MediaPortal.</string>
@@ -303,11 +322,11 @@ Exemplo: "Avatar (tt0499549) (3D) mkv" Resultará em "Avatar (3D)"
 	<string Field="SettingListedPluginsName">Listado em "My Plugins"</string>
 	<string Field="SettingListedPluginsDescription">Ativar esta configuração para o plugin do IMDb aparecer na janela "My plugin".</string>
 	<string Field="SettingsSyncIntervalName">Numero de horas até a próxima atualização</string>
-	<string Field="SettingsSyncIntervalDescription">Esta configuração controla a frequência com que o plugin irá fazer uma verificação on-line do "scraper" de script e da base de dados.</string>
+	<string Field="SettingsSyncIntervalDescription">Esta configuração controla a frequência com  que o plugin irá fazer uma verificação on-line do “scraper” de script e da base de dados.</string>
 	<string Field="SettingsSyncOnStartupName">Verificar se há atualizações no arranque</string>
-	<string Field="SettingsSyncOnStartupDescription">Esta configuração irá forçar o plugin a fazer uma verificação on-line por um script do "scraper" e pela base de dados atualizado e substituições de cada vez que iniciar o MediaPortal.</string>
+	<string Field="SettingsSyncOnStartupDescription">Esta configuração irá forçar o plugin a fazer uma verificação on-line por um script do “scraper” e pela base de dados atualizado e substituições de cada vez que iniciar o  MediaPortal.</string>
 	<string Field="SettingsDisableNotificationsName">Desligar notificações</string>
-	<string Field="SettingsDisableNotificationsDescription">Esta configuração permite que você desative as notificações aquando as atualizações do "scraper" foram aplicadas no seu sistema.</string>
+	<string Field="SettingsDisableNotificationsDescription">Esta configuração permite que você desative as notificações aquando as atualizações do “scraper” foram aplicadas no seu sistema.</string>
 	<string Field="SelectSources">Selecione Fontes para converter para o IMDb+</string>
 	<string Field="StartsWith">Começar com {0}</string>
 	<string Field="SelectAlphas">Selecionar filmes começados com...</string>
@@ -315,15 +334,18 @@ Exemplo: "Avatar (tt0499549) (3D) mkv" Resultará em "Avatar (3D)"
 	<!-- T -->
 
 	<!-- U -->
-	<string Field="UkRating">Sistema de certificação Inglesa BBFC</string>
-	<string Field="UkRatingDescription">Desligar = Usar certificação Americana MPAA
-Ligar = Usar a certificação Inglesa
+	<string Field="UkRating">Títulos Inglês-Inglês</string>
+	<string Field="UkRatingDescription">Desligado = Use títulos Inglês-EUA
+Ligado = Use títulos Inglês-Inglês
 
-Usar esta configuração para as certificações de cinema do Reino Unido.
+Use esta opção para títulos Inglês-Inglês.
 
-Isto inclui 'U' para a Universal, 'PG' de Orientação Parental, 12A, 12, 15, 18 e, finalmente, 'R18' para limitado aos 18.
+Exemplo famoso é o primeiro filme de Harry Potter. O título original é "Harry Potter and the Philosopher's Stone", que foi americanizado para "Harry Potter and the Sorcerer's Stone".Desde que o site IMDb está  mais focado para um público americano, todos os títulos se disponveis serão em Inglês-EUA. Com esta opçaõ, você pode mudar para um título em Inglês-Inglês.
+
+Nota: Não há atualmente nenhuma base de dados que suporte a renomeação / substituição para títulos em Inglês-Inglês, assim você ainda continuará com""Harry Potter I: Sorcerer's Stone", por enquanto você podera modificar este título renomeando e substituindo manualmente na base de dados, até que um suporte adequado seja adicionado ao plugin + IMDb.
 </string>
-	<string Field="UpdatedScraperScript">MovingPictures foi atualizado com o script do scraper do IMDb+ v{0}</string>
+
+	<string Field="UpdatedScraperScript">MovingPictures foi atualizado com o  script do scraper do IMDb+ v{0}</string>
 	<string Field="Update">Atualizar</string>
 	<string Field="UpdateAll">Atualizar tudo</string>
 	<string Field="UpdateReplacementOnly">Atualizar apenas as substituições</string>

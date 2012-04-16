@@ -47,7 +47,7 @@ Nota: Aviso: Las resúmenes de los usuarios pueden contener spoilers.
 películas, importadas con el scrapper IMDb por defecto,
 comienzen a usar IMDb+?
 </string>
-	<string Field="ForceIMDbPlusComplete">Cambiados correctamente {0}/{1} películas
+	<string Field="ForceIMDbPlusComplete">Cambiadas correctamente {0}/{1} películas
 al scraper IMDb+.
 </string>
 	<string Field="ForeignTitleFirst">Título de la película, primero el de lengua no inglesa</string>
@@ -115,7 +115,6 @@ El idioma por defecto es el Inglés via: 'en'
 Sin embargo, si por ejemplo eres Noruego y quieres tener las películas noruegas con su título original y el inglés para todas las demás, entonces usa: 'en.no'
 
 Nota: El teclado virtual de Mediaportal no soporta el carácter '|', se ha usado '.' para separar los distintos idiomas. Tenga cuidado al ajustar esta opción, un ajuste incorrecto puede detener la funcionalidad del scrapper IMDB+.
-
 </string>
 	<string Field="LongSummary">Usar resúmenes largos que pueden contener Spoilers</string>
 	<string Field="LongSummaryDescription">Off = Resumen corto para la sinopsis de la película
@@ -140,15 +139,16 @@ Si activas esta opción entonces las valoraciones con menos de 20 votos no se ten
 	<string Field="NumberOfMovies">{0}/{1} Películas</string>
 	<string Field="NumberOfMovies2">{0} Películas</string>
 	<string Field="NoSourcesFound">No se han encontrada películas que puedan ser forzadas a
-usar el scrapper IMDb+!</string>
-	<string Field="NullSource">No source, but usable IMDb-ID</string>
+usar el scrapper IMDb+!
+</string>
+	<string Field="NullSource">Sin Datos, pero tenemos el IMDb-ID</string>
 
 	<!-- O -->
 	<string Field="OneWriterDirector">Limitar la importación a un solo guionista y un solo director</string>
 	<string Field="OneWriterDirectorDescription">Off = Importar todos los nombres de guionistas y directores
 On = Solo usar el primer nombre del guionista y del director
 
-Algunos skins no disponen de mucho espacion para los guionistas y directores. Si quieres evitar un desplazamiento horizontal, entonces activa esta opción para importar solamento un nombre para el guionista y otro para el director.
+Algunos skins no disponen de mucho espacio para los guionistas y directores. Si quieres evitar un desplazamiento horizontal, entonces activa esta opción para importar solamento un nombre para el guionista y otro para el director.
 
 Hay que teneer en cuenta que esta restricción afectará a la búsqueda de películas por un determinado guionista o director ya que solo dispondremos de un mombre por cada película. Por otro lado hay que tener en cuenta que el número de películas que tengan varios directores o guionistas es mínimo.
 </string>
@@ -164,24 +164,43 @@ Si quieres que todos los títulos de tus películas estén en inglés, mantén esta o
 	<!-- P -->
 
 	<!-- R -->
+	<string Field="Ratings">Sistema Inglés de Valoración/Certificación</string>
+	<string Field="RatingsDescription">Existen muchos sistemas de valocación/certificación Ingleses en el mundo. El más famoso es el Americano MPAA rating system con valores como PG-13, R, NC-17, etc.
+
+Usuarios en Australia, Canada, Reino Unido, y Nueva Zelanda pueden usar esta opción para cambiar a su sistema particular de valoración/certificación.
+</string>
+	<string Field="RatingsHeader">Selecciona un Sistema de Valoración</string>
+	<string Field="Rating01">USA</string>
+ 	<string Field="Rating02">UK</string>
+ 	<string Field="Rating03">Canada (Alberta)</string>
+	<string Field="Rating04">Canada (British Columbia)</string>
+	<string Field="Rating05">Canada (Manitoba)</string>
+	<string Field="Rating06">Canada (Nova Scotia)</string>
+	<string Field="Rating07">Canada (Ontario)</string>
+	<string Field="Rating08">Canada (Quebec)</string>
+ 	<string Field="Rating09">Australia</string>
+	<string Field="Rating10">Nueva Zealand</string>
 	<string Field="RefreshMovies">Actualizar Películas</string>
 	<string Field="RefreshingMovies">Actualizando Películas</string>
 	<string Field="RefreshCancel">Cancelar Actualización</string>
 	<string Field="RefreshMoviesDescription">Estás seguro de actualizar todas las películas que
-tienen a IMDb+ como origen primario de datos?</string>
+tienen a IMDb+ como origen primario de datos?
+</string>
 	<string Field="RefreshMovieStatus">Actualizando {0}/{1} Películas: {2}%</string>
 	<string Field="RefreshMoviesNotification">La actualización con IMDb+ ha terminado.
-Disfruta de los resultados.</string>
+Disfruta de los resultados.
+</string>
 	<string Field="RefreshMoviesCancelNotification">La Actualización ha sido cancelada.
 {0} movies done so far.
-Refresh again to resume.</string>
+Refresh again to resume.
+</string>
 	<string Field="RefreshAllFields">Actualizar todos los campos</string>
 	<string Field="RefreshAllFieldsDescription">Off = Solo actualizar algunos campos
 On = Actualizarlo todo
 
 La información de IMDb está constantemente actualizandose y completándose. Por esta razón, tiene sentido actualizar cada cierto tiempo la información de las películas de tu colección.
 
-Activando esta opción se forzará la actualización de todos los datos. En otro caso solamente los campos vacios y las certificaciones, puntuación y votos serán actualizados.
+Activando esta opción se forzará la actualización de todos los datos. En caso contrario solamente los campos vacíos, las certificaciones, puntuación y votos serán actualizados.
 
 Nota: Esta opción desactiva el sistema de renombrado para las películas existentes.
 </string>
@@ -197,7 +216,7 @@ Tenga en cuenta que esto solo se hace cuando la primera película de la serie no 
 	<string Field="RenameTitlesDescription">Off = Usar título como está
 On = Cambiar el nombre de los títulos de forma que las series se agrupen
 
-Hay cantidad de películas que forman uan serie o saga, y algunas veces los títulos de estas no comienzan igual y no permite verlas juntas. Para resolver esto, se usa un fichero de base de datos que renombrá el título de la película basado en el número IMDb tt-ID. Obtendremos como resultado que las películas se renombrarán de forma que serán fáciles de identificar como parte de una serie. 
+Hay cantidad de películas que forman uan serie o saga, y algunas veces los títulos de estas no comienzan igual y no permite verlas juntas. Para resolver esto, se usa un fichero de base de datos que renombrá el título de la película basado en el número IMDb tt-ID. Obtendremos como resultado que las películas se renombrarán de forma que serán fáciles de identificar como parte de una serie.
 
 Ejemplo: 'Batman VII: The Dark Knight Rises' se agrupará dentro de una saga junto con otros títulos de la serie.
 
@@ -205,11 +224,11 @@ El fichero que contiene los títulos por defecto es, 'IMDb+\Rename dBase IMDb+ Sc
 
 Cualquier entrada manual que se quiera incluir debería escribirse dentro del fichero, 'IMDb+\Rename dBase IMDb+ Scraper (Custom).xml'
 
-Puede utilizar el bloc de notas para editar el fichero propio, como el predeterminado se actualizará automáticamente a veces, por favor asegúrese de que el contenido de los archivos XML es el correcto.
+Puede utilizar el bloc de notas para editar el fichero propio. Como el predeterminado se actualizará automáticamente con frecuencia, por favor asegúrese de que el contenido de los archivos XML es el correcto.
 </string>
 	<string Field="RottenMeter">RottenTomatoes TomatoMeter</string>
 	<string Field="RottenMeterDescription">Off = Valoraciones de la 'Audiencia' de RottenTomatoes
-On = Valoraciones 'TomatoMeter' de RottenTomatoes 
+On = Valoraciones 'TomatoMeter' de RottenTomatoes
 
 Hay diferentes sistemas de valoración disponibles en el website de RottenTomatoes.
 
@@ -224,7 +243,7 @@ con esta opción activada se usa la valoración 'promedio', si no se usa la valora
 El sistema de valoración 'Percentage' (porcentaje) es un tipo especial de valoración en el se cuentan la cantidad de usuarios de RottenTomatoes que han votado hacia una determinada dirección.
 </string>
 	<string Field="RottenTopCritics">Críticas 'Top' de RottenTomatoes</string>
-	<string Field="RottenTopCriticsDescription">Off = Todas las Críticas de RottenTomatoes
+	<string Field="RottenTopCriticsDescription">Off =  Todas las Críticas de RottenTomatoes
 On = Solamente las críticas 'Top' de RottenTomatoes
 
 Hay un sistema de valoración TomatoMeter que incluye todas las valoraciones y otro que solamente incluye un grupo seleccionado de críticas 'Top'
@@ -263,7 +282,7 @@ On = Forzar título en Inglés
 
 Si un idioma alternativo se ha seleccionado para obtener los detalles, el título de la película también vendrá traducido. Esta opción mantiene el título en Inglés.
 
-Nota: Esta opción no se aplica al sistema de renombrado. Todavía se requiere Una entrada traducida para obtener un título extranjero, aun cuando esta opción está deshabilitada.
+Nota: Esta opción no se aplica al sistema de renombrado. Todavía se requiere una entrada traducida para obtener un título extranjero, aun cuando esta opción está deshabilitada.
 </string>
 	<string Field="SingleScore">Sistema de Valoración</string>
 	<string Field="SingleScoreDescription">Off = Usar valoración promedio
@@ -281,11 +300,11 @@ Si incluyes el número IMDb tt-ID en el nombre del fichero o con un fichero NFO, 
 
 Puede añadir los siguientes términos en el nombre del fichero entre paréntesis:
 
- - 3D			-3D-
- - Extended 		-Extendida-
- - Unrated		-Sin valorar-
- - Director's Cut	-Montaje del director-
- - Alternate Ending	-Final Alternativo-
+ - 3D			  -3D-
+ - Extended   		  -Extendida-
+ - Unrated		  -Sin valorar-
+ - Director's Cut	  -Montaje del director-
+ - Alternate Ending	  -Final Alternativo-
 
 También se puede añadir el término 'Edition' al final de ellos si se quiere.
 
@@ -310,18 +329,21 @@ Ejemplo: "Avatar (tt0499549) (3D).mkv" se convertira en "Avatar (3D)"
 	<!-- T -->
 
 	<!-- U -->
-	<string Field="UkRating">Sistema de certificación Inglés BBFC</string>
-	<string Field="UkRatingDescription">Off = Usar la certificación americana MPAA
-On = Activar la certificación Inglesa BBFC
+	<string Field="UkRating">Títulos de Películas Inglés-Británico</string>
+	<string Field="UkRatingDescription">Off = Usar Títulos Americanos
+On = Activar Títulos de Películas Inglés-Británico
 
-Active esta opción para activar las certificaciones de UK.
+Active esta opción para los Títulos de Películas Inglés-Británico.
 
-Esto incluye 'U' para todos los públicos, 'PG' con supervisión paterna, 12A, 12, 15, 18 y finalmente 'R18' para mayores de 18.
+Un ejemplo famoso es la primera película película de Harry Potter. El título original era "Harry Potter and the Philosopher's Stone",
+y fué Americanizado en "Harry Potter and the Sorcerer's Stone". Como la web IMDb está orientada al público Americano si existe un título americanizado, IMDB usará este por defecto.
+Con esta opción puedes seleccionar que el título por defecto sea el Inglés-Británico.
+
 </string>
 	<string Field="UpdatedScraperScript">MovingPictures ha sido actualizado con el Scrapper IMDb+ Scraper script v{0}</string>
 	<string Field="Update">Actualizar</string>
 	<string Field="UpdateAll">Actualizar Todo</string>
-	<string Field="UpdateReplacementOnly">Actualizar Sustituiciones solamente</string>
+	<string Field="UpdateReplacementOnly">Actualizar Sustituciones solamente</string>
 	<string Field="UpdateAlphas">Actualizar Películas Comenzando Con...</string>
 
 	<!-- V -->

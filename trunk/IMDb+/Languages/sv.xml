@@ -162,16 +162,34 @@ Om du vill att samtliga filmer skall ha en Engelsk eller Svensk titel, låt denna
 	<!-- P -->
 
 	<!-- R -->
+	<string Field="Ratings">Åldersgränser som används i Engelskspråkiga länder</string>
+	<string Field="RatingsDescription">Det finns flera olika åldersgräns-system för Engelskspråkiga länder runt om i världen. Den mest kända är MPAA från USA med gränser såsom PG-13, R, NC-17, osv.
+
+Användare i Australien, Kanada, Storbritannien samt Nya Zealand kan använda deena inställning för att istället använda en lokal variant.
+</string>
+	<string Field="RatingsHeader">Välj åldersgräns efter land</string>
+	<string Field="Rating01">USA</string>
+	<string Field="Rating02">Storbritannien</string>
+	<string Field="Rating03">Kanada (Alberta)</string>
+	<string Field="Rating04">Kanada (Brittiska Columbia)</string>
+	<string Field="Rating05">Kanada (Manitoba)</string>
+	<string Field="Rating06">Kanada (Nova Scotia)</string>
+	<string Field="Rating07">Kanada (Ontario)</string>
+	<string Field="Rating08">Kanada (Quebec)</string>
+	<string Field="Rating09">Australien</string>
+	<string Field="Rating10">Nya Zealand</string>
 	<string Field="RefreshMovies">Hämta om information</string>
 	<string Field="RefreshingMovies">Söker uppdaterad information</string>
 	<string Field="RefreshCancel">Avbryter uppdatering</string>
 	<string Field="RefreshMoviesDescription">Är du säker på att du vill uppdatera informationen för samtliga titlar som använt IMDb+ som sin huvudsakliga källa?</string>
 	<string Field="RefreshMovieStatus">Uppdaterar {0}/{1} filmer: {2}%</string>
 	<string Field="RefreshMoviesNotification">Uppdatering av information för IMDb+ är klar.
-Njut av resultatet.</string>
+Njut av resultatet.
+</string>
 	<string Field="RefreshMoviesCancelNotification">Uppdatering har avbrutits.
 {0} filmer klara hittills.
-Uppdatera igen för att återuppta.</string>
+Uppdatera igen för att återuppta.
+</string>
 	<string Field="RefreshAllFields">Uppdatera samtliga fält</string>
 	<string Field="RefreshAllFieldsDescription">Av = Uppdatera endast vissa fält
 På = Uppdatera samtliga fält
@@ -307,13 +325,14 @@ Exempel: "Avatar (tt0499549) (3D).mkv" kommer att skrivas ut som "Avatar (3D)"
 	<!-- T -->
 
 	<!-- U -->
-	<string Field="UkRating">Brittiska BBFC åldersgränser</string>
-	<string Field="UkRatingDescription">Av = Använd Amerikanska MPAA åldersgränser
-På = Använd Brittiska BBFC åldersgränser
+<string Field="UkRating">Film-titlar baserade på Brittisk engelska</string>
+<string Field="UkRatingDescription">Av = Använd Amerikanska film-titlar
+På = Använd de titlar som används i Storbritannien. Denna inställning gäller endast titlar med Brittisk engelska.
 
-Sätt denna inställning till På för att använda de Brittiska åldersgränserna.
+Ett välkänt exempel är den första Harry Potter-filmen. Original-titeln, "Harry Potter and the Philosopher's Stone", som senare fick en Amerikansk titel, "Harry Potter and the Sorcerer's Stone". IMDB är mest inriktad på den Amerikanska publiken vilket innebär att samtliga titlar som har en Amerikaniserad titel kommer att använda denna automatiskt. Denna inställning låter dig välja den titel filmen har på Brittisk engelska.
 
-Detta innebär 'U' för Universal (ALLA), 'PG' för Parental Guidance (i vuxens sällskap), 12A, 12, 15, 18 och slutligen 'R18' för Restricted 18 (sträng 18-årsgräns).
+OBS: Det finns i nuläget inget implementerat stöd för för Brittisk-engelska titlar i den automatiska omdöpningen av filmer, så än så länge kommer du ändå att se "Harry Potter I: Sorcerer's Stone", men det går att tvinga ersättande titlar via databasen i "custom.xml"  tills dess att riktigt stöd har implementerats i IMDb+. 
+
 </string>
 	<string Field="UpdatedScraperScript">MovingPictures har blivit uppdaterad med IMDb+ scraper-script v{0}</string>
 	<string Field="Update">Uppdatera</string>

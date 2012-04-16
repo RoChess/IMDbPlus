@@ -332,7 +332,7 @@ Use this setting for British-English movie titles.
 
 Famous example is the first Harry Potter movie. The original title is "Harry Potter and the Philosopher's Stone", which was Americanized into "Harry Potter and the Sorcerer's Stone". Since the IMDb website is focused towards an American audience that means all titles will use the American-English title if available. With this setting you can change that to the British-English title.
 
-Note: There is currently no rename/replacement database support for British-English titles yet, so you will still end up with ""Harry Potter I: Sorcerer's Stone", but you can overrule that via the custom rename/replacement database for the time being until proper support is added to the IMDb+ plugin.
+Note: There is currently no rename/replacement database support for British-English titles yet, so you will still end up with "Harry Potter I: Sorcerer's Stone", but you can overrule that via the custom rename/replacement database for the time being until proper support is added to the IMDb+ plugin.
 </string>
 	<string Field="UpdatedScraperScript">MovingPictures has been updated with IMDb+ Scraper script v{0}</string>
 	<string Field="Update">Update</string>

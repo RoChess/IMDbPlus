@@ -163,17 +163,36 @@ Wenn alle Filme englische Titel haben sollen, dann muss diese Funktion deaktivie
 	<!-- P -->
 
 	<!-- R -->
+	<string Field="Ratings">Englische Altersfreigaben</string>
+	<string Field="RatingsDescription">Es gibt mehrere englischsprachige Altersfreigabesysteme auf der Welt. Das bekannteste ist das amerikanische MPAA-System mit Bewertungen wie PG-13, R, NC-17, etc.
+
+Nutzer in Australien, Kanada, Großbritannien und Neuseeland können diese Einstellung nutzen um zum landesspezifischen Altersfreigabensystem zu wechseln.
+</string>
+	<string Field="RatingsHeader">Altersfreigabensystem auswählen</string>
+	<string Field="Rating01">USA</string>
+	<string Field="Rating02">Großbritannien</string>
+	<string Field="Rating03">Kanada (Alberta)</string>
+	<string Field="Rating04">Kanada (British Columbia)</string>
+	<string Field="Rating05">Kanada (Manitoba)</string>
+	<string Field="Rating06">Kanada (Nova Scotia)</string>
+	<string Field="Rating07">Kanada (Ontario)</string>
+	<string Field="Rating08">Kanada (Quebec)</string>
+	<string Field="Rating09">Australien</string>
+	<string Field="Rating10">Neuseeland</string>
 	<string Field="RefreshMovies">Filme aktualisieren</string>
 	<string Field="RefreshingMovies">Aktualisiere Filme</string>
 	<string Field="RefreshCancel">Aktualisierung abbrechen</string>
 	<string Field="RefreshMoviesDescription">Sind Sie sicher, dass alle Filme, die IMDB+
-als Scraper nutzen aktualisiert werden sollen?</string>
+als Scraper nutzen aktualisiert werden sollen?
+</string>
 	<string Field="RefreshMovieStatus">Aktualisiere {0}/{1} Filme: {2}%</string>
 	<string Field="RefreshMoviesNotification">IMDb+-Filmaktualisierung ist beendet.
-Viel Spass mit dem Ergebnis.</string>
+Viel Spass mit dem Ergebnis.
+</string>
 	<string Field="RefreshMoviesCancelNotification">Aktualisierung abgebrochen.
 {0} Filme bisher aktualisiert.
-Erneut Aktualisieren um fortzufahren.</string>
+Erneut Aktualisieren um fortzufahren.
+</string>
 	<string Field="RefreshAllFields">Alle Felder aktualisieren</string>
 	<string Field="RefreshAllFieldsDescription">Aus = Nur einiges wird aktualisiert
 An = Alles aktualisieren
@@ -309,13 +328,15 @@ Beispiel: "Avatar (tt0499549) (3D).mkv" wird zu "Avatar (3D)"
 	<!-- T -->
 
 	<!-- U -->
-	<string Field="UkRating">Britische BBFC-Altersfreigabe</string>
-	<string Field="UkRatingDescription">Aus = Die amerikanische MPAA-Altersfreigabe nutzen
-An = Die britische BBFC-Alterfreigabe nutzen
+	<string Field="UkRating">Filmtitel in britischem Englisch</string>
+	<string Field="UkRatingDescription">Aus = Filmtitel in amerikanischem Englisch anzeigen
+An = Filmtitel in britischem Englisch anzeigen
 
-Diese Einstellung regelt britische Altersfreigaben anstatt amerikanscher.
+Diese Einstellung ist für Filme mit einem Titel in britischem Englisch.
 
-Dies umschliesst 'U' für Universal, 'PG' für Parental Guidance, 12A, 12, 15, 18 und letzlich 'R18' für Restricted 18.
+Ein bekanntes Beispiel ist der erste Harry-Potter-Film. Der britische Originaltitel ist "Harry Potter and the Philosopher's Stone", was zu "Harry Potter and the Sorcerer's Stone" amerikanisiert wurde. Da die IMDb-Webseite auf ein amerikanisches Publikum fokussiert ist heißt das, dass alle Filme mit Titeln in amerikanischem Englisch geführt werden - wenn verfügbar. Mit dieser Einstellung kann dies zu dem Titel in britischem Englisch geändert werden.
+
+Achtung: Momentan gibt es noch keine Datenbank, die Titel in britischem Englisch bereitstellt, so wird immernoch ""Harry Potter I: Sorcerer's Stone" erscheinen, aber dies kann durch die eigene Umbenennungs-Datenbank umgangen werden, solange es noch keine Unterstützung innerhalb des IMDb+-Plugins gibt.
 </string>
 	<string Field="UpdatedScraperScript">MovingPictures wurde mit dem IMDb+-Scraper-Script v{0} aktualisiert</string>
 	<string Field="Update">Aktualisieren</string>
