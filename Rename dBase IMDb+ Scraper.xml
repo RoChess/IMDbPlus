@@ -26,7 +26,7 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="3" point="3" />
+		<version major="1" minor="3" point="4" />
 		<published month="04" day="16" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
@@ -1226,7 +1226,7 @@
 	<rename id="tt0353324" title="The Crow IV: Wicked Prayer" />
 	<rename id="tt0946992" title="The Crow V: Purgatory" />
 	<rename id="tt1347027" title="The Crow VI: Purgatory 2" />
-	<rename id="tt1340094" title="The Crow (Remake) I" title="The Crow X01"/>
+	<rename id="tt1340094" title="The Crow (Remake) I" sortby="The Crow X01"/>
 	<rename id="tt0382625" title="The Da Vinci Code I" />
 	<rename id="tt0808151" title="The Da Vinci Code II: Angels &amp; Demons" />
 	<rename id="tt1422137" title="The Da Vinci Code III: The Lost Symbol" />
