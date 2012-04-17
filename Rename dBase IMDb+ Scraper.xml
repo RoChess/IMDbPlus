@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="3" point="4" />
-		<published month="04" day="16" year="2012" />
+		<version major="1" minor="3" point="5" />
+		<published month="04" day="17" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -37,6 +37,8 @@
 	<rename id="tt0103594" title="1492: Conquest of Paradise" />
 	<rename id="tt0112950" title="Empire Records" />
 	<rename id="tt0443424" title="9 (Original)" />
+	<rename id="tt0055254" title="101 Dalmatians I" />
+	<rename id="tt0324941" title="101 Dalmatians II: Patch's London Adventure" />
 	<rename id="tt0062622" title="2001 I: A Space Odyssey" />
 	<rename id="tt0086837" title="2001 II: 2010" />
 	<rename id="tt0050086" title="3:10 to Yuma (Original)" />
