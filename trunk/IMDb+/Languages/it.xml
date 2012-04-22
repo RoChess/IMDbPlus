@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- IMDb+ translation file -->
+<!-- Italian (IT) -->
+<!-- Note: English is the fallback for any strings not found in other languages -->
+<strings>
+	<!-- A -->
+	<string Field="AddForeignTitle">Aggiunta titolo originale</string>
+	<string Field="AddForeignTitleDescription">Off = Mantenere il titolo inalterato
+On = Aggiungere il titolo originale tra parentesi
+
+Abilitando questo settaggio sarà possibile visualizzare il titolo originale (straniero) tra parentesi dopo il titolo in Inglese.
+
+Esempio: Milk (Latte)
+</string>
+
+	<!-- B -->
+	<string Field="BoolOn">On</string>
+	<string Field="BoolOff">Off</string>
+
+	<!-- C -->
+	<string Field="Cancel">Cancel</string>
+	<string Field="CountryFilter">Advanced: Filtro Paese</string>
+	<string Field="CountryFilterDescription">Alcuni film in lingua Inglese hanno titoli orignali (non in Inglese). Quindi, per facilitare la corretta visualizzazione dei titoli in Inglese è necessario filtrare il paese in cui il film è stato prodotto.
+
+I Paesi che non utilizzano i Titoli originali: 'us.ca.gb.ie.au.nz' (Stati Uniti, Canada, Gran Bretagna, Irlanda, Australia e Nuova Zelanda)
+
+Attenzione: La tastiera virtuale del MediaPortal non supporta il carattere '|', viene utilizzato al suo posto il carattere '.' in modo da separare i differenti linguaggi. E' opportuno prestare attenzione nella modifica di questo parametro in quanto potrebbe bloccare il funzionamento di IMDb+.
+</string>
+
+	<!-- D -->
+	<string Field="DefaultDescription">Selezionare una delle opzioni riportate sotto e verrà visualizzata un riepilogo più dettagliato.</string>
+
+	<!-- E -->
+
+	<!-- F -->
+	<string Field="First">Primo</string>
+	<string Field="FixMissingSummary">Utilizza la descrizione-utente in caso di riepilogo vuota</string>
+	<string Field="FixMissingSummaryDescription">Off = Mantiene il riepilogo vuoto
+On = Utilizza la descrizione-utente come riepilogo
+
+Non tutti i Film hanno un riepilogo disponibile sul sito web imdb.com. In alcuni casi, lo stesso Film ha una descrizione fornita dagli utenti. Questa impostazione consente di utilizzare la descrizione dell'utente in caso di riepilogo vuoto.
+
+Attenzione: La descrizione-utente può contenere il finale del Film.
+</string>
+	<string Field="ForceIMDbPlus">Forza IMDb+</string>
+	<string Field="ForceIMDbPlusDescription">Sei sicuro di impostare per tutti
+i Film, importati con lo scraper IMDb
+di default, l'uso di IMDb+?
+</string>
+	<string Field="ForceIMDbPlusComplete">Impostati con successo {0}/{1} Film
+con lo scaper IMDb+.
+</string>
+	<string Field="ForeignTitleFirst">Utilizzo del titolo originale in prima posizione</string>
+	<string Field="ForeignTitleFirstDescription">Off = Inglese (Straniero)
+On = Straniero (Inglese)
+
+Abilitando questa opzione il titolo originale (straniero) verrà visualizzato per primo seguito da quello Inglese tra parentesi.
+
+Esempio: Latte (Milk)
+</string>
+
+	<!-- G -->
+
+	<!-- H -->
+
+	<!-- I -->
+	<string Field="IMDbMetaScore">Metacritics MetaScore</string>
+	<string Field="IMDbMetaScoreDescription">Off = Viene utilizzato la valutazione di IMDb.com
+On = Viene utilizzato la valutazione di Metacritics Metascore
+
+Il sito IMDb.com offre anche la valutazione di Metacritics.com. Abilitando questa opzione viene utilizzata la valutazione di Metacritics, in alternativa viene utilizzata quella di IMDb.com.
+
+Attenzione: Questa impostazione richiede che sia abilitato anche 'IMDb Score' e di conseguenza disabilitato il metodo RottenTomatoes per i sommari, le durate e le informazioni mancanti.
+</string>
+	<string Field="IMDbScore">IMDb Score</string>
+	<string Field="IMDbScoreDescription">Off = Utilizza il sito RottenTomatoes
+On = Utilizza solamente il sito IMDb.com
+
+RottenTomatoes offre informazioni addizionali, ma nel caso si voglia circoscrivere la ricerca ad IMDb.com è necessario abilitare questa impostazione.
+
+Attenzione: Questo disabilita anche la ricerca dei sommari, della durata e degli score altrimenti presenti su RottenTomatoes.
+</string>
+	<string Field="IMDbInfo">IMDb+ Info</string>
+	<string Field="InfoPluginVersion">Versione Plugin: v{0}</string>
+	<string Field="InfoScraperAuthor">Autore Scraper: {0}</string>
+	<string Field="InfoScraperVersion">Versione Scraper: v{0}</string>
+	<string Field="InfoScraperPriority">Priorità Scraper: {0}</string>
+	<string Field="InfoScraperPublished">Data di Pubblicazione Scraper: {0}</string>
+	<string Field="InfoScraperLastUpdateCheck">Ultimo Aggiornamento Scraper: {0}</string>
+	<string Field="InfoMoviesIMDbPlusPrimary">Film che utilizzano IMDb+ come scraper: {0}</string>
+	<string Field="InfoMoviesOtherPlusPrimary">Film che utilizzano uno scraper diverso: {0}</string>
+	<string Field="InfoReplacementsVersion">Versione del motore di Sostituzione: v{0}</string>
+	<string Field="InfoReplacementsPublished">Pubblicazioni Sostituite: {0}</string>
+	<string Field="InfoReplacementEntries">Elementi Sostituiti: {0}</string>
+	<string Field="InfoCustomReplacementEntries">Elementi Sostituiti (Personalizzati): {0}</string>
+	<string Field="IntervalSixHours">6 Ore</string>
+	<string Field="IntervalTwelveHours">12 Ore</string>
+	<string Field="IntervalTwentyFourHours">24 Ore</string>
+	<string Field="IntervalTwoDays">2 Giorni</string>
+	<string Field="IntervalThreeDays">3 Giorni</string>
+	<string Field="IntervalFourDays">4 Giorni</string>
+	<string Field="IntervalSevenDays">7 Giorni</string>
+
+	<!-- K -->
+
+	<!-- J -->
+
+	<!-- L -->
+	<string Field="LastScraperUpdate">Ultimo Aggiornamento Scraper</string>
+	<string Field="LanguageFilter">Avanzate: Filtro Linguaggio</string>
+	<string Field="LanguageFilterDescription">Filtro speciale per inserire i titoli in altri linguaggi invede dell'Inglese (en). Utilizzare IMDb.com con un browser per trovare i codici ISO 639-1 dopo /language/.
+
+Il linguaggio di default è Inglese: 'en'
+
+Quindi se sei Italiano e vuoi che i Film Italiani utilizzino il loro titolo originale e i titoli in Inglese per tutti gli altri, utilizzare: 'en.it'
+
+Note: La tastiera virtuale del MediaPortal non supporta il carattere '|', viene utilizzato al suo posto il carattere '.' in modo da separare i differenti linguaggi. E' opportuno prestare attenzione nella modifica di questo parametro in quanto potrebbe bloccare il funzionamento di IMDb+.
+</string>
+	<string Field="LongSummary">Utilizzo di descrizioni estese che possono contenere spoilers</string>
+	<string Field="LongSummaryDescription">Off = Utilizzo di descrizioni sintetiche
+On = Utilizzo di descrizioni estese (possono contenere spoilers)
+
+Descrizioni estese offrono più informazioni, ma possono avere al loro interno degli spoilers. Per questo motivo questa impostazione disattiva di default, può però essere attivata nel caso si preferiscano le descrizioni estese.
+</string>
+
+	<!-- M -->
+	<string Field="MinIMDbVotes">Numero minimo di voti IMDb richiesti</string>
+	<string Field="MinIMDbVotesDescription">Off = Utilizza sempre la valutazione di IMDb
+On = Utilizza la valutazione di IMDb solo se è maggiore di 20 voti
+
+La valutazione di IMDb molte volte è influenzata dalle persone che hanno lavorato al Film. Questa è la motivazione per la quale non è raro trovare Film con meno di 20 voti con una valutazione molto alta.
+
+Se viene abilitata questa impostazione le valutazioni di IMDb con meno di 20 voti vengono ignorate.
+</string>
+	<string Field="MultiSelectDialog">Finestra di Selezione Multipla</string>
+
+	<!-- N -->
+	<string Field="No">No</string>
+	<string Field="NumberOfMovies">{0}/{1} Film</string>
+	<string Field="NumberOfMovies2">{0} Film</string>
+	<string Field="NoSourcesFound">Non è stato trovato alcun Film che può
+utilizzare lo script dello scraper IMDb+!</string>
+	<string Field="NullSource">Nessun dato, ma IMDb-ID valido</string>
+
+	<!-- O -->
+	<string Field="OneWriterDirector">Importazione di un solo scrittore e direttore</string>
+	<string Field="OneWriterDirectorDescription">Off = Importa tutti i nomi degli scrittori e direttori
+On = Utilizza solo il primo nome degli scrittori e direttori
+
+Alcuni skin non dispongono di spazio sufficiente per visualizzare scrittori e direttori. Quindi se si vuole evitare uno scroll orizzonatale è necessario abilitare questa impostazione in modo da importare solo il primo nome degli scrittori e dei direttori.
+
+E' bene tenere presente che questa impostazione influenzerà la possibilità di ricercare Film per scrittori/direttori in quanto sarà disponibile solo un nome per Film. Comunque il numero di Film che riportano più scrittori e direttori al momento è molto limitato.
+</string>
+	<string Field="OriginalTitle">Utilizzare il titolo originale del FilmUse the original title from the movie</string>
+	<string Field="OriginalTitleDescription">Off = Utilizza il titolo Inglese per i Film stranieri
+On = Utilizza il titolo originale per i Film stranieri
+
+I Film stranieri spesso hanno il titolo in una lingua diversa dall'Inglese.
+
+Se si vuole che tutti i Film abbiano il titolo in Inglese è necessario disabilitare questa impostazione.
+</string>
+
+	<!-- P -->
+
+	<!-- R -->
+	<string Field="Ratings">Sistemi di Rating/Certification per lingua Inglese</string>
+	<string Field="RatingsDescription">Ci sono più sistemi di Rating/Certificazione per i differenti paesi di lingua Inglese. Il più famoso è quello Americano basato sul sistema di rating MPAA con risultati tipo PG-13, R, NC-17, etc.
+
+Gli utenti in Australia, Canada, Regno Unito, e Nuova Zelanda possono utilizzare questa impostazione per impostare il sistema di rating del proprio paese.</string>
+	<string Field="RatingsHeader">Selezionare il Sistema di Rating</string>
+	<string Field="Rating01">USA</string>
+	<string Field="Rating02">UK</string>
+	<string Field="Rating03">Canada (Alberta)</string>
+	<string Field="Rating04">Canada (British Columbia)</string>
+	<string Field="Rating05">Canada (Manitoba)</string>
+	<string Field="Rating06">Canada (Nova Scotia)</string>
+	<string Field="Rating07">Canada (Ontario)</string>
+	<string Field="Rating08">Canada (Quebec)</string>
+	<string Field="Rating09">Australia</string>
+	<string Field="Rating10">Nuova Zelanda</string>
+	<string Field="RefreshMovies">Aggiornamento Film</string>
+	<string Field="RefreshingMovies">Aggiornamento Film in corso ...</string>
+	<string Field="RefreshCancel">Cancella Aggiornamento</string>
+	<string Field="RefreshMoviesDescription">Sei sicuro di voler aggiornare tutti i Film
+che hanno IMDb+ come sorgente primaria?</string>
+	<string Field="RefreshMovieStatus">Aggiornamento in corso di {0}/{1} Film: {2}%</string>
+	<string Field="RefreshMoviesNotification">Aggiornamento Film utilizzando IMDb+ completato.
+Ora è possibile apprezzare il risultato.</string>
+	<string Field="RefreshMoviesCancelNotification">Aggiornamento Cancellato.
+{0} Film aggiornati.
+Effettuare un nuovo aggiornamento per completare l'aggiornamento dei Film mancanti.</string>
+	<string Field="RefreshAllFields">Aggiornare tutti i campi</string>
+	<string Field="RefreshAllFieldsDescription">Off = Aggiornare solo alcuni elementi
+On = Aggiornare tutti i campi
+
+Le informazioni dul sito IMDb sono costantemente aggiornate e completate. Per questa ragione è opportuno che ogni tanto venga effettuato un aggiornamento delle informazioni dei Film.
+
+Abilitando questa impostazione saranno aggiornate tulle le informazioni dei Film. Altrimenti verranno aggiornate solo le informazioni mancanti, le certificazioni i voti e gli score.
+
+Attenzione: Abilitando questa impostazione il sistema di 'rinomina dei titoli' viene disabilitato.
+</string>
+	<string Field="RemoveFirstRoman">Rimozione del numero Romano (I) dal primo Film della serie</string>
+	<string Field="RemoveFirstRomanDescription">Off = Mantenere il titolo come da sistema di rinomina
+On = Eliminare il numero Romano (I) dal primo film della serie
+
+Se il sistema di rinomina è attivo, come default, le serie di Film vengono ragruppate aggiungendo un numero Romano al titolo. Questa operazione viene effettuata anche sul primo Film della serie, il Film 'Avatar' diventa quindi 'Avatar I'. Abilitando questa impostazione viene rimosso il numero Romano (I) dal titolo, mantenendo comunque il corretto ordinamento della serie di Film.
+
+E' bene tenere presente che questa operazione è effettuata solo quando il primo Film della serie non ha sottotitolo. Il Indiana Jones I: I Predatori dell'Arca perduta' continuerà a mantenere il numero Romano.
+</string>
+	<string Field="RenameTitles">Rinomina del Titolo in modo da mantenere raggruppati i Film di una serie</string>
+	<string Field="RenameTitlesDescription">Off = Lascia il titolo inalterato
+On = Rinomina il titolo in modo da mantenere raggruppati i Film di una serie.
+
+Molte volte non tutti i Titoli dei Film di una serie iniziano con lo stesso prefisso in modo da permettre un raggruppamento. Per risolvere questo problema è utilizzato un apposito database che effettua la rinomina del titolo basandosi sul identificativo tt-ID fornito da IMDb. Il risultato è che i Film di una serie possono essere facilmente identificati.
+
+Esempio: 'Batman VII: The Dark Knight Rises' sarà  ragruppato con gli altri Film della stessa serie.
+
+Il titolo utilizzato di default per rinominare il Film è contenuto nel file 'IMDb+\Rename dBase IMDb+ Scraper.xml' che si trova all'interno del folder utente di MediaPortal (es. 'C:\ProgramData\Team MediaPortal\MediaPortal' per una installazione in Windows 7).
+
+Per utilizzare titoli personalizzati durante il processo di rinomina i valori devono essere inseriti nel file 'IMDb+\Rename dBase IMDb+ Scraper (Custom).xml'
+
+Per modificare il file con i titoli personalizzati è possibile utilizzare 'Notepad', mentre quello di default viene aggiornato in modo automatico. E' importante che il contenuto dei file di rinomina rimanga conforme al formato XML.
+</string>
+	<string Field="RottenMeter">Valutazioni RottenTomatoes e TomatoMeter</string>
+	<string Field="RottenMeterDescription">Off = Valutazioni RottenTomatoes 'Audience'
+On = Valutazioni RottenTomatoes 'TomatoMeter'
+
+Al sito RottenTomatoes sono disponibili differenti sistemi di valutazione.
+
+Per usare una delle valutazioni 'TomatoMeter' è necessario abilitare questa impostazione, alternativamente sarà utilizzato il sistema di valutazione 'Audience'.
+
+</string>
+	<string Field="RottenAverage">Valutazione 'Media' RottenTomatoes</string>
+	<string Field="RottenAverageDescription">Off = Valutazione 'Percentuale' RottenTomatoes
+On = Valutazione 'Media' RottenTomatoes
+
+Con questa impostazione abilitata è utilizzata la valutazione 'Media', altrimenti è utilizzata la valutazione 'Percentuale'.
+
+Il valutazione 'Percentuale' conta il numero di utenti RottenTomatoes che hanno votato in un certo modo..
+</string>
+	<string Field="RottenTopCritics">La critica 'Top' di RottenTomatoes</string>
+	<string Field="RottenTopCriticsDescription">Off = 'Tutta' la critica di RottenTomatoes
+On = La critica 'Top' di RottenTomatoes
+
+E' disponibile su TomatoMeter una valutazione che comprente 'Tutta' la critica oppure un gruppo selezionato 'Top' di critici.
+
+Abilitando questa impostazione viene limitata valutazione al solo gruppo 'Top'.
+</string>
+	<string Field="Resume">(Riprendi)</string>
+
+	<!-- S -->
+	<string Field="ScraperOptionsTitle">Opzioni IMDb+ Scraper</string>
+	<string Field="ScraperNotFirstPrompt">Lo scraper IMDb+ non è il primo!\nQuesto può causare problemi.\nPotete correggere l'impostazione?</string>
+	<string Field="SecondaryDetails">Le informazioni addizionali saranno ottenute nel seguente linguaggio</string>
+	<string Field="SecondaryDetailsDescription">E' possibile ottenere alcune informazioni, quali Riepilogo, Certificazioni, Genere etc ..., in una lingua diversa.
+
+Attualmente sono disponibili: Olandese, Francese, Tedesco, Islandese, Italiano, Portoghese, Spagnolo e Svedese.
+</string>
+	<string Field="SecondaryDetailsHeader">Lingua Secondaria</string>
+	<string Field="SecondaryLanguage01">Inglese</string>
+	<string Field="SecondaryLanguage02">Tedesco</string>
+	<string Field="SecondaryLanguage03">Spagnolo</string>
+	<string Field="SecondaryLanguage04">Francese</string>
+	<string Field="SecondaryLanguage05">Italiano</string>
+	<string Field="SecondaryLanguage06">Portoghese</string>
+	<string Field="SecondaryLanguage07">Svedese</string>
+	<string Field="SecondaryLanguage08">Islandese</string>
+	<string Field="SecondaryLanguage09">Olandese</string>
+	<string Field="SecondarySummary">Ripristinare il riepilogo in Inglese se la lingua secondaria selezionata non è disponibile</string>
+	<string Field="SecondarySummaryDescription">Off = Non visualizzare niente se il riepilogo non è disponibile nella lingua secondaria selezionata
+On = Utilizzare il riepilogo in Inglese se non è disponibile nella lingua secondaria selezionata
+
+I siti stranieri generalmente non hanno tutte le informazioni contenute in IMDb.com oppure hanno parti non complete. Generalmente questo riguarda il riepilogo; per evitare che le informazioni rimangano vuote, abilitare questa opzione per ripristinare i contenuti in lingua Inglese (se disponibili). Idealmente la cosa migliore sarebbe registrarsi al sito straniero e completare le informazioni mancanti in modo da renderle disponibili a tutti.
+</string>
+	<string Field="SecondaryEnglishTitle">Titolo secondario Inglese</string>
+	<string Field="SecondaryEnglishTitleDescription">Off = Utilizzo del titolo straniero
+On = Utilizzo del titolo Inglese
+
+Se è stata selezionata una lingua straniera per i dettagli relativi al riepilogo, anche il titolo verrà visualizzato nella lingua straniera. Questa opzione consente di mantenere il titolo in Inglese.
+
+Attenzione: Questa impostazione non si applica al sistema di rinomina. Tuttavia è necessario disporre di un titolo tradotto per ottenere il titolo straniero, anche quando questa impostazione è disattivata.
+</string>
+	<string Field="SingleScore">Sistema di valutazioni singola del punteggio</string>
+	<string Field="SingleScoreDescription">Off = Valutazione media del punteggio
+On = Valutazioni singola del punteggio
+
+Alcune volte c'e' molta differenza tra i punteggi delle valutazioni disponibili. Al fine di disporre di una valutazione equilibrata viene utilizzato un valore medio tra i punteggi di IMDb, MetaCritics e Rottentomatoes.
+
+Attenzione: Se l'opzione 'IMDb Score' è abilitata e questa impostazione è attivata allora, per il calcolo del valore medio, viene utilizzata la media dei punteggi dei soli IMDb and Metacritics.
+</string>
+	<string Field="SpecialEditions">Supporto a Tag per rinominare Edizioni Speciali</string>
+	<string Field="SpecialEditionsDescription">Off = Mantenere il titolo così com'è
+On = Aggiungere al titolo i Tag per le Edizioni Speciali
+
+Se l'identificativo IMDb (tt-ID) è resodisponibile nel nome del file oppure tramite file NFO, è possibile abilitare questa opzione per rendere disponibile il Tagging con le informazioni sulle Edisioni Speciali.
+
+E' possibile aggiungere i seguenti termini, tra parentesi, al nome del file:
+
+ - 3D
+ - Extended
+ - Unrated
+ - Director's Cut
+ - Alternate Ending
+
+E' anche possibile avere il termine 'Edition' come suffisso alla fine del file..
+
+Esempio: "Avatar (tt0499549) (3D).mkv" risulterà "Avatar (3D)"
+</string>
+	<string Field="SettingPluginEnabledName">Plugin Abilitato</string>
+	<string Field="SettingPluginEnabledDescription">Abilitare / Disabilitare questa impostazione per verificare se il plugin IMDb+ è caricato con il MediaPortal.</string>
+	<string Field="SettingListedHomeName">Visualizzato nella Home</string>
+	<string Field="SettingListedHomeDescription">Abilitare questa impostazione per visualizzare IMDb+ nel menu principale (Home) di Mediaportal.</string>
+	<string Field="SettingListedPluginsName">Visualizzato in My Plugins</string>
+	<string Field="SettingListedPluginsDescription">Abilitare questa impostazione per visualizzare IMDb+ nel menu dei Plug-in (My Plugins) di Mediaportal.</string>
+	<string Field="SettingsSyncIntervalName">Intervallo, in ore, per la verifica di aggirnamenti</string>
+	<string Field="SettingsSyncIntervalDescription">Questa impostazione contralla la frequenza con cui il plugin verifica sulla rete la presenza di aggiornamenti relativamente agli script ed al database di rinomina.</string>
+	<string Field="SettingsSyncOnStartupName">Verifica degli aggiornamenti all'avvio</string>
+	<string Field="SettingsSyncOnStartupDescription">Questa impostazione forza il plugin a verificare, in fase di avvio di MediaPortal, la presenza in rete di aggiornamenti relativamente agli script ed al database di rinomina.</string>
+	<string Field="SettingsDisableNotificationsName">Disabila le notifiche</string>
+	<string Field="SettingsDisableNotificationsDescription">Questa impostazione consente di disabilitare le notifiche che appaiono quando vengono applicati degli aggiornamenti.</string>
+	<string Field="SelectSources">Selezionare le sorgenti da convertire a IMDb+</string>
+	<string Field="StartsWith">Iniziare con {0}</string>
+	<string Field="SelectAlphas">Selezionare i Film che iniziano con ...</string>
+
+	<!-- T -->
+
+	<!-- U -->
+	<string Field="UkRating">Titoli dei Film in British-English</string>
+	<string Field="UkRatingDescription">Off = Visualizza i titoli dei Film in American-English
+On = Visualizza i titoli dei Film in British-English
+
+Utilizzare questa impostazione per visualizzare i titoli dei Film in lingua British-English.
+
+Un esempio è il primo Film di Harry Potter. Il titolo originale è "Harry Potter and the Philosopher's Stone", che è stato 'Americanizzato' in "Harry Potter and the Sorcerer's Stone". Il sito IMDb è principalmente rivolto ad un pubblico Americano il che significa che sarà utilizzato il titolo in American-English se disponibile. Con questa impostazione è possibile visualizzare il titolo in British-English.
+
+Attenzione: Al momento non è disponibile alcun database di rinomina dei titoli per il British-English, quindi alla fine il titolo sarà comunque "Harry Potter I: Sorcerer's Stone", è comunque possibile impostare il titolo in British-English utilizzando il database di rinomina personalizzata fino a quando non verrà introdotto il supporto in modo nativo.
+</string>
+	<string Field="UpdatedScraperScript">MovingPictures è stato aggiornato con gli Script dello scraper IMDb+ v{0}</string>
+	<string Field="Update">Aggiorna</string>
+	<string Field="UpdateAll">Aggiorna tutto</string>
+	<string Field="UpdateReplacementOnly">Aggiorna solo le sostituzioni</string>
+	<string Field="UpdateAlphas">Aggiorna i Film che iniziano con ...</string>
+
+	<!-- V -->
+
+	<!-- W -->
+
+	<!-- Y -->
+	<string Field="Yes">Si</string>
+</strings>
