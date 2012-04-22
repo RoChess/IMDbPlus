@@ -83,6 +83,20 @@
               <ZipFileName>Installer{CopyFile}\{b512c8af-101b-4644-9a5d-3603aa1ec7fd}-sv.xml</ZipFileName>
               <DestinationFilename>%Language%\IMDb+\sv.xml</DestinationFilename>
             </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\fr.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{d3dda53d-d3b0-4aee-bc29-e0860e4697d5}-fr.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\fr.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\it.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{dcb98c8e-bad3-4833-9319-80f5c95c287c}-it.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\it.xml</DestinationFilename>
+            </FileItem>
           </Items>
         </Files>
       </GroupItem>
@@ -218,18 +232,9 @@
       </GroupItem>
       <GroupItem Name="MediaInfo">
         <ParentGroup />
-        <DisplayName>MediaInfo v0.7.53.0</DisplayName>
+        <DisplayName>MediaInfo v0.7.56.0</DisplayName>
         <DefaulChecked>true</DefaulChecked>
-        <Description>MediaInfo DLL library v0.7.53.0
-
-Fixes:
-  * MediaPortal TS crash
-  * Compressed QuickTime files
-  * Wrong channel count PCM
-
-Adds support for:
-  * Official DTS CodecIDs
-  * Audio only AVI files</Description>
+        <Description>MediaInfo DLL library</Description>
         <Files>
           <Items>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
@@ -631,22 +636,21 @@ public class Script
     <ForumPage>http://forum.team-mediaportal.com/moving-pictures-284/imdb-scraper--98978/</ForumPage>
     <UpdateUrl>http://imdbplus.googlecode.com/svn/trunk/MPEI/update.xml</UpdateUrl>
     <Version>
-      <Major>1</Major>
-      <Minor>5</Minor>
+      <Major>2</Major>
+      <Minor>0</Minor>
       <Build>0</Build>
-      <Revision>250</Revision>
+      <Revision>281</Revision>
     </Version>
     <ExtensionDescription>The IMDb+ plugin and scraper for MovingPictures will make your movie collection easier to use. The plugin will keep the scraper script up-to-date, and add powerful features such as rename and grouping of movie series. It also corrects English titles, allows RottenTomatoes ratings, and many other features.</ExtensionDescription>
-    <VersionDescription>* Fixed bug that caused MovPic to use wrong IMDb+ scraper-script path after update
-* Fixed bug on cover sources getting re-enabled
-* If scraper-debug mode is enabled IMDb+ GUI notification is off
+    <VersionDescription>* Updates MediaInfo to v0.7.56
+* Includes updated language files
 
-This version includes IMDb+ scraper-script v4.3.2 by default
+This version includes IMDb+ scraper-script v4.3.8 by default
 which will auto update once IMDb+ plugin runs for the first time
 and a new version is available.</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
-    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.5.0.250.mpe1</OnlineLocation>
-    <ReleaseDate>2012-01-28T02:33:31</ReleaseDate>
+    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v2.0.0.281.mpe1</OnlineLocation>
+    <ReleaseDate>2012-04-22T16:02:11</ReleaseDate>
     <Tags>moving pictures, movies, scraper</Tags>
     <Location>.\Release\imdbplus.plugin.v[Version].mpe1</Location>
     <Params>
@@ -745,6 +749,20 @@ and a new version is available.</VersionDescription>
         <LocalFileName>..\IMDb+\Languages\sv.xml</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{b512c8af-101b-4644-9a5d-3603aa1ec7fd}-sv.xml</ZipFileName>
         <DestinationFilename>%Language%\IMDb+\sv.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\fr.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{d3dda53d-d3b0-4aee-bc29-e0860e4697d5}-fr.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\fr.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\it.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{dcb98c8e-bad3-4833-9319-80f5c95c287c}-it.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\it.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
@@ -848,21 +866,21 @@ and a new version is available.</VersionDescription>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Resources\sidebar.jpg</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{1b6176a7-97fa-4cd8-8cb7-535b73479e85}-sidebar.jpg</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{92e2dfaf-bd52-4c93-8bdf-b04671b8f01e}-sidebar.jpg</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Resources\header.jpg</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{f886a280-6a4c-48f1-b645-41f7dd6cd311}-header.jpg</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{34c0c809-7ffe-4376-ae96-c1e41f8443ef}-header.jpg</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\IMDb+\Images\imdb_icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{c74b537e-41f6-4b97-95e5-f246e57c5279}-imdb_icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{c01286c2-af58-4718-a025-a54dbac0d1d2}-imdb_icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
@@ -900,7 +918,7 @@ and a new version is available.</VersionDescription>
         <Recursive>true</Recursive>
       </FolderGroup>
     </FolderGroups>
-    <ProjectFilename>IMDB+.xmp2</ProjectFilename>
+    <ProjectFilename>IMDb+.xmp2</ProjectFilename>
     <UpdatePath1>./update.xml</UpdatePath1>
     <UpdatePath2 />
     <UpdatePath3 />
