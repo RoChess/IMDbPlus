@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="3" point="5" />
-		<published month="04" day="17" year="2012" />
+		<version major="1" minor="3" point="6" />
+		<published month="04" day="26" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -229,6 +229,7 @@
 	<rename id="tt1349482" title="Bring It On V: Fight To The Finish" />
 	<rename id="tt0328880" title="Brother Bear I" />
 	<rename id="tt0465925" title="Brother Bear II" />
+	<rename id="tt0077850" title="Bruce Lee: The Man, the Myth" foreign="Li Xiao Long zhuan qi" />
 	<rename id="tt0080487" title="Caddyshack I" />
 	<rename id="tt0094824" title="Caddyshack II" />
 	<rename id="tt0301078" title="Camelot (TV)" />
@@ -798,6 +799,8 @@
 	<rename id="tt1302011" title="Kung Fu Panda II" />
 	<rename id="tt1287845" title="Kung Fu Panda (Short) I: Secrets of the Furious Five" />
 	<rename id="tt1702433" title="Kung Fu Panda (Short) II: Holiday Special" />
+	<rename id="tt1228933" title="Laid to Rest I" />
+	<rename id="tt1792799" title="Laid to Rest II: ChromeSkull" />
 	<rename id="tt0139414" title="Lake Placid I" />
 	<rename id="tt0974583" title="Lake Placid II" />
 	<rename id="tt1499249" title="Lake Placid III" />
@@ -824,6 +827,17 @@
 	<rename id="tt0115238" title="Lonesome Dove IV: Dead Man's Walk" />
 	<rename id="tt0783328" title="Lonesome Dove V: Comanche Moon" />
 	<rename id="tt0245712" title="Love's a Bitch" foreign="Amores perros" />
+	<rename id="tt0345591" title="Love Comes Softly I" sortby="Love Comes Softly 01" />
+	<rename id="tt0402348" title="Love Comes Softly II: Love's Enduring Promise" sortby="Love Comes Softly 02" />
+	<rename id="tt0486420" title="Love Comes Softly III: Love's Long Journey" sortby="Love Comes Softly 03" />
+	<rename id="tt0785025" title="Love Comes Softly IV: Love's Abiding Joy" sortby="Love Comes Softly 04" />
+	<rename id="tt0929864" title="Love Comes Softly V: Love's Unending Legacy" sortby="Love Comes Softly 05" />
+	<rename id="tt0960143" title="Love Comes Softly VI: Love's Unfolding Dream" sortby="Love Comes Softly 06" />
+	<rename id="tt1269560" title="Love Comes Softly VII: Love Takes Wing" sortby="Love Comes Softly 07" />
+	<rename id="tt1307064" title="Love Comes Softly VIII: Love Finds a Home" sortby="Love Comes Softly 08" />
+	<rename id="tt1684907" title="Love Comes Softly (Prequel) I: Love Begins" sortby="Love Comes Softly X01" />
+	<rename id="tt1672621" title="Love Comes Softly (Prequel) II: Love's Everlasting Courage" sortby="Love Comes Softly X02" />
+	<rename id="tt2078672" title="Love Comes Softly: Love's Christmas Journey" sortby="Love Comes Softly Y01" />
 	<rename id="tt0351283" title="Madagascar I" />
 	<rename id="tt0479952" title="Madagascar II: Escape 2 Africa" />
 	<rename id="tt1277953" title="Madagascar III" />
