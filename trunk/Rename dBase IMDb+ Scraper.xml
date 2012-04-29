@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="3" point="6" />
-		<published month="04" day="26" year="2012" />
+		<version major="1" minor="3" point="7" />
+		<published month="04" day="28" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -330,6 +330,8 @@
 	<rename id="tt0094868" title="Chocolat (France)" />
 	<rename id="tt0251637" title="Choke (Docu)" />
 	<rename id="tt0265118" title="Choke (Cult)" />
+	<rename id="tt1706593" title="Chronicle" sortby="Chronicle I" />
+	<rename id="tt2298281" title="Chronicle II" />
 	<rename id="tt0042332" title="Cinderella I" />
 	<rename id="tt0291082" title="Cinderella II: Dreams Come True" />
 	<rename id="tt0465940" title="Cinderella III: A Twist in Time" />
@@ -755,6 +757,14 @@
 	<rename id="tt0263488" title="Jeepers Creepers I" />
 	<rename id="tt0301470" title="Jeepers Creepers II" />
 	<rename id="tt1139592" title="Jeepers Creepers III: Cathedral" />
+	<rename id="tt0431420" title="Jesse Stone I: Stone Cold" />
+	<rename id="tt0498360" title="Jesse Stone II: Night Passage" />
+	<rename id="tt0800095" title="Jesse Stone III: Death in Paradise" />
+	<rename id="tt0905345" title="Jesse Stone IV: Sea Change" />
+	<rename id="tt1064884" title="Jesse Stone V: Thin Ice" />
+	<rename id="tt1315216" title="Jesse Stone VI: No Remorse" />
+	<rename id="tt1710573" title="Jesse Stone VII: Innocents Lost" />
+	<rename id="tt2004262" title="Jesse Stone VIII: Benefit of the Doubt" />
 	<rename id="tt0274166" title="Johnny English I" />
 	<rename id="tt1634122" title="Johnny English II: Reborn" />
 	<rename id="tt1606600" title="Jonah Hex (DC Showcase)" />
