@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="3" point="7" />
-		<published month="04" day="28" year="2012" />
+		<version major="1" minor="3" point="8" />
+		<published month="05" day="03" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -41,6 +41,9 @@
 	<rename id="tt0324941" title="101 Dalmatians II: Patch's London Adventure" />
 	<rename id="tt0062622" title="2001 I: A Space Odyssey" />
 	<rename id="tt0086837" title="2001 II: 2010" />
+	<rename id="tt0092312" title="21 Jump Street (Original)" />
+	<rename id="tt1232829" title="21 Jump Street" sortby="21 Jump Street I" />
+	<rename id="tt2294449" title="21 Jump Street II" />
 	<rename id="tt0050086" title="3:10 to Yuma (Original)" />
 	<rename id="tt0389722" title="30 Days of Night I" />
 	<rename id="tt1320304" title="30 Days of Night II: Dark Days" />
@@ -903,6 +906,8 @@
 	<rename id="tt1197627" title="National Treasure III" />
 	<rename id="tt1023111" title="Never Back Down I" />
 	<rename id="tt1754264" title="Never Back Down II" />
+	<rename id="tt1648112" title="New Kids I: Turbo" />
+	<rename id="tt2043932" title="New Kids II: Nitro" />
 	<rename id="tt0477347" title="Night at the Museum I" />
 	<rename id="tt1078912" title="Night at the Museum II: Battle of the Smithsonian" />
 	<rename id="tt0403358" title="Night Watch I" foreign="Nochnoy dozor" />
@@ -1189,6 +1194,7 @@
 	<rename id="tt1707687" title="Street Kings II: Motor City" />
 	<rename id="tt0078346" title="Superman I" />
 	<rename id="tt0081573" title="Superman II" />
+	<rename id="tt0839995" title="Superman II: The Richard Donner Cut" sortby="Superman IIb" />
 	<rename id="tt0086393" title="Superman III" />
 	<rename id="tt0094074" title="Superman IV: The Quest for Peace" />
 	<rename id="tt0348150" title="Superman V: Superman Returns" />
