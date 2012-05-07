@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="3" point="8" />
-		<published month="05" day="03" year="2012" />
+		<version major="1" minor="3" point="9" />
+		<published month="05" day="06" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -204,6 +204,8 @@
 	<rename id="tt0096928" title="Bill &amp; Ted's I: Excellent Adventure" />
 	<rename id="tt0101452" title="Bill &amp; Ted's II: Bogus Journey" />
 	<rename id="tt0071222" title="Black Christmas (Original)" />
+	<rename id="tt0115693" title="Black Mask I" />
+	<rename id="tt0264429" title="Black Mask II: City of Masks" />
 	<rename id="tt0120611" title="Blade I" />
 	<rename id="tt0187738" title="Blade II" />
 	<rename id="tt0359013" title="Blade III: Trinity" />
@@ -504,6 +506,9 @@
 	<rename id="tt0062979" title="Flesh I" />
 	<rename id="tt0066482" title="Flesh II: Trash" />
 	<rename id="tt0068688" title="Flesh III: Heat" />
+	<rename id="tt0434215" title="Flicka I" />
+	<rename id="tt1381767" title="Flicka II: Friends Forever" />
+	<rename id="tt2039339" title="Flicka III: Country Pride" />
 	<rename id="tt0087277" title="Footloose (Original)" />
 	<rename id="tt0106950" title="Fortress I" />
 	<rename id="tt0179183" title="Fortress II: Re-Entry" />
@@ -810,8 +815,8 @@
 	<rename id="tt1871303" title="Kiss Me Kate (NL)" />
 	<rename id="tt0441773" title="Kung Fu Panda I" />
 	<rename id="tt1302011" title="Kung Fu Panda II" />
-	<rename id="tt1287845" title="Kung Fu Panda (Short) I: Secrets of the Furious Five" />
-	<rename id="tt1702433" title="Kung Fu Panda (Short) II: Holiday Special" />
+	<rename id="tt1287845" title="Kung Fu Panda (Short) I: Secrets of the Furious Five" sortby="Kung Fu Panda X01" />
+	<rename id="tt1702433" title="Kung Fu Panda (Short) II: Holiday Special" sortby="Kung Fu Panda X02" />
 	<rename id="tt1228933" title="Laid to Rest I" />
 	<rename id="tt1792799" title="Laid to Rest II: ChromeSkull" />
 	<rename id="tt0139414" title="Lake Placid I" />
@@ -1131,11 +1136,11 @@
 	<rename id="tt0298148" title="Shrek II" />
 	<rename id="tt0413267" title="Shrek III: The Third" />
 	<rename id="tt0892791" title="Shrek IV: Forever After" />
-	<rename id="tt0360985" title="Shrek (Short): 4-D" sortby="Shrek (Short) 01" />
-	<rename id="tt0307461" title="Shrek (Short): Shrek in the Swamp Karaoke Dance Party" sortby="Shrek (Short) 02" />
-	<rename id="tt0897387" title="Shrek (Short): Shrek The Halls" sortby="Shrek (Short) 03" />
-	<rename id="tt1830577" title="Shrek (Short): Donkey's Christmas Shrektacular" sortby="Shrek (Short) 04" />
-	<rename id="tt1725156" title="Shrek (Short): Scared Shrekless" sortby="Shrek (Short) 05" />
+	<rename id="tt0360985" title="Shrek (Short): 4-D" sortby="Shrek X01" />
+	<rename id="tt0307461" title="Shrek (Short): Shrek in the Swamp Karaoke Dance Party" sortby="Shrek X02" />
+	<rename id="tt0897387" title="Shrek (Short): Shrek The Halls" sortby="Shrek X03" />
+	<rename id="tt1830577" title="Shrek (Short): Donkey's Christmas Shrektacular" sortby="Shrek X04" />
+	<rename id="tt1725156" title="Shrek (Short): Scared Shrekless" sortby="Shrek X05" />
 	<rename id="tt0475394" title="Smokin' Aces I" />
 	<rename id="tt1319743" title="Smokin' Aces II: Assassins' Ball" />
 	<rename id="tt0108171" title="Sniper I" />
@@ -1467,6 +1472,9 @@
 	<rename id="tt0114709" title="Toy Story I" />
 	<rename id="tt0120363" title="Toy Story II" />
 	<rename id="tt0435761" title="Toy Story III" />
+	<rename id="tt1979376" title="Toy Story IV" />
+	<rename id="tt1850374" title="Toy Story (Short): Hawaiian Vacation" sortby="Toy Story X01" />
+	<rename id="tt2033372" title="Toy Story (Short): Small Fry" sortby="Toy Story X02" />
 	<rename id="tt0418279" title="Transformers I" />
 	<rename id="tt1055369" title="Transformers II: Revenge of the Fallen" />
 	<rename id="tt1399103" title="Transformers III: Dark of the Moon" />
@@ -1543,6 +1551,7 @@
 	<rename id="tt0351977" title="Walking Tall I" />
 	<rename id="tt0804550" title="Walking Tall II: The Payback" />
 	<rename id="tt0804551" title="Walking Tall III: Lone Justice" />
+	<rename id="tt1334585" title="WALL·E: BURN-E" />
 	<rename id="tt0094291" title="Wall Street I" />
 	<rename id="tt1027718" title="Wall Street II: Money Never Sleeps" />
 	<rename id="tt0104361" title="Wallace &amp; Gromit I: A Grand Day Out" />
