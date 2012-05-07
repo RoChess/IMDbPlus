@@ -1,20 +1,12 @@
-#summary Installation of scraper scripts in MovingPictures.
-#labels Deprecated
+#summary Helping scraper-script developers fix problems.
 
-<wiki:toc max_depth="1"/>
+=Debugging scraper-scripts=
 
-=Installing the scraper script=
+Movie database sites adjust their code, so the scraper-scripts have to be modified.
 
-Movie database sites adjust their code, so the scraper scripts have to be modified.
+Sometimes this causes problems that prevent everything from working correct. The best way for a scraper-script developer to figure out what is going wrong is to look at the !MovingPictures log file set to scraper-script debug mode.
 
-MovingPictures gets the information regarding cast, summary and other details from internet movie websites, such as IMDb. This process is called scraping, and it is a seperate part of !MovingPictures. The reason for this is that you can update the scrapers without waiting for a new !MovingPictures release. A lot of scrapers are bundled by default, but there are many other scrapers available, including this IMDb+ one.
-
-
-In order to install and/or update a scraper, use the following steps:
-
- * Download the featured scraper script ZIP file via the 'Downloads' section.
-
- * Unzip all of the XML files to your desktop first and then move them into the 'C:\' location. The desktop step is needed to prevent creation of the "Mandatory Integrity Control" (MIC) flag that would mess things up with "User Access Control" (UAC) mode enabled.
+To enable scraper-script debug mode, use the following steps:
 
  * Open MovingPictures configuration, and go to the "Importer Settings" tab:
 
@@ -28,20 +20,16 @@ In order to install and/or update a scraper, use the following steps:
 
 	http://blixy.net/mp/FAQ.MovingPictures.1c_Movie.Details.Data.Sources.png
 
- * This will show you the existing scrapers, their order in which they are used, and their current version. Click the little arrow next to the `[+]` to reveal the following menu:
-
-	http://blixy.net/mp/FAQ.MovingPictures.1d_Add.New.Data.Source.png
-
- * Select "Add a New Data Source" and then browse to the 'C:\' location where you unzipped all the XML files and select the "IMDb+ (version).xml" file. New scrapers will be added at the bottom, and you can use the green up and down arrows to adjust their position. If you did not adjust the default settings, then only the first scraper listed is used for auto-approval, so keep that in mind.
-
------
-
-=Debugging=
-
-If you are the first to notice something is wrong with a scraper, then you can help the developers with proper debug logs. To enable the scraper debug mode, go back to the "Movie Details Data Sources" screen from before that lists all the scrapers. Then use the gear icon to select the following option:
+ * Then use the gear icon to select the following option:
 
 	http://blixy.net/mp/FAQ.MovingPictures.1e_Scraper.Enable.Debug.Mode.png
 
-This will activate the scraper debug mode, which you can verify via: http://blixy.net/mp/FAQ.MovingPictures.1f_Scraper.Debug.Enabled.png
+This will activate the scraper-script debug mode, which you can verify via: http://blixy.net/mp/FAQ.MovingPictures.1f_Scraper.Debug.Enabled.png
 
-Your movingpictures.log file can now be zipped and given to the scraper developer to solve the problem you discovered. This can result in extremly large log files if you import a large amount of movies, so keep the steps needed to recreate the problem as short as possible. For example close !MovingPictures configuration, open it, and re-import a single movie that is causing problems.
+*IMPORTANT:* So now that you turned on scraper-script debug mode, you have to make sure that the log file contains the problem you are trying to report. Keep in mind that this debug mode generates huge log files in the Megabytes for each movie. Everything also happens at the same time, so you want to be sure to only import or refresh a single movie.
+
+After you are done, ZIP up the movingpictures.log file and attach it to a forum post (or Google Code Issue) that your scraper-script developer monitors.
+
+To locate the movingpictures.log file; Start Menu -> 'All Programs' -> Team !MediaPortal -> '!MediaPortal' -> Use the shortcut 'User Files' -> navigate to the 'log' subfolder.
+
+And remember to turn scraper-script debugging off after you are done, unless you do not have a problem with the giant log file and the delays it causes.
