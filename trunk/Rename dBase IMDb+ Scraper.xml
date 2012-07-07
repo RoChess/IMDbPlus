@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="3" point="9" />
-		<published month="05" day="06" year="2012" />
+		<version major="1" minor="4" point="0" />
+		<published month="07" day="07" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -163,6 +163,8 @@
 	<rename id="tt0499549" title="Avatar" sortby="Avatar I" />
 	<rename id="tt1630029" title="Avatar II" />
 	<rename id="tt1757678" title="Avatar III" />
+	<rename id="tt0112431" title="Babe I" />
+	<rename id="tt0120595" title="Babe II: Pig in the City" />
 	<rename id="tt0086927" title="Bachelor Party I" />
 	<rename id="tt0954541" title="Bachelor Party II: The Last Temptation" />
 	<rename id="tt0088763" title="Back to the Future I" />
@@ -347,7 +349,7 @@
 	<rename id="tt0057950" title="Cinderella (TV/Remake)" />
 	<rename id="tt0910852" title="Cinderella (Video)" />
 	<rename id="tt0082186" title="Clash of the Titans (Original)" />
-	<rename id="tt0800320" title="Clash of the Titans" sortby="Clash of the Titans I" />
+	<rename id="tt0800320" title="Clash of the Titans I" />
 	<rename id="tt1646987" title="Clash of the Titans II: Wrath of the Titans" />
 	<rename id="tt2103167" title="Clash of the Titans III" />
 	<rename id="tt0007801" title="Cleopatra (Classic)" />
@@ -502,6 +504,8 @@
 	<rename id="tt0414982" title="Final Destination III" />
 	<rename id="tt1144884" title="Final Destination IV: The Final Destination" />
 	<rename id="tt1622979" title="Final Destination V" />
+	<rename id="tt2062960" title="Flatland I" />
+	<rename id="tt2062960" title="Flatland II: Sphereland" />
 	<rename id="tt0780516" title="Flawless (UK)" />
 	<rename id="tt0062979" title="Flesh I" />
 	<rename id="tt0066482" title="Flesh II: Trash" />
@@ -789,6 +793,7 @@
 	<rename id="tt0107290" title="Jurassic Park I" />
 	<rename id="tt0119567" title="Jurassic Park II: The Lost World" />
 	<rename id="tt0163025" title="Jurassic Park III: Return to the Island" />
+	<rename id="tt0369610" title="Jurassic Park IV" />
 	<rename id="tt0266697" title="Kill Bill: Volume I" />
 	<rename id="tt0378194" title="Kill Bill: Volume II" />
 	<rename id="tt1521225" title="Kill Bill: Volume III" />
@@ -923,6 +928,9 @@
 	<rename id="tt0240772" title="Ocean's I: Eleven" />
 	<rename id="tt0349903" title="Ocean's II: Twelve" />
 	<rename id="tt0496806" title="Ocean's III: Thirteen" />
+	<rename id="tt0076489" title="Oh, God! I" />
+	<rename id="tt0081268" title="Oh, God! II: Book II" />
+	<rename id="tt0087835" title="Oh, God! III: You Devil" />
 	<rename id="tt0216048" title="Oklahoma! (UK)" />
 	<rename id="tt2048823" title="Oklahoma! (TV)" />
 	<rename id="tt0064116" title="Once Upon a Time in the West" foreign="C'era una volta il West" />
@@ -945,6 +953,7 @@
 	<rename id="tt1536044" title="Paranormal Activity II" />
 	<rename id="tt1728179" title="Paranormal Activity II: Tokyo Night" foreign="Paranômaru akutibiti: Dai-2-shô" />
 	<rename id="tt1778304" title="Paranormal Activity III" />
+	<rename id="tt2109184" title="Paranormal Activity IV" />
 	<rename id="tt0814255" title="Percy Jackson &amp; the Olympians I: The Lightning Thief" />
 	<rename id="tt1854564" title="Percy Jackson &amp; the Olympians II: The Sea of Monsters" />
 	<rename id="tt0046183" title="Peter Pan (Cartoon)" />
@@ -975,6 +984,10 @@
 	<rename id="tt0069768" title="Planet of the Apes V: Battle for the..." />
 	<rename id="tt0133152" title="Planet of the Apes (Remake) I" sortby="Planet of the Apes X01" />
 	<rename id="tt1318514" title="Planet of the Apes (Remake) II: Rise of the..." sortby="Planet of the Apes X02" />
+	<rename id="tt0105156" title="Poison Ivy I" />
+	<rename id="tt0114151" title="Poison Ivy II" />
+	<rename id="tt0119908" title="Poison Ivy III: The New Seduction" />
+	<rename id="tt1131749" title="Poison Ivy IV: The Secret Society" />
 	<rename id="tt0087928" title="Police Academy I" />
 	<rename id="tt0089822" title="Police Academy II: Their First Assignment" />
 	<rename id="tt0091777" title="Police Academy III: Back in Training" />
@@ -1100,6 +1113,17 @@
 	<rename id="tt0120082" title="Scream II" />
 	<rename id="tt0134084" title="Scream III" />
 	<rename id="tt1262416" title="Scream IV" />
+	<rename id="tt0175142" title="Scary Movie I" />
+	<rename id="tt0257106" title="Scary Movie II" />
+	<rename id="tt0306047" title="Scary Movie III" />
+	<rename id="tt0362120" title="Scary Movie IV" />
+	<rename id="tt0795461" title="Scary Movie V" />
+	<rename id="tt1000774" title="Sex and the City I" />
+	<rename id="tt1261945" title="Sex and the City II" />
+	<rename id="tt0105287" title="Sex and Zen I" foreign="Yu pu tuan zhi: Tou qing bao jian" />
+	<rename id="tt0117605" title="Sex and Zen II" foreign="Yu pu tuan II: Yu nu xin jing" />
+	<rename id="tt0133196" title="Sex and Zen III" foreign="Yuk po tuen III goon yan ngoh yiu" />
+	<rename id="tt1365048" title="Sex and Zen IV: Extreme Ecstasy (3D)" foreign="3D rou pu tuan zhi ji le bao jian" />
 	<rename id="tt0184894" title="Shanghai Noon I" />
 	<rename id="tt0300471" title="Shanghai Noon II: Shanghai Knights" />
 	<rename id="tt0031448" title="Sherlock Holmes I: The Hound of the Baskervilles" sortby="Sherlock Holmes (Original) 01" />
@@ -1118,17 +1142,6 @@
 	<rename id="tt0038494" title="Sherlock Holmes XIV: Dressed to Kill" sortby="Sherlock Holmes (Original) 14" />
 	<rename id="tt0988045" title="Sherlock Holmes I" />
 	<rename id="tt1515091" title="Sherlock Holmes II: A Game of Shadows" />
-	<rename id="tt0175142" title="Scary Movie I" />
-	<rename id="tt0257106" title="Scary Movie II" />
-	<rename id="tt0306047" title="Scary Movie III" />
-	<rename id="tt0362120" title="Scary Movie IV" />
-	<rename id="tt0795461" title="Scary Movie V" />
-	<rename id="tt1000774" title="Sex and the City I" />
-	<rename id="tt1261945" title="Sex and the City II" />
-	<rename id="tt0105287" title="Sex and Zen I" foreign="Yu pu tuan zhi: Tou qing bao jian" />
-	<rename id="tt0117605" title="Sex and Zen II" foreign="Yu pu tuan II: Yu nu xin jing" />
-	<rename id="tt0133196" title="Sex and Zen III" foreign="Yuk po tuen III goon yan ngoh yiu" />
-	<rename id="tt1365048" title="Sex and Zen IV: Extreme Ecstasy (3D)" foreign="3D rou pu tuan zhi ji le bao jian" />
 	<rename id="tt0091949" title="Short Circuit I" />
 	<rename id="tt0096101" title="Short Circuit II" />
 	<rename id="tt0929281" title="Short Circuit (Remake) I" />
@@ -1141,6 +1154,8 @@
 	<rename id="tt0897387" title="Shrek (Short): Shrek The Halls" sortby="Shrek X03" />
 	<rename id="tt1830577" title="Shrek (Short): Donkey's Christmas Shrektacular" sortby="Shrek X04" />
 	<rename id="tt1725156" title="Shrek (Short): Scared Shrekless" sortby="Shrek X05" />
+	<rename id="tt0401792" title="Sin City" sortby="Sin City I" />
+	<rename id="tt0458481" title="Sin City II: A Dame to Kill For" />
 	<rename id="tt0475394" title="Smokin' Aces I" />
 	<rename id="tt1319743" title="Smokin' Aces II: Assassins' Ball" />
 	<rename id="tt0108171" title="Sniper I" />
@@ -1286,6 +1301,7 @@
 	<rename id="tt1013752" title="The Fast and the Furious IV: Fast &amp; Furious" />
 	<rename id="tt1538503" title="The Fast and the Furious IV: Los Bandoleros" />
 	<rename id="tt1596343" title="The Fast and the Furious V: Fast Five" />
+	<rename id="tt1905041" title="The Fast and the Furious VI" />
 	<rename id="tt0059183" title="The Flight of the Phoenix (Original)" />
 	<rename id="tt0091064" title="The Fly I" />
 	<rename id="tt0097368" title="The Fly II" />
