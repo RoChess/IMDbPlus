@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="4" point="0" />
-		<published month="07" day="07" year="2012" />
+		<version major="1" minor="4" point="1" />
+		<published month="08" day="02" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -478,6 +478,8 @@
 	<rename id="tt0190374" title="Dungeons &amp; Dragons I" />
 	<rename id="tt0406728" title="Dungeons &amp; Dragons II: Wrath of the Dragon God" />
 	<rename id="tt0119040" title="East Side Story (Docu)" />
+	<rename id="tt0085475" title="Eddie and the Cruisers I" />
+	<rename id="tt0097262" title="Eddie and the Cruisers II: Eddie Lives!" />
 	<rename id="tt0104815" title="El mariachi I" />
 	<rename id="tt0112851" title="El mariachi II: Desperado" />
 	<rename id="tt0285823" title="El mariachi III: Once Upon a Time in Mexico" />
@@ -598,6 +600,8 @@
 	<rename id="tt0220506" title="Halloween VIII: Resurrection" />
 	<rename id="tt0373883" title="Halloween (Remake) I" sortby="Halloween X01" />
 	<rename id="tt1311067" title="Halloween (Remake) II" sortby="Halloween X02" />
+	<rename id="tt0448157" title="Hancock" sortby="Hancock I" />
+	<rename id="tt1498780" title="Hancock II" />
 	<rename id="tt0091474" title="Hannibal I: Manhunter" />
 	<rename id="tt0102926" title="Hannibal II: The Silence of the Lambs" />
 	<rename id="tt0212985" title="Hannibal III: Hannibal" />
@@ -1212,6 +1216,9 @@
 	<rename id="tt0067800" title="Straw Dogs (Original)" />
 	<rename id="tt0421073" title="Street Kings I" />
 	<rename id="tt1707687" title="Street Kings II: Motor City" />
+	<rename id="tt1447972" title="StreetDance I: 3D" />
+	<rename id="tt1718903" title="StreetDance II" />
+	<rename id="tt2262149" title="StreetDance III: Jnrs." />
 	<rename id="tt0078346" title="Superman I" />
 	<rename id="tt0081573" title="Superman II" />
 	<rename id="tt0839995" title="Superman II: The Richard Donner Cut" sortby="Superman IIb" />
@@ -1222,6 +1229,12 @@
 	<rename id="tt1398941" title="Superman/Batman I: Public Enemies" />
 	<rename id="tt1673430" title="Superman/Batman II: Apocalypse" />
 	<rename id="tt1701223" title="Superman/Shazam!: The Return of Black Adam (DC Showcase)" />
+	<rename id="tt0250638" title="Tactical Unit I: PTU" />
+	<rename id="tt1256635" title="Tactical Unit II: The Code" foreign="Kei tung bou deui - Ging lai" />
+	<rename id="tt1401663" title="Tactical Unit III: No Way Out" foreign="Kei tung bou deui - Juet lou" />
+	<rename id="tt1401664" title="Tactical Unit IV: Human Nature" foreign="Kei tung bou deui - Yan sing" />
+	<rename id="tt1344008" title="Tactical Unit V: Comrades in Arms" foreign="Kei tung bou deui - Tung pou" />
+	<rename id="tt1403854" title="Tactical Unit VI: Partners" foreign="Kei tung bou deui - Fo pun" />
 	<rename id="tt0936501" title="Taken" sortby="Taken I" />
 	<rename id="tt1397280" title="Taken II" />
 	<rename id="tt0208495" title="Taken (Classic)" />
@@ -1485,6 +1498,7 @@
 	<rename id="tt1217213" title="Tinker Bell IV: Secret of the Wings" />
 	<rename id="tt0808510" title="Tooth Fairy I" />
 	<rename id="tt1935929" title="Tooth Fairy II" />
+	<rename id="tt1386703" title="Total Recall (Remake)" />
 	<rename id="tt0114709" title="Toy Story I" />
 	<rename id="tt0120363" title="Toy Story II" />
 	<rename id="tt0435761" title="Toy Story III" />
