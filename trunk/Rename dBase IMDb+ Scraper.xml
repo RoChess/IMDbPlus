@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="4" point="1" />
-		<published month="08" day="02" year="2012" />
+		<version major="1" minor="4" point="2" />
+		<published month="08" day="04" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1350,6 +1350,10 @@
 	<rename id="tt1467304" title="The Human Centipede I: First Sequence" />
 	<rename id="tt1530509" title="The Human Centipede II: Full Sequence" />
 	<rename id="tt1883367" title="The Human Centipede III: Final Sequence" />
+	<rename id="tt1392170" title="The Hunger Games" sortby="The Hunger Games I" />
+	<rename id="tt1951264" title="The Hunger Games II: Catching Fire" />
+	<rename id="tt1951265" title="The Hunger Games III: Mockingjay - Part 1" />
+	<rename id="tt1951266" title="The Hunger Games III: Mockingjay - Part 2" />
 	<rename id="tt0087538" title="The Karate Kid I" />
 	<rename id="tt0091326" title="The Karate Kid II" />
 	<rename id="tt0097647" title="The Karate Kid III" />
