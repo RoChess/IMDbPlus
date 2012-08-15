@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="4" point="2" />
-		<published month="08" day="04" year="2012" />
+		<version major="1" minor="4" point="3" />
+		<published month="08" day="14" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1431,6 +1431,8 @@
 	<rename id="tt0450314" title="The Punisher II: War Zone" />
 	<rename id="tt0098141" title="The Punisher (Original)" />
 	<rename id="tt1797521" title="The Punisher (Remake) I" />
+	<rename id="tt0076618" title="The Rescuers I" />
+	<rename id="tt0100477" title="The Rescuers II: Down Under" />
 	<rename id="tt0298130" title="The Ring I" sortby="The Ring 01" />
 	<rename id="tt0449092" title="The Ring II: Rings" sortby="The Ring 02" />
 	<rename id="tt0377109" title="The Ring II" sortby="The Ring 03" />
