@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="4" point="3" />
-		<published month="08" day="14" year="2012" />
+		<version major="1" minor="4" point="4" />
+		<published month="09" day="03" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -197,6 +197,9 @@
 	<rename id="tt1208647" title="Behind Enemy Lines III: Colombia" />
 	<rename id="tt1037011" title="Ben 10 I: Race Against Time" />
 	<rename id="tt1327701" title="Ben 10 II: Alien Swarm" />
+	<rename id="tt1014775" title="Beverly Hills Chihuahua I" />
+	<rename id="tt1482393" title="Beverly Hills Chihuahua II" />
+	<rename id="tt2224075" title="Beverly Hills Chihuahua III: Viva La Fiesta!" />
 	<rename id="tt0086960" title="Beverly Hills Cop I" />
 	<rename id="tt0092644" title="Beverly Hills Cop II" />
 	<rename id="tt0109254" title="Beverly Hills Cop III" />
@@ -885,6 +888,9 @@
 	<rename id="tt0290002" title="Meet the Parents II: Meet the Fockers" />
 	<rename id="tt0970866" title="Meet the Parents III: Little Fockers" />
 	<rename id="tt0119654" title="Men in Black I" />
+	<rename id="tt0120912" title="Men in Black II" />
+	<rename id="tt1409024" title="Men in Black III" />
+	<rename id="tt2283336" title="Men in Black IV" />
 	<rename id="tt1259014" title="Mesrine I: Killer Instinct" foreign="L'instinct de mort" />
 	<rename id="tt0411272" title="Mesrine II: Public Enemy #1" foreign="L'ennemi public n°1" />
 	<rename id="tt0790686" title="Mirrors I" />
@@ -897,6 +903,7 @@
 	<rename id="tt0120755" title="Mission: Impossible II" />
 	<rename id="tt0317919" title="Mission: Impossible III" />
 	<rename id="tt1229238" title="Mission: Impossible IV - Ghost Protocol" />
+	<rename id="tt2381249" title="Mission: Impossible V" />
 	<rename id="tt0057591" title="Monsieur Gangster" foreign="Les tontons flingueurs" />
 	<rename id="tt1542599" title="Monsters vs Aliens: B.O.B.'s Big Break" />
 	<rename id="tt0071853" title="Monty Python's I: The Holy Grail" />
