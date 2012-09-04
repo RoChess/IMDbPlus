@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="4" point="4" />
-		<published month="09" day="03" year="2012" />
+		<version major="1" minor="4" point="5" />
+		<published month="09" day="04" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -249,6 +249,8 @@
 	<rename id="tt0112625" title="Candyman II: Farewell to the Flesh" />
 	<rename id="tt0165662" title="Candyman III: Day of the Dead" />
 	<rename id="tt0055824" title="Cape Fear (Original)" />
+	<rename id="tt0458339" title="Captain America I: The First Avenger" />
+	<rename id="tt1843866" title="Captain America II: The Winter Soldier" />
 	<rename id="tt0074285" title="Carrie I" />
 	<rename id="tt0144814" title="Carrie II: The Rage" />
 	<rename id="tt1351632" title="Carrie (TV)" />
@@ -1173,6 +1175,8 @@
 	<rename id="tt0338450" title="Sniper II" />
 	<rename id="tt0408196" title="Sniper III" />
 	<rename id="tt1571243" title="Sniper IV: Reloaded" />
+	<rename id="tt1735898" title="Snow White and the Huntsman I" />
+	<rename id="tt2381991" title="Snow White and the Huntsman II" />
 	<rename id="tt0482603" title="Space Chimps I" />
 	<rename id="tt1537481" title="Space Chimps II: Zartog Strikes Back" />
 	<rename id="tt0114508" title="Species I" />
@@ -1502,7 +1506,7 @@
 	<rename id="tt0120902" title="The X-Files I: Fight the Future" />
 	<rename id="tt0443701" title="The X-Files II: I Want to Believe" />
 	<rename id="tt0800369" title="Thor I" />
-	<rename id="tt1981115" title="Thor II" />
+	<rename id="tt1981115" title="Thor II: The Dark World" />
 	<rename id="tt0111438" title="Timecop I" />
 	<rename id="tt0318763" title="Timecop II: The Berlin Decision" />
 	<rename id="tt0823671" title="Tinker Bell I" />
