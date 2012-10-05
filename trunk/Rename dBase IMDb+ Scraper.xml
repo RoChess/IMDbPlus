@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="4" point="6" />
-		<published month="09" day="21" year="2012" />
+		<version major="1" minor="4" point="7" />
+		<published month="10" day="05" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -969,7 +969,8 @@
 	<rename id="tt2109184" title="Paranormal Activity IV" />
 	<rename id="tt0814255" title="Percy Jackson &amp; the Olympians I: The Lightning Thief" />
 	<rename id="tt1854564" title="Percy Jackson &amp; the Olympians II: The Sea of Monsters" />
-	<rename id="tt0046183" title="Peter Pan (Cartoon)" />
+	<rename id="tt0046183" title="Peter Pan (Cartoon) I" />
+	<rename id="tt0280030" title="Peter Pan (Cartoon) II: Return to Never Land" />
 	<rename id="tt0015224" title="Peter Pan (Original)" />
 	<rename id="tt1632586" title="Peter Pan (Musical/Original)" />
 	<rename id="tt1711375" title="Peter Pan (Musical)" />
