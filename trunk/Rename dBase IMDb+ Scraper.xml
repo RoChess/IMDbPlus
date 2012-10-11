@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="4" point="7" />
-		<published month="10" day="05" year="2012" />
+		<version major="1" minor="4" point="8" />
+		<published month="10" day="10" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -525,6 +525,7 @@
 	<rename id="tt0179183" title="Fortress II: Re-Entry" />
 	<rename id="tt0076054" title="Freaky Friday (Original)" />
 	<rename id="tt0113112" title="Freaky Friday (TV)" />
+	<rename id="tt0109836" title="Frankenstein (Remake)" />
 	<rename id="tt1595842" title="Fred I: The Movie" />
 	<rename id="tt1927093" title="Fred II: Night of the Living Fred" />
 	<rename id="tt0497619" title="Freeway (Docu)" />
@@ -718,6 +719,7 @@
 	<rename id="tt1773499" title="Inside (Italy)" />
 	<rename id="tt0378109" title="Into the Blue I" />
 	<rename id="tt0865907" title="Into the Blue II: The Reef " />
+	<rename id="tt0049366" title="Invasion of the Body Snatchers (Original)" />
 	<rename id="tt0216487" title="Invincible (TV)" />
 	<rename id="tt0080932" title="Invincible (HK)" />
 	<rename id="tt0245171" title="Invincible (Classic)" />
@@ -770,6 +772,7 @@
 	<rename id="tt0381061" title="James Bond XXI: Casino Royale" sortby="James Bond 21" />
 	<rename id="tt0830515" title="James Bond XXII: Quantum Of Solace" sortby="James Bond 22" />
 	<rename id="tt1074638" title="James Bond XXIII: Skyfall" sortby="James Bond 23" />
+	<rename id="tt0217579" title="Jason and the Argonauts (TV)" />
 	<rename id="tt0073195" title="Jaws I" />
 	<rename id="tt0077766" title="Jaws II" />
 	<rename id="tt0085750" title="Jaws III" />
@@ -1404,6 +1407,7 @@
 	<rename id="tt0120616" title="The Mummy I" />
 	<rename id="tt0209163" title="The Mummy II: The Mummy Returns" />
 	<rename id="tt0859163" title="The Mummy III: Tomb of the Dragon Emperor" />
+	<rename id="tt0053085" title="The Mummy (TV)" />
 	<rename id="tt0095705" title="The Naked Gun I: From the Files of Police Squad!" />
 	<rename id="tt0102510" title="The Naked Gun II: The Smell of Fear (2½)" />
 	<rename id="tt0110622" title="The Naked Gun III: The Final Insult (33 1/3)" />
@@ -1424,6 +1428,12 @@
 	<rename id="tt0098066" title="The Parent Trap III" />
 	<rename id="tt0098065" title="The Parent Trap IV: Hawaiian Honeymoon" />
 	<rename id="tt0335345" title="The Passion of the Christ" />
+	<rename id="tt0056347" title="The Phantom of the Opera (Musical)" />
+	<rename id="tt0098090" title="The Phantom of the Opera (Classic)" />
+	<rename id="tt0086101" title="The Phantom of the Opera (Remake)" />
+	<rename id="tt0100361" title="The Phantom of the Opera (TV)" />
+	<rename id="tt0220699" title="The Phantom of the Opera (Live)" />
+	<rename id="tt0829262" title="The Phantom of the Opera (Cartoon)" />
 	<rename id="tt0057413" title="The Pink Panther I" sortby="The Pink Panther (Sellers) 01" />
 	<rename id="tt0058586" title="The Pink Panther II: A Shot in the Dark" sortby="The Pink Panther (Sellers) 02" />
 	<rename id="tt0072081" title="The Pink Panther III: The Return of the Pink Panther" sortby="The Pink Panther (Sellers) 03" />
