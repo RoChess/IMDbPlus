@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="4" point="8" />
-		<published month="10" day="10" year="2012" />
+		<version major="1" minor="4" point="9" />
+		<published month="10" day="11" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -959,6 +959,8 @@
 	<rename id="tt0368909" title="Ong Bak I: Ong-Bak" />
 	<rename id="tt0785035" title="Ong Bak II: The Beginning" />
 	<rename id="tt1653690" title="Ong Bak III: The Final Battle" />
+	<rename id="tt0374102" title="Open Water I" />
+	<rename id="tt0470055" title="Open Water II: Adrift" />
 	<rename id="tt0081290" title="Our Town (Remake)" />
 	<rename id="tt0353849" title="Our Town (TV)" />
 	<rename id="tt0141699" title="Out of the Past (Docu)" />
@@ -1407,7 +1409,7 @@
 	<rename id="tt0120616" title="The Mummy I" />
 	<rename id="tt0209163" title="The Mummy II: The Mummy Returns" />
 	<rename id="tt0859163" title="The Mummy III: Tomb of the Dragon Emperor" />
-	<rename id="tt0053085" title="The Mummy (TV)" />
+	<rename id="tt0053085" title="The Mummy (UK)" />
 	<rename id="tt0095705" title="The Naked Gun I: From the Files of Police Squad!" />
 	<rename id="tt0102510" title="The Naked Gun II: The Smell of Fear (2½)" />
 	<rename id="tt0110622" title="The Naked Gun III: The Final Insult (33 1/3)" />
