@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="4" point="9" />
-		<published month="10" day="11" year="2012" />
+		<version major="1" minor="5" point="0" />
+		<published month="10" day="17" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -362,6 +362,8 @@
 	<rename id="tt0346765" title="Cleopatra (Argentina)" />
 	<rename id="tt0109445" title="Clerks I" />
 	<rename id="tt0424345" title="Clerks II" />
+	<rename id="tt0844471" title="Cloudy I: with a Chance of Meatballs" />
+	<rename id="tt1985966" title="Cloudy II: Revenge of the Leftovers" />
 	<rename id="tt0017765" title="College (Classic)" />
 	<rename id="tt0082198" title="Conan the Barbarian (Original)" />
 	<rename id="tt0266425" title="Conspiracy (TV)" />
@@ -482,6 +484,7 @@
 	<rename id="tt0111512" title="Drunken Master II" foreign="Jui Kuen II" />
 	<rename id="tt0190374" title="Dungeons &amp; Dragons I" />
 	<rename id="tt0406728" title="Dungeons &amp; Dragons II: Wrath of the Dragon God" />
+	<rename id="tt1733125" title="Dungeons &amp; Dragons III: The Book of Vile Darkness" />
 	<rename id="tt0119040" title="East Side Story (Docu)" />
 	<rename id="tt0085475" title="Eddie and the Cruisers I" />
 	<rename id="tt0097262" title="Eddie and the Cruisers II: Eddie Lives!" />
@@ -1686,4 +1689,8 @@
 	<rename id="tt0054494" title="Zazie in the Subway" />
 	<rename id="tt0388556" title="Zebraman I" />
 	<rename id="tt1534568" title="Zebraman II: Attack on Zebra City" />
+	<rename id="tt1166827" title="Zeitgeist I: The Movie" />
+	<rename id="tt1332128" title="Zeitgeist II: Addendum" />
+	<rename id="tt1781069" title="Zeitgeist III: Moving Forward" />
+	<rename id="tt1965308" title="Zeitgeist IV: Beyond the Pale" />
 </imdbplus>
