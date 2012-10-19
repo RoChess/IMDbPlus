@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="5" point="0" />
-		<published month="10" day="17" year="2012" />
+		<version major="1" minor="5" point="1" />
+		<published month="10" day="19" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1030,7 +1030,12 @@
 	<rename id="tt0103044" title="Prison on Fire II" foreign="Jian yu feng yun II: Tao fan" />
 	<rename id="tt0085127" title="Project A I" foreign="'A' gai wak" />
 	<rename id="tt0092501" title="Project A II" foreign="'A' gai wak juk jap" />
-	<rename id="tt1082868" title="Quarantine I" />
+	<rename id="tt0117407" title="Pusher I" />
+	<rename id="tt0396184" title="Pusher II: With Blood On My Hands" />
+	<rename id="tt0425379" title="Pusher III: I'm The Angel Of Death" />
+	<rename id="tt1921070" title="Pusher (UK)" />
+	<rename id="tt1082075" title="Pusher (India)" />
+ 	<rename id="tt1082868" title="Quarantine I" />
 	<rename id="tt1699231" title="Quarantine II: Terminal" />
 	<rename id="tt0089421" title="Quatermain I: King Solomon's Mines" />
 	<rename id="tt0092534" title="Quatermain II: Allan Quatermain and the Lost City of Gold" />
