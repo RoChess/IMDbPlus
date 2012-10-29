@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="5" point="1" />
-		<published month="10" day="19" year="2012" />
+		<version major="1" minor="5" point="2" />
+		<published month="10" day="28" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -514,6 +514,7 @@
 	<rename id="tt0414982" title="Final Destination III" />
 	<rename id="tt1144884" title="Final Destination IV: The Final Destination" />
 	<rename id="tt1622979" title="Final Destination V" />
+	<rename id="tt0091053" title="Fire with Fire (Captive Hearts)" />
 	<rename id="tt2062960" title="Flatland I" />
 	<rename id="tt2062960" title="Flatland II: Sphereland" />
 	<rename id="tt0780516" title="Flawless (UK)" />
@@ -878,7 +879,7 @@
 	<rename id="tt2078672" title="Love Comes Softly: Love's Christmas Journey" sortby="Love Comes Softly Y01" />
 	<rename id="tt0351283" title="Madagascar I" />
 	<rename id="tt0479952" title="Madagascar II: Escape 2 Africa" />
-	<rename id="tt1277953" title="Madagascar III" />
+	<rename id="tt1277953" title="Madagascar III: Europe's Most Wanted" />
 	<rename id="tt0079501" title="Mad Max I" />
 	<rename id="tt0082694" title="Mad Max II: The Road Warrior" />
 	<rename id="tt0089530" title="Mad Max III: Beyond Thunderdome" />
@@ -1030,6 +1031,16 @@
 	<rename id="tt0103044" title="Prison on Fire II" foreign="Jian yu feng yun II: Tao fan" />
 	<rename id="tt0085127" title="Project A I" foreign="'A' gai wak" />
 	<rename id="tt0092501" title="Project A II" foreign="'A' gai wak juk jap" />
+	<rename id="tt0098143" title="Puppet Master I: Puppetmaster" sortby="Puppet Master 01" />
+	<rename id="tt0100438" title="Puppet Master II: His Unholy Creations" sortby="Puppet Master 02" />
+	<rename id="tt0102728" title="Puppet Master III: Toulon's Revenge" sortby="Puppet Master 03" />
+	<rename id="tt0107899" title="Puppet Master IV: When Bad Puppets Turn Good" sortby="Puppet Master 04" />
+	<rename id="tt0110916" title="Puppet Master V: The Final Chapter" sortby="Puppet Master 05" />
+	<rename id="tt0132451" title="Puppet Master VI: Curse of the Puppet Master" sortby="Puppet Master 06" />
+	<rename id="tt0189047" title="Puppet Master VII: Retro Puppet Master" sortby="Puppet Master 07" />
+	<rename id="tt0390393" title="Puppet Master VIII: The Legacy" sortby="Puppet Master 08" />
+	<rename id="tt1504467" title="Puppet Master IX: Axis of Evil" sortby="Puppet Master 09" />
+	<rename id="tt2301900" title="Puppet Master X: Axis Rising" sortby="Puppet Master 10" />
 	<rename id="tt0117407" title="Pusher I" />
 	<rename id="tt0396184" title="Pusher II: With Blood On My Hands" />
 	<rename id="tt0425379" title="Pusher III: I'm The Angel Of Death" />
@@ -1381,6 +1392,8 @@
 	<rename id="tt1951264" title="The Hunger Games II: Catching Fire" />
 	<rename id="tt1951265" title="The Hunger Games III: Mockingjay - Part 1" />
 	<rename id="tt1951266" title="The Hunger Games III: Mockingjay - Part 2" />
+	<rename id="tt0080907" title="The Hunter (Classic)" />
+	<rename id="tt1190072" title="The Hunter (Iran)" />
 	<rename id="tt0087538" title="The Karate Kid I" />
 	<rename id="tt0091326" title="The Karate Kid II" />
 	<rename id="tt0097647" title="The Karate Kid III" />
@@ -1546,6 +1559,7 @@
 	<rename id="tt1979376" title="Toy Story IV" />
 	<rename id="tt1850374" title="Toy Story (Short): Hawaiian Vacation" sortby="Toy Story X01" />
 	<rename id="tt2033372" title="Toy Story (Short): Small Fry" sortby="Toy Story X02" />
+	<rename id="tt2340678" title="Toy Story (Short): Partysaurus Rex" sortby="Toy Story X03" />
 	<rename id="tt0418279" title="Transformers I" />
 	<rename id="tt1055369" title="Transformers II: Revenge of the Fallen" />
 	<rename id="tt1399103" title="Transformers III: Dark of the Moon" />
@@ -1603,7 +1617,7 @@
 	<rename id="tt0186655" title="Universal Soldier III: Unfinished Business" />
 	<rename id="tt0176269" title="Universal Soldier IV: The Return" />
 	<rename id="tt1288403" title="Universal Soldier V: Regeneration" />
-	<rename id="tt1659343" title="Universal Soldier VI: A New Dimension" />
+	<rename id="tt1659343" title="Universal Soldier VI: Day of Reckoning" />
 	<rename id="tt0146336" title="Urban Legend I" />
 	<rename id="tt0192731" title="Urban Legend II: Final Cut" />
 	<rename id="tt0451957" title="Urban Legend III: Bloody Mary" />
@@ -1677,6 +1691,7 @@
 	<rename id="tt0804555" title="Wrong Turn II: Dead End" />
 	<rename id="tt1261978" title="Wrong Turn III: Left For Dead" />
 	<rename id="tt1865567" title="Wrong Turn IV: Bloody Beginnings" />
+	<rename id="tt2375779" title="Wrong Turn V: Bloodlines" />
 	<rename id="tt0120903" title="X-Men I" />
 	<rename id="tt0290334" title="X-Men II: X-Men United (X2)" />
 	<rename id="tt0376994" title="X-Men III: The Last Stand" />
