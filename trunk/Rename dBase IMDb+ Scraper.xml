@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="5" point="2" />
-		<published month="10" day="28" year="2012" />
+		<version major="1" minor="5" point="3" />
+		<published month="11" day="05" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -230,6 +230,8 @@
 	<rename id="tt0900357" title="Boogeyman II" />
 	<rename id="tt1204883" title="Boogeyman III" />
 	<rename id="tt0103873" title="Dead Alive (Braindead)" />
+	<rename id="tt0109331" title="Brave (Musical)" />
+	<rename id="tt1149582" title="Brave (Thailand)" />
 	<rename id="tt0086998" title="Breakin' I" />
 	<rename id="tt0086999" title="Breakin' II: Electric Boogaloo" />
 	<rename id="tt0204946" title="Bring It On I" />
@@ -743,6 +745,8 @@
 	<rename id="tt0116671" title="Jack Frost I" />
 	<rename id="tt0239496" title="Jack Frost II: Revenge of the Mutant Killer Snowman" />
 	<rename id="tt0079357" title="Jack Frost (TV)" />
+	<rename id="tt2087820" title="Jack Irish I: Bad Debts " />
+	<rename id="tt2090537" title="Jack Irish II: Black Tide" />
 	<rename id="tt0099810" title="Jack Ryan I: The Hunt for Red October" />
 	<rename id="tt0105112" title="Jack Ryan II: Patriot Games" />
 	<rename id="tt0109444" title="Jack Ryan III: Clear and Present Danger" />
@@ -1300,6 +1304,9 @@
 	<rename id="tt0983193" sortby="The Adventures of Tintin I" />
 	<rename id="tt1037226" title="The Adventures of Tintin II: Prisoners of the Sun" />
 	<rename id="tt1204343" title="The Adventures of Tintin III" />
+	<rename id="tt0948470" title="The Amazing Spider-Man I" />
+	<rename id="tt1872181" title="The Amazing Spider-Man II" />
+	<rename id="tt2250912" title="The Amazing Spider-Man III" />
 	<rename id="tt0160009" title="The Art Of War I" />
 	<rename id="tt1233571" title="The Art Of War II: Betrayal" />
 	<rename id="tt0878647" title="The Art Of War III: Retribution" />
@@ -1618,6 +1625,7 @@
 	<rename id="tt0176269" title="Universal Soldier IV: The Return" />
 	<rename id="tt1288403" title="Universal Soldier V: Regeneration" />
 	<rename id="tt1659343" title="Universal Soldier VI: Day of Reckoning" />
+	<rename id="tt1537759" title="Up (Short): Dug's Special Mission" sortby="Up X01" />
 	<rename id="tt0146336" title="Urban Legend I" />
 	<rename id="tt0192731" title="Urban Legend II: Final Cut" />
 	<rename id="tt0451957" title="Urban Legend III: Bloody Mary" />
