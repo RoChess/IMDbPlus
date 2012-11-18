@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="5" point="3" />
-		<published month="11" day="05" year="2012" />
+		<version major="1" minor="5" point="4" />
+		<published month="11" day="18" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -408,6 +408,7 @@
 	<rename id="tt1321509" title="Death at a Funeral (US)" />
 	<rename id="tt1196141" title="Diary of a Wimpy Kid I" />
 	<rename id="tt1650043" title="Diary of a Wimpy Kid II: Rodrick Rules" />
+	<rename id="tt2023453" title="Diary of a Wimpy Kid III: Dog Days" />
 	<rename id="tt0452608" title="Death Race I" />
 	<rename id="tt1500491" title="Death Race II" />
 	<rename id="tt0071402" title="Death Wish I" />
@@ -1214,6 +1215,8 @@
 	<rename id="tt0120841" title="Species II" />
 	<rename id="tt0410650" title="Species III" />
 	<rename id="tt0844894" title="Species IV: The Awakening" />
+	<rename id="tt0111257" title="Speed I" />
+	<rename id="tt0120179" title="Speed II: Cruise Control" />
 	<rename id="tt0145487" title="Spider-Man I" />
 	<rename id="tt0316654" title="Spider-Man II" />
 	<rename id="tt0413300" title="Spider-Man III" />
@@ -1626,6 +1629,7 @@
 	<rename id="tt1288403" title="Universal Soldier V: Regeneration" />
 	<rename id="tt1659343" title="Universal Soldier VI: Day of Reckoning" />
 	<rename id="tt1537759" title="Up (Short): Dug's Special Mission" sortby="Up X01" />
+	<rename id="tt1552624" title="Up (Short): George &amp; A.J." sortby="Up X02" />
 	<rename id="tt0146336" title="Urban Legend I" />
 	<rename id="tt0192731" title="Urban Legend II: Final Cut" />
 	<rename id="tt0451957" title="Urban Legend III: Bloody Mary" />
