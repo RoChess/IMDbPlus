@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="3" point="8" />
-		<published month="04" day="03" year="2012" />
+		<version major="4" minor="3" point="9" />
+		<published month="11" day="30" year="2012" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1072,20 +1072,30 @@
 				<!-- Since we already have the RottenTomatoes results, lets use their summary if imdb.com did not have one -->
 				<if test="${movie.summary}=">
 					<if test="${global_options_secondary_details}&lt;=1">
+						<!-- Set short summary RegExp first -->
 						<set name="rx_rotten_summary">
 							<![CDATA[
-							<span\sid="movie_synopsis_all"\sstyle="display:\snone;">(?<rottenSummary>[^<]+)</span>
+							<input name="synopsis" type="hidden" value="(?<rottenSummary>[^"]+)" />
 							]]>
 						</set>
+						<if test="${global_options_long_summary}=true">
+							<set name="rx_rotten_summary">
+								<![CDATA[
+								<p\sid="movieSynopsis"\sclass="movie_synopsis"\sitemprop="description">\s*(?<rottenSummary>.+?)</span>
+								]]>
+							</set>
+						</if>
+
 						<parse name="rotten_summary" input="${rotten_details}" regex="${rx_rotten_summary}" />
-						<set name="movie.summary" value="${rotten_summary[0][0]:htmldecode}" />
+						<set name="rotten_summary_clean" value="${rotten_summary[0][0]:striptags}" />
+						<set name="movie.summary" value="${rotten_summary_clean:htmldecode}" />
 					</if>
 				</if>
 				<!-- Might as well verify the runtime -->
 				<if test="${movie.runtime}=0">
 					<set name="rx_rotten_runtime">
 						<![CDATA[
-						<span class="label">Running Time:</span>\s<span[^>]+>(?<runtimeHours>\d+) hr. (?<runtimeMinutes>\d+) min.</span>
+						<span[^>]+>(?<runtimeHours>\d+) hr. (?<runtimeMinutes>\d+) min.</span>
 						]]>
 					</set>
 					<parse name="rotten_runtime" input="${rotten_details}" regex="${rx_rotten_runtime}" />
@@ -1093,6 +1103,16 @@
 					<multiply name="runtime_minutes" value1="60" value2="${rotten_runtime[0][0]}" result_type="int" />
 					<add name="runtime_minutes" value1="${runtime_minutes}" value2="${rotten_runtime[0][1]}" />
 					<set name="movie.runtime" value="${runtime_minutes}" />
+				</if>
+				<!-- and Certification -->
+				<if test="${movie.certification}=">
+					<set name="rx_rotten_certification">
+						<![CDATA[
+						<span\sitemprop="contentRating">(?<rottenCertification>(?:G|PG|PG-13|R|NC-17))</span>
+						]]>
+					</set>
+					<parse name="rotten_certification" input="${rotten_details}" regex="${rx_rotten_certification}" />
+					<set name="movie.certification" value="${rotten_certification[0][0]:htmldecode}" />
 				</if>
 			</if>
 		<!-- END: global_options_imdb_score -->
@@ -1442,7 +1462,7 @@
 				<set name="query_year" value="+(${search.year})" />
 			</if>
 
-			<retrieve name="search_page" url="http://akas.imdb.com/find?s=tt;q=${search.title:safe(ISO-8859-1)}${query_year}" />
+			<retrieve name="search_page" url="http://akas.imdb.com/find?s=tt&amp;q=${search.title:safe(ISO-8859-1)}${query_year}" />
 
 			<!-- if we got a details page, this is used. if not, regex does not match so we dont process the loop-->
 			<parse name="details_page_block" input="${search_page}" regex="${rx_details_page_block}" />
@@ -1470,7 +1490,7 @@
 
 				<set name="rx_search_page">
 					<![CDATA[
-					<meta name="title" content="IMDb Title Search">.+</body>
+					<meta name="title" content="Find - IMDb" />.+</body>
 					]]>
 				</set>
 
@@ -1478,30 +1498,13 @@
 				<parse name="search_results_block" input="${search_page}" regex="${rx_search_page}" />
 				<if test="${search_results_block}!=">
 
-					<set name="rx_title_exact_match">
-						<![CDATA[
-						<p><b>Popular Titles</b> \(Displaying \d{2} Results\).*?<p><b>Titles \(Exact Matches\)</b>.*?>\d+\.<.*?><a[^>]+href="/title/(tt\d{7})/"[^>]+>(?:&#x27;)?([^<]+?)(?:&#x27;)?</a> \((\d{4})\) (?!\(VG\)|<small>\(TV series\)</small>)
-						]]>
-					</set>
-
-					<!-- to prevent an exact title match from being burried by popular matches, lets grab the first exact title match result -->
-					<parse name="title_exact_match" input="${search_results_block}" regex="${rx_title_exact_match}" />
-					<if test="${title_exact_match}!=">
-						<set name="movie[0].imdb_id" value="${title_exact_match[0][0]:htmldecode}" />
-						<set name="movie[0].site_id" value="${title_exact_match[0][0]:htmldecode}" />
-						<set name="movie[0].title" value="${title_exact_match[0][1]:htmldecode}" />
-						<set name="movie[0].year" value="${title_exact_match[0][2]:htmldecode}" />
-						<set name="movie[0].popularity" value="100" />
-						<set name="offset" value="1" />
-					</if>
-
 					<set name="rx_search_results">
 						<![CDATA[
-						><a[^>]+href="/title/(tt\d{7})/"[^>]+>(?!&#x22;)(?:&#x27;)?([^<]+?)(?:&#x27;)?</a> \((\d{4})[\/IVX]*\)(?! \(VG\))(?:[^<].*?>(?=aka ")?(.+?)?</td>)?
+						<tr\s*class="findResult[^>]+>(?:\s*<td\s*class="primary_photo">\s*<a[^>]+><img[^>]+></a>\s*</td>)?\s*<td\s*class="result_text">\s*<a\s*href="/title/(?<imdb_id>tt\d{7})[^"]+"\s*>(?<title>[^<]+)</a>\s*\((?<year>\d{4})[\/IVX]*\)(?:(?:\s*<br/>aka\s*<i>")(?<aka>[^"]+)(?:"</i>\s*))?[^<]+</td>\s*</tr>
 						]]>
 					</set>
 
-					<!-- process the rest of the search page and obtain all the popular results -->
+					<!-- process the search page and obtain all the popular results -->
 					<loop name="search_results_verified" on="search_results_block" limit="99">
 						<parse name="movie_details" input="${search_results_verified}" regex="${rx_search_results}" />
 						<loop name="curr_details" on="movie_details" limit="99">
@@ -1509,14 +1512,9 @@
 							<set name="movie[${counter}].imdb_id" value="${curr_details[0]:htmldecode}" />
 							<set name="movie[${counter}].site_id" value="${curr_details[0]:htmldecode}" />
 							<set name="movie[${counter}].title" value="${curr_details[1]:htmldecode}" />
-
-							<parse name="akas" input="${curr_details[3]:htmldecode}" regex="${rx_aka}" />
-							<set name="movie[${counter}].alternate_titles" value='' />
-							<loop name="currAka" on="akas" limit="50">
-								<set name="movie[${counter}].alternate_titles" value="${movie[${counter}].alternate_titles}|${currAka[0]}" />
-							</loop>
-
 							<set name="movie[${counter}].year" value="${curr_details[2]:htmldecode}" />
+							<set name="movie[${counter}].alternate_titles" value="${curr_details[3]:htmldecode}" />
+
 							<subtract name="movie[${counter}].popularity" value1="100" value2="${counter}" />
 						</loop>
 					</loop>
