@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="5" point="4" />
-		<published month="11" day="18" year="2012" />
+		<version major="1" minor="5" point="5" />
+		<published month="12" day="09" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -63,6 +63,9 @@
 	<rename id="tt0406649" title="A Christmas Carol (TV III)" />
 	<rename id="tt0112668" title="A Christmas Carol (Cartoon)" />
 	<rename id="tt1519929" title="A Dog Named Christmas" />
+	<rename id="tt1489248" title="A Golden Christmas I" />
+	<rename id="tt1942787" title="A Golden Christmas II: 3 Holiday Tails" />
+	<rename id="tt2315500" title="A Golden Christmas III" />
 	<rename id="tt0422748" title="A Midsummer Night's Dream (Musical)" />
 	<rename id="tt0255374" title="A Midsummer Night's Dream (Opera)" />
 	<rename id="tt0026714" title="A Midsummer Night's Dream (Original)" />
@@ -687,6 +690,7 @@
 	<rename id="tt0040446" title="Homecoming (Classic)" />
 	<rename id="tt1618376" title="Homecoming (Indie)" />
 	<rename id="tt0418735" title="Homecoming (Drama)" />
+	<rename id="tt0314431" title="Hope Springs (UK)" />
 	<rename id="tt0450278" title="Hostel I" />
 	<rename id="tt0498353" title="Hostel II" />
 	<rename id="tt1255916" title="Hostel III" />
@@ -701,6 +705,7 @@
 	<rename id="tt0051744" title="House on Haunted Hill (Original)" />
 	<rename id="tt0185371" title="House on Haunted Hill I" />
 	<rename id="tt0827782" title="House on Haunted Hill II: Return to House on Haunted Hill" />
+	<rename id="tt0892769" title="How to Train Your Dragon I" />
 	<rename id="tt1646971" title="How to Train Your Dragon II" />
 	<rename id="tt2113625" title="How to Train Your Dragon: Book of Dragons" />
 	<rename id="tt2065968" title="How to Train Your Dragon: Gift of the Night Fury" />
@@ -1322,6 +1327,7 @@
 	<rename id="tt0372183" title="The Bourne II: Supremacy" />
 	<rename id="tt0440963" title="The Bourne III: Ultimatum" />
 	<rename id="tt1194173" title="The Bourne IV: Legacy" />
+	<rename id="tt2395088" title="The Bourne V" />
 	<rename id="tt0289879" title="The Butterfly Effect I" />
 	<rename id="tt0457297" title="The Butterfly Effect II" />
 	<rename id="tt1234541" title="The Butterfly Effect III: Revelations" />
