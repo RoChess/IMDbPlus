@@ -5,7 +5,7 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="4" point="0" />
+		<version major="4" minor="4" point="1" />
 		<published month="12" day="11" year="2012" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
