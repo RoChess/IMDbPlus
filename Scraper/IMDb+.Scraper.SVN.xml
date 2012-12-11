@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="4" point="1" />
-		<published month="12" day="11" year="2012" />
+		<version major="4" minor="4" point="2" />
+		<published month="12" day="12" year="2012" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -201,6 +201,7 @@
 				<set name="site" value="http://akas.imdb.com/title/${movie.site_id}" />
 			</if>
 			<if test="${global_options_secondary_details}>1">
+				<set name="alt_site_encoding" value="UTF-8" />
 				<set name="site" value="http://www.imdb.com/title/${movie.site_id}" />
 
 				<!-- Reuse expression for all the foreign IMDb sites, and overwrite it for the non-IMDb ones -->
@@ -317,6 +318,7 @@
 					<!-- Avatar = http://kvikmyndir.is/xml/movingpictures/?id=0499549 -->
 					<replace name="imdb_id_fixed" input="${movie.imdb_id}" pattern="tt" with='' />
 					<set name="alt_site" value="http://kvikmyndir.is/xml/movingpictures/?id=${imdb_id_fixed}" />
+					<set name="alt_site_encoding" value="ISO-8859-1" />
 					<set name="rx_title_year">
 						<![CDATA[
 						<name>(?<movieTitle>[^<]+)</name>.*<PremiereDateIS>(?<movieYear>\d{4})\-\d+\-\d+</PremiereDateIS>
@@ -354,7 +356,7 @@
 					<!-- Use imdb.com language info -->
 					<log LogLevel="Info" Message="IMDb+ Scraper: Dutch (moviemeter.nl) used for some data on: ${movie.site_id}" />
 				</if>
-				<retrieve name="foreign_page" url="${alt_site}" />
+				<retrieve name="foreign_page" url="${alt_site}" encoding="${alt_site_encoding}" />
 			</if>
 			<retrieve name="details_page" url="${site}" />
 
