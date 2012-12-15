@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="5" point="5" />
-		<published month="12" day="09" year="2012" />
+		<version major="1" minor="5" point="6" />
+		<published month="12" day="15" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1306,6 +1306,8 @@
 	<rename id="tt0181852" title="Terminator III: Rise Of The Machines" />
 	<rename id="tt0438488" title="Terminator IV: Terminator Salvation" />
 	<rename id="tt1340138" title="Terminator V" />
+	<rename id="tt0086425" title="Terms of Endearment I" />
+	<rename id="tt0116240" title="Terms of Endearment II: The Evening Star" />
 	<rename id="tt0078243" title="The 36th Chamber I: ...of Shaolin" foreign="Shao Lin san shi liu fang" />
 	<rename id="tt0081494" title="The 36th Chamber II: Return to..." foreign="Shao Lin da peng da shi" />
 	<rename id="tt0089029" title="The 36th Chamber III: Disciples of..." foreign="Pi li shi jie" />
@@ -1362,6 +1364,7 @@
 	<rename id="tt0449086" title="The Exorcist V: Dominion - Prequel to the Exorcist" />
 	<rename id="tt1320253" title="The Expendables I" />
 	<rename id="tt1764651" title="The Expendables II" />
+	<rename id="tt2333784" title="The Expendables III" />
 	<rename id="tt0232500" title="The Fast and the Furious I" />
 	<rename id="tt0322259" title="The Fast and the Furious II: 2 Fast 2 Furious" />
 	<rename id="tt0463985" title="The Fast and the Furious III: Tokyo Drift" />
