@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="4" point="3" />
-		<published month="12" day="13" year="2012" />
+		<version major="4" minor="4" point="4" />
+		<published month="12" day="16" year="2012" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -356,7 +356,7 @@
 					<!-- Use imdb.com language info -->
 					<log LogLevel="Info" Message="IMDb+ Scraper: Dutch (moviemeter.nl) used for some data on: ${movie.site_id}" />
 				</if>
-				<retrieve name="foreign_page" url="${alt_site}" encoding="${alt_site_encoding}" />
+				<retrieve name="foreign_page" url="${alt_site}" encoding="${alt_site_encoding}" allow_unsafe_header="true" />
 			</if>
 			<retrieve name="details_page" url="${site}" />
 
