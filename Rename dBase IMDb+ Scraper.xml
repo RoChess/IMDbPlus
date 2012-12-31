@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="5" point="7" />
-		<published month="12" day="30" year="2012" />
+		<version major="1" minor="5" point="8" />
+		<published month="12" day="31" year="2012" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -685,6 +685,11 @@
 	<rename id="tt0475293" title="High School Musical I" />
 	<rename id="tt0810900" title="High School Musical II" />
 	<rename id="tt0962726" title="High School Musical III: Senior Year" />
+	<rename id="tt0099785" title="Home Alone I" />
+	<rename id="tt0104431" title="Home Alone II: Lost in New York" />
+	<rename id="tt0119303" title="Home Alone III" />
+	<rename id="tt0329200" title="Home Alone IV: Taking Back the House" />
+	<rename id="tt2308733" title="Home Alone V: The Holiday Heist" />
 	<rename id="tt0097523" title="Honey, I Shrunk the Kids" sortby="Honey, I Shrunk the Kids 01" />
 	<rename id="tt0104437" title="Honey, I Blew Up the Kid" sortby="Honey, I Shrunk the Kids 02" />
 	<rename id="tt0113325" title="Honey, I Shrunk the Audience" sortby="Honey, I Shrunk the Kids 02b" />
@@ -794,6 +799,8 @@
 	<rename id="tt0381061" title="James Bond XXI: Casino Royale" sortby="James Bond 21" />
 	<rename id="tt0830515" title="James Bond XXII: Quantum Of Solace" sortby="James Bond 22" />
 	<rename id="tt1074638" title="James Bond XXIII: Skyfall" sortby="James Bond 23" />
+	<rename id="tt2379713" title="James Bond XXIV" sortby="James Bond 24" />
+	<rename id="tt2382320" title="James Bond XXV" sortby="James Bond 25" />
 	<rename id="tt0217579" title="Jason and the Argonauts (TV)" />
 	<rename id="tt0073195" title="Jaws I" />
 	<rename id="tt0077766" title="Jaws II" />
