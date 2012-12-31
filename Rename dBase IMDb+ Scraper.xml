@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="5" point="8" />
-		<published month="12" day="31" year="2012" />
+		<version major="1" minor="5" point="9" />
+		<published month="01" day="01" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -116,10 +116,10 @@
 	<rename id="tt0023753" title="Alice in Wonderland (Original)" />
 	<rename id="tt0043274" title="Alice in Wonderland (Cartoon)" />
 	<rename id="tt0164993" title="Alice in Wonderland (TV)" />
-	<rename id="tt0078748" title="Alien I: Alien" />
-	<rename id="tt0090605" title="Alien II: Aliens" />
-	<rename id="tt0103644" title="Alien III: Alien³" />
-	<rename id="tt0118583" title="Alien IV: Alien Resurrection" />
+	<rename id="tt0078748" title="Alien I: Alien" sortby="Alien 01" />
+	<rename id="tt0090605" title="Alien II: Aliens" sortby="Alien 02" />
+	<rename id="tt0103644" title="Alien III: Alien³" sortby="Alien 03" />
+	<rename id="tt0118583" title="Alien IV: Alien Resurrection" sortby="Alien 04" />
 	<rename id="tt0400150" title="Alive (Musical)" />
 	<rename id="tt0331834" title="Alive (Japan)" />
 	<rename id="tt0020629" title="All Quiet on the Western Front (Original)" />
