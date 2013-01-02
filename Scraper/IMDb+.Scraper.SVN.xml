@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="4" point="6" />
-		<published month="12" day="18" year="2012" />
+		<version major="4" minor="4" point="7" />
+		<published month="01" day="01" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1462,21 +1462,8 @@
 				]]>
 			</set>
 
-			<!-- Retrieve other results using "Title (year)" -->
-
-			<set name="query_year" value='' />
-			<if test="${search.year}>1800">
-				<set name="query_year" value="+(${search.year})" />
-			</if>
-
-			<retrieve name="search_page" url="http://akas.imdb.com/find?s=tt&amp;q=${search.title:safe(UTF-8)}${query_year}" />
-
-			<!-- extra check to see if search page came back with no results -->
-			<parse name="search_results_not_found" input="${search_page}" regex="${rx_search_results}" />
-			<if test="${search_results_not_found}!=">
-				<!-- new IMDb search system can cause failures when year is provided, so trying again without -->
-				<retrieve name="search_page" url="http://akas.imdb.com/find?s=tt&amp;q=${search.title:safe(UTF-8)}" />
-			</if>
+			<!-- Retrieve results using just "Title" -->
+			<retrieve name="search_page" url="http://akas.imdb.com/find?s=tt&amp;q=${search.title:safe(UTF-8)}" />
 
 			<parse name="details_page_block" input="${search_page}" regex="${rx_details_page_block}" />
 			<!-- loop gets skipped if no match is found -->
@@ -1548,6 +1535,17 @@
 				<set name="movie[0].details_url" value="###${special_edition}###" />
 			</if>
 		</if>
+
+		<log LogLevel="Info" Message="############################ IMDb+ Search Node ############################" />
+		<log LogLevel="Info" Message="# Search Folder  = ${search.foldername}" />
+		<log LogLevel="Info" Message="# Search File    = ${search.filename_noext}" />
+		<log LogLevel="Info" Message="# Search IMDb ID = ${search.imdb_id}" />
+		<log LogLevel="Info" Message="# Search Title   = ${search.title} (${search.year})" />
+		<log LogLevel="Info" Message="#" />
+		<log LogLevel="Info" Message="# IMDb+ IMDb ID  = ${movie[0].imdb_id} (Only showing first movie found)" />
+		<log LogLevel="Info" Message="# IMDb+ Title    = ${movie[0].title} (${movie[0].year})" />
+		<log LogLevel="Info" Message="# IMDb+ Special  = ${special_edition}" />
+		<log LogLevel="Info" Message="###########################################################################" />
 	</action>
 
 
