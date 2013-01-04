@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="4" point="7" />
-		<published month="01" day="01" year="2013" />
+		<version major="4" minor="4" point="8" />
+		<published month="01" day="03" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -27,6 +27,7 @@
 <!-- Details Node -->
 
 	<action name="get_details">
+		<log LogLevel="Info" Message="############################ IMDb+ Detail Node ############################" />
 
 		<!-- ### OPTIONS ### -->						<!--       TRUE		|         FALSE		-->
 			<set name="global_options_original_title" value="false" />	<!-- Original Title	| Always English Title	-->
@@ -1387,12 +1388,14 @@
 		<if test="${movie.site_id}=">
 			<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Aborting details node, movie.site_id is empty" />
 		</if>
+		<log LogLevel="Info" Message="###########################################################################" />
 	</action>
 
 
 <!-- Search Node -->
 
 	<action name="search">
+		<log LogLevel="Info" Message="############################ IMDb+ Search Node ############################" />
 
 		<!-- Regular Expressions -->
 		<set name="rx_imdb_results">
@@ -1519,6 +1522,16 @@
 							<subtract name="movie[${counter}].popularity" value1="100" value2="${counter}" />
 						</loop>
 					</loop>
+
+					<!-- Add AKA results to the first match if none exists -->
+					<if test="${movie[0].alternate_titles}=">
+						<retrieve name="aka_page" url="http://akas.imdb.com/title/${movie[0].imdb_id}/releaseinfo" />
+						<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
+						<set name="movie[0].alternate_titles" value='' />
+						<loop name="currAka" on="akas" limit="50">
+							<set name="movie[0].alternate_titles" value="${movie[0].alternate_titles}|${currAka[0]:htmldecode}" />
+						</loop>
+					</if>
 				</if>
 			</if>
 		</if>
@@ -1536,9 +1549,9 @@
 			</if>
 		</if>
 
-		<log LogLevel="Info" Message="############################ IMDb+ Search Node ############################" />
+		<log LogLevel="Info" Message="########################## IMDb+ Search Results ###########################" />
 		<log LogLevel="Info" Message="# Search Folder  = ${search.foldername}" />
-		<log LogLevel="Info" Message="# Search File    = ${search.filename_noext}" />
+		<log LogLevel="Info" Message="# Search File    = ${search.filename}" />
 		<log LogLevel="Info" Message="# Search IMDb ID = ${search.imdb_id}" />
 		<log LogLevel="Info" Message="# Search Title   = ${search.title} (${search.year})" />
 		<log LogLevel="Info" Message="#" />
