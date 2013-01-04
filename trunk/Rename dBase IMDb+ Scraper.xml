@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="5" point="9" />
-		<published month="01" day="01" year="2013" />
+		<version major="1" minor="6" point="0" />
+		<published month="01" day="04" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -187,6 +187,9 @@
 	<rename id="tt0112443" title="Bad Company (Thriller)" />
 	<rename id="tt0307987" sortby="Bad Santa I" />
 	<rename id="tt1798603" title="Bad Santa II" />
+	<rename id="tt0112453" title="Balto I" />
+	<rename id="tt0281634" title="Balto II: Wolf Quest" />
+	<rename id="tt0423849" title="Balto III: Wings of Change" />
 	<rename id="tt0034492" title="Bambi I" />
 	<rename id="tt0103772" title="Basic Instinct I" />
 	<rename id="tt0430912" title="Basic Instinct II" />
@@ -548,6 +551,10 @@
 	<rename id="tt1927093" title="Fred II: Night of the Living Fred" />
 	<rename id="tt0497619" title="Freeway (Docu)" />
 	<rename id="tt0095177" title="Freeway (Cult)" />
+	<rename id="tt0089175" title="Fright Night I" />
+	<rename id="tt0097390" title="Fright Night II" />
+	<rename id="tt1438176" title="Fright Night (Remake) I" />
+	<rename id="tt2486630" title="Fright Night (Remake) II" />
 	<rename id="tt0076059" title="Fun with Dick and Jane (Original)" />
 	<rename id="tt0471711" title="Futurama I: Bender's Big Score!" />
 	<rename id="tt1054485" title="Futurama II: The Beast with a Billion Backs" />
@@ -564,12 +571,16 @@
 	<rename id="tt0107254" title="Friday the 13th IX: Jason Goes to Hell - The Final Friday" sortby="Friday the 13th 09" />
 	<rename id="tt0211443" title="Friday the 13th X: Jason X" sortby="Friday the 13th 10" />
 	<rename id="tt0758746" title="Friday the 13th (Remake) I" sortby="Friday the 13th 11" />
+	<rename id="tt0376606" title="Frozen (UK)" />
+	<rename id="tt2294629" title="Frozen (Cartoon)" />
 	<rename id="tt0089118" title="F/X I" />
 	<rename id="tt0101846" title="F/X II" />
 	<rename id="tt1525835" title="Gantz I" />
 	<rename id="tt1525836" title="Gantz II: Perfect Answer" />
 	<rename id="tt0263372" title="Gaslight (TV)" />
 	<rename id="tt0031359" title="Gaslight (Classic)" />
+	<rename id="tt0119190" title="George of the Jungle I" />
+	<rename id="tt0322389" title="George of the Jungle II" />
 	<rename id="tt0067128" title="Get Carter (Original)" />
 	<rename id="tt0104346" title="Gladiator (Cult)" />
 	<rename id="tt0259324" title="Ghost Rider I" />
@@ -714,6 +725,8 @@
 	<rename id="tt0097527" title="House III: The Horror Show" />
 	<rename id="tt0837796" title="House (Cult)" />
 	<rename id="tt0113342" title="House (Canada)" />
+	<rename id="tt0317676" title="House of the Dead I" />
+	<rename id="tt0435665" title="House of the Dead II" />
 	<rename id="tt0045888" title="House of Wax (Original)" />
 	<rename id="tt0051744" title="House on Haunted Hill (Original)" />
 	<rename id="tt0185371" title="House on Haunted Hill I" />
@@ -864,6 +877,8 @@
 	<rename id="tt1302011" title="Kung Fu Panda II" />
 	<rename id="tt1287845" title="Kung Fu Panda (Short) I: Secrets of the Furious Five" sortby="Kung Fu Panda X01" />
 	<rename id="tt1702433" title="Kung Fu Panda (Short) II: Holiday Special" sortby="Kung Fu Panda X02" />
+	<rename id="tt0048280" title="Lady and the Tramp I" />
+	<rename id="tt0249677" title="Lady and the Tramp II: Scamp's Adventure" />
 	<rename id="tt1228933" title="Laid to Rest I" />
 	<rename id="tt1792799" title="Laid to Rest II: ChromeSkull" />
 	<rename id="tt0139414" title="Lake Placid I" />
@@ -944,9 +959,10 @@
 	<rename id="tt2381249" title="Mission: Impossible V" />
 	<rename id="tt0057591" title="Monsieur Gangster" foreign="Les tontons flingueurs" />
 	<rename id="tt1542599" title="Monsters vs Aliens: B.O.B.'s Big Break" />
-	<rename id="tt0071853" title="Monty Python's I: The Holy Grail" />
-	<rename id="tt0079470" title="Monty Python's II: Life of Brian" />
-	<rename id="tt0085959" title="Monty Python's III: The Meaning of Life" />
+	<rename id="tt0066765" title="Monty Python's I: And Now for Something Completely Different" sortby="Monty 01" />
+	<rename id="tt0071853" title="Monty Python's I: The Holy Grail" sortby="Monty 02" />
+	<rename id="tt0079470" title="Monty Python's II: Life of Brian" sortby="Monty 03" />
+	<rename id="tt0085959" title="Monty Python's III: The Meaning of Life" sortby="Monty 04" />
 	<rename id="tt0033922" title="Mr. &amp; Mrs. Smith (Original)" />
 	<rename id="tt0134119" title="Mr. Ripley I: The Talented Mr. Ripley" />
 	<rename id="tt0265651" title="Mr. Ripley II: Ripley's Game" />
@@ -1062,6 +1078,7 @@
 	<rename id="tt0103044" title="Prison on Fire II" foreign="Jian yu feng yun II: Tao fan" />
 	<rename id="tt0085127" title="Project A I" foreign="'A' gai wak" />
 	<rename id="tt0092501" title="Project A II" foreign="'A' gai wak juk jap" />
+	<rename id="tt0114202" title="Public Enemies (Classic)" />
 	<rename id="tt0098143" title="Puppet Master I: Puppetmaster" sortby="Puppet Master 01" />
 	<rename id="tt0100438" title="Puppet Master II: His Unholy Creations" sortby="Puppet Master 02" />
 	<rename id="tt0102728" title="Puppet Master III: Toulon's Revenge" sortby="Puppet Master 03" />
@@ -1476,8 +1493,9 @@
 	<rename id="tt0102510" title="The Naked Gun II: The Smell of Fear (2½)" />
 	<rename id="tt0110622" title="The Naked Gun III: The Final Insult (33 1/3)" />
 	<rename id="tt0088323" title="The NeverEnding Story I" />
-	<rename id="tt0100240" title="The Neverending Story II: The Next Chapter" />
-	<rename id="tt0110647" title="The Neverending Story III: Escape from Fantasia" />
+	<rename id="tt0100240" title="The NeverEnding Story II: The Next Chapter" />
+	<rename id="tt0110647" title="The NeverEnding Story III: Escape from Fantasia" />
+	<rename id="tt1386664" title="The NeverEnding Story (Remake)" />
 	<rename id="tt0117218" title="The Nutty Professor I" />
 	<rename id="tt0144528" title="The Nutty Professor II: The Klumps" />
 	<rename id="tt0063374" title="The Odd Couple I" />
