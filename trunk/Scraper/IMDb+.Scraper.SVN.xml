@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="4" point="8" />
-		<published month="01" day="03" year="2013" />
+		<version major="4" minor="4" point="9" />
+		<published month="01" day="10" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1430,6 +1430,9 @@
 				<set name="movie[0].imdb_id" value="${imdb_results[0][2]:htmldecode}" />
 				<set name="movie[0].site_id" value="${imdb_results[0][2]:htmldecode}" />
 				<set name="movie[0].popularity" value="100" />
+
+				<!-- Compensating for bug (ahem changes) in Moving-Pictures auto-approval system -->
+				<set name="movie[0].alternate_titles" value="${search.title}" />
 
 				<log LogLevel="Debug" Message="IMDb+ Scraper: Direct match found for [${search.imdb_id}] as: '${movie[0].title} (${movie[0].year})'" />
 				<if test="${force_imdb_match}=true">
