@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="6" point="0" />
-		<published month="01" day="04" year="2013" />
+		<version major="1" minor="6" point="1" />
+		<published month="01" day="26" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -425,6 +425,7 @@
 	<rename id="tt2023453" title="Diary of a Wimpy Kid III: Dog Days" />
 	<rename id="tt0452608" title="Death Race I" />
 	<rename id="tt1500491" title="Death Race II" />
+	<rename id="tt1988591" title="Death Race III: Inferno" />
 	<rename id="tt0071402" title="Death Wish I" />
 	<rename id="tt0082250" title="Death Wish II" />
 	<rename id="tt0089003" title="Death Wish III" />
@@ -531,6 +532,8 @@
 	<rename id="tt0414982" title="Final Destination III" />
 	<rename id="tt1144884" title="Final Destination IV: The Final Destination" />
 	<rename id="tt1622979" title="Final Destination V" />
+	<rename id="tt0266543" sortby="Finding Nemo I" />
+	<rename id="tt2277860" title="Finding Nemo II" />
 	<rename id="tt0091053" title="Fire with Fire (Captive Hearts)" />
 	<rename id="tt2062960" title="Flatland I" />
 	<rename id="tt2062960" title="Flatland II: Sphereland" />
@@ -579,6 +582,11 @@
 	<rename id="tt1525836" title="Gantz II: Perfect Answer" />
 	<rename id="tt0263372" title="Gaslight (TV)" />
 	<rename id="tt0031359" title="Gaslight (Classic)" />
+	<rename id="tt0248827" title="George Carlin: Carlin at Carnegie" />
+	<rename id="tt0963207" title="George Carlin: It's Bad for Ya!" />
+	<rename id="tt0526069" title="George Carlin: More Than 7 Words" />
+	<rename id="tt0249854" title="George Carlin: On location at USC" />
+	<rename id="tt0249853" title="George Carlin: On location at Phoenix" />
 	<rename id="tt0119190" title="George of the Jungle I" />
 	<rename id="tt0322389" title="George of the Jungle II" />
 	<rename id="tt0067128" title="Get Carter (Original)" />
@@ -958,6 +966,8 @@
 	<rename id="tt1229238" title="Mission: Impossible IV - Ghost Protocol" />
 	<rename id="tt2381249" title="Mission: Impossible V" />
 	<rename id="tt0057591" title="Monsieur Gangster" foreign="Les tontons flingueurs" />
+	<rename id="tt0198781" sortby="Monsters Inc 01" />
+	<rename id="tt1453405" sortby="Monsters Inc 02" />
 	<rename id="tt1542599" title="Monsters vs Aliens: B.O.B.'s Big Break" />
 	<rename id="tt0066765" title="Monty Python's I: And Now for Something Completely Different" sortby="Monty 01" />
 	<rename id="tt0071853" title="Monty Python's I: The Holy Grail" sortby="Monty 02" />
@@ -1106,6 +1116,8 @@
 	<rename id="tt1401143" title="Rare Exports: A Christmas Tale" />
 	<rename id="tt0433035" title="Real Steel" sortby="Real Steal I" />
 	<rename id="tt1896804" title="Real Steel II" />
+	<rename id="tt1245526" title="Red" sortby="Red I" />
+	<rename id="tt1821694" title="Red II" />
 	<rename id="tt0087985" title="Red Dawn (Original)" />
 	<rename id="tt0120804" title="Resident Evil I" />
 	<rename id="tt0318627" title="Resident Evil II: Apocalypse" />
