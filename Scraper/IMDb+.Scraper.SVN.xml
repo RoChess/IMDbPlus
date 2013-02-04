@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="5" point="2" />
-		<published month="02" day="02" year="2013" />
+		<version major="4" minor="5" point="3" />
+		<published month="02" day="04" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -471,12 +471,12 @@
 						</set>
 						<set name="rx_tmp_infix">
 							<![CDATA[
-							".+?<h4 class="inline">Language:</h4>\s*<a[^>]+href="/language/
+							[^"]*".+?<h4 class="inline">Language:</h4>\s*<a[^>]+href="/language/
 							]]>
 						</set>
 						<set name="rx_tmp_postfix">
 							<![CDATA[
-							")|(?!.+?<a[^>]+href="releaseinfo#akas"[^>]*>)).+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>
+							[^"]*")|(?!.+?<a[^>]+href="releaseinfo[^#]*#akas"[^>]*>)).+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>
 							]]>
 						</set>
 						<set name="rx_title_year" value="${rx_tmp_prefix}(?:${global_options_country_filter})${rx_tmp_infix}(?:${global_options_language_filter})${rx_tmp_postfix}" />
@@ -525,7 +525,7 @@
 					</set>
 					<set name="rx_genres">
 						<![CDATA[
-						<a\s+(?:onclick="[^"]+"\s*)?href="(?:/Sections)?/[Gg]enre[s]?/[^/]+/?"[^>]+>(?<movieGenres>.+?)</a>
+						<a\s+(?:onclick="[^"]+"\s*)?href="(?:/Sections)?/[Gg]enre[s]?/[^"]+"[^>]*>(?<movieGenres>.+?)</a>
 						]]>
 					</set>
 					<parse name="genres_block" input="${details_page}" regex="${rx_genres_block}" />
@@ -1584,7 +1584,7 @@
 			<!-- Get cover directly by manipulating details page thumbnail -->
 			<set name="rx_cover">
 				<![CDATA[
-				<a\s*onclick="[^"]+"\s*href="/media/.+?/tt\d{7}"[^>]+><img.+?src="([^_]+_V1)\.[^\.]+([^"]+)".+?alt=".+?Poster"
+				<a\s*onclick="[^"]+"\s*href="/media/.+?/tt\d{7}[^"]*"[^>]+><img.+?src="([^_]+_V1)\.[^\.]+([^"]+)".+?alt=".+?Poster"
 				]]>
 			</set>
 			<parse name="cover_src" input="${details_page}" regex="${rx_cover}" />
