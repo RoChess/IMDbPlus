@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="5" point="3" />
-		<published month="02" day="04" year="2013" />
+		<version major="4" minor="5" point="4" />
+		<published month="02" day="11" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -199,11 +199,11 @@
 			</if>
 
 			<if test="${global_options_secondary_details}&lt;=1">
-				<set name="site" value="http://akas.imdb.com/title/${movie.site_id}" />
+				<set name="site" value="http://akas.imdb.com/title/${movie.site_id}/" />
 			</if>
 			<if test="${global_options_secondary_details}>1">
 				<set name="alt_site_encoding" value="UTF-8" />
-				<set name="site" value="http://www.imdb.com/title/${movie.site_id}" />
+				<set name="site" value="http://www.imdb.com/title/${movie.site_id}/" />
 
 				<!-- Reuse expression for all the foreign IMDb sites, and overwrite it for the non-IMDb ones -->
 				<set name="rx_title_year">
@@ -1421,7 +1421,7 @@
 
 		<!-- Retrieve result using IMDB id (if provided) -->
 		<if test="${search.imdb_id}!=">
-			<retrieve name="imdb_page" url="http://akas.imdb.com/title/${search.imdb_id}" />
+			<retrieve name="imdb_page" url="http://akas.imdb.com/title/${search.imdb_id}/" />
 			<parse name="imdb_results" input="${imdb_page}" regex="${rx_imdb_results}" />
 			<if test="${imdb_results[0][2]}!=">
 				<!-- Direct match found, let's get the results and be done with it -->
