@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="5" point="5" />
-		<published month="02" day="12" year="2013" />
+		<version major="4" minor="6" point="5" />
+		<published month="02" day="18" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -436,7 +436,7 @@
 				</set>
 				<set name="rx_actors">
 					<![CDATA[
-					<td[^<]*<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7}[^"]+"[^>]*>(?<movieActors>[^<]*)</a>
+					<td class="name"[^<]*<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7}[^"]+"[^>]*>\s*(?<movieActors>.+?)\s*</a>
 					]]>
 				</set>
 				<parse name="actors_block" input="${details_page}" regex="${rx_actors_block}" />
@@ -1533,6 +1533,20 @@
 						<loop name="currAka" on="akas" limit="50">
 							<set name="movie[0].alternate_titles" value="${movie[0].alternate_titles}|${currAka[0]:htmldecode}" />
 						</loop>
+					</if>
+
+				</if>
+			</if>
+
+			<!-- Auto-approve workaround for foreign-users (temporary, will remove once new MovPic gets released) -->
+			<if test="${search.title}!=${movie[0].title}">
+				<if test="${search.title}=${movie[0].alternate_titles}">
+					<set name="movie[0].title" value="${search.title}" />
+					<if test="${search.year}=${movie[0].year}">
+						<log LogLevel="Info" Message="IMDb+ Scraper: Forcing title as '${search.title}' with match on '${search.year}' to make auto-approve work for foreign users" />
+					</if>
+					<if test="${search.year}!=${movie[0].year}">
+						<log LogLevel="Info" Message="IMDb+ Scraper: Forcing title as '${search.title}' with year *NOT* matching to make auto-approve work for foreign users" />
 					</if>
 				</if>
 			</if>
