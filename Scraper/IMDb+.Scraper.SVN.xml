@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="7" point="3" />
-		<published month="02" day="21" year="2013" />
+		<version major="4" minor="7" point="4" />
+		<published month="02" day="22" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -436,7 +436,7 @@
 				</set>
 				<set name="rx_actors">
 					<![CDATA[
-					<td class="name"[^<]*<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7}[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieActors>.+?)\s*(?:</span>)?</a>
+					<td class="name"[^<]*<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7}[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieActors>.+?)\s*(?:</span>)?</a>|<span class="itemprop" itemprop="name"[^>]*>\s*(?<movieActors>[^<]+)</span>\s*</a>
 					]]>
 				</set>
 				<parse name="actors_block" input="${details_page}" regex="${rx_actors_block}" />
