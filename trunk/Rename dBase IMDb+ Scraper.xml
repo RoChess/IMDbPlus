@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="6" point="1" />
-		<published month="01" day="26" year="2013" />
+		<version major="1" minor="6" point="2" />
+		<published month="02" day="23" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1313,6 +1313,8 @@
 	<rename id="tt0462590" title="Step Up I" />
 	<rename id="tt1023481" title="Step Up II: Step Up 2 the Streets" />
 	<rename id="tt1193631" title="Step Up III: Step Up 3D" />
+	<rename id="tt1800741" title="Step Up IV: Revolution" />
+	<rename id="tt2626350" title="Step Up V" />
 	<rename id="tt0067800" title="Straw Dogs (Original)" />
 	<rename id="tt0421073" title="Street Kings I" />
 	<rename id="tt1707687" title="Street Kings II: Motor City" />
@@ -1646,11 +1648,11 @@
 	<rename id="tt0120390" title="Turbulence I" />
 	<rename id="tt0192701" title="Turbulence II: Fear of Flying" />
 	<rename id="tt0251448" title="Turbulence III: Heavy Metal" />
-	<rename id="tt1099212" title="Twilight I" />
-	<rename id="tt1259571" title="Twilight II: New Moon" />
-	<rename id="tt1325004" title="Twilight III: Eclipse" />
-	<rename id="tt1324999" title="Twilight IV: Breaking Dawn (Part 1)" />
-	<rename id="tt1673434" title="Twilight IV: Breaking Dawn (Part 2)" />
+	<rename id="tt1099212" title="Twilight I" sortby="Twilight 01" />
+	<rename id="tt1259571" title="Twilight II: New Moon" sortby="Twilight 02" />
+	<rename id="tt1325004" title="Twilight III: Eclipse" sortby="Twilight 03" />
+	<rename id="tt1324999" title="Twilight IV: Breaking Dawn (Part 1)" sortby="Twilight 04a" />
+	<rename id="tt1673434" title="Twilight IV: Breaking Dawn (Part 2)" sortby="Twilight 04b" />
 	<rename id="tt0103285" title="Once Upon a Time in China I" foreign="Wong Fei Hung" />
 	<rename id="tt0105839" title="Once Upon a Time in China II" foreign="Wong Fei Hung II: Nam yi dong ji keung" />
 	<rename id="tt0108592" title="Once Upon a Time in China III" foreign="Wong Fei Hung ji saam: Si wong jaang ba" />
