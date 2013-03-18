@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="7" point="4" />
-		<published month="02" day="22" year="2013" />
+		<version major="4" minor="7" point="5" />
+		<published month="03" day="18" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -212,7 +212,12 @@
 					]]>
 				</set>
 
-				<if test="${global_options_secondary_details}=2">
+				<!-- Temporary fix (hopefully) till IMDb restores localized data for DE/ES/FR/IT/PT -->
+				<if test="${global_options_secondary_details}<7">
+					<set name="alt_site" value="http://www.imdb.com/title/${movie.site_id}" />
+				</if>
+
+				<if test="${global_options_secondary_details}=(disabled)2">
 					<!-- Avatar = http://www.imdb.de/title/tt0499549 -->
 					<set name="alt_site" value="http://www.imdb.de/title/${movie.site_id}" />
 					<set name="rx_genres_block" value="&lt;h5&gt;Genre:&lt;/h5&gt;[^&gt;]+?&gt;\s+(.+?)\s+?&lt;/div&gt;" />
@@ -229,7 +234,7 @@
 					</set>
 					<log LogLevel="Info" Message="IMDb+ Scraper: German (imdb.de) used for some data on: ${movie.site_id}" />
 				</if>
-				<if test="${global_options_secondary_details}=3">
+				<if test="${global_options_secondary_details}=(disabled)3">
 					<!-- Avatar = http://www.imdb.es/title/tt0499549 -->
 					<set name="alt_site" value="http://www.imdb.es/title/${movie.site_id}" />
 					<set name="rx_genres_block" value="&lt;h5&gt;G&amp;#xE9;nero:&lt;/h5&gt;[^&gt;]+?&gt;\s+(.+?)\s+?&lt;/div&gt;" />
@@ -246,7 +251,7 @@
 					</set>
 					<log LogLevel="Info" Message="IMDb+ Scraper: Spanish (imdb.es) used for some data on: ${movie.site_id}" />
 				</if>
-				<if test="${global_options_secondary_details}=4">
+				<if test="${global_options_secondary_details}=(disabled)4">
 					<!-- Avatar = http://www.imdb.fr/title/tt0499549 -->
 					<set name="alt_site" value="http://www.imdb.fr/title/${movie.site_id}" />
 					<set name="rx_genres_block" value="&lt;h5&gt;Genre:&lt;/h5&gt;[^&gt;]+?&gt;\s+(.+?)\s+?&lt;/div&gt;" />
@@ -263,7 +268,7 @@
 					</set>
 					<log LogLevel="Info" Message="IMDb+ Scraper: French (imdb.fr) used for some data on: ${movie.site_id}" />
 				</if>
-				<if test="${global_options_secondary_details}=5">
+				<if test="${global_options_secondary_details}=(disabled)5">
 					<!-- Avatar = http://www.imdb.it/title/tt0499549 -->
 					<set name="alt_site" value="http://www.imdb.it/title/${movie.site_id}" />
 					<set name="rx_genres_block" value="&lt;h5&gt;Genere:&lt;/h5&gt;[^&gt;]+?&gt;\s+(.+?)\s+?&lt;/div&gt;" />
@@ -280,7 +285,7 @@
 					</set>
 					<log LogLevel="Info" Message="IMDb+ Scraper: Italian (imdb.it) used for some data on: ${movie.site_id}" />
 				</if>
-				<if test="${global_options_secondary_details}=6">
+				<if test="${global_options_secondary_details}=(disabled)6">
 					<!-- Avatar = http://www.imdb.pt/title/tt0499549 -->
 					<set name="alt_site" value="http://www.imdb.pt/title/${movie.site_id}" />
 					<set name="rx_genres_block" value="&lt;h5&gt;G&amp;#xEA;nero:&lt;/h5&gt;[^&gt;]+?&gt;\s+(.+?)\s+?&lt;/div&gt;" />
