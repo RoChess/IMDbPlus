@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="6" point="2" />
-		<published month="02" day="23" year="2013" />
+		<version major="1" minor="6" point="3" />
+		<published month="03" day="19" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -381,7 +381,9 @@
 	<rename id="tt0844471" title="Cloudy I: with a Chance of Meatballs" />
 	<rename id="tt1985966" title="Cloudy II: Revenge of the Leftovers" />
 	<rename id="tt0017765" title="College (Classic)" />
-	<rename id="tt0082198" title="Conan the Barbarian (Original)" />
+	<rename id="tt0082198" title="Conan I: The Barbarian" />
+	<rename id="tt0087078" title="Conan II: The Destroyer" />
+	<rename id="tt2479722" title="Conan III: The Legend" />
 	<rename id="tt0266425" title="Conspiracy (TV)" />
 	<rename id="tt1884274" title="Conspiracy (Cult)" />
 	<rename id="tt0479884" title="Crank I" />
@@ -559,6 +561,8 @@
 	<rename id="tt1438176" title="Fright Night (Remake) I" />
 	<rename id="tt2486630" title="Fright Night (Remake) II" />
 	<rename id="tt0076059" title="Fun with Dick and Jane (Original)" />
+	<rename id="tt0076061" title="Funny People I" />
+	<rename id="tt0085571" title="Funny People II" />
 	<rename id="tt0471711" title="Futurama I: Bender's Big Score!" />
 	<rename id="tt1054485" title="Futurama II: The Beast with a Billion Backs" />
 	<rename id="tt1054486" title="Futurama III: Bender's Game" />
@@ -892,6 +896,7 @@
 	<rename id="tt0139414" title="Lake Placid I" />
 	<rename id="tt0974583" title="Lake Placid II" />
 	<rename id="tt1499249" title="Lake Placid III" />
+	<rename id="tt2117905" title="Lake Placid IV: The Final Chapter" />
 	<rename id="tt0146316" title="Lara Croft: Tomb Raider I" />
 	<rename id="tt0325703" title="Lara Croft: Tomb Raider II (The Cradle of Life)" />
 	<rename id="tt0119345" title="Last Summer I: I Know What You Did..." sortby="I Know What You Did Last Summer 01" />
@@ -1490,6 +1495,7 @@
 	<rename id="tt1400526" title="The Lost Boys III: The Thirst" />
 	<rename id="tt0419946" title="The Marine I" />
 	<rename id="tt1266027" title="The Marine II" />
+	<rename id="tt2334841" title="The Marine III: Homefront" />
 	<rename id="tt0120746" title="The Mask of Zorro I" />
 	<rename id="tt0386140" title="The Mask of Zorro II: The Legend of Zorro" />
 	<rename id="tt0133093" title="The Matrix I" />
