@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="7" point="5" />
-		<published month="03" day="18" year="2013" />
+		<version major="4" minor="7" point="6" />
+		<published month="03" day="19" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -213,7 +213,7 @@
 				</set>
 
 				<!-- Temporary fix (hopefully) till IMDb restores localized data for DE/ES/FR/IT/PT -->
-				<if test="${global_options_secondary_details}<7">
+				<if test="${global_options_secondary_details}&lt;=6">
 					<set name="alt_site" value="http://www.imdb.com/title/${movie.site_id}" />
 				</if>
 
@@ -527,7 +527,7 @@
 			<if test="${global_options_refresh_all_fields}=true"><set name="update_genres" value="true" /></if><if test="${movie.genres}="><set name="update_genres" value="true" /></if>
 			<if test="${update_genres}=true">
 				<!-- Genres -->
-				<if test="${global_options_secondary_details}&lt;=1">
+				<if test="${global_options_secondary_details}&lt;=6">
 					<set name="rx_genres_block">
 						<![CDATA[
 						Genre[s]?:[^<]*</h4>(?<genres_block>.+?)</div>
@@ -540,16 +540,64 @@
 					</set>
 					<parse name="genres_block" input="${details_page}" regex="${rx_genres_block}" />
 				</if>
-				<if test="${global_options_secondary_details}>1">
+				<if test="${global_options_secondary_details}>6">
 					<parse name="genres_block" input="${foreign_page}" regex="${rx_genres_block}" />
 				</if>
+
 				<parse name="genres" input="${genres_block[0][0]}" regex="${rx_genres}" />
 				<set name="movie.genres" value='' />
+
 				<loop name="currGenre" on="genres" limit="30">
 					<set name="movie.genres" value="${movie.genres}|${currGenre[0]:htmldecode}" />
 				</loop>
-			</if>
 
+				<!-- Temporary forced genre translation -->
+				<if test="${global_options_secondary_details}>1">
+					<if test="${global_options_secondary_details}&lt;=6">
+						<!-- imdb.de (German) -->
+						<if test="${global_options_secondary_details}=2">
+							<if test="${movie.genres}!=">
+								<replace name="movie.genres" input="${movie.genres}" pattern="Adventure" with="Abenteuer" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Animation" with="Zeichentrick" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Biography" with="Biographie" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="Komödie" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Crime" with="Krimi" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Documentary" with="Dokumentation" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Family" with="Familie" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Film-Noir" with="Kriminalfilm" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Spielshow" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Geschichte" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Music" with="Musik" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Nachrichten" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="Romanze" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Krieg" />
+							</if>
+						</if>
+						<!-- imdb.fr (French) -->
+						<if test="${global_options_secondary_details}=4">
+							<if test="${movie.genres}!=">
+								<replace name="movie.genres" input="${movie.genres}" pattern="Adventure" with="Aventure" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Biography" with="Biographie" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="Comédie" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Crime" with="Policier" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Documentary" with="Documentaire" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Drama" with="Drame" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Family" with="Famille" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Fantasy" with="Fantastique" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Emissions TV" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Historique" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Horror" with="Horreur" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Music" with="Musique" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Mystery" with="Mistérieux" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Journaux" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Tv-Réalité" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Guerre" />
+							</if>
+						</if>
+					</if>
+				</if>
+			</if>
+	
 			<if test="${global_options_refresh_all_fields}=true"><set name="update_runtime" value="true" /></if><if test="${movie.runtime}=0"><set name="update_runtime" value="true" /></if>
 			<if test="${update_runtime}=true">
 				<!-- Runtime -->
@@ -688,7 +736,7 @@
 			</if>
 			<!-- imdb.de (German) -->
 			<if test="${global_options_secondary_details}=2">
-				<parse name="certification" input="${foreign_page}" regex="Deutschland:(\d+|o\.Al\.)" />
+				<parse name="certification" input="${foreign_page}" regex="Germany:(\d+|o\.Al\.)" />
 				<replace name="certification1" input="${certification[0][0]:htmldecode}" pattern="o\.Al\." with="0" />
 				<set name="movie.certification" value="${certification1}" />
 			</if>
@@ -720,7 +768,7 @@
 			</if>
 			<!-- imdb.it (Italian) -->
 			<if test="${global_options_secondary_details}=5">
-				<parse name="certification" input="${foreign_page}" regex="Italia:((?:T)|(?:VPA)|(?:VM\d+)|(?:X))" />
+				<parse name="certification" input="${foreign_page}" regex="Italy:((?:T)|(?:VPA)|(?:VM\d+)|(?:X))" />
 				<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
 				<if test="${movie.certification}=">
 					<!-- Fix localized rating, forced to swap order, as 'G' gets replaced inside 'PG' and 'PG-13' otherwise -->
