@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="6" point="3" />
-		<published month="03" day="19" year="2013" />
+		<version major="1" minor="6" point="4" />
+		<published month="03" day="23" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -95,6 +95,8 @@
 	<rename id="tt0114565" title="A Streetcar Named Desire (TV II)" />
 	<rename id="tt0027075" title="A Tale of Two Cities (Original)" />
 	<rename id="tt0081595" title="A Tale of Two Cities (TV)" />
+	<rename id="tt1230204" title="A Turtle's Tale I: Sammy's Adventures" />
+	<rename id="tt2288005" title="A Turtle's Tale II: Sammy's Great Escape" />
 	<rename id="tt1330978" title="Ace in the Hole: Sadaam Hussein" />
 	<rename id="tt1441232" title="Ace in the Hole (TV)" />
 	<rename id="tt0109040" title="Ace Ventura I: Pet Detective" />
