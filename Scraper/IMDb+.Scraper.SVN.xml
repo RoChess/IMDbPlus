@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="7" point="9" />
-		<published month="03" day="27" year="2013" />
+		<version major="4" minor="8" point="1" />
+		<published month="03" day="28" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -567,7 +567,7 @@
 								<replace name="movie.genres" input="${movie.genres}" pattern="Film-Noir" with="Kriminalfilm" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Spielshow" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Geschichte" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Music" with="Musik" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="|Music|" with="|Musik|" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Nachrichten" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="Romanze" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Krieg" />
@@ -589,7 +589,7 @@
 								<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Concurso TV" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Historia" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Horror" with="Terror" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Music" with="Música" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="|Music|" with="|Música|" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Mystery" with="Misterio" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Noticias" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Reality Show" />
@@ -614,7 +614,7 @@
 								<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Emissions TV" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Historique" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Horror" with="Horreur" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Music" with="Musique" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="|Music|" with="|Musique|" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Mystery" with="Mistérieux" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Journaux" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Tv-Réalité" />
@@ -634,7 +634,7 @@
 								<replace name="movie.genres" input="${movie.genres}" pattern="Drama" with="Drammatico" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Family" with="Famiglia" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Storico" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Music" with="Musica" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="|Music|" with="|Musica|" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="Romantico" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Sci-Fi" with="Fantascienza" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Guerra" />
