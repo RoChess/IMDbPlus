@@ -26,8 +26,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="6" point="4" />
-		<published month="03" day="23" year="2013" />
+		<version major="1" minor="6" point="5" />
+		<published month="04" day="05" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -242,6 +242,8 @@
 	<rename id="tt1223922" title="Blue (India)" />
 	<rename id="tt0326773" title="Blue (Japan)" />
 	<rename id="tt1148198" title="Blue (Urban)" />
+	<rename id="tt0300532" title="Blue Crush I" />
+	<rename id="tt1630626" title="Blue Crush II" /> 
 	<rename id="tt0357507" title="Boogeyman I" />
 	<rename id="tt0900357" title="Boogeyman II" />
 	<rename id="tt1204883" title="Boogeyman III" />
@@ -405,6 +407,8 @@
 	<rename id="tt0090555" title="Crocodile Dundee I" />
 	<rename id="tt0092493" title="Crocodile Dundee II" />
 	<rename id="tt0231402" title="Crocodile Dundee III: Los Angeles" />
+	<rename id="tt0190332" title="Crouching Tiger, Hidden Dragon I" foreign="Wo hu cang long" />
+	<rename id="tt2652118" title="Crouching Tiger, Hidden Dragon II: Iron Knight, Silver Vase" foreign="Wo hu cang long II" />
 	<rename id="tt0123755" title="Cube I" />
 	<rename id="tt0285492" title="Cube II: Hypercube" />
 	<rename id="tt0377713" title="Cube III: Cube Zero" />
@@ -1006,6 +1010,8 @@
 	<rename id="tt0409904" title="Night Watch II: Day Watch" foreign="Dnevnoy dozor" />
 	<rename id="tt1290099" title="Ninjas vs. I: Zombies" />
 	<rename id="tt1748134" title="Ninjas vs. II: Vampires" />
+	<rename id="tt0410377" title="Nim's Island I" />
+	<rename id="tt2221648" title="Nim's Island II: Return to..." />
 	<rename id="tt1509850" title="No Crossover: The Trial of Allen Iverson" />
 	<rename id="tt0240772" title="Ocean's I: Eleven" />
 	<rename id="tt0349903" title="Ocean's II: Twelve" />
