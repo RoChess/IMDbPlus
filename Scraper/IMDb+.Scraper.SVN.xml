@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="8" point="1" />
-		<published month="03" day="28" year="2013" />
+		<version major="4" minor="8" point="2" />
+		<published month="04" day="05" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -396,9 +396,9 @@
 					<set name="movie.directors" value="${directors[0][0]:htmldecode}" />
 				</if>
 				<if test="${global_options_one_writer_director}=false">
-					<set name="movie.directors" value='' />
+					<set name="movie.directors" value="|" />
 					<loop name="currDirector" on="directors" limit="10">
-						<set name="movie.directors" value="${movie.directors}|${currDirector[0]:htmldecode}" />
+						<set name="movie.directors" value="${movie.directors}${currDirector[0]:htmldecode}|" />
 					</loop>
 				</if>
 			</if>
@@ -423,9 +423,9 @@
 					<set name="movie.writers" value="${writers[0][0]:htmldecode}" />
 				</if>
 				<if test="${global_options_one_writer_director}=false">
-					<set name="movie.writers" value='' />
+					<set name="movie.writers" value="|" />
 					<loop name="currWriter" on="writers" limit="10">
-						<set name="movie.writers" value="${movie.writers}|${currWriter[0]:htmldecode}" />
+						<set name="movie.writers" value="${movie.writers}${currWriter[0]:htmldecode}|" />
 					</loop>
 				</if>
 			</if>
@@ -446,9 +446,9 @@
 				</set>
 				<parse name="actors_block" input="${details_page}" regex="${rx_actors_block}" />
 				<parse name="actors" input="${actors_block}" regex="${rx_actors}" />
-				<set name="movie.actors" value='' />
+				<set name="movie.actors" value="|" />
 				<loop name="currActor" on="actors" limit="30">
-					<set name="movie.actors" value="${movie.actors}|${currActor[0]:htmldecode}" />
+					<set name="movie.actors" value="${movie.actors}${currActor[0]:htmldecode}|" />
 				</loop>
 			</if>
 
@@ -518,9 +518,9 @@
 				</set>
 				<parse name="studios_block" input="${details_page}" regex="${rx_studios_block}" />
 				<parse name="studios" input="${studios_block}" regex="${rx_studios}" />
-				<set name="movie.studios" value='' />
+				<set name="movie.studios" value="|" />
 				<loop name="currStudio" on="studios" limit="10">
-					<set name="movie.studios" value="${movie.studios}|${currStudio[0]:htmldecode}" />
+					<set name="movie.studios" value="${movie.studios}${currStudio[0]:htmldecode}|" />
 				</loop>
 			</if>
 
@@ -535,7 +535,7 @@
 					</set>
 					<set name="rx_genres">
 						<![CDATA[
-						<a\s+(?:onclick="[^"]+"\s*)?href="(?:/Sections)?/[Gg]enre[s]?/[^"]+"[^>]*>(?<movieGenres>.+?)</a>
+						<a\s+(?:onclick="[^"]+"\s*)?href="(?:/Sections)?/[Gg]enre[s]?/[^"]+"[^>]*>\s*(?<movieGenres>.+?)</a>
 						]]>
 					</set>
 					<parse name="genres_block" input="${details_page}" regex="${rx_genres_block}" />
@@ -545,10 +545,10 @@
 				</if>
 
 				<parse name="genres" input="${genres_block[0][0]}" regex="${rx_genres}" />
-				<set name="movie.genres" value='' />
+				<set name="movie.genres" value="|" />
 
 				<loop name="currGenre" on="genres" limit="30">
-					<set name="movie.genres" value="${movie.genres}|${currGenre[0]:htmldecode}" />
+					<set name="movie.genres" value="${movie.genres}${currGenre[0]:htmldecode}|" />
 				</loop>
 
 				<!-- Temporary forced genre translation -->
@@ -567,7 +567,7 @@
 								<replace name="movie.genres" input="${movie.genres}" pattern="Film-Noir" with="Kriminalfilm" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Spielshow" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Geschichte" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="|Music|" with="|Musik|" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Musik|" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Nachrichten" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="Romanze" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Krieg" />
@@ -589,7 +589,7 @@
 								<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Concurso TV" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Historia" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Horror" with="Terror" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="|Music|" with="|Música|" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Música|" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Mystery" with="Misterio" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Noticias" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Reality Show" />
@@ -614,7 +614,7 @@
 								<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Emissions TV" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Historique" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Horror" with="Horreur" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="|Music|" with="|Musique|" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Musique|" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Mystery" with="Mistérieux" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Journaux" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Tv-Réalité" />
@@ -634,7 +634,7 @@
 								<replace name="movie.genres" input="${movie.genres}" pattern="Drama" with="Drammatico" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Family" with="Famiglia" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Storico" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="|Music|" with="|Musica|" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Musica|" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="Romantico" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Sci-Fi" with="Fantascienza" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Guerra" />
@@ -863,7 +863,7 @@
 		<!-- START: global_options_long_summary -->
 			<if test="${global_options_refresh_all_fields}=true"><set name="update_summary" value="true" /></if><if test="${movie.summary}="><set name="update_summary" value="true" /></if>
 			<if test="${update_summary}=true">
-				<if test="${global_options_secondary_details}&lt;=1">
+				<if test="${global_options_secondary_details}&lt;=6">
 					<set name="rx_plot">
 						<![CDATA[
 						<p class="plotpar">\s*(?<moviePlotLong>.*?)<i>.*?</i>.*?</p>|<h5>Plot Synopsis:</h5>[^>]+>\s*(?<moviePlotLong>.*?)\s*<a
@@ -1178,7 +1178,7 @@
 
 				<!-- Since we already have the RottenTomatoes results, lets use their summary if imdb.com did not have one -->
 				<if test="${movie.summary}=">
-					<if test="${global_options_secondary_details}&lt;=1">
+					<if test="${global_options_secondary_details}&lt;=6">
 						<!-- Set short summary RegExp first -->
 						<set name="rx_rotten_summary">
 							<![CDATA[
@@ -1247,9 +1247,9 @@
 				</set>
 				<retrieve name="aka_page" url="${site}releaseinfo" />
 				<parse name="akas" input="${aka_page}" regex="${rx_aka}" />
-				<set name="movie.alternate_titles" value='' />
+				<set name="movie.alternate_titles" value="|" />
 				<loop name="currAka" on="akas" limit="50">
-					<set name="movie.alternate_titles" value="${movie.alternate_titles}|${currAka[0]:htmldecode}" />
+					<set name="movie.alternate_titles" value="${movie.alternate_titles}${currAka[0]:htmldecode}|" />
 				</loop>
 
 				<!-- Test for rare case when an English movie gets a new title -->
@@ -1587,9 +1587,9 @@
 				<!-- AKA page -->
 				<retrieve name="aka_page" url="http://akas.imdb.com/title/${imdb_results[0][2]}/releaseinfo" />
 				<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
-				<set name="movie[${counter}].alternate_titles" value='' />
+				<set name="movie[${counter}].alternate_titles" value="|" />
 				<loop name="currAka" on="akas" limit="50">
-					<set name="movie[${counter}].alternate_titles" value="${movie[${counter}].alternate_titles}|${currAka[0]:htmldecode}" />
+					<set name="movie[${counter}].alternate_titles" value="${movie[${counter}].alternate_titles}${currAka[0]:htmldecode}|" />
 				</loop>
 
 				<subtract name="movie[${counter}].popularity" value1="100" value2="${counter}" />
@@ -1633,9 +1633,9 @@
 					<if test="${movie[0].alternate_titles}=">
 						<retrieve name="aka_page" url="http://akas.imdb.com/title/${movie[0].imdb_id}/releaseinfo" />
 						<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
-						<set name="movie[0].alternate_titles" value='' />
+						<set name="movie[0].alternate_titles" value="|" />
 						<loop name="currAka" on="akas" limit="50">
-							<set name="movie[0].alternate_titles" value="${movie[0].alternate_titles}|${currAka[0]:htmldecode}" />
+							<set name="movie[0].alternate_titles" value="${movie[0].alternate_titles}${currAka[0]:htmldecode}|" />
 						</loop>
 					</if>
 
