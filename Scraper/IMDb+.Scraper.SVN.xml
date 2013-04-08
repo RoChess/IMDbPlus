@@ -1,4 +1,4 @@
-<ScriptableScraper>
+ï»¿<ScriptableScraper>
 	<details>
 		<!-- These details are for display purposes only. -->
 		<name>IMDb+</name>
@@ -6,7 +6,7 @@
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
 		<version major="4" minor="8" point="2" />
-		<published month="04" day="05" year="2013" />
+		<published month="04" day="08" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -560,7 +560,7 @@
 								<replace name="movie.genres" input="${movie.genres}" pattern="Adventure" with="Abenteuer" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Animation" with="Zeichentrick" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Biography" with="Biographie" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="Komödie" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="KomÃ¶die" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Crime" with="Krimi" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Documentary" with="Dokumentation" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Family" with="Familie" />
@@ -576,28 +576,28 @@
 						<!-- imdb.es (Spanish) -->
 						<if test="${global_options_secondary_details}=3">
 							<if test="${movie.genres}!=">
-								<replace name="movie.genres" input="${movie.genres}" pattern="Action" with="Acción" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Action" with="AcciÃ³n" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Adventure" with="Aventuras" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Animation" with="Animación" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Biography" with="Biografía" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Animation" with="AnimaciÃ³n" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Biography" with="BiografÃ­a" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="Comedia" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Crime" with="Crimen" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Documentary" with="Documental" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Family" with="Familiar" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Fantasy" with="Fantasía" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Fantasy" with="FantasÃ­a" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Film-Noir" with="Cine Negro" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Concurso TV" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Historia" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Horror" with="Terror" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Música|" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="MÃºsica|" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Mystery" with="Misterio" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Noticias" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Reality Show" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="Romántica" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Sci-Fi" with="Ciencia Ficción" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="RomÃ¡ntica" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Sci-Fi" with="Ciencia FicciÃ³n" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Sport" with="Deportes" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Talk-Show" with="Debate" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Bélico" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="BÃ©lico" />
 							</if>
 						</if>
 						<!-- imdb.fr (French) -->
@@ -605,7 +605,7 @@
 							<if test="${movie.genres}!=">
 								<replace name="movie.genres" input="${movie.genres}" pattern="Adventure" with="Aventure" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Biography" with="Biographie" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="Comédie" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="ComÃ©die" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Crime" with="Policier" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Documentary" with="Documentaire" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Drama" with="Drame" />
@@ -615,9 +615,9 @@
 								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Historique" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Horror" with="Horreur" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Musique|" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Mystery" with="Mistérieux" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Mystery" with="MistÃ©rieux" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Journaux" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Tv-Réalité" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Tv-RÃ©alitÃ©" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Guerre" />
 							</if>
 						</if>
