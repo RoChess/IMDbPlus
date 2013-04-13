@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="8" point="5" />
-		<published month="04" day="12" year="2013" />
+		<version major="4" minor="8" point="6" />
+		<published month="04" day="13" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1707,6 +1707,8 @@
 		
 		<!-- if we have a site id (imdb id) we can continue -->
 		<if test="${movie.site_id}!=">
+			<log LogLevel="Info" Message="############################ IMDb+ Cover Node ############################" />
+			<log LogLevel="Info" Message="# IMDb+ Title    = ${movie.title} (${movie.year}) [(${movie.site_id})]" />
 
 			<!-- Retrieve details -->
 			<retrieve name="details_page" url="http://www.imdb.com/title/${movie.site_id}/" />
@@ -1714,13 +1716,14 @@
 			<!-- Get cover directly by manipulating details page thumbnail -->
 			<set name="rx_cover">
 				<![CDATA[
-				<a\s*onclick="[^"]+"\s*href="/media/.+?/tt\d{7}[^"]*"[^>]+><img.+?src="([^_]+_V1)\.[^\.]+([^"]+)".+?alt=".+?Poster"
+				title="[^)]+\)\s*Poster"\s*src="([^_]+_V1)[^.]+([^"]+)"
 				]]>
 			</set>
 			<parse name="cover_src" input="${details_page}" regex="${rx_cover}" />
 
 			<!-- set cover -->
 			<set name="cover_art[0].url" value="${cover_src[0][0]}${cover_src[0][1]}" />
+			<log LogLevel="Info" Message="###########################################################################" />
 		</if>
 	</action>
 </ScriptableScraper>
