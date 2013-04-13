@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="8" point="4" />
-		<published month="04" day="09" year="2013" />
+		<version major="4" minor="8" point="5" />
+		<published month="04" day="12" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -667,6 +667,19 @@
 				<parse name="tagline" input="${details_page}" regex="${rx_tagline}" />
 				<set name="tagline_clean" value="${tagline[0][0]:striptags}" />
 				<set name="movie.tagline" value="${tagline_clean:htmldecode}" />
+			</if>
+
+			<if test="${global_options_refresh_all_fields}=true"><set name="update_plotkeywords" value="true" /></if><if test="${movie.plotkeywords}="><set name="update_plotkeywords" value="true" /></if>
+			<if test="${update_plotkeywords}=true">
+				<!-- Tagline -->
+				<set name="rx_plotkeywords">
+					<![CDATA[
+					<h4[^>]+>Plot Keywords:</h4>\s*(?<moviePlotKeywords>.+?)(?:&nbsp;|<nobr>|See more|</div>)
+					]]>
+				</set>
+				<parse name="plotkeywords" input="${details_page}" regex="${rx_plotkeywords}" />
+				<set name="plotkeywords_clean" value="|${plotkeywords[0][0]:striptags}|" />
+				<replace name="movie.plotkeywords" input="${plotkeywords_clean:htmldecode}" pattern="\s*[|]+\s*" with="|" />
 			</if>
 
 			<if test="${global_options_refresh_all_fields}=true"><set name="update_language" value="true" /></if><if test="${movie.language}="><set name="update_language" value="true" /></if>
