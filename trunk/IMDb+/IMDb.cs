@@ -39,7 +39,7 @@ namespace IMDb
 
         #region Private Variables
 
-        int PluginID = 31415;
+        public static int PluginID = 31415;
         DBSourceInfo IMDbPlusSource;
         static Timer syncUpdateTimer;
         bool moviesRefreshing;
@@ -265,7 +265,7 @@ namespace IMDb
 
             // Check if scraper is first, if not
             // prompt user to change it
-            if (CheckIMDbScraperScriptPriorityIsFirst() == false)
+            if (CheckIMDbScraperScriptPriorityIsFirst() == false && !PluginSettings.SkipWarningDlg)
             {
                 if (GUIUtils.ShowYesNoDialog("IMDb+", Translation.ScraperNotFirstPrompt, true))
                 {

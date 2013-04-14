@@ -86,6 +86,26 @@ namespace IMDb
         public static bool DisableNotifications { get; set; }
         public static List<string> MoviesRefreshed { get; set; }
 
+        public static bool ShowLastActiveModuleOnRestart { get; set; }
+        public static int LastActiveModule { get; set; }
+
+        /// <summary>
+        /// We can't show dialog's OnPageLoad when MediaPortal resume's from restart/standby
+        /// </summary>
+        public static bool SkipWarningDlg
+        {
+            get
+            {
+                if (ShowLastActiveModuleOnRestart && LastActiveModule == IMDb.PluginID)
+                {
+                    ShowLastActiveModuleOnRestart = false;
+                    return true;
+                }
+
+                return false;
+            }
+        }
+
         public static string Version
         {
             get
@@ -144,6 +164,16 @@ namespace IMDb
                 SyncLastDateTime = xmlreader.GetValueAsString(cSection, cSyncLastDateTime, DateTime.MinValue.ToString());
                 DisableNotifications = xmlreader.GetValueAsBool(cSection, cDisableNotifications, false);
                 MoviesRefreshed = xmlreader.GetValueAsString(cSection, cMoviesRefreshed, string.Empty).FromJSONArray<string>().ToList();
+            }
+            #endregion
+
+            #region MediaPortal
+            // Check if MediaPortal will Show TVSeries Plugin when restarting
+            // We need to do this because we may need to show a modal dialog e.g. PinCode and we can't do this if MediaPortal window is not yet ready            
+            using (Settings xmlreader = new Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml")))
+            {
+                ShowLastActiveModuleOnRestart = xmlreader.GetValueAsBool("general", "showlastactivemodule", false);
+                LastActiveModule = xmlreader.GetValueAsInt("general", "lastactivemodule", -1);
             }
             #endregion
 
