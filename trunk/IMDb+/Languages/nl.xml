@@ -1,345 +1,161 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- IMDb+ translation file -->
-<!-- Dutch (Nederlands) -->
-<!-- Note: English is the fallback for any strings not found in other languages -->
-<strings>
-	<!-- A -->
-	<string Field="AddForeignTitle">Voeg buitenlandse filmtitel toe</string>
-	<string Field="AddForeignTitleDescription">Uit = Behoud huidige filmtitel
-Aan = Voeg orginele filmtitel toe tussen haakjes
-
-Indien deze optie geactiveerd is, wordt de orginele filmtitel tussen haakjes achter de Engelse titel gezet.
-
-Voorbeeld: Black Book (Zwartboek)
-</string>
-
-	<!-- B -->
-	<string Field="BoolOn">Aan</string>
-	<string Field="BoolOff">Uit</string>
-
-	<!-- C -->
-	<string Field="Cancel">Annuleren</string>
-	<string Field="CountryFilter">Geavanceerd: Landen filter</string>
-	<string Field="CountryFilterDescription">Sommige Engels-talige films hebben een buitenlandse titel. Voor een juiste detectie is het ook nodig om te filteren op het land waar de film geproduceerd is.
-
-Landen die geen buitenlandse titel(s) gebruiken zijn: 'us.ca.gb.ie.au.nz' (Verenigde Staten, Canada, Groot-Brittannïe, Ierland, Australie en Nieuw-Zeeland)
-
-Let op: Het virtuele toetsenbord van MediaPortal ondersteund het '|' karakter niet, daarom is een '.' gebruikt om de verschillende talen te scheiden. Wees voorzichtig bij het aanpassen van deze instelling, aangezien het de functie van de IMDb+ scraper kan stoppen.
-</string>
-
-	<!-- D -->
-	<string Field="DefaultDescription">Selecteer één van de bovenstaande opties en een meer gedetailleerde toelichting wordt hier getoond.</string>
-
-	<!-- E -->
-
-	<!-- F -->
-	<string Field="First">Eerste</string>
-	<string Field="FixMissingSummary">Gebruikersrecensie voor lege samenvattingen gebruiken.</string>
-	<string Field="FixMissingSummaryDescription">Uit = Laat samenvatting leeg
-Aan = Stel gebruikersrecensie in als samenvatting
-
-Niet alle films op imdb.com hebben een samenvatting. In sommige gevallen heeft zo'n film wel een gebruikersrecensie. Deze instelling geeft je de mogelijkheid om een gebruikersrecensie te gebruiken als samenvatting.
-
-Let op: Gebruikersrecensies kunnen spoilers bevatten!
-</string>
-	<string Field="ForceIMDbPlus">Forceer IMDb+</string>
-	<string Field="ForceIMDbPlusDescription">Wil je de IMDb+ scraper gebruiken voor alle films, die al met de standaard IMDb scraper geïmporteerd zijn?</string>
-	<string Field="ForceIMDbPlusComplete">{0}/{1} films succesvol omgezet naar de IMDb+ scraper.</string>
-	<string Field="ForeignTitleFirst">Laat de buitenlandse titel als eerste zien</string>
-	<string Field="ForeignTitleFirstDescription">Uit = Engels (Buitenlands)
-Aan = Buitenlands (Engels)
-
-Door deze instelling aan te zetten krijg je de orginele buitenlandse titel als eerste te zien, gevolgd door de Engelse titel tussen haakjes.
-
-Voorbeeld: Zwartboek (Black Book)
-</string>
-
-	<!-- G -->
-
-	<!-- H -->
-
-	<!-- I -->
-	<string Field="IMDbMetaScore">Metacritics MetaScore</string>
-	<string Field="IMDbMetaScoreDescription">Uit = Gebruik imdb.com score
-Aan = Gebruik Metacritics Metascore
-
-De imdb.com website kan ook de Metacritic.com score weergeven. Door deze instelling aan te zetten, wordt deze score gebruikt, anders wordt de standaard imdb.com score gebruikt.
-
-Let op: Als deze instelling gebruikt wordt, moet de instelling voor 'IMDb Score' ook aan staan. Dit zorgt er dan indirect voor dat RottenTomatoes niet meer kan worden gebruikt voor missende samenvattingen &amp; speelduur.
-</string>
-	<string Field="IMDbScore">IMDb Score</string>
-	<string Field="IMDbScoreDescription">Uit = Gebruik RottenTomatoes website
-Aan = Gebruik alleen imdb.com
-
-RottenTomatoes bied aanvullende informatie, maar als je jezelf wil beperken tot imdb.com, moet deze intelling ingeschakeld zijn.
-
-Let op: Hiermee schakel je het ophalen van missende samenvattingen, speelduur en score via RottenTomatoes ook uit!
-</string>
-	<string Field="IMDbInfo">IMDb+ Info</string>
-	<string Field="InfoPluginVersion">Plugin Versie: v{0}</string>
-	<string Field="InfoScraperAuthor">Scraper Schrijver: {0}</string>
-	<string Field="InfoScraperVersion">Scraper Versie: v{0}</string>
-	<string Field="InfoScraperPriority">Scraper Prioriteit: {0}</string>
-	<string Field="InfoScraperPublished">Scraper Gepubliceerd: {0}</string>
-	<string Field="InfoScraperLastUpdateCheck">Laatste check scraper update: {0}</string>
-	<string Field="InfoMoviesIMDbPlusPrimary">Films die IMDb+ als scraper gebruiken: {0}</string>
-	<string Field="InfoMoviesOtherPlusPrimary">Films die een andere scraper gebruiken: {0}</string>
-	<string Field="InfoReplacementsVersion">Vervangingen Versie: v{0}</string>
-	<string Field="InfoReplacementsPublished">Vervangingen Gepubliceerd: {0}</string>
-	<string Field="InfoReplacementEntries">Aantal vervangingen: {0}</string>
-	<string Field="InfoCustomReplacementEntries">Aantal vervangingen (Custom): {0}</string>
-	<string Field="IntervalSixHours">6 Uur</string>
-	<string Field="IntervalTwelveHours">12 Uur</string>
-	<string Field="IntervalTwentyFourHours">24 Uur</string>
-	<string Field="IntervalTwoDays">2 Dagen</string>
-	<string Field="IntervalThreeDays">3 Dagen</string>
-	<string Field="IntervalFourDays">4 Dagen</string>
-	<string Field="IntervalSevenDays">7 Dagen</string>
-
-	<!-- K -->
-
-	<!-- J -->
-
-	<!-- L -->
-	<string Field="LastScraperUpdate">Laatste Scraper Update</string>
-	<string Field="LanguageFilter">Geavanceerd: Talen filter</string>
-	<string Field="LanguageFilterDescription">Speciaal filter om andere talen naast Engels (en) te gebruiken. Gebruik de imdb.com paginabron om de ISO 639-1 code te vinden achter /language/.
-
-Standaardtaal is Engels middels: 'en'
-
-Stel dat je uit Noorwegen komt en je wilt dat voor Noorse films de orginele titel gebruikt word, en Engelse titels voor de rest, gebruik dan de instelling: 'en.no'
-
-Let op: Het virtuele toetsenbord van MediaPortal ondersteund het '|' karakter niet, daarom is een '.' gebruikt om de verschillende talen te scheiden. Wees voorzichtig bij het aanpassen van deze instelling, aangezien het de functie van de IMDb+ scraper kan stoppen.
-</string>
-	<string Field="LongSummary">Gebruik lange samenvatting met kans op spoilers</string>
-	<string Field="LongSummaryDescription">Uit = Gebruik korte samenvatting
-Aan = Gebruik lange samenvatting (kan spoilers bevatten!)
-
-Lange samenvattigen bevatten meer informatie, maar kunnen spoilers bevatten. Daarom is deze instelling standaard uitgeschakeld, maar je kan hem via deze optie gemakkelijk inschakelen.
-</string>
-
-	<!-- M -->
-	<string Field="MinIMDbVotes">Minimum aantal IMDb stemmen benodigd</string>
-	<string Field="MinIMDbVotesDescription">Uit = Gebruik altijd de imdb.com score
-Aan = Gebruik de imdb.com scores alleen als er meer dan 20 stemmen zijn.
-
-De IMDb score wordt vaak omhoog gebracht door de mensen die aan de film gewerkt hebben. Daarom komt het nogal wel eens voor dat een film met minder dan 20 stemmen een veels te hoge score heeft.
-
-Als je deze instelling inschakeld worden de IMDb scores met minder dan 20 stemmen genegeerd.
-</string>
-	<string Field="MultiSelectDialog">Multi-Select Dialoog</string>
-
-	<!-- N -->
-	<string Field="No">Nee</string>
-	<string Field="NumberOfMovies">{0}/{1} Films</string>
-	<string Field="NumberOfMovies2">{0} Films</string>
-	<string Field="NoSourcesFound">Geen films gevonden die geforceerd kunnen worden om de IMDb+ scraper te gebruiken!</string>
-	<string Field="NullSource">Geen bron, maar bruikbare IMDb-ID</string>
-
-	<!-- O -->
-	<string Field="OneWriterDirector">Limiteer import tot schrijver &amp; regisseur alleen</string>
-	<string Field="OneWriterDirectorDescription">Uit = Geef alle namen van de schrijvers &amp; regisseurs weer
-Aan = Geef de naam van één schrijver &amp; regisseur weer
-
-Sommige skins hebben niet veel ruimte voor schrijvers &amp; regisseurs. Als je horizontaal scrollen wilt voorkomen, schakel dan deze instelling in zodat slechts één naam voor schrijvers &amp; regisseurs wordt weergegeven.
-
-Houd rekening met het feit dat het zoeken op schrijver of regisseur wordt beperkt, omdat er slechts één naam wordt weergegeven per film. Het aantal films met meerdere schrijvers en/of regisseurs is overigens erg gelimiteerd.
-</string>
-	<string Field="OriginalTitle">Gebruik de orginele filmtitel</string>
-	<string Field="OriginalTitleDescription">Uit = Forceer Engelse filmtitel
-Aan = Gebruik orginele filmtitel voor buitenlandse films
-
-Buitenlandse films hebben vaak een niet-Engelse titel.
-
-Als je voor al je films een Engelse titel wilt gebruiken, laat deze instelling dan uitgeschakeld.
-</string>
-
-	<!-- P -->
-
-	<!-- R -->
-	<string Field="Ratings">Engels Rating/Certificatie Systeem</string>
-	<string Field="RatingsDescription">Er zijn verschillende Engelse rating/certificatie systemen wereldwijd. Het meest bekende is het Amerikaanse MPAA rating systeem, welke resultaten geeft als PG-13, R, NC-17, enz.
-
-Gebruikers in Australie, Canada, Engeland en Nieuw-Zeeland kunnen deze instelling gebruiken om hun lokale rating systeem te gebruiken.
-</string>
-	<string Field="RatingsHeader">Selecteer Rating Systeem</string>
-	<string Field="Rating01">USA</string>
-	<string Field="Rating02">UK</string>
-	<string Field="Rating03">Canada (Alberta)</string>
-	<string Field="Rating04">Canada (British Columbia)</string>
-	<string Field="Rating05">Canada (Manitoba)</string>
-	<string Field="Rating06">Canada (Nova Scotia)</string>
-	<string Field="Rating07">Canada (Ontario)</string>
-	<string Field="Rating08">Canada (Quebec)</string>
-	<string Field="Rating09">Australie</string>
-	<string Field="Rating10">Nieuw-Zeeland</string>
-	<string Field="RefreshMovies">Ververs Films</string>
-	<string Field="RefreshingMovies">Films aan het verversen</string>
-	<string Field="RefreshCancel">Stop verversen</string>
-	<string Field="RefreshMoviesDescription">Weet je zeker dat je alle films wilt verversen die IMDb+ als primaire bron gebruiken?</string>
-	<string Field="RefreshMovieStatus">Ververs {0}/{1} Films: {2}%</string>
-	<string Field="RefreshMoviesNotification">IMDb+ films verversen is klaar.
-Geniet van het resultaat.
-</string>
-	<string Field="RefreshMoviesCancelNotification">Verversen is geannuleerd.
-{0} films tot nu toe ververst.
-Ververs opnieuw om te hervatten.
-</string>
-	<string Field="RefreshAllFields">Ververs alle velden</string>
-	<string Field="RefreshAllFieldsDescription">Uit = Ververs slechts een paar velden
-Aan = Ververs alle velden
-
-De informatie op IMDb.com wordt continue ververst en aangevuld. Daarom is het begrijpbaar dat je de volledige filmcollectie soms wilt verversen.
-
-Door deze instelling in te schakelen wordt elke veld ververst. Anders worden alleen de lege velden en velden voor certificatie, score &amp; stemmen ververst.
-
-Let op: Deze instelling schakelt het hernoem-systeem voor betaande films uit!
-</string>
-	<string Field="RemoveFirstRoman">Verwijder de Romeinse nummering voor eerste filmtitel</string>
-	<string Field="RemoveFirstRomanDescription">Uit = Houd bestaande filmtitel
-Aan = Verwijder de Romeinse nummering voor eerste filmtitel
-
-Als het hernoem-systeem is ingeschakelt, worden films met meerdere delen gesorteerd door Romeinse nummering toe te voegen aan de filmtitel. Dit wordt ook gedaan voor de eerste film, dus 'Avatar' wordt 'Avatar I'. Door deze instelling in te schakelen wordt de eerste filmtitel nog steeds correct gesorteerd, maar wordt de Romeinse nummering van de filmtitel verwijderd.
-
-Houd er rekening mee dat de Romeinse nummering alleen verwijderd wordt uit de eerste filmtitel, als deze filmtitel geen Romeinse nummering bevat. De film 'Indiana Jones I: Raiders of the Lost Ark' behoud dus zijn Romeinse nummering.
-</string>
-	<string Field="RenameTitles">Hernoem filmtitels zodat deze gegroepeerd worden</string>
-	<string Field="RenameTitlesDescription">Uit = Gebruik orginele filmtitel
-Aan = Hernoem filmtitel zodat deze gegroepeerd worden
-
-Er zijn veel films waar meerdere delen van verschenen zijn, en soms starten de filmtitels niet met hetzelfde voorvoegsel. Om dit probleem op te lossen wordt een bestand gebruikt dat de titel hernoemd op basis van het IMDb tt-ID nummer. Dit resulteerd in het hernoemen van filmtitels, zodat deze gemakkelijker herkenbaar zijn als onderdeel van een reeks.
-
-Voorbeeld: 'Batman VII: The Dark Knight Rises' groepeerd mooi met de overige films uit de reeks.
-
-De standaard hernoemde filmtitels staan in het bestand 'IMDb+\Rename dBase IMDb+ Scraper.xml', welke te vinden is in je MediaPortal Gebruikers folder.
-
-Als je zelf aanpassingen wilt maken in de hernoeming, gebruik dan het bestand 'IMDb+\Rename dBase IMDb+ Scraper (Custom).xml'.
-
-Je kan met notepad het 'Custom' filmtitel bestand aanpassen, aangezien de 'Standaard' hernoemde filmtitels (af en toe) automatisch aangepast worden.
-</string>
-	<string Field="RottenMeter">RottenTomatoes TomatoMeter</string>
-	<string Field="RottenMeterDescription">Uit = RottenTomatoes 'Bezoekers' ratings
-Aan = RottenTomatoes 'TomatoMeter' ratings
-
-Er zijn veel verschillende ratings beschikbaar op de RottenTomatoes website.
-
-Deze instelling moet ingeschakelt zijn om een TomatoMeter rating te gebruiken, anders worden de 'Bezoekers' ratings gebruikt.
-</string>
-	<string Field="RottenAverage">RottenTomatoes gemiddelde rating</string>
-	<string Field="RottenAverageDescription">Uit = RottenTomatoes 'Procentuele' rating
-Aan = RottenTomatoes 'Gemiddelde' rating
-
-Als deze instelling ingeschakeld is wordt de 'Gemiddelde' rating gebruikt, anders wordt de 'Procentuele' rating gebruikt.
-
-De 'Procentuele' rating is een bijzondere, waarin het aantal RottenTomatoes gebruikers geteld wordt dat op een bepaalde manier gestemd heeft.
-</string>
-	<string Field="RottenTopCritics">RottenTomatoes top critici</string>
-	<string Field="RottenTopCriticsDescription">Uit = RottenTomatoes 'Alle' critici
-Aan = RottenTomatoes 'Top' critici
-
-Er is een TomatoMeter rating beschikbaar voor alle critici, en een beperkte groep voor de 'Top' critici.
-
-Door deze instelling in te schakelen wordt je rating gelimiteerd tot de 'Top' critici.
-</string>
-	<string Field="Resume">(Hervat)</string>
-
-	<!-- S -->
-	<string Field="ScraperOptionsTitle">IMDb+ Scraper Opties</string>
-	<string Field="ScraperNotFirstPrompt">De IMDb+ scraper is niet eerst!\nDit zal problemen veroorzaken.\nWil je dit corrigeren?</string>
-	<string Field="SecondaryDetails">Haal aanvullende informatie op in de volgende taal</string>
-	<string Field="SecondaryDetailsDescription">Er is ondersteuning om bepaalde informatie in een andere taal op te halen. Het gaat hier o.a. om de velden Samenvatting, Certificatie, Genres en meer indien mogelijk.
-
-Huidige ondersteuning omvat: Nederlands, Frans, Duits, IJslands, Italiaans, Portugees, Spaans en Zweeds.
-</string>
-	<string Field="SecondaryDetailsHeader">Tweede taal</string>
-	<string Field="SecondaryLanguage01">Engels</string>
-	<string Field="SecondaryLanguage02">Duits</string>
-	<string Field="SecondaryLanguage03">Spaans</string>
-	<string Field="SecondaryLanguage04">Frans</string>
-	<string Field="SecondaryLanguage05">Italiaans</string>
-	<string Field="SecondaryLanguage06">Portugees</string>
-	<string Field="SecondaryLanguage07">Zweeds</string>
-	<string Field="SecondaryLanguage08">IJslands</string>
-	<string Field="SecondaryLanguage09">Nederlands</string>
-	<string Field="SecondarySummary">Terugvallen op Engelse samenvatting als buitenlandse taal ontbreekt</string>
-	<string Field="SecondarySummaryDescription">Uit = Geef niks weer indien buitenlandse samenvatting ontbreekt
-Aan = Gebruik Engelse samenvatting om op terug te vallen, indien buitenlandse samenvatting ontbreekt
-
-Buitenlandse film websites zijn niet altijd even uitgebreid als imdb.com, of hebben niet dezelfde informatie beschikbaar. Dit geld met name voor de samenvatting. Schakel deze instelling in om te voorkomen dat je samenvatting leeg blijft, en de Engelse samenvatting gebruikt wordt (indien aanwezig). Je kan natuurlijk ook de ontbrekende informatie zelf invullen op je film website, maar totdat deze beschikbaar is kan je dan de Engelse informatie gebruiken via deze optie.
-</string>
-	<string Field="SecondaryEnglishTitle">Secundaire Engelse filmtitel</string>
-	<string Field="SecondaryEnglishTitleDescription">Uit = Gebruik buitenlandse filmtitel
-Aan = Forceer Engelse filmtitel
-
-Als een buitenlandse taal is geselecteerd voor bepaalde informatie, wordt dezelfde taal gebruik voor de filmtitel. Deze instelling kan gebruikt worden om de filmtitel Engels te houden.
-
-Let op: Dit geld niet voor het hernoem-systeem. Een vertaalde invoering is nog steeds benodigd om de buitenlandse titel te verkrijgen, zelfs met deze instelling uitgeschakeld.
-</string>
-	<string Field="SingleScore">Enkelvoudige film score</string>
-	<string Field="SingleScoreDescription">Uit = Gebruik de gemiddelde score
-Aan = Enkelvoudige score wordt gebruikt
-
-Soms zit er een groot verschil tussen de verschillende beoordelingen van verschillende websites. Om dit te compenseren wordt een gemiddelde score berekend op basis van de beoordelingen van imdb, metacrtic &amp; rottentomatoes.
-
-Let op: Als de 'IMDb Score' instelling is ingeschakeld, wordt de gemiddelde score van ALLEEN IMDb &amp; Metacritic gebruikt.
-</string>
-	<string Field="SpecialEditions">Ondersteuning 'Speciale Editie' tag</string>
-	<string Field="SpecialEditionsDescription">Uit = Behoud orginele filmtitel
-Aan = Voeg 'Speciale Editie' tag toe aan titel
-
-Als je het IMDb tt-ID nummer toevoegd aan de bestandsnaam of foldernaam (of middels een NFO bestand) dan zorgt deze instelling ervoor dat de 'Speciale Editie' tag wordt toegevoegd.
-
-Je kan de volgende criteria tussen haakjes toevoegen:
-
- - 3D
- - Extended
- - Unrated
- - Director's Cut
- - Alternate Ending
-
-Als je wilt, kan je ook de term 'Edition' toevoegen aan het einde
-
-Voorbeeld: "Avatar (tt0499549) (3D).mkv" resulteert in "Avatar (3D)"
-</string>
-	<string Field="SettingPluginEnabledName">Plugin Ingeschakeld</string>
-	<string Field="SettingPluginEnabledDescription">Schakel deze instelling in of uit om te bepalen of de IMDb+ plugin wordt geladen met MediaPortal.</string>
-	<string Field="SettingListedHomeName">Plaats in Home menu</string>
-	<string Field="SettingListedHomeDescription">Schakel deze instelling in zodat de IMDb+ plugin wordt weergegeven in het Home menu.</string>
-	<string Field="SettingListedPluginsName">Plaats in Mijn Plugins</string>
-	<string Field="SettingListedPluginsDescription">Schakel deze instelling in zodat de IMDb+ plugin wordt weergegeven in het Mijn Plugins menu.</string>
-	<string Field="SettingsSyncIntervalName">Aantal uur tot de volgende controle op updates</string>
-	<string Field="SettingsSyncIntervalDescription">Deze instelling bepaald hoe vaak er wordt gecontroleerd op updates van het scraper script of de hernoem-database</string>
-	<string Field="SettingsSyncOnStartupName">Controleer op updates tijdens starten</string>
-	<string Field="SettingsSyncOnStartupDescription">Deze instelling forceert de plugin te controleren op updates van het scraper script of de hernoem-database, elke keer als MediaPortal wordt gestart.</string>
-	<string Field="SettingsDisableNotificationsName">Schakel notificaties uit</string>
-	<string Field="SettingsDisableNotificationsDescription">Deze instelling schakelt notificaties uit (bijvoorbeeld als het scraper script geupdate is op je systeem).</string>
-	<string Field="SelectSources">Selecteer bronnen die omgezet moeten worden naar IMDb+</string>
-	<string Field="StartsWith">Start met {0}</string>
-	<string Field="SelectAlphas">Selecteer films die beginnen met...</string>
-
-	<!-- T -->
-
-	<!-- U -->
-	<string Field="UkRating">Brits-Engelse Filmtitels</string>
-	<string Field="UkRatingDescription">Uit = Gebruik Engels-Amerikaane Filmtitels
-Aan = Gebruik Brits-Engelse Filmtitles
-
-Gebruik deze instelling voor Brits-Engelse filmtitels.
-
-Een goed voorbeeld is de eerste Harry Potter film. De orginele titel is "Harry Potter and the Philosopher's Stone", welke is geveramerikaniseerd in "Harry Potter and the Sorcerer's Stone". Aangezien de IMDb website zich richt op Amerikaans publiek betekend dit dat alle titels de Amerikaans-Engelse titel gebruiken, indien beschikbaar. Met deze instelling kan je dit veranderen in de Brits-Engelse titel.
-
-Let op: Er is momenteel geen hernoem/vervangings database ondersteuning voor Brits-Engelse titels, waardoor je nog steeds "Harry Potter I: Sorcerer's Stone" krijgt, maar dit kun je voorlopig aanpassen via de handmatige hernoem/vervangings database, tot er juiste ondersteuning is toegevoegd aan de IMDb+ plugin.
-</string>
-	<string Field="UpdatedScraperScript">MovingPictures is geupdate met IMDb+ Scraper script v{0}</string>
-	<string Field="Update">Update</string>
-	<string Field="UpdateAll">Update Alles</string>
-	<string Field="UpdateReplacementOnly">Update Alleen Vervangingen</string>
-	<string Field="UpdateAlphas">Update Films die beginnen met...</string>
-
-	<!-- V -->
-
-	<!-- W -->
-
-	<!-- Y -->
-	<string Field="Yes">Ja</string>
-</strings>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <string name="AddForeignTitle">Voeg buitenlandse filmtitel toe</string>
+  <string name="AddForeignTitleDescription">Uit = Behoud huidige filmtitel\nAan = Voeg orginele filmtitel toe tussen haakjes\n\nIndien deze optie geactiveerd is, wordt de orginele filmtitel tussen haakjes achter de Engelse titel gezet.\n\nVoorbeeld: Black Book (Zwartboek)\n</string>
+  <!--B-->
+  <string name="BoolOn">Aan</string>
+  <string name="BoolOff">Uit</string>
+  <!--C-->
+  <string name="Cancel">Annuleren</string>
+  <string name="CountryFilter">Geavanceerd: Landen filter</string>
+  <string name="CountryFilterDescription">Sommige Engels-talige films hebben een buitenlandse titel. Voor een juiste detectie is het ook nodig om te filteren op het land waar de film geproduceerd is.\n\nLanden die geen buitenlandse titel(s) gebruiken zijn: \'us.ca.gb.ie.au.nz\' (Verenigde Staten, Canada, Groot-BrittannÃ¯e, Ierland, Australie en Nieuw-Zeeland)\n\nLet op: Het virtuele toetsenbord van MediaPortal ondersteund het \'|\' karakter niet, daarom is een \'.\' gebruikt om de verschillende talen te scheiden. Wees voorzichtig bij het aanpassen van deze instelling, aangezien het de functie van de IMDb+ scraper kan stoppen.\n</string>
+  <!--D-->
+  <string name="DefaultDescription">Selecteer Ã©Ã©n van de bovenstaande opties en een meer gedetailleerde toelichting wordt hier getoond.</string>
+  <!--E-->
+  <!--F-->
+  <string name="First">Eerste</string>
+  <string name="FixMissingSummary">Gebruikersrecensie voor lege samenvattingen gebruiken.</string>
+  <string name="FixMissingSummaryDescription">Uit = Laat samenvatting leeg\nAan = Stel gebruikersrecensie in als samenvatting\n\nNiet alle films op imdb.com hebben een samenvatting. In sommige gevallen heeft zo\'n film wel een gebruikersrecensie. Deze instelling geeft je de mogelijkheid om een gebruikersrecensie te gebruiken als samenvatting.\n\nLet op: Gebruikersrecensies kunnen spoilers bevatten!\n</string>
+  <string name="ForceIMDbPlus">Forceer IMDb+</string>
+  <string name="ForceIMDbPlusDescription">Wil je de IMDb+ scraper gebruiken voor alle films, die al met de standaard IMDb scraper geÃ¯mporteerd zijn?</string>
+  <string name="ForceIMDbPlusComplete">{0}/{1} films succesvol omgezet naar de IMDb+ scraper.</string>
+  <string name="ForeignTitleFirst">Laat de buitenlandse titel als eerste zien</string>
+  <string name="ForeignTitleFirstDescription">Uit = Engels (Buitenlands)\nAan = Buitenlands (Engels)\n\nDoor deze instelling aan te zetten krijg je de orginele buitenlandse titel als eerste te zien, gevolgd door de Engelse titel tussen haakjes.\n\nVoorbeeld: Zwartboek (Black Book)\n</string>
+  <!--G-->
+  <!--H-->
+  <!--I-->
+  <string name="IMDbMetaScore">Metacritics MetaScore</string>
+  <string name="IMDbMetaScoreDescription">Uit = Gebruik imdb.com score\nAan = Gebruik Metacritics Metascore\n\nDe imdb.com website kan ook de Metacritic.com score weergeven. Door deze instelling aan te zetten, wordt deze score gebruikt, anders wordt de standaard imdb.com score gebruikt.\n\nLet op: Als deze instelling gebruikt wordt, moet de instelling voor \'IMDb Score\' ook aan staan. Dit zorgt er dan indirect voor dat RottenTomatoes niet meer kan worden gebruikt voor missende samenvattingen &amp; speelduur.\n</string>
+  <string name="IMDbScore">IMDb Score</string>
+  <string name="IMDbScoreDescription">Uit = Gebruik RottenTomatoes website\nAan = Gebruik alleen imdb.com\n\nRottenTomatoes bied aanvullende informatie, maar als je jezelf wil beperken tot imdb.com, moet deze intelling ingeschakeld zijn.\n\nLet op: Hiermee schakel je het ophalen van missende samenvattingen, speelduur en score via RottenTomatoes ook uit!\n</string>
+  <string name="IMDbInfo">IMDb+ Info</string>
+  <string name="InfoPluginVersion">Plugin Versie: v{0}</string>
+  <string name="InfoScraperAuthor">Scraper Schrijver: {0}</string>
+  <string name="InfoScraperVersion">Scraper Versie: v{0}</string>
+  <string name="InfoScraperPriority">Scraper Prioriteit: {0}</string>
+  <string name="InfoScraperPublished">Scraper Gepubliceerd: {0}</string>
+  <string name="InfoScraperLastUpdateCheck">Laatste check scraper update: {0}</string>
+  <string name="InfoMoviesIMDbPlusPrimary">Films die IMDb+ als scraper gebruiken: {0}</string>
+  <string name="InfoMoviesOtherPlusPrimary">Films die een andere scraper gebruiken: {0}</string>
+  <string name="InfoReplacementsVersion">Vervangingen Versie: v{0}</string>
+  <string name="InfoReplacementsPublished">Vervangingen Gepubliceerd: {0}</string>
+  <string name="InfoReplacementEntries">Aantal vervangingen: {0}</string>
+  <string name="InfoCustomReplacementEntries">Aantal vervangingen (Custom): {0}</string>
+  <string name="IntervalSixHours">6 Uur</string>
+  <string name="IntervalTwelveHours">12 Uur</string>
+  <string name="IntervalTwentyFourHours">24 Uur</string>
+  <string name="IntervalTwoDays">2 Dagen</string>
+  <string name="IntervalThreeDays">3 Dagen</string>
+  <string name="IntervalFourDays">4 Dagen</string>
+  <string name="IntervalSevenDays">7 Dagen</string>
+  <!--K-->
+  <!--J-->
+  <!--L-->
+  <string name="LastScraperUpdate">Laatste Scraper Update</string>
+  <string name="LanguageFilter">Geavanceerd: Talen filter</string>
+  <string name="LanguageFilterDescription">Speciaal filter om andere talen naast Engels (en) te gebruiken. Gebruik de imdb.com paginabron om de ISO 639-1 code te vinden achter /language/.\n\nStandaardtaal is Engels middels: \'en\'\n\nStel dat je uit Noorwegen komt en je wilt dat voor Noorse films de orginele titel gebruikt word, en Engelse titels voor de rest, gebruik dan de instelling: \'en.no\'\n\nLet op: Het virtuele toetsenbord van MediaPortal ondersteund het \'|\' karakter niet, daarom is een \'.\' gebruikt om de verschillende talen te scheiden. Wees voorzichtig bij het aanpassen van deze instelling, aangezien het de functie van de IMDb+ scraper kan stoppen.\n</string>
+  <string name="LongSummary">Gebruik lange samenvatting met kans op spoilers</string>
+  <string name="LongSummaryDescription">Uit = Gebruik korte samenvatting\nAan = Gebruik lange samenvatting (kan spoilers bevatten!)\n\nLange samenvattigen bevatten meer informatie, maar kunnen spoilers bevatten. Daarom is deze instelling standaard uitgeschakeld, maar je kan hem via deze optie gemakkelijk inschakelen.\n</string>
+  <!--M-->
+  <string name="MinIMDbVotes">Minimum aantal IMDb stemmen benodigd</string>
+  <string name="MinIMDbVotesDescription">Uit = Gebruik altijd de imdb.com score\nAan = Gebruik de imdb.com scores alleen als er meer dan 20 stemmen zijn.\n\nDe IMDb score wordt vaak omhoog gebracht door de mensen die aan de film gewerkt hebben. Daarom komt het nogal wel eens voor dat een film met minder dan 20 stemmen een veels te hoge score heeft.\n\nAls je deze instelling inschakeld worden de IMDb scores met minder dan 20 stemmen genegeerd.\n</string>
+  <string name="MultiSelectDialog">Multi-Select Dialoog</string>
+  <!--N-->
+  <string name="No">Nee</string>
+  <string name="NumberOfMovies">{0}/{1} Films</string>
+  <string name="NumberOfMovies2">{0} Films</string>
+  <string name="NoSourcesFound">Geen films gevonden die geforceerd kunnen worden om de IMDb+ scraper te gebruiken!</string>
+  <string name="NullSource">Geen bron, maar bruikbare IMDb-ID</string>
+  <!--O-->
+  <string name="OneWriterDirector">Limiteer import tot schrijver &amp; regisseur alleen</string>
+  <string name="OneWriterDirectorDescription">Uit = Geef alle namen van de schrijvers &amp; regisseurs weer\nAan = Geef de naam van Ã©Ã©n schrijver &amp; regisseur weer\n\nSommige skins hebben niet veel ruimte voor schrijvers &amp; regisseurs. Als je horizontaal scrollen wilt voorkomen, schakel dan deze instelling in zodat slechts Ã©Ã©n naam voor schrijvers &amp; regisseurs wordt weergegeven.\n\nHoud rekening met het feit dat het zoeken op schrijver of regisseur wordt beperkt, omdat er slechts Ã©Ã©n naam wordt weergegeven per film. Het aantal films met meerdere schrijvers en/of regisseurs is overigens erg gelimiteerd.\n</string>
+  <string name="OriginalTitle">Gebruik de orginele filmtitel</string>
+  <string name="OriginalTitleDescription">Uit = Forceer Engelse filmtitel\nAan = Gebruik orginele filmtitel voor buitenlandse films\n\nBuitenlandse films hebben vaak een niet-Engelse titel.\n\nAls je voor al je films een Engelse titel wilt gebruiken, laat deze instelling dan uitgeschakeld.\n</string>
+  <!--P-->
+  <!--R-->
+  <string name="Ratings">Engels Rating/Certificatie Systeem</string>
+  <string name="RatingsDescription">Er zijn verschillende Engelse rating/certificatie systemen wereldwijd. Het meest bekende is het Amerikaanse MPAA rating systeem, welke resultaten geeft als PG-13, R, NC-17, enz.\n\nGebruikers in Australie, Canada, Engeland en Nieuw-Zeeland kunnen deze instelling gebruiken om hun lokale rating systeem te gebruiken.\n</string>
+  <string name="RatingsHeader">Selecteer Rating Systeem</string>
+  <string name="Rating01">USA</string>
+  <string name="Rating02">UK</string>
+  <string name="Rating03">Canada (Alberta)</string>
+  <string name="Rating04">Canada (British Columbia)</string>
+  <string name="Rating05">Canada (Manitoba)</string>
+  <string name="Rating06">Canada (Nova Scotia)</string>
+  <string name="Rating07">Canada (Ontario)</string>
+  <string name="Rating08">Canada (Quebec)</string>
+  <string name="Rating09">Australie</string>
+  <string name="Rating10">Nieuw-Zeeland</string>
+  <string name="RefreshMovies">Ververs Films</string>
+  <string name="RefreshingMovies">Films aan het verversen</string>
+  <string name="RefreshCancel">Stop verversen</string>
+  <string name="RefreshMoviesDescription">Weet je zeker dat je alle films wilt verversen die IMDb+ als primaire bron gebruiken?</string>
+  <string name="RefreshMovieStatus">Ververs {0}/{1} Films: {2}%</string>
+  <string name="RefreshMoviesNotification">IMDb+ films verversen is klaar.\nGeniet van het resultaat.\n</string>
+  <string name="RefreshMoviesCancelNotification">Verversen is geannuleerd.\n{0} films tot nu toe ververst.\nVervers opnieuw om te hervatten.\n</string>
+  <string name="RefreshAllFields">Ververs alle velden</string>
+  <string name="RefreshAllFieldsDescription">Uit = Ververs slechts een paar velden\nAan = Ververs alle velden\n\nDe informatie op IMDb.com wordt continue ververst en aangevuld. Daarom is het begrijpbaar dat je de volledige filmcollectie soms wilt verversen.\n\nDoor deze instelling in te schakelen wordt elke veld ververst. Anders worden alleen de lege velden en velden voor certificatie, score &amp; stemmen ververst.\n\nLet op: Deze instelling schakelt het hernoem-systeem voor betaande films uit!\n</string>
+  <string name="RemoveFirstRoman">Verwijder de Romeinse nummering voor eerste filmtitel</string>
+  <string name="RemoveFirstRomanDescription">Uit = Houd bestaande filmtitel\nAan = Verwijder de Romeinse nummering voor eerste filmtitel\n\nAls het hernoem-systeem is ingeschakelt, worden films met meerdere delen gesorteerd door Romeinse nummering toe te voegen aan de filmtitel. Dit wordt ook gedaan voor de eerste film, dus \'Avatar\' wordt \'Avatar I\'. Door deze instelling in te schakelen wordt de eerste filmtitel nog steeds correct gesorteerd, maar wordt de Romeinse nummering van de filmtitel verwijderd.\n\nHoud er rekening mee dat de Romeinse nummering alleen verwijderd wordt uit de eerste filmtitel, als deze filmtitel geen Romeinse nummering bevat. De film \'Indiana Jones I: Raiders of the Lost Ark\' behoud dus zijn Romeinse nummering.\n</string>
+  <string name="RenameTitles">Hernoem filmtitels zodat deze gegroepeerd worden</string>
+  <string name="RenameTitlesDescription">Uit = Gebruik orginele filmtitel\nAan = Hernoem filmtitel zodat deze gegroepeerd worden\n\nEr zijn veel films waar meerdere delen van verschenen zijn, en soms starten de filmtitels niet met hetzelfde voorvoegsel. Om dit probleem op te lossen wordt een bestand gebruikt dat de titel hernoemd op basis van het IMDb tt-ID nummer. Dit resulteerd in het hernoemen van filmtitels, zodat deze gemakkelijker herkenbaar zijn als onderdeel van een reeks.\n\nVoorbeeld: \'Batman VII: The Dark Knight Rises\' groepeerd mooi met de overige films uit de reeks.\n\nDe standaard hernoemde filmtitels staan in het bestand \'IMDb+\Rename dBase IMDb+ Scraper.xml\', welke te vinden is in je MediaPortal Gebruikers folder.\n\nAls je zelf aanpassingen wilt maken in de hernoeming, gebruik dan het bestand \'IMDb+\Rename dBase IMDb+ Scraper (Custom).xml\'.\n\nJe kan met notepad het \'Custom\' filmtitel bestand aanpassen, aangezien de \'Standaard\' hernoemde filmtitels (af en toe) automatisch aangepast worden.\n</string>
+  <string name="RottenMeter">RottenTomatoes TomatoMeter</string>
+  <string name="RottenMeterDescription">Uit = RottenTomatoes \'Bezoekers\' ratings\nAan = RottenTomatoes \'TomatoMeter\' ratings\n\nEr zijn veel verschillende ratings beschikbaar op de RottenTomatoes website.\n\nDeze instelling moet ingeschakelt zijn om een TomatoMeter rating te gebruiken, anders worden de \'Bezoekers\' ratings gebruikt.\n</string>
+  <string name="RottenAverage">RottenTomatoes gemiddelde rating</string>
+  <string name="RottenAverageDescription">Uit = RottenTomatoes \'Procentuele\' rating\nAan = RottenTomatoes \'Gemiddelde\' rating\n\nAls deze instelling ingeschakeld is wordt de \'Gemiddelde\' rating gebruikt, anders wordt de \'Procentuele\' rating gebruikt.\n\nDe \'Procentuele\' rating is een bijzondere, waarin het aantal RottenTomatoes gebruikers geteld wordt dat op een bepaalde manier gestemd heeft.\n</string>
+  <string name="RottenTopCritics">RottenTomatoes top critici</string>
+  <string name="RottenTopCriticsDescription">Uit = RottenTomatoes \'Alle\' critici\nAan = RottenTomatoes \'Top\' critici\n\nEr is een TomatoMeter rating beschikbaar voor alle critici, en een beperkte groep voor de \'Top\' critici.\n\nDoor deze instelling in te schakelen wordt je rating gelimiteerd tot de \'Top\' critici.\n</string>
+  <string name="Resume">(Hervat)</string>
+  <!--S-->
+  <string name="ScraperOptionsTitle">IMDb+ Scraper Opties</string>
+  <string name="ScraperNotFirstPrompt">De IMDb+ scraper is niet eerst!\nDit zal problemen veroorzaken.\nWil je dit corrigeren?</string>
+  <string name="SecondaryDetails">Haal aanvullende informatie op in de volgende taal</string>
+  <string name="SecondaryDetailsDescription">Er is ondersteuning om bepaalde informatie in een andere taal op te halen. Het gaat hier o.a. om de velden Samenvatting, Certificatie, Genres en meer indien mogelijk.\n\nHuidige ondersteuning omvat: Nederlands, Frans, Duits, IJslands, Italiaans, Portugees, Spaans en Zweeds.\n</string>
+  <string name="SecondaryDetailsHeader">Tweede taal</string>
+  <string name="SecondaryLanguage01">Engels</string>
+  <string name="SecondaryLanguage02">Duits</string>
+  <string name="SecondaryLanguage03">Spaans</string>
+  <string name="SecondaryLanguage04">Frans</string>
+  <string name="SecondaryLanguage05">Italiaans</string>
+  <string name="SecondaryLanguage06">Portugees</string>
+  <string name="SecondaryLanguage07">Zweeds</string>
+  <string name="SecondaryLanguage08">IJslands</string>
+  <string name="SecondaryLanguage09">Nederlands</string>
+  <string name="SecondarySummary">Terugvallen op Engelse samenvatting als buitenlandse taal ontbreekt</string>
+  <string name="SecondarySummaryDescription">Uit = Geef niks weer indien buitenlandse samenvatting ontbreekt\nAan = Gebruik Engelse samenvatting om op terug te vallen, indien buitenlandse samenvatting ontbreekt\n\nBuitenlandse film websites zijn niet altijd even uitgebreid als imdb.com, of hebben niet dezelfde informatie beschikbaar. Dit geld met name voor de samenvatting. Schakel deze instelling in om te voorkomen dat je samenvatting leeg blijft, en de Engelse samenvatting gebruikt wordt (indien aanwezig). Je kan natuurlijk ook de ontbrekende informatie zelf invullen op je film website, maar totdat deze beschikbaar is kan je dan de Engelse informatie gebruiken via deze optie.\n</string>
+  <string name="SecondaryEnglishTitle">Secundaire Engelse filmtitel</string>
+  <string name="SecondaryEnglishTitleDescription">Uit = Gebruik buitenlandse filmtitel\nAan = Forceer Engelse filmtitel\n\nAls een buitenlandse taal is geselecteerd voor bepaalde informatie, wordt dezelfde taal gebruik voor de filmtitel. Deze instelling kan gebruikt worden om de filmtitel Engels te houden.\n\nLet op: Dit geld niet voor het hernoem-systeem. Een vertaalde invoering is nog steeds benodigd om de buitenlandse titel te verkrijgen, zelfs met deze instelling uitgeschakeld.\n</string>
+  <string name="SingleScore">Enkelvoudige film score</string>
+  <string name="SingleScoreDescription">Uit = Gebruik de gemiddelde score\nAan = Enkelvoudige score wordt gebruikt\n\nSoms zit er een groot verschil tussen de verschillende beoordelingen van verschillende websites. Om dit te compenseren wordt een gemiddelde score berekend op basis van de beoordelingen van imdb, metacrtic &amp; rottentomatoes.\n\nLet op: Als de \'IMDb Score\' instelling is ingeschakeld, wordt de gemiddelde score van ALLEEN IMDb &amp; Metacritic gebruikt.\n</string>
+  <string name="SpecialEditions">Ondersteuning \'Speciale Editie\' tag</string>
+  <string name="SpecialEditionsDescription">Uit = Behoud orginele filmtitel\nAan = Voeg \'Speciale Editie\' tag toe aan titel\n\nAls je het IMDb tt-ID nummer toevoegd aan de bestandsnaam of foldernaam (of middels een NFO bestand) dan zorgt deze instelling ervoor dat de \'Speciale Editie\' tag wordt toegevoegd.\n\nJe kan de volgende criteria tussen haakjes toevoegen:\n\n - 3D\n - Extended\n - Unrated\n - Director\'s Cut\n - Alternate Ending\n\nAls je wilt, kan je ook de term \'Edition\' toevoegen aan het einde\n\nVoorbeeld: \"Avatar (tt0499549) (3D).mkv\" resulteert in \"Avatar (3D)\"\n</string>
+  <string name="SettingPluginEnabledName">Plugin Ingeschakeld</string>
+  <string name="SettingPluginEnabledDescription">Schakel deze instelling in of uit om te bepalen of de IMDb+ plugin wordt geladen met MediaPortal.</string>
+  <string name="SettingListedHomeName">Plaats in Home menu</string>
+  <string name="SettingListedHomeDescription">Schakel deze instelling in zodat de IMDb+ plugin wordt weergegeven in het Home menu.</string>
+  <string name="SettingListedPluginsName">Plaats in Mijn Plugins</string>
+  <string name="SettingListedPluginsDescription">Schakel deze instelling in zodat de IMDb+ plugin wordt weergegeven in het Mijn Plugins menu.</string>
+  <string name="SettingsSyncIntervalName">Aantal uur tot de volgende controle op updates</string>
+  <string name="SettingsSyncIntervalDescription">Deze instelling bepaald hoe vaak er wordt gecontroleerd op updates van het scraper script of de hernoem-database</string>
+  <string name="SettingsSyncOnStartupName">Controleer op updates tijdens starten</string>
+  <string name="SettingsSyncOnStartupDescription">Deze instelling forceert de plugin te controleren op updates van het scraper script of de hernoem-database, elke keer als MediaPortal wordt gestart.</string>
+  <string name="SettingsDisableNotificationsName">Schakel notificaties uit</string>
+  <string name="SettingsDisableNotificationsDescription">Deze instelling schakelt notificaties uit (bijvoorbeeld als het scraper script geupdate is op je systeem).</string>
+  <string name="SelectSources">Selecteer bronnen die omgezet moeten worden naar IMDb+</string>
+  <string name="StartsWith">Start met {0}</string>
+  <string name="SelectAlphas">Selecteer films die beginnen met...</string>
+  <!--T-->
+  <!--U-->
+  <string name="UkRating">Brits-Engelse Filmtitels</string>
+  <string name="UkRatingDescription">Uit = Gebruik Engels-Amerikaane Filmtitels\nAan = Gebruik Brits-Engelse Filmtitles\n\nGebruik deze instelling voor Brits-Engelse filmtitels.\n\nEen goed voorbeeld is de eerste Harry Potter film. De orginele titel is \"Harry Potter and the Philosopher\'s Stone\", welke is geveramerikaniseerd in \"Harry Potter and the Sorcerer\'s Stone\". Aangezien de IMDb website zich richt op Amerikaans publiek betekend dit dat alle titels de Amerikaans-Engelse titel gebruiken, indien beschikbaar. Met deze instelling kan je dit veranderen in de Brits-Engelse titel.\n\nLet op: Er is momenteel geen hernoem/vervangings database ondersteuning voor Brits-Engelse titels, waardoor je nog steeds \"Harry Potter I: Sorcerer\'s Stone\" krijgt, maar dit kun je voorlopig aanpassen via de handmatige hernoem/vervangings database, tot er juiste ondersteuning is toegevoegd aan de IMDb+ plugin.\n</string>
+  <string name="UpdatedScraperScript">MovingPictures is geupdate met IMDb+ Scraper script v{0}</string>
+  <string name="Update">Update</string>
+  <string name="UpdateAll">Update Alles</string>
+  <string name="UpdateReplacementOnly">Update Alleen Vervangingen</string>
+  <string name="UpdateAlphas">Update Films die beginnen met...</string>
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+  <string name="Yes">Ja</string>
+</resources>

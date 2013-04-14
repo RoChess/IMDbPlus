@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <!--B-->
+  <!--C-->
+  <string name="Cancel">Atšaukti</string>
+  <!--D-->
+  <!--E-->
+  <!--F-->
+  <!--G-->
+  <!--H-->
+  <!--I-->
+  <!--K-->
+  <!--J-->
+  <!--L-->
+  <!--M-->
+  <string name="MultiSelectDialog">Daugkartinio pasirinkimo dialogas</string>
+  <!--N-->
+  <string name="No">Ne</string>
+  <!--O-->
+  <!--P-->
+  <!--R-->
+  <!--S-->
+  <string name="SettingPluginEnabledName">Įskiepis įjungtas</string>
+  <string name="SettingListedHomeName">Pagrindiniame ekrane</string>
+  <string name="SettingListedPluginsName">Rodomi Mano Įskiepiuose</string>
+  <!--T-->
+  <!--U-->
+  <string name="Update">Atnaujinti</string>
+  <string name="UpdateAll">Atnaujinti viską</string>
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+  <string name="Yes">Taip</string>
+</resources>

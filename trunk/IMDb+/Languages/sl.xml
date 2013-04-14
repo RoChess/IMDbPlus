@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <!--B-->
+  <!--C-->
+  <string name="Cancel">Preklici</string>
+  <!--D-->
+  <!--E-->
+  <!--F-->
+  <!--G-->
+  <!--H-->
+  <!--I-->
+  <!--K-->
+  <!--J-->
+  <!--L-->
+  <!--M-->
+  <string name="MultiSelectDialog">Multi-izbira</string>
+  <!--N-->
+  <string name="No">Ne</string>
+  <!--O-->
+  <!--P-->
+  <!--R-->
+  <!--S-->
+  <string name="SettingPluginEnabledName">Vtičnik je omogočen</string>
+  <string name="SettingListedHomeName">Prikazan v Home</string>
+  <string name="SettingListedPluginsName">Prikazan v Moji vtičniki</string>
+  <!--T-->
+  <!--U-->
+  <string name="Update">Posodobi</string>
+  <string name="UpdateAll">Posodobi vse</string>
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+  <string name="Yes">Ja</string>
+</resources>

@@ -1,359 +1,161 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- IMDb+ translation file -->
-<!-- Icelandic (IS) -->
-<!-- Note: English is the fallback for any strings not found in other languages -->
-<strings>
-	<!-- A -->
-	<string Field="AddForeignTitle">Bæta við erlendum titli</string>
-	<string Field="AddForeignTitleDescription">Af = Halda titlinum
-Á = Bæta við upprunalegum titli í sviga
-
-Virkja þennan möguleika leyfir þér að sjá upprunalegan titil í sviga á eftir enskum titli.
-
-T.d.: Black Book (Zwartboek)
-</string>
-
-	<!-- B -->
-	<string Field="BoolOn">Á</string>
-	<string Field="BoolOff">Af</string>
-
-	<!-- C -->
-	<string Field="Cancel">Hætta við</string>
-	<string Field="CountryFilter">Ítarlegt: Landasíun</string>
-	<string Field="CountryFilterDescription">Það eru nokkrar enskumælandi kvikmyndir sem hafa erlendan titil. Svo til að finna enskan titil þá er nauðsyn að sía út landið þar sem myndin var framleidd.
-
-Sjálfgefin lönd sem nota ekki erlenda titla eru: 'us.ca.gb.ie.au.nz' (Bandaríkin, Kanada, Bretland, Írland, Ástralía og Nýja Sjáland)
-
-Aths: MediaPortal lyklaborði styður ekki '|', svo að '.' var notað til að skilja á milli mismunandi tungumála. Gætið varúðar við að breyta þessari stillingu þar sem það getur stöðvað virkni IMDb+.
-</string>
-
-	<!-- D -->
-	<string Field="DefaultDescription">Merkið einhverja ofantalda möguleika og ítarupplýsingar verða birtar hér.</string>
-
-	<!-- E -->
-
-	<!-- F -->
-	<string Field="First">Fyrst</string>
-	<string Field="FixMissingSummary">Lýsingar frá notendum verði notaðar í söguþráð þar sem það hann er auður</string>
-	<string Field="FixMissingSummaryDescription">Af = Haldið söguþræði auðum
-Á = Skráðar upplýsingar frá notendum
-
-Það hafa ekki allar kvikmyndir skráðan söguþráð hjá imdb.com. En það í nokkrum tilvikum hafa notendur skráð inn söguþráð. Þessi stilling leyfir þér að nota þær upplýsingar í stað þess að hafa engar.
-
-Ath.: Hafið í huga að söguþráður sem notendur hafa skráð geta gefið of mikið upp.
-</string>
-	<string Field="ForceIMDbPlus">Virkja IMDb+</string>
-	<string Field="ForceIMDbPlusDescription">Ertu tilbúin(n) fyrir það að allar þær
-kvikmyndir, innflutt með upprunalegum IMDb
-sköfun, að byrja að nota IMDb+?
-</string>
-	<string Field="ForceIMDbPlusComplete">Tókst að færa {0}/{1} kvikmyndir
-yfir á IMDb+ sköfun.
-</string>
-	<string Field="ForeignTitleFirst">Byrja á erlendum titli</string>
-	<string Field="ForeignTitleFirstDescription">Af = Enskur (erlendur)
-Á = Erlendur (enskur)
-
-Virkja þessa stillingu sýnir upprunalegan titil og enskur titill í sviga.
-
-Dæmi: Með allt á hreinu (On Top)
-</string>
-
-	<!-- G -->
-
-	<!-- H -->
-
-	<!-- I -->
-	<string Field="IMDbMetaScore">Metacritics MetaScore</string>
-	<string Field="IMDbMetaScoreDescription">Af = imdb.com einkunnagjöf er notuð
-Á = Nota Metacritics Metascore
-Imdb.com vefsíðan leyfir einnig Metacritics.com metascore. Virkja þessa stilingu notar þá einkunnagjöf, annars er einkunnagjöf IMDb notuð.
-
-Ath.: Þessi stilling þarf einnig að hafa einkunnagjöf IMDb á og þ.a.l. óvirkir RottenTomatoes aðferð við auðar lýsingar og sýningartíma.
-</string>
-	<string Field="IMDbScore">IMDb einkunnagjöf</string>
-	<string Field="IMDbScoreDescription">Af = Nota vefsíðu RottenTomatoes
-Á = Eingöngu að nota vefsíðu imdb.com
-
-RottenTomatoes hefur aukaupplýsingar, en ef þú vilt bara nota imdb.com, virkjaðu þá þessa stillingu.
-
-Ath.: Þetta hefur áhrif á að fá aðrar upplýsingar, svo sem að fá söguþráð þar sem hann vantar, sýningartíma og einkunnagjöf.
-</string>
-	<string Field="IMDbInfo">IMDb+ upplýsingar</string>
-	<string Field="InfoPluginVersion">Útgáfunúmer viðbóta: v{0}</string>
-	<string Field="InfoScraperAuthor">Höfundur sköfunar: {0}</string>
-	<string Field="InfoScraperVersion">Útgáfa sköfunar: v{0}</string>
-	<string Field="InfoScraperPriority">Forgangur sköfunar: {0}</string>
-	<string Field="InfoScraperPublished">Sköfun birt: {0}</string>
-	<string Field="InfoScraperLastUpdateCheck">Síðasta athugun á uppfærslu á skafara: {0}</string>
-	<string Field="InfoMoviesIMDbPlusPrimary">Kvikmyndir sem nota IMDb+ sem skafara: {0}</string>
-	<string Field="InfoMoviesOtherPlusPrimary">Kvikmyndir sem nota annan skafara: {0}</string>
-	<string Field="InfoReplacementsVersion">Endurnefningarútgáfa: v{0}</string>
-	<string Field="InfoReplacementsPublished">Endurnefningar birt: {0}</string>
-	<string Field="InfoReplacementEntries">Fjöldi endurnefninga: {0}</string>
-	<string Field="InfoCustomReplacementEntries">Fjöldi endurnefninga (Eigin): {0}</string>
-	<string Field="IntervalSixHours">6 stundir</string>
-	<string Field="IntervalTwelveHours">12 stundir</string>
-	<string Field="IntervalTwentyFourHours">24 stundir</string>
-	<string Field="IntervalTwoDays">2 dagar</string>
-	<string Field="IntervalThreeDays">3 dagar</string>
-	<string Field="IntervalFourDays">4 dagar</string>
-	<string Field="IntervalSevenDays">7 dagar</string>
-
-	<!-- K -->
-
-	<!-- J -->
-
-	<!-- L -->
-	<string Field="LastScraperUpdate">Síðasta uppfærsla sköfunar</string>
-	<string Field="LanguageFilter">Ítarlegra: Tungumálasía</string>
-	<string Field="LanguageFilterDescription">Sérstök sía sem inniheldur önnur tungumál en ensku (en). Notið imdb.com HTML kóðann til að finna ISO 639-1 kódann sem er fyrir aftan /language/.
-
-Sjálfgefið tungumál er enska: 'en'
-
-En ef þú ert frá Íslandi og vilt hafa íslenskar kvikmyndir með upprunalegum titli og enskan titil fyrir allt annað, notið: 'en.is'
-
-Ath.: Lyklaborð MediaPortal styður ekki '|' táknið, svo að '.' var notað þess í stað til að skilja á milli mismunandi tungumála. Notið með varúð þar sem breyting á þessari stillingu getur stöðvað virkni IMDb+ sköfunar.
-</string>
-	<string Field="LongSummary">Að nota ítarlýsingu getur spillt fyrir þér (of mikið uppgefið)</string>
-	<string Field="LongSummaryDescription">Af = Styttri lýsing á söguþræði kvikmyndar
-Á = Lengri lýsing á söguþræði (gæti spillt fyrir)
-
-Ítarlýsing gefur meiri upplýsingar, en gæti spillt fyrir. Þess vegna er þetta haft óvirkt í upphafi, en að sjálfsögðu getur þú virkjað þetta.
-</string>
-
-	<!-- M -->
-	<string Field="MinIMDbVotes">Lágmarks fjöldi af IMDb atkvæðum</string>
-	<string Field="MinIMDbVotesDescription">Af = Ávallt að nota imdb.com einkunnagjöf
-Á = Aðeins að nota imdb.com einkunnagjöf með fleirum en 20 atkvæðum
-
-Starfsmenn við kvikmyndir hafa áhrif á einkunnagjöf IMDb.com á sínar kvikmyndir. Þess vegna er ekki óalgengt að kvikmyndir með færri en 20 atkvæði hafi háa einkunnagjöf.
-
-En ef þetta er virkjað þá er kvikmyndum með færri en 20 atkvæðum sleppt.
-</string>
-	<string Field="MultiSelectDialog">Multi-Select Dialog</string>
-
-	<!-- N -->
-	<string Field="No">Nei</string>
-	<string Field="NumberOfMovies">{0}/{1} kvikmyndir</string>
-	<string Field="NumberOfMovies2">{0} kvikmyndir</string>
-	<string Field="NoSourcesFound">Fannst engin kvikmynd sem skikkjuð
-til að nota IMDb+ skriftina!</string>
-	<string Field="NullSource">Engin sköfun, en nothæft IMDb-kenni</string>
-
-	<!-- O -->
-	<string Field="OneWriterDirector">Takmarka innflutning á aðeins einum handritshöfundi og leikstjóra</string>
-	<string Field="OneWriterDirectorDescription">Af = Alla handritshöfunda og leikstjóra
-Á = Aðeins fyrsta nafn handritshöfunda og leikstjóra
-
-Sum útlit hafa ekki pláss fyrir alla handritshöfunda og leikstjóra. Svo ef þú vilt koma í veg fyrir lárétta skrunun, virkjaðu þá þennan möguleika til að fá aðeins fyrsta handritshöfund og leikstjóra.
-
-Hafið í huga að þetta hefur áhrif á leitun að kvikmyndum með ákveðnum handritshöfundi eða leikstjóra þar sem aðeins einn handristhöfundur eða leikstjóri er fyrir hverja kvikmynd. En aftur á móti eru það fáar kvikmyndir sem eru með fleiri en einn handritshöfund eða leikstjóra.
-</string>
-	<string Field="OriginalTitle">Nota upprunalegan kvikmyndatitil</string>
-	<string Field="OriginalTitleDescription">Af = Alltaf að nota enskt kvikmyndaheiti
-Á = Nota upprunalegan titil fyrir erlendar kvikmyndir
-
-Erlendar kvikmyndir hafa oft ekki enskan kvikmyndatitil.
-
-Ef þú vilt að allar kvikmyndir noti enskan titil, afmerktu þennan möguleika.
-</string>
-
-	<!-- P -->
-
-	<!-- R -->
-	<string Field="Ratings">English Rating/Certification System</string>
-	<string Field="RatingsDescription">Það eru til nokkrar tegundir af enskum aldurstakmörkunum í heiminum.  Það þekktasta er ameríska MPAA kerfið sem gefur niðurstöður eins og PG-13, R, NC-17, o.s.frv.
-
-Notendur í Ástralíu, Kanada, Stóra-Bretlandi og Nýja Sjálandi geta notað þessar stillingar til að velja þeirra eigin aldurstakmarkanir.
-</string>
-	<string Field="RatingsHeader">Veljið tegund aldurstakmarkana</string>
-	<string Field="Rating01">Bandaríkin</string>
-	<string Field="Rating02">Bretland</string>
-	<string Field="Rating03">Kanada (Alberta)</string>
-	<string Field="Rating04">Kanada (Breska Kolumbía)</string>
-	<string Field="Rating05">Kanada (Manitoba)</string>
-	<string Field="Rating06">Kanada (Nova Scotia)</string>
-	<string Field="Rating07">Kanada (Ontario)</string>
-	<string Field="Rating08">Kanada (Quebec)</string>
-	<string Field="Rating09">Ástralía</string>
-	<string Field="Rating10">Nýja Sjáland</string>
-	<string Field="RefreshMovies">Endurstilla kvikmyndir</string>
-	<string Field="RefreshingMovies">Endurstilli kvikmyndir</string>
-	<string Field="RefreshCancel">Hætta við endurstillingu</string>
-	<string Field="RefreshMoviesDescription">Ertu viss um að endurstilla allar kvikmyndir
-sem hafa IMDb+ sem sjálfgefna sköfun?
-</string>
-	<string Field="RefreshMovieStatus">Endurstilling {0}/{1} kvikmynda: {2}%</string>
-	<string Field="RefreshMoviesNotification">IMDb+ endurstilling er lokið.
-Njótið niðurstöðunnar.
-</string>
-	<string Field="RefreshMoviesCancelNotification">Hætt var við endurstillingu kvikmynda.
-{0} kvikmyndir voru uppfærðar.
-Endurstillið aftur til að halda áfram.
-</string>
-	<string Field="RefreshAllFields">Endurstilla öll svæði</string>
-	<string Field="RefreshAllFieldsDescription">Af = Uppfæra nokkur svæði
-Á = Endurstilla allt
-
-Það er stanslaust verið að uppfæra upplýsingar hjá IMDb. Vegna þessa er skynsamlegt að uppfæra kvikmyndasafnið þitt.
-
-Virkja þessa stillingu tryggir að allt sé uppfært. Annars vegar uppfærist aðeins auð svæði, aldurstakmörk, einkunnagjöf og atkvæði.
-
-Ath.: Þessi stilling óvirkir kerfið sem endurnefnir eldri kvikmyndir í safninu.
-</string>
-	<string Field="RemoveFirstRoman">Eyða rómverskri tölu af fyrstu kvikmyndinni</string>
-	<string Field="RemoveFirstRomanDescription">Af = Halda endurnefndum titli eins
-Á = Eyða rómverskri tölu af fyrstu kvikmyndinni
-
-Ef kerfið sem endurnefnir kvikmyndir er virkt, þá er sjálfgefið að kvikmyndir eru raðaðar saman með rómversku tölum fremst í titli. Þetta er einnig gert fyrir fyrstu kvikmyndina í seríunni, 'Avatar' verður 'Avatar I'. Virkja þessa stillingu mun raða kvikmyndinni rétt, en mun eyða rómversku tölunni úr titlinum.
-
-Hafið í huga að þetta gerist aðeins ef fyrsta kvikmyndin í seríunni hefur ekki undirtitil. 'Indiana Jones I: Raiders of the Lost Ark' mun þess vegna halda rómversku tölunni.
-</string>
-	<string Field="RenameTitles">Endurnefna titla svo að kvikmyndum er raðað saman</string>
-	<string Field="RenameTitlesDescription">Af = Nota upprunalegan titil
-Á = Endurnefna titla svo að seríur er raðað saman
-
-Það eru margar kvikmyndaseríur, og stundum hafa kvikmyndirnar ekki sama forskeyti til að raða þeim saman. Til að leysa það, er gagnaskrá með endurnefndum titlum þar sem er notað IMDb tt-einkennið. Niðurstaðan er sú að kvikmyndir eru endurnefnar svo að auðvelt er að tengja þær við kvikmyndaseríuna.
-
-T.d.: 'Batman VII: The Dark Knight Rises' mun raðast rétt með öðrum kvikmyndum í seríunni.
-
-Gagnaskráin fyrir endurnefndu titlana er vistuð í skránni 'IMDb+\Rename dBase IMDb+ Scraper.xml' sem er undir MediaPortal User möppunni.
-
-Allar eigin endurnefningar eiga að fara inní 'IMDb+\Rename dBase IMDb+ Scraper (Custom).xml'
-
-Þú getur notað notepad til að breyta eigin endurnefningum, þar sem sjálfgefna gagnaskráin verður uppfærð reglulega, vinsamlegast passið að innihald XML skránna sé samhæfð.
-</string>
-	<string Field="RottenMeter">RottenTomatoes TomatoMeter</string>
-	<string Field="RottenMeterDescription">Af = RottenTomatoes 'Audience' einkunnagjöf
-Á = RottenTomatoes 'TomatoMeter' einkunnagjöf
-
-Það eru mismunandi einkunnagjöf til á vefsíðu RottenTomatoes.
-
-Til að virkja einhvern af 'TomatoMeter' einkunnagjöfinni, þá verður þú að virkja þessa stillingu, annars mun 'Audience' gilda.
-</string>
-	<string Field="RottenAverage">RottenTomatoes meðatals einkunnagjöf</string>
-	<string Field="RottenAverageDescription">Af = RottenTomatoes 'Percentage' einkunnagjöf
-Á = RottenTomatoes 'Average' einkunnagjöf
-
-Með þessa stillingu á þá mun kerfið nota 'Average' einkunnagjöfina, annars 'Percentage' einkunnagjöfina.
-
-'Percentage' einkunnagjöfin hefur sérstakt gildi, finnur hlutfall RottenTomatoes notenda, hvernig þeir gáfu einkunn.
-</string>
-	<string Field="RottenTopCritics">RottenTomatoes aðal gagnrýnendur</string>
-	<string Field="RottenTopCriticsDescription">Af = RottenTomatoes 'All' gagnrýnendur
-Á = RottenTomatoes 'Top' gagnrýnendur
-
-Það er til TomatoMeter einkunnakerfi fyrir alla gagnrýnendur eða aðeins 'Topp' gagnrýnendur.
-
-Virkja þessa stillingu mun eingöngu nota topp gagnrýnendur.
-</string>
-	<string Field="Resume">(Halda áfram)</string>
-
-	<!-- S -->
-	<string Field="ScraperOptionsTitle">IMDb+ sköfunarmöguleikar</string>
-	<string Field="ScraperNotFirstPrompt">IMDb+ sköfun er ekki efstur!\nÞetta mun valda vandamálum.\nViltu laga þetta?</string>
-	<string Field="SecondaryDetails">Fá viðbótarupplýsingar fyrir eftirfarandi tungumál</string>
-	<string Field="SecondaryDetailsDescription">Það er stuðningur á ýmsum upplýsingum á mismunandi tungumálum. Þetta nær yfir eins og söguþráð, aldurstakmörk, flokkun og jafnvel fleira.
-
-Núverandi stuðningur nær yfir: hollensku, frönsku, þýsku, íslensku, ítölsku, portúgölsku, spænsku og sænsku.
-</string>
-	<string Field="SecondaryDetailsHeader">Annað tungumál</string>
-	<string Field="SecondaryLanguage01">Enska</string>
-	<string Field="SecondaryLanguage02">Þýska</string>
-	<string Field="SecondaryLanguage03">Spænska</string>
-	<string Field="SecondaryLanguage04">Franska</string>
-	<string Field="SecondaryLanguage05">Ítalska</string>
-	<string Field="SecondaryLanguage06">Potúgalska</string>
-	<string Field="SecondaryLanguage07">Sænska</string>
-	<string Field="SecondaryLanguage08">Íslenska</string>
-	<string Field="SecondaryLanguage09">Hollenska</string>
-	<string Field="SecondarySummary">Enska notuð ef erlenda tungumálið er ekki til</string>
-	<string Field="SecondarySummaryDescription">Af = Sýna ekkert ef valið tungumál á ekki til lýsingu
-Á = Nota söguþráð á ensku þegar söguþráður á völdu tungumáli er ekki til
-
-Erlendar kvikmyndasíður eru ekki alltaf eins ítarlegar eins og imdb.com eða hafa sömu upplýsingar. Þetta hefur aðallega áhrif á söguþráð, svo til þess að koma í veg fyrir að safnið verði tómt, hafið þennan möguleika á (ef mögulegt). Hugmynd væri að skrá sig á síðuna og bæta við þessum upplýsingum, en annars að nota ensku upplýsingarnar.
-</string>
-	<string Field="SecondaryEnglishTitle">Enskur undirtitill</string>
-	<string Field="SecondaryEnglishTitleDescription">Af = Nota erlendan titil
-Á = Þröngva enskum titli
-
-Ef valið er annað tungumál en enska fyrir ýmsar upplýsingar, þá mun titill vera í sama tungumáli. Þessi möguleiki er til þess að halda í enskan titil.
-
-Ath.: Þetta á ekki við endurnefningar. Það þarf að hafa þýddan titil til að fá erlendan titil, þó að þessi stilling sé óvirk.
-</string>
-	<string Field="SingleScore">Nota staka einkunnagjöf</string>
-	<string Field="SingleScoreDescription">Af = Nota meðaltals einkunnagjöf
-Á = Nota staka einkunnagjöf
-
-Það getur verið stór munur á milli mismunandi einkunnagjafa. Til að jafna það er notuð meðatals gildi einkunna frá imbd, metacritics og rottentomatoes.
-
-Ath.: Ef 'IMDb einkunnagjöf' er virkjuð, þá verður aðeins notuð meðtal af IMDb og Metacritics þegar þessi stilling er notuð fyrir meðatals einkunnagjöf.
-</string>
-	<string Field="SpecialEditions">Endurnefna sérstakar útgáfur</string>
-	<string Field="SpecialEditionsDescription">Af = Nota upprunalegan titil
-Á = Bæta við sérstökum útgáfumtögum við titilinn
-
-Ef þú hefur IMDb tt-ID number í skráarheiti eða í gegnum NFO skrá, hafðu þá þennan möguleika á fyrir sérstaka tögun.
-
-Þú getur bætt við eftirfarandi möguleikum í skráarheitið innan sviga:
-
- - 3D
- - Extended
- - Unrated
- - Director's Cut
- - Alternate Ending
-
-Þú getur einnig bætt við 'Edition' fyrir aftan ef þú vilt.
-
-Dæmi: "Avatar (tt0499549) (3D).mkv" mun gefa heitið "Avatar (3D)"
-</string>
-	<string Field="SettingPluginEnabledName">Viðbætur virkt</string>
-	<string Field="SettingPluginEnabledDescription">Virkja / óvirkja þennan möguleika á IMDb+ viðbætum ef notað með MediaPortal.</string>
-	<string Field="SettingListedHomeName">Birt í Home</string>
-	<string Field="SettingListedHomeDescription">Virkja þennan möguleika ef IMDb+ eigi að birtast í Home valmyndinni.</string>
-	<string Field="SettingListedPluginsName">Birt í Viðbætum</string>
-	<string Field="SettingListedPluginsDescription">Virkja þennan möguleika fyrir IMDb+ til að birtast í Viðbætur valmyndinni.</string>
-	<string Field="SettingsSyncIntervalName">Fjöldi klukkustunda þangað til að athugað er með næstu uppfærslu</string>
-	<string Field="SettingsSyncIntervalDescription">Þessi stilling athugar hve oft IMDb+ eigi að athuga á internetinu af nýrri útgáfu af sér.</string>
-	<string Field="SettingsSyncOnStartupName">Athuga með uppfærslu í ræsingu MediaPortal</string>
-	<string Field="SettingsSyncOnStartupDescription">Þessi stilling athugar með uppfærslu af sér á internetinu í ræsingu á MediaPortal.</string>
-	<string Field="SettingsDisableNotificationsName">Óvirkja upplýsingar</string>
-	<string Field="SettingsDisableNotificationsDescription">Þessi stilling leyfir þér að óvirkja upplýsingar um uppfærslur sem hafa verið settar inn.</string>
-	<string Field="SelectSources">Velja sköfun sem á að IMDb+ á taka yfir og uppfæra</string>
-	<string Field="StartsWith">Byrjar á {0}</string>
-	<string Field="SelectAlphas">Velja kvikmyndir sem byrja á...</string>
-
-	<!-- T -->
-
-	<!-- U -->
-	<string Field="UkRating">Bresk-ensk kvikmyndaheiti</string>
-	<string Field="UkRatingDescription">Af = Nota amerískar-ensk kvikmyndaheiti
-Á = Nota breska-ensk kvikmyndaheiti
-
-Nota þessa stillingu fyrir breska-enska kvikmyndatitla.
-Þekkt dæmi er fyrsta Harry Potter kvikmyndin.  Upprunalegur titill er "Harry Potter and the Philosopher's Stone", sem var ameríkanserað í "Harry Potter and the Sorcerer's Stone".  Þar sem vefsíðan IMDb er stíluð á ameríska áhorfendur þýðir það að allar kvikmyndir nota ameríska-enska titla ef þeir eru til.  Með þessari stillingu getur þú breytt því í breska-enska titla.
-
-Ath.: Nú er ekki enn til endurnefningargagnagrunnur fyrir breska-enska titla, svo að þú endar með "Harry Potter I: Sorcerer's Stone", en þú getur breytt því í gegnum eigin endurnefningargagnagrunninn í bili þangað til stuðningur verður gerður í IMDb+ viðbótinni.
-</string>
-	<string Field="UkRating">Breska BBFC aldurstakmarkanir</string>
-	<string Field="UkRatingDescription">Af = Nota ameríska MPAA aldurstakmarkanir
-Á = Nota bresku BBFC aldurstakmarkanir
-
-Virkja þessa stillingu fyrir aldurstakmarkanir í Stóra-Bretlandi.
-
-Það inniheldur 'U' fyrir Universal, 'PG' fyrir Parental Guidance, 12A, 12, 15, 18 og að lokum 'R18' fyrir eldra en 18 ára.
-</string>
-	<string Field="UpdatedScraperScript">MovingPictures hefur verið uppfært með IMDb+ Scraper skriptinni v{0}</string>
-	<string Field="Update">Uppfæra</string>
-	<string Field="UpdateAll">Uppfæra allt</string>
-	<string Field="UpdateReplacementOnly">Uppfæra aðeins endurnefningar</string>
-	<string Field="UpdateAlphas">Uppfæra kvikmyndir, byrja á...</string>
-
-	<!-- V -->
-
-	<!-- W -->
-
-	<!-- Y -->
-	<string Field="Yes">Já</string>
-</strings>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <string name="AddForeignTitle">BÃ¦ta viÃ° erlendum titli</string>
+  <string name="AddForeignTitleDescription">Af = Halda titlinum\nÃ = BÃ¦ta viÃ° upprunalegum titli Ã­ sviga\n\nVirkja Ã¾ennan mÃ¶guleika leyfir Ã¾Ã©r aÃ° sjÃ¡ upprunalegan titil Ã­ sviga Ã¡ eftir enskum titli.\n\nT.d.: Black Book (Zwartboek)\n</string>
+  <!--B-->
+  <string name="BoolOn">Ã</string>
+  <string name="BoolOff">Af</string>
+  <!--C-->
+  <string name="Cancel">HÃ¦tta viÃ°</string>
+  <string name="CountryFilter">Ãtarlegt: LandasÃ­un</string>
+  <string name="CountryFilterDescription">ÃžaÃ° eru nokkrar enskumÃ¦landi kvikmyndir sem hafa erlendan titil. Svo til aÃ° finna enskan titil Ã¾Ã¡ er nauÃ°syn aÃ° sÃ­a Ãºt landiÃ° Ã¾ar sem myndin var framleidd.\n\nSjÃ¡lfgefin lÃ¶nd sem nota ekki erlenda titla eru: \'us.ca.gb.ie.au.nz\' (BandarÃ­kin, Kanada, Bretland, Ãrland, ÃstralÃ­a og NÃ½ja SjÃ¡land)\n\nAths: MediaPortal lyklaborÃ°i styÃ°ur ekki \'|\', svo aÃ° \'.\' var notaÃ° til aÃ° skilja Ã¡ milli mismunandi tungumÃ¡la. GÃ¦tiÃ° varÃºÃ°ar viÃ° aÃ° breyta Ã¾essari stillingu Ã¾ar sem Ã¾aÃ° getur stÃ¶Ã°vaÃ° virkni IMDb+.\n</string>
+  <!--D-->
+  <string name="DefaultDescription">MerkiÃ° einhverja ofantalda mÃ¶guleika og Ã­tarupplÃ½singar verÃ°a birtar hÃ©r.</string>
+  <!--E-->
+  <!--F-->
+  <string name="First">Fyrst</string>
+  <string name="FixMissingSummary">LÃ½singar frÃ¡ notendum verÃ°i notaÃ°ar Ã­ sÃ¶guÃ¾rÃ¡Ã° Ã¾ar sem Ã¾aÃ° hann er auÃ°ur</string>
+  <string name="FixMissingSummaryDescription">Af = HaldiÃ° sÃ¶guÃ¾rÃ¦Ã°i auÃ°um\nÃ = SkrÃ¡Ã°ar upplÃ½singar frÃ¡ notendum\n\nÃžaÃ° hafa ekki allar kvikmyndir skrÃ¡Ã°an sÃ¶guÃ¾rÃ¡Ã° hjÃ¡ imdb.com. En Ã¾aÃ° Ã­ nokkrum tilvikum hafa notendur skrÃ¡Ã° inn sÃ¶guÃ¾rÃ¡Ã°. Ãžessi stilling leyfir Ã¾Ã©r aÃ° nota Ã¾Ã¦r upplÃ½singar Ã­ staÃ° Ã¾ess aÃ° hafa engar.\n\nAth.: HafiÃ° Ã­ huga aÃ° sÃ¶guÃ¾rÃ¡Ã°ur sem notendur hafa skrÃ¡Ã° geta gefiÃ° of mikiÃ° upp.\n</string>
+  <string name="ForceIMDbPlus">Virkja IMDb+</string>
+  <string name="ForceIMDbPlusDescription">Ertu tilbÃºin(n) fyrir Ã¾aÃ° aÃ° allar Ã¾Ã¦r\nkvikmyndir, innflutt meÃ° upprunalegum IMDb\nskÃ¶fun, aÃ° byrja aÃ° nota IMDb+?\n</string>
+  <string name="ForceIMDbPlusComplete">TÃ³kst aÃ° fÃ¦ra {0}/{1} kvikmyndir\nyfir Ã¡ IMDb+ skÃ¶fun.\n</string>
+  <string name="ForeignTitleFirst">Byrja Ã¡ erlendum titli</string>
+  <string name="ForeignTitleFirstDescription">Af = Enskur (erlendur)\nÃ = Erlendur (enskur)\n\nVirkja Ã¾essa stillingu sÃ½nir upprunalegan titil og enskur titill Ã­ sviga.\n\nDÃ¦mi: MeÃ° allt Ã¡ hreinu (On Top)\n</string>
+  <!--G-->
+  <!--H-->
+  <!--I-->
+  <string name="IMDbMetaScore">Metacritics MetaScore</string>
+  <string name="IMDbMetaScoreDescription">Af = imdb.com einkunnagjÃ¶f er notuÃ°\nÃ = Nota Metacritics Metascore\nImdb.com vefsÃ­Ã°an leyfir einnig Metacritics.com metascore. Virkja Ã¾essa stilingu notar Ã¾Ã¡ einkunnagjÃ¶f, annars er einkunnagjÃ¶f IMDb notuÃ°.\n\nAth.: Ãžessi stilling Ã¾arf einnig aÃ° hafa einkunnagjÃ¶f IMDb Ã¡ og Ã¾.a.l. Ã³virkir RottenTomatoes aÃ°ferÃ° viÃ° auÃ°ar lÃ½singar og sÃ½ningartÃ­ma.\n</string>
+  <string name="IMDbScore">IMDb einkunnagjÃ¶f</string>
+  <string name="IMDbScoreDescription">Af = Nota vefsÃ­Ã°u RottenTomatoes\nÃ = EingÃ¶ngu aÃ° nota vefsÃ­Ã°u imdb.com\n\nRottenTomatoes hefur aukaupplÃ½singar, en ef Ã¾Ãº vilt bara nota imdb.com, virkjaÃ°u Ã¾Ã¡ Ã¾essa stillingu.\n\nAth.: Ãžetta hefur Ã¡hrif Ã¡ aÃ° fÃ¡ aÃ°rar upplÃ½singar, svo sem aÃ° fÃ¡ sÃ¶guÃ¾rÃ¡Ã° Ã¾ar sem hann vantar, sÃ½ningartÃ­ma og einkunnagjÃ¶f.\n</string>
+  <string name="IMDbInfo">IMDb+ upplÃ½singar</string>
+  <string name="InfoPluginVersion">ÃštgÃ¡funÃºmer viÃ°bÃ³ta: v{0}</string>
+  <string name="InfoScraperAuthor">HÃ¶fundur skÃ¶funar: {0}</string>
+  <string name="InfoScraperVersion">ÃštgÃ¡fa skÃ¶funar: v{0}</string>
+  <string name="InfoScraperPriority">Forgangur skÃ¶funar: {0}</string>
+  <string name="InfoScraperPublished">SkÃ¶fun birt: {0}</string>
+  <string name="InfoScraperLastUpdateCheck">SÃ­Ã°asta athugun Ã¡ uppfÃ¦rslu Ã¡ skafara: {0}</string>
+  <string name="InfoMoviesIMDbPlusPrimary">Kvikmyndir sem nota IMDb+ sem skafara: {0}</string>
+  <string name="InfoMoviesOtherPlusPrimary">Kvikmyndir sem nota annan skafara: {0}</string>
+  <string name="InfoReplacementsVersion">EndurnefningarÃºtgÃ¡fa: v{0}</string>
+  <string name="InfoReplacementsPublished">Endurnefningar birt: {0}</string>
+  <string name="InfoReplacementEntries">FjÃ¶ldi endurnefninga: {0}</string>
+  <string name="InfoCustomReplacementEntries">FjÃ¶ldi endurnefninga (Eigin): {0}</string>
+  <string name="IntervalSixHours">6 stundir</string>
+  <string name="IntervalTwelveHours">12 stundir</string>
+  <string name="IntervalTwentyFourHours">24 stundir</string>
+  <string name="IntervalTwoDays">2 dagar</string>
+  <string name="IntervalThreeDays">3 dagar</string>
+  <string name="IntervalFourDays">4 dagar</string>
+  <string name="IntervalSevenDays">7 dagar</string>
+  <!--K-->
+  <!--J-->
+  <!--L-->
+  <string name="LastScraperUpdate">SÃ­Ã°asta uppfÃ¦rsla skÃ¶funar</string>
+  <string name="LanguageFilter">Ãtarlegra: TungumÃ¡lasÃ­a</string>
+  <string name="LanguageFilterDescription">SÃ©rstÃ¶k sÃ­a sem inniheldur Ã¶nnur tungumÃ¡l en ensku (en). NotiÃ° imdb.com HTML kÃ³Ã°ann til aÃ° finna ISO 639-1 kÃ³dann sem er fyrir aftan /language/.\n\nSjÃ¡lfgefiÃ° tungumÃ¡l er enska: \'en\'\n\nEn ef Ã¾Ãº ert frÃ¡ Ãslandi og vilt hafa Ã­slenskar kvikmyndir meÃ° upprunalegum titli og enskan titil fyrir allt annaÃ°, notiÃ°: \'en.is\'\n\nAth.: LyklaborÃ° MediaPortal styÃ°ur ekki \'|\' tÃ¡kniÃ°, svo aÃ° \'.\' var notaÃ° Ã¾ess Ã­ staÃ° til aÃ° skilja Ã¡ milli mismunandi tungumÃ¡la. NotiÃ° meÃ° varÃºÃ° Ã¾ar sem breyting Ã¡ Ã¾essari stillingu getur stÃ¶Ã°vaÃ° virkni IMDb+ skÃ¶funar.\n</string>
+  <string name="LongSummary">AÃ° nota Ã­tarlÃ½singu getur spillt fyrir Ã¾Ã©r (of mikiÃ° uppgefiÃ°)</string>
+  <string name="LongSummaryDescription">Af = Styttri lÃ½sing Ã¡ sÃ¶guÃ¾rÃ¦Ã°i kvikmyndar\nÃ = Lengri lÃ½sing Ã¡ sÃ¶guÃ¾rÃ¦Ã°i (gÃ¦ti spillt fyrir)\n\nÃtarlÃ½sing gefur meiri upplÃ½singar, en gÃ¦ti spillt fyrir. Ãžess vegna er Ã¾etta haft Ã³virkt Ã­ upphafi, en aÃ° sjÃ¡lfsÃ¶gÃ°u getur Ã¾Ãº virkjaÃ° Ã¾etta.\n</string>
+  <!--M-->
+  <string name="MinIMDbVotes">LÃ¡gmarks fjÃ¶ldi af IMDb atkvÃ¦Ã°um</string>
+  <string name="MinIMDbVotesDescription">Af = Ãvallt aÃ° nota imdb.com einkunnagjÃ¶f\nÃ = AÃ°eins aÃ° nota imdb.com einkunnagjÃ¶f meÃ° fleirum en 20 atkvÃ¦Ã°um\n\nStarfsmenn viÃ° kvikmyndir hafa Ã¡hrif Ã¡ einkunnagjÃ¶f IMDb.com Ã¡ sÃ­nar kvikmyndir. Ãžess vegna er ekki Ã³algengt aÃ° kvikmyndir meÃ° fÃ¦rri en 20 atkvÃ¦Ã°i hafi hÃ¡a einkunnagjÃ¶f.\n\nEn ef Ã¾etta er virkjaÃ° Ã¾Ã¡ er kvikmyndum meÃ° fÃ¦rri en 20 atkvÃ¦Ã°um sleppt.\n</string>
+  <string name="MultiSelectDialog">Multi-Select Dialog</string>
+  <!--N-->
+  <string name="No">Nei</string>
+  <string name="NumberOfMovies">{0}/{1} kvikmyndir</string>
+  <string name="NumberOfMovies2">{0} kvikmyndir</string>
+  <string name="NoSourcesFound">Fannst engin kvikmynd sem skikkjuÃ°\ntil aÃ° nota IMDb+ skriftina!</string>
+  <string name="NullSource">Engin skÃ¶fun, en nothÃ¦ft IMDb-kenni</string>
+  <!--O-->
+  <string name="OneWriterDirector">Takmarka innflutning Ã¡ aÃ°eins einum handritshÃ¶fundi og leikstjÃ³ra</string>
+  <string name="OneWriterDirectorDescription">Af = Alla handritshÃ¶funda og leikstjÃ³ra\nÃ = AÃ°eins fyrsta nafn handritshÃ¶funda og leikstjÃ³ra\n\nSum Ãºtlit hafa ekki plÃ¡ss fyrir alla handritshÃ¶funda og leikstjÃ³ra. Svo ef Ã¾Ãº vilt koma Ã­ veg fyrir lÃ¡rÃ©tta skrunun, virkjaÃ°u Ã¾Ã¡ Ã¾ennan mÃ¶guleika til aÃ° fÃ¡ aÃ°eins fyrsta handritshÃ¶fund og leikstjÃ³ra.\n\nHafiÃ° Ã­ huga aÃ° Ã¾etta hefur Ã¡hrif Ã¡ leitun aÃ° kvikmyndum meÃ° Ã¡kveÃ°num handritshÃ¶fundi eÃ°a leikstjÃ³ra Ã¾ar sem aÃ°eins einn handristhÃ¶fundur eÃ°a leikstjÃ³ri er fyrir hverja kvikmynd. En aftur Ã¡ mÃ³ti eru Ã¾aÃ° fÃ¡ar kvikmyndir sem eru meÃ° fleiri en einn handritshÃ¶fund eÃ°a leikstjÃ³ra.\n</string>
+  <string name="OriginalTitle">Nota upprunalegan kvikmyndatitil</string>
+  <string name="OriginalTitleDescription">Af = Alltaf aÃ° nota enskt kvikmyndaheiti\nÃ = Nota upprunalegan titil fyrir erlendar kvikmyndir\n\nErlendar kvikmyndir hafa oft ekki enskan kvikmyndatitil.\n\nEf Ã¾Ãº vilt aÃ° allar kvikmyndir noti enskan titil, afmerktu Ã¾ennan mÃ¶guleika.\n</string>
+  <!--P-->
+  <!--R-->
+  <string name="Ratings">English Rating/Certification System</string>
+  <string name="RatingsDescription">ÃžaÃ° eru til nokkrar tegundir af enskum aldurstakmÃ¶rkunum Ã­ heiminum.  ÃžaÃ° Ã¾ekktasta er amerÃ­ska MPAA kerfiÃ° sem gefur niÃ°urstÃ¶Ã°ur eins og PG-13, R, NC-17, o.s.frv.\n\nNotendur Ã­ ÃstralÃ­u, Kanada, StÃ³ra-Bretlandi og NÃ½ja SjÃ¡landi geta notaÃ° Ã¾essar stillingar til aÃ° velja Ã¾eirra eigin aldurstakmarkanir.\n</string>
+  <string name="RatingsHeader">VeljiÃ° tegund aldurstakmarkana</string>
+  <string name="Rating01">BandarÃ­kin</string>
+  <string name="Rating02">Bretland</string>
+  <string name="Rating03">Kanada (Alberta)</string>
+  <string name="Rating04">Kanada (Breska KolumbÃ­a)</string>
+  <string name="Rating05">Kanada (Manitoba)</string>
+  <string name="Rating06">Kanada (Nova Scotia)</string>
+  <string name="Rating07">Kanada (Ontario)</string>
+  <string name="Rating08">Kanada (Quebec)</string>
+  <string name="Rating09">ÃstralÃ­a</string>
+  <string name="Rating10">NÃ½ja SjÃ¡land</string>
+  <string name="RefreshMovies">Endurstilla kvikmyndir</string>
+  <string name="RefreshingMovies">Endurstilli kvikmyndir</string>
+  <string name="RefreshCancel">HÃ¦tta viÃ° endurstillingu</string>
+  <string name="RefreshMoviesDescription">Ertu viss um aÃ° endurstilla allar kvikmyndir\nsem hafa IMDb+ sem sjÃ¡lfgefna skÃ¶fun?\n</string>
+  <string name="RefreshMovieStatus">Endurstilling {0}/{1} kvikmynda: {2}%</string>
+  <string name="RefreshMoviesNotification">IMDb+ endurstilling er lokiÃ°.\nNjÃ³tiÃ° niÃ°urstÃ¶Ã°unnar.\n</string>
+  <string name="RefreshMoviesCancelNotification">HÃ¦tt var viÃ° endurstillingu kvikmynda.\n{0} kvikmyndir voru uppfÃ¦rÃ°ar.\nEndurstilliÃ° aftur til aÃ° halda Ã¡fram.\n</string>
+  <string name="RefreshAllFields">Endurstilla Ã¶ll svÃ¦Ã°i</string>
+  <string name="RefreshAllFieldsDescription">Af = UppfÃ¦ra nokkur svÃ¦Ã°i\nÃ = Endurstilla allt\n\nÃžaÃ° er stanslaust veriÃ° aÃ° uppfÃ¦ra upplÃ½singar hjÃ¡ IMDb. Vegna Ã¾essa er skynsamlegt aÃ° uppfÃ¦ra kvikmyndasafniÃ° Ã¾itt.\n\nVirkja Ã¾essa stillingu tryggir aÃ° allt sÃ© uppfÃ¦rt. Annars vegar uppfÃ¦rist aÃ°eins auÃ° svÃ¦Ã°i, aldurstakmÃ¶rk, einkunnagjÃ¶f og atkvÃ¦Ã°i.\n\nAth.: Ãžessi stilling Ã³virkir kerfiÃ° sem endurnefnir eldri kvikmyndir Ã­ safninu.\n</string>
+  <string name="RemoveFirstRoman">EyÃ°a rÃ³mverskri tÃ¶lu af fyrstu kvikmyndinni</string>
+  <string name="RemoveFirstRomanDescription">Af = Halda endurnefndum titli eins\nÃ = EyÃ°a rÃ³mverskri tÃ¶lu af fyrstu kvikmyndinni\n\nEf kerfiÃ° sem endurnefnir kvikmyndir er virkt, Ã¾Ã¡ er sjÃ¡lfgefiÃ° aÃ° kvikmyndir eru raÃ°aÃ°ar saman meÃ° rÃ³mversku tÃ¶lum fremst Ã­ titli. Ãžetta er einnig gert fyrir fyrstu kvikmyndina Ã­ serÃ­unni, \'Avatar\' verÃ°ur \'Avatar I\'. Virkja Ã¾essa stillingu mun raÃ°a kvikmyndinni rÃ©tt, en mun eyÃ°a rÃ³mversku tÃ¶lunni Ãºr titlinum.\n\nHafiÃ° Ã­ huga aÃ° Ã¾etta gerist aÃ°eins ef fyrsta kvikmyndin Ã­ serÃ­unni hefur ekki undirtitil. \'Indiana Jones I: Raiders of the Lost Ark\' mun Ã¾ess vegna halda rÃ³mversku tÃ¶lunni.\n</string>
+  <string name="RenameTitles">Endurnefna titla svo aÃ° kvikmyndum er raÃ°aÃ° saman</string>
+  <string name="RenameTitlesDescription">Af = Nota upprunalegan titil\nÃ = Endurnefna titla svo aÃ° serÃ­ur er raÃ°aÃ° saman\n\nÃžaÃ° eru margar kvikmyndaserÃ­ur, og stundum hafa kvikmyndirnar ekki sama forskeyti til aÃ° raÃ°a Ã¾eim saman. Til aÃ° leysa Ã¾aÃ°, er gagnaskrÃ¡ meÃ° endurnefndum titlum Ã¾ar sem er notaÃ° IMDb tt-einkenniÃ°. NiÃ°urstaÃ°an er sÃº aÃ° kvikmyndir eru endurnefnar svo aÃ° auÃ°velt er aÃ° tengja Ã¾Ã¦r viÃ° kvikmyndaserÃ­una.\n\nT.d.: \'Batman VII: The Dark Knight Rises\' mun raÃ°ast rÃ©tt meÃ° Ã¶Ã°rum kvikmyndum Ã­ serÃ­unni.\n\nGagnaskrÃ¡in fyrir endurnefndu titlana er vistuÃ° Ã­ skrÃ¡nni \'IMDb+\Rename dBase IMDb+ Scraper.xml\' sem er undir MediaPortal User mÃ¶ppunni.\n\nAllar eigin endurnefningar eiga aÃ° fara innÃ­ \'IMDb+\Rename dBase IMDb+ Scraper (Custom).xml\'\n\nÃžÃº getur notaÃ° notepad til aÃ° breyta eigin endurnefningum, Ã¾ar sem sjÃ¡lfgefna gagnaskrÃ¡in verÃ°ur uppfÃ¦rÃ° reglulega, vinsamlegast passiÃ° aÃ° innihald XML skrÃ¡nna sÃ© samhÃ¦fÃ°.\n</string>
+  <string name="RottenMeter">RottenTomatoes TomatoMeter</string>
+  <string name="RottenMeterDescription">Af = RottenTomatoes \'Audience\' einkunnagjÃ¶f\nÃ = RottenTomatoes \'TomatoMeter\' einkunnagjÃ¶f\n\nÃžaÃ° eru mismunandi einkunnagjÃ¶f til Ã¡ vefsÃ­Ã°u RottenTomatoes.\n\nTil aÃ° virkja einhvern af \'TomatoMeter\' einkunnagjÃ¶finni, Ã¾Ã¡ verÃ°ur Ã¾Ãº aÃ° virkja Ã¾essa stillingu, annars mun \'Audience\' gilda.\n</string>
+  <string name="RottenAverage">RottenTomatoes meÃ°atals einkunnagjÃ¶f</string>
+  <string name="RottenAverageDescription">Af = RottenTomatoes \'Percentage\' einkunnagjÃ¶f\nÃ = RottenTomatoes \'Average\' einkunnagjÃ¶f\n\nMeÃ° Ã¾essa stillingu Ã¡ Ã¾Ã¡ mun kerfiÃ° nota \'Average\' einkunnagjÃ¶fina, annars \'Percentage\' einkunnagjÃ¶fina.\n\n\'Percentage\' einkunnagjÃ¶fin hefur sÃ©rstakt gildi, finnur hlutfall RottenTomatoes notenda, hvernig Ã¾eir gÃ¡fu einkunn.\n</string>
+  <string name="RottenTopCritics">RottenTomatoes aÃ°al gagnrÃ½nendur</string>
+  <string name="RottenTopCriticsDescription">Af = RottenTomatoes \'All\' gagnrÃ½nendur\nÃ = RottenTomatoes \'Top\' gagnrÃ½nendur\n\nÃžaÃ° er til TomatoMeter einkunnakerfi fyrir alla gagnrÃ½nendur eÃ°a aÃ°eins \'Topp\' gagnrÃ½nendur.\n\nVirkja Ã¾essa stillingu mun eingÃ¶ngu nota topp gagnrÃ½nendur.\n</string>
+  <string name="Resume">(Halda Ã¡fram)</string>
+  <!--S-->
+  <string name="ScraperOptionsTitle">IMDb+ skÃ¶funarmÃ¶guleikar</string>
+  <string name="ScraperNotFirstPrompt">IMDb+ skÃ¶fun er ekki efstur!\nÃžetta mun valda vandamÃ¡lum.\nViltu laga Ã¾etta?</string>
+  <string name="SecondaryDetails">FÃ¡ viÃ°bÃ³tarupplÃ½singar fyrir eftirfarandi tungumÃ¡l</string>
+  <string name="SecondaryDetailsDescription">ÃžaÃ° er stuÃ°ningur Ã¡ Ã½msum upplÃ½singum Ã¡ mismunandi tungumÃ¡lum. Ãžetta nÃ¦r yfir eins og sÃ¶guÃ¾rÃ¡Ã°, aldurstakmÃ¶rk, flokkun og jafnvel fleira.\n\nNÃºverandi stuÃ°ningur nÃ¦r yfir: hollensku, frÃ¶nsku, Ã¾Ã½sku, Ã­slensku, Ã­tÃ¶lsku, portÃºgÃ¶lsku, spÃ¦nsku og sÃ¦nsku.\n</string>
+  <string name="SecondaryDetailsHeader">AnnaÃ° tungumÃ¡l</string>
+  <string name="SecondaryLanguage01">Enska</string>
+  <string name="SecondaryLanguage02">ÃžÃ½ska</string>
+  <string name="SecondaryLanguage03">SpÃ¦nska</string>
+  <string name="SecondaryLanguage04">Franska</string>
+  <string name="SecondaryLanguage05">Ãtalska</string>
+  <string name="SecondaryLanguage06">PotÃºgalska</string>
+  <string name="SecondaryLanguage07">SÃ¦nska</string>
+  <string name="SecondaryLanguage08">Ãslenska</string>
+  <string name="SecondaryLanguage09">Hollenska</string>
+  <string name="SecondarySummary">Enska notuÃ° ef erlenda tungumÃ¡liÃ° er ekki til</string>
+  <string name="SecondarySummaryDescription">Af = SÃ½na ekkert ef valiÃ° tungumÃ¡l Ã¡ ekki til lÃ½singu\nÃ = Nota sÃ¶guÃ¾rÃ¡Ã° Ã¡ ensku Ã¾egar sÃ¶guÃ¾rÃ¡Ã°ur Ã¡ vÃ¶ldu tungumÃ¡li er ekki til\n\nErlendar kvikmyndasÃ­Ã°ur eru ekki alltaf eins Ã­tarlegar eins og imdb.com eÃ°a hafa sÃ¶mu upplÃ½singar. Ãžetta hefur aÃ°allega Ã¡hrif Ã¡ sÃ¶guÃ¾rÃ¡Ã°, svo til Ã¾ess aÃ° koma Ã­ veg fyrir aÃ° safniÃ° verÃ°i tÃ³mt, hafiÃ° Ã¾ennan mÃ¶guleika Ã¡ (ef mÃ¶gulegt). Hugmynd vÃ¦ri aÃ° skrÃ¡ sig Ã¡ sÃ­Ã°una og bÃ¦ta viÃ° Ã¾essum upplÃ½singum, en annars aÃ° nota ensku upplÃ½singarnar.\n</string>
+  <string name="SecondaryEnglishTitle">Enskur undirtitill</string>
+  <string name="SecondaryEnglishTitleDescription">Af = Nota erlendan titil\nÃ = ÃžrÃ¶ngva enskum titli\n\nEf valiÃ° er annaÃ° tungumÃ¡l en enska fyrir Ã½msar upplÃ½singar, Ã¾Ã¡ mun titill vera Ã­ sama tungumÃ¡li. Ãžessi mÃ¶guleiki er til Ã¾ess aÃ° halda Ã­ enskan titil.\n\nAth.: Ãžetta Ã¡ ekki viÃ° endurnefningar. ÃžaÃ° Ã¾arf aÃ° hafa Ã¾Ã½ddan titil til aÃ° fÃ¡ erlendan titil, Ã¾Ã³ aÃ° Ã¾essi stilling sÃ© Ã³virk.\n</string>
+  <string name="SingleScore">Nota staka einkunnagjÃ¶f</string>
+  <string name="SingleScoreDescription">Af = Nota meÃ°altals einkunnagjÃ¶f\nÃ = Nota staka einkunnagjÃ¶f\n\nÃžaÃ° getur veriÃ° stÃ³r munur Ã¡ milli mismunandi einkunnagjafa. Til aÃ° jafna Ã¾aÃ° er notuÃ° meÃ°atals gildi einkunna frÃ¡ imbd, metacritics og rottentomatoes.\n\nAth.: Ef \'IMDb einkunnagjÃ¶f\' er virkjuÃ°, Ã¾Ã¡ verÃ°ur aÃ°eins notuÃ° meÃ°tal af IMDb og Metacritics Ã¾egar Ã¾essi stilling er notuÃ° fyrir meÃ°atals einkunnagjÃ¶f.\n</string>
+  <string name="SpecialEditions">Endurnefna sÃ©rstakar ÃºtgÃ¡fur</string>
+  <string name="SpecialEditionsDescription">Af = Nota upprunalegan titil\nÃ = BÃ¦ta viÃ° sÃ©rstÃ¶kum ÃºtgÃ¡fumtÃ¶gum viÃ° titilinn\n\nEf Ã¾Ãº hefur IMDb tt-ID number Ã­ skrÃ¡arheiti eÃ°a Ã­ gegnum NFO skrÃ¡, hafÃ°u Ã¾Ã¡ Ã¾ennan mÃ¶guleika Ã¡ fyrir sÃ©rstaka tÃ¶gun.\n\nÃžÃº getur bÃ¦tt viÃ° eftirfarandi mÃ¶guleikum Ã­ skrÃ¡arheitiÃ° innan sviga:\n\n - 3D\n - Extended\n - Unrated\n - Director\'s Cut\n - Alternate Ending\n\nÃžÃº getur einnig bÃ¦tt viÃ° \'Edition\' fyrir aftan ef Ã¾Ãº vilt.\n\nDÃ¦mi: \"Avatar (tt0499549) (3D).mkv\" mun gefa heitiÃ° \"Avatar (3D)\"\n</string>
+  <string name="SettingPluginEnabledName">ViÃ°bÃ¦tur virkt</string>
+  <string name="SettingPluginEnabledDescription">Virkja / Ã³virkja Ã¾ennan mÃ¶guleika Ã¡ IMDb+ viÃ°bÃ¦tum ef notaÃ° meÃ° MediaPortal.</string>
+  <string name="SettingListedHomeName">Birt Ã­ Home</string>
+  <string name="SettingListedHomeDescription">Virkja Ã¾ennan mÃ¶guleika ef IMDb+ eigi aÃ° birtast Ã­ Home valmyndinni.</string>
+  <string name="SettingListedPluginsName">Birt Ã­ ViÃ°bÃ¦tum</string>
+  <string name="SettingListedPluginsDescription">Virkja Ã¾ennan mÃ¶guleika fyrir IMDb+ til aÃ° birtast Ã­ ViÃ°bÃ¦tur valmyndinni.</string>
+  <string name="SettingsSyncIntervalName">FjÃ¶ldi klukkustunda Ã¾angaÃ° til aÃ° athugaÃ° er meÃ° nÃ¦stu uppfÃ¦rslu</string>
+  <string name="SettingsSyncIntervalDescription">Ãžessi stilling athugar hve oft IMDb+ eigi aÃ° athuga Ã¡ internetinu af nÃ½rri ÃºtgÃ¡fu af sÃ©r.</string>
+  <string name="SettingsSyncOnStartupName">Athuga meÃ° uppfÃ¦rslu Ã­ rÃ¦singu MediaPortal</string>
+  <string name="SettingsSyncOnStartupDescription">Ãžessi stilling athugar meÃ° uppfÃ¦rslu af sÃ©r Ã¡ internetinu Ã­ rÃ¦singu Ã¡ MediaPortal.</string>
+  <string name="SettingsDisableNotificationsName">Ã“virkja upplÃ½singar</string>
+  <string name="SettingsDisableNotificationsDescription">Ãžessi stilling leyfir Ã¾Ã©r aÃ° Ã³virkja upplÃ½singar um uppfÃ¦rslur sem hafa veriÃ° settar inn.</string>
+  <string name="SelectSources">Velja skÃ¶fun sem Ã¡ aÃ° IMDb+ Ã¡ taka yfir og uppfÃ¦ra</string>
+  <string name="StartsWith">Byrjar Ã¡ {0}</string>
+  <string name="SelectAlphas">Velja kvikmyndir sem byrja Ã¡...</string>
+  <!--T-->
+  <!--U-->
+  <string name="UkRating">Bresk-ensk kvikmyndaheiti</string>
+  <string name="UkRatingDescription">Af = Nota amerÃ­skar-ensk kvikmyndaheiti\nÃ = Nota breska-ensk kvikmyndaheiti\n\nNota Ã¾essa stillingu fyrir breska-enska kvikmyndatitla.\nÃžekkt dÃ¦mi er fyrsta Harry Potter kvikmyndin.  Upprunalegur titill er \"Harry Potter and the Philosopher\'s Stone\", sem var amerÃ­kanseraÃ° Ã­ \"Harry Potter and the Sorcerer\'s Stone\".  Ãžar sem vefsÃ­Ã°an IMDb er stÃ­luÃ° Ã¡ amerÃ­ska Ã¡horfendur Ã¾Ã½Ã°ir Ã¾aÃ° aÃ° allar kvikmyndir nota amerÃ­ska-enska titla ef Ã¾eir eru til.  MeÃ° Ã¾essari stillingu getur Ã¾Ãº breytt Ã¾vÃ­ Ã­ breska-enska titla.\n\nAth.: NÃº er ekki enn til endurnefningargagnagrunnur fyrir breska-enska titla, svo aÃ° Ã¾Ãº endar meÃ° \"Harry Potter I: Sorcerer\'s Stone\", en Ã¾Ãº getur breytt Ã¾vÃ­ Ã­ gegnum eigin endurnefningargagnagrunninn Ã­ bili Ã¾angaÃ° til stuÃ°ningur verÃ°ur gerÃ°ur Ã­ IMDb+ viÃ°bÃ³tinni.\n</string>
+  <string name="UpdatedScraperScript">MovingPictures hefur veriÃ° uppfÃ¦rt meÃ° IMDb+ Scraper skriptinni v{0}</string>
+  <string name="Update">UppfÃ¦ra</string>
+  <string name="UpdateAll">UppfÃ¦ra allt</string>
+  <string name="UpdateReplacementOnly">UppfÃ¦ra aÃ°eins endurnefningar</string>
+  <string name="UpdateAlphas">UppfÃ¦ra kvikmyndir, byrja Ã¡...</string>
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+  <string name="Yes">JÃ¡</string>
+</resources>

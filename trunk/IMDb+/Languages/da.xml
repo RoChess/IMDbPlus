@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <!--B-->
+  <!--C-->
+  <string name="Cancel">Annuller</string>
+  <!--D-->
+  <!--E-->
+  <!--F-->
+  <!--G-->
+  <!--H-->
+  <!--I-->
+  <!--K-->
+  <!--J-->
+  <!--L-->
+  <!--M-->
+  <string name="MultiSelectDialog">Markér flere</string>
+  <!--N-->
+  <string name="No">Nej</string>
+  <!--O-->
+  <!--P-->
+  <!--R-->
+  <!--S-->
+  <string name="SettingPluginEnabledName">Tilføjelse slået til</string>
+  <string name="SettingListedHomeName">Vis i Hjem</string>
+  <string name="SettingListedPluginsName">Vis i Mine Tilføjelser</string>
+  <!--T-->
+  <!--U-->
+  <string name="Update">Opdater</string>
+  <string name="UpdateAll">Opdater alle</string>
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+  <string name="Yes">Ja</string>
+</resources>

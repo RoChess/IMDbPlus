@@ -1,349 +1,161 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- IMDb+ translation file -->
-<!-- English (US) -->
-<!-- Note: English is the fallback for any strings not found in other languages -->
-<strings>
-	<!-- A -->
-	<string Field="AddForeignTitle">Add the foreign title</string>
-	<string Field="AddForeignTitleDescription">Off = Keep title as-is
-On = Add the original title in parentheses
-
-Enabling this setting will allow you to see the original title in parentheses after the English title.
-
-Example: Black Book (Zwartboek)
-</string>
-
-	<!-- B -->
-	<string Field="BoolOn">On</string>
-	<string Field="BoolOff">Off</string>
-
-	<!-- C -->
-	<string Field="Cancel">Cancel</string>
-	<string Field="CountryFilter">Advanced: Country filter</string>
-	<string Field="CountryFilterDescription">There are some English language based movies that have a foreign title. So to aid in the proper detection of English titles it was needed to also filter on the country in which the movie was produced.
-
-Default countries that do not use foreign titles are: 'us.ca.gb.ie.au.nz' (United States, Canada, Great Britain, Ireland, Australia and New Zealand)
-
-Note: The MediaPortal virtual keyboard does not support the '|' character, so a '.' was used instead to seperate the different languages. Be very careful in adjusting this setting as it can stop the function of the IMDb+ scraper.
-</string>
-
-	<!-- D -->
-	<string Field="DefaultDescription">Highlight any of the above options and a more detailed explanation will be shown here.</string>
-
-	<!-- E -->
-
-	<!-- F -->
-	<string Field="First">First</string>
-	<string Field="FixMissingSummary">Force user-review for empty summary</string>
-	<string Field="FixMissingSummaryDescription">Off = Keep summary empty
-On = Force user-review as summary
-
-Not every movie has a summary available yet at the imdb.com website. In some cases, the same movie does however have a user-review. This setting allows you to use this user-review then instead of showing nothing.
-
-Note: Be warned that user-reviews can contain spoilers.
-</string>
-	<string Field="ForceIMDbPlus">Force IMDb+</string>
-	<string Field="ForceIMDbPlusDescription">Are you ready to force all your existing
-movies, imported with the default IMDb
-scraper, to start using the IMDb+ one?
-</string>
-	<string Field="ForceIMDbPlusComplete">Successfully switched {0}/{1} movies
-over to the IMDb+ scraper.
-</string>
-	<string Field="ForeignTitleFirst">Start the title with the foreign one first</string>
-	<string Field="ForeignTitleFirstDescription">Off = English (Foreign)
-On = Foreign (English)
-
-Enabling this setting shows the original foreign title first followed by the English title in parentheses.
-
-Example: Zwartboek (Black Book)
-</string>
-
-	<!-- G -->
-
-	<!-- H -->
-
-	<!-- I -->
-	<string Field="IMDbMetaScore">Metacritics MetaScore</string>
-	<string Field="IMDbMetaScoreDescription">Off = Main imdb.com score is used
-On = Use Metacritics Metascore instead
-
-The imdb.com website also offers the Metacritics.com metascore. Enabling this setting will use that score, otherwise the IMDb score is used.
-
-Note: This setting requires that the 'IMDb Score' setting is also enabled and will therefore disable the RottenTomatoes method for missing summary and runtime info.
-</string>
-	<string Field="IMDbScore">IMDb Score</string>
-	<string Field="IMDbScoreDescription">Off = Use RottenTomatoes website
-On = Restrict to imdb.com website only
-
-RottenTomatoes offers additional info, but if you want to restrict yourself to imdb.com then enable this setting.
-
-Note: This also disables getting missing summary, runtime and scoreing.
-</string>
-	<string Field="IMDbInfo">IMDb+ Info</string>
-	<string Field="InfoPluginVersion">Plugin Version: v{0}</string>
-	<string Field="InfoScraperAuthor">Scraper Author: {0}</string>
-	<string Field="InfoScraperVersion">Scraper Version: v{0}</string>
-	<string Field="InfoScraperPriority">Scraper Priority: {0}</string>
-	<string Field="InfoScraperPublished">Scraper Published: {0}</string>
-	<string Field="InfoScraperLastUpdateCheck">Scraper Last Update Check: {0}</string>
-	<string Field="InfoMoviesIMDbPlusPrimary">Movies using IMDb+ as scraper source: {0}</string>
-	<string Field="InfoMoviesOtherPlusPrimary">Movies that use a different scraper: {0}</string>
-	<string Field="InfoReplacementsVersion">Replacements Version: v{0}</string>
-	<string Field="InfoReplacementsPublished">Replacements Published: {0}</string>
-	<string Field="InfoReplacementEntries">Replacement Entries: {0}</string>
-	<string Field="InfoCustomReplacementEntries">Replacement Entries (Custom): {0}</string>
-	<string Field="IntervalSixHours">6 Hours</string>
-	<string Field="IntervalTwelveHours">12 Hours</string>
-	<string Field="IntervalTwentyFourHours">24 Hours</string>
-	<string Field="IntervalTwoDays">2 Days</string>
-	<string Field="IntervalThreeDays">3 Days</string>
-	<string Field="IntervalFourDays">4 Days</string>
-	<string Field="IntervalSevenDays">7 Days</string>
-
-	<!-- K -->
-
-	<!-- J -->
-
-	<!-- L -->
-	<string Field="LastScraperUpdate">Last Scraper Update</string>
-	<string Field="LanguageFilter">Advanced: Language filter</string>
-	<string Field="LanguageFilterDescription">Special filter to include other language titles besides English (en). Use the imdb.com HTML source to find the ISO 639-1 code after /language/.
-
-Default language is English via: 'en'
-
-However if you are from Norway and you wish to have Norwegian movies use their original title and English titles for everything else, then use: 'en.no'
-
-Note: The MediaPortal virtual keyboard does not support the '|' character, so a '.' was used instead to seperate the different languages. Be very careful in adjusting this setting as it can stop the function of the IMDb+ scraper.
-</string>
-	<string Field="LongSummary">Use long summaries which may contain spoilers</string>
-	<string Field="LongSummaryDescription">Off = Short summary to describe movie plot
-On = Long summary (might contain spoilers)
-
-Long summaries offer more information, but can sometimes have spoilers contained within them. This is why this setting is disabled by default, but you can of course enable it if you prefer them.
-</string>
-
-	<!-- M -->
-	<string Field="MinIMDbVotes">Minimum amount of IMDb votes required</string>
-	<string Field="MinIMDbVotesDescription">Off = Always use imdb.com score
-On = Only use imdb.com scores with 20+ votes
-
-The IMDb score is inflated a lot of times by the people who worked on the movie. This is why it is not uncommon for a movie with less then 20 votes to have a very high rating.
-
-If you enable this setting then the IMDb scores with less then 20 votes are ignored.
-</string>
-	<string Field="MultiSelectDialog">Multi-Select Dialog</string>
-
-	<!-- N -->
-	<string Field="No">No</string>
-	<string Field="NumberOfMovies">{0}/{1} Movies</string>
-	<string Field="NumberOfMovies2">{0} Movies</string>
-	<string Field="NoSourcesFound">No movies found that can be forced
-into using the IMDb+ scraper script!</string>
-	<string Field="NullSource">No source, but usable IMDb-ID</string>
-
-	<!-- O -->
-	<string Field="OneWriterDirector">Limit import to only one writer and director</string>
-	<string Field="OneWriterDirectorDescription">Off = Get all the names for writers and directors
-On = Only use first name for writers and directors
-
-Some skins do not allow much room for writers and directors. So if you want to prevent horizontal scrolling, then enable this setting to only import the first name for writers and directors.
-
-Keep in mind that this will affect your ability to search for movies done by a certain writer or director as only one name will be available per movie. On the other hand the amount of movies that feature multiple writers and/or directors are very limited.
-</string>
-	<string Field="OriginalTitle">Use the original title from the movie</string>
-	<string Field="OriginalTitleDescription">Off = Always force English title
-On = Use original title for foreign movies
-
-Foreign movies often have a non-English title.
-
-If you want all your movies to use an English title, then keep this setting disabled.
-</string>
-
-	<!-- P -->
-
-	<!-- R -->
-	<string Field="Ratings">English Rating/Certification System</string>
-	<string Field="RatingsDescription">There are multiple English based rating/certification systems throughout the world. The most famous one is the American based MPAA rating system with results such as PG-13, R, NC-17, etc.
-
-Users in Australia, Canada, United Kingdom, and New Zealand can use this setting to switch to their localized rating system.</string>
-	<string Field="RatingsHeader">Select Rating System</string>
-	<string Field="Rating01">USA</string>
-	<string Field="Rating02">UK</string>
-	<string Field="Rating03">Canada (Alberta)</string>
-	<string Field="Rating04">Canada (British Columbia)</string>
-	<string Field="Rating05">Canada (Manitoba)</string>
-	<string Field="Rating06">Canada (Nova Scotia)</string>
-	<string Field="Rating07">Canada (Ontario)</string>
-	<string Field="Rating08">Canada (Quebec)</string>
-	<string Field="Rating09">Australia</string>
-	<string Field="Rating10">New Zealand</string>
-	<string Field="RefreshMovies">Refresh Movies</string>
-	<string Field="RefreshingMovies">Refreshing Movies</string>
-	<string Field="RefreshCancel">Cancel Refresh</string>
-	<string Field="RefreshMoviesDescription">Are you sure you want to refresh all movies
-that have IMDb+ as primary source?</string>
-	<string Field="RefreshMovieStatus">Refreshing {0}/{1} Movies: {2}%</string>
-	<string Field="RefreshMoviesNotification">IMDb+ movie refresh is done.
-Please enjoy the results.</string>
-	<string Field="RefreshMoviesCancelNotification">Refresh has been cancelled.
-{0} movies done so far.
-Refresh again to resume.</string>
-	<string Field="RefreshAllFields">Refresh all of the fields</string>
-	<string Field="RefreshAllFieldsDescription">Off = Only update a few things
-On = Update everything
-
-The information at IMDb is constantly updated and completed. For this reason it makes sense to once in a while update movies in your collection.
-
-Enabling this setting will force everything to be updated. Otherwise only empty, certifications, score and votes fields are updated on a refresh.
-
-Note: This setting disables the rename system for existing movies.
-</string>
-	<string Field="RemoveFirstRoman">Remove Roman numeral from first movie</string>
-	<string Field="RemoveFirstRomanDescription">Off = Keep renamed title as-is
-On = Strip Roman numeral from first movie
-
-If the rename system is enabled, then by default, series will be grouped by adding Roman numerals to the title. This is also done to the first movie in the series, so 'Avatar' becomes 'Avatar I'. Enabling this setting will still sort the first movie in the series correct, but it will remove the Roman numeral from the title.
-
-Keep in mind that this is only done when the first movie in the series does not have a subtitle. The movie 'Indiana Jones I: Raiders of the Lost Ark' will therefore keep its Roman numeral.
-</string>
-	<string Field="RenameTitles">Rename titles so that series are grouped together</string>
-	<string Field="RenameTitlesDescription">Off = Use title as-is
-On = Rename title so that series will group together
-
-There are many movie series, and sometimes the titles do not start with the same prefix to group them together. To solve this, a rename database file is used that will rename a title based on the IMDb tt-ID number. The result is that movies are renamed so that they are easy to identify as being part of a series.
-
-Example: 'Batman VII: The Dark Knight Rises' will group nicely along with the other movies in the series.
-
-The default rename titles are placed in a file 'IMDb+\Rename dBase IMDb+ Scraper.xml' which resides in your MediaPortal User folder.
-
-Any custom rename entries that you want should go into 'IMDb+\Rename dBase IMDb+ Scraper (Custom).xml'
-
-You can use notepad to edit the custom one, as the default one will be automatically updated at times, please make sure that the contents of the XML files remain compliant.
-</string>
-	<string Field="RottenMeter">RottenTomatoes TomatoMeter</string>
-	<string Field="RottenMeterDescription">Off = RottenTomatoes 'Audience' ratings
-On = RottenTomatoes 'TomatoMeter' ratings
-
-There are many different ratings available at the RottenTomatoes website.
-
-To use any of the TomatoMeter ratings you have to enable this setting, otherwise the 'Audience' one is used.
-</string>
-	<string Field="RottenAverage">RottenTomatoes average rating</string>
-	<string Field="RottenAverageDescription">Off = RottenTomatoes 'Percentage' rating
-On = RottenTomatoes 'Average' rating
-
-With this setting enabled the 'Average' rating value is used, otherwise the 'Percentage' value is.
-
-The 'Percentage' rating is a special kind, in that it counts the amount of RottenTomatoes users who voted a certain way.
-</string>
-	<string Field="RottenTopCritics">RottenTomatoes top critics</string>
-	<string Field="RottenTopCriticsDescription">Off = RottenTomatoes 'All' critics
-On = RottenTomatoes 'Top' critics
-
-There is a TomatoMeter rating available for all of the critics and a select group of 'Top' critics.
-
-Enabling this setting will limit your rating to just the top ones.
-</string>
-	<string Field="Resume">(Resume)</string>
-
-	<!-- S -->
-	<string Field="ScraperOptionsTitle">IMDb+ Scraper Options</string>
-	<string Field="ScraperNotFirstPrompt">The IMDb+ scraper is not first!\nThis will cause problems.\nWould you like to correct this?</string>
-	<string Field="SecondaryDetails">Obtain additional information in the following language</string>
-	<string Field="SecondaryDetailsDescription">There is support to obtain certain information in a different language. This covers information such as Summary, Certification, Genres and wherever possible even more.
-
-Current support includes: Dutch, French, German, Icelandic, Italian, Portugese, Spanish and Swedish.
-</string>
-	<string Field="SecondaryDetailsHeader">Secondary Language</string>
-	<string Field="SecondaryLanguage01">English</string>
-	<string Field="SecondaryLanguage02">German</string>
-	<string Field="SecondaryLanguage03">Spanish</string>
-	<string Field="SecondaryLanguage04">French</string>
-	<string Field="SecondaryLanguage05">Italian</string>
-	<string Field="SecondaryLanguage06">Portuguese</string>
-	<string Field="SecondaryLanguage07">Swedish</string>
-	<string Field="SecondaryLanguage08">Icelandic</string>
-	<string Field="SecondaryLanguage09">Dutch</string>
-	<string Field="SecondarySummary">Fallback to English summary if foreign one is missing</string>
-	<string Field="SecondarySummaryDescription">Off = Show nothing if foreign summary is missing
-On = Use English summary as a fallback when no foreign one exists
-
-Foreign movie websites are not always as extensive as imdb.com or have the same information available. This mainly affects the summary, so to prevent your collection from being empty, enable this option to then fallback on the English summary (if available). Ideally you would register at the foreign movie website and submit the missing information, but until then you can use English.
-</string>
-	<string Field="SecondaryEnglishTitle">Secondary English title</string>
-	<string Field="SecondaryEnglishTitleDescription">Off = Use foreign title
-On = Force English title
-
-If a foreign language has been selected for certain details, the title will become foreign as well. This option can be used to keep the title in English.
-
-Note: This does not apply to the rename system. A translated entry is still required then to get a foreign title, even when this setting is disabled.
-</string>
-	<string Field="SingleScore">Single score rating system</string>
-	<string Field="SingleScoreDescription">Off = Use average rating system
-On = Single rating value is used
-
-There is a big difference sometimes between all the different ratings that are available. To compensate for that, an average value is used based on the ratings from imdb, metacritics and rottentomatoes.
-
-Note: If the 'IMDb Score' is enabled then the average rating of only IMDb and Metacritics is used when this setting is active for an average rating result.
-</string>
-	<string Field="SpecialEditions">Special editions rename tagging support</string>
-	<string Field="SpecialEditionsDescription">Off = Keep title as-is
-On = Add special editions tag to the title
-
-If you make the IMDb tt-ID number available inside filename or via NFO files, then you can enable this setting for special edition tagging.
-
-You can add the following terms to your filename inside parenthesis:
-
- - 3D
- - Extended
- - Unrated
- - Director's Cut
- - Alternate Ending
-
-You can also have the term 'Edition' postfixed to the end of them if you wish.
-
-Example: "Avatar (tt0499549) (3D).mkv" will result in "Avatar (3D)"
-</string>
-	<string Field="SettingPluginEnabledName">Plugin Enabled</string>
-	<string Field="SettingPluginEnabledDescription">Enable / Disable this setting to control if IMDb+ plugin is loaded with MediaPortal.</string>
-	<string Field="SettingListedHomeName">Listed in Home</string>
-	<string Field="SettingListedHomeDescription">Enable this setting for IMDb+ plugin to appear in the main Home screen menu items.</string>
-	<string Field="SettingListedPluginsName">Listed in My Plugins</string>
-	<string Field="SettingListedPluginsDescription">Enable this setting for IMDb+ plugin to appear in the My Plugins screen menu items.</string>
-	<string Field="SettingsSyncIntervalName">Number of hours until next update check</string>
-	<string Field="SettingsSyncIntervalDescription">This setting controls how often the plugin will check online for an updated scraper script and replacements database.</string>
-	<string Field="SettingsSyncOnStartupName">Check for updates on startup</string>
-	<string Field="SettingsSyncOnStartupDescription">This setting will force the plugin to check online for an updated scraper script and replacements database every time MediaPortal starts.</string>
-	<string Field="SettingsDisableNotificationsName">Disable notifications</string>
-	<string Field="SettingsDisableNotificationsDescription">This setting will allow you to disable notifications that appear such as when any scraper updates have been applied to your system.</string>
-	<string Field="SelectSources">Select Sources to Convert to IMDb+</string>
-	<string Field="StartsWith">Starts with {0}</string>
-	<string Field="SelectAlphas">Select Movies Starting With...</string>
-
-	<!-- T -->
-
-	<!-- U -->
-	<string Field="UkRating">British-English Movie Titles</string>
-	<string Field="UkRatingDescription">Off = Use American-English Movie Titles
-On = Use British-English Movie Titles
-
-Use this setting for British-English movie titles.
-
-Famous example is the first Harry Potter movie. The original title is "Harry Potter and the Philosopher's Stone", which was Americanized into "Harry Potter and the Sorcerer's Stone". Since the IMDb website is focused towards an American audience that means all titles will use the American-English title if available. With this setting you can change that to the British-English title.
-
-Note: There is currently no rename/replacement database support for British-English titles yet, so you will still end up with "Harry Potter I: Sorcerer's Stone", but you can overrule that via the custom rename/replacement database for the time being until proper support is added to the IMDb+ plugin.
-</string>
-	<string Field="UpdatedScraperScript">MovingPictures has been updated with IMDb+ Scraper script v{0}</string>
-	<string Field="Update">Update</string>
-	<string Field="UpdateAll">Update All</string>
-	<string Field="UpdateReplacementOnly">Update Replacements Only</string>
-	<string Field="UpdateAlphas">Update Movies Starting With...</string>
-
-	<!-- V -->
-
-	<!-- W -->
-
-	<!-- Y -->
-	<string Field="Yes">Yes</string>
-</strings>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <string name="AddForeignTitle">Add the foreign title</string>
+  <string name="AddForeignTitleDescription">Off = Keep title as-is\nOn = Add the original title in parentheses\n\nEnabling this setting will allow you to see the original title in parentheses after the English title.\n\nExample: Black Book (Zwartboek)\n</string>
+  <!--B-->
+  <string name="BoolOn">On</string>
+  <string name="BoolOff">Off</string>
+  <!--C-->
+  <string name="Cancel">Cancel</string>
+  <string name="CountryFilter">Advanced: Country filter</string>
+  <string name="CountryFilterDescription">There are some English language based movies that have a foreign title. So to aid in the proper detection of English titles it was needed to also filter on the country in which the movie was produced.\n\nDefault countries that do not use foreign titles are: \'us.ca.gb.ie.au.nz\' (United States, Canada, Great Britain, Ireland, Australia and New Zealand)\n\nNote: The MediaPortal virtual keyboard does not support the \'|\' character, so a \'.\' was used instead to seperate the different languages. Be very careful in adjusting this setting as it can stop the function of the IMDb+ scraper.\n</string>
+  <!--D-->
+  <string name="DefaultDescription">Highlight any of the above options and a more detailed explanation will be shown here.</string>
+  <!--E-->
+  <!--F-->
+  <string name="First">First</string>
+  <string name="FixMissingSummary">Force user-review for empty summary</string>
+  <string name="FixMissingSummaryDescription">Off = Keep summary empty\nOn = Force user-review as summary\n\nNot every movie has a summary available yet at the imdb.com website. In some cases, the same movie does however have a user-review. This setting allows you to use this user-review then instead of showing nothing.\n\nNote: Be warned that user-reviews can contain spoilers.\n</string>
+  <string name="ForceIMDbPlus">Force IMDb+</string>
+  <string name="ForceIMDbPlusDescription">Are you ready to force all your existing\nmovies, imported with the default IMDb\nscraper, to start using the IMDb+ one?\n</string>
+  <string name="ForceIMDbPlusComplete">Successfully switched {0}/{1} movies\nover to the IMDb+ scraper.\n</string>
+  <string name="ForeignTitleFirst">Start the title with the foreign one first</string>
+  <string name="ForeignTitleFirstDescription">Off = English (Foreign)\nOn = Foreign (English)\n\nEnabling this setting shows the original foreign title first followed by the English title in parentheses.\n\nExample: Zwartboek (Black Book)\n</string>
+  <!--G-->
+  <!--H-->
+  <!--I-->
+  <string name="IMDbMetaScore">Metacritics MetaScore</string>
+  <string name="IMDbMetaScoreDescription">Off = Main imdb.com score is used\nOn = Use Metacritics Metascore instead\n\nThe imdb.com website also offers the Metacritics.com metascore. Enabling this setting will use that score, otherwise the IMDb score is used.\n\nNote: This setting requires that the \'IMDb Score\' setting is also enabled and will therefore disable the RottenTomatoes method for missing summary and runtime info.\n</string>
+  <string name="IMDbScore">IMDb Score</string>
+  <string name="IMDbScoreDescription">Off = Use RottenTomatoes website\nOn = Restrict to imdb.com website only\n\nRottenTomatoes offers additional info, but if you want to restrict yourself to imdb.com then enable this setting.\n\nNote: This also disables getting missing summary, runtime and scoreing.\n</string>
+  <string name="IMDbInfo">IMDb+ Info</string>
+  <string name="InfoPluginVersion">Plugin Version: v{0}</string>
+  <string name="InfoScraperAuthor">Scraper Author: {0}</string>
+  <string name="InfoScraperVersion">Scraper Version: v{0}</string>
+  <string name="InfoScraperPriority">Scraper Priority: {0}</string>
+  <string name="InfoScraperPublished">Scraper Published: {0}</string>
+  <string name="InfoScraperLastUpdateCheck">Scraper Last Update Check: {0}</string>
+  <string name="InfoMoviesIMDbPlusPrimary">Movies using IMDb+ as scraper source: {0}</string>
+  <string name="InfoMoviesOtherPlusPrimary">Movies that use a different scraper: {0}</string>
+  <string name="InfoReplacementsVersion">Replacements Version: v{0}</string>
+  <string name="InfoReplacementsPublished">Replacements Published: {0}</string>
+  <string name="InfoReplacementEntries">Replacement Entries: {0}</string>
+  <string name="InfoCustomReplacementEntries">Replacement Entries (Custom): {0}</string>
+  <string name="IntervalSixHours">6 Hours</string>
+  <string name="IntervalTwelveHours">12 Hours</string>
+  <string name="IntervalTwentyFourHours">24 Hours</string>
+  <string name="IntervalTwoDays">2 Days</string>
+  <string name="IntervalThreeDays">3 Days</string>
+  <string name="IntervalFourDays">4 Days</string>
+  <string name="IntervalSevenDays">7 Days</string>
+  <!--K-->
+  <!--J-->
+  <!--L-->
+  <string name="LastScraperUpdate">Last Scraper Update</string>
+  <string name="LanguageFilter">Advanced: Language filter</string>
+  <string name="LanguageFilterDescription">Special filter to include other language titles besides English (en). Use the imdb.com HTML source to find the ISO 639-1 code after /language/.\n\nDefault language is English via: \'en\'\n\nHowever if you are from Norway and you wish to have Norwegian movies use their original title and English titles for everything else, then use: \'en.no\'\n\nNote: The MediaPortal virtual keyboard does not support the \'|\' character, so a \'.\' was used instead to seperate the different languages. Be very careful in adjusting this setting as it can stop the function of the IMDb+ scraper.\n</string>
+  <string name="LongSummary">Use long summaries which may contain spoilers</string>
+  <string name="LongSummaryDescription">Off = Short summary to describe movie plot\nOn = Long summary (might contain spoilers)\n\nLong summaries offer more information, but can sometimes have spoilers contained within them. This is why this setting is disabled by default, but you can of course enable it if you prefer them.\n</string>
+  <!--M-->
+  <string name="MinIMDbVotes">Minimum amount of IMDb votes required</string>
+  <string name="MinIMDbVotesDescription">Off = Always use imdb.com score\nOn = Only use imdb.com scores with 20+ votes\n\nThe IMDb score is inflated a lot of times by the people who worked on the movie. This is why it is not uncommon for a movie with less then 20 votes to have a very high rating.\n\nIf you enable this setting then the IMDb scores with less then 20 votes are ignored.\n</string>
+  <string name="MultiSelectDialog">Multi-Select Dialog</string>
+  <!--N-->
+  <string name="No">No</string>
+  <string name="NumberOfMovies">{0}/{1} Movies</string>
+  <string name="NumberOfMovies2">{0} Movies</string>
+  <string name="NoSourcesFound">No movies found that can be forced\ninto using the IMDb+ scraper script!</string>
+  <string name="NullSource">No source, but usable IMDb-ID</string>
+  <!--O-->
+  <string name="OneWriterDirector">Limit import to only one writer and director</string>
+  <string name="OneWriterDirectorDescription">Off = Get all the names for writers and directors\nOn = Only use first name for writers and directors\n\nSome skins do not allow much room for writers and directors. So if you want to prevent horizontal scrolling, then enable this setting to only import the first name for writers and directors.\n\nKeep in mind that this will affect your ability to search for movies done by a certain writer or director as only one name will be available per movie. On the other hand the amount of movies that feature multiple writers and/or directors are very limited.\n</string>
+  <string name="OriginalTitle">Use the original title from the movie</string>
+  <string name="OriginalTitleDescription">Off = Always force English title\nOn = Use original title for foreign movies\n\nForeign movies often have a non-English title.\n\nIf you want all your movies to use an English title, then keep this setting disabled.\n</string>
+  <!--P-->
+  <!--R-->
+  <string name="Ratings">English Rating/Certification System</string>
+  <string name="RatingsDescription">There are multiple English based rating/certification systems throughout the world. The most famous one is the American based MPAA rating system with results such as PG-13, R, NC-17, etc.\n\nUsers in Australia, Canada, United Kingdom, and New Zealand can use this setting to switch to their localized rating system.</string>
+  <string name="RatingsHeader">Select Rating System</string>
+  <string name="Rating01">USA</string>
+  <string name="Rating02">UK</string>
+  <string name="Rating03">Canada (Alberta)</string>
+  <string name="Rating04">Canada (British Columbia)</string>
+  <string name="Rating05">Canada (Manitoba)</string>
+  <string name="Rating06">Canada (Nova Scotia)</string>
+  <string name="Rating07">Canada (Ontario)</string>
+  <string name="Rating08">Canada (Quebec)</string>
+  <string name="Rating09">Australia</string>
+  <string name="Rating10">New Zealand</string>
+  <string name="RefreshMovies">Refresh Movies</string>
+  <string name="RefreshingMovies">Refreshing Movies</string>
+  <string name="RefreshCancel">Cancel Refresh</string>
+  <string name="RefreshMoviesDescription">Are you sure you want to refresh all movies\nthat have IMDb+ as primary source?</string>
+  <string name="RefreshMovieStatus">Refreshing {0}/{1} Movies: {2}%</string>
+  <string name="RefreshMoviesNotification">IMDb+ movie refresh is done.\nPlease enjoy the results.</string>
+  <string name="RefreshMoviesCancelNotification">Refresh has been cancelled.\n{0} movies done so far.\nRefresh again to resume.</string>
+  <string name="RefreshAllFields">Refresh all of the fields</string>
+  <string name="RefreshAllFieldsDescription">Off = Only update a few things\nOn = Update everything\n\nThe information at IMDb is constantly updated and completed. For this reason it makes sense to once in a while update movies in your collection.\n\nEnabling this setting will force everything to be updated. Otherwise only empty, certifications, score and votes fields are updated on a refresh.\n\nNote: This setting disables the rename system for existing movies.\n</string>
+  <string name="RemoveFirstRoman">Remove Roman numeral from first movie</string>
+  <string name="RemoveFirstRomanDescription">Off = Keep renamed title as-is\nOn = Strip Roman numeral from first movie\n\nIf the rename system is enabled, then by default, series will be grouped by adding Roman numerals to the title. This is also done to the first movie in the series, so \'Avatar\' becomes \'Avatar I\'. Enabling this setting will still sort the first movie in the series correct, but it will remove the Roman numeral from the title.\n\nKeep in mind that this is only done when the first movie in the series does not have a subtitle. The movie \'Indiana Jones I: Raiders of the Lost Ark\' will therefore keep its Roman numeral.\n</string>
+  <string name="RenameTitles">Rename titles so that series are grouped together</string>
+  <string name="RenameTitlesDescription">Off = Use title as-is\nOn = Rename title so that series will group together\n\nThere are many movie series, and sometimes the titles do not start with the same prefix to group them together. To solve this, a rename database file is used that will rename a title based on the IMDb tt-ID number. The result is that movies are renamed so that they are easy to identify as being part of a series.\n\nExample: \'Batman VII: The Dark Knight Rises\' will group nicely along with the other movies in the series.\n\nThe default rename titles are placed in a file \'IMDb+\Rename dBase IMDb+ Scraper.xml\' which resides in your MediaPortal User folder.\n\nAny custom rename entries that you want should go into \'IMDb+\Rename dBase IMDb+ Scraper (Custom).xml\'\n\nYou can use notepad to edit the custom one, as the default one will be automatically updated at times, please make sure that the contents of the XML files remain compliant.\n</string>
+  <string name="RottenMeter">RottenTomatoes TomatoMeter</string>
+  <string name="RottenMeterDescription">Off = RottenTomatoes \'Audience\' ratings\nOn = RottenTomatoes \'TomatoMeter\' ratings\n\nThere are many different ratings available at the RottenTomatoes website.\n\nTo use any of the TomatoMeter ratings you have to enable this setting, otherwise the \'Audience\' one is used.\n</string>
+  <string name="RottenAverage">RottenTomatoes average rating</string>
+  <string name="RottenAverageDescription">Off = RottenTomatoes \'Percentage\' rating\nOn = RottenTomatoes \'Average\' rating\n\nWith this setting enabled the \'Average\' rating value is used, otherwise the \'Percentage\' value is.\n\nThe \'Percentage\' rating is a special kind, in that it counts the amount of RottenTomatoes users who voted a certain way.\n</string>
+  <string name="RottenTopCritics">RottenTomatoes top critics</string>
+  <string name="RottenTopCriticsDescription">Off = RottenTomatoes \'All\' critics\nOn = RottenTomatoes \'Top\' critics\n\nThere is a TomatoMeter rating available for all of the critics and a select group of \'Top\' critics.\n\nEnabling this setting will limit your rating to just the top ones.\n</string>
+  <string name="Resume">(Resume)</string>
+  <!--S-->
+  <string name="ScraperOptionsTitle">IMDb+ Scraper Options</string>
+  <string name="ScraperNotFirstPrompt">The IMDb+ scraper is not first!\nThis will cause problems.\nWould you like to correct this?</string>
+  <string name="SecondaryDetails">Obtain additional information in the following language</string>
+  <string name="SecondaryDetailsDescription">There is support to obtain certain information in a different language. This covers information such as Summary, Certification, Genres and wherever possible even more.\n\nCurrent support includes: Dutch, French, German, Icelandic, Italian, Portugese, Spanish and Swedish.\n</string>
+  <string name="SecondaryDetailsHeader">Secondary Language</string>
+  <string name="SecondaryLanguage01">English</string>
+  <string name="SecondaryLanguage02">German</string>
+  <string name="SecondaryLanguage03">Spanish</string>
+  <string name="SecondaryLanguage04">French</string>
+  <string name="SecondaryLanguage05">Italian</string>
+  <string name="SecondaryLanguage06">Portuguese</string>
+  <string name="SecondaryLanguage07">Swedish</string>
+  <string name="SecondaryLanguage08">Icelandic</string>
+  <string name="SecondaryLanguage09">Dutch</string>
+  <string name="SecondarySummary">Fallback to English summary if foreign one is missing</string>
+  <string name="SecondarySummaryDescription">Off = Show nothing if foreign summary is missing\nOn = Use English summary as a fallback when no foreign one exists\n\nForeign movie websites are not always as extensive as imdb.com or have the same information available. This mainly affects the summary, so to prevent your collection from being empty, enable this option to then fallback on the English summary (if available). Ideally you would register at the foreign movie website and submit the missing information, but until then you can use English.\n</string>
+  <string name="SecondaryEnglishTitle">Secondary English title</string>
+  <string name="SecondaryEnglishTitleDescription">Off = Use foreign title\nOn = Force English title\n\nIf a foreign language has been selected for certain details, the title will become foreign as well. This option can be used to keep the title in English.\n\nNote: This does not apply to the rename system. A translated entry is still required then to get a foreign title, even when this setting is disabled.\n</string>
+  <string name="SingleScore">Single score rating system</string>
+  <string name="SingleScoreDescription">Off = Use average rating system\nOn = Single rating value is used\n\nThere is a big difference sometimes between all the different ratings that are available. To compensate for that, an average value is used based on the ratings from imdb, metacritics and rottentomatoes.\n\nNote: If the \'IMDb Score\' is enabled then the average rating of only IMDb and Metacritics is used when this setting is active for an average rating result.\n</string>
+  <string name="SpecialEditions">Special editions rename tagging support</string>
+  <string name="SpecialEditionsDescription">Off = Keep title as-is\nOn = Add special editions tag to the title\n\nIf you make the IMDb tt-ID number available inside filename or via NFO files, then you can enable this setting for special edition tagging.\n\nYou can add the following terms to your filename inside parenthesis:\n\n - 3D\n - Extended\n - Unrated\n - Director\'s Cut\n - Alternate Ending\n\nYou can also have the term \'Edition\' postfixed to the end of them if you wish.\n\nExample: \"Avatar (tt0499549) (3D).mkv\" will result in \"Avatar (3D)\"\n</string>
+  <string name="SettingPluginEnabledName">Plugin Enabled</string>
+  <string name="SettingPluginEnabledDescription">Enable / Disable this setting to control if IMDb+ plugin is loaded with MediaPortal.</string>
+  <string name="SettingListedHomeName">Listed in Home</string>
+  <string name="SettingListedHomeDescription">Enable this setting for IMDb+ plugin to appear in the main Home screen menu items.</string>
+  <string name="SettingListedPluginsName">Listed in My Plugins</string>
+  <string name="SettingListedPluginsDescription">Enable this setting for IMDb+ plugin to appear in the My Plugins screen menu items.</string>
+  <string name="SettingsSyncIntervalName">Number of hours until next update check</string>
+  <string name="SettingsSyncIntervalDescription">This setting controls how often the plugin will check online for an updated scraper script and replacements database.</string>
+  <string name="SettingsSyncOnStartupName">Check for updates on startup</string>
+  <string name="SettingsSyncOnStartupDescription">This setting will force the plugin to check online for an updated scraper script and replacements database every time MediaPortal starts.</string>
+  <string name="SettingsDisableNotificationsName">Disable notifications</string>
+  <string name="SettingsDisableNotificationsDescription">This setting will allow you to disable notifications that appear such as when any scraper updates have been applied to your system.</string>
+  <string name="SelectSources">Select Sources to Convert to IMDb+</string>
+  <string name="StartsWith">Starts with {0}</string>
+  <string name="SelectAlphas">Select Movies Starting With...</string>
+  <!--T-->
+  <!--U-->
+  <string name="UkRating">British-English Movie Titles</string>
+  <string name="UkRatingDescription">Off = Use American-English Movie Titles\nOn = Use British-English Movie Titles\n\nUse this setting for British-English movie titles.\n\nFamous example is the first Harry Potter movie. The original title is \"Harry Potter and the Philosopher\'s Stone\", which was Americanized into \"Harry Potter and the Sorcerer\'s Stone\". Since the IMDb website is focused towards an American audience that means all titles will use the American-English title if available. With this setting you can change that to the British-English title.\n\nNote: There is currently no rename/replacement database support for British-English titles yet, so you will still end up with \"Harry Potter I: Sorcerer\'s Stone\", but you can overrule that via the custom rename/replacement database for the time being until proper support is added to the IMDb+ plugin.\n</string>
+  <string name="UpdatedScraperScript">MovingPictures has been updated with IMDb+ Scraper script v{0}</string>
+  <string name="Update">Update</string>
+  <string name="UpdateAll">Update All</string>
+  <string name="UpdateReplacementOnly">Update Replacements Only</string>
+  <string name="UpdateAlphas">Update Movies Starting With...</string>
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+  <string name="Yes">Yes</string>
+</resources>
