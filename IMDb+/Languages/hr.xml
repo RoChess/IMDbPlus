@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <!--B-->
+  <!--C-->
+  <string name="Cancel">Odustani</string>
+  <!--D-->
+  <!--E-->
+  <!--F-->
+  <!--G-->
+  <!--H-->
+  <!--I-->
+  <!--K-->
+  <!--J-->
+  <!--L-->
+  <!--M-->
+  <!--N-->
+  <string name="No">Ne</string>
+  <!--O-->
+  <!--P-->
+  <!--R-->
+  <!--S-->
+  <string name="SettingPluginEnabledName">Dodatak omogućen</string>
+  <string name="SettingListedHomeName">Na popisu u Početnom izborniku</string>
+  <string name="SettingListedPluginsName">Na popisu u Mojim dodacima</string>
+  <!--T-->
+  <!--U-->
+  <string name="Update">Ažurirajte</string>
+  <string name="UpdateAll">Sve ažurirajte</string>
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+  <string name="Yes">Da</string>
+</resources>

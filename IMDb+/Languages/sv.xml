@@ -1,349 +1,161 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- IMDb+ translation file -->
-<!-- Swedish -->
-<!-- Note: English is the fallback for any strings not found in other languages -->
-<strings>
-	<!-- A -->
-	<string Field="AddForeignTitle">Lägg till originaltitel</string>
-	<string Field="AddForeignTitleDescription">Av = Behåll titeln som den hämtas
-På = Lägg till originaltiteln inom parentes
-
-Med denna inställning på syns originaltiteln efter den Svenska biotiteln.
-
-Exempel: Den Svarta Boken (Zwartboek)
-</string>
-
-	<!-- B -->
-	<string Field="BoolOn">På</string>
-	<string Field="BoolOff">Av</string>
-
-	<!-- C -->
-	<string Field="Cancel">Avbryt</string>
-	<string Field="CountryFilter">Avancerat: Landsfilter</string>
-	<string Field="CountryFilterDescription">Vissa filmer med engelskt tal har även en titel på ett annat språk. För att kunna känna av vilken titel som är korrekt behövs i vissa fall ett filter som hittar produktionslandet för filmen.
-
-Vissa länder har som regel inte icke-engelska titlar: 'us.ca.gb.ie.au.nz' (U.S.A, Kanada, Storbritannien, Irland, Australien samt Nya Zealand)
-
-OBS: MediaPortal har en virtuell keyboard som inte stödjer '|' -tecknet, så ett '.' har istället använts för att skilja olika språk från varandra. Var noggrann med denna inställning då IMDB+ kan sluta att fungera om den är felaktigt inställd.
-</string>
-
-	<!-- D -->
-	<string Field="DefaultDescription">Markera en av de ovanstående valen för att en mer detaljerad beskrivning av dess funktion skall visas.</string>
-
-	<!-- E -->
-
-	<!-- F -->
-	<string Field="First">Första</string>
-	<string Field="FixMissingSummary">Hämta en användare-recension istället ifall beskrivning av handlingen saknas</string>
-	<string Field="FixMissingSummaryDescription">Av = Låt fältet för Handling vara tomt
-På = Hämta användare-recension att fylla fältet Handling
-
-På IMDB.com saknas ibland en kort beskrivning av handlingen. I vissa fall har filmen i alla fall en recension skriven av en användare. Denna inställning möjliggör att en sådan hämtas istället för att lämna fältet tomt.
-
-OBS: Användare-recensioner kan avslöja överraskningar i handlingen som kan förstöra upplevelsen för tittaren.
-</string>
-	<string Field="ForceIMDbPlus">Tvinga IMDb+</string>
-	<string Field="ForceIMDbPlusDescription">Vill du välja att alla filmer som tidigare importerats med IMDB (förinställd hämtare av info) istället skall använda sig av IMDB+?
-</string>
-	<string Field="ForceIMDbPlusComplete">Lyckades framgångsrikt byta {0}/{1} filmer
-till IMDb+ .
-</string>
-	<string Field="ForeignTitleFirst">Sätt titeln på originalspråket främst</string>
-	<string Field="ForeignTitleFirstDescription">Av = Svensk (Originaltitel)
-PÅ = Originaltitel (Svensk)
-
-Med denna inställning På hamnar originaltiteln framför den Svenska titeln som står skriven inom parentes.
-
-Example: Zwartboek (Den Svarta Boken)
-</string>
-
-	<!-- G -->
-
-	<!-- H -->
-
-	<!-- I -->
-	<string Field="IMDbMetaScore">Metacritics MetaScore</string>
-	<string Field="IMDbMetaScoreDescription">Av = Rankningen från IMDb.com används
-På = Använd istället Metacritics Metascore
-
-IMDb.com tillåter användning av Metacritics.com Metascore utöver enbart den egna rankningen. Med denna inställning På används denna rankning istället för IMDb-rankningen.
-
-OBS: Denna inställning kräver att 'IMDb betyg' också är På och dessutom stängs RottRottenTomatoes metod för saknad Handling samt speltid av.
-</string>
-	<string Field="IMDbScore">IMDb betyg</string>
-	<string Field="IMDbScoreDescription">På = Använd RottenTomatoes
-På = Använd endast IMDb.com
-
-RottenTomatoes erbjuder extra information, men om du hellre vill använda IMDb.com så sätter du På denna inställning.
-
-OBS: Detta stänger även av hämtning av saknad Handling, speltid samt rankning.
-
-</string>
-	<string Field="IMDbInfo">IMDb+ Info</string>
-	<string Field="InfoPluginVersion">Plugin-version: v{0}</string>
-	<string Field="InfoScraperAuthor">Scraper författad av: {0}</string>
-	<string Field="InfoScraperVersion">Scraper-version: v{0}</string>
-	<string Field="InfoScraperPriority">Scraper-prioritet: {0}</string>
-	<string Field="InfoScraperPublished">Scraper publicerad: {0}</string>
-	<string Field="InfoScraperLastUpdateCheck">Uppdatering av scraper senast kontrollerad: {0}</string>
-	<string Field="InfoMoviesIMDbPlusPrimary">Filmer som använt IMDb+ som källa: {0}</string>
-	<string Field="InfoMoviesOtherPlusPrimary">Filmer som använt en annan källa: {0}</string>
-	<string Field="InfoReplacementsVersion">Ersättarversion: v{0}</string>
-	<string Field="InfoReplacementsPublished">Ersättare publicerad: {0}</string>
-	<string Field="InfoReplacementEntries">Ersatta poster: {0}</string>
-	<string Field="InfoCustomReplacementEntries">Ersatta poster(egna): {0}</string>
-	<string Field="IntervalSixHours">6 timmar</string>
-	<string Field="IntervalTwelveHours">12 timmar</string>
-	<string Field="IntervalTwentyFourHours">24 timmar</string>
-	<string Field="IntervalTwoDays">2 dagar</string>
-	<string Field="IntervalThreeDays">3 dagar</string>
-	<string Field="IntervalFourDays">4 dagar</string>
-	<string Field="IntervalSevenDays">7 dagar</string>
-
-	<!-- K -->
-
-	<!-- J -->
-
-	<!-- L -->
-	<string Field="LastScraperUpdate">Senaste uppdatering av scraper</string>
-	<string Field="LanguageFilter">Avancerat: Språkfilter</string>
-	<string Field="LanguageFilterDescription">Unikt filter för att hitta fler titlar än de engelska(en). Använder IMDb.coms HTML-källa för att hitta rätt ISO 639-1-kod efter /language/.
-
-Förvalt språk är English genom: 'en'
-
-Men, om du är från Norge och vill ha de norska filmernas titel på norska och övriga på engelska använd istället : 'en.no'
-
-OBS: MediaPortal har en virtuell keyboard som inte stödjer '|' -tecknet, så ett '.' har istället använts för att skilja olika språk från varandra. Var noggrann med denna inställning då IMDB+ kan sluta att fungera om den är felaktigt inställd.
-</string>
-	<string Field="LongSummary">Använd längre beskrivningar av handlingen även om de kan avslöja eventuella överraskningar i filmen</string>
-	<string Field="LongSummaryDescription">Av = Kort beskrivning för att beskriva filmens handling
-På = Lång beskrivning (kan avslöja eventuella överraskningar i filmen)
-
-Långa beskrivningar ger mer information om filmen men kan ibland innehålla oväntade och överraskande vändningar i handlingen. Därför är denna inställning förinställd till Av men går att ställa till På om du föredrar detta.
-
-</string>
-
-	<!-- M -->
-	<string Field="MinIMDbVotes">Minsta värde av röster hos IMDb som krävs</string>
-	<string Field="MinIMDbVotesDescription">Av = Använd alltid IMDb.com för betyg
-	På = Använder endast detta betyg när fler än 20 har röstat
-
-Ofta är betyget från IMDb felaktigt då de som gjort filmen själva har röstat. Det är därför inte ovanligt att filmer med färre än 20 röster har ett väldigt högt betyg.
-
-Med denna inställning På kommer betyg som utgörs av färre än 20 röster att ignoreras.
-</string>
-	<string Field="MultiSelectDialog">Flervalsdialog</string>
-
-	<!-- N -->
-	<string Field="No">Nej</string>
-	<string Field="NumberOfMovies">{0}/{1} Filmer</string>
-	<string Field="NumberOfMovies2">{0} Filmer</string>
-	<string Field="NoSourcesFound">Ingen filminfo funnen att konvertera till IMDb+ !</string>
-	<string Field="NullSource">Ingen info, men användbart IMDb-ID</string>
-
-	<!-- O -->
-	<string Field="OneWriterDirector">Begränsa import av manusförfattare och regissör</string>
-	<string Field="OneWriterDirectorDescription">Av = Hämta samtliga manusförfattare och regissörer som listas
-På = Hämta endast det första namnet för både manus och regi
-
-Vissa MediaPortal-skin tillåter inte tillräckligt med utrymme för många namn på manusförfattare och regissörer. För att slippa horisontell rullning av namnen i onödan, sätt denna inställning till På för att endast hämta det första namnet som listats.
-
-Glöm dock inte av att detta tar bort möjligheten att söka efter en viss författare eller regissör som kan ha stått på andra plats hos IMDb.com. Å andra sidan är det ovanligt med filmer där flera författare eller regissörer är inblandade.
-</string>
-	<string Field="OriginalTitle">Använd originaltiteln för filmen</string>
-	<string Field="OriginalTitleDescription">Av = Tvinga Internationell titel
-På = Använd originaltiteln
-
-Utländska filmer har ofta en icke-Engelsk titel.
-
-Om du vill att samtliga filmer skall ha en Engelsk eller Svensk titel, låt denna inställning vara Av.
-</string>
-
-	<!-- P -->
-
-	<!-- R -->
-	<string Field="Ratings">Åldersgränser som används i Engelskspråkiga länder</string>
-	<string Field="RatingsDescription">Det finns flera olika åldersgräns-system för Engelskspråkiga länder runt om i världen. Den mest kända är MPAA från USA med gränser såsom PG-13, R, NC-17, osv.
-
-Användare i Australien, Kanada, Storbritannien samt Nya Zealand kan använda deena inställning för att istället använda en lokal variant.
-</string>
-	<string Field="RatingsHeader">Välj åldersgräns efter land</string>
-	<string Field="Rating01">USA</string>
-	<string Field="Rating02">Storbritannien</string>
-	<string Field="Rating03">Kanada (Alberta)</string>
-	<string Field="Rating04">Kanada (Brittiska Columbia)</string>
-	<string Field="Rating05">Kanada (Manitoba)</string>
-	<string Field="Rating06">Kanada (Nova Scotia)</string>
-	<string Field="Rating07">Kanada (Ontario)</string>
-	<string Field="Rating08">Kanada (Quebec)</string>
-	<string Field="Rating09">Australien</string>
-	<string Field="Rating10">Nya Zealand</string>
-	<string Field="RefreshMovies">Hämta om information</string>
-	<string Field="RefreshingMovies">Söker uppdaterad information</string>
-	<string Field="RefreshCancel">Avbryter uppdatering</string>
-	<string Field="RefreshMoviesDescription">Är du säker på att du vill uppdatera informationen för samtliga titlar som använt IMDb+ som sin huvudsakliga källa?</string>
-	<string Field="RefreshMovieStatus">Uppdaterar {0}/{1} filmer: {2}%</string>
-	<string Field="RefreshMoviesNotification">Uppdatering av information för IMDb+ är klar.
-Njut av resultatet.
-</string>
-	<string Field="RefreshMoviesCancelNotification">Uppdatering har avbrutits.
-{0} filmer klara hittills.
-Uppdatera igen för att återuppta.
-</string>
-	<string Field="RefreshAllFields">Uppdatera samtliga fält</string>
-	<string Field="RefreshAllFieldsDescription">Av = Uppdatera endast vissa fält
-På = Uppdatera samtliga fält
-
-Informationen på IMDb.com uppdateras och kompletteras ständigt. Av denna anledning är det nödvändigt att uppdatera informationen för filmerna i samlingen.
-
-Med denna inställning På hämtas all information på nytt. Om inte hämtas endast tomma fält, certifieringar, rankning och röster vid en uppdatering.
-
-OBS: Denna inställning gör att tidigare formatering av titeln för existerande filmer inte sparas.
-</string>
-	<string Field="RemoveFirstRoman">Ta bort romerska siffror efter första filmen i en serie</string>
-	<string Field="RemoveFirstRomanDescription">Av = Behåll titeln som den är listad på IMDb.com
-På = Ta bort romersk siffra från titeln i den första filmen
-
-Om formatering av filmtiteln är På kommer filmer som ingår i en serie att delas in med romerska siffror i titeln. Detta görs även med den första filmen i en serie, så att 'Avatar' blir 'Avatar I'. Med denna inställning På kommer den första filmen att hamna först i serien men den romerska siffran kommer inte att visas förutom på uppföljare.
-
-Observera att detta endast görs när den första filmen i serien inte har en undertitel. Filmen 'Indiana Jones I: Raiders of the Lost Ark' kommer därför att behålla sin romerska I:a.
-</string>
-	<string Field="RenameTitles">Ändra titel så att serier grupperas</string>
-	<string Field="RenameTitlesDescription">Av = Använd den titel som står på IMDb.com
-På = Ändra titeln för att få filmerna att hänga samman i listan
-
-Det finns flera serier av filmer, och ibland börjar dessa inte med samma inledande namn för att göra klart att det är en serie. Som en lösning för detta tas en omdöpt databasfil till hjälp baserad på ett IMDb tt-ID nummer. Resultatet blir att filmerna får nya titlar som gör de lätta att identifiera som del av en serie och hamnar intill varandra i filmlistan.
-
-Exempel: 'Batman VII: The Dark Knight Rises' kommer att passa in väl bland de andra i serien.
-
-Den förvalda, nya titeln hamnar i en fil: 'IMDb+\Rename dBase IMDb+ Scraper.xml' som du kan finna i MediaPortals User-mapp.
-
-Andra specialtitlar du önska bör hamna i 'IMDb+\Rename dBase IMDb+ Scraper (Custom).xml'
-
-Du kan använda Notepad för att ändra i Custom-filen som sedan sparar dessa titlar, då den andra filen automatiskt kommer att skrivas över vid en uppdatering, var försiktig så att innehållet i xml-filen är kompatibelt.
-</string>
-	<string Field="RottenMeter">RottenTomatoes TomatoMeter</string>
-	<string Field="RottenMeterDescription">Av = RottenTomatoes 'publika' rankningar
-På = RottenTomatoes 'TomatoMeter' rankningar
-
-Det finns många olika rankningsvarianter på RottenTomatoes.com.
-
-För att använda en av dessa TomatoMeter-rankningar måste denna inställning vara På annars kommer den 'Publika' att användas.
-</string>
-	<string Field="RottenAverage">RottenTomatoes medel-rankning</string>
-	<string Field="RottenAverageDescription">Av = RottenTomatoes 'Procentuella' rankning
-På = RottenTomatoes 'Medel' rankning
-
-Med denna inställning På är det 'Medel'-rankningen som gäller, annars kommer den 'Procentuella' rankningen att gälla.
-
-Den 'Procentuella' rankningen är speciell i att den räknar antalet RottenTomatoes-användare som röstat på ett avvikande sätt.
-</string>
-	<string Field="RottenTopCritics">RottenTomatoes topp-kritiker</string>
-	<string Field="RottenTopCriticsDescription">Av = RottenTomatoes 'Samtliga' kritiker
-På = RottenTomatoes 'Topp' kritiker
-
-Det finns en rankning för samtliga, men också en för en utvald 'Topp'.
-
-Med denna inställning På kommer endast de i toppen att räknas.
-</string>
-	<string Field="Resume">(Återuppta)</string>
-
-	<!-- S -->
-	<string Field="ScraperOptionsTitle">IMDb+ scraperinställningar</string>
-	<string Field="ScraperNotFirstPrompt">IMDB+ är inte det första scraper-scriptet i listan!\nDetta kan skapa problem.\nVill du rätta till detta?</string>
-	<string Field="SecondaryDetails">Hämta extra information på följande språk</string>
-	<string Field="SecondaryDetailsDescription">Det finns stöd för att hämta viss information på ytterligare ett annat språk. Denna information täcker Handling, Certifiering, Genrer och möjligtvis senare ännu mer.
-
-Just nu finns stöd för: Holländska, Franska, Tyska, Isländska, Italienska, Portugisiska, Spanska och Svenska.
-</string>
-	<string Field="SecondaryDetailsHeader">Det andra språket</string>
-	<string Field="SecondaryLanguage01">Engelska</string>
-	<string Field="SecondaryLanguage02">Tyska</string>
-	<string Field="SecondaryLanguage03">Spanska</string>
-	<string Field="SecondaryLanguage04">Franska</string>
-	<string Field="SecondaryLanguage05">Italienska</string>
-	<string Field="SecondaryLanguage06">Portugisiska</string>
-	<string Field="SecondaryLanguage07">Svenska</string>
-	<string Field="SecondaryLanguage08">Isländska</string>
-	<string Field="SecondaryLanguage09">Holländska</string>
-	<string Field="SecondarySummary">Om något fält inte är översatt visas den engelska motsvarigheten</string>
-	<string Field="SecondarySummaryDescription">Av = Visa ingenting om valt andra språk saknas
-På = Använd engelska motsvarigheten om valt språk inte är översatt
-
-Icke-engelska filmsidor på Internet är inte alltid lika uppdaterade som IMDb.com eller så innehåller de identisk information. Detta brukar oftast drabba beskrivningen av handlingen, så för att din filmsamling inte skall ha tomma Handlingsfält kan du med denna inställning På ta emot handlingen på engelska (om det är tillgängligt). Bäst är om du själv registrerar dig på den sidan där din information saknas för ditt språk och själv bidrar med informationen, men så länge har du möjligheten att ta del av den engelska informationen.
-</string>
-	<string Field="SecondaryEnglishTitle">Den andra engelska titeln</string>
-	<string Field="SecondaryEnglishTitleDescription">Av = Använd icke-engelsk titel
-På = Tvinga engelsk titel
-
-När ett annat språk än engelska har valts för att hämta vissa detaljer, blir titeln också på detta språk. Denna inställning kan användas för att så gott som alltid få en engelsk titel på filmen.
-
-OBS: Detta påverkar inte den automatiska titeländringen för serier av filmer. Ett översatt fält kommer ändå att att få den ursprungliga titeln även om denna inställning är Av.
-</string>
-	<string Field="SingleScore">Enkelt rankningssystem</string>
-	<string Field="SingleScoreDescription">Av = Använd en genomsnittsrankning
-På = Enkel rankning används
-
-Det är ibland en stor skillnad på de olika typerna av rankning som är tillgängliga. För att väga upp detta finns det en genomsnittsrankning som är baserad på IMDb, Metacritics och Rottentomatoes.
-
-OBS: Om 'IMDb Rankning' är På kommer den genomsnittliga rankningen att vara baserad på IMDb och Metacritics.
-</string>
-	<string Field="SpecialEditions">Känn av om det är en special-utgåva av filmen</string>
-	<string Field="SpecialEditionsDescription">Av = Behåll titeln som den hämtats
-På = Lägg till att filmen är i en special-utgåva i titeln
-
-Om du har lagt till ett IMDb tt-ID nummer i filnamnet eller via en .nfo-fil kan denna inställning känna av om det är en speciell version av filmen.
-
-Följande kan användas inom parentes i filnamnet för att automatisk avkänning :
-
- - 3D
- - Extended
- - Unrated
- - Director's Cut
- - Alternate Ending
-
-Det går även att få termen 'Edition' tillagd efter titeln om man så önskar.
-
-Exempel: "Avatar (tt0499549) (3D).mkv" kommer att skrivas ut som "Avatar (3D)"
-</string>
-	<string Field="SettingPluginEnabledName">Plugin aktiv</string>
-	<string Field="SettingPluginEnabledDescription">Aktivera / Avaktivera denna inställning för att styra huruvida IMDb+ laddas med MediaPortal.</string>
-	<string Field="SettingListedHomeName">Visa i Hemskärmen</string>
-	<string Field="SettingListedHomeDescription">Aktivera denna inställning för att IMDb+ skall synas på hemskärmens lista över tillgängliga plugins.</string>
-	<string Field="SettingListedPluginsName">Visa bland mina plugins</string>
-	<string Field="SettingListedPluginsDescription">Aktivera denna inställning för att IMDb+ skall synas i listan över aktiverade plugins.</string>
-	<string Field="SettingsSyncIntervalName">Antal timmar tills nästa försök att uppdatera IMDB+ skall ske</string>
-	<string Field="SettingsSyncIntervalDescription">Denna inställning sätter ett värde för hur ofta IMDB+ skall leta efter uppdateringar av informations-script samt ny databas med ändringar.</string>
-	<string Field="SettingsSyncOnStartupName">Sök uppdatering vid start</string>
-	<string Field="SettingsSyncOnStartupDescription">Denna inställning tvingar en kontroll av tillgängliga uppdateringar för IMDB+ varje gång MediaPortal startats.</string>
-	<string Field="SettingsDisableNotificationsName">Stäng av visuella uppdateringar</string>
-	<string Field="SettingsDisableNotificationsDescription">Denna inställning stänger av popup-fönster som talar om när IMDB+ eller någon av dess komponenter har uppdaterats i ditt system.</string>
-	<string Field="SelectSources">Välj källor att konvertera till IMDB+</string>
-	<string Field="StartsWith">Börjar med {0}</string>
-	<string Field="SelectAlphas">Välj filmer som börjar på...</string>
-
-	<!-- T -->
-
-	<!-- U -->
-<string Field="UkRating">Film-titlar baserade på Brittisk engelska</string>
-<string Field="UkRatingDescription">Av = Använd Amerikanska film-titlar
-På = Använd de titlar som används i Storbritannien. Denna inställning gäller endast titlar med Brittisk engelska.
-
-Ett välkänt exempel är den första Harry Potter-filmen. Original-titeln, "Harry Potter and the Philosopher's Stone", som senare fick en Amerikansk titel, "Harry Potter and the Sorcerer's Stone". IMDB är mest inriktad på den Amerikanska publiken vilket innebär att samtliga titlar som har en Amerikaniserad titel kommer att använda denna automatiskt. Denna inställning låter dig välja den titel filmen har på Brittisk engelska.
-
-OBS: Det finns i nuläget inget implementerat stöd för för Brittisk-engelska titlar i den automatiska omdöpningen av filmer, så än så länge kommer du ändå att se "Harry Potter I: Sorcerer's Stone", men det går att tvinga ersättande titlar via databasen i "custom.xml"  tills dess att riktigt stöd har implementerats i IMDb+. 
-
-</string>
-	<string Field="UpdatedScraperScript">MovingPictures har blivit uppdaterad med IMDb+ scraper-script v{0}</string>
-	<string Field="Update">Uppdatera</string>
-	<string Field="UpdateAll">Uppdatera samtliga</string>
-	<string Field="UpdateReplacementOnly">Uppdatera ersättare endast</string>
-	<string Field="UpdateAlphas">Uppdatera filmer som börjar på...</string>
-
-	<!-- V -->
-
-	<!-- W -->
-
-	<!-- Y -->
-	<string Field="Yes">Ja</string>
-</strings>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <string name="AddForeignTitle">LÃ¤gg till originaltitel</string>
+  <string name="AddForeignTitleDescription">Av = BehÃ¥ll titeln som den hÃ¤mtas\nPÃ¥ = LÃ¤gg till originaltiteln inom parentes\n\nMed denna instÃ¤llning pÃ¥ syns originaltiteln efter den Svenska biotiteln.\n\nExempel: Den Svarta Boken (Zwartboek)\n</string>
+  <!--B-->
+  <string name="BoolOn">PÃ¥</string>
+  <string name="BoolOff">Av</string>
+  <!--C-->
+  <string name="Cancel">Avbryt</string>
+  <string name="CountryFilter">Avancerat: Landsfilter</string>
+  <string name="CountryFilterDescription">Vissa filmer med engelskt tal har Ã¤ven en titel pÃ¥ ett annat sprÃ¥k. FÃ¶r att kunna kÃ¤nna av vilken titel som Ã¤r korrekt behÃ¶vs i vissa fall ett filter som hittar produktionslandet fÃ¶r filmen.\n\nVissa lÃ¤nder har som regel inte icke-engelska titlar: \'us.ca.gb.ie.au.nz\' (U.S.A, Kanada, Storbritannien, Irland, Australien samt Nya Zealand)\n\nOBS: MediaPortal har en virtuell keyboard som inte stÃ¶djer \'|\' -tecknet, sÃ¥ ett \'.\' har istÃ¤llet anvÃ¤nts fÃ¶r att skilja olika sprÃ¥k frÃ¥n varandra. Var noggrann med denna instÃ¤llning dÃ¥ IMDB+ kan sluta att fungera om den Ã¤r felaktigt instÃ¤lld.\n</string>
+  <!--D-->
+  <string name="DefaultDescription">Markera en av de ovanstÃ¥ende valen fÃ¶r att en mer detaljerad beskrivning av dess funktion skall visas.</string>
+  <!--E-->
+  <!--F-->
+  <string name="First">FÃ¶rsta</string>
+  <string name="FixMissingSummary">HÃ¤mta en anvÃ¤ndare-recension istÃ¤llet ifall beskrivning av handlingen saknas</string>
+  <string name="FixMissingSummaryDescription">Av = LÃ¥t fÃ¤ltet fÃ¶r Handling vara tomt\nPÃ¥ = HÃ¤mta anvÃ¤ndare-recension att fylla fÃ¤ltet Handling\n\nPÃ¥ IMDB.com saknas ibland en kort beskrivning av handlingen. I vissa fall har filmen i alla fall en recension skriven av en anvÃ¤ndare. Denna instÃ¤llning mÃ¶jliggÃ¶r att en sÃ¥dan hÃ¤mtas istÃ¤llet fÃ¶r att lÃ¤mna fÃ¤ltet tomt.\n\nOBS: AnvÃ¤ndare-recensioner kan avslÃ¶ja Ã¶verraskningar i handlingen som kan fÃ¶rstÃ¶ra upplevelsen fÃ¶r tittaren.\n</string>
+  <string name="ForceIMDbPlus">Tvinga IMDb+</string>
+  <string name="ForceIMDbPlusDescription">Vill du vÃ¤lja att alla filmer som tidigare importerats med IMDB (fÃ¶rinstÃ¤lld hÃ¤mtare av info) istÃ¤llet skall anvÃ¤nda sig av IMDB+?\n</string>
+  <string name="ForceIMDbPlusComplete">Lyckades framgÃ¥ngsrikt byta {0}/{1} filmer\ntill IMDb+ .\n</string>
+  <string name="ForeignTitleFirst">SÃ¤tt titeln pÃ¥ originalsprÃ¥ket frÃ¤mst</string>
+  <string name="ForeignTitleFirstDescription">Av = Svensk (Originaltitel)\nPÃ… = Originaltitel (Svensk)\n\nMed denna instÃ¤llning PÃ¥ hamnar originaltiteln framfÃ¶r den Svenska titeln som stÃ¥r skriven inom parentes.\n\nExample: Zwartboek (Den Svarta Boken)\n</string>
+  <!--G-->
+  <!--H-->
+  <!--I-->
+  <string name="IMDbMetaScore">Metacritics MetaScore</string>
+  <string name="IMDbMetaScoreDescription">Av = Rankningen frÃ¥n IMDb.com anvÃ¤nds\nPÃ¥ = AnvÃ¤nd istÃ¤llet Metacritics Metascore\n\nIMDb.com tillÃ¥ter anvÃ¤ndning av Metacritics.com Metascore utÃ¶ver enbart den egna rankningen. Med denna instÃ¤llning PÃ¥ anvÃ¤nds denna rankning istÃ¤llet fÃ¶r IMDb-rankningen.\n\nOBS: Denna instÃ¤llning krÃ¤ver att \'IMDb betyg\' ocksÃ¥ Ã¤r PÃ¥ och dessutom stÃ¤ngs RottRottenTomatoes metod fÃ¶r saknad Handling samt speltid av.\n</string>
+  <string name="IMDbScore">IMDb betyg</string>
+  <string name="IMDbScoreDescription">PÃ¥ = AnvÃ¤nd RottenTomatoes\nPÃ¥ = AnvÃ¤nd endast IMDb.com\n\nRottenTomatoes erbjuder extra information, men om du hellre vill anvÃ¤nda IMDb.com sÃ¥ sÃ¤tter du PÃ¥ denna instÃ¤llning.\n\nOBS: Detta stÃ¤nger Ã¤ven av hÃ¤mtning av saknad Handling, speltid samt rankning.\n\n</string>
+  <string name="IMDbInfo">IMDb+ Info</string>
+  <string name="InfoPluginVersion">Plugin-version: v{0}</string>
+  <string name="InfoScraperAuthor">Scraper fÃ¶rfattad av: {0}</string>
+  <string name="InfoScraperVersion">Scraper-version: v{0}</string>
+  <string name="InfoScraperPriority">Scraper-prioritet: {0}</string>
+  <string name="InfoScraperPublished">Scraper publicerad: {0}</string>
+  <string name="InfoScraperLastUpdateCheck">Uppdatering av scraper senast kontrollerad: {0}</string>
+  <string name="InfoMoviesIMDbPlusPrimary">Filmer som anvÃ¤nt IMDb+ som kÃ¤lla: {0}</string>
+  <string name="InfoMoviesOtherPlusPrimary">Filmer som anvÃ¤nt en annan kÃ¤lla: {0}</string>
+  <string name="InfoReplacementsVersion">ErsÃ¤ttarversion: v{0}</string>
+  <string name="InfoReplacementsPublished">ErsÃ¤ttare publicerad: {0}</string>
+  <string name="InfoReplacementEntries">Ersatta poster: {0}</string>
+  <string name="InfoCustomReplacementEntries">Ersatta poster(egna): {0}</string>
+  <string name="IntervalSixHours">6 timmar</string>
+  <string name="IntervalTwelveHours">12 timmar</string>
+  <string name="IntervalTwentyFourHours">24 timmar</string>
+  <string name="IntervalTwoDays">2 dagar</string>
+  <string name="IntervalThreeDays">3 dagar</string>
+  <string name="IntervalFourDays">4 dagar</string>
+  <string name="IntervalSevenDays">7 dagar</string>
+  <!--K-->
+  <!--J-->
+  <!--L-->
+  <string name="LastScraperUpdate">Senaste uppdatering av scraper</string>
+  <string name="LanguageFilter">Avancerat: SprÃ¥kfilter</string>
+  <string name="LanguageFilterDescription">Unikt filter fÃ¶r att hitta fler titlar Ã¤n de engelska(en). AnvÃ¤nder IMDb.coms HTML-kÃ¤lla fÃ¶r att hitta rÃ¤tt ISO 639-1-kod efter /language/.\n\nFÃ¶rvalt sprÃ¥k Ã¤r English genom: \'en\'\n\nMen, om du Ã¤r frÃ¥n Norge och vill ha de norska filmernas titel pÃ¥ norska och Ã¶vriga pÃ¥ engelska anvÃ¤nd istÃ¤llet : \'en.no\'\n\nOBS: MediaPortal har en virtuell keyboard som inte stÃ¶djer \'|\' -tecknet, sÃ¥ ett \'.\' har istÃ¤llet anvÃ¤nts fÃ¶r att skilja olika sprÃ¥k frÃ¥n varandra. Var noggrann med denna instÃ¤llning dÃ¥ IMDB+ kan sluta att fungera om den Ã¤r felaktigt instÃ¤lld.\n</string>
+  <string name="LongSummary">AnvÃ¤nd lÃ¤ngre beskrivningar av handlingen Ã¤ven om de kan avslÃ¶ja eventuella Ã¶verraskningar i filmen</string>
+  <string name="LongSummaryDescription">Av = Kort beskrivning fÃ¶r att beskriva filmens handling\nPÃ¥ = LÃ¥ng beskrivning (kan avslÃ¶ja eventuella Ã¶verraskningar i filmen)\n\nLÃ¥nga beskrivningar ger mer information om filmen men kan ibland innehÃ¥lla ovÃ¤ntade och Ã¶verraskande vÃ¤ndningar i handlingen. DÃ¤rfÃ¶r Ã¤r denna instÃ¤llning fÃ¶rinstÃ¤lld till Av men gÃ¥r att stÃ¤lla till PÃ¥ om du fÃ¶redrar detta.\n\n</string>
+  <!--M-->
+  <string name="MinIMDbVotes">Minsta vÃ¤rde av rÃ¶ster hos IMDb som krÃ¤vs</string>
+  <string name="MinIMDbVotesDescription">Av = AnvÃ¤nd alltid IMDb.com fÃ¶r betyg\n\tPÃ¥ = AnvÃ¤nder endast detta betyg nÃ¤r fler Ã¤n 20 har rÃ¶stat\n\nOfta Ã¤r betyget frÃ¥n IMDb felaktigt dÃ¥ de som gjort filmen sjÃ¤lva har rÃ¶stat. Det Ã¤r dÃ¤rfÃ¶r inte ovanligt att filmer med fÃ¤rre Ã¤n 20 rÃ¶ster har ett vÃ¤ldigt hÃ¶gt betyg.\n\nMed denna instÃ¤llning PÃ¥ kommer betyg som utgÃ¶rs av fÃ¤rre Ã¤n 20 rÃ¶ster att ignoreras.\n</string>
+  <string name="MultiSelectDialog">Flervalsdialog</string>
+  <!--N-->
+  <string name="No">Nej</string>
+  <string name="NumberOfMovies">{0}/{1} Filmer</string>
+  <string name="NumberOfMovies2">{0} Filmer</string>
+  <string name="NoSourcesFound">Ingen filminfo funnen att konvertera till IMDb+ !</string>
+  <string name="NullSource">Ingen info, men anvÃ¤ndbart IMDb-ID</string>
+  <!--O-->
+  <string name="OneWriterDirector">BegrÃ¤nsa import av manusfÃ¶rfattare och regissÃ¶r</string>
+  <string name="OneWriterDirectorDescription">Av = HÃ¤mta samtliga manusfÃ¶rfattare och regissÃ¶rer som listas\nPÃ¥ = HÃ¤mta endast det fÃ¶rsta namnet fÃ¶r bÃ¥de manus och regi\n\nVissa MediaPortal-skin tillÃ¥ter inte tillrÃ¤ckligt med utrymme fÃ¶r mÃ¥nga namn pÃ¥ manusfÃ¶rfattare och regissÃ¶rer. FÃ¶r att slippa horisontell rullning av namnen i onÃ¶dan, sÃ¤tt denna instÃ¤llning till PÃ¥ fÃ¶r att endast hÃ¤mta det fÃ¶rsta namnet som listats.\n\nGlÃ¶m dock inte av att detta tar bort mÃ¶jligheten att sÃ¶ka efter en viss fÃ¶rfattare eller regissÃ¶r som kan ha stÃ¥tt pÃ¥ andra plats hos IMDb.com. Ã… andra sidan Ã¤r det ovanligt med filmer dÃ¤r flera fÃ¶rfattare eller regissÃ¶rer Ã¤r inblandade.\n</string>
+  <string name="OriginalTitle">AnvÃ¤nd originaltiteln fÃ¶r filmen</string>
+  <string name="OriginalTitleDescription">Av = Tvinga Internationell titel\nPÃ¥ = AnvÃ¤nd originaltiteln\n\nUtlÃ¤ndska filmer har ofta en icke-Engelsk titel.\n\nOm du vill att samtliga filmer skall ha en Engelsk eller Svensk titel, lÃ¥t denna instÃ¤llning vara Av.\n</string>
+  <!--P-->
+  <!--R-->
+  <string name="Ratings">Ã…ldersgrÃ¤nser som anvÃ¤nds i EngelsksprÃ¥kiga lÃ¤nder</string>
+  <string name="RatingsDescription">Det finns flera olika Ã¥ldersgrÃ¤ns-system fÃ¶r EngelsksprÃ¥kiga lÃ¤nder runt om i vÃ¤rlden. Den mest kÃ¤nda Ã¤r MPAA frÃ¥n USA med grÃ¤nser sÃ¥som PG-13, R, NC-17, osv.\n\nAnvÃ¤ndare i Australien, Kanada, Storbritannien samt Nya Zealand kan anvÃ¤nda deena instÃ¤llning fÃ¶r att istÃ¤llet anvÃ¤nda en lokal variant.\n</string>
+  <string name="RatingsHeader">VÃ¤lj Ã¥ldersgrÃ¤ns efter land</string>
+  <string name="Rating01">USA</string>
+  <string name="Rating02">Storbritannien</string>
+  <string name="Rating03">Kanada (Alberta)</string>
+  <string name="Rating04">Kanada (Brittiska Columbia)</string>
+  <string name="Rating05">Kanada (Manitoba)</string>
+  <string name="Rating06">Kanada (Nova Scotia)</string>
+  <string name="Rating07">Kanada (Ontario)</string>
+  <string name="Rating08">Kanada (Quebec)</string>
+  <string name="Rating09">Australien</string>
+  <string name="Rating10">Nya Zealand</string>
+  <string name="RefreshMovies">HÃ¤mta om information</string>
+  <string name="RefreshingMovies">SÃ¶ker uppdaterad information</string>
+  <string name="RefreshCancel">Avbryter uppdatering</string>
+  <string name="RefreshMoviesDescription">Ã„r du sÃ¤ker pÃ¥ att du vill uppdatera informationen fÃ¶r samtliga titlar som anvÃ¤nt IMDb+ som sin huvudsakliga kÃ¤lla?</string>
+  <string name="RefreshMovieStatus">Uppdaterar {0}/{1} filmer: {2}%</string>
+  <string name="RefreshMoviesNotification">Uppdatering av information fÃ¶r IMDb+ Ã¤r klar.\nNjut av resultatet.\n</string>
+  <string name="RefreshMoviesCancelNotification">Uppdatering har avbrutits.\n{0} filmer klara hittills.\nUppdatera igen fÃ¶r att Ã¥teruppta.\n</string>
+  <string name="RefreshAllFields">Uppdatera samtliga fÃ¤lt</string>
+  <string name="RefreshAllFieldsDescription">Av = Uppdatera endast vissa fÃ¤lt\nPÃ¥ = Uppdatera samtliga fÃ¤lt\n\nInformationen pÃ¥ IMDb.com uppdateras och kompletteras stÃ¤ndigt. Av denna anledning Ã¤r det nÃ¶dvÃ¤ndigt att uppdatera informationen fÃ¶r filmerna i samlingen.\n\nMed denna instÃ¤llning PÃ¥ hÃ¤mtas all information pÃ¥ nytt. Om inte hÃ¤mtas endast tomma fÃ¤lt, certifieringar, rankning och rÃ¶ster vid en uppdatering.\n\nOBS: Denna instÃ¤llning gÃ¶r att tidigare formatering av titeln fÃ¶r existerande filmer inte sparas.\n</string>
+  <string name="RemoveFirstRoman">Ta bort romerska siffror efter fÃ¶rsta filmen i en serie</string>
+  <string name="RemoveFirstRomanDescription">Av = BehÃ¥ll titeln som den Ã¤r listad pÃ¥ IMDb.com\nPÃ¥ = Ta bort romersk siffra frÃ¥n titeln i den fÃ¶rsta filmen\n\nOm formatering av filmtiteln Ã¤r PÃ¥ kommer filmer som ingÃ¥r i en serie att delas in med romerska siffror i titeln. Detta gÃ¶rs Ã¤ven med den fÃ¶rsta filmen i en serie, sÃ¥ att \'Avatar\' blir \'Avatar I\'. Med denna instÃ¤llning PÃ¥ kommer den fÃ¶rsta filmen att hamna fÃ¶rst i serien men den romerska siffran kommer inte att visas fÃ¶rutom pÃ¥ uppfÃ¶ljare.\n\nObservera att detta endast gÃ¶rs nÃ¤r den fÃ¶rsta filmen i serien inte har en undertitel. Filmen \'Indiana Jones I: Raiders of the Lost Ark\' kommer dÃ¤rfÃ¶r att behÃ¥lla sin romerska I:a.\n</string>
+  <string name="RenameTitles">Ã„ndra titel sÃ¥ att serier grupperas</string>
+  <string name="RenameTitlesDescription">Av = AnvÃ¤nd den titel som stÃ¥r pÃ¥ IMDb.com\nPÃ¥ = Ã„ndra titeln fÃ¶r att fÃ¥ filmerna att hÃ¤nga samman i listan\n\nDet finns flera serier av filmer, och ibland bÃ¶rjar dessa inte med samma inledande namn fÃ¶r att gÃ¶ra klart att det Ã¤r en serie. Som en lÃ¶sning fÃ¶r detta tas en omdÃ¶pt databasfil till hjÃ¤lp baserad pÃ¥ ett IMDb tt-ID nummer. Resultatet blir att filmerna fÃ¥r nya titlar som gÃ¶r de lÃ¤tta att identifiera som del av en serie och hamnar intill varandra i filmlistan.\n\nExempel: \'Batman VII: The Dark Knight Rises\' kommer att passa in vÃ¤l bland de andra i serien.\n\nDen fÃ¶rvalda, nya titeln hamnar i en fil: \'IMDb+\Rename dBase IMDb+ Scraper.xml\' som du kan finna i MediaPortals User-mapp.\n\nAndra specialtitlar du Ã¶nska bÃ¶r hamna i \'IMDb+\Rename dBase IMDb+ Scraper (Custom).xml\'\n\nDu kan anvÃ¤nda Notepad fÃ¶r att Ã¤ndra i Custom-filen som sedan sparar dessa titlar, dÃ¥ den andra filen automatiskt kommer att skrivas Ã¶ver vid en uppdatering, var fÃ¶rsiktig sÃ¥ att innehÃ¥llet i xml-filen Ã¤r kompatibelt.\n</string>
+  <string name="RottenMeter">RottenTomatoes TomatoMeter</string>
+  <string name="RottenMeterDescription">Av = RottenTomatoes \'publika\' rankningar\nPÃ¥ = RottenTomatoes \'TomatoMeter\' rankningar\n\nDet finns mÃ¥nga olika rankningsvarianter pÃ¥ RottenTomatoes.com.\n\nFÃ¶r att anvÃ¤nda en av dessa TomatoMeter-rankningar mÃ¥ste denna instÃ¤llning vara PÃ¥ annars kommer den \'Publika\' att anvÃ¤ndas.\n</string>
+  <string name="RottenAverage">RottenTomatoes medel-rankning</string>
+  <string name="RottenAverageDescription">Av = RottenTomatoes \'Procentuella\' rankning\nPÃ¥ = RottenTomatoes \'Medel\' rankning\n\nMed denna instÃ¤llning PÃ¥ Ã¤r det \'Medel\'-rankningen som gÃ¤ller, annars kommer den \'Procentuella\' rankningen att gÃ¤lla.\n\nDen \'Procentuella\' rankningen Ã¤r speciell i att den rÃ¤knar antalet RottenTomatoes-anvÃ¤ndare som rÃ¶stat pÃ¥ ett avvikande sÃ¤tt.\n</string>
+  <string name="RottenTopCritics">RottenTomatoes topp-kritiker</string>
+  <string name="RottenTopCriticsDescription">Av = RottenTomatoes \'Samtliga\' kritiker\nPÃ¥ = RottenTomatoes \'Topp\' kritiker\n\nDet finns en rankning fÃ¶r samtliga, men ocksÃ¥ en fÃ¶r en utvald \'Topp\'.\n\nMed denna instÃ¤llning PÃ¥ kommer endast de i toppen att rÃ¤knas.\n</string>
+  <string name="Resume">(Ã…teruppta)</string>
+  <!--S-->
+  <string name="ScraperOptionsTitle">IMDb+ scraperinstÃ¤llningar</string>
+  <string name="ScraperNotFirstPrompt">IMDB+ Ã¤r inte det fÃ¶rsta scraper-scriptet i listan!\nDetta kan skapa problem.\nVill du rÃ¤tta till detta?</string>
+  <string name="SecondaryDetails">HÃ¤mta extra information pÃ¥ fÃ¶ljande sprÃ¥k</string>
+  <string name="SecondaryDetailsDescription">Det finns stÃ¶d fÃ¶r att hÃ¤mta viss information pÃ¥ ytterligare ett annat sprÃ¥k. Denna information tÃ¤cker Handling, Certifiering, Genrer och mÃ¶jligtvis senare Ã¤nnu mer.\n\nJust nu finns stÃ¶d fÃ¶r: HollÃ¤ndska, Franska, Tyska, IslÃ¤ndska, Italienska, Portugisiska, Spanska och Svenska.\n</string>
+  <string name="SecondaryDetailsHeader">Det andra sprÃ¥ket</string>
+  <string name="SecondaryLanguage01">Engelska</string>
+  <string name="SecondaryLanguage02">Tyska</string>
+  <string name="SecondaryLanguage03">Spanska</string>
+  <string name="SecondaryLanguage04">Franska</string>
+  <string name="SecondaryLanguage05">Italienska</string>
+  <string name="SecondaryLanguage06">Portugisiska</string>
+  <string name="SecondaryLanguage07">Svenska</string>
+  <string name="SecondaryLanguage08">IslÃ¤ndska</string>
+  <string name="SecondaryLanguage09">HollÃ¤ndska</string>
+  <string name="SecondarySummary">Om nÃ¥got fÃ¤lt inte Ã¤r Ã¶versatt visas den engelska motsvarigheten</string>
+  <string name="SecondarySummaryDescription">Av = Visa ingenting om valt andra sprÃ¥k saknas\nPÃ¥ = AnvÃ¤nd engelska motsvarigheten om valt sprÃ¥k inte Ã¤r Ã¶versatt\n\nIcke-engelska filmsidor pÃ¥ Internet Ã¤r inte alltid lika uppdaterade som IMDb.com eller sÃ¥ innehÃ¥ller de identisk information. Detta brukar oftast drabba beskrivningen av handlingen, sÃ¥ fÃ¶r att din filmsamling inte skall ha tomma HandlingsfÃ¤lt kan du med denna instÃ¤llning PÃ¥ ta emot handlingen pÃ¥ engelska (om det Ã¤r tillgÃ¤ngligt). BÃ¤st Ã¤r om du sjÃ¤lv registrerar dig pÃ¥ den sidan dÃ¤r din information saknas fÃ¶r ditt sprÃ¥k och sjÃ¤lv bidrar med informationen, men sÃ¥ lÃ¤nge har du mÃ¶jligheten att ta del av den engelska informationen.\n</string>
+  <string name="SecondaryEnglishTitle">Den andra engelska titeln</string>
+  <string name="SecondaryEnglishTitleDescription">Av = AnvÃ¤nd icke-engelsk titel\nPÃ¥ = Tvinga engelsk titel\n\nNÃ¤r ett annat sprÃ¥k Ã¤n engelska har valts fÃ¶r att hÃ¤mta vissa detaljer, blir titeln ocksÃ¥ pÃ¥ detta sprÃ¥k. Denna instÃ¤llning kan anvÃ¤ndas fÃ¶r att sÃ¥ gott som alltid fÃ¥ en engelsk titel pÃ¥ filmen.\n\nOBS: Detta pÃ¥verkar inte den automatiska titelÃ¤ndringen fÃ¶r serier av filmer. Ett Ã¶versatt fÃ¤lt kommer Ã¤ndÃ¥ att att fÃ¥ den ursprungliga titeln Ã¤ven om denna instÃ¤llning Ã¤r Av.\n</string>
+  <string name="SingleScore">Enkelt rankningssystem</string>
+  <string name="SingleScoreDescription">Av = AnvÃ¤nd en genomsnittsrankning\nPÃ¥ = Enkel rankning anvÃ¤nds\n\nDet Ã¤r ibland en stor skillnad pÃ¥ de olika typerna av rankning som Ã¤r tillgÃ¤ngliga. FÃ¶r att vÃ¤ga upp detta finns det en genomsnittsrankning som Ã¤r baserad pÃ¥ IMDb, Metacritics och Rottentomatoes.\n\nOBS: Om \'IMDb Rankning\' Ã¤r PÃ¥ kommer den genomsnittliga rankningen att vara baserad pÃ¥ IMDb och Metacritics.\n</string>
+  <string name="SpecialEditions">KÃ¤nn av om det Ã¤r en special-utgÃ¥va av filmen</string>
+  <string name="SpecialEditionsDescription">Av = BehÃ¥ll titeln som den hÃ¤mtats\nPÃ¥ = LÃ¤gg till att filmen Ã¤r i en special-utgÃ¥va i titeln\n\nOm du har lagt till ett IMDb tt-ID nummer i filnamnet eller via en .nfo-fil kan denna instÃ¤llning kÃ¤nna av om det Ã¤r en speciell version av filmen.\n\nFÃ¶ljande kan anvÃ¤ndas inom parentes i filnamnet fÃ¶r att automatisk avkÃ¤nning :\n\n - 3D\n - Extended\n - Unrated\n - Director\'s Cut\n - Alternate Ending\n\nDet gÃ¥r Ã¤ven att fÃ¥ termen \'Edition\' tillagd efter titeln om man sÃ¥ Ã¶nskar.\n\nExempel: \"Avatar (tt0499549) (3D).mkv\" kommer att skrivas ut som \"Avatar (3D)\"\n</string>
+  <string name="SettingPluginEnabledName">Plugin aktiv</string>
+  <string name="SettingPluginEnabledDescription">Aktivera / Avaktivera denna instÃ¤llning fÃ¶r att styra huruvida IMDb+ laddas med MediaPortal.</string>
+  <string name="SettingListedHomeName">Visa i HemskÃ¤rmen</string>
+  <string name="SettingListedHomeDescription">Aktivera denna instÃ¤llning fÃ¶r att IMDb+ skall synas pÃ¥ hemskÃ¤rmens lista Ã¶ver tillgÃ¤ngliga plugins.</string>
+  <string name="SettingListedPluginsName">Visa bland mina plugins</string>
+  <string name="SettingListedPluginsDescription">Aktivera denna instÃ¤llning fÃ¶r att IMDb+ skall synas i listan Ã¶ver aktiverade plugins.</string>
+  <string name="SettingsSyncIntervalName">Antal timmar tills nÃ¤sta fÃ¶rsÃ¶k att uppdatera IMDB+ skall ske</string>
+  <string name="SettingsSyncIntervalDescription">Denna instÃ¤llning sÃ¤tter ett vÃ¤rde fÃ¶r hur ofta IMDB+ skall leta efter uppdateringar av informations-script samt ny databas med Ã¤ndringar.</string>
+  <string name="SettingsSyncOnStartupName">SÃ¶k uppdatering vid start</string>
+  <string name="SettingsSyncOnStartupDescription">Denna instÃ¤llning tvingar en kontroll av tillgÃ¤ngliga uppdateringar fÃ¶r IMDB+ varje gÃ¥ng MediaPortal startats.</string>
+  <string name="SettingsDisableNotificationsName">StÃ¤ng av visuella uppdateringar</string>
+  <string name="SettingsDisableNotificationsDescription">Denna instÃ¤llning stÃ¤nger av popup-fÃ¶nster som talar om nÃ¤r IMDB+ eller nÃ¥gon av dess komponenter har uppdaterats i ditt system.</string>
+  <string name="SelectSources">VÃ¤lj kÃ¤llor att konvertera till IMDB+</string>
+  <string name="StartsWith">BÃ¶rjar med {0}</string>
+  <string name="SelectAlphas">VÃ¤lj filmer som bÃ¶rjar pÃ¥...</string>
+  <!--T-->
+  <!--U-->
+  <string name="UkRating">Film-titlar baserade pÃ¥ Brittisk engelska</string>
+  <string name="UkRatingDescription">Av = AnvÃ¤nd Amerikanska film-titlar\nPÃ¥ = AnvÃ¤nd de titlar som anvÃ¤nds i Storbritannien. Denna instÃ¤llning gÃ¤ller endast titlar med Brittisk engelska.\n\nEtt vÃ¤lkÃ¤nt exempel Ã¤r den fÃ¶rsta Harry Potter-filmen. Original-titeln, \"Harry Potter and the Philosopher\'s Stone\", som senare fick en Amerikansk titel, \"Harry Potter and the Sorcerer\'s Stone\". IMDB Ã¤r mest inriktad pÃ¥ den Amerikanska publiken vilket innebÃ¤r att samtliga titlar som har en Amerikaniserad titel kommer att anvÃ¤nda denna automatiskt. Denna instÃ¤llning lÃ¥ter dig vÃ¤lja den titel filmen har pÃ¥ Brittisk engelska.\n\nOBS: Det finns i nulÃ¤get inget implementerat stÃ¶d fÃ¶r fÃ¶r Brittisk-engelska titlar i den automatiska omdÃ¶pningen av filmer, sÃ¥ Ã¤n sÃ¥ lÃ¤nge kommer du Ã¤ndÃ¥ att se \"Harry Potter I: Sorcerer\'s Stone\", men det gÃ¥r att tvinga ersÃ¤ttande titlar via databasen i \"custom.xml\"  tills dess att riktigt stÃ¶d har implementerats i IMDb+. \n\n</string>
+  <string name="UpdatedScraperScript">MovingPictures har blivit uppdaterad med IMDb+ scraper-script v{0}</string>
+  <string name="Update">Uppdatera</string>
+  <string name="UpdateAll">Uppdatera samtliga</string>
+  <string name="UpdateReplacementOnly">Uppdatera ersÃ¤ttare endast</string>
+  <string name="UpdateAlphas">Uppdatera filmer som bÃ¶rjar pÃ¥...</string>
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+  <string name="Yes">Ja</string>
+</resources>

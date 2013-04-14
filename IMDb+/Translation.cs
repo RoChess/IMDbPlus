@@ -96,55 +96,6 @@ namespace IMDb
             }
         }
 
-        public static int LoadTranslations(string lang)
-        {
-            XmlDocument doc = new XmlDocument();
-            Dictionary<string, string> TranslatedStrings = new Dictionary<string, string>();
-            string langPath = string.Empty;
-            try
-            {
-                langPath = Path.Combine(path, lang + ".xml");
-                doc.Load(langPath);
-            }
-            catch (Exception e)
-            {
-                if (lang == "en")
-                    return 0; // otherwise we are in an endless loop!
-
-                if (e.GetType() == typeof(FileNotFoundException))
-                    Logger.Warning("Cannot find translation file {0}. Falling back to English", langPath);
-                else
-                    Logger.Error("Error in translation xml file: {0}. Falling back to English", lang);
-
-                return LoadTranslations("en");
-            }
-            foreach (XmlNode stringEntry in doc.DocumentElement.ChildNodes)
-            {
-                if (stringEntry.NodeType == XmlNodeType.Element)
-                {
-                    try
-                    {
-                        TranslatedStrings.Add(stringEntry.Attributes.GetNamedItem("Field").Value, stringEntry.InnerText);
-                    }
-                    catch (Exception ex)
-                    {
-                        Logger.Error("Error in Translation Engine", ex.Message);
-                    }
-                }
-            }
-
-            Type TransType = typeof(Translation);
-            FieldInfo[] fieldInfos = TransType.GetFields(BindingFlags.Public | BindingFlags.Static);
-            foreach (FieldInfo fi in fieldInfos)
-            {
-                if (TranslatedStrings != null && TranslatedStrings.ContainsKey(fi.Name))
-                    TransType.InvokeMember(fi.Name, BindingFlags.SetField, null, TransType, new object[] { TranslatedStrings[fi.Name] });
-                else
-                    Logger.Info("Translation not found for field: {0}.  Using hard-coded English default.", fi.Name);
-            }
-            return TranslatedStrings.Count;
-        }
-
         public static string GetByName(string name)
         {
             if (!Strings.ContainsKey(name))
@@ -173,6 +124,68 @@ namespace IMDb
             return input;
         }
 
+        #endregion
+
+        #region Private Methods
+        static int LoadTranslations(string lang)
+        {
+            XmlDocument doc = new XmlDocument();
+            Dictionary<string, string> TranslatedStrings = new Dictionary<string, string>();
+            string langPath = string.Empty;
+            try
+            {
+                langPath = Path.Combine(path, lang + ".xml");
+                doc.Load(langPath);
+            }
+            catch (Exception e)
+            {
+                if (lang == "en")
+                    return 0; // otherwise we are in an endless loop!
+
+                if (e.GetType() == typeof(FileNotFoundException))
+                    Logger.Warning("Cannot find translation file {0}. Falling back to English", langPath);
+                else
+                    Logger.Error("Error in translation xml file: {0}. Falling back to English", lang);
+
+                return LoadTranslations("en");
+            }
+            foreach (XmlNode stringEntry in doc.DocumentElement.ChildNodes)
+            {
+                if (stringEntry.NodeType == XmlNodeType.Element)
+                {
+                    try
+                    {
+                        TranslatedStrings.Add(stringEntry.Attributes.GetNamedItem("name").Value, stringEntry.InnerText.NormalizeTranslation());
+                    }
+                    catch (Exception ex)
+                    {
+                        Logger.Error("Error in Translation Engine", ex.Message);
+                    }
+                }
+            }
+
+            Type TransType = typeof(Translation);
+            FieldInfo[] fieldInfos = TransType.GetFields(BindingFlags.Public | BindingFlags.Static);
+            foreach (FieldInfo fi in fieldInfos)
+            {
+                if (TranslatedStrings != null && TranslatedStrings.ContainsKey(fi.Name))
+                    TransType.InvokeMember(fi.Name, BindingFlags.SetField, null, TransType, new object[] { TranslatedStrings[fi.Name] });
+                else
+                    Logger.Info("Translation not found for name: {0}. Using hard-coded English default.", fi.Name);
+            }
+            return TranslatedStrings.Count;
+        }
+
+        /// <summary>
+        /// Temp workaround to remove unwanted chars from Transifex
+        /// </summary>
+        static string NormalizeTranslation(this string input)
+        {
+            input = input.Replace("\\'", "'");
+            input = input.Replace("\\\"", "\"");
+            input = input.Replace("\\n", "\n");
+            return input;
+        }
         #endregion
 
         #region Translations / Strings
