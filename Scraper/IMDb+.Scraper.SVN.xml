@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="8" point="7" />
-		<published month="04" day="14" year="2013" />
+		<version major="4" minor="8" point="8" />
+		<published month="04" day="24" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1417,7 +1417,7 @@
 				</set>
 				<set name="rx_rename_check_postfix">
 					<![CDATA[
-					"[\t\s]+(?:title="(?<renameTitle>[^"]+)")?(?:[\t\s]*foreign="(?<renameForeign>[^"]+)")?(?:[\t\s]*sortby="(?<renameSortBy>[^"]+)")?[\t\s]*/>
+					"[\t\s]+(?:title="(?<renameTitle>[^"]+)")?(?:[\t\s]*collection="(?<renameCollection>[^"]+)")?(?:[\t\s]*foreign="(?<renameForeign>[^"]+)")?(?:[\t\s]*sortby="(?<renameSortBy>[^"]+)")?[\t\s]*/>
 					]]>
 				</set>
 				<retrieve name="file" file="C:\Rename dBase IMDb+ Scraper.xml" encoding="UTF-8" />
@@ -1436,15 +1436,15 @@
 							</if>
 						</if>
 						<if test="${global_options_foreign_title}=true">
-							<if test="${fileRename[0][1]}!=">
+							<if test="${fileRename[0][2]}!=">
 								<if test="${global_options_foreign_first}=true">
-									<set name="movie.title" value="${fileRename[0][1]:htmldecode} (${fileRename[0][0]:htmldecode})" />
+									<set name="movie.title" value="${fileRename[0][2]:htmldecode} (${fileRename[0][0]:htmldecode})" />
 								</if>
 								<if test="${global_options_foreign_first}=false">
-									<set name="movie.title" value="${fileRename[0][0]:htmldecode} (${fileRename[0][1]:htmldecode})" />
+									<set name="movie.title" value="${fileRename[0][0]:htmldecode} (${fileRename[0][2]:htmldecode})" />
 								</if>
 							</if>
-							<if test="${fileRename[0][1]}=">
+							<if test="${fileRename[0][2]}=">
 								<set name="movie.title" value="${fileRename[0][0]:htmldecode}" />
 							</if>
 						</if>
@@ -1453,9 +1453,20 @@
 						</if>
 						<log LogLevel="Info" Message="IMDb+ Scraper: Title adjusted via Default Rename XML for: ${movie.imdb_id}" />
 					</if>
-					<if test="${fileRename[0][2]}!=">
-						<set name="movie.sortby" value="${fileRename[0][2]:htmldecode}" />
+					<if test="${fileRename[0][3]}!=">
+						<set name="movie.sortby" value="${fileRename[0][3]:htmldecode}" />
 						<log LogLevel="Info" Message="IMDb+ Scraper: SortBy adjusted via Default Rename XML for: ${movie.imdb_id}" />
+					</if>
+					<if test="${fileRename[0][1]}!=">
+						<set name="movie.collections" value="${fileRename[0][1]}" />
+						<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection set to '${fileRename[0][1]}'" />
+					</if>
+					<if test="${fileRename[0][1]}=">
+						<parse name="collection_prefix" input="${fileRename[0][0]:htmldecode}" regex="^(.+?)(?:\s[IVX]+)(?:\:|$)" />
+						<if test="${collection_prefix[0][0]}!=">
+							<set name="movie.collections" value="${collection_prefix[0][0]}" />
+							<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection auto-set to '${collection_prefix[0][0]}'" />
+						</if>
 					</if>
 				</if>
 				<if test="${fileRename.count}&gt;1">
@@ -1470,7 +1481,7 @@
 				</set>
 				<set name="rx_rename_check_postfix">
 					<![CDATA[
-					"[\t\s]+(?:title="(?<renameTitle>[^"]+)")?(?:[\t\s]*sortby="(?<renameSortBy>[^"]+)")?[\t\s]*/>
+					"[\t\s]+(?:title="(?<renameTitle>[^"]+)")?(?:[\t\s]*collection="(?<renameCollection>[^"]+)")?(?:[\t\s]*sortby="(?<renameSortBy>[^"]+)")?[\t\s]*/>
 					]]>
 				</set>
 				<retrieve name="file" file="C:\Rename dBase IMDb+ Scraper (Custom).xml" encoding="UTF-8" />
@@ -1481,9 +1492,13 @@
 						<set name="movie.title" value="${fileRename[0][0]:htmldecode}" />
 						<log LogLevel="Info" Message="IMDb+ Scraper: Title adjusted via Custom Rename XML for: ${movie.imdb_id}" />
 					</if>
-					<if test="${fileRename[0][1]}!=">
+					<if test="${fileRename[0][2]}!=">
 						<set name="movie.sortby" value="${fileRename[0][1]:htmldecode}" />
 						<log LogLevel="Info" Message="IMDb+ Scraper: SortBy adjusted via Custom Rename XML for: ${movie.imdb_id}" />
+					</if>
+					<if test="${fileRename[0][1]}!=">
+						<set name="movie.collections" value="${fileRename[0][1]}" />
+						<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection set to '${fileRename[0][1]}' via Custom Rename XML" />
 					</if>
 				</if>
 				<if test="${fileRename.count}&gt;1">
