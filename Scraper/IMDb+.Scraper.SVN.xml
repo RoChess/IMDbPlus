@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="8" point="8" />
-		<published month="04" day="24" year="2013" />
+		<version major="4" minor="8" point="9" />
+		<published month="04" day="25" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1458,13 +1458,13 @@
 						<log LogLevel="Info" Message="IMDb+ Scraper: SortBy adjusted via Default Rename XML for: ${movie.imdb_id}" />
 					</if>
 					<if test="${fileRename[0][1]}!=">
-						<set name="movie.collections" value="${fileRename[0][1]}" />
+						<set name="movie.collections" value="|${fileRename[0][1]}|" />
 						<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection set to '${fileRename[0][1]}'" />
 					</if>
 					<if test="${fileRename[0][1]}=">
 						<parse name="collection_prefix" input="${fileRename[0][0]:htmldecode}" regex="^(.+?)(?:\s[IVX]+)(?:\:|$)" />
 						<if test="${collection_prefix[0][0]}!=">
-							<set name="movie.collections" value="${collection_prefix[0][0]}" />
+							<set name="movie.collections" value="|${collection_prefix[0][0]}|" />
 							<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection auto-set to '${collection_prefix[0][0]}'" />
 						</if>
 					</if>
@@ -1497,7 +1497,7 @@
 						<log LogLevel="Info" Message="IMDb+ Scraper: SortBy adjusted via Custom Rename XML for: ${movie.imdb_id}" />
 					</if>
 					<if test="${fileRename[0][1]}!=">
-						<set name="movie.collections" value="${fileRename[0][1]}" />
+						<set name="movie.collections" value="|${fileRename[0][1]}|" />
 						<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection set to '${fileRename[0][1]}' via Custom Rename XML" />
 					</if>
 				</if>
