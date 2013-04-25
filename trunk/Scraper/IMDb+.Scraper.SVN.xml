@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="8" point="9" />
-		<published month="04" day="25" year="2013" />
+		<version major="4" minor="9" point="1" />
+		<published month="04" day="26" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1423,8 +1423,19 @@
 				<retrieve name="file" file="C:\Rename dBase IMDb+ Scraper.xml" encoding="UTF-8" />
 				<parse name="fileRename" input="${file}" regex="${rx_rename_check_prefix}${movie.imdb_id}${rx_rename_check_postfix}" />
 				<if test="${fileRename.count}=1">
+					<if test="${fileRename[0][1]}!=">
+						<set name="movie.collections" value="${fileRename[0][1]}" />
+						<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection set to '${movie.collections}'" />
+					</if>
 					<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
 					<if test="${fileRename[0][0]}!=">
+						<if test="${fileRename[0][1]}=">
+							<parse name="collection_prefix" input="${fileRename[0][0]:htmldecode}" regex="^(.+?)(?:\s[IVX]+)(?:\:|$)" />
+							<if test="${collection_prefix[0][0]}!=">
+								<set name="movie.collections" value="${collection_prefix[0][0]}" />
+								<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection auto-set to '${movie.collections}'" />
+							</if>
+						</if>
 						<if test="${new_import}!=true">
 							<if test="${global_options_remove_first_roman}=true">
 								<parse name="strip_first_roman" input="${fileRename[0][0]:htmldecode}" regex="^(.+?)((?&lt;!Part|Volume)\sI)$" />
@@ -1457,17 +1468,6 @@
 						<set name="movie.sortby" value="${fileRename[0][3]:htmldecode}" />
 						<log LogLevel="Info" Message="IMDb+ Scraper: SortBy adjusted via Default Rename XML for: ${movie.imdb_id}" />
 					</if>
-					<if test="${fileRename[0][1]}!=">
-						<set name="movie.collections" value="|${fileRename[0][1]}|" />
-						<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection set to '${fileRename[0][1]}'" />
-					</if>
-					<if test="${fileRename[0][1]}=">
-						<parse name="collection_prefix" input="${fileRename[0][0]:htmldecode}" regex="^(.+?)(?:\s[IVX]+)(?:\:|$)" />
-						<if test="${collection_prefix[0][0]}!=">
-							<set name="movie.collections" value="|${collection_prefix[0][0]}|" />
-							<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection auto-set to '${collection_prefix[0][0]}'" />
-						</if>
-					</if>
 				</if>
 				<if test="${fileRename.count}&gt;1">
 					<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Default Rename XML file has more then one entry for: ${movie.imdb_id}" />
@@ -1497,8 +1497,8 @@
 						<log LogLevel="Info" Message="IMDb+ Scraper: SortBy adjusted via Custom Rename XML for: ${movie.imdb_id}" />
 					</if>
 					<if test="${fileRename[0][1]}!=">
-						<set name="movie.collections" value="|${fileRename[0][1]}|" />
-						<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection set to '${fileRename[0][1]}' via Custom Rename XML" />
+						<set name="movie.collections" value="${fileRename[0][1]}" />
+						<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection set to '${movie.collections}' via Custom Rename XML" />
 					</if>
 				</if>
 				<if test="${fileRename.count}&gt;1">
