@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="3" />
-		<published month="04" day="28" year="2013" />
+		<version major="4" minor="9" point="4" />
+		<published month="04" day="29" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -501,6 +501,18 @@
 
 				<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
 				<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
+			</if>
+
+			<if test="${global_options_refresh_all_fields}=true"><set name="update_release_date" value="true" /></if><if test="${movie.release_date}="><set name="update_release_date" value="true" /></if>
+			<if test="${update_release_date}=true">
+				<!-- Release Date -->
+				<set name="rx_release_date">
+					<![CDATA[
+					<h4 class="inline">Release Date:</h4>\s*(?<releaseDate>\d{1,2}\s*[^\s]+\s*\d{4})
+					]]>
+				</set>
+				<parse name="release_date" input="${details_page}" regex="${rx_release_date}" />
+				<set name="movie.release_date" value="${release_date[0]:htmldecode}|" />
 			</if>
 
 			<if test="${global_options_refresh_all_fields}=true"><set name="update_studios" value="true" /></if><if test="${movie.studios}="><set name="update_studios" value="true" /></if>
