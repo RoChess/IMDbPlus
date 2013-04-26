@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="6" point="6" />
-		<published month="04" day="24" year="2013" />
+		<version major="1" minor="6" point="7" />
+		<published month="04" day="25" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -528,7 +528,7 @@
 	<rename id="tt0022854" title="Emma (Classic)" />
 	<rename id="tt0118308" title="Emma (TV)" />
 	<rename id="tt0362590" title="Employee of the Month (Cult)" />
-	<rename id="tt0120667" title="Fantastic Four I" collection="Fantasic Four|Superheroes" />
+	<rename id="tt0120667" title="Fantastic Four I" collection="Fantastic Four|Superheroes" />
 	<rename id="tt0486576" title="Fantastic Four II: Rise of the Silver Surfer" collection="Fantastic Four|Superheroes" />
 	<rename id="tt0042451" title="Father of the Bride (Original) I" />
 	<rename id="tt0043526" title="Father of the Bride (Original) II: Father's Little Dividend" />
@@ -900,8 +900,8 @@
 	<rename id="tt1871303" title="Kiss Me Kate (NL)" />
 	<rename id="tt0441773" title="Kung Fu Panda I" />
 	<rename id="tt1302011" title="Kung Fu Panda II" />
-	<rename id="tt1287845" title="Kung Fu Panda (Short) I: Secrets of the Furious Five" sortby="Kung Fu Panda X01" />
-	<rename id="tt1702433" title="Kung Fu Panda (Short) II: Holiday Special" sortby="Kung Fu Panda X02" />
+	<rename id="tt1287845" title="Kung Fu Panda (Short) I: Secrets of the Furious Five" collection="Kung Fu Panda" sortby="Kung Fu Panda X01" />
+	<rename id="tt1702433" title="Kung Fu Panda (Short) II: Holiday Special" collection="Kung Fu Panda" sortby="Kung Fu Panda X02" />
 	<rename id="tt0048280" title="Lady and the Tramp I" />
 	<rename id="tt0249677" title="Lady and the Tramp II: Scamp's Adventure" />
 	<rename id="tt1228933" title="Laid to Rest I" />
@@ -941,9 +941,9 @@
 	<rename id="tt0960143" title="Love Comes Softly VI: Love's Unfolding Dream" sortby="Love Comes Softly 06" />
 	<rename id="tt1269560" title="Love Comes Softly VII: Love Takes Wing" sortby="Love Comes Softly 07" />
 	<rename id="tt1307064" title="Love Comes Softly VIII: Love Finds a Home" sortby="Love Comes Softly 08" />
-	<rename id="tt1684907" title="Love Comes Softly (Prequel) I: Love Begins" sortby="Love Comes Softly X01" />
-	<rename id="tt1672621" title="Love Comes Softly (Prequel) II: Love's Everlasting Courage" sortby="Love Comes Softly X02" />
-	<rename id="tt2078672" title="Love Comes Softly: Love's Christmas Journey" sortby="Love Comes Softly Y01" />
+	<rename id="tt1684907" title="Love Comes Softly (Prequel) I: Love Begins" collection="Love Comes Softly" sortby="Love Comes Softly X01" />
+	<rename id="tt1672621" title="Love Comes Softly (Prequel) II: Love's Everlasting Courage" collection="Love Comes Softly" sortby="Love Comes Softly X02" />
+	<rename id="tt2078672" title="Love Comes Softly: Love's Christmas Journey" collection="Love Comes Softly" sortby="Love Comes Softly Y01" />
 	<rename id="tt0985694" title="Machete I" />
 	<rename id="tt2002718" title="Machete II: Kills" />
 	<rename id="tt2002719" title="Machete III: Kills Again... In Space!" />
@@ -1272,11 +1272,11 @@
 	<rename id="tt0298148" title="Shrek II" />
 	<rename id="tt0413267" title="Shrek III: The Third" />
 	<rename id="tt0892791" title="Shrek IV: Forever After" />
-	<rename id="tt0360985" title="Shrek (Short): 4-D" sortby="Shrek X01" />
-	<rename id="tt0307461" title="Shrek (Short): Shrek in the Swamp Karaoke Dance Party" sortby="Shrek X02" />
-	<rename id="tt0897387" title="Shrek (Short): Shrek The Halls" sortby="Shrek X03" />
-	<rename id="tt1830577" title="Shrek (Short): Donkey's Christmas Shrektacular" sortby="Shrek X04" />
-	<rename id="tt1725156" title="Shrek (Short): Scared Shrekless" sortby="Shrek X05" />
+	<rename id="tt0360985" title="Shrek (Short): 4-D" collection="Shrek" sortby="Shrek X01" />
+	<rename id="tt0307461" title="Shrek (Short): Shrek in the Swamp Karaoke Dance Party" collection="Shrek" sortby="Shrek X02" />
+	<rename id="tt0897387" title="Shrek (Short): Shrek The Halls" collection="Shrek" sortby="Shrek X03" />
+	<rename id="tt1830577" title="Shrek (Short): Donkey's Christmas Shrektacular" collection="Shrek" sortby="Shrek X04" />
+	<rename id="tt1725156" title="Shrek (Short): Scared Shrekless" collection="Shrek" sortby="Shrek X05" />
 	<rename id="tt0401792" title="Sin City I" />
 	<rename id="tt0458481" title="Sin City II: A Dame to Kill For" />
 	<rename id="tt0475394" title="Smokin' Aces I" />
@@ -1656,9 +1656,9 @@
 	<rename id="tt0120363" title="Toy Story II" />
 	<rename id="tt0435761" title="Toy Story III" />
 	<rename id="tt1979376" title="Toy Story IV" />
-	<rename id="tt1850374" title="Toy Story (Short): Hawaiian Vacation" sortby="Toy Story X01" />
-	<rename id="tt2033372" title="Toy Story (Short): Small Fry" sortby="Toy Story X02" />
-	<rename id="tt2340678" title="Toy Story (Short): Partysaurus Rex" sortby="Toy Story X03" />
+	<rename id="tt1850374" title="Toy Story (Short): Hawaiian Vacation" collection="Toy Story" sortby="Toy Story X01" />
+	<rename id="tt2033372" title="Toy Story (Short): Small Fry" collection="Toy Story" sortby="Toy Story X02" />
+	<rename id="tt2340678" title="Toy Story (Short): Partysaurus Rex" collection="Toy Story" sortby="Toy Story X03" />
 	<rename id="tt0418279" title="Transformers I" />
 	<rename id="tt1055369" title="Transformers II: Revenge of the Fallen" />
 	<rename id="tt1399103" title="Transformers III: Dark of the Moon" />
@@ -1717,8 +1717,8 @@
 	<rename id="tt0176269" title="Universal Soldier IV: The Return" />
 	<rename id="tt1288403" title="Universal Soldier V: Regeneration" />
 	<rename id="tt1659343" title="Universal Soldier VI: Day of Reckoning" />
-	<rename id="tt1537759" title="Up (Short): Dug's Special Mission" sortby="Up X01" />
-	<rename id="tt1552624" title="Up (Short): George &amp; A.J." sortby="Up X02" />
+	<rename id="tt1537759" title="Up (Short): Dug's Special Mission" collection="Up" sortby="Up X01" />
+	<rename id="tt1552624" title="Up (Short): George &amp; A.J." collection="Up" sortby="Up X02" />
 	<rename id="tt0146336" title="Urban Legend I" />
 	<rename id="tt0192731" title="Urban Legend II: Final Cut" />
 	<rename id="tt0451957" title="Urban Legend III: Bloody Mary" />
@@ -1798,8 +1798,8 @@
 	<rename id="tt0120903" title="X-Men I" collection="X-Men Trilogy|X-Men" />
 	<rename id="tt0290334" title="X-Men II: X-Men United (X2)" collection="X-Men Trilogy|X-Men" />
 	<rename id="tt0376994" title="X-Men III: The Last Stand" collection="X-Men Trilogy|X-Men" />
-	<rename id="tt1270798" title="X-Men: First Class" sortby="X-Men: First Class I" collection="X-Men First Class|X-Men" />
-	<rename id="tt1877832" title="X-Men: First Class II" collection="X-Men First Class|X-Men" />
+	<rename id="tt1270798" title="X-Men: First Class" sortby="X-Men: First Class I" collection="X-Men Origin|X-Men" />
+	<rename id="tt1877832" title="X-Men: First Class II" collection="X-Men Origin|X-Men" />
 	<rename id="tt0295701" title="xXx I" />
 	<rename id="tt0329774" title="xXx II: State Of The Union" />
 	<rename id="tt1293847" title="xXx III: The Return of Xander Cage" />
