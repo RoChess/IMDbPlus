@@ -30,14 +30,15 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="6" point="8" />
-		<published month="04" day="27" year="2013" />
+		<version major="1" minor="6" point="9" />
+		<published month="04" day="30" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
-	<rename id="tt1038988" title="[Rec] I" />
-	<rename id="tt1245112" title="[Rec] II" />
-	<rename id="tt1649444" title="[Rec] III: Génesis" />
+	<rename id="tt1038988" title="[Rec] I" collection="Quarantine &amp; [Rec]" />
+	<rename id="tt1245112" title="[Rec] II" collection="Quarantine &amp; [Rec]" />
+	<rename id="tt1649444" title="[Rec] III: Génesis" collection="Quarantine &amp; [Rec]" />
+	<rename id="tt1649443" title="[Rec] IV: Apocalypse" collection="Quarantine &amp; [Rec]" />
 	<rename id="tt0103594" title="1492: Conquest of Paradise" />
 	<rename id="tt0112950" title="Empire Records" />
 	<rename id="tt0443424" title="9 (Original)" />
@@ -706,6 +707,7 @@
 	<rename id="tt0817910" title="Hellboy Animated II: Blood &amp; Iron" collection="Hellboy|» Superheroes" />
 	<rename id="tt0167190" title="Hellboy I" collection="Hellboy|» Superheroes" />
 	<rename id="tt0411477" title="Hellboy II: The Golden Army" collection="Hellboy|» Superheroes" />
+	<rename id="tt2274648" title="Hellboy III" collection="Hellboy|» Superheroes" />
 	<rename id="tt0093177" title="Hellraiser I: Hellraiser" sortby="Hellraiser 01" />
 	<rename id="tt0095294" title="Hellraiser II: Hellbound" sortby="Hellraiser 02" />
 	<rename id="tt0104409" title="Hellraiser III: Hell on Earth" sortby="Hellraiser 03" />
@@ -917,6 +919,7 @@
 	<rename id="tt1871303" title="Kiss Me Kate (NL)" />
 	<rename id="tt0441773" title="Kung Fu Panda I" />
 	<rename id="tt1302011" title="Kung Fu Panda II" />
+	<rename id="tt2267968" title="Kung Fu Panda III" />
 	<rename id="tt1287845" title="Kung Fu Panda (Short) I: Secrets of the Furious Five" collection="Kung Fu Panda" sortby="Kung Fu Panda X01" />
 	<rename id="tt1702433" title="Kung Fu Panda (Short) II: Holiday Special" collection="Kung Fu Panda" sortby="Kung Fu Panda X02" />
 	<rename id="tt0048280" title="Lady and the Tramp I" />
@@ -1147,8 +1150,8 @@
 	<rename id="tt0425379" title="Pusher III: I'm The Angel Of Death" />
 	<rename id="tt1921070" title="Pusher (UK)" />
 	<rename id="tt1082075" title="Pusher (India)" />
- 	<rename id="tt1082868" title="Quarantine I" />
-	<rename id="tt1699231" title="Quarantine II: Terminal" />
+ 	<rename id="tt1082868" title="Quarantine I" collection="Quarantine &amp; [Rec]" />
+	<rename id="tt1699231" title="Quarantine II: Terminal" collection="Quarantine &amp; [Rec]" />
 	<rename id="tt0089421" title="Quatermain I: King Solomon's Mines" />
 	<rename id="tt0092534" title="Quatermain II: Allan Quatermain and the Lost City of Gold" />
 	<rename id="tt0295989" title="Quatermain III: High Adventure" />
