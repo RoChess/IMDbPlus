@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="12" />
-		<published month="05" day="07" year="2013" />
+		<version major="4" minor="9" point="13" />
+		<published month="05" day="09" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1450,7 +1450,7 @@
 					<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
 					<if test="${fileRename[0][0]}!=">
 						<if test="${fileRename[0][1]}=">
-							<parse name="collection_prefix" input="${fileRename[0][0]:htmldecode}" regex="^(.+?)(?:\s\([^\)]+\))?(?:(?:\:\s(?:Part|Volume))?\s[IVX]+)(?:\:|$)" />
+							<parse name="collection_prefix" input="${fileRename[0][0]:htmldecode}" regex="^(.+?)(?:\s\([^\)]+\))?(?:(?:\:\s(?:Part|Volume))?\s[IVX\d]+)(?:\:|$)" />
 							<if test="${collection_prefix[0][0]}!=">
 								<set name="movie.collections" value="|${collection_prefix[0][0]}|" />
 								<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection auto-set to '${movie.collections}'" />
