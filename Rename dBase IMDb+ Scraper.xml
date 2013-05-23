@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="7" point="0" />
-		<published month="05" day="09" year="2013" />
+		<version major="1" minor="7" point="1" />
+		<published month="05" day="23" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -41,17 +41,19 @@
 	<rename id="tt1649443" title="[Rec] IV: Apocalypse" collection="Quarantine &amp; [Rec]" />
 	<rename id="tt0103594" title="1492: Conquest of Paradise" />
 	<rename id="tt0112950" title="Empire Records" />
+	<rename id="tt0050086" title="3:10 to Yuma (Original)" />
 	<rename id="tt0443424" title="9 (Original)" />
+	<rename id="tt1160368" title="12 Rounds I" />
+	<rename id="tt2317524" title="12 Rounds II: Reloaded" />
+	<rename id="tt0092312" title="21 Jump Street (Original)" />
+	<rename id="tt1232829" title="21 Jump Street I" />
+	<rename id="tt2294449" title="21 Jump Street II" />
+	<rename id="tt0389722" title="30 Days of Night I" />
+	<rename id="tt1320304" title="30 Days of Night II: Dark Days" />
 	<rename id="tt0055254" title="101 Dalmatians I" />
 	<rename id="tt0324941" title="101 Dalmatians II: Patch's London Adventure" />
 	<rename id="tt0062622" title="2001 I: A Space Odyssey" />
 	<rename id="tt0086837" title="2001 II: 2010" />
-	<rename id="tt0092312" title="21 Jump Street (Original)" />
-	<rename id="tt1232829" title="21 Jump Street I" />
-	<rename id="tt2294449" title="21 Jump Street II" />
-	<rename id="tt0050086" title="3:10 to Yuma (Original)" />
-	<rename id="tt0389722" title="30 Days of Night I" />
-	<rename id="tt1320304" title="30 Days of Night II: Dark Days" />
 	<rename id="tt0006333" title="20,000 Leagues Under the Sea (Original)" />
 	<rename id="tt0118247" title="20,000 Leagues Under the Sea (TV I)" />
 	<rename id="tt0118248" title="20,000 Leagues Under the Sea (TV II)" />
@@ -483,6 +485,7 @@
 	<rename id="tt0112864" title="Die Hard III: Die Hard with a Vengeance" />
 	<rename id="tt0337978" title="Die Hard IV: Live Free or Die Hard" />
 	<rename id="tt1606378" title="Die Hard V: A Good Day to Die Hard" />
+	<rename id="tt2884178" title="Die Hard VI: Die Hardest" />
 	<rename id="tt0066999" title="Dirty Harry I" />
 	<rename id="tt0070355" title="Dirty Harry II: Magnum Force" />
 	<rename id="tt0074483" title="Dirty Harry III: The Enforcer" />
