@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="7" point="1" />
-		<published month="05" day="23" year="2013" />
+		<version major="1" minor="7" point="2" />
+		<published month="05" day="25" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -225,6 +225,9 @@
 	<rename id="tt0055781" title="Beauty and the Beast (Original)" />
 	<rename id="tt0338769" title="Beauty and the Beast: Blood of Beasts" />
 	<rename id="tt1410295" title="Beauty and the Beasts: A Dark Tale" />
+	<rename id="tt0112471" title="Before Sunrise" sortby="Before Sunrise 1" collection="Before Sunrise" />
+	<rename id="tt0381681" title="Before Sunset" sortby="Before Sunrise 2" collection="Before Sunrise" />
+	<rename id="tt2209418" title="Before Midnight" sortby="Before Sunrise 3" collection="Before Sunrise" />
 	<rename id="tt0159273" title="Behind Enemy Lines I" />
 	<rename id="tt0497329" title="Behind Enemy Lines II: Axis of Evil" />
 	<rename id="tt1208647" title="Behind Enemy Lines III: Colombia" />
@@ -711,6 +714,8 @@
 	<rename id="tt0367959" title="Hannibal V: Hannibal Rising" />
 	<rename id="tt1460002" title="Hansel &amp; Gretel (Cartoon)" />
 	<rename id="tt0892763" title="Hansel &amp; Gretel (Remake)" />
+	<rename id="tt1428538" title="Hansel &amp; Gretel I: Witch Hunters" />
+	<rename id="tt2784082" title="Hansel &amp; Gretel II: Witch Hunters 2" />
 	<rename id="tt0193995" title="Hansel and Gretel (Cartoon)" />
 	<rename id="tt1380833" title="Hansel and Gretel (Musical)" />
 	<rename id="tt0270398" title="Hansel and Gretel (Opera)" />
