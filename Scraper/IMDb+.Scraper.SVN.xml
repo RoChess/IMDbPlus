@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="13" />
-		<published month="05" day="09" year="2013" />
+		<version major="4" minor="9" point="14" />
+		<published month="05" day="27" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -975,7 +975,7 @@
 			<!-- Get imdb + metacritics votes/scores and fix to a scale of 10 if needed -->
 			<set name="rx_imdb_votes">
 				<![CDATA[
-				title="(?<imdbPopularity>[^\s]+) IMDb users have given a weighted average vote of (?<imdbScore>\d+.\d+)/10"(?:.+?Metascore:\s*<a[^>]+>\s*(?<metaScore>\d+)/100.+?"criticreviews[^>]+>\s*(?<metaPopularity>[^\s]+)\s*</a>)?
+				title="(?<imdbPopularity>[^\s]+) IMDb users\D+(?<imdbScore>\d+(?:.\d+)?)/10"(?:.+?Metascore:\s*<a[^>]+>\s*(?<metaScore>\d+)/100.+?"criticreviews[^>]+>\s*(?<metaPopularity>[^\s]+)\s*</a>)?
 				]]>
 			</set>
 			<parse name="imdb_votes" input="${details_page}" regex="${rx_imdb_votes}" />
