@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="7" point="2" />
-		<published month="05" day="25" year="2013" />
+		<version major="1" minor="7" point="3" />
+		<published month="06" day="05" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -992,6 +992,12 @@
 	<rename id="tt0104714" title="Lethal Weapon III" />
 	<rename id="tt0122151" title="Lethal Weapon IV" />
 	<rename id="tt0822827" title="Lightspeed" collection="» Superheroes" />
+	<rename id="tt0275847" title="Lilo &amp; Stitch I" />
+	<rename id="tt0457993" title="Lilo &amp; Stitch II: Stitch Has a Glitch" />
+	<rename id="tt1242449" title="Lilo &amp; Stitch: The Origin of Stitch" collection="Lilo &amp; Stitch" sortby="Lilo 01" />
+	<rename id="tt0348124" title="Lilo &amp; Stitch: Stitch! The Movie" collection="Lilo &amp; Stitch" sortby="Lilo 02" />
+	<rename id="tt0451213" title="Lilo &amp; Stitch: Stitch's Great Escape" collection="Lilo &amp; Stitch" sortby="Lilo 03" />
+	<rename id="tt0486761" title="Lilo &amp; Stitch: Leroy &amp; Stitch" collection="Lilo &amp; Stitch" sortby="Lilo 04" />
 	<rename id="tt0096639" title="Lonesome Dove I: Lonesome Dove" />
 	<rename id="tt0106112" title="Lonesome Dove II: Return to Lonesome Dove" />
 	<rename id="tt0112041" title="Lonesome Dove III: Streets of Laredo" />
@@ -1132,6 +1138,8 @@
 	<rename id="tt0250635" title="Out of Time (Canada)" />
 	<rename id="tt1951212" title="Out of Time (Drama)" />
 	<rename id="tt0095802" title="Out of Time (TV)" />
+	<rename id="tt1462667" title="Outrage I" foreign="Autoreiji" />
+	<rename id="tt1724962" title="Outrage II: Beyond" foreign="Autoreiji: Biyondo" />
 	<rename id="tt1055300" title="Painted Skin I" foreign="Hua Pi" />
 	<rename id="tt2371411" title="Painted Skin II: The Resurrection" foreign="Hua Pi Er" />
 	<rename id="tt1179904" title="Paranormal Activity I" />
@@ -1624,6 +1632,8 @@
 	<rename id="tt1674782" title="The Karate Kid (Remake) II" />
 	<rename id="tt1504320" title="The King's Speech" collection="» Oscars for Best Picture" />
 	<rename id="tt0093389" title="The Last Emperor" collection="» Oscars for Best Picture" />
+	<rename id="tt1320244" title="The Last Exorcism I" />
+	<rename id="tt2034139" title="The Last Exorcism II" />
 	<rename id="tt0311429" title="The League of Extraordinary Gentlemen" collection="» Superheroes" />
 	<rename id="tt0412915" title="The Librarian I: Quest For the Spear" />
 	<rename id="tt0455596" title="The Librarian II: Return to King Solomon's Mines" />
@@ -1632,7 +1642,7 @@
 	<rename id="tt1111918" title="The Line" foreign="La Linea" />
 	<rename id="tt0110357" title="The Lion King I" />
 	<rename id="tt0120131" title="The Lion King II" />
-	<rename id="tt0318403" title="The Lion King III: Hakuna Matata (1½)" />
+	<rename id="tt0318403" title="The Lion King III: Hakuna Matata (1½)" collection="The Lion King|Lilo &amp; Stitch" />
 	<rename id="tt0120737" title="The Lord of the Rings I: Fellowship of the Ring" collection="The Lord of the Rings|» Tolkien's Middle-earth" />
 	<rename id="tt0167261" title="The Lord of the Rings II: The Two Towers" collection="The Lord of the Rings|» Tolkien's Middle-earth" />
 	<rename id="tt0167260" title="The Lord of the Rings III: The Return of the King" collection="The Lord of the Rings|» Tolkien's Middle-earth|» Oscars for Best Picture" />
