@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="7" point="3" />
-		<published month="06" day="05" year="2013" />
+		<version major="1" minor="7" point="4" />
+		<published month="06" day="08" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1140,6 +1140,8 @@
 	<rename id="tt0095802" title="Out of Time (TV)" />
 	<rename id="tt1462667" title="Outrage I" foreign="Autoreiji" />
 	<rename id="tt1724962" title="Outrage II: Beyond" foreign="Autoreiji: Biyondo" />
+	<rename id="tt1623205" title="Oz the Great and Powerful I" />
+	<rename id="tt2761172" title="Oz the Great and Powerful II" />
 	<rename id="tt1055300" title="Painted Skin I" foreign="Hua Pi" />
 	<rename id="tt2371411" title="Painted Skin II: The Resurrection" foreign="Hua Pi Er" />
 	<rename id="tt1179904" title="Paranormal Activity I" />
