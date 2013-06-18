@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="7" point="4" />
-		<published month="06" day="08" year="2013" />
+		<version major="1" minor="7" point="5" />
+		<published month="06" day="18" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -442,6 +442,13 @@
 	<rename id="tt0123755" title="Cube I" />
 	<rename id="tt0285492" title="Cube II: Hypercube" />
 	<rename id="tt0377713" title="Cube III: Cube Zero" />
+	<rename id="tt0097138" title="Cyborg I" />
+	<rename id="tt0106639" title="Cyborg II: Glass Shadow" />
+	<rename id="tt0112765" title="Cyborg III: The Recycler" />
+	<rename id="tt2075291" title="Cyborg IV: Nemesis" />
+	<rename id="tt0109517" title="Cyborg Cop I" />
+	<rename id="tt0109518" title="Cyborg Cop II" />
+	<rename id="tt0112766" title="Cyborg Cop III" />
 	<rename id="tt0042367" title="Cyrano de Bergerac (Original)" />
 	<rename id="tt0178361" title="Cyrano de Bergerac (TV)" />
 	<rename id="tt0472301" title="Cyrano de Bergerac (UK)" />
@@ -647,6 +654,8 @@
 	<rename id="tt0119190" title="George of the Jungle I" />
 	<rename id="tt0322389" title="George of the Jungle II" />
 	<rename id="tt0067128" title="Get Carter (Original)" />
+	<rename id="tt0113161" title="Get Shorty I" />
+	<rename id="tt0377471" title="Get Shorty II: Be Cool" />
 	<rename id="tt0259324" title="Ghost Rider I" collection="Ghost Rider|» Superheroes" />
 	<rename id="tt1071875" title="Ghost Rider II: Spirit of Vengeance" collection="Ghost Rider|» Superheroes" />
 	<rename id="tt0087332" title="Ghostbusters I" />
