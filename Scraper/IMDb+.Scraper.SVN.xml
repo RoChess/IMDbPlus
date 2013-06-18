@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="16" />
-		<published month="06" day="17" year="2013" />
+		<version major="4" minor="9" point="17" />
+		<published month="06" day="18" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1380,23 +1380,34 @@
 									</if>
 
 									<if test="${title_year[0][0]}=">
-										<!-- Last resort by looking for (undefined) titles -->
+										<!-- Grab first "(original title)" as this is the English title for foreign users if no valid 'USA' title was found above -->
 										<set name="rx_aka_english">
 											<![CDATA[
-											<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td></td>.*?</table>
+											<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>\s*<table[^>]+>\s*<tr[^>]+>\s*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>\(original title\)</td>
 											]]>
 										</set>
-										<!-- TEST MOVIE: http://www.imdb.com/title/tt0061806/releaseinfo (Castle of Bloody Lust) -->
+										<!-- TEST MOVIE: 4proxy.de on http://www.imdb.com/title/tt0465624/ (My Super Ex-Girlfriend) -->
 										<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
 
 										<if test="${title_year[0][0]}=">
-											<!-- Giving up, and using the AKA title -->
+											<!-- Last resort by looking for (undefined) titles -->
 											<set name="rx_aka_english">
 												<![CDATA[
-												<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.*?<meta name="title" content="(?:&#x27;)?(?<movieTitleEnglish>[^\(]+?)(?:&#x27;)?\s*\(
+												<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td></td>.*?</table>
 												]]>
 											</set>
+											<!-- TEST MOVIE: http://www.imdb.com/title/tt0061806/releaseinfo (Castle of Bloody Lust) -->
 											<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
+
+											<if test="${title_year[0][0]}=">
+												<!-- Giving up, and using the AKA title -->
+												<set name="rx_aka_english">
+													<![CDATA[
+													<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.*?<meta name="title" content="(?:&#x27;)?(?<movieTitleEnglish>[^\(]+?)(?:&#x27;)?\s*\(
+													]]>
+												</set>
+												<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
+											</if>
 										</if>
 									</if>
 								</if>
