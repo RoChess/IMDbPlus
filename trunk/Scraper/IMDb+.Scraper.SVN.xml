@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="18" />
-		<published month="06" day="23" year="2013" />
+		<version major="4" minor="9" point="19" />
+		<published month="06" day="27" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1383,7 +1383,7 @@
 										<!-- Grab first "(original title)" as this is the English title for foreign users if no valid 'USA' title was found above -->
 										<set name="rx_aka_english">
 											<![CDATA[
-											<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>\s*<table[^>]+>\s*<tr[^>]+>\s*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>\(original title\)</td>
+											<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>\s*<table[^>]+>\s*<tr[^>]+>\s*(?:<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>\(original title\)</td>|<td>\(original title\)</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>)
 											]]>
 										</set>
 										<!-- TEST MOVIE: 4proxy.de on http://www.imdb.com/title/tt0465624/ (My Super Ex-Girlfriend) -->
