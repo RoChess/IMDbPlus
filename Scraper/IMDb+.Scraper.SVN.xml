@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="19" />
-		<published month="06" day="27" year="2013" />
+		<version major="4" minor="9" point="20" />
+		<published month="06" day="28" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -464,14 +464,14 @@
 					<if test="${global_options_original_title}=true">
 						<set name="rx_title_year">
 							<![CDATA[
-							<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitle>.+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>
+							<title>(?:&#x27;)?(?<movieTitle>.+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>
 							]]>
 						</set>
 					</if>
 					<if test="${global_options_original_title}=false">
 						<set name="rx_tmp_prefix">
 							<![CDATA[
-							<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleEnglish>(?:(?=.+?generic.monitoring.set_twilight_info\(\s*"title",\s*"
+							<title>(?:&#x27;)?(?<movieTitleEnglish>(?:(?=.+?generic.monitoring.set_twilight_info\(\s*"title",\s*"
 							]]>
 						</set>
 						<set name="rx_tmp_infix">
@@ -1281,7 +1281,7 @@
 				<if test="${title_year[0][0]}!=">
 					<set name="rx_aka_english">
 						<![CDATA[
-						<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*?<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*USA \(new title\)[^<]*</td>.*?</table>
+						<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*?<td>[^<]*USA \(new title\)[^<]*</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 						]]>
 					</set>
 					<!-- TEST MOVIE: http://www.imdb.com/title/tt1415283/releaseinfo (Nanny McPhee Returns) -->
@@ -1295,145 +1295,124 @@
 
 				<!-- Find English title on AKA page if we failed to get one at the beginning -->
 				<if test="${title_year[0][0]}=">
+					<!-- Sort out pure British-English titles first, so we can re-use the same last-resort English code later -->
 					<if test="${global_options_uk_rating}=false">
-						<!-- First making sure there is no display title entry -->
+						<!-- UK ratings are disabled so we check for USA title first -->
 						<set name="rx_aka_english">
 							<![CDATA[
-							<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA\s*\(imdb display title\))(?!\s*\((?:Spanish title)\))[^<]*</td>.*?</table>
+							<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td>USA</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+							]]>
+						</set>
+						<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
+						<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
+					</if>
+					<if test="${global_options_uk_rating}=true">
+						<set name="rx_aka_english">
+							<![CDATA[
+							<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td>UK</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+							]]>
+						</set>
+						<!-- TEST MOVIE: http://www.imdb.com/title/tt0241527/releaseinfo (Harry Potter) -->
+						<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
+					</if>
+
+					<if test="${title_year[0][0]}=">
+						<!-- Checking for International English title -->
+						<set name="rx_aka_english">
+							<![CDATA[
+							<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td>World-wide \(English title\)</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 							]]>
 						</set>
 						<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
 						<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
 
 						<if test="${title_year[0][0]}=">
-							<!-- Checking for 'last' added USA title first -->
+							<!-- Locate English 'Hong Kong' title -->
 							<set name="rx_aka_english">
 								<![CDATA[
-								<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA(?!\s*\((?:longer version|working title|fake working title|alternative spelling|complete title|short title|original script title|literal English title|(?:imdb display title\)\s*\()?Spanish title|director.#x27;s cut|poster title|promotional title|promotional abbreviation|IMAX version|3-D version)\)))[^<]*</td>.*?</table>
-								]]>
-							</set>
-							<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
-						</if>
-					</if>
-					<if test="${title_year[0][0]}=">
-						<if test="${global_options_uk_rating}=true">
-							<set name="rx_aka_english">
-								<![CDATA[
-								<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:UK\s*\(imdb display title\))[^<]*</td>.*?</table>
-								]]>
-							</set>
-							<!-- TEST MOVIE: http://www.imdb.com/title/tt0241527/releaseinfo (Harry Potter) -->
-							<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
-						</if>
-
-						<if test="${title_year[0][0]}=">
-							<!-- Checking for International English title -->
-							<set name="rx_aka_english">
-								<![CDATA[
-								<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*?<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:International|World-wide(?!\s*(?:\(imdb display title\)\s\(Spanish title\)|\((?:informal short title|alternative spelling)\)\s\(English title\)|\((?:longer version|working title|fake working title|alternative spelling|complete title|short title|original script title|literal English title|Spanish title|director.#x27;s cut|poster title|promotional title|promotional abbreviation|IMAX version|3-D version)\))))[^<]*</td>
+								<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>Hong Kong[^<]*English[^<]*</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 								]]>
 							</set>
 							<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
 							<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
 
 							<if test="${title_year[0][0]}=">
-								<!-- Locate English 'Hong Kong' title -->
+								<!-- Accepting any remaining English title -->
 								<set name="rx_aka_english">
 									<![CDATA[
-									<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>Hong Kong[^<]*English[^<]*</td>.*?</table>
+									<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>(?!.*?(?:Japan|working title|short title|alternative spelling))[^<]*English[^<]*</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 									]]>
 								</set>
 								<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
 								<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
 
-								<if test="${title_year[0][0]}=">
-									<!-- Accepting any remaining English title -->
-									<set name="rx_aka_english">
-										<![CDATA[
-										<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>(?!.*?(?:Japan|working title|short title|alternative spelling))[^<]*English[^<]*</td>.*?</table>
-										]]>
-									</set>
-									<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
-									<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
-
-									<if test="${global_options_uk_rating}=true">
-										<if test="${title_year[0][0]}=">
-											<!-- Give USA title one last chance for UK users -->
-											<set name="rx_aka_english">
-												<![CDATA[
-												<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA\s*\(imdb display title\)(?!\s*\((?:Spanish title)\)))[^<]*</td>.*?</table>
-												]]>
-											</set>
-											<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
-											<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
-
-											<if test="${title_year[0][0]}=">
-												<set name="rx_aka_english">
-													<![CDATA[
-													<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>[^<]*(?:USA(?!\s*\((?:longer version|working title|fake working title|alternative spelling|complete title|short title|original script title|literal English title|(?:imdb display title\)\s*\()?Spanish title|director.#x27;s cut|poster title|promotional title|promotional abbreviation|IMAX version|3-D version)\)))[^<]*</td>.*?</table>
-													]]>
-												</set>
-												<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
-												<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
-											</if>
-										</if>
-									</if>
-
+								<if test="${global_options_uk_rating}=true">
 									<if test="${title_year[0][0]}=">
-										<!-- Grab first "(original title)" as this is the English title for foreign users if no valid 'USA' title was found above -->
+										<!-- Give USA title one last chance for British-English users -->
 										<set name="rx_aka_english">
 											<![CDATA[
-											<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>\s*<table[^>]+>\s*<tr[^>]+>\s*(?:<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td>\(original title\)</td>|<td>\(original title\)</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>)
+											<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td>USA</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 											]]>
 										</set>
-										<!-- TEST MOVIE: 4proxy.de on http://www.imdb.com/title/tt0465624/ (My Super Ex-Girlfriend) -->
+										<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
+										<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
+									</if>
+								</if>
+
+								<if test="${title_year[0][0]}=">
+									<!-- Grab first "(original title)" as this is the English title for foreign users if no valid 'USA' title was found above -->
+									<set name="rx_aka_english">
+										<![CDATA[
+										<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>\s*<table[^>]+>\s*<tr[^>]+>\s*<td>\(original title\)</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>
+										]]>
+									</set>
+									<!-- TEST MOVIE: 4proxy.de on http://www.imdb.com/title/tt0465624/ (My Super Ex-Girlfriend) -->
+									<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
+
+									<if test="${title_year[0][0]}=">
+										<!-- Last resort by looking for (undefined) titles -->
+										<set name="rx_aka_english">
+											<![CDATA[
+											<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td></td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+											]]>
+										</set>
+										<!-- TEST MOVIE: http://www.imdb.com/title/tt0061806/releaseinfo (Castle of Bloody Lust) -->
 										<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
 
 										<if test="${title_year[0][0]}=">
-											<!-- Last resort by looking for (undefined) titles -->
+											<!-- Giving up, and using the AKA title -->
 											<set name="rx_aka_english">
 												<![CDATA[
-												<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>(?<movieTitleEnglish>[^<]+)</td>\s*<td></td>.*?</table>
+												<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.*?<meta name="title" content="(?:&#x27;)?(?<movieTitleEnglish>[^\(]+?)(?:&#x27;)?\s*\(
 												]]>
 											</set>
-											<!-- TEST MOVIE: http://www.imdb.com/title/tt0061806/releaseinfo (Castle of Bloody Lust) -->
 											<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
-
-											<if test="${title_year[0][0]}=">
-												<!-- Giving up, and using the AKA title -->
-												<set name="rx_aka_english">
-													<![CDATA[
-													<title>(?:IMDb[\s-]*)?(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.*?<meta name="title" content="(?:&#x27;)?(?<movieTitleEnglish>[^\(]+?)(?:&#x27;)?\s*\(
-													]]>
-												</set>
-												<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
-											</if>
 										</if>
 									</if>
 								</if>
 							</if>
 						</if>
 					</if>
-					<!-- the title_year array is in reverse on the AKA page -->
-					<if test="${global_options_foreign_title}=true">
-						<!-- prevent title duplicate on some foreign movies with English titles -->
-						<if test="${title_year[0][2]:htmldecode}!=${title_year[0][0]:htmldecode}">
-							<if test="${global_options_foreign_first}=true">
-								<set name="movie.title" value="${title_year[0][0]:htmldecode} (${title_year[0][2]:htmldecode})" />
-							</if>
-							<if test="${global_options_foreign_first}=false">
-								<set name="movie.title" value="${title_year[0][2]:htmldecode} (${title_year[0][0]:htmldecode})" />
-							</if>
+				</if>
+				<!-- the title_year array is in reverse on the AKA page -->
+				<if test="${global_options_foreign_title}=true">
+					<!-- prevent title duplicate on some foreign movies with English titles -->
+					<if test="${title_year[0][2]:htmldecode}!=${title_year[0][0]:htmldecode}">
+						<if test="${global_options_foreign_first}=true">
+							<set name="movie.title" value="${title_year[0][0]:htmldecode} (${title_year[0][2]:htmldecode})" />
 						</if>
-						<if test="${title_year[0][2]:htmldecode}=${title_year[0][0]:htmldecode}">
-							<set name="movie.title" value="${title_year[0][2]:htmldecode}" />
+						<if test="${global_options_foreign_first}=false">
+							<set name="movie.title" value="${title_year[0][2]:htmldecode} (${title_year[0][0]:htmldecode})" />
 						</if>
 					</if>
-					<if test="${global_options_foreign_title}=false">
+					<if test="${title_year[0][2]:htmldecode}=${title_year[0][0]:htmldecode}">
 						<set name="movie.title" value="${title_year[0][2]:htmldecode}" />
 					</if>
-					<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
 				</if>
+				<if test="${global_options_foreign_title}=false">
+					<set name="movie.title" value="${title_year[0][2]:htmldecode}" />
+				</if>
+				<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
 			</if>
 
 			<!-- Details URL -->
