@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="20" />
-		<published month="06" day="28" year="2013" />
+		<version major="4" minor="9" point="21" />
+		<published month="07" day="02" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1400,9 +1400,17 @@
 					<if test="${title_year[0][2]:htmldecode}!=${title_year[0][0]:htmldecode}">
 						<if test="${global_options_foreign_first}=true">
 							<set name="movie.title" value="${title_year[0][0]:htmldecode} (${title_year[0][2]:htmldecode})" />
+							<if test="${title_year[0][2]:htmldecode}=">
+								<!-- Fix empty English title -->
+								<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
+							</if>
 						</if>
 						<if test="${global_options_foreign_first}=false">
 							<set name="movie.title" value="${title_year[0][2]:htmldecode} (${title_year[0][0]:htmldecode})" />
+							<if test="${title_year[0][2]:htmldecode}=">
+								<!-- Fix empty Foreign title -->
+								<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
+							</if>
 						</if>
 					</if>
 					<if test="${title_year[0][2]:htmldecode}=${title_year[0][0]:htmldecode}">
