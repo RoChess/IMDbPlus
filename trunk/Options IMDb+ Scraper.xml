@@ -17,6 +17,7 @@
 	<set id="16" name="global_options_one_writer_director"	value="false" />
 	<set id="17" name="global_options_remove_first_roman"	value="false" />
 	<set id="18" name="global_options_fix_missing_summary"	value="false" />
+	<set id="18" name="global_options_debug_imdb_sources"	value="false" />
 
 	<set id="94" name="global_options_english_movie_rating"	value="01" />
 	<set id="95" name="global_options_secondary_en_title"	value="false" />
