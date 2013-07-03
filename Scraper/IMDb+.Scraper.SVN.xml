@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="21" />
-		<published month="07" day="02" year="2013" />
+		<version major="4" minor="9" point="22" />
+		<published month="07" day="03" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -48,6 +48,7 @@
 			<set name="global_options_one_writer_director" value="false" />	<!-- Only use one name	| Get all the names	-->
 			<set name="global_options_remove_first_roman" value="false" />	<!-- Remove 'I' numeral	| Rename title as-is	-->
 			<set name="global_options_fix_missing_summary" value="false" />	<!-- Try to use reviews	| Keep summary as-is	-->
+			<set name="global_options_debug_imdb_sources" value="false" />	<!-- Log HTML sources	| Not needed normally	-->
 
 			<!--
 				There is now expanded support for other English based rating systems.
@@ -146,6 +147,8 @@
 				<set name="global_options_remove_first_roman" value="${xml_option[0].@value}" />
 				<parse name="xml_option" input="${file}" xpath="//set[@id=18]" />
 				<set name="global_options_fix_missing_summary" value="${xml_option[0].@value}" />
+				<parse name="xml_option" input="${file}" xpath="//set[@id=19]" />
+				<set name="global_options_debug_imdb_sources" value="${xml_option[0].@value}" />
 
 				<parse name="xml_option" input="${file}" xpath="//set[@id=94]" />
 				<if test="${xml_option.count}=1">
@@ -363,8 +366,18 @@
 					<log LogLevel="Info" Message="IMDb+ Scraper: Dutch (moviemeter.nl) used for some data on: ${movie.site_id}" />
 				</if>
 				<retrieve name="foreign_page" url="${alt_site}" encoding="${alt_site_encoding}" allow_unsafe_header="true" timeout="10000" />
+				<if test="${global_options_debug_imdb_sources}=true">
+					<log LogLevel="Debug" Message="############################ IMDb+ HTML Source ############################" />
+					<log LogLevel="Debug" Message="##### foreign_page = ${foreign_page} #####" />
+					<log LogLevel="Debug" Message="###########################################################################" />
+				</if>
 			</if>
 			<retrieve name="details_page" url="${site}" />
+			<if test="${global_options_debug_imdb_sources}=true">
+				<log LogLevel="Debug" Message="############################ IMDb+ HTML Source ############################" />
+				<log LogLevel="Debug" Message="##### details_page = ${details_page} #####" />
+				<log LogLevel="Debug" Message="###########################################################################" />
+			</if>
 
 			<set name="movie.imdb_id" value="${movie.site_id}" />
 
@@ -1271,10 +1284,15 @@
 					]]>
 				</set>
 				<retrieve name="aka_page" url="${site}releaseinfo" />
+				<if test="${global_options_debug_imdb_sources}=true">
+					<log LogLevel="Debug" Message="############################ IMDb+ HTML Source ############################" />
+					<log LogLevel="Debug" Message="##### aka_page = ${aka_page} #####" />
+					<log LogLevel="Debug" Message="###########################################################################" />
+				</if>
 				<parse name="akas" input="${aka_page}" regex="${rx_aka}" />
 				<set name="movie.alternate_titles" value="|" />
 				<loop name="currAka" on="akas" limit="50">
-					<set name="movie.alternate_titles" value="${movie.alternate_titles}${currAka[0]:htmldecode}|" />
+					<set name="movie.alternate_titles" value="${movie.alternate_titles}${currAka[1]:htmldecode}|" />
 				</loop>
 
 				<!-- Test for rare case when an English movie gets a new title -->
@@ -1340,7 +1358,7 @@
 								<!-- Accepting any remaining English title -->
 								<set name="rx_aka_english">
 									<![CDATA[
-									<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>(?!.*?(?:Japan|working title|short title|alternative spelling))[^<]*English[^<]*</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+									<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>(?!.*?(?:Japan|working title|short title|alternative spelling|promotional title))[^<]*English[^<]*</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 									]]>
 								</set>
 								<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
@@ -1408,7 +1426,7 @@
 						<if test="${global_options_foreign_first}=false">
 							<set name="movie.title" value="${title_year[0][2]:htmldecode} (${title_year[0][0]:htmldecode})" />
 							<if test="${title_year[0][2]:htmldecode}=">
-								<!-- Fix empty Foreign title -->
+								<!-- Fix empty English title -->
 								<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
 							</if>
 						</if>
