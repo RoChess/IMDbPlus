@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="22" />
-		<published month="07" day="03" year="2013" />
+		<version major="4" minor="9" point="23" />
+		<published month="07" day="28" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1358,7 +1358,7 @@
 								<!-- Accepting any remaining English title -->
 								<set name="rx_aka_english">
 									<![CDATA[
-									<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>(?!.*?(?:Japan|working title|short title|alternative spelling|promotional title))[^<]*English[^<]*</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+									<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>(?!.*?(?:Japan|working title|short title|alternative spelling|promotional title|informal title))[^<]*English[^<]*</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 									]]>
 								</set>
 								<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
