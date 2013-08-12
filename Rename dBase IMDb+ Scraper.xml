@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="7" point="5" />
-		<published month="06" day="18" year="2013" />
+		<version major="1" minor="7" point="6" />
+		<published month="08" day="12" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -131,6 +131,8 @@
 	<rename id="tt0090605" title="Alien II: Aliens" sortby="Alien 02" />
 	<rename id="tt0103644" title="Alien III: Alien³" sortby="Alien 03" />
 	<rename id="tt0118583" title="Alien IV: Alien Resurrection" sortby="Alien 04" />
+	<rename id="tt0370263" title="Aliens vs. Predator I" collection="Alien" sortby="Alien X01" />
+	<rename id="tt0758730" title="Aliens vs. Predator II: Requiem" collection="Alien" sortby="Alien X02" />
 	<rename id="tt0331834" title="Alive (Japan)" />
 	<rename id="tt0400150" title="Alive (Musical)" />
 	<rename id="tt0042192" title="All About Eve" collection="» Oscars for Best Picture" />
@@ -193,6 +195,11 @@
 	<rename id="tt1757678" title="Avatar III" />
 	<rename id="tt0112431" title="Babe I" />
 	<rename id="tt0120595" title="Babe II: Pig in the City" />
+	<rename id="tt0118665" title="Baby Geniuses I" />
+	<rename id="tt0270846" title="Baby Geniuses II: Superbabies" />
+	<rename id="tt2150163" title="Baby Geniuses III: Mystery of the Crown Jewels" />
+	<rename id="tt2287250" title="Baby Geniuses IV: Space Baby" />
+	<rename id="tt2287238" title="Baby Geniuses V: Treasures of Egypt" />
 	<rename id="tt0086927" title="Bachelor Party I" />
 	<rename id="tt0954541" title="Bachelor Party II: The Last Temptation" />
 	<rename id="tt0088763" title="Back to the Future I" />
@@ -412,6 +419,8 @@
 	<rename id="tt0424345" title="Clerks II" />
 	<rename id="tt0844471" title="Cloudy I: with a Chance of Meatballs" />
 	<rename id="tt1985966" title="Cloudy II: Revenge of the Leftovers" />
+	<rename id="tt0088933" title="Cocoon I" />
+	<rename id="tt0094890" title="Cocoon II: The Return" />
 	<rename id="tt0017765" title="College (Classic)" />
 	<rename id="tt0082198" title="Conan I: The Barbarian" />
 	<rename id="tt0087078" title="Conan II: The Destroyer" />
@@ -819,7 +828,9 @@
 	<rename id="tt2113625" title="How to Train Your Dragon: Book of Dragons" />
 	<rename id="tt2065968" title="How to Train Your Dragon: Gift of the Night Fury" />
 	<rename id="tt1744776" title="How to Train Your Dragon: Legend of the BoneKnapper Dragon" />
-	<rename id="tt0095368" title="Hulk (Original) I: The Incredible Hulk Returns" collection="» Superheroes" />
+	<rename id="tt0107131" title="Homeward Bound I: The Incredible Journey" />
+	<rename id="tt0116552" title="Homeward Bound II: Lost in San Francisco" />
+ 	<rename id="tt0095368" title="Hulk (Original) I: The Incredible Hulk Returns" collection="» Superheroes" />
 	<rename id="tt0098512" title="Hulk (Original) II: The Trial of the Incredible Hulk" collection="» Superheroes" />
 	<rename id="tt0099387" title="Hulk (Original) III: The Death of the Incredible Hulk" collection="» Superheroes" />
 	<rename id="tt0286716" title="Hulk" collection="» Superheroes" />
@@ -1012,6 +1023,8 @@
 	<rename id="tt0112041" title="Lonesome Dove III: Streets of Laredo" />
 	<rename id="tt0115238" title="Lonesome Dove IV: Dead Man's Walk" />
 	<rename id="tt0783328" title="Lonesome Dove V: Comanche Moon" />
+	<rename id="tt1737237" title="Lost on Journey I" foreign="Ren zai jiong tu" />
+	<rename id="tt2459022" title="Lost on Journey II: Lost in Thailand" foreign="Ren zai jiong tu zhi tai jiong" />
 	<rename id="tt0245712" title="Love's a Bitch" foreign="Amores perros" />
 	<rename id="tt0345591" title="Love Comes Softly I" sortby="Love Comes Softly 01" />
 	<rename id="tt0402348" title="Love Comes Softly II: Love's Enduring Promise" sortby="Love Comes Softly 02" />
@@ -1778,7 +1791,7 @@
 	<rename id="tt1754720" title="The Thin Man (Remake) I" sortby="The Thin Man X01" />
 	<rename id="tt0905372" title="The Thing (Remake)" />
 	<rename id="tt0063688" title="The Thomas Crown Affair (Original)" />
-	<rename id="tt0155267" title="The Thomas Crown Affair I" />
+	<rename id="tt0155267" title="The Thomas Crown Affair" sortby="The Thomas Crown Affair I" />
 	<rename id="tt0433100" title="The Thomas Crown Affair II" />
 	<rename id="tt0076786" title="The Three Mothers I: Suspiria" />
 	<rename id="tt0080923" title="The Three Mothers II: Inferno" />
