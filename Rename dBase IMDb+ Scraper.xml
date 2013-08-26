@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="7" point="6" />
-		<published month="08" day="12" year="2013" />
+		<version major="1" minor="7" point="7" />
+		<published month="08" day="25" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -47,11 +47,13 @@
 	<rename id="tt2317524" title="12 Rounds II: Reloaded" />
 	<rename id="tt0092312" title="21 Jump Street (Original)" />
 	<rename id="tt1232829" title="21 Jump Street I" />
-	<rename id="tt2294449" title="21 Jump Street II" />
+	<rename id="tt2294449" title="21 Jump Street II: 22 Jump Street" />
 	<rename id="tt0389722" title="30 Days of Night I" />
 	<rename id="tt1320304" title="30 Days of Night II: Dark Days" />
 	<rename id="tt0055254" title="101 Dalmatians I" />
 	<rename id="tt0324941" title="101 Dalmatians II: Patch's London Adventure" />
+	<rename id="tt0416449" title="300" sortby="300 I" />
+	<rename id="tt1253863" title="300 II: Rise of an Empire" />
 	<rename id="tt0062622" title="2001 I: A Space Odyssey" />
 	<rename id="tt0086837" title="2001 II: 2010" />
 	<rename id="tt0006333" title="20,000 Leagues Under the Sea (Original)" />
@@ -419,6 +421,8 @@
 	<rename id="tt0424345" title="Clerks II" />
 	<rename id="tt0844471" title="Cloudy I: with a Chance of Meatballs" />
 	<rename id="tt1985966" title="Cloudy II: Revenge of the Leftovers" />
+	<rename id="tt1060277" title="Cloverfield" sortby="Cloverfield I" />
+	<rename id="tt1179933" title="Cloverfield II" />
 	<rename id="tt0088933" title="Cocoon I" />
 	<rename id="tt0094890" title="Cocoon II: The Return" />
 	<rename id="tt0017765" title="College (Classic)" />
@@ -694,6 +698,8 @@
 	<rename id="tt0099700" title="Gremlins II: The New Batch" />
 	<rename id="tt1028528" title="Grindhouse I: Death Proof" />
 	<rename id="tt1077258" title="Grindhouse II: Planet Terror" />
+	<rename id="tt1375670" title="Grown Ups" sortby="Grown Ups I" />
+	<rename id="tt2191701" title="Grown Ups II" />
 	<rename id="tt2015381" title="Guardians of the Galaxy" collection="The Avengers|» Superheroes" />
 	<rename id="tt0489718" title="Gulliver's Travels (Cartoon)" />
 	<rename id="tt0031397" title="Gulliver's Travels (Original)" />
@@ -844,6 +850,7 @@
 	<rename id="tt0061811" title="In the Heat of the Night" collection="» Oscars for Best Picture" />
 	<rename id="tt0460780" title="In the Name of the King I: A Dungeon Siege Tale" />
 	<rename id="tt1767319" title="In the Name of the King II: Two Worlds" />
+	<rename id="tt2379386" title="In the Name of the King III: The Last Job" />
 	<rename id="tt0116629" title="Independence Day" sortby="Independence Day I" />
 	<rename id="tt1628841" title="Independence Day II" />
 	<rename id="tt1628842" title="Independence Day III" />
@@ -1296,6 +1303,7 @@
 	<rename id="tt0089927" title="Rocky IV" />
 	<rename id="tt0100507" title="Rocky V" />
 	<rename id="tt0479143" title="Rocky VI: Rocky Balboa" />
+	<rename id="tt3076658" title="Rocky VII: Creed" />
 	<rename id="tt0152225" title="Romeo &amp; Juliet (Canada)" />
 	<rename id="tt0111011" title="Romeo &amp; Juliet (TV)" />
 	<rename id="tt0167374" title="Romeo and Juliet (Ballet)" />
@@ -1450,6 +1458,7 @@
 	<rename id="tt0253754" title="Star Trek X: Nemesis" sortby="Star Trek 10" />
 	<rename id="tt0796366" title="Star Trek XI: Star Trek" sortby="Star Trek 11" />
 	<rename id="tt1408101" title="Star Trek XII: Into Darkness" sortby="Star Trek 12" />
+	<rename id="tt2660888" title="Star Trek XIII" sortby="Star Trek 13" />
 	<rename id="tt1185834" title="Star Wars: The Clone Wars" collection="Star Wars" />
 	<rename id="tt0120915" title="Star Wars I: The Phantom Menace" sortby="Star Wars 01" />
 	<rename id="tt0121765" title="Star Wars II: Attack of the Clones" sortby="Star Wars 02" />
@@ -1536,7 +1545,7 @@
 	<rename id="tt0878647" title="The Art Of War III: Retribution" />
 	<rename id="tt1655442" title="The Artist" collection="» Oscars for Best Picture" />
 	<rename id="tt0848228" title="The Avengers" collection="The Avengers|» Superheroes" sortby="The Avengers I" />
-	<rename id="tt2395427" title="The Avengers II" collection="The Avengers|» Superheroes" />
+	<rename id="tt2395427" title="The Avengers II: Age of Ultron" collection="The Avengers|» Superheroes" />
 	<rename id="tt0095800" title="The Bear" foreign="L'ours" />
 	<rename id="tt0036868" title="The Best Years of Our Lives" collection="» Oscars for Best Picture" />
 	<rename id="tt0080453" title="The Blue Lagoon I" />
@@ -1595,6 +1604,7 @@
 	<rename id="tt1538503" title="The Fast and the Furious IV: Los Bandoleros" />
 	<rename id="tt1596343" title="The Fast and the Furious V: Fast Five" />
 	<rename id="tt1905041" title="The Fast and the Furious VI" />
+	<rename id="tt2820852" title="The Fast and the Furious VII" />
 	<rename id="tt0059183" title="The Flight of the Phoenix (Original)" />
 	<rename id="tt0091064" title="The Fly I" />
 	<rename id="tt0097368" title="The Fly II" />
@@ -1629,6 +1639,8 @@
 	<rename id="tt1119646" title="The Hangover I" collection="The Hangover Trilogy" />
 	<rename id="tt1411697" title="The Hangover II" collection="The Hangover Trilogy" />
 	<rename id="tt1951261" title="The Hangover III" collection="The Hangover Trilogy" />
+	<rename id="tt2404463" title="The Heat" sortby="The Heat I" />
+	<rename id="tt2869716" title="The Heat II" />
 	<rename id="tt0077681" title="The Hills Have Eyes I" />
 	<rename id="tt0089274" title="The Hills Have Eyes II" />
 	<rename id="tt0454841" title="The Hills Have Eyes (Remake) I" />
@@ -1655,6 +1667,19 @@
 	<rename id="tt1155076" title="The Karate Kid (Remake) I" />
 	<rename id="tt1674782" title="The Karate Kid (Remake) II" />
 	<rename id="tt1504320" title="The King's Speech" collection="» Oscars for Best Picture" />
+	<rename id="tt0095489" title="The Land Before Time I" sortby="The Land Before Time 01" />
+	<rename id="tt0110300" title="The Land Before Time II: The Great Valley Adventure" sortby="The Land Before Time 02" />
+	<rename id="tt0113596" title="The Land Before Time III: The Time of the Great Giving" sortby="The Land Before Time 03" />
+	<rename id="tt0116817" title="The Land Before Time IV: Journey Through the Mists" sortby="The Land Before Time 04" />
+	<rename id="tt0123950" title="The Land Before Time V: The Mysterious Island" sortby="The Land Before Time 05" />
+	<rename id="tt0167247" title="The Land Before Time VI: The Secret of Saurus Rock" sortby="The Land Before Time 06" />
+	<rename id="tt0267657" title="The Land Before Time VII: The Stone of Cold Fire" sortby="The Land Before Time 07" />
+	<rename id="tt0301526" title="The Land Before Time VIII: The Big Freeze" sortby="The Land Before Time 08" />
+	<rename id="tt0345543" title="The Land Before Time IX: Journey to the Big Water" sortby="The Land Before Time 09" />
+	<rename id="tt0378230" title="The Land Before Time X: The Great Longneck Migration" sortby="The Land Before Time 10" />
+	<rename id="tt0424228" title="The Land Before Time XI: Invasion of the Tinysauruses" sortby="The Land Before Time 11" />
+	<rename id="tt0933064" title="The Land Before Time XII: The Great Day of the Flyers" sortby="The Land Before Time 12" />
+	<rename id="tt1139111" title="The Land Before Time XIII: The Wisdom of Friends" sortby="The Land Before Time 13" />
 	<rename id="tt0093389" title="The Last Emperor" collection="» Oscars for Best Picture" />
 	<rename id="tt1320244" title="The Last Exorcism I" />
 	<rename id="tt2034139" title="The Last Exorcism II" />
@@ -1835,6 +1860,7 @@
 	<rename id="tt0418279" title="Transformers I" />
 	<rename id="tt1055369" title="Transformers II: Revenge of the Fallen" />
 	<rename id="tt1399103" title="Transformers III: Dark of the Moon" />
+	<rename id="tt2109248" title="Transformers IV" />
 	<rename id="tt0100814" title="Tremors I" />
 	<rename id="tt0114720" title="Tremors II: Aftershocks" />
 	<rename id="tt0259685" title="Tremors III: Back to Perfection" />
