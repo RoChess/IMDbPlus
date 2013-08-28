@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="23" />
-		<published month="07" day="28" year="2013" />
+		<version major="4" minor="9" point="24" />
+		<published month="08" day="28" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -726,18 +726,17 @@
 			</if>
 
 		<!-- START: Certification -->
+			<!-- USA/MPAA default certification expression -->
+			<set name="rx_certification">
+				<![CDATA[
+				(?:>\s*USA:|Rated\s*)(?<movieCertification>(?:G)|(?:PG)|(?:PG-13)|(?:R)|(?:X)|(?:NC-17))(?:</a>|\s*for)
+				]]>
+			</set>
 			<if test="${global_options_english_movie_rating}&lt;=1">
 				<if test="${global_options_uk_rating}=true">
 					<set name="rx_certification">
 						<![CDATA[
 						UK:(?<movieCertification>(?:U)|(?:PG)|(?:12)|(?:12A)|(?:15)|(?:18)|(?:R18))</a>
-						]]>
-					</set>
-				</if>
-				<if test="${global_options_uk_rating}=false">
-					<set name="rx_certification">
-						<![CDATA[
-						(?:>\s*USA:|Rated\s*)(?<movieCertification>(?:G)|(?:PG)|(?:PG-13)|(?:R)|(?:X)|(?:NC-17))(?:</a>|\s*for)
 						]]>
 					</set>
 				</if>
