@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="7" point="7" />
-		<published month="08" day="25" year="2013" />
+		<version major="1" minor="7" point="8" />
+		<published month="09" day="06" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -165,6 +165,8 @@
 	<rename id="tt0366174" title="Anaconda II: The Hunt for the Blood Orchid" />
 	<rename id="tt1137996" title="Anaconda III: The Offspring" />
 	<rename id="tt1150934" title="Anaconda IV: Trail of Blood" />
+	<rename id="tt0357413" title="Anchorman I: The Legend of Ron Burgundy" />
+	<rename id="tt1229340" title="Anchorman II: The Legend Continues" />
 	<rename id="tt0043286" title="Angels in the Outfield (Original)" />
 	<rename id="tt0040098" title="Anna Karenina (Classic)" />
 	<rename id="tt0026071" title="Anna Karenina (Original)" />
@@ -763,6 +765,9 @@
 	<rename id="tt0417741" title="Harry Potter VI: The Half-Blood Prince" />
 	<rename id="tt0926084" title="Harry Potter VII: The Deathly Hallows (Part 1)" />
 	<rename id="tt1201607" title="Harry Potter VII: The Deathly Hallows (Part 2)" />
+	<rename id="tt0422401" title="Hatchet I" />
+	<rename id="tt1270835" title="Hatchet II" />
+	<rename id="tt1870419" title="Hatchet III" />
 	<rename id="tt0032572" title="Haunted House (Rare)" />
 	<rename id="tt0093164" title="Heat (Cult)" />
 	<rename id="tt0810895" title="Hellboy Animated I: Sword of Storms" collection="Hellboy|» Superheroes" />
@@ -842,6 +847,8 @@
 	<rename id="tt0286716" title="Hulk" collection="» Superheroes" />
 	<rename id="tt0480249" title="I Am Legend" sortby="I Am Legend I" />
 	<rename id="tt1167498" title="I Am Legend II" />
+	<rename id="tt1242432" title="I Spit on Your Grave I" />
+	<rename id="tt2537176" title="I Spit on Your Grave II" />
 	<rename id="tt0268380" title="Ice Age I" />
 	<rename id="tt0438097" title="Ice Age II: The Meltdown" />
 	<rename id="tt1080016" title="Ice Age III: Dawn of the Dinosaurs" />
@@ -863,6 +870,8 @@
 	<rename id="tt0374339" title="Infernal Affairs III: End Inferno" foreign="Mou gaan dou III: Jung gik mou gaan" />
 	<rename id="tt1773499" title="Inside (Italy)" />
 	<rename id="tt0116640" title="Inside (TV)" />
+	<rename id="tt1591095" title="Insidious I" />
+	<rename id="tt2226417" title="Insidious II: Chapter 2" />
 	<rename id="tt0378109" title="Into the Blue I" />
 	<rename id="tt0865907" title="Into the Blue II: The Reef " />
 	<rename id="tt0049366" title="Invasion of the Body Snatchers (Original)" />
