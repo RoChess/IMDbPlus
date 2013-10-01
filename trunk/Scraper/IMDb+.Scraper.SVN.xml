@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="24" />
-		<published month="08" day="28" year="2013" />
+		<version major="4" minor="9" point="25" />
+		<published month="10" day="01" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -112,64 +112,56 @@
 		<if test="${fileCheck.count}>0">
 			<if test="${fileCheck[0][0]}!=">
 				<parse name="xml_option" input="${file}" xpath="//set[@id=01]" />
-				<set name="global_options_original_title" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_original_title" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=02]" />
-				<set name="global_options_foreign_title" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_foreign_title" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=03]" />
-				<set name="global_options_foreign_first" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_foreign_first" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=04]" />
-				<set name="global_options_uk_rating" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_uk_rating" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=05]" />
-				<set name="global_options_imdb_score" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_imdb_score" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=06]" />
-				<set name="global_options_imdb_metascore" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_imdb_metascore" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=07]" />
-				<set name="global_options_long_summary" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_long_summary" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=08]" />
-				<set name="global_options_rotten_meter" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_rotten_meter" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=09]" />
-				<set name="global_options_rotten_average" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_rotten_average" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=10]" />
-				<set name="global_options_rotten_top_critics" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_rotten_top_critics" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=11]" />
-				<set name="global_options_special_edition" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_special_edition" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=12]" />
-				<set name="global_options_rename_titles" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_rename_titles" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=13]" />
-				<set name="global_options_single_score" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_single_score" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=14]" />
-				<set name="global_options_min_imdb_votes" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_min_imdb_votes" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=15]" />
-				<set name="global_options_refresh_all_fields" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_refresh_all_fields" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=16]" />
-				<set name="global_options_one_writer_director" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_one_writer_director" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=17]" />
-				<set name="global_options_remove_first_roman" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_remove_first_roman" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=18]" />
-				<set name="global_options_fix_missing_summary" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_fix_missing_summary" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=19]" />
-				<set name="global_options_debug_imdb_sources" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_debug_imdb_sources" value="${xml_option[0].@value}" /></if>
 
 				<parse name="xml_option" input="${file}" xpath="//set[@id=94]" />
-				<if test="${xml_option.count}=1">
-					<set name="global_options_english_movie_rating" value="${xml_option[0].@value}" />
-				</if>
+				<if test="${xml_option.count}=1"><set name="global_options_english_movie_rating" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=95]" />
-				<set name="global_options_secondary_en_title" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_secondary_en_title" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=96]" />
-				<set name="global_options_secondary_summary" value="${xml_option[0].@value}" />
+				<if test="${xml_option.count}=1"><set name="global_options_secondary_summary" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=97]" />
-				<if test="${xml_option.count}=1">
-					<set name="global_options_secondary_details" value="${xml_option[0].@value}" />
-				</if>
+				<if test="${xml_option.count}=1"><set name="global_options_secondary_details" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=98]" />
-				<if test="${xml_option.count}=1">
-					<set name="global_options_country_filter" value="${xml_option[0].@value}" />
-				</if>
+				<if test="${xml_option.count}=1"><set name="global_options_country_filter" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=99]" />
-				<if test="${xml_option.count}=1">
-					<set name="global_options_language_filter" value="${xml_option[0].@value}" />
-				</if>
+				<if test="${xml_option.count}=1"><set name="global_options_language_filter" value="${xml_option[0].@value}" /></if>
 
 				<log LogLevel="Info" Message="IMDb+ Scraper: Settings overruled via Options XML file" />
 			</if>
@@ -1468,7 +1460,7 @@
 				<parse name="fileRename" input="${file}" regex="${rx_rename_check_prefix}${movie.imdb_id}${rx_rename_check_postfix}" />
 				<if test="${fileRename.count}=1">
 					<if test="${fileRename[0][1]}!=">
-						<set name="movie.collections" value="|${fileRename[0][1]}|" />
+						<set name="movie.collections" value="|${fileRename[0][1]:htmldecode}|" />
 						<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection set to '${movie.collections}'" />
 					</if>
 					<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
@@ -1541,7 +1533,7 @@
 						<log LogLevel="Info" Message="IMDb+ Scraper: SortBy adjusted via Custom Rename XML for: ${movie.imdb_id}" />
 					</if>
 					<if test="${fileRename[0][1]}!=">
-						<set name="movie.collections" value="|${fileRename[0][1]}|" />
+						<set name="movie.collections" value="|${fileRename[0][1]:htmldecode}|" />
 						<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection set to '${movie.collections}' via Custom Rename XML" />
 					</if>
 				</if>
