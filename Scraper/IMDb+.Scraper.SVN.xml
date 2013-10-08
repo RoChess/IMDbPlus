@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="26" />
-		<published month="10" day="05" year="2013" />
+		<version major="4" minor="9" point="27" />
+		<published month="10" day="08" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -183,7 +183,7 @@
 			<if test="${global_options_special_edition}=true">
 				<set name="rx_special_editions">
 					<![CDATA[
-					.+([\(\[\{](?:3D|Extended|Unrated|Director's Cut|Alternate Ending|(?<=\[)[^\]]+(?=\]))(?: Edition)?[\}\]\)])
+					(?<=.+)([\(\[\{](?:3D|Extended|Unrated|Director's Cut|Alternate Ending|(?<=\[)[^\]]+(?=\]))(?: Edition)?[\}\]\)])
 					]]>
 				</set>
 
