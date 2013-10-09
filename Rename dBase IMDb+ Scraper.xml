@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="7" point="8" />
-		<published month="09" day="06" year="2013" />
+		<version major="1" minor="7" point="9" />
+		<published month="10" day="09" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -142,6 +142,8 @@
 	<rename id="tt0041113" title="All the King's Men (Original)" collection="» Oscars for Best Picture" />
 	<rename id="tt0216534" title="All the King's Men (TV)" />
 	<rename id="tt0220969" title="All the King's Men (UK)" />
+	<rename id="tt1213012" title="Alpha and Omega I" />
+	<rename id="tt3111728" title="Alpha and Omega II: A Howl-iday Adventure" />
 	<rename id="tt0952640" title="Alvin and the Chipmunks I" />
 	<rename id="tt1231580" title="Alvin and the Chipmunks II: The Squeakquel" />
 	<rename id="tt1615918" title="Alvin and the Chipmunks III: Chip-Wrecked" />
@@ -627,6 +629,7 @@
 	<rename id="tt1927093" title="Fred II: Night of the Living Fred" />
 	<rename id="tt0095177" title="Freeway (Cult)" />
 	<rename id="tt0497619" title="Freeway (Docu)" />
+	<rename id="tt2396421" collection="Friday the 13th" />
 	<rename id="tt0080761" title="Friday the 13th I: A Long Night at Camp Blood" sortby="Friday the 13th 01" />
 	<rename id="tt0082418" title="Friday the 13th II: Part II" sortby="Friday the 13th 02" />
 	<rename id="tt0083972" title="Friday the 13th III: Part III" sortby="Friday the 13th 03" />
@@ -1869,7 +1872,7 @@
 	<rename id="tt0418279" title="Transformers I" />
 	<rename id="tt1055369" title="Transformers II: Revenge of the Fallen" />
 	<rename id="tt1399103" title="Transformers III: Dark of the Moon" />
-	<rename id="tt2109248" title="Transformers IV" />
+	<rename id="tt2109248" title="Transformers IV: Age of Extinction" />
 	<rename id="tt0100814" title="Tremors I" />
 	<rename id="tt0114720" title="Tremors II: Aftershocks" />
 	<rename id="tt0259685" title="Tremors III: Back to Perfection" />
