@@ -1,12 +1,12 @@
-﻿<ScriptableScraper>
+<ScriptableScraper>
 	<details>
 		<!-- These details are for display purposes only. -->
 		<name>IMDb+</name>
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="27" />
-		<published month="10" day="08" year="2013" />
+		<version major="4" minor="9" point="28" />
+		<published month="10" day="26" year="2013" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -587,6 +587,7 @@
 								<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Musik|" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Nachrichten" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="Romanze" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Kurzfilm" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Krieg" />
 							</if>
 						</if>
@@ -612,6 +613,7 @@
 								<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Reality Show" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="Romántica" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Sci-Fi" with="Ciencia Ficción" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Short" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Sport" with="Deportes" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Talk-Show" with="Debate" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Bélico" />
@@ -635,6 +637,7 @@
 								<replace name="movie.genres" input="${movie.genres}" pattern="Mystery" with="Mistérieux" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Journaux" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Tv-Réalité" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Short" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Guerre" />
 							</if>
 						</if>
@@ -654,6 +657,33 @@
 								<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Musica|" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="Romantico" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Sci-Fi" with="Fantascienza" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Short" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Guerra" />
+							</if>
+						</if>
+						<!-- imdb.pt (Portugese) -->
+						<if test="${global_options_secondary_details}=6">
+							<if test="${movie.genres}!=">
+								<replace name="movie.genres" input="${movie.genres}" pattern="Action" with="Acção" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Adventure" with="Aventura" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Animation" with="Animação" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Biography" with="Biografia" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="Comédia" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Documentary" with="Documentário" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Family" with="Familiar" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Fantasy" with="Fantasia" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Film-Noir" with="Cinema Negro" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Concurso" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Histórico" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Horror" with="Terror" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Musica|" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Mystery" with="Mistério" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Noticias" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Reality Show" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Sci-Fi" with="Ficção Científica" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Curta Metragem" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Sport" with="Desporto" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Talk-Show" with="Entrevista/Debate" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Guerra" />
 							</if>
 						</if>
@@ -1349,7 +1379,7 @@
 								<!-- Accepting any remaining English title -->
 								<set name="rx_aka_english">
 									<![CDATA[
-									<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>(?!.*?(?:Japan|working title|short title|alternative spelling|promotional title|informal title))[^<]*English[^<]*</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+									<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>(?!.*?(?:Japan|working title|short title|alternative spelling|promotional title|informal title|teaser title|review title|IMAX))[^<]*English[^<]*</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 									]]>
 								</set>
 								<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
