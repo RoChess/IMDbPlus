@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="8" point="0" />
-		<published month="10" day="27" year="2013" />
+		<version major="1" minor="8" point="1" />
+		<published month="10" day="28" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -613,7 +613,7 @@
 	<rename id="tt1144884" title="Final Destination IV: The Final Destination" />
 	<rename id="tt1622979" title="Final Destination V" />
 	<rename id="tt0266543" sortby="Finding Nemo I" collection="Finding Nemo" />	
-	<rename id="tt2277860" title="Finding Nemo II" />
+	<rename id="tt2277860" title="Finding Nemo II: Finding Dory" />
 	<rename id="tt0050397" title="Fire Down Below (Classic)" />
 	<rename id="tt1137455" title="Fire Down Below (Cult)" />
 	<rename id="tt0091053" title="Fire with Fire (Captive Hearts)" />
@@ -721,7 +721,7 @@
 	<rename id="tt0099700" title="Gremlins II: The New Batch" />
 	<rename id="tt1028528" title="Grindhouse I: Death Proof" />
 	<rename id="tt1077258" title="Grindhouse II: Planet Terror" />
-	<rename id="tt1375670" title="Grown Ups" sortby="Grown Ups I" />
+	<rename id="tt1375670" title="Grown Ups I" />
 	<rename id="tt2191701" title="Grown Ups II" />
 	<rename id="tt2015381" title="Guardians of the Galaxy" collection="The Avengers|» Superheroes" />
 	<rename id="tt0489718" title="Gulliver's Travels (Cartoon)" />
@@ -1308,7 +1308,7 @@
 	<rename id="tt1896804" title="Real Steel II" />
 	<rename id="tt0032976" title="Rebecca" collection="» Oscars for Best Picture" />
 	<rename id="tt0087985" title="Red Dawn (Original)" />
-	<rename id="tt1245526" title="Red" sortby="Red I" />
+	<rename id="tt1245526" title="Red I" />
 	<rename id="tt1821694" title="Red II" />
 	<rename id="tt1174954" title="Resident Evil (CG) I: Degeneration" sortby="Resident Evil Zort (CG) I" />
 	<rename id="tt1753496" title="Resident Evil (CG) II: Damnation" sortby="Resident Evil Zort (CG) II" />
@@ -1696,7 +1696,7 @@
 	<rename id="tt1467304" title="The Human Centipede I: First Sequence" />
 	<rename id="tt1530509" title="The Human Centipede II: Full Sequence" />
 	<rename id="tt1883367" title="The Human Centipede III: Final Sequence" />
-	<rename id="tt1392170" title="The Hunger Games" sortby="The Hunger Games I" />
+	<rename id="tt1392170" title="The Hunger Games I" />
 	<rename id="tt1951264" title="The Hunger Games II: Catching Fire" />
 	<rename id="tt1951265" title="The Hunger Games III: Mockingjay - Part 1" />
 	<rename id="tt1951266" title="The Hunger Games III: Mockingjay - Part 2" />
@@ -2050,7 +2050,7 @@
 	<rename id="tt0290334" title="X-Men II: X-Men United (X2)" collection="X-Men Trilogy|X-Men|» Superheroes" />
 	<rename id="tt0376994" title="X-Men III: The Last Stand" collection="X-Men Trilogy|X-Men|» Superheroes" />
 	<rename id="tt1270798" title="X-Men: First Class" collection="X-Men Origin|X-Men|» Superheroes" sortby="X-Men: First Class I" />
-	<rename id="tt1877832" title="X-Men: First Class II" collection="X-Men Origin|X-Men|» Superheroes" />
+	<rename id="tt1877832" title="X-Men: First Class II: Days of Future Past" collection="X-Men Origin|X-Men|» Superheroes" />
 	<rename id="tt0295701" title="xXx I" />
 	<rename id="tt0329774" title="xXx II: State Of The Union" />
 	<rename id="tt1293847" title="xXx III: The Return of Xander Cage" />
