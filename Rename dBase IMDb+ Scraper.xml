@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="8" point="1" />
-		<published month="10" day="28" year="2013" />
+		<version major="1" minor="8" point="2" />
+		<published month="11" day="11" year="2013" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -838,6 +838,8 @@
 	<rename id="tt0443536" title="Hoodwinked! I" />
 	<rename id="tt0844993" title="Hoodwinked! II: Hood VS. Evil" />
 	<rename id="tt0314431" title="Hope Springs (UK)" />
+	<rename id="tt1499658" sortby="Horrible Bosses I" />
+	<rename id="tt2170439" title="Horrible Bosses II" />
 	<rename id="tt0450278" title="Hostel I" />
 	<rename id="tt0498353" title="Hostel II" />
 	<rename id="tt1255916" title="Hostel III" />
@@ -1217,7 +1219,7 @@
 	<rename id="tt2109184" title="Paranormal Activity IV" />
 	<rename id="tt0066206" title="Patton" collection="» Oscars for Best Picture" />
 	<rename id="tt0814255" title="Percy Jackson &amp; the Olympians I: The Lightning Thief" />
-	<rename id="tt1854564" title="Percy Jackson &amp; the Olympians II: The Sea of Monsters" />
+	<rename id="tt1854564" title="Percy Jackson &amp; the Olympians II: Sea of Monsters" />
 	<rename id="tt0046183" title="Peter Pan (Cartoon) I" />
 	<rename id="tt0280030" title="Peter Pan (Cartoon) II: Return to Never Land" />
 	<rename id="tt1711375" title="Peter Pan (Musical)" />
@@ -1552,7 +1554,7 @@
 	<rename id="tt1486820" title="Taken (Docu)" />
 	<rename id="tt0361038" title="Taken (Horror)" />
 	<rename id="tt0466338" title="Taken (Video)" />
-	<rename id="tt0936501" title="Taken" sortby="Taken I" />
+	<rename id="tt0936501" title="Taken I" />
 	<rename id="tt1397280" title="Taken II" />
 	<rename id="tt0053335" title="Tarzan the Ape Man (Remake)" />
 	<rename id="tt0152930" title="Taxi I" />
@@ -1648,7 +1650,7 @@
 	<rename id="tt1013752" title="The Fast and the Furious IV: Fast &amp; Furious" />
 	<rename id="tt1538503" title="The Fast and the Furious IV: Los Bandoleros" />
 	<rename id="tt1596343" title="The Fast and the Furious V: Fast Five" />
-	<rename id="tt1905041" title="The Fast and the Furious VI" />
+	<rename id="tt1905041" title="The Fast and the Furious VI: Furious Six" />
 	<rename id="tt2820852" title="The Fast and the Furious VII" />
 	<rename id="tt0059183" title="The Flight of the Phoenix (Original)" />
 	<rename id="tt0091064" title="The Fly I" />
