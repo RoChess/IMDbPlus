@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="28" />
-		<published month="10" day="26" year="2013" />
+		<version major="4" minor="9" point="29" />
+		<published month="01" day="28" year="2014" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -613,7 +613,7 @@
 								<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Reality Show" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="Romántica" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Sci-Fi" with="Ciencia Ficción" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Short" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Cortometrage" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Sport" with="Deportes" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Talk-Show" with="Debate" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Bélico" />
@@ -637,7 +637,7 @@
 								<replace name="movie.genres" input="${movie.genres}" pattern="Mystery" with="Mistérieux" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Journaux" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Tv-Réalité" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Short" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Court Métrage" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Guerre" />
 							</if>
 						</if>
@@ -657,7 +657,7 @@
 								<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Musica|" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="Romantico" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="Sci-Fi" with="Fantascienza" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Short" />
+								<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Cortometraggio" />
 								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Guerra" />
 							</if>
 						</if>
@@ -718,7 +718,7 @@
 
 			<if test="${global_options_refresh_all_fields}=true"><set name="update_plotkeywords" value="true" /></if><if test="${movie.plotkeywords}="><set name="update_plotkeywords" value="true" /></if>
 			<if test="${update_plotkeywords}=true">
-				<!-- Tagline -->
+				<!-- Plot Keywords -->
 				<set name="rx_plotkeywords">
 					<![CDATA[
 					<h4[^>]+>Plot Keywords:</h4>\s*(?<moviePlotKeywords>.+?)(?:&nbsp;|<nobr>|See more|</div>)
@@ -1797,7 +1797,7 @@
 			<!-- Get cover directly by manipulating details page thumbnail -->
 			<set name="rx_cover">
 				<![CDATA[
-				title="[^)]+\)\s*Poster"\s*src="([^_]+_V1)[^.]+([^"]+)"
+				title="[^)]+\)\s*Poster"\s*src="([^_]+_V1)(?:\._CR[^_]+)?[^.]+([^"]+)"
 				]]>
 			</set>
 			<parse name="cover_src" input="${details_page}" regex="${rx_cover}" />
