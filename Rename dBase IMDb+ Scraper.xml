@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="8" point="2" />
-		<published month="11" day="11" year="2013" />
+		<version major="1" minor="8" point="3" />
+		<published month="01" day="28" year="2014" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1111,6 +1111,10 @@
 	<rename id="tt2293640" title="Minions" collection="Despicable Me" />
 	<rename id="tt0790686" title="Mirrors I" />
 	<rename id="tt1576699" title="Mirrors II" />
+	<rename id="tt0055205" title="Miss Marple I: Murder She Said" />
+	<rename id="tt0057334" title="Miss Marple II: Murder at the Gallop" />
+	<rename id="tt0058383" title="Miss Marple III: Murder Most Foul" />
+	<rename id="tt0058382" title="Miss Marple IV: Murder Ahoy" />
 	<rename id="tt0087727" title="Missing in Action I" />
 	<rename id="tt0089604" title="Missing in Action II: The Beginning" />
 	<rename id="tt0094792" title="Missing in Action III: Braddock" />
@@ -1148,6 +1152,8 @@
 	<rename id="tt0368891" title="National Treasure I" />
 	<rename id="tt0465234" title="National Treasure II: Book of Secrets" />
 	<rename id="tt1197627" title="National Treasure III" />
+	<rename id="tt1242447" title="Nativity! I" />
+	<rename id="tt2089750" title="Nativity! II: Danger in the Manger!" /> 
 	<rename id="tt1023111" title="Never Back Down I" />
 	<rename id="tt1754264" title="Never Back Down II" />
 	<rename id="tt1648112" title="New Kids I: Turbo" />
@@ -1324,6 +1330,8 @@
 	<rename id="tt0107953" title="Return of the Living Dead III" />
 	<rename id="tt0411805" title="Return of the Living Dead IV: Necropolis" />
 	<rename id="tt0411806" title="Return of the Living Dead V: Rave to the Grave" />
+	<rename id="tt1408253" sortby="Ride Along I" />
+	<rename id="tt2869728" title="Ride Along II" />
 	<rename id="tt1436562" title="Rio I" />
 	<rename id="tt2357291" title="Rio II" />
 	<rename id="tt0098206" title="Road House I" />
@@ -1367,6 +1375,7 @@
 	<rename id="tt0120812" title="Rush Hour I" />
 	<rename id="tt0266915" title="Rush Hour II" />
 	<rename id="tt0293564" title="Rush Hour III" />
+	<rename id="tt2324606" title="Rush Hour IV" />
 	<rename id="tt0114319" title="Sabrina (Remake)" />
 	<rename id="tt0120051" title="Safe House (Original)" />
 	<rename id="tt0047444" title="Samurai I: Musashi Miyamoto" />
