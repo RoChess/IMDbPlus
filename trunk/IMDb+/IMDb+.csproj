@@ -30,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Common.Utils">
@@ -61,9 +62,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="Utils">
       <HintPath>..\Externals\Utils.dll</HintPath>
-    </Reference>
-    <Reference Include="WindowPlugins">
-      <HintPath>..\Externals\WindowPlugins.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
