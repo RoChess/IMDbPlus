@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="30" />
-		<published month="02" day="10" year="2014" />
+		<version major="4" minor="9" point="31" />
+		<published month="03" day="13" year="2014" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1379,7 +1379,7 @@
 								<!-- Accepting any remaining English title -->
 								<set name="rx_aka_english">
 									<![CDATA[
-									<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>(?!.*?(?:Japan|Israel|working title|short title|alternative spelling|promotional title|promotional abbreviation|informal title|teaser title|review title|IMAX))[^<]*English[^<]*</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+									<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>(?!.*?(?:Japan|Israel|Germany|Philippines|working title|short title|alternative spelling|promotional title|promotional abbreviation|informal title|teaser title|review title|IMAX))[^<]*English[^<]*</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 									]]>
 								</set>
 								<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
@@ -1594,184 +1594,191 @@
 	<action name="search">
 		<log LogLevel="Info" Message="############################ IMDb+ Search Node ############################" />
 
-		<!-- Regular Expressions -->
-		<set name="rx_imdb_results">
-			<![CDATA[
-			<title>(?:IMDb[\s-]*)?(?:&#x27;)?(.+?)(?:&#x27;)?\s*\(\D*(\d{4})[^)]*\).*?</title>.+?(tt\d{7})/fullcredits
-			]]>
-		</set>
+		<!-- Skip files with '#CDUniverse#' prefix to allow IMDb+ to coexist with CDUniverse scraper-script -->
+		<parse name="skip_cduniverse" input="${search.filename_noext}" regex="^\#CDUniverse\#" />
+		<if test="${skip_cduniverse[0][0]}=">		<!-- Regular Expressions -->
 
-		<set name="rx_special_editions">
-			<![CDATA[
-			([\(\[\{](?:3D|Extended|Unrated|Director's Cut|Alternate Ending|(?<=\(\[)[^\]]+(?=\]\)))(?: Edition)?[\}\]\)])
-			]]>
-		</set>
+			<set name="rx_imdb_results">
+				<![CDATA[
+				<title>(?:IMDb[\s-]*)?(?:&#x27;)?(.+?)(?:&#x27;)?\s*\(\D*(\d{4})[^)]*\).*?</title>.+?(tt\d{7})/fullcredits
+				]]>
+			</set>
 
-		<!-- If 'prefer foldername' is enabled the filename is skipped, so double checking for IMDb tt-ID -->
-		<if test="${search.imdb_id}=">
-			<parse name="search.imdb_id" input="${search.filename_noext}" regex="tt\d{6,7}" />
-			<if test="${search.imdb_id}!=">
-				<set name="force_imdb_match" value="true" />
-				<log LogLevel="Debug" Message="IMDb+ Scraper: Forcing match via the IMDb tt-ID found in filename: [${search.imdb_id}]" />
-			</if>
-		</if>
+			<set name="rx_special_editions">
+				<![CDATA[
+				([\(\[\{](?:3D|Extended|Unrated|Director's Cut|Alternate Ending|(?<=\(\[)[^\]]+(?=\]\)))(?: Edition)?[\}\]\)])
+				]]>
+			</set>
 
-		<!-- Retrieve result using IMDB id (if provided) -->
-		<if test="${search.imdb_id}!=">
-			<retrieve name="imdb_page" url="http://akas.imdb.com/title/${search.imdb_id}/" />
-			<parse name="imdb_results" input="${imdb_page}" regex="${rx_imdb_results}" />
-			<if test="${imdb_results[0][2]}!=">
-				<!-- Direct match found, let's get the results and be done with it -->
-				<set name="movie[0].title" value="${imdb_results[0][0]:htmldecode}" />
-				<set name="movie[0].year" value="${imdb_results[0][1]:htmldecode}" />
-				<set name="movie[0].imdb_id" value="${imdb_results[0][2]:htmldecode}" />
-				<set name="movie[0].site_id" value="${imdb_results[0][2]:htmldecode}" />
-				<set name="movie[0].popularity" value="100" />
-
-				<!-- Compensating for bug (ahem changes) in Moving-Pictures auto-approval system -->
-				<set name="movie[0].alternate_titles" value="${search.title}" />
-
-				<log LogLevel="Debug" Message="IMDb+ Scraper: Direct match found for [${search.imdb_id}] as: '${movie[0].title} (${movie[0].year})'" />
-				<if test="${force_imdb_match}=true">
-					<set name="movie[0].title" value="${search.title}" />
-					<log LogLevel="Debug" Message="IMDb+ Scraper: Forcing title as '${search.title}' to make auto-approve work and then we fix title later" />
+			<!-- If 'prefer foldername' is enabled the filename is skipped, so double checking for IMDb tt-ID -->
+			<if test="${search.imdb_id}=">
+				<parse name="search.imdb_id" input="${search.filename_noext}" regex="tt\d{6,7}" />
+				<if test="${search.imdb_id}!=">
+					<set name="force_imdb_match" value="true" />
+					<log LogLevel="Debug" Message="IMDb+ Scraper: Forcing match via the IMDb tt-ID found in filename: [${search.imdb_id}]" />
 				</if>
 			</if>
-		</if>
 
-		<!-- No sense looking up any other movie if we have found a direct IMDb match -->
-		<if test="${movie[0].site_id}=">
+			<!-- Retrieve result using IMDB id (if provided) -->
+			<if test="${search.imdb_id}!=">
+				<retrieve name="imdb_page" url="http://akas.imdb.com/title/${search.imdb_id}/" />
+				<parse name="imdb_results" input="${imdb_page}" regex="${rx_imdb_results}" />
+				<if test="${imdb_results[0][2]}!=">
+					<!-- Direct match found, let's get the results and be done with it -->
+					<set name="movie[0].title" value="${imdb_results[0][0]:htmldecode}" />
+					<set name="movie[0].year" value="${imdb_results[0][1]:htmldecode}" />
+					<set name="movie[0].imdb_id" value="${imdb_results[0][2]:htmldecode}" />
+					<set name="movie[0].site_id" value="${imdb_results[0][2]:htmldecode}" />
+					<set name="movie[0].popularity" value="100" />
 
-			<set name="offset" value="0" />
+					<!-- Compensating for bug (ahem changes) in Moving-Pictures auto-approval system -->
+					<set name="movie[0].alternate_titles" value="${search.title}" />
 
-			<set name="rx_details_page_block">
-				<![CDATA[
-				<title>(?:&#x27;)?.+?(?:&#x27;)?\s*\(\D*\d{4}[^)]*\).*?</title>.+</body>
-				]]>
-			</set>
-			<set name="rx_search_results">
-				<![CDATA[
-				<h1 class="findHeader">No results found for <span class="findSearchTerm">[^<]+</span>
-				]]>
-			</set>
-			<set name="rx_aka_details">
-				<![CDATA[
-				<tr>\s+?<td>(.+?)</td>\s+?<td>(.+?)</td>.*?</tr>
-				]]>
-			</set>
-			<set name="rx_aka">
-				<![CDATA[
-				aka "(.+?)"
-				]]>
-			</set>
+					<log LogLevel="Debug" Message="IMDb+ Scraper: Direct match found for [${search.imdb_id}] as: '${movie[0].title} (${movie[0].year})'" />
+					<if test="${force_imdb_match}=true">
+						<set name="movie[0].title" value="${search.title}" />
+						<log LogLevel="Debug" Message="IMDb+ Scraper: Forcing title as '${search.title}' to make auto-approve work and then we fix title later" />
+					</if>
+				</if>
+			</if>
 
-			<!-- Retrieve results using just "Title" -->
-			<retrieve name="search_page" url="http://akas.imdb.com/find?s=tt&amp;q=${search.title:safe(UTF-8)}" />
-
-			<parse name="details_page_block" input="${search_page}" regex="${rx_details_page_block}" />
-			<!-- loop gets skipped if no match is found -->
-			<loop name="details_page_verified" on="details_page_block" limit="99">
-				<add name="counter" value1="${count}" value2="${offset}" />
-				<parse name="imdb_results" input="${details_page_verified}" regex="${rx_imdb_results}" />
-				<set name="movie[${counter}].title" value="${imdb_results[0][0]:htmldecode}" />
-				<set name="movie[${counter}].year" value="${imdb_results[0][1]:htmldecode}" />
-				<set name="movie[${counter}].imdb_id" value="${imdb_results[0][2]}" />
-				<set name="movie[${counter}].site_id" value="${imdb_results[0][2]}" />
-
-				<!-- AKA page -->
-				<retrieve name="aka_page" url="http://akas.imdb.com/title/${imdb_results[0][2]}/releaseinfo" />
-				<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
-				<set name="movie[${counter}].alternate_titles" value="|" />
-				<loop name="currAka" on="akas" limit="50">
-					<set name="movie[${counter}].alternate_titles" value="${movie[${counter}].alternate_titles}${currAka[0]:htmldecode}|" />
-				</loop>
-
-				<subtract name="movie[${counter}].popularity" value1="100" value2="${counter}" />
-			</loop>
-
-			<!-- No sense looking up any other movie if we found a details page already -->
+			<!-- No sense looking up any other movie if we have found a direct IMDb match -->
 			<if test="${movie[0].site_id}=">
 
-				<set name="rx_search_page">
+				<set name="offset" value="0" />
+
+				<set name="rx_details_page_block">
 					<![CDATA[
-					<div\s*class="findSection"[^>]*>.+<div\s*id="sidebar"[^>]*>
+					<title>(?:&#x27;)?.+?(?:&#x27;)?\s*\(\D*\d{4}[^)]*\).*?</title>.+</body>
+					]]>
+				</set>
+				<set name="rx_search_results">
+					<![CDATA[
+					<h1 class="findHeader">No results found for <span class="findSearchTerm">[^<]+</span>
+					]]>
+				</set>
+				<set name="rx_aka_details">
+					<![CDATA[
+					<tr>\s+?<td>(.+?)</td>\s+?<td>(.+?)</td>.*?</tr>
+					]]>
+				</set>
+				<set name="rx_aka">
+					<![CDATA[
+					aka "(.+?)"
 					]]>
 				</set>
 
-				<!-- if we got a search result page, this is used. if not, regex does not match so we dont process the outer loop. -->
-				<parse name="search_results_block" input="${search_page}" regex="${rx_search_page}" />
-				<if test="${search_results_block}!=">
+				<!-- Retrieve results using just "Title" -->
+				<retrieve name="search_page" url="http://akas.imdb.com/find?s=tt&amp;q=${search.title:safe(UTF-8)}" />
 
-					<set name="rx_search_results">
+				<parse name="details_page_block" input="${search_page}" regex="${rx_details_page_block}" />
+				<!-- loop gets skipped if no match is found -->
+				<loop name="details_page_verified" on="details_page_block" limit="99">
+					<add name="counter" value1="${count}" value2="${offset}" />
+					<parse name="imdb_results" input="${details_page_verified}" regex="${rx_imdb_results}" />
+					<set name="movie[${counter}].title" value="${imdb_results[0][0]:htmldecode}" />
+					<set name="movie[${counter}].year" value="${imdb_results[0][1]:htmldecode}" />
+					<set name="movie[${counter}].imdb_id" value="${imdb_results[0][2]}" />
+					<set name="movie[${counter}].site_id" value="${imdb_results[0][2]}" />
+
+					<!-- AKA page --> 
+					<retrieve name="aka_page" url="http://akas.imdb.com/title/${imdb_results[0][2]}/releaseinfo" />
+					<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
+					<set name="movie[${counter}].alternate_titles" value="|" />
+					<loop name="currAka" on="akas" limit="50">
+						<set name="movie[${counter}].alternate_titles" value="${movie[${counter}].alternate_titles}${currAka[0]:htmldecode}|" />
+					</loop>
+
+					<subtract name="movie[${counter}].popularity" value1="100" value2="${counter}" />
+				</loop>
+
+				<!-- No sense looking up any other movie if we found a details page already -->
+				<if test="${movie[0].site_id}=">
+
+					<set name="rx_search_page">
 						<![CDATA[
-						<tr\s*class="findResult[^>]+>(?:\s*<td\s*class="primary_photo">\s*<a[^>]+><img[^>]+></a>\s*</td>)?\s*<td\s*class="result_text">\s*<a\s*href="/title/(?<imdb_id>tt\d{7})[^"]+"\s*>(?<title>[^<]+)</a>(?:\s*\([\/IVX]*\))?\s*\((?<year>\d{4})[^)]*\)(?:(?:\s*<br/>aka\s*<i>")(?<aka>[^"]+)(?:"</i>\s*))?[^<]+</td>\s*</tr>
+						<div\s*class="findSection"[^>]*>.+<div\s*id="sidebar"[^>]*>
 						]]>
 					</set>
 
-					<!-- process the search page and obtain all the popular results -->
-					<loop name="search_results_verified" on="search_results_block" limit="99">
-						<parse name="movie_details" input="${search_results_verified}" regex="${rx_search_results}" />
-						<loop name="curr_details" on="movie_details" limit="99">
-							<add name="counter" value1="${count}" value2="${offset}" />
-							<set name="movie[${counter}].imdb_id" value="${curr_details[0]:htmldecode}" />
-							<set name="movie[${counter}].site_id" value="${curr_details[0]:htmldecode}" />
-							<set name="movie[${counter}].title" value="${curr_details[1]:htmldecode}" />
-							<set name="movie[${counter}].year" value="${curr_details[2]:htmldecode}" />
-							<set name="movie[${counter}].alternate_titles" value="${curr_details[3]:htmldecode}" />
+					<!-- if we got a search result page, this is used. if not, regex does not match so we dont process the outer loop. -->
+					<parse name="search_results_block" input="${search_page}" regex="${rx_search_page}" />
+					<if test="${search_results_block}!=">
 
-							<subtract name="movie[${counter}].popularity" value1="100" value2="${counter}" />
-						</loop>
-					</loop>
+						<set name="rx_search_results">
+							<![CDATA[
+							<tr\s*class="findResult[^>]+>(?:\s*<td\s*class="primary_photo">\s*<a[^>]+><img[^>]+></a>\s*</td>)?\s*<td\s*class="result_text">\s*<a\s*href="/title/(?<imdb_id>tt\d{7})[^"]+"\s*>(?<title>[^<]+)</a>(?:\s*\([\/IVX]*\))?\s*\((?<year>\d{4})[^)]*\)(?:(?:\s*<br/>aka\s*<i>")(?<aka>[^"]+)(?:"</i>\s*))?[^<]+</td>\s*</tr>
+							]]>
+						</set>
 
-					<!-- Add AKA results to the first match if none exists -->
-					<if test="${movie[0].alternate_titles}=">
-						<retrieve name="aka_page" url="http://akas.imdb.com/title/${movie[0].imdb_id}/releaseinfo" />
-						<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
-						<set name="movie[0].alternate_titles" value="|" />
-						<loop name="currAka" on="akas" limit="50">
-							<set name="movie[0].alternate_titles" value="${movie[0].alternate_titles}${currAka[0]:htmldecode}|" />
+						<!-- process the search page and obtain all the popular results -->
+						<loop name="search_results_verified" on="search_results_block" limit="99">
+							<parse name="movie_details" input="${search_results_verified}" regex="${rx_search_results}" />
+							<loop name="curr_details" on="movie_details" limit="99">
+								<add name="counter" value1="${count}" value2="${offset}" />
+								<set name="movie[${counter}].imdb_id" value="${curr_details[0]:htmldecode}" />
+								<set name="movie[${counter}].site_id" value="${curr_details[0]:htmldecode}" />
+								<set name="movie[${counter}].title" value="${curr_details[1]:htmldecode}" />
+								<set name="movie[${counter}].year" value="${curr_details[2]:htmldecode}" />
+								<set name="movie[${counter}].alternate_titles" value="${curr_details[3]:htmldecode}" />
+
+								<subtract name="movie[${counter}].popularity" value1="100" value2="${counter}" />
+							</loop>
 						</loop>
+
+						<!-- Add AKA results to the first match if none exists -->
+						<if test="${movie[0].alternate_titles}=">
+							<retrieve name="aka_page" url="http://akas.imdb.com/title/${movie[0].imdb_id}/releaseinfo" />
+							<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
+							<set name="movie[0].alternate_titles" value="|" />
+							<loop name="currAka" on="akas" limit="50">
+								<set name="movie[0].alternate_titles" value="${movie[0].alternate_titles}${currAka[0]:htmldecode}|" />
+							</loop>
+						</if>
+
 					</if>
+				</if>
 
+				<!-- Auto-approve workaround for foreign-users (temporary, will remove once new MovPic gets released) -->
+				<if test="${search.title}!=${movie[0].title}">
+					<if test="${search.title}=${movie[0].alternate_titles}">
+						<set name="movie[0].title" value="${search.title}" />
+						<if test="${search.year}=${movie[0].year}">
+							<log LogLevel="Info" Message="IMDb+ Scraper: Forcing title as '${search.title}' with match on '${search.year}' to make auto-approve work for foreign users" />
+						</if>
+						<if test="${search.year}!=${movie[0].year}">
+							<log LogLevel="Info" Message="IMDb+ Scraper: Forcing title as '${search.title}' with year *NOT* matching to make auto-approve work for foreign users" />
+						</if>
+					</if>
 				</if>
 			</if>
 
-			<!-- Auto-approve workaround for foreign-users (temporary, will remove once new MovPic gets released) -->
-			<if test="${search.title}!=${movie[0].title}">
-				<if test="${search.title}=${movie[0].alternate_titles}">
-					<set name="movie[0].title" value="${search.title}" />
-					<if test="${search.year}=${movie[0].year}">
-						<log LogLevel="Info" Message="IMDb+ Scraper: Forcing title as '${search.title}' with match on '${search.year}' to make auto-approve work for foreign users" />
-					</if>
-					<if test="${search.year}!=${movie[0].year}">
-						<log LogLevel="Info" Message="IMDb+ Scraper: Forcing title as '${search.title}' with year *NOT* matching to make auto-approve work for foreign users" />
-					</if>
-				</if>
-			</if>
-		</if>
-
-		<!-- Using unused 'details_url' to pass special edition strings onto details node -->
-		<parse name="special_edition" input="${search.filename_noext}" regex="${rx_special_editions}" />
-		<if test="${special_edition[0][0]}!=">
-			<set name="movie[0].details_url" value="###${special_edition}###" />
-		</if>
-		<if test="${special_edition[0][0]}=">
-			<!-- Filename came up empty; lets try foldername before giving up -->
-			<parse name="special_edition" input="${search.foldername}" regex="${rx_special_editions}" />
+			<!-- Using unused 'details_url' to pass special edition strings onto details node -->
+			<parse name="special_edition" input="${search.filename_noext}" regex="${rx_special_editions}" />
 			<if test="${special_edition[0][0]}!=">
 				<set name="movie[0].details_url" value="###${special_edition}###" />
 			</if>
-		</if>
+			<if test="${special_edition[0][0]}=">
+				<!-- Filename came up empty; lets try foldername before giving up -->
+				<parse name="special_edition" input="${search.foldername}" regex="${rx_special_editions}" />
+				<if test="${special_edition[0][0]}!=">
+					<set name="movie[0].details_url" value="###${special_edition}###" />
+				</if>
+			</if>
 
-		<log LogLevel="Info" Message="########################## IMDb+ Search Results ###########################" />
-		<log LogLevel="Info" Message="# Search Folder  = ${search.foldername}" />
-		<log LogLevel="Info" Message="# Search File    = ${search.filename}" />
-		<log LogLevel="Info" Message="# Search IMDb ID = ${search.imdb_id}" />
-		<log LogLevel="Info" Message="# Search Title   = ${search.title} (${search.year})" />
-		<log LogLevel="Info" Message="#" />
-		<log LogLevel="Info" Message="# IMDb+ IMDb ID  = ${movie[0].imdb_id} (Only showing first movie found)" />
-		<log LogLevel="Info" Message="# IMDb+ Title    = ${movie[0].title} (${movie[0].year})" />
-		<log LogLevel="Info" Message="# IMDb+ Special  = ${special_edition}" />
+			<log LogLevel="Info" Message="########################## IMDb+ Search Results ###########################" />
+			<log LogLevel="Info" Message="# Search Folder  = ${search.foldername}" />
+			<log LogLevel="Info" Message="# Search File    = ${search.filename}" />
+			<log LogLevel="Info" Message="# Search IMDb ID = ${search.imdb_id}" />
+			<log LogLevel="Info" Message="# Search Title   = ${search.title} (${search.year})" />
+			<log LogLevel="Info" Message="#" />
+			<log LogLevel="Info" Message="# IMDb+ IMDb ID  = ${movie[0].imdb_id} (Only showing first movie found)" />
+			<log LogLevel="Info" Message="# IMDb+ Title    = ${movie[0].title} (${movie[0].year})" />
+			<log LogLevel="Info" Message="# IMDb+ Special  = ${special_edition}" />
+		</if>
+		<if test="${skip_cduniverse[0][0]}!=">
+			<log LogLevel="Info" Message="# Skipping CDUniverse file = ${search.filename}" />
+		</if>
 		<log LogLevel="Info" Message="###########################################################################" />
 	</action>
 
