@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="31" />
-		<published month="03" day="13" year="2014" />
+		<version major="4" minor="9" point="32" />
+		<published month="03" day="14" year="2014" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1596,7 +1596,7 @@
 
 		<!-- Skip files with '#CDUniverse#' prefix to allow IMDb+ to coexist with CDUniverse scraper-script -->
 		<parse name="skip_cduniverse" input="${search.filename_noext}" regex="^\#CDUniverse\#" />
-		<if test="${skip_cduniverse[0][0]}=">		<!-- Regular Expressions -->
+		<if test="${skip_cduniverse[0]}=">		<!-- Regular Expressions -->
 
 			<set name="rx_imdb_results">
 				<![CDATA[
@@ -1776,7 +1776,7 @@
 			<log LogLevel="Info" Message="# IMDb+ Title    = ${movie[0].title} (${movie[0].year})" />
 			<log LogLevel="Info" Message="# IMDb+ Special  = ${special_edition}" />
 		</if>
-		<if test="${skip_cduniverse[0][0]}!=">
+		<if test="${skip_cduniverse[0]}!=">
 			<log LogLevel="Info" Message="# Skipping CDUniverse file = ${search.filename}" />
 		</if>
 		<log LogLevel="Info" Message="###########################################################################" />
