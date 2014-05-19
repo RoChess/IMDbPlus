@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="8" point="4" />
-		<published month="05" day="06" year="2014" />
+		<version major="1" minor="8" point="5" />
+		<published month="05" day="19" year="2014" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1194,6 +1194,8 @@
 	<rename id="tt0409904" title="Night Watch II: Day Watch" foreign="Dnevnoy dozor" />
 	<rename id="tt0410377" title="Nim's Island I" />
 	<rename id="tt2221648" title="Nim's Island II: Return to..." />
+	<rename id="tt1182921" title="Ninja I" />
+	<rename id="tt2458106" title="Ninja II: Shadow of a Tear" />
 	<rename id="tt1290099" title="Ninjas vs. I: Zombies" />
 	<rename id="tt1748134" title="Ninjas vs. II: Vampires" />
 	<rename id="tt0477348" title="No Country for Old Men" collection="» Oscars for Best Picture" />
