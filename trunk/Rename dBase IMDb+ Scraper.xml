@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="8" point="5" />
-		<published month="05" day="19" year="2014" />
+		<version major="1" minor="8" point="6" />
+		<published month="05" day="26" year="2014" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -906,6 +906,7 @@
 	<rename id="tt0087469" title="Indiana Jones II: The Temple of Doom" />
 	<rename id="tt0097576" title="Indiana Jones III: The Last Crusade" />
 	<rename id="tt0367882" title="Indiana Jones IV: Kingdom of the Crystal Skull" />
+	<rename id="tt1462764" title="Indiana Jones V" />
 	<rename id="tt0338564" title="Infernal Affairs I" foreign="Mou gaan dou" />
 	<rename id="tt0369060" title="Infernal Affairs II" foreign="Mou gaan dou II" />
 	<rename id="tt0374339" title="Infernal Affairs III: End Inferno" foreign="Mou gaan dou III: Jung gik mou gaan" />
@@ -1011,7 +1012,7 @@
 	<rename id="tt0107290" title="Jurassic Park I" />
 	<rename id="tt0119567" title="Jurassic Park II: The Lost World" />
 	<rename id="tt0163025" title="Jurassic Park III: Return to the Island" />
-	<rename id="tt0369610" title="Jurassic Park IV" />
+	<rename id="tt0369610" title="Jurassic Park IV: Jurassic World" />
 	<rename id="tt1250777" title="Kick-Ass I" collection="Kick-Ass|» Superheroes" />
 	<rename id="tt1650554" title="Kick-Ass II" collection="Kick-Ass|» Superheroes" />
 	<rename id="tt0097659" title="Kickboxer I" />
@@ -1273,12 +1274,14 @@
 	<rename id="tt0383574" title="Pirates Of The Caribbean II: Dead Man's Chest" />
 	<rename id="tt0449088" title="Pirates Of The Caribbean III: At World's End" />
 	<rename id="tt1298650" title="Pirates Of The Caribbean IV: On Stranger Tides" />
-	<rename id="tt1790809" title="Pirates Of The Caribbean V" />
+	<rename id="tt1790809" title="Pirates Of The Caribbean V: Dead Men Tell No Tales" />
 	<rename id="tt1790810" title="Pirates Of The Caribbean VI" />
 	<rename id="tt0134847" title="Pitch Black I" collection="The Chronicles of Riddick" />
 	<rename id="tt0407658" title="Pitch Black II: Dark Fury (Prequel)" collection="The Chronicles of Riddick" sortby="Pitch Black Ib" />
 	<rename id="tt0296572" title="Pitch Black II: The Chronicles Of Riddick" collection="The Chronicles of Riddick" />
 	<rename id="tt1411250" title="Pitch Black III: Dead Man Stalking" collection="The Chronicles of Riddick" />
+	<rename id="tt1691917" title="Planes I" />
+	<rename id="tt2980706" title="Planes II: Fire & Rescue" />
 	<rename id="tt0063442" title="Planet of the Apes I" />
 	<rename id="tt0065462" title="Planet of the Apes II: Beneath the..." />
 	<rename id="tt0067065" title="Planet of the Apes III: Escape from the..." />
@@ -1601,6 +1604,7 @@
 	<rename id="tt0466338" title="Taken (Video)" />
 	<rename id="tt0936501" title="Taken I" />
 	<rename id="tt1397280" title="Taken II" />
+	<rename id="tt2446042" title="Taken III" />
 	<rename id="tt0053335" title="Tarzan the Ape Man (Remake)" />
 	<rename id="tt0152930" title="Taxi I" />
 	<rename id="tt0183869" title="Taxi II" />
@@ -1620,7 +1624,6 @@
 	<rename id="tt0181852" title="Terminator III: Rise Of The Machines" />
 	<rename id="tt0438488" title="Terminator IV: Terminator Salvation" />
 	<rename id="tt1340138" title="Terminator V: Genesis" />
-	<rename id="tt1340138" title="Terminator V" />
 	<rename id="tt0086425" title="Terms of Endearment I" collection="Terms of Endearment|» Oscars for Best Picture" />
 	<rename id="tt0116240" title="Terms of Endearment II: The Evening Star" collection="Terms of Endearment" />
 	<rename id="tt0078243" title="The 36th Chamber I: ...of Shaolin" foreign="Shao Lin san shi liu fang" />
@@ -1661,8 +1664,8 @@
 	<rename id="tt0363771" title="The Chronicles of Narnia I: The Lion, the Witch and the Wardrobe" />
 	<rename id="tt0499448" title="The Chronicles of Narnia II: Prince Caspian" />
 	<rename id="tt0980970" title="The Chronicles of Narnia III: The Voyage of the Dawn Treader" />
-	<rename id="tt1872184" title="The Chronicles of Narnia IV: The Magician's Nephew" />
-	<rename id="tt1223947" title="The Chronicles of Narnia V: The Silver Chair" />
+	<rename id="tt1223947" title="The Chronicles of Narnia IV: The Silver Chair" />
+	<rename id="tt1872184" title="The Chronicles of Narnia V: The Magician's Nephew" />
 	<rename id="tt0109506" title="The Crow I" />
 	<rename id="tt0115986" title="The Crow II: City of Angels" />
 	<rename id="tt0132910" title="The Crow III: Salvation" />
@@ -2088,6 +2091,7 @@
 	<rename id="tt1276107" title="Without a Paddle II: Nature's Calling" />
 	<rename id="tt0458525" title="Wolverine I" collection="X-Men Origin|X-Men|» Superheroes" />
 	<rename id="tt1430132" title="Wolverine II" collection="X-Men Origin|X-Men|» Superheroes" />
+	<rename id="tt3315342" title="Wolverine III" collection="X-Men Origin|X-Men|» Superheroes" />
 	<rename id="tt1247704" title="Women in Trouble I" />
 	<rename id="tt1340773" title="Women in Trouble II: Elektra Luxx" />
 	<rename id="tt1341342" title="Women in Trouble III: Women in Ecstasy" />
@@ -2102,11 +2106,13 @@
 	<rename id="tt1238834" title="Wuthering Heights (TV II)" />
 	<rename id="tt1181614" title="Wuthering Heights (UK)" />
 	<rename id="tt0066585" title="Wuthering Heights (UK/Original)" />
+	<rename id="tt3053198" title="X-Force" collection="X-Men|» Superheroes" sortby="X-Force I" />
 	<rename id="tt0120903" title="X-Men I" collection="X-Men Trilogy|X-Men|» Superheroes" />
 	<rename id="tt0290334" title="X-Men II: X-Men United (X2)" collection="X-Men Trilogy|X-Men|» Superheroes" />
 	<rename id="tt0376994" title="X-Men III: The Last Stand" collection="X-Men Trilogy|X-Men|» Superheroes" />
 	<rename id="tt1270798" title="X-Men: First Class" collection="X-Men Origin|X-Men|» Superheroes" sortby="X-Men: First Class I" />
 	<rename id="tt1877832" title="X-Men: First Class II: Days of Future Past" collection="X-Men Origin|X-Men|» Superheroes" />
+	<rename id="tt3385516" title="X-Men: Apocalypse" collection="X-Men Origin|X-Men|» Superheroes" sortby="X-Men X01" />
 	<rename id="tt0295701" title="xXx I" />
 	<rename id="tt0329774" title="xXx II: State Of The Union" />
 	<rename id="tt1293847" title="xXx III: The Return of Xander Cage" />
