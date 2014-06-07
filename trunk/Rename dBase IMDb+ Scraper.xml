@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="8" point="6" />
-		<published month="05" day="26" year="2014" />
+		<version major="1" minor="8" point="7" />
+		<published month="06" day="06" year="2014" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1002,6 +1002,7 @@
 	<rename id="tt2294687" title="Journey III" />
 	<rename id="tt0206314" title="Joy Ride I" />
 	<rename id="tt1140941" title="Joy Ride II: Dead Ahead" />
+	<rename id="tt3138376" title="Joy Ride III: Roadkill" />
 	<rename id="tt0330500" title="Ju-on I: The Curse" foreign="Ju-on" />
 	<rename id="tt0330501" title="Ju-on II: The Curse II" foreign="Ju-on 2" />
 	<rename id="tt0364385" title="Ju-on III: The Grudge" foreign="Ju-on: Gekijô-ban" />
@@ -1281,7 +1282,7 @@
 	<rename id="tt0296572" title="Pitch Black II: The Chronicles Of Riddick" collection="The Chronicles of Riddick" />
 	<rename id="tt1411250" title="Pitch Black III: Dead Man Stalking" collection="The Chronicles of Riddick" />
 	<rename id="tt1691917" title="Planes I" />
-	<rename id="tt2980706" title="Planes II: Fire & Rescue" />
+	<rename id="tt2980706" title="Planes II: Fire &amp; Rescue" />
 	<rename id="tt0063442" title="Planet of the Apes I" />
 	<rename id="tt0065462" title="Planet of the Apes II: Beneath the..." />
 	<rename id="tt0067065" title="Planet of the Apes III: Escape from the..." />
