@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="34" />
-		<published month="06" day="16" year="2014" />
+		<version major="4" minor="9" point="35" />
+		<published month="06" day="17" year="2014" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1622,7 +1622,7 @@
 
 			<!-- Retrieve result using IMDB id (if provided) -->
 			<if test="${search.imdb_id}!=">
-				<retrieve name="imdb_page" url="http://akas.imdb.com/title/${search.imdb_id}/" accept_language="en" />
+				<retrieve name="imdb_page" url="http://akas.imdb.com/title/${search.imdb_id}/" />
 				<parse name="imdb_results" input="${imdb_page}" regex="${rx_imdb_results}" />
 				<if test="${imdb_results[0][2]}!=">
 					<!-- Direct match found, let's get the results and be done with it -->
@@ -1670,7 +1670,7 @@
 				</set>
 
 				<!-- Retrieve results using just "Title" -->
-				<retrieve name="search_page" url="http://akas.imdb.com/find?s=tt&amp;q=${search.title:safe(UTF-8)}" accept_language="en" />
+				<retrieve name="search_page" url="http://akas.imdb.com/find?s=tt&amp;q=${search.title:safe(UTF-8)}" />
 
 				<parse name="details_page_block" input="${search_page}" regex="${rx_details_page_block}" />
 				<!-- loop gets skipped if no match is found -->
@@ -1683,7 +1683,7 @@
 					<set name="movie[${counter}].site_id" value="${imdb_results[0][2]}" />
 
 					<!-- AKA page --> 
-					<retrieve name="aka_page" url="http://akas.imdb.com/title/${imdb_results[0][2]}/releaseinfo" accept_language="en" />
+					<retrieve name="aka_page" url="http://akas.imdb.com/title/${imdb_results[0][2]}/releaseinfo" />
 					<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
 					<set name="movie[${counter}].alternate_titles" value="|" />
 					<loop name="currAka" on="akas" limit="50">
@@ -1729,7 +1729,7 @@
 
 						<!-- Add AKA results to the first match if none exists -->
 						<if test="${movie[0].alternate_titles}=">
-							<retrieve name="aka_page" url="http://akas.imdb.com/title/${movie[0].imdb_id}/releaseinfo" accept_language="en" />
+							<retrieve name="aka_page" url="http://akas.imdb.com/title/${movie[0].imdb_id}/releaseinfo" />
 							<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
 							<set name="movie[0].alternate_titles" value="|" />
 							<loop name="currAka" on="akas" limit="50">
