@@ -1,0 +1,38 @@
+#summary How to provide the right feedback on reporting a bug
+#labels Phase-QA,Debug
+
+= Introduction =
+
+Foreign users of IMDb+ will have to assist more in order to find out why things are failing during import. This is because Amazon/IMDb will provide different HTML source code.
+
+IMDb+ relies on the Moving-Pictures plugin, so any issues during importing are all stored in the 'movingpictures.log' file. To debug the majority of IMDb+ issues the HTML code that Amazon/IMDb provides is needed, which requires a few extra steps.
+
+= Prerequisites =
+
+Locate the "Options IMDb+ Scraper.xml" file at:
+
+  {{{C:\ProgramData\Team MediaPortal\MediaPortal\IMDb+}}}
+
+Edit this file with notepad or alike and add:
+
+  {{{<set id="19" name="global_options_debug_imdb_sources" value="true" />}}}
+
+right after the id="18" entry.
+
+Open MediaPortal configuration and select the 'General' menu entry. Verify or adjust that "Log verbosity" is set to 'Debug'. Close MediaPortal configuration via the 'OK' button.
+
+= Getting the log file =
+
+Change the Windows Explorer location to:
+
+  {{{C:\ProgramData\Team MediaPortal\MediaPortal\log}}}
+
+What is needed is the 'movingpictures.log' file, but without any log 'noise' in it from missing artwork/etc. The easiest way to do this is by having the Moving-Pictures configuration window open (use the direct shortcut and not MediaPortal config) and delete all the log files. Wait 3 seconds. Keep deleting the log files, until eventually the 'movingpictures.log' will stop getting recreated. When that happens all the background tasks have finally finished.
+
+Now simply switch to the "Movie Manager" tab inside Moving-Pictures configuration and locate one of the movies that you know has issues. Use the green circled arrow icon at the top right to "Refresh Movie Info from Internet" or send the movie back to the importer if the IMDb+ bug is in the search-node.
+
+To ensure that IMDb+ is indeed being used you can also use the tiny little downward faced arrow next to the icon to select "Refresh from IMDb+", incase you have multiple scraper-scripts enabled. The "Primary Source" on the movie details should however already be "IMDb+", otherwise you can use the IMDb+ plugin menu option to force this change.
+
+After the above steps a 'movingpictures.log' has been created that contains exactly what is needed to diagnose/fix the problem. Please provide this file (ZIP it up if it is very large) via forum, ticket, paste2, IRC, etc.
+
+Thank you :o)
