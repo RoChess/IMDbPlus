@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="36" />
-		<published month="07" day="27" year="2014" />
+		<version major="4" minor="9" point="37" />
+		<published month="09" day="06" year="2014" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -505,6 +505,7 @@
 				</if>
 
 				<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
+	 			<set name="movie_title" value="${title_year[0][0]:htmldecode}" />
 				<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
 			</if>
 
@@ -1440,25 +1441,31 @@
 					<if test="${title_year[0][2]:htmldecode}!=${title_year[0][0]:htmldecode}">
 						<if test="${global_options_foreign_first}=true">
 							<set name="movie.title" value="${title_year[0][0]:htmldecode} (${title_year[0][2]:htmldecode})" />
+	 						<set name="movie_title" value="${title_year[0][0]:htmldecode} (${title_year[0][2]:htmldecode})" />
 							<if test="${title_year[0][2]:htmldecode}=">
 								<!-- Fix empty English title -->
 								<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
+	 							<set name="movie_title" value="${title_year[0][0]:htmldecode}" />
 							</if>
 						</if>
 						<if test="${global_options_foreign_first}=false">
 							<set name="movie.title" value="${title_year[0][2]:htmldecode} (${title_year[0][0]:htmldecode})" />
+	 						<set name="movie_title" value="${title_year[0][2]:htmldecode} (${title_year[0][0]:htmldecode})" />
 							<if test="${title_year[0][2]:htmldecode}=">
 								<!-- Fix empty English title -->
 								<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
+	 							<set name="movie_title" value="${title_year[0][0]:htmldecode}" />
 							</if>
 						</if>
 					</if>
 					<if test="${title_year[0][2]:htmldecode}=${title_year[0][0]:htmldecode}">
 						<set name="movie.title" value="${title_year[0][2]:htmldecode}" />
+	 					<set name="movie_title" value="${title_year[0][2]:htmldecode}" />
 					</if>
 				</if>
 				<if test="${global_options_foreign_title}=false">
 					<set name="movie.title" value="${title_year[0][2]:htmldecode}" />
+	 				<set name="movie_title" value="${title_year[0][2]:htmldecode}" />
 				</if>
 				<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
 			</if>
@@ -1517,17 +1524,21 @@
 							<if test="${fileRename[0][2]}!=">
 								<if test="${global_options_foreign_first}=true">
 									<set name="movie.title" value="${fileRename[0][2]:htmldecode} (${fileRename[0][0]:htmldecode})" />
+									<set name="movie_title" value="${fileRename[0][2]:htmldecode} (${fileRename[0][0]:htmldecode})" />
 								</if>
 								<if test="${global_options_foreign_first}=false">
 									<set name="movie.title" value="${fileRename[0][0]:htmldecode} (${fileRename[0][2]:htmldecode})" />
+	 								<set name="movie_title" value="${fileRename[0][0]:htmldecode} (${fileRename[0][2]:htmldecode})" />
 								</if>
 							</if>
 							<if test="${fileRename[0][2]}=">
 								<set name="movie.title" value="${fileRename[0][0]:htmldecode}" />
+	 							<set name="movie_title" value="${fileRename[0][0]:htmldecode}" />
 							</if>
 						</if>
 						<if test="${global_options_foreign_title}=false">
 							<set name="movie.title" value="${fileRename[0][0]:htmldecode}" />
+							<set name="movie_title" value="${fileRename[0][0]:htmldecode}" />
 						</if>
 						<log LogLevel="Info" Message="IMDb+ Scraper: Title adjusted via Default Rename XML for: ${movie.imdb_id}" />
 					</if>
@@ -1557,6 +1568,7 @@
 					<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
 					<if test="${fileRename[0][0]}!=">
 						<set name="movie.title" value="${fileRename[0][0]:htmldecode}" />
+						<set name="movie_title" value="${fileRename[0][0]:htmldecode}" />
 						<log LogLevel="Info" Message="IMDb+ Scraper: Title adjusted via Custom Rename XML for: ${movie.imdb_id}" />
 					</if>
 					<if test="${fileRename[0][2]}!=">
@@ -1575,11 +1587,11 @@
 
 			<!-- Adjust title if this is a special edition -->
 			<if test="${special_edition[0][0]}!=">
-				<set name="movie.title" value="${movie.title} ${special_edition[0][0]}" />
+				<set name="movie.title" value="${movie_title} ${special_edition[0][0]}" />
 			</if>
 			<if test="${special_edition[0][0]}=">
 				<if test="${special_backup[0][0]}!=">
-					<set name="movie.title" value="${movie.title} ${special_backup}" />
+					<set name="movie.title" value="${movie_title} ${special_backup}" />
 				</if>
 			</if>
 		</if>
