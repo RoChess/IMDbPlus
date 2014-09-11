@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="38" />
-		<published month="09" day="08" year="2014" />
+		<version major="4" minor="9" point="39" />
+		<published month="09" day="11" year="2014" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1475,7 +1475,7 @@
 			<if test="${global_options_rename_titles}=true">
 				<!-- Auto Collection System for IMDb Top 250 -->
 				<retrieve name="imdb_top250_page" url="http://www.imdb.com/chart/top" />
-				<parse name="imdb_top250" input="${imdb_top250_page}" regex="&lt;a href=&quot;/title/${movie.imdb_id}/[^&quot;]+&quot; title=&quot;[^&quot;]+&quot;\s*&gt;[^&lt;]+&lt;/a&gt;" />
+				<parse name="imdb_top250" input="${imdb_top250_page}" regex="&lt;a href=&quot;/title/${movie.imdb_id}/[^&quot;]+&quot;\s*title=&quot;[^&quot;]+&quot;\s*&gt;[^&lt;]+&lt;/a&gt;" />
 				<if test="${imdb_top250[0]}!=">
 					<set name="movie.collections" value="|» IMDb Top 250|" />
 					<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection auto-set to '${movie.collections}'" />
