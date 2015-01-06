@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="8" point="7" />
-		<published month="06" day="06" year="2014" />
+		<version major="1" minor="8" point="8" />
+		<published month="01" day="05" year="2015" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -96,7 +96,7 @@
 	<rename id="tt0097981" title="A Nightmare on Elm Street V: The Dream Child" />
 	<rename id="tt0101917" title="A Nightmare on Elm Street VI: The Final Nightmare" />
 	<rename id="tt0111686" title="A Nightmare on Elm Street VII: New Nightmare" />
-	<rename id="tt0329101" title="A Nightmare on Elm Street VIII: Freddy vs. Jason" />
+	<rename id="tt0329101" title="A Nightmare on Elm Street VIII: Freddy vs. Jason" collection="A Nightmare on Elm Street|Friday the 13th" />
 	<rename id="tt1179056" title="A Nightmare on Elm Street (Remake) I" sortby="A Nightmare on Elm Street X01" />
 	<rename id="tt1650038" title="A Nightmare on Elm Street (Remake) II" sortby="A Nightmare on Elm Street X02" />
 	<rename id="tt1025103" title="A Room with a View (TV)" />
@@ -203,6 +203,7 @@
 	<rename id="tt0499549" title="Avatar" sortby="Avatar I" />
 	<rename id="tt1630029" title="Avatar II" />
 	<rename id="tt1757678" title="Avatar III" />
+	<rename id="tt3095356" title="Avatar IV" />
 	<rename id="tt0112431" title="Babe I" />
 	<rename id="tt0120595" title="Babe II: Pig in the City" />
 	<rename id="tt0118665" title="Baby Geniuses I" />
@@ -538,7 +539,7 @@
 	<rename id="tt0074483" title="Dirty Harry III: The Enforcer" />
 	<rename id="tt0086383" title="Dirty Harry IV: Sudden Impact" />
 	<rename id="tt0094963" title="Dirty Harry V: The Dead Pool" />
-	<rename id="tt1840309" title="Divergent" sortby="Divergent I" />
+	<rename id="tt1840309" title="Divergent I" />
 	<rename id="tt2908446" title="Divergent II: Insurgent" />
 	<rename id="tt3410834" title="Divergent III: Allegiant" />
 	<rename id="tt0118998" title="Doctor Dolittle I" />
@@ -565,7 +566,9 @@
 	<rename id="tt1159984" title="Dr. Jekyll and Mr. Hyde (TV)" />
 	<rename id="tt0340083" title="Dr. Jekyll and Mr. Hyde (UK)" />
 	<rename id="tt0346899" title="Dr. Jekyll and Mr. Hyde (Video)" />
-	<rename id="tt0079073" title="Dracula (Remake)" />
+	 <rename id="tt0066740" title="Dr. Phibes I: The Abominable" />
+	<rename id="tt0068503" title="Dr. Phibes II: Rises Again" />
+  <rename id="tt0079073" title="Dracula (Remake)" />
 	<rename id="tt0847161" title="Dracula (TV)" />
 	<rename id="tt0070003" title="Dracula (TV/Original)" />
 	<rename id="tt0287846" title="Dracula (TV/Remake)" />
@@ -616,7 +619,8 @@
 	<rename id="tt0120667" title="Fantastic Four I" collection="Fantastic Four|» Superheroes" />
 	<rename id="tt0486576" title="Fantastic Four II: Rise of the Silver Surfer" collection="Fantastic Four|» Superheroes" />
 	<rename id="tt1502712" title="Fantastic Four (Reboot)" collection="Fantastic Four|» Superheroes" sortby="Fantastic Four (Reboot) I" />
-	<rename id="tt0042451" title="Father of the Bride (Original) I" />
+	 <rename id="tt3614802" title="Fantastic Four (Reboot) II" collection="Fantastic Four|» Superheroes" />
+  <rename id="tt0042451" title="Father of the Bride (Original) I" />
 	<rename id="tt0043526" title="Father of the Bride (Original) II: Father's Little Dividend" />
 	<rename id="tt0101862" title="Father of the Bride I" />
 	<rename id="tt0113041" title="Father of the Bride II" />
@@ -898,10 +902,10 @@
 	<rename id="tt0061811" title="In the Heat of the Night" collection="» Oscars for Best Picture" />
 	<rename id="tt0460780" title="In the Name of the King I: A Dungeon Siege Tale" />
 	<rename id="tt1767319" title="In the Name of the King II: Two Worlds" />
-	<rename id="tt2379386" title="In the Name of the King III: The Last Job" />
+	<rename id="tt2379386" title="In the Name of the King III: The Last Mission" />
 	<rename id="tt0116629" title="Independence Day" sortby="Independence Day I" />
-	<rename id="tt1628841" title="Independence Day II" />
-	<rename id="tt1628842" title="Independence Day III" />
+	<rename id="tt1628841" title="Independence Day II: ID Forever Part I" />
+	<rename id="tt1628842" title="Independence Day III: ID Forever Part II" />
 	<rename id="tt0082971" title="Indiana Jones I: The Raiders of the Lost Ark" />
 	<rename id="tt0087469" title="Indiana Jones II: The Temple of Doom" />
 	<rename id="tt0097576" title="Indiana Jones III: The Last Crusade" />
@@ -931,7 +935,9 @@
 	<rename id="tt1228705" title="Iron Man II" collection="Iron Man|The Avengers|» Superheroes" />
 	<rename id="tt1300854" title="Iron Man III" collection="Iron Man|The Avengers|» Superheroes" />
 	<rename id="tt0025316" title="It Happened One Night" collection="» Oscars for Best Picture" />
-	<rename id="tt0821787" title="Ivanhoe (Cartoon)" />
+	 <rename id="tt1233301" title="Ironclad I" />
+	<rename id="tt2404583" title="Ironclad II: Battle for Blood" />
+  <rename id="tt0821787" title="Ivanhoe (Cartoon)" />
 	<rename id="tt0044760" title="Ivanhoe (Original)" />
 	<rename id="tt0084157" title="Ivanhoe (TV)" />
 	<rename id="tt0079357" title="Jack Frost (TV)" />
@@ -974,9 +980,11 @@
 	<rename id="tt0381061" title="James Bond XXI: Casino Royale" sortby="James Bond 21" />
 	<rename id="tt0830515" title="James Bond XXII: Quantum Of Solace" sortby="James Bond 22" />
 	<rename id="tt1074638" title="James Bond XXIII: Skyfall" sortby="James Bond 23" />
-	<rename id="tt2379713" title="James Bond XXIV" sortby="James Bond 24" />
+	<rename id="tt2379713" title="James Bond XXIV: Spectre" sortby="James Bond 24" />
 	<rename id="tt2382320" title="James Bond XXV" sortby="James Bond 25" />
-	<rename id="tt0217579" title="Jason and the Argonauts (TV)" />
+	 <rename id="tt0418763" title="Jarhead I" />
+	<rename id="tt3699508" title="Jarhead II: Field of Fire" />
+  <rename id="tt0217579" title="Jason and the Argonauts (TV)" />
 	<rename id="tt0073195" title="Jaws I" />
 	<rename id="tt0077766" title="Jaws II" />
 	<rename id="tt0085750" title="Jaws III" />
@@ -1271,7 +1279,7 @@
 	<rename id="tt0464154" title="Piranha (Remake) I" />
 	<rename id="tt1714203" title="Piranha (Remake) II: 3DD" />
 	<rename id="tt0069091" title="Piranha, Piranha!" />
-	<rename id="tt0325980" title="Pirates Of The Caribbean I: Curse Black Pearl" />
+	<rename id="tt0325980" title="Pirates Of The Caribbean I: The Curse of the Black Pearl" />
 	<rename id="tt0383574" title="Pirates Of The Caribbean II: Dead Man's Chest" />
 	<rename id="tt0449088" title="Pirates Of The Caribbean III: At World's End" />
 	<rename id="tt1298650" title="Pirates Of The Caribbean IV: On Stranger Tides" />
@@ -1281,7 +1289,9 @@
 	<rename id="tt0407658" title="Pitch Black II: Dark Fury (Prequel)" collection="The Chronicles of Riddick" sortby="Pitch Black Ib" />
 	<rename id="tt0296572" title="Pitch Black II: The Chronicles Of Riddick" collection="The Chronicles of Riddick" />
 	<rename id="tt1411250" title="Pitch Black III: Dead Man Stalking" collection="The Chronicles of Riddick" />
-	<rename id="tt1691917" title="Planes I" />
+	 <rename id="tt1981677" title="Pitch Perfect I" />
+	<rename id="tt2848292" title="Pitch Perfect II" />
+  <rename id="tt1691917" title="Planes I" />
 	<rename id="tt2980706" title="Planes II: Fire &amp; Rescue" />
 	<rename id="tt0063442" title="Planet of the Apes I" />
 	<rename id="tt0065462" title="Planet of the Apes II: Beneath the..." />
@@ -1343,7 +1353,11 @@
 	<rename id="tt0089421" title="Quatermain I: King Solomon's Mines" />
 	<rename id="tt0092534" title="Quatermain II: Allan Quatermain and the Lost City of Gold" />
 	<rename id="tt0295989" title="Quatermain III: High Adventure" />
-	<rename id="tt0095953" title="Rain Man" collection="» Oscars for Best Picture" />
+	 <rename id="tt0049646" title="Quatermass I: The Xperiment" />
+	<rename id="tt0050873" title="Quatermass II: Enemy from Space" />
+	<rename id="tt0062168" title="Quatermass III: Five Million Years to Earth" />
+	<rename id="tt0823523" title="Quatermass IV: The Conclusion" />
+  <rename id="tt0095953" title="Rain Man" collection="» Oscars for Best Picture" />
 	<rename id="tt0083944" title="Rambo: First Blood I" />
 	<rename id="tt0089880" title="Rambo: First Blood II" />
 	<rename id="tt0095956" title="Rambo: First Blood III" />
@@ -1362,7 +1376,8 @@
 	<rename id="tt0432021" title="Resident Evil III: Extinction" />
 	<rename id="tt1220634" title="Resident Evil IV: Afterlife" />
 	<rename id="tt1855325" title="Resident Evil V: Retribution" />
-	<rename id="tt0089907" title="Return of the Living Dead I" />
+	 <rename id="tt2592614" title="Resident Evil VI: The Final Chapter" />
+  <rename id="tt0089907" title="Return of the Living Dead I" />
 	<rename id="tt0095990" title="Return of the Living Dead II" />
 	<rename id="tt0107953" title="Return of the Living Dead III" />
 	<rename id="tt0411805" title="Return of the Living Dead IV: Necropolis" />
@@ -1391,7 +1406,9 @@
 	<rename id="tt0100507" title="Rocky V" />
 	<rename id="tt0479143" title="Rocky VI: Rocky Balboa" />
 	<rename id="tt3076658" title="Rocky VII: Creed" />
-	<rename id="tt0152225" title="Romeo &amp; Juliet (Canada)" />
+	 <rename id="tt0088011" title="Romancing the Stone I" />
+	<rename id="tt0089370" title="Romancing the Stone II: The Jewel of the Nile" />
+  <rename id="tt0152225" title="Romeo &amp; Juliet (Canada)" />
 	<rename id="tt0111011" title="Romeo &amp; Juliet (TV)" />
 	<rename id="tt0167374" title="Romeo and Juliet (Ballet)" />
 	<rename id="tt0047029" title="Romeo and Juliet (Classic)" />
@@ -1415,7 +1432,9 @@
 	<rename id="tt2324606" title="Rush Hour IV" />
 	<rename id="tt0114319" title="Sabrina (Remake)" />
 	<rename id="tt0120051" title="Safe House (Original)" />
-	<rename id="tt0047444" title="Samurai I: Musashi Miyamoto" />
+	 <rename id="tt0944835" title="Salt I" />
+	<rename id="tt1958011" title="Salt II" />
+  <rename id="tt0047444" title="Samurai I: Musashi Miyamoto" />
 	<rename id="tt0048579" title="Samurai II: Duel at Ichijoji Temple" />
 	<rename id="tt0049710" title="Samurai III: Duel at Ganryu Island" />
 	<rename id="tt0206275" title="Save the Last Dance I" />
@@ -1509,7 +1528,8 @@
 	<rename id="tt0338450" title="Sniper II" />
 	<rename id="tt0408196" title="Sniper III" />
 	<rename id="tt1571243" title="Sniper IV: Reloaded" />
-	<rename id="tt1735898" title="Snow White and the Huntsman I" />
+	 <rename id="tt3776288" title="Sniper V: Legacy" />
+  <rename id="tt1735898" title="Snow White and the Huntsman I" />
 	<rename id="tt2381991" title="Snow White and the Huntsman II" />
 	<rename id="tt0482603" title="Space Chimps I" />
 	<rename id="tt1537481" title="Space Chimps II: Zartog Strikes Back" />
@@ -1569,7 +1589,9 @@
 	<rename id="tt1193631" title="Step Up III: Step Up 3D" />
 	<rename id="tt1800741" title="Step Up IV: Revolution" />
 	<rename id="tt2626350" title="Step Up V" />
-	<rename id="tt0067800" title="Straw Dogs (Original)" />
+	 <rename id="tt0775539" title="Stomp the Yard I" />
+	<rename id="tt1533817" title="Stomp the Yard II: Homecoming" />
+  <rename id="tt0067800" title="Straw Dogs (Original)" />
 	<rename id="tt0421073" title="Street Kings I" />
 	<rename id="tt1707687" title="Street Kings II: Motor City" />
 	<rename id="tt1447972" title="StreetDance I: 3D" />
@@ -1641,7 +1663,7 @@
 	<rename id="tt1233571" title="The Art Of War II: Betrayal" />
 	<rename id="tt0878647" title="The Art Of War III: Retribution" />
 	<rename id="tt1655442" title="The Artist" collection="» Oscars for Best Picture" />
-	<rename id="tt0848228" title="The Avengers" collection="The Avengers|» Superheroes" sortby="The Avengers I" />
+	<rename id="tt0848228" title="The Avengers I" collection="The Avengers|» Superheroes" />
 	<rename id="tt2395427" title="The Avengers II: Age of Ultron" collection="The Avengers|» Superheroes" />
 	<rename id="tt0095800" title="The Bear" foreign="L'ours" />
 	<rename id="tt0036868" title="The Best Years of Our Lives" collection="» Oscars for Best Picture" />
@@ -1791,7 +1813,9 @@
 	<rename id="tt0110357" title="The Lion King I" />
 	<rename id="tt0120131" title="The Lion King II" />
 	<rename id="tt0318403" title="The Lion King III: Hakuna Matata (1½)" collection="The Lion King|Lilo &amp; Stitch" />
-	<rename id="tt0120737" title="The Lord of the Rings I: Fellowship of the Ring" collection="The Lord of the Rings|» Tolkien's Middle-earth" />
+	 <rename id="tt0110366" title="The Little Rascals I" />
+	<rename id="tt2490004" title="The Little Rascals II: Save the Day" />
+  <rename id="tt0120737" title="The Lord of the Rings I: Fellowship of the Ring" collection="The Lord of the Rings|» Tolkien's Middle-earth" />
 	<rename id="tt0167261" title="The Lord of the Rings II: The Two Towers" collection="The Lord of the Rings|» Tolkien's Middle-earth" />
 	<rename id="tt0167260" title="The Lord of the Rings III: The Return of the King" collection="The Lord of the Rings|» Tolkien's Middle-earth|» Oscars for Best Picture" />
 	<rename id="tt0093437" title="The Lost Boys I" />
@@ -1875,7 +1899,10 @@
 	<rename id="tt0330793" title="The Punisher I" collection="The Punisher|» Superheroes" />
 	<rename id="tt0450314" title="The Punisher II: War Zone" collection="The Punisher|» Superheroes" />
 	<rename id="tt1797521" title="The Punisher (Remake) I" collection="The Punisher|» Superheroes" />
-	<rename id="tt0076618" title="The Rescuers I" />
+	 <rename id="tt1899353" title="The Raid I: Redemption" />
+	<rename id="tt2265171" title="The Raid II: Retaliation" />
+	<rename id="tt3448656" title="The Raid III" />
+  <rename id="tt0076618" title="The Rescuers I" />
 	<rename id="tt0100477" title="The Rescuers II: Down Under" />
 	<rename id="tt0298130" title="The Ring I" sortby="The Ring 01" />
 	<rename id="tt0449092" title="The Ring II: Rings" sortby="The Ring 02" />
@@ -2111,7 +2138,7 @@
 	<rename id="tt0120903" title="X-Men I" collection="X-Men Trilogy|X-Men|» Superheroes" />
 	<rename id="tt0290334" title="X-Men II: X-Men United (X2)" collection="X-Men Trilogy|X-Men|» Superheroes" />
 	<rename id="tt0376994" title="X-Men III: The Last Stand" collection="X-Men Trilogy|X-Men|» Superheroes" />
-	<rename id="tt1270798" title="X-Men: First Class" collection="X-Men Origin|X-Men|» Superheroes" sortby="X-Men: First Class I" />
+	<rename id="tt1270798" title="X-Men: First Class I" collection="X-Men Origin|X-Men|» Superheroes" />
 	<rename id="tt1877832" title="X-Men: First Class II: Days of Future Past" collection="X-Men Origin|X-Men|» Superheroes" />
 	<rename id="tt3385516" title="X-Men: Apocalypse" collection="X-Men Origin|X-Men|» Superheroes" sortby="X-Men X01" />
 	<rename id="tt0295701" title="xXx I" />
