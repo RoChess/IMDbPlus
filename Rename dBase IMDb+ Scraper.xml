@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="8" point="8" />
-		<published month="01" day="05" year="2015" />
+		<version major="1" minor="8" point="9" />
+		<published month="02" day="23" year="2015" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -267,6 +267,7 @@
 	<rename id="tt0208003" title="Big Momma's House I" />
 	<rename id="tt0421729" title="Big Momma's House II" />
 	<rename id="tt1464174" title="Big Momma's House III: Like Father, Like Son" />
+  <rename id="tt2562232" title="Birdman" collection="» Oscars for Best Picture" />
 	<rename id="tt0096928" title="Bill &amp; Ted's I: Excellent Adventure" />
 	<rename id="tt0101452" title="Bill &amp; Ted's II: Bogus Journey" />
 	<rename id="tt0071222" title="Black Christmas (Original)" />
