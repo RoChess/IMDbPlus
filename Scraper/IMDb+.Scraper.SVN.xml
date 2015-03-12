@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="40" />
-		<published month="02" day="01" year="2014" />
+		<version major="4" minor="9" point="41" />
+		<published month="03" day="12" year="2014" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -302,7 +302,7 @@
 					<set name="alt_site" value="http://www.nyheter24.se/filmtipset/imdb/${movie.site_id}" />
 					<set name="rx_title_year">
 						<![CDATA[
-						<h1>(?<movieTitle>[^<]+)</h1>.+?<b>Utgivnings&aring;r:</b></td><td class="list" align="left" valign="top">(?<movieYear>\d{4})</td>
+						<h1>(?<movieTitle>[^<]+)</h1>.+?<b>Utgivnings&aring;r:</b></td><td align="left" valign="top">(?<movieYear>\d{4})</td>
 						]]>
 					</set>
 					<set name="rx_genres_block" value="&lt;h2&gt;Genre:(.+?)&lt;/tr&gt;" />
