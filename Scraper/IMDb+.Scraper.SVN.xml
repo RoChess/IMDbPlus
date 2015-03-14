@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="41" />
-		<published month="03" day="12" year="2014" />
+		<version major="4" minor="9" point="42" />
+		<published month="03" day="13" year="2014" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -50,7 +50,13 @@
 			<set name="global_options_fix_missing_summary" value="false" />	<!-- Try to use reviews	| Keep summary as-is	-->
 			<set name="global_options_debug_imdb_sources" value="false" />	<!-- Log HTML sources	| Not needed normally	-->
 
-			<!--
+	 		<!--
+				RottenTomatoes has switched to a JSON system with API key.
+				Register for your own key @ http://developer.rottentomatoes.com/member/register
+			-->
+			<set name="global_options_rotten_api_key" value="" />
+
+  		<!--
 				There is now expanded support for other English based rating systems.
 				Before it was just USA/MPAA or UK/BBFC via the 'global_options_uk_rating' option.
 
@@ -149,6 +155,8 @@
 				<if test="${xml_option.count}=1"><set name="global_options_fix_missing_summary" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=19]" />
 				<if test="${xml_option.count}=1"><set name="global_options_debug_imdb_sources" value="${xml_option[0].@value}" /></if>
+				<parse name="xml_option" input="${file}" xpath="//set[@id=20]" />
+				<if test="${xml_option.count}=1"><set name="global_options_rotten_api_key" value="${xml_option[0].@value}" /></if>
 
 				<parse name="xml_option" input="${file}" xpath="//set[@id=94]" />
 				<if test="${xml_option.count}=1"><set name="global_options_english_movie_rating" value="${xml_option[0].@value}" /></if>
@@ -1096,11 +1104,22 @@
 			</if>
 
 			<!-- RottenTomatoes -->
-			<if test="${global_options_imdb_score}=false">
+	 		<set name="rotten_api_key" value="" />
+			<if test="${global_options_rotten_api_key}!=">
+				<set name="rotten_api_key" value="apikey=${global_options_rotten_api_key}&amp;" />
+			</if>
+  		<if test="${global_options_imdb_score}=false">
 				<!-- Adjust IMDb ID to be compatible with RottenTomatoes -->
 				<replace name="imdb_id_fixed" input="${movie.imdb_id}" pattern="tt" with='' />
 				<!-- Retrieve detail page from RottenTomatoes -->
-				<retrieve name="rotten_details" url="http://www.rottentomatoes.com/alias?type=imdbid&amp;s=${imdb_id_fixed}" />
+	 			<retrieve name="rotten_json" url="http://api.rottentomatoes.com/api/public/v1.0/movie_alias.json?${rotten_api_key}type=imdb&amp;id=${imdb_id_fixed}" />
+				<set name="rx_rotten_alternate">
+					<![CDATA[
+					"alternate":"([^"]+)"
+					]]>
+				</set>
+				<parse name="rotten_alternate" input="${rotten_json}" regex="${rx_rotten_alternate}" />
+  			<retrieve name="rotten_details" url="http://www.rottentomatoes.com/alias?type=imdbid&amp;s=${imdb_id_fixed}" />
 
 				<set name="rx_rotten_tomatometer">
 					<![CDATA[
