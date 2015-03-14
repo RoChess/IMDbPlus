@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="43" />
-		<published month="03" day="13" year="2015" />
+		<version major="4" minor="9" point="44" />
+		<published month="03" day="14" year="2015" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1123,7 +1123,7 @@
 
 				<set name="rx_rotten_tomatometer">
 					<![CDATA[
-					(?:<span (?:itemprop="ratingValue" )?id="all-critics-meter"[^>]+>(?<rtAllPercentage>\d{1,3}?)</span>.+?<p class="critic_stats">\D*(?<rtAllAverage>\d+(?:\.\d+)?)/10\D*(?<rtAllVotes>\d+).+?<span id="all-critics-meter"[^>]+>(?:(?<rtTopPercentage>\d{1,3}?)|No Score Yet...)</span>.+?<p class="critic_stats">(?:\D*(?<rtTopAverage>\d+(?:\.\d+)?)/10|.+?N/A</span>)\D*(?<rtTopVotes>\d+).+?)?<span class="meter[^"]+">(?<rtPercentage>\d{1,3}?)</span>[^<]*<p class="critic_stats">(?:\D*(?<rtAverage>\d+(?:\.\d+)?)/5)?\D*(?<rtVotes>\d+[,.]?\d+)
+					(?:<div id="all-critics-numbers".+?<span itemprop="ratingValue">(?<rtAllPercentage>\d{1,3}?)</span>.+?<div id="scoreStats">\D*(?<rtAllAverage>\d+(?:\.\d+)?)/10\D*(?<rtAllVotes>\d+).+?<span itemprop="ratingValue">(?:(?<rtTopPercentage>\d{1,3}?)|No Score Yet...)</span>.+?<div id="scoreStats">(?:\D*(?<rtTopAverage>\d+(?:\.\d+)?)/10|.+?N/A</span>)\D*(?<rtTopVotes>\d+).+?<span itemprop="ratingValue">(?<rtPercentage>\d{1,3}?)</span>.+?)?<div class="audience-info">(?:\D*(?<rtAverage>\d+(?:\.\d+)?)/5)?\D*(?<rtVotes>\d+[,.]?\d+)
 					]]>
 				</set>
 				<parse name="rotten_rating" input="${rotten_details}" regex="${rx_rotten_tomatometer}" />
@@ -1260,13 +1260,13 @@
 						<!-- Set short summary RegExp first -->
 						<set name="rx_rotten_summary">
 							<![CDATA[
-							<input name="synopsis" type="hidden" value="(?<rottenSummary>[^"]+)" />
+							<p id="movieSynopsis" class="movie_synopsis">\s*(?<rottenSummary>[^<]+?)\s*<
 							]]>
 						</set>
 						<if test="${global_options_long_summary}=true">
 							<set name="rx_rotten_summary">
 								<![CDATA[
-								<p\sid="movieSynopsis"\sclass="movie_synopsis"\sitemprop="description">\s*(?<rottenSummary>.+?)</span>
+								<p id="movieSynopsis" class="movie_synopsis">\s*(?<rottenSummary>.+?)</span>
 								]]>
 							</set>
 						</if>
@@ -1280,7 +1280,7 @@
 				<if test="${movie.runtime}=0">
 					<set name="rx_rotten_runtime">
 						<![CDATA[
-						<span[^>]+>(?<runtimeHours>\d+) hr. (?<runtimeMinutes>\d+) min.</span>
+						<time[^>]+>\s*(?<runtimeHours>\d+) hr. (?<runtimeMinutes>\d+) min.\s*</time>
 						]]>
 					</set>
 					<parse name="rotten_runtime" input="${rotten_details}" regex="${rx_rotten_runtime}" />
@@ -1293,7 +1293,7 @@
 				<if test="${movie.certification}=">
 					<set name="rx_rotten_certification">
 						<![CDATA[
-						<span\sitemprop="contentRating">(?<rottenCertification>(?:G|PG|PG-13|R|NC-17))</span>
+						<dd itemprop="contentRating">(?<rottenCertification>(?:G|PG-13|PG|R|NC-17))[^<]*</dd>
 						]]>
 					</set>
 					<parse name="rotten_certification" input="${rotten_details}" regex="${rx_rotten_certification}" />
