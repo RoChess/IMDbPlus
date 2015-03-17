@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="44" />
-		<published month="03" day="14" year="2015" />
+		<version major="4" minor="9" point="45" />
+		<published month="03" day="17" year="2015" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1750,8 +1750,22 @@
 							</loop>
 						</loop>
 
-						<!-- Add AKA results to the first match if none exists -->
-						<if test="${movie[0].alternate_titles}=">
+	 					<!-- Add AKA results to the first match if none exists, or when this is a non-USA search -->
+						<if test="${movie[0].alternate_titles}="><set name="force_aka_to_first_match" value="true" /></if>
+						<if test="${movie[0].alternate_titles}!=">
+							<set name="rx_import_country">
+								<![CDATA[
+								"main",\s{2}"([^"]+)",
+								]]>
+							</set>
+							<parse name="import_country" input="${search_page}" regex="${rx_import_country}" />
+							<if test="${import_country[0][0]}!=US">
+								<set name="force_aka_to_first_match" value="true" />
+								<log LogLevel="Info" Message="IMDb+ Scraper: Non-US country code detected '${import_country[0][0]}'" />
+							</if>
+						</if>
+
+						<if test="${force_aka_to_first_match}=true">
 							<retrieve name="aka_page" url="http://akas.imdb.com/title/${movie[0].imdb_id}/releaseinfo" />
 							<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
 							<set name="movie[0].alternate_titles" value="|" />
