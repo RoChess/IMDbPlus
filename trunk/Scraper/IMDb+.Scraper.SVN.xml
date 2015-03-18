@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="47" />
-		<published month="03" day="19" year="2015" />
+		<version major="4" minor="9" point="48" />
+		<published month="03" day="20" year="2015" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1763,11 +1763,18 @@
 						<if test="${force_aka_to_first_match}=true">
 							<retrieve name="aka_page" url="http://akas.imdb.com/title/${movie[0].imdb_id}/releaseinfo" />
 							<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
-							<set name="movie[0].alternate_titles" value="|" />
-							<loop name="currAka" on="akas" limit="50">
-								<set name="movie[0].alternate_titles" value="${movie[0].alternate_titles}${currAka[1]:htmldecode}|" />
-							</loop>
-						</if>
+							<if test="${import_country[0][0]}!=US">
+								<if test="${akas[0][0]}=(original title)">
+									<set name="movie[0].alternate_titles" value="${akas[0][1]:htmldecode}" />
+								</if>
+							</if>
+							<if test="${movie[0].alternate_titles}=">
+								<set name="movie[0].alternate_titles" value="|" />
+								<loop name="currAka" on="akas" limit="50">
+									<set name="movie[0].alternate_titles" value="${movie[0].alternate_titles}${currAka[1]:htmldecode}|" />
+								</loop>
+							</if>
+  					</if>
 
 					</if>
 				</if>
