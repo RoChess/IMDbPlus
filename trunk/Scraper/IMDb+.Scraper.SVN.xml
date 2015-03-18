@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="45" />
-		<published month="03" day="17" year="2015" />
+		<version major="4" minor="9" point="46" />
+		<published month="03" day="18" year="2015" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1683,12 +1683,7 @@
 				</set>
 				<set name="rx_aka_details">
 					<![CDATA[
-					<tr>\s+?<td>(.+?)</td>\s+?<td>(.+?)</td>.*?</tr>
-					]]>
-				</set>
-				<set name="rx_aka">
-					<![CDATA[
-					aka "(.+?)"
+					<tr[^>]*>\s+?<td>([^<]+)</td>\s+?<td>([^<]+)</td>\s*</tr>
 					]]>
 				</set>
 
@@ -1755,7 +1750,7 @@
 						<if test="${movie[0].alternate_titles}!=">
 							<set name="rx_import_country">
 								<![CDATA[
-								"main",\s{2}"([^"]+)",
+								"main",\s*"([A-Z]+)",
 								]]>
 							</set>
 							<parse name="import_country" input="${search_page}" regex="${rx_import_country}" />
