@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="46" />
-		<published month="03" day="18" year="2015" />
+		<version major="4" minor="9" point="47" />
+		<published month="03" day="19" year="2015" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1765,7 +1765,7 @@
 							<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
 							<set name="movie[0].alternate_titles" value="|" />
 							<loop name="currAka" on="akas" limit="50">
-								<set name="movie[0].alternate_titles" value="${movie[0].alternate_titles}${currAka[0]:htmldecode}|" />
+								<set name="movie[0].alternate_titles" value="${movie[0].alternate_titles}${currAka[1]:htmldecode}|" />
 							</loop>
 						</if>
 
