@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="8" point="9" />
-		<published month="02" day="23" year="2015" />
+		<version major="1" minor="9" point="0" />
+		<published month="04" day="05" year="2015" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1359,10 +1359,10 @@
 	<rename id="tt0062168" title="Quatermass III: Five Million Years to Earth" />
 	<rename id="tt0823523" title="Quatermass IV: The Conclusion" />
   <rename id="tt0095953" title="Rain Man" collection="» Oscars for Best Picture" />
-	<rename id="tt0083944" title="Rambo: First Blood I" />
-	<rename id="tt0089880" title="Rambo: First Blood II" />
-	<rename id="tt0095956" title="Rambo: First Blood III" />
-	<rename id="tt0462499" title="Rambo: First Blood IV" />
+	<rename id="tt0083944" title="Rambo I: First Blood I" />
+	<rename id="tt0089880" title="Rambo II: First Blood II" />
+	<rename id="tt0095956" title="Rambo III: First Blood III" />
+	<rename id="tt0462499" title="Rambo IV: First Blood IV" />
 	<rename id="tt1401143" title="Rare Exports: A Christmas Tale" />
 	<rename id="tt0433035" title="Real Steel" sortby="Real Steal I" />
 	<rename id="tt1896804" title="Real Steel II" />
