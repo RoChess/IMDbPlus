@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="51" />
-		<published month="04" day="07" year="2015" />
+		<version major="4" minor="9" point="52" />
+		<published month="06" day="21" year="2015" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -317,7 +317,7 @@
 					<set name="rx_genres" value="'&gt;(.*?)&lt;/a&gt;" />
 					<set name="rx_plot2">
 						<![CDATA[
-						<tr><td[^>]+><h2>[^<]+</h2>\s*(?<moviePlotShort>[^<]+)</td></tr>
+						<tr>\s*<td[^>]+><h2>[^<]+</h2>\s*(?<moviePlotShort>[^<]+)</td>\s*</tr>
 						]]>
 					</set>
 					<!-- Use imdb.com language info -->
