@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="52" />
-		<published month="06" day="21" year="2015" />
+		<version major="4" minor="9" point="53" />
+		<published month="12" day="31" year="2015" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -933,12 +933,12 @@
 				<if test="${global_options_secondary_details}&lt;=6">
 					<set name="rx_plot">
 						<![CDATA[
-						<p class="plotpar">\s*(?<moviePlotLong>.*?)<i>.*?</i>.*?</p>|<h5>Plot Synopsis:</h5>[^>]+>\s*(?<moviePlotLong>(?!\s*<a[^>]+>This plot synopsis is empty[^<]+</a>).*?)\s*<a
+						<p class="plotpar">\s*(?<moviePlotLong>.*?)<i>.*?</i>.*?</p>|<h5>Plot Synopsis:</h5>[^>]+>\s*(?<moviePlotLong>(?!\s*<a[^>]+>This plot synopsis is empty[^<]+</a>).*?)\s*<a|<h2>Storyline</h2>[^>]+>\s*<p>\s*(?<moviePlotLong>[^<]+?)\s*</p>
 						]]>
 					</set>
 					<set name="rx_plot2">
 						<![CDATA[
-						<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:&\w+;)*)?\s*</p>
+						<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:&\w+;)*)?\s*</p>|<div class="summary_text" itemprop="description">\s*(?<moviePlotShort>[^<]+?)\s*</div>
 						]]>
 					</set>
 				</if>
@@ -1017,7 +1017,7 @@
 			<!-- Get imdb + metacritics votes/scores and fix to a scale of 10 if needed -->
 			<set name="rx_imdb_votes">
 				<![CDATA[
-				title="(?<imdbPopularity>[^\s]+) IMDb users\D+(?<imdbScore>\d+(?:.\d+)?)/10"(?:.+?Metascore:\s*<a[^>]+>\s*(?<metaScore>\d+)/100.+?"criticreviews[^>]+>\s*(?<metaPopularity>[^\s]+)\s*</a>)?
+				title="(?<imdbPopularity>[^\s]+) IMDb users\D+(?<imdbScore>\d+(?:.\d+)?)/10"(?:.+?Metascore:\s*<a[^>]+>\s*(?<metaScore>\d+)/100.+?"criticreviews[^>]+>\s*(?<metaPopularity>[^\s]+)\s*</a>)?|<span itemprop="ratingValue">(?<imdbScore>\d+(?:.\d+)?)</span>.+?<span class="small" itemprop="ratingCount">(?<imdbPopularity>[^<]+)</span>.+?<span itemprop="reviewCount">(?<metaPopularity>[^\s]+) crit[^<]+</span>.+?<div class="metacriticScore score_mixed titleReviewBarSubItem">\s*<span>(?<metaScore>\d+)</span>
 				]]>
 			</set>
 			<parse name="imdb_votes" input="${details_page}" regex="${rx_imdb_votes}" />
@@ -1119,11 +1119,11 @@
 					]]>
 				</set>
 				<parse name="rotten_alternate" input="${rotten_json}" regex="${rx_rotten_alternate}" />
-  			<retrieve name="rotten_details" url="${rotten_alternate[0][0]}" />
+  				<retrieve name="rotten_details" url="${rotten_alternate[0][0]}" />
 
 				<set name="rx_rotten_tomatometer">
 					<![CDATA[
-					(?:<div id="all-critics-numbers".+?<span itemprop="ratingValue[^>]+>(?<rtAllPercentage>\d{1,3}?)</span>.+?<div id="scoreStats[^>]+>\D*(?<rtAllAverage>\d+(?:\.\d+)?)/10\D*(?<rtAllVotes>\d+).+?<span itemprop="ratingValue[^>]+>(?:(?<rtTopPercentage>\d{1,3}?)|No Score Yet...)</span>.+?<div id="scoreStats[^>]+>(?:\D*(?<rtTopAverage>\d+(?:\.\d+)?)/10|.+?N/A</span>)\D*(?<rtTopVotes>\d+).+?<span itemprop="ratingValue[^>]+>(?<rtPercentage>\d{1,3}?)</span>.+?)?<div class="audience-info[^>]+>(?:\D*(?<rtAverage>\d+(?:\.\d+)?)/5)?\D*(?<rtVotes>[\d,.]+)
+					(?:<div id="all-critics-numbers".+?<span itemprop="ratingValue[^>]+>(?<rtAllPercentage>\d{1,3}?)</span>.+?<div id="scoreStats[^>]+>\D*(?<rtAllAverage>\d+(?:\.\d+)?)/10\D*(?<rtAllVotes>\d+).+?<span itemprop="ratingValue[^>]+>(?:(?<rtTopPercentage>\d{1,3}?)|No Score Yet...)</span>.+?<div id="scoreStats[^>]+>(?:\D*(?<rtTopAverage>\d+(?:\.\d+)?)/10|.+?N/A</span>)\D*(?<rtTopVotes>\d+).+?<span itemprop="ratingValue[^>]+>(?<rtPercentage>\d{1,3}?)[%]*</span>.+?)?<div class="audience-info[^>]+>(?:\D*(?<rtAverage>\d+(?:\.\d+)?)/5)?\D*(?<rtVotes>[\d,.]+)
 					]]>
 				</set>
 				<parse name="rotten_rating" input="${rotten_details}" regex="${rx_rotten_tomatometer}" />
@@ -1257,23 +1257,16 @@
 				<!-- Since we already have the RottenTomatoes results, lets use their summary if imdb.com did not have one -->
 				<if test="${movie.summary}=">
 					<if test="${global_options_secondary_details}&lt;=6">
-						<!-- Set short summary RegExp first -->
-						<set name="rx_rotten_summary">
-							<![CDATA[
-							<p id="movieSynopsis" class="movie_synopsis">\s*(?<rottenSummary>[^<]+?)\s*<
-							]]>
-						</set>
 						<if test="${global_options_long_summary}=true">
 							<set name="rx_rotten_summary">
 								<![CDATA[
-								<p id="movieSynopsis" class="movie_synopsis">\s*(?<rottenSummary>.+?)</span>
+								<div id="movieSynopsis"[^>]+>\s*(?<rottenSummary>[^<]+?)\s*(?:\(C\)[^<]+)?\s*<
 								]]>
 							</set>
+							<parse name="rotten_summary" input="${rotten_details}" regex="${rx_rotten_summary}" />
+							<set name="rotten_summary_clean" value="${rotten_summary[0][0]:striptags}" />
+							<set name="movie.summary" value="${rotten_summary_clean:htmldecode}" />
 						</if>
-
-						<parse name="rotten_summary" input="${rotten_details}" regex="${rx_rotten_summary}" />
-						<set name="rotten_summary_clean" value="${rotten_summary[0][0]:striptags}" />
-						<set name="movie.summary" value="${rotten_summary_clean:htmldecode}" />
 					</if>
 				</if>
 				<!-- Might as well verify the runtime -->
@@ -1293,7 +1286,7 @@
 				<if test="${movie.certification}=">
 					<set name="rx_rotten_certification">
 						<![CDATA[
-						<dd itemprop="contentRating">(?<rottenCertification>(?:G|PG-13|PG|R|NC-17))[^<]*</dd>
+						<td itemprop="contentRating">(?<rottenCertification>(?:G|PG-13|PG|R|NC-17))[^<]*</td>
 						]]>
 					</set>
 					<parse name="rotten_certification" input="${rotten_details}" regex="${rx_rotten_certification}" />
