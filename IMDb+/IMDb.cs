@@ -50,8 +50,8 @@ namespace IMDb
 
         #region Constants
 
-        const string ScraperUpdateFile = @"http://imdbplus.googlecode.com/svn/trunk/Scraper/IMDb+.Scraper.SVN.xml";
-        const string ReplacementsUpdateFile = @"http://imdbplus.googlecode.com/svn/trunk/Rename%20dBase%20IMDb+%20Scraper.xml";
+        const string ScraperUpdateFile = @"https://raw.githubusercontent.com/RoChess/IMDbPlus/master/Scraper/IMDb%2B.Scraper.SVN.xml";
+        const string ReplacementsUpdateFile = @"https://raw.githubusercontent.com/RoChess/IMDbPlus/master/Rename%20dBase%20IMDb%2B%20Scraper.xml";
         const int IMDbPlusScriptId = 314159265;
         const int IMDbScriptId = 874902;
         #endregion
