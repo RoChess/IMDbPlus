@@ -1,28 +1,315 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
   <!--A-->
+  <string name="AddForeignTitle">Přidat název v jiném jazyce</string>
+  <string name="AddForeignTitleDescription">Vyp. = Cizojazyčný
+Zap. = Anglický (Cizojazyčný)
+
+Povolením této volby dojde ke zobrazení názvu filmu v pořadí anglický následovaný cizojazyčným, uvedeným v závorkách.
+
+Příklad: Cars (Auta)
+</string>
   <!--B-->
+  <string name="BoolOn">Zap.</string>
+  <string name="BoolOff">Vyp.</string>
   <!--C-->
   <string name="Cancel">Storno</string>
+  <string name="CountryFilter">Filtr země</string>
+  <string name="CountryFilterDescription">Existují anglicky mluvené filmy, které mají cizojazyčný název. Aby byly tyto filmy správně detekovány bylo zapotřebí přidat také filtr země, kde byl film vyroben.
+
+Výchozí země, které nepoužívají cizojazyčné názvy jsou: \'us.ca.gb.ie.au.nz\' (Spojené Státy, Kanada, Velká Británie, Irsko, Austrálie a Nový Zéland)
+
+Poznámka: Virtuální klávesnice aplikace MediaPortal neobsahuje znak \'|\'. Z tohoto důvodu byla pro oddělení různých jazyků použita tečka \'.\' Buďte velmi opatrní při změně této položky, protože chybné nastavení může způsobit úplnou nefunkčnost IMDb+ skrejpru.
+</string>
   <!--D-->
+  <string name="DefaultDescription">Označením výše uvedených možností se zde zobrazí detailnější vysvětlení. </string>
   <!--E-->
   <!--F-->
+  <string name="First">První</string>
+  <string name="FixMissingSummary">Vynutit hodnocení uživatelů v případě je chybí souhrn</string>
+  <string name="FixMissingSummaryDescription">Vyp. = Nechat shrnutí prázdné
+Zap. = Na místo shrnutí použít hodnocení uživatelů
+
+Ne všechny filmy obsahují oficiální shrnutí na stránkách imdb.com V některých případech ale tyto filmy obsahují hodnocení uživatelů. Toto nastavení umožňuje použít hodnocení uživatele namísto prázdného souhrnu.
+
+Upozornění: Hodnocení uživatelů mohou vyzrazovat zápletku.
+</string>
+  <string name="ForceIMDbPlus">Vynutit IMDb+</string>
+  <string name="ForceIMDbPlusDescription">Chcete vynutit u všech Vašich existujících filmů
+změnu z výchozího skrejpru IMDb na skrejpr IMDb+?
+</string>
+  <string name="ForceIMDbPlusComplete">Úspěšně jste přepnuli {0}/{1} filmů
+na IMDb+ skrejpr.
+</string>
+  <string name="ForeignTitleFirst">Nastavit cizojazyčný název jako první</string>
+  <string name="ForeignTitleFirstDescription">Vyp. = Anglický (Cizojazyčný)
+Zap. = Cizojazyčný (Anglický)
+
+Povolením této volby dojde ke zobrazení názvu filmu v pořadí cizojazyčný následovaný anglickým, uvedeným v závorkách.
+
+Příklad: Auta (Cars)
+</string>
   <!--G-->
   <!--H-->
   <!--I-->
+  <string name="IMDbMetaScore">Metacritics MetaScore</string>
+  <string name="IMDbMetaScoreDescription">Vyp. = použije se hlavní hodnocení imdb.com
+Zap. = použije se hodnocení Metacritics Metascore
+
+Stránka imdb.com nabízí také hodnocení z webu Metacritics.com. Povolením této možnosti bude použito toto hodnocení.
+
+Poznámka: Toto nastavení vyžaduje aby bylo povoleno také nastavení \'Skóre IMDb\', a dojte tak v vypnutí stahování chybějících shrnutí a informací o délce z webu RottenTomatoes.
+</string>
+  <string name="IMDbScore">Skóre IMDb</string>
+  <string name="IMDbScoreDescription">Vyp. = Použít web RottenTomatoes
+Zap. = Omezit pouze na používání imdb.com
+
+RottenTomatoes nabízí dodatečné informace, ale zapnutím tohoto nastavení vynutíte využívání pouze webu imdb.com.
+
+Poznámka: Tím také dojde k vypnutí stahování chybějících shrnutí, informací o délce a hodnocení.
+</string>
+  <string name="IMDbInfo">IMDb+ Informace</string>
+  <string name="InfoPluginVersion">Verze modulu</string>
+  <string name="InfoScraperAuthor">Autor skrejpru: v{0}</string>
+  <string name="InfoScraperVersion">Verze skrejpru: v{0}</string>
+  <string name="InfoScraperPriority">Priorita skrejpru: {0}</string>
+  <string name="InfoScraperPublished">Skrejpr publikován: {0}</string>
+  <string name="InfoScraperLastUpdateCheck">Poslední aktualizace skrejpru: {0}</string>
+  <string name="InfoMoviesIMDbPlusPrimary">Filmy používající skrejpr IMDB+: {0}</string>
+  <string name="InfoMoviesOtherPlusPrimary">Filmy používající jiný skrejpr: {0}</string>
+  <string name="InfoReplacementsVersion">Verze Náhrad: v{0}</string>
+  <string name="InfoReplacementsPublished">Publikování Náhrad: v{0}</string>
+  <string name="InfoReplacementEntries">Položky Náhrad: v{0}</string>
+  <string name="InfoCustomReplacementEntries"> Položky Náhrad (vlastní): v{0}</string>
+  <string name="IntervalSixHours">6 hodin</string>
+  <string name="IntervalTwelveHours">12 hodin</string>
+  <string name="IntervalTwentyFourHours">24 hodin</string>
+  <string name="IntervalTwoDays">2 dny</string>
+  <string name="IntervalThreeDays">3 dny</string>
+  <string name="IntervalFourDays">4 dny</string>
+  <string name="IntervalSevenDays">7 dní</string>
   <!--K-->
   <!--J-->
   <!--L-->
+  <string name="LastScraperUpdate">Poslední aktualizace skrejpru</string>
+  <string name="LanguageFilter">Rozšířené možnosti: Jazykový filtr</string>
+  <string name="LanguageFilterDescription">Filtr umožňující zahrnout další jazyk kromě anglického (en). Pro nalezení správného kódu jazyka podle normy ISO 639-1 použijte HTML zdrojový kód webu imdb.com.
+
+Výchozí jazyk je Angličtina \'en\'
+
+Nicméně jestliže jste z Norska, a přejete si aby názvy Norských filmů byly v originále v norštině a všechny ostatní názvy byly v angličtině, použijte nastavení: \'en.no\'
+
+Poznámka: Virtuální klávesnice aplikace MediaPortal neobsahuje znak \'|\'. Z tohoto důvodu byla pro oddělení různých jazyků použita tečka \'.\' Buďte velmi opatrní při změně této položky, protože chybné nastavení může způsobit úplnou nefunkčnost IMDb+ skrejpru.
+</string>
+  <string name="LongSummary">Použít dlouhá shrnutí, která mohou prozradit zápletku</string>
+  <string name="LongSummaryDescription">Vyp. = Zkrácená shrnutí popisující děj filmu
+Zap. = Dlouhá shrnutí (mohou vyzrazovat zápletku)
+
+Dlouhá shrnutí nabízí více informací, ale mohou vyzrazovat zápletku filmu. Z tohoto důvodu je tato možnost ve výchozím stavu nastavena na vypnuto.
+</string>
   <!--M-->
+  <string name="MinIMDbVotes">Požadovaný minimální počet IMDb hlasů</string>
+  <string name="MinIMDbVotesDescription">Vyp. = Vždy používat hodnocení imdb.com
+Zap. = Použít hodnocení imdb.com pouze v případě, že existuje více jak 20 hodnocení
+
+IMDb hodnocení jsou často nafouknuta lidmi, kteří se podíleli na výrobě filmu. Z tohoto důvodu pak nejsou výjimečné vysoké hodnocení filmů s méně jak 20ti hodnoceními.
+
+Při zapnutí této volby budou tato hodnocení ignorována.
+</string>
+  <string name="MultiSelectDialog">Dialog více voleb</string>
   <!--N-->
   <string name="No">Ne</string>
+  <string name="NumberOfMovies">{0}/{1} filmů</string>
+  <string name="NumberOfMovies2">{0} filmů</string>
+  <string name="NoSourcesFound">Nebyly nalezeny žádné filmy u kterých
+by bylo možné vynutit IMDb+ skrejpr!</string>
+  <string name="NullSource">Žádný zdroj, ale použitelné IMDb-ID</string>
   <!--O-->
+  <string name="OneWriterDirector">Omezit import pouze na jednoho autora a režiséra</string>
+  <string name="OneWriterDirectorDescription">Vyp. = Zobrazit jména všech autorů a režisérů
+Zap. = Zobrazit pouze jednoho autora a režiséra
+
+Některé vzhledy nemají mnoho místa pro zobrazení všech autorů a režisérů. Jestliže nechcete aby došlo k posunování textu s těmito informacemi můžete tuto volbu zapnout.
+
+Pamatujte však, že nemusí správně fungovat vyhledávání filmů podle autorů a režisérů. Nicméně filmů s více autory nebo režiséry je poměrně málo.
+</string>
+  <string name="OriginalTitle">Použít originální název filmu</string>
+  <string name="OriginalTitleDescription">Vyp. = Vždy použít anglický název
+Zap. = U cizojazyčný filmů použít původní název
+
+Cizý filmy mívají často neanglický název.
+
+V případě, že chcete u všech filmů použít anglický název nechte toto nastavení vypnuté.
+</string>
   <!--P-->
   <!--R-->
+  <string name="Ratings">Anglický systém hodnocení/certifikace</string>
+  <string name="RatingsDescription">Existuje množství certifikačních/hodnotících systémů v anglicky mluvících zemích po celém světě. Mezi nejznámější patří americký MPAA, s výsledným značením jako je např. PG-13, R, NC-17 apod.
+
+Uživatelé z Austrálie, Kanady, Velké Británie a Nového Zélandu mohou použít toto nastavení na zvolení jejich národního systému.</string>
+  <string name="RatingsHeader">Volba systému certifikace</string>
+  <string name="Rating01">Spojené státy</string>
+  <string name="Rating02">Velká Británie</string>
+  <string name="Rating03">Kanada (Alberta)</string>
+  <string name="Rating04">Kanada (Britská Kolumbie)</string>
+  <string name="Rating05">Kanada (Manitoba)</string>
+  <string name="Rating06">Kanada (Nové Skotsko)</string>
+  <string name="Rating07">Kanada (Ontario)</string>
+  <string name="Rating08">Kanada (Quebec)</string>
+  <string name="Rating09">Austrálie</string>
+  <string name="Rating10">Nový Zéland</string>
+  <string name="RefreshMovies">Aktualizace filmů</string>
+  <string name="RefreshingMovies">Probíhá aktualizace filmů</string>
+  <string name="RefreshCancel">Zrušit aktualizaci</string>
+  <string name="RefreshMoviesDescription">Opravdu chcete aktualizovat všechny filmy,
+které mají IMDb+ jako primární zdroj?</string>
+  <string name="RefreshMovieStatus">Aktualizace {0}/{1} Filmů: {2}%</string>
+  <string name="RefreshMoviesNotification">Aktualizace filmů IMDb+ je hotova.
+Užijte si výsledky.</string>
+  <string name="RefreshMoviesCancelNotification">Aktualizace byla přerušena.
+Bylo aktualizováno {0} filmů.</string>
+  <string name="RefreshAllFields">Aktualizace všech polí</string>
+  <string name="RefreshAllFieldsDescription">Vyp. = Aktualizovat jen některá pole
+Zap. = Aktualizovat vše
+
+Informace se na IMDb neustále mění a doplňují. Z tohoto důvodu je dobré čas od času aktualizovat informace o filmech ve Vaší knihovně.
+
+Povolením této volby vynutíte kompletní aktualizaci. V opačném případě budou informace pouze doplněny do chybějících polí, a bude aktualizováno hodnocení, certifikace a hlasování.
+
+Poznámka: Toto nastavení vypne systém přejmenování u existujících filmů.
+</string>
+  <string name="RemoveFirstRoman">Odstranit řecké číslování u prvního filmu</string>
+  <string name="RemoveFirstRomanDescription">Vyp. = Ponechat přejmenovaný název tak jak je
+Zap. = Odstranit římskou číslici u prvního filmu
+
+Jestliže je povolen systém přejmenování souborů, bude ve výchozím nastavení, přidána římská číslice k názvu filmu. To platí i o první film ze série, takže např. \'Avatar\' bude přejmenován na \'Avatar I\'. Jestliže povolíte toto nastavení bude tato číslice u prvního filmu odstraněna, ale správné pořadí zůstane zachováno.
+
+Pamatujte že toto nastavení bude fungovat pouze v případě, jestliže první film v sérii neobsahuje také podtitul. Např. název filmu \'Indiana Jones I: Raiders of the Lost Ark\' zůstane nezměněn.
+</string>
+  <string name="RenameTitles">Změnit názvy tak, aby byly seriály pohromadě.</string>
+  <string name="RenameTitlesDescription">Vyp. = Použít původní název
+Zap. = Změnit názvy, aby došlo k seskupení sérií
+
+Existuje mnoho filmových sérií a někdy jednotlivé díly nezačínají stejným názvem aby bylo možné je seskupit dohromady. Proto je k dispozici možnost přejmenování titulu podle IMDb tt identifikátoru. Výsledkem je přejmenování filmů tak, aby bylo možné lehce identifikovat, že patří do jedné série.
+
+Příklad: \'Batman VII: The Dark Knight Rises\' se správně přiřadí k ostatním filmům série
+
+Výchozí nastavení pro přejmenování je uloženo v databázovém souboru \'IMDb+Rename dBase IMDb+ Scraper.xml\', který je uložen v složce účtu uživatele aplikace MediaPortal.
+Jakékoliv změny provádějte do souboru \'IMDb+Rename dBase IMDb+ Scraper (Custom).xml\'. Pro editaci můžete použít aplikaci Notepad. Při úpravách dbejte na správnou syntaxi.
+</string>
+  <string name="RottenMeter">RajčatoMetr RottenTomatoes</string>
+  <string name="RottenMeterDescription">Vyp. = \'Uživatelská\' hodnocení RottenTomatoes
+Zap. = Hodnocení \'RajčatoMetr\' Rotten Tomatoes
+
+Na webu RottenTomatoes je k dispozici mnoho různých systémů hodnocení.
+
+Chcete-li používat některý z těchto systémů musíte povolit tuto volbu. V opačném případě bude použit systém uživatelských hodnocení.
+</string>
+  <string name="RottenAverage">Průměrné hodnocení z RottenTomatoes</string>
+  <string name="RottenAverageDescription">Vyp. = \'Procentuální\' hodnocení RottenTomatoes
+Zap. = \'Průměrné\' hodnocení RottenTomatoes
+
+\'Procentuální\' je zvláštní druh hodnocení, který je založený na sledování uživatelů RottenTomatoes, kteří volili určitým způsobem.
+</string>
+  <string name="RottenTopCritics">Nejlepší kritiky z RottenTomatoes</string>
+  <string name="RottenTopCriticsDescription">Vyp. =  \'Všichni\' kritici z RottenTomatoes
+Zap. =  \'Top\' kritici z RottenTomatoes
+
+Na RottenTomatoes jsou k dispozici dvě skupiny hodnocení: \'Všichni\' a \'Top\' kritici.
+
+Povolením této volby dojde k používání pouze hodnocení \'Top\' kritiků.
+</string>
+  <string name="Resume">(Obnovit)</string>
   <!--S-->
+  <string name="ScraperOptionsTitle">Možnosti IMDb+ skrejpru</string>
+  <string name="ScraperNotFirstPrompt">IMDb+ skrejpr není nastaven jako výchozí!
+To může způsobovat problémy.
+Chcete to změnit?</string>
+  <string name="SecondaryDetails">Získat další informace v následujícím jazyce</string>
+  <string name="SecondaryDetailsDescription">Je možné získávat informace i v jiném jazyce. Jedná se o souhrny, certifikace, žánry a případně i více, když jsou informace k dispozici.
+
+V současné chvíli jsou podporovány tyto jazyky: Holandština, Francouzština, Němčina, Islandština, Italština, Portugalština, Španělština a Švédština.
+</string>
+  <string name="SecondaryDetailsHeader">Druhý jazyk</string>
+  <string name="SecondaryLanguage01">Angličtina</string>
+  <string name="SecondaryLanguage02">Němčina</string>
+  <string name="SecondaryLanguage03">Španělština</string>
+  <string name="SecondaryLanguage04">Francouzština</string>
+  <string name="SecondaryLanguage05">Italština</string>
+  <string name="SecondaryLanguage06">Portugalština</string>
+  <string name="SecondaryLanguage07">Švédština</string>
+  <string name="SecondaryLanguage08">Islandský</string>
+  <string name="SecondaryLanguage09">Holandština</string>
+  <string name="SecondarySummary">Použít angličtinu v případě, že není k dispozici požadovaný jazyk</string>
+  <string name="SecondarySummaryDescription">Vyp. = Nezobrazit nic, jestliže chybí cizojazyčný souhrn
+Zap. = Použít anglický souhrn
+
+Cizojazyčné weby nejsou často tak bohaté na obsah jako imdb.com nebo nenabízejí stejný rozsah informací. To se týká hlavně souhrnů filmů. Aby Vaše kolekce filmů nebyla v této části prázdná, lze povolit stažení informací v angličtině (je-li k dispozici).  V ideálním případě by bylo nejlepší zaregistrovat se na tomto webu a chybějící informaci doplnit. Ale než se tak stane, je možné využívat anglického souhrnu.
+</string>
+  <string name="SecondaryEnglishTitle">Druhý název v angličtině</string>
+  <string name="SecondaryEnglishTitleDescription">Vyp. = Zobrazit cizojazyčný název
+Zap. = Zobrazit anglický název
+
+Jestli bylo nastaveno použití cizojazyčných informací o filmu, zobrazí se i jeho název v tomto jazyce. Pomocí tohoto nastavení lze i v tomto případě zachovat anglický název filmu.
+
+Poznámka: Toto se nevztahuje na systém přejmenování. Pro získání cizojazyčného názvu je vyžadován překlad, i v případě, že je tato možnost vypnuta.
+</string>
+  <string name="SingleScore">Jednojádrový systém hodnocení</string>
+  <string name="SingleScoreDescription">Vyp. = Použít průměrný systém hodnocení
+Zap. = Použít pouze jeden systém hodnocení
+
+Občas jsou mezi jednotlivými systémy hodnocení velké rozdíly. Toto lze eliminovat zprůměrováním systémů hodnocení z imdb.com, Metacritics a TottenTomatoes.
+
+Poznámka: V případě, že je zapnuta položka \'Skóre IMDb\' dojde ke zprůměrování pouze hodnocení z IMDb a Metacritics.
+</string>
+  <string name="SpecialEditions">Podpora označování zvláštních edicí pomocí štítků</string>
+  <string name="SpecialEditionsDescription">Vyp. = Nechat původní název
+Zap. = Přidat identifikační štítky speciální edice
+
+Jestliže do názvu filmu nebo do souboru NFO přidáte informaci o IMDb tt identifikátoru, pak lze zapnout tuto volbu pro správné přiřazení ke speciální edici.
+
+Můžete také přidat do názvu souboru následující identifikátory umístěné v závorkách:
+
+3D
+Extended
+Unrated
+Director\'s Cut
+Alternate Ending
+
+Také je lze doplnit termínem \'Edition\'
+
+Příklad: Výsledkem názvu \"Avatar (tt0499549) (3D).mkv\" bude \"Avatar (3D)\"
+</string>
+  <string name="SettingPluginEnabledName">Modul je povolen</string>
+  <string name="SettingPluginEnabledDescription">Toto nastavení kontroluje, zda je modul IMDb+ načten po spuštění aplikace MediaPortal.</string>
+  <string name="SettingListedHomeName">Uvedeno na domovské stránce</string>
+  <string name="SettingListedHomeDescription">Při povolení se modul IMDb+ zobrazí na hlavním panelu aplikace MediaPortal.</string>
+  <string name="SettingListedPluginsName">Uvedeno v mých doplňcích</string>
+  <string name="SettingListedPluginsDescription">Při povolení se modul IMDb+ zobrazí v sekci modulů aplikace MediaPortal.</string>
+  <string name="SettingsSyncIntervalName">Počet hodin do další kontroly aktualizací</string>
+  <string name="SettingsSyncIntervalDescription">Toto nastavení kontroluje jak často bude modul z webu aktualizovat skript skrejpru a databázi náhrad.</string>
+  <string name="SettingsSyncOnStartupName">Zkontrolovat aktualizace při spuštění</string>
+  <string name="SettingsSyncOnStartupDescription">Toto nastavení vynutí  kontrolu aktualizací z webu, skriptu skrejpru a databáze náhrad, při každém spuštění aplikace MediaPortal.</string>
+  <string name="SettingsDisableNotificationsName">Vypnout upozornění</string>
+  <string name="SettingsDisableNotificationsDescription">Toto nastavení umožňuje vypnutí oznámení, která se zobrazují např, v případě dokončení aktualizací pomocí skrejperu.</string>
+  <string name="SelectSources">Zvolte zdroje pro konverzi do IMDb+</string>
+  <string name="StartsWith">Začíná na {0}</string>
+  <string name="SelectAlphas">Zvolit filmy začínající na...</string>
   <!--T-->
   <!--U-->
+  <string name="UkRating">Názvy filmů v britské angličtině</string>
+  <string name="UkRatingDescription">Vyp. = Používat americké názvy filmů
+Zap. = Používat britské názvy filmů
+
+Hezkým příkladem rozdílného pojmenování filmů je např. první film o Harry Potterovi. Originální název zní \"Harry Potter and the Philosopher\'s Stone\", kdežto americká verze zní \"Harry Potter and the Sorcerer\'s Stone\". Protože je je web imdb.com primárně zaměřen na americké uživatele, jsou používány primárně americké názvy. Chcete-li zobrazovat britské názvy, v případě že jsou k dispozici, povolte tuto možnost.
+
+Poznámka: V tomto případě nebude fungovat správné pojmenování filmu a bude přidána římská číslice \'I\': \"Harry Potter I: Sorcerer\'s Stone\".
+</string>
+  <string name="UpdatedScraperScript">MovingPictures byl aktualizován pomocí IMDb+ skrejpru v{0}</string>
   <string name="Update">Aktualizovat</string>
+  <string name="UpdateAll">Aktualizovat vše</string>
+  <string name="UpdateReplacementOnly">Aktualizovat pouze nahrazené</string>
+  <string name="UpdateAlphas">Aktualizovat filmy začínající na...</string>
   <!--V-->
   <!--W-->
   <!--Y-->

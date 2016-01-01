@@ -3,7 +3,6 @@
   <!--A-->
   <!--B-->
   <!--C-->
-  <string name="Cancel">ביטול</string>
   <!--D-->
   <!--E-->
   <!--F-->
@@ -15,16 +14,13 @@
   <!--L-->
   <!--M-->
   <!--N-->
-  <string name="No">לא</string>
   <!--O-->
   <!--P-->
   <!--R-->
   <!--S-->
   <!--T-->
   <!--U-->
-  <string name="Update">עדכון</string>
   <!--V-->
   <!--W-->
   <!--Y-->
-  <string name="Yes">כן</string>
 </resources>

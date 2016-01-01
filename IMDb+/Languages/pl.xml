@@ -1,27 +1,98 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
   <!--A-->
+  <string name="AddForeignTitle">Dodaj obcojęzyczny tytuł</string>
   <!--B-->
+  <string name="BoolOn">Włącz</string>
+  <string name="BoolOff">Wyłącz</string>
   <!--C-->
   <string name="Cancel">Anuluj</string>
+  <string name="CountryFilter">Zaawansowane: Filtr kraju</string>
   <!--D-->
+  <string name="DefaultDescription">Podświetl dowolną z powyższych opcji a szczegółowe objaśnienia pojawią się tutaj.</string>
   <!--E-->
   <!--F-->
+  <string name="First">Pierwszy</string>
+  <string name="FixMissingSummary">Używaj opisów użytkowników zamiast pustego opisu</string>
+  <string name="ForceIMDbPlus">Wymuś IMDb+</string>
+  <string name="ForeignTitleFirst">Rozpoczynaj tytuł obcojęzycznym tytułem</string>
   <!--G-->
   <!--H-->
   <!--I-->
+  <string name="IMDbScore">Ocena IMDb</string>
+  <string name="IMDbInfo">Informacje IMDb+</string>
+  <string name="InfoPluginVersion">Wersja dodatku: v{0}</string>
+  <string name="InfoScraperAuthor">Autor skryptu: {0}</string>
+  <string name="InfoScraperVersion">Wersja skryptu: v{0}</string>
+  <string name="InfoScraperPriority">Priorytet skryptu: {0}</string>
+  <string name="InfoScraperPublished">Wydawca skryptu: {0}</string>
+  <string name="InfoScraperLastUpdateCheck">Ostatnie sprawdzenie aktualności skryptu: {0}</string>
+  <string name="InfoMoviesIMDbPlusPrimary">Filmy używające skryptów IMDb+ jako źródło: {0}</string>
+  <string name="InfoMoviesOtherPlusPrimary">Filmy używające innych skryptów: {0}</string>
+  <string name="InfoReplacementsVersion">Zastępowana wersja: v{0}</string>
+  <string name="InfoReplacementsPublished">Zastępowany wydawca: {0}</string>
+  <string name="IntervalSixHours">6 godzin</string>
+  <string name="IntervalTwelveHours">12 godzin</string>
+  <string name="IntervalTwentyFourHours">24 godziny</string>
+  <string name="IntervalTwoDays">2 dni</string>
+  <string name="IntervalThreeDays">3 dni</string>
+  <string name="IntervalFourDays">4 dni</string>
+  <string name="IntervalSevenDays">7 dni</string>
   <!--K-->
   <!--J-->
   <!--L-->
+  <string name="LastScraperUpdate">Ostatnia aktualizacja skryptu</string>
   <!--M-->
+  <string name="MultiSelectDialog">Okno wielokrotnego wyboru</string>
   <!--N-->
   <string name="No">Nie</string>
+  <string name="NumberOfMovies">{0}/{1} filmów</string>
+  <string name="NumberOfMovies2">{0} filmów</string>
   <!--O-->
+  <string name="OneWriterDirector">Ogranicz import do tylko jednego scenarzysty i reżysera</string>
+  <string name="OriginalTitle">Użyj oryginalnego tytułu dla filmu</string>
   <!--P-->
   <!--R-->
+  <string name="Rating01">USA</string>
+  <string name="Rating02">Wielka Brytania</string>
+  <string name="Rating03">Kanada (Alberta)</string>
+  <string name="Rating04">Kanada (Kolumbia Brytyjska)</string>
+  <string name="Rating05">Kanada (Manitoba)</string>
+  <string name="Rating06">Kanada (Nowa Szkocja)</string>
+  <string name="Rating07">Kanada (Ontario)</string>
+  <string name="Rating08">Kanada (Quebec)</string>
+  <string name="Rating09">Australia</string>
+  <string name="Rating10">Nowa Zelandia</string>
+  <string name="RefreshMovies">Odśwież filmy</string>
+  <string name="RefreshingMovies">Odświeżanie filmów</string>
+  <string name="RefreshCancel">Anuluj odświeżanie</string>
+  <string name="RefreshMovieStatus">Odświeżanie {0}/{1} filmów: {2}%</string>
+  <string name="RefreshAllFields">Odśwież wszystkie pola</string>
+  <string name="RenameTitles">Zmieniaj tytuły aby otrzymać odcinki pogrupowane razem</string>
   <!--S-->
+  <string name="ScraperOptionsTitle">Opcje skryptów IMDb+</string>
+  <string name="SecondaryDetails">Uzyskaj dodatkowe informacje w następującym języku</string>
+  <string name="SecondaryDetailsHeader">Dodatkowy język</string>
+  <string name="SecondaryLanguage01">angielski</string>
+  <string name="SecondaryLanguage02">niemiecki</string>
+  <string name="SecondaryLanguage03">hiszpański</string>
+  <string name="SecondaryLanguage04">francuski</string>
+  <string name="SecondaryLanguage05">włoski</string>
+  <string name="SecondaryLanguage06">portugalski</string>
+  <string name="SecondaryLanguage07">szwedzki</string>
+  <string name="SecondaryLanguage08">islandzki</string>
+  <string name="SecondaryLanguage09">duński</string>
+  <string name="SecondarySummary">Użyj angielskojęzycznego opisu jeśli obcojęzyczny nie istnieje</string>
+  <string name="SettingPluginEnabledName">Dodatek włączony</string>
+  <string name="SettingListedHomeName">Widoczny na ekranie Home</string>
+  <string name="SettingListedPluginsName">Widoczny w dodatkach</string>
+  <string name="SettingsDisableNotificationsName">Wyłącz powiadomienia</string>
+  <string name="StartsWith">Rozpoczyna się z {0}</string>
+  <string name="SelectAlphas">Wybierz filmy rozpoczynające się z...</string>
   <!--T-->
   <!--U-->
+  <string name="Update">Aktualizuj</string>
+  <string name="UpdateAll">Aktualizuj wszystko</string>
   <!--V-->
   <!--W-->
   <!--Y-->

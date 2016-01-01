@@ -2,7 +2,10 @@
 <resources>
   <!--A-->
   <!--B-->
+  <string name="BoolOn">Açık</string>
+  <string name="BoolOff">Kapalı</string>
   <!--C-->
+  <string name="Cancel">İptal</string>
   <!--D-->
   <!--E-->
   <!--F-->
@@ -14,13 +17,17 @@
   <!--L-->
   <!--M-->
   <!--N-->
+  <string name="No">Hayır</string>
+  <string name="NumberOfMovies2">{0} Filmler</string>
   <!--O-->
   <!--P-->
   <!--R-->
   <!--S-->
+  <string name="SettingPluginEnabledName">Eklenti Aktif</string>
   <!--T-->
   <!--U-->
   <!--V-->
   <!--W-->
   <!--Y-->
+  <string name="Yes">Evet</string>
 </resources>

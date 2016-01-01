@@ -3,7 +3,7 @@
   <!--A-->
   <!--B-->
   <!--C-->
-  <string name="Cancel">ביטול</string>
+  <string name="Cancel">Hủy bỏ</string>
   <!--D-->
   <!--E-->
   <!--F-->
@@ -15,16 +15,15 @@
   <!--L-->
   <!--M-->
   <!--N-->
-  <string name="No">לא</string>
+  <string name="No">Không đồng ý</string>
   <!--O-->
   <!--P-->
   <!--R-->
   <!--S-->
   <!--T-->
   <!--U-->
-  <string name="Update">עדכון</string>
   <!--V-->
   <!--W-->
   <!--Y-->
-  <string name="Yes">כן</string>
+  <string name="Yes">Đồng ý</string>
 </resources>

@@ -1,27 +1,116 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
   <!--A-->
+  <string name="AddForeignTitle">Pridať cudzojazyčný názov</string>
   <!--B-->
+  <string name="BoolOn">Zap.</string>
+  <string name="BoolOff">Vyp.</string>
   <!--C-->
   <string name="Cancel">Zrušiť</string>
+  <string name="CountryFilter">Pokročilé: Filter podľa krajín</string>
   <!--D-->
+  <string name="DefaultDescription">Označte niektorú z možností vyššie, zobrazí sa bližší popis.</string>
   <!--E-->
   <!--F-->
+  <string name="First">Prvý</string>
+  <string name="FixMissingSummary">Pri prázdnom sumári si vynútiť používateľovu recenziu</string>
+  <string name="ForceIMDbPlus">Vynútiť IMDb+</string>
+  <string name="ForeignTitleFirst">Najprv zahraničný názov</string>
   <!--G-->
   <!--H-->
   <!--I-->
+  <string name="IMDbMetaScore">Metacritics MetaScore</string>
+  <string name="IMDbScore">IMDB skóre</string>
+  <string name="IMDbInfo">IMDb+ Info</string>
+  <string name="InfoPluginVersion">Verzia doplnku: v{0}</string>
+  <string name="InfoScraperAuthor">Autor scrapera: {0}</string>
+  <string name="InfoScraperVersion">Verzia scrapera: v{0}</string>
+  <string name="InfoScraperPriority">Priorita scrapera: {0}</string>
+  <string name="InfoScraperPublished">Publikácia scrapera: {0}</string>
+  <string name="InfoScraperLastUpdateCheck">Posledná kontrola aktualizácie scrapera: {0}</string>
+  <string name="InfoMoviesIMDbPlusPrimary">Filmy, ktoré používajú IMDB+ ako zdrojový scraper: {0}</string>
+  <string name="InfoMoviesOtherPlusPrimary">Filmy, ktoré používajú iný scraper: {0}</string>
+  <string name="IntervalSixHours">6 hodín</string>
+  <string name="IntervalTwelveHours">12 hodín</string>
+  <string name="IntervalTwentyFourHours">24 hodín</string>
+  <string name="IntervalTwoDays">2 dni</string>
+  <string name="IntervalThreeDays">3 dni</string>
+  <string name="IntervalFourDays">4 dni</string>
+  <string name="IntervalSevenDays">7 dní</string>
   <!--K-->
   <!--J-->
   <!--L-->
+  <string name="LastScraperUpdate">Posledná kontrola scrapera</string>
+  <string name="LanguageFilter">Pokročilé: Filter jazykov</string>
+  <string name="LongSummary">Používať dlhý sumár. Môže prezradiť dej.</string>
   <!--M-->
+  <string name="MinIMDbVotes">Požadované minimum počtu hlasov IMDB</string>
+  <string name="MultiSelectDialog">Dialóg s multi-výberom</string>
   <!--N-->
   <string name="No">Nie</string>
+  <string name="NumberOfMovies">{0}/{1} Filmov</string>
+  <string name="NumberOfMovies2">{0} filmov</string>
+  <string name="NullSource">Bez zdroja, ale použiteľné IMDB ID</string>
   <!--O-->
+  <string name="OneWriterDirector">Obmedziť import na jediného autora a režiséra</string>
+  <string name="OriginalTitle">Použiť originálny názov filmov</string>
   <!--P-->
   <!--R-->
+  <string name="Ratings">Anglické hodnotenie / Certifikačný systém</string>
+  <string name="RatingsHeader">Vyberte systém hodnotenia</string>
+  <string name="Rating01">USA</string>
+  <string name="Rating02">UK</string>
+  <string name="Rating03">Kanada (Alberta)</string>
+  <string name="Rating04">Kanada (Britská Kolumbia)</string>
+  <string name="Rating05">Kanada (Manitoba)</string>
+  <string name="Rating06">Kanada (Nové Škótsko)</string>
+  <string name="Rating07">Kanada (Ontário)</string>
+  <string name="Rating08">Kanada (Quebec)</string>
+  <string name="Rating09">Austrália</string>
+  <string name="Rating10">Nový Zéland</string>
+  <string name="RefreshMovies">Aktualizovať filmy</string>
+  <string name="RefreshingMovies">Aktualizujem filmy</string>
+  <string name="RefreshCancel">Zrušiť aktualizáciu</string>
+  <string name="RefreshMovieStatus">Aktualizujem {0} z {1} filmov: {2}%</string>
+  <string name="RefreshAllFields">Aktualizovať všetky polia</string>
+  <string name="RemoveFirstRoman">Odstrániť rímske číslice z prvého dielu filmu</string>
+  <string name="RenameTitles">Premenovať tak aby seriál tvoril skupinu</string>
+  <string name="RottenMeter">RottenTomatoes TomatoMeter</string>
+  <string name="RottenAverage">RottenTomatoes priemerné hodnotenie</string>
+  <string name="RottenTopCritics">RottenTomatoes top kritiky</string>
+  <string name="Resume">(Resumé)</string>
   <!--S-->
+  <string name="ScraperOptionsTitle">Voľby scrapera IMDB+</string>
+  <string name="SecondaryDetailsHeader">Sekundárny jazyk</string>
+  <string name="SecondaryLanguage01">angličtina</string>
+  <string name="SecondaryLanguage02">nemčina</string>
+  <string name="SecondaryLanguage03">španielčina</string>
+  <string name="SecondaryLanguage04">francúzština</string>
+  <string name="SecondaryLanguage05">taliančina</string>
+  <string name="SecondaryLanguage06">portugalčina</string>
+  <string name="SecondaryLanguage07">švédčina</string>
+  <string name="SecondaryLanguage08">islandčina</string>
+  <string name="SecondaryLanguage09">holandčina</string>
+  <string name="SecondarySummary">Návrat k angličtine, pokiaľ iný jazyk chýba</string>
+  <string name="SecondaryEnglishTitle">Sekundárny anglický názov</string>
+  <string name="SingleScore">Hodnotiaci systém typu skóre</string>
+  <string name="SettingPluginEnabledName">Doplnok povoelný</string>
+  <string name="SettingListedHomeName">Počúvať doma</string>
+  <string name="SettingListedPluginsName">Uvedené do mojich doplnkov</string>
+  <string name="SettingsSyncIntervalName">Koľko hodín zostáva do pokusu o aktualizáciu</string>
+  <string name="SettingsSyncOnStartupName">Skontroluj aktulizácie pri spustení</string>
+  <string name="SettingsDisableNotificationsName">Nepovoliť notofikácie</string>
+  <string name="SelectSources">Zvoľte zdroje na konverziu do IMDB+</string>
+  <string name="StartsWith">Začína na {0}</string>
+  <string name="SelectAlphas">Vybrať filmy začínajúce sa na...</string>
   <!--T-->
   <!--U-->
+  <string name="UkRating">Názvy filmov v britskej angličtine</string>
+  <string name="UpdatedScraperScript">MovingPictures bol obohatený o IMDb+ Scraper skript v{0}</string>
+  <string name="Update">Aktualizovať</string>
+  <string name="UpdateAll">Aktualizovať všetko</string>
+  <string name="UpdateReplacementOnly">Aktulizovať len náhrady</string>
+  <string name="UpdateAlphas">Aktualizovať filmy začínajúce sa na...</string>
   <!--V-->
   <!--W-->
   <!--Y-->

@@ -1,15 +1,31 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
   <!--A-->
+  <string name="AddForeignTitle">Dodaj tuj naslov</string>
   <!--B-->
+  <string name="BoolOn">Vklopljen</string>
+  <string name="BoolOff">Izklopljen</string>
   <!--C-->
-  <string name="Cancel">Preklici</string>
+  <string name="Cancel">Prekliči</string>
+  <string name="CountryFilter">Napredno: Filter držav</string>
   <!--D-->
   <!--E-->
   <!--F-->
+  <string name="First">Prvo</string>
+  <string name="ForceIMDbPlus">Vsili IMDb+</string>
   <!--G-->
   <!--H-->
   <!--I-->
+  <string name="IMDbScore">IMDb ocena</string>
+  <string name="IMDbInfo">IMDb+ Informacije</string>
+  <string name="InfoPluginVersion">Različica vtičnika: v{0}</string>
+  <string name="IntervalSixHours">6 ur</string>
+  <string name="IntervalTwelveHours">12 ur</string>
+  <string name="IntervalTwentyFourHours">24 ur</string>
+  <string name="IntervalTwoDays">2 dni</string>
+  <string name="IntervalThreeDays">3 dni</string>
+  <string name="IntervalFourDays">4 dni</string>
+  <string name="IntervalSevenDays">7 dni</string>
   <!--K-->
   <!--J-->
   <!--L-->
@@ -17,17 +33,56 @@
   <string name="MultiSelectDialog">Multi-izbira</string>
   <!--N-->
   <string name="No">Ne</string>
+  <string name="NumberOfMovies">{0}/{1} filmov</string>
+  <string name="NumberOfMovies2">{0} filmov</string>
+  <string name="NullSource">Ni izvora, ampak uporaben IMDb-ID</string>
   <!--O-->
+  <string name="OneWriterDirector">Omeji uvoz na samo enega avtorja in režiserja</string>
+  <string name="OriginalTitle">Uporabi izviren naslov iz filma</string>
   <!--P-->
   <!--R-->
+  <string name="RatingsHeader">Izberi ocenitveni sistem</string>
+  <string name="Rating01">ZDA</string>
+  <string name="Rating02">Velika Britanija</string>
+  <string name="Rating03">Kanada (Alberta)</string>
+  <string name="Rating04">Kanada (Britanska Kolumbija)</string>
+  <string name="Rating05">Kanada (Manitoba)</string>
+  <string name="Rating06">Kanada (Nova Škotska)</string>
+  <string name="Rating07">Kanada (Ontario)</string>
+  <string name="Rating08">Kanada (Quebec)</string>
+  <string name="Rating09">Avstralia</string>
+  <string name="Rating10">Nova Zelandija</string>
+  <string name="RefreshMovies">Osveži filme</string>
+  <string name="RefreshingMovies">Osveževanje filmov</string>
+  <string name="RefreshCancel">Prekliči osveževanje</string>
+  <string name="RefreshMovieStatus">Osveževanje {0}/{1} filmov: {2}%</string>
+  <string name="RefreshAllFields">Posodobi vsa polja</string>
+  <string name="Resume">(Nadaljuj)</string>
   <!--S-->
+  <string name="SecondaryDetails">Pridobi dodatne informacije v naslednjem jeziku</string>
+  <string name="SecondaryDetailsHeader">Drugi jezik</string>
+  <string name="SecondaryLanguage01">Angleščina</string>
+  <string name="SecondaryLanguage02">Nemščina</string>
+  <string name="SecondaryLanguage03">Španščina</string>
+  <string name="SecondaryLanguage04">Francoščina</string>
+  <string name="SecondaryLanguage05">Italijanščina</string>
+  <string name="SecondaryLanguage06">Portugalščina</string>
+  <string name="SecondaryLanguage07">Švedščina</string>
+  <string name="SecondaryLanguage08">Islandščina</string>
+  <string name="SecondaryLanguage09">Nizozemščina</string>
+  <string name="SecondaryEnglishTitle">Drugi angleški naslov</string>
   <string name="SettingPluginEnabledName">Vtičnik je omogočen</string>
   <string name="SettingListedHomeName">Prikazan v Home</string>
   <string name="SettingListedPluginsName">Prikazan v Moji vtičniki</string>
+  <string name="SettingsSyncIntervalName">Število ur do naslednje preveritve posodobitev</string>
+  <string name="StartsWith">Začne z {0}</string>
+  <string name="SelectAlphas">Izberi filme začenši z...</string>
   <!--T-->
   <!--U-->
   <string name="Update">Posodobi</string>
   <string name="UpdateAll">Posodobi vse</string>
+  <string name="UpdateReplacementOnly">Posodobi samo zamenjave</string>
+  <string name="UpdateAlphas">Posodobi filme začenši z...</string>
   <!--V-->
   <!--W-->
   <!--Y-->

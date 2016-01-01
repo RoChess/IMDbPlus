@@ -1,33 +1,128 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
   <!--A-->
+  <string name="AddForeignTitle">Tilføj den udenlandske titel</string>
   <!--B-->
+  <string name="BoolOn">Tænd</string>
+  <string name="BoolOff">Fra</string>
   <!--C-->
   <string name="Cancel">Annuller</string>
+  <string name="CountryFilter">Avanceret: Lande filter</string>
   <!--D-->
+  <string name="DefaultDescription">Fremhæv en af ​​de ovenstående muligheder, og en mere detaljeret forklaring bliver vist he</string>
   <!--E-->
   <!--F-->
+  <string name="First">Første</string>
+  <string name="FixMissingSummary">Gennemtving bruger-review for tomme resumé</string>
+  <string name="ForceIMDbPlus">Gennemtving IMDb+</string>
+  <string name="ForeignTitleFirst">Start titlen med den udenlandske først</string>
   <!--G-->
   <!--H-->
   <!--I-->
+  <string name="IMDbMetaScore">Metacritics MetaScore</string>
+  <string name="IMDbScore">IMDb Score</string>
+  <string name="IMDbInfo">IMDb+ Info</string>
+  <string name="InfoPluginVersion">Plugin Version: v{0}</string>
+  <string name="InfoScraperAuthor">Scraper forfatter: {0}</string>
+  <string name="InfoScraperVersion">Scraper Version: v{0}</string>
+  <string name="InfoScraperPriority">Scraper prioritet: {0}</string>
+  <string name="InfoScraperPublished">Scraper udgivet: {0}</string>
+  <string name="InfoScraperLastUpdateCheck">Scraper sidste opdateringscheck: {0}</string>
+  <string name="InfoMoviesIMDbPlusPrimary">Film, der bruger IMDb+ som scraper kilde: {0}</string>
+  <string name="InfoMoviesOtherPlusPrimary">Film, der bruger en anden scraper: {0}</string>
+  <string name="InfoReplacementsVersion">Udskiftning Version: v {0}</string>
+  <string name="InfoReplacementsPublished">Udskiftning udgivet: {0}</string>
+  <string name="InfoReplacementEntries">Udskiftning Angivelser: {0}</string>
+  <string name="InfoCustomReplacementEntries">Udskiftning Angivelser (Brugerdefineret): {0}</string>
+  <string name="IntervalSixHours">6 timer</string>
+  <string name="IntervalTwelveHours">12 timer</string>
+  <string name="IntervalTwentyFourHours">24 timer</string>
+  <string name="IntervalTwoDays">2 dage</string>
+  <string name="IntervalThreeDays">3 dage</string>
+  <string name="IntervalFourDays">4 dage</string>
+  <string name="IntervalSevenDays">7 dage</string>
   <!--K-->
   <!--J-->
   <!--L-->
+  <string name="LastScraperUpdate">Sidste Scraper  opdatering</string>
+  <string name="LanguageFilter">Avanceret: Sprog filter</string>
+  <string name="LongSummary">Brug lange sammenfatninger, som kan indeholde spoilere</string>
   <!--M-->
+  <string name="MinIMDbVotes">Minimum antal af IMDb krævede stemmer</string>
   <string name="MultiSelectDialog">Markér flere</string>
   <!--N-->
   <string name="No">Nej</string>
+  <string name="NumberOfMovies">{0}/{1} Film</string>
+  <string name="NumberOfMovies2">{0} Film</string>
+  <string name="NullSource">Ingen kilde, men brugbart IMDb-ID</string>
   <!--O-->
+  <string name="OneWriterDirector">Begræns import til kun én forfatter og instruktør</string>
+  <string name="OriginalTitle">Brug den originale titel fra filmen</string>
   <!--P-->
   <!--R-->
+  <string name="Ratings">English Rating/Certification System</string>
+  <string name="RatingsHeader">Vælg vurderingssystem</string>
+  <string name="Rating01">USA</string>
+  <string name="Rating02">UK</string>
+  <string name="Rating03">Canada (Alberta)</string>
+  <string name="Rating04">Canada (British Columbia)</string>
+  <string name="Rating05">Canada (Manitoba)</string>
+  <string name="Rating06">Canada (Nova Scotia)</string>
+  <string name="Rating07">Canada (Ontario)</string>
+  <string name="Rating08">Canada (Quebec)</string>
+  <string name="Rating09">Australia</string>
+  <string name="Rating10">New Zealand</string>
+  <string name="RefreshMovies">Opdatere film</string>
+  <string name="RefreshingMovies">Opdaterer film</string>
+  <string name="RefreshCancel">Afbryd opdatering</string>
+  <string name="RefreshMovieStatus">Opdatere {0}/{1} film: {2}%</string>
+  <string name="RefreshAllFields">Opdater alle felter</string>
+  <string name="RemoveFirstRoman">Fjern romersk nummerering fra første film</string>
+  <string name="RenameTitles">Omdøbe titler, så serien samles</string>
+  <string name="RottenMeter">RottenTomatoes TomatoMeter</string>
+  <string name="RottenAverage">RottenTomatoes gennemsnits vurdering</string>
+  <string name="RottenTopCritics">RottenTomatoes top kritikere</string>
+  <string name="Resume">(Fortsæt)</string>
   <!--S-->
+  <string name="ScraperOptionsTitle">IMDb+ Scraper muligheder</string>
+  <string name="SecondaryDetails">Indhente yderligere oplysninger på følgende sprog</string>
+  <string name="SecondaryDetailsHeader">Sekundært sprog</string>
+  <string name="SecondaryLanguage01">Engelsk</string>
+  <string name="SecondaryLanguage02">Tysk</string>
+  <string name="SecondaryLanguage03">Spansk</string>
+  <string name="SecondaryLanguage04">Fransk</string>
+  <string name="SecondaryLanguage05">Italiensk</string>
+  <string name="SecondaryLanguage06">Portugisisk</string>
+  <string name="SecondaryLanguage07">Svensk</string>
+  <string name="SecondaryLanguage08">Islandsk</string>
+  <string name="SecondaryLanguage09">Hollandsk</string>
+  <string name="SecondarySummary">Engelsk er default hvis none-engelsk sprog mangler</string>
+  <string name="SecondaryEnglishTitle">Sekundær engelsk titel</string>
+  <string name="SingleScore">Singel vurderings system</string>
+  <string name="SpecialEditions">Særudgaver omdøbe tagging support</string>
   <string name="SettingPluginEnabledName">Tilføjelse slået til</string>
+  <string name="SettingPluginEnabledDescription">Aktiver / Deaktiver denne indstilling til at starte IMDb+ tilføjelsen med MediaPortal.</string>
   <string name="SettingListedHomeName">Vis i Hjem</string>
+  <string name="SettingListedHomeDescription">Slå denne indstilling til for at lade IMDb+-tilføjelsen vises i Hjem-menuen.</string>
   <string name="SettingListedPluginsName">Vis i Mine Tilføjelser</string>
+  <string name="SettingListedPluginsDescription">Slå denne indstilling til for at lade IMDb+-tilføjelsen vises i Mine Tilføjelser.</string>
+  <string name="SettingsSyncIntervalName">Antal timer indtil næste opdaterings check</string>
+  <string name="SettingsSyncIntervalDescription">Denne indstilling styrer, hvor ofte plugin vil tjekke online efter en opdatering at scraper script og omdøb database.</string>
+  <string name="SettingsSyncOnStartupName">Tjek ved opstart for opdateringer</string>
+  <string name="SettingsSyncOnStartupDescription">Denne indstilling vil tvinge plugin til at tjekke online efter en opdatering  til scraper script og omdøb databasen, hver gang MediaPortal begynder.</string>
+  <string name="SettingsDisableNotificationsName">Deaktiver påmindelse</string>
+  <string name="SettingsDisableNotificationsDescription">Denne indstilling giver dig mulighed for at deaktivere meddelelser, så som når scraper bliver opdateret.</string>
+  <string name="SelectSources">Vælg Kilder der skal konverteres til IMDb+</string>
+  <string name="StartsWith">Starter med  {0}</string>
+  <string name="SelectAlphas">Vælg film som starter med...</string>
   <!--T-->
   <!--U-->
+  <string name="UkRating">Britisk-Engelsk film titler</string>
+  <string name="UpdatedScraperScript">MovingPictures er blevet opdateret med IMDb+ Scraper script v {0}</string>
   <string name="Update">Opdater</string>
   <string name="UpdateAll">Opdater alle</string>
+  <string name="UpdateReplacementOnly">Opdater Kun Udskiftning </string>
+  <string name="UpdateAlphas">Opdater film startende med...</string>
   <!--V-->
   <!--W-->
   <!--Y-->

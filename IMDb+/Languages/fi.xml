@@ -1,30 +1,95 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
   <!--A-->
+  <string name="AddForeignTitle">Lisää ulkomaalainen otsikko</string>
   <!--B-->
+  <string name="BoolOn">Päällä</string>
+  <string name="BoolOff">Pois päältä</string>
   <!--C-->
   <string name="Cancel">Peruuta</string>
+  <string name="CountryFilter">Kehittynyt: Maa -suodatin</string>
   <!--D-->
+  <string name="DefaultDescription">Valitse jokin yllä olevista vaihtoehdoista ja yksityiskohtaisempi selitys näytetään tässä.</string>
   <!--E-->
   <!--F-->
+  <string name="First">Ensimmäinen</string>
+  <string name="FixMissingSummary">Käyttäjän arvostelu tyhjän kuvauksen tilalle</string>
+  <string name="ForceIMDbPlus">Pakota IMDb+</string>
   <!--G-->
   <!--H-->
   <!--I-->
+  <string name="IMDbScore">IMDB pisteet</string>
+  <string name="IMDbInfo">IMDB+ Tiedot</string>
+  <string name="InfoPluginVersion">Lisäosan versio: v{0}</string>
+  <string name="InfoScraperAuthor">Scraperin tekijä: {0}</string>
+  <string name="InfoScraperVersion">Scraper versio: v{0}</string>
+  <string name="InfoScraperPriority">Scraperin prioriteetti: {0}</string>
+  <string name="InfoScraperPublished">Scraper julkaistu: {0}</string>
+  <string name="InfoScraperLastUpdateCheck">Scraperin viimeinen päivitys tarkistus: {0}</string>
+  <string name="IntervalSixHours">6 tuntia</string>
+  <string name="IntervalTwelveHours">12 tuntia</string>
+  <string name="IntervalTwentyFourHours">24 tuntia</string>
+  <string name="IntervalTwoDays">2 päivää</string>
+  <string name="IntervalThreeDays">3 päivää</string>
+  <string name="IntervalFourDays">4 päivää</string>
+  <string name="IntervalSevenDays">7 päivää</string>
   <!--K-->
   <!--J-->
   <!--L-->
+  <string name="LanguageFilter">Kehittynyt: Kielen suodatin</string>
   <!--M-->
+  <string name="MultiSelectDialog">Monivalinta Ikkuna</string>
   <!--N-->
   <string name="No">Ei</string>
+  <string name="NumberOfMovies">{0}/{1} elokuvaa</string>
+  <string name="NumberOfMovies2">{0} elokuvia</string>
+  <string name="NullSource">Ei lähdetta, mutta toimiva IMDB-ID</string>
   <!--O-->
+  <string name="OriginalTitle">Käytä elokuvan alkuperäistä otsikkoa</string>
   <!--P-->
   <!--R-->
+  <string name="Ratings">Englantilainen arvosana/sertifikaatio järjestelmä</string>
+  <string name="RatingsHeader">Valitse arvosana järjestelmä</string>
+  <string name="Rating01">Yhdysvallat</string>
+  <string name="Rating02">Iso-Britania</string>
+  <string name="Rating03">Kanada (Alberta)</string>
+  <string name="Rating04">Kanada (Brittiläinen Kolumbia)</string>
+  <string name="Rating05">Kanada (Manitoba)</string>
+  <string name="Rating06">Kanada (Nova Scotia)</string>
+  <string name="Rating07">Kanada (Ontario)</string>
+  <string name="Rating08">Kanada (Quebec)</string>
+  <string name="Rating09">Austraalia</string>
+  <string name="Rating10">Uusi-Seelanti</string>
+  <string name="RefreshMovies">Päivitä elokuvat</string>
+  <string name="RefreshingMovies">Päivitetään elokuvia</string>
+  <string name="RefreshCancel">Peruuta päivitys</string>
+  <string name="RefreshMovieStatus">Päivitetään {0}/{1} Elokuvat: {2}%</string>
+  <string name="RefreshAllFields">Päivitä kaikki kentät</string>
+  <string name="RemoveFirstRoman">Poista roomalaiset numerot ensimmäisestä elokuvasta</string>
+  <string name="RenameTitles">Nimeää otsikot uudelleen että sarjat ryhmitetään yhteen</string>
+  <string name="Resume">(Jatka)</string>
   <!--S-->
+  <string name="SecondaryDetailsHeader">Toissijainen kieli</string>
+  <string name="SecondaryLanguage01">Englanti</string>
+  <string name="SecondaryLanguage02">Saksa</string>
+  <string name="SecondaryLanguage03">Espanja</string>
+  <string name="SecondaryLanguage04">Ranska</string>
+  <string name="SecondaryLanguage05">Italia</string>
+  <string name="SecondaryLanguage06">Portugali</string>
+  <string name="SecondaryLanguage07">Ruotsi</string>
+  <string name="SecondaryLanguage08">Islanti</string>
+  <string name="SecondaryLanguage09">Hollanti</string>
+  <string name="SecondarySummary">Oletus kieleksi palautuu Enganti, jos toinen kieli puuttuu</string>
+  <string name="SecondaryEnglishTitle">Toissijainen Englantilainen otsikko</string>
   <string name="SettingPluginEnabledName">Lisäosa otettu käyttöön</string>
   <string name="SettingListedHomeName">Näkyy Kotivalikossa</string>
   <string name="SettingListedPluginsName">Näkyy Lisäosissa</string>
+  <string name="SettingsDisableNotificationsName">Poista ilmoitukset käytöstä</string>
+  <string name="StartsWith">Alkaa {0}</string>
+  <string name="SelectAlphas">Valitse elokuvat jotka alkavat...</string>
   <!--T-->
   <!--U-->
+  <string name="UkRating">Brittiläiset elokuvien otsikot</string>
   <string name="Update">Päivitä</string>
   <string name="UpdateAll">Päivitä kaikki</string>
   <!--V-->

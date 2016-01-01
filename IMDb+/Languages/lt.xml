@@ -1,33 +1,128 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
   <!--A-->
+  <string name="AddForeignTitle">Pridėti užsienietišką antraštę</string>
   <!--B-->
+  <string name="BoolOn">Įjungta</string>
+  <string name="BoolOff">Išjungta</string>
   <!--C-->
   <string name="Cancel">Atšaukti</string>
+  <string name="CountryFilter">Išplestinis: šalies filtras</string>
   <!--D-->
+  <string name="DefaultDescription">Pazymėkite bet kurią aukščiau rodomą pasirinkimą ir bus parodytas detalesnis aprašymas.</string>
   <!--E-->
   <!--F-->
+  <string name="First">Pirmas</string>
+  <string name="FixMissingSummary">Tuščiai santraukai priverstinai naudoti vartotojo apžvalgą</string>
+  <string name="ForceIMDbPlus">Priverstinai naudoti IMDB+</string>
+  <string name="ForeignTitleFirst">Pradėti antrašte užsienietišku pavadinimu pradžioje</string>
   <!--G-->
   <!--H-->
   <!--I-->
+  <string name="IMDbMetaScore">Metacritics MetaScore</string>
+  <string name="IMDbScore">IMDB įvertinimas</string>
+  <string name="IMDbInfo">IMDb+ informacija</string>
+  <string name="InfoPluginVersion">Įskiepio versija: v{0}</string>
+  <string name="InfoScraperAuthor">Skreperio autorius: {0}</string>
+  <string name="InfoScraperVersion">Skreperio versija: v{0}</string>
+  <string name="InfoScraperPriority">Skreperio prioritetas: {0}</string>
+  <string name="InfoScraperPublished">Skreperis paviešintas: {0}</string>
+  <string name="InfoScraperLastUpdateCheck">Skreperis paskutinį kartą atnaujintas: {0}</string>
+  <string name="InfoMoviesIMDbPlusPrimary">Filmai, kurie naudoja IMDB+ kaip skreperio šaltinį: {0}</string>
+  <string name="InfoMoviesOtherPlusPrimary">Filmai, kurie naudoją kitą skreperį: {0}</string>
+  <string name="InfoReplacementsVersion">Keičiamoji versija: v{0}</string>
+  <string name="InfoReplacementsPublished">Keitimas išleistas: {0}</string>
+  <string name="InfoReplacementEntries">Keičiamieji įrašai: {0}</string>
+  <string name="InfoCustomReplacementEntries">Keičiamieji įrašai (pasirinkti): {0}</string>
+  <string name="IntervalSixHours">6 valandos</string>
+  <string name="IntervalTwelveHours">12 valandų</string>
+  <string name="IntervalTwentyFourHours">Para</string>
+  <string name="IntervalTwoDays">2 dienos</string>
+  <string name="IntervalThreeDays">3 dienos</string>
+  <string name="IntervalFourDays">4 dienos</string>
+  <string name="IntervalSevenDays">7 dienos</string>
   <!--K-->
   <!--J-->
   <!--L-->
+  <string name="LastScraperUpdate">Paskutinis skreperio atnaujinimas</string>
+  <string name="LanguageFilter">Papildomai: kalbos filtras</string>
+  <string name="LongSummary">Naudoti ilgas santraukas, kurios gali turėti išnašas</string>
   <!--M-->
+  <string name="MinIMDbVotes">Reikalingas minimalus IMDb balsų skaičius</string>
   <string name="MultiSelectDialog">Daugkartinio pasirinkimo dialogas</string>
   <!--N-->
   <string name="No">Ne</string>
+  <string name="NumberOfMovies">{0}/{1} filmai(ų)</string>
+  <string name="NumberOfMovies2">{0} filmai(ų)</string>
+  <string name="NullSource">Be šaltinio, bet tinkamas IMDb-ID</string>
   <!--O-->
+  <string name="OneWriterDirector">Riboti iki vieno rašytojo ir režisieriaus</string>
+  <string name="OriginalTitle">Naudoti originalią filmo antraštę</string>
   <!--P-->
   <!--R-->
+  <string name="Ratings">Angliška vertinimo/sertifikavimo sistema</string>
+  <string name="RatingsHeader">Pasirinkti vertinimo sistemą</string>
+  <string name="Rating01">JAV</string>
+  <string name="Rating02">DB</string>
+  <string name="Rating03">Kanada (Alberta)</string>
+  <string name="Rating04">Kanada (Britų kolumbija)</string>
+  <string name="Rating05">Kanada (Manitoba)</string>
+  <string name="Rating06">Kanada (Naujoji Škotija)</string>
+  <string name="Rating07">Kanada (Ontario)</string>
+  <string name="Rating08">Kanada (Kvebekas)</string>
+  <string name="Rating09">Australija</string>
+  <string name="Rating10">Naujoji Zelandija</string>
+  <string name="RefreshMovies">Atnaujinti filmus</string>
+  <string name="RefreshingMovies">Filmai atnaujinami</string>
+  <string name="RefreshCancel">Nutraukti atnaujinimą</string>
+  <string name="RefreshMovieStatus">Atnaujinami {0}/{1} filmai: {2}%</string>
+  <string name="RefreshAllFields">Atnaujinti visus laukus</string>
+  <string name="RemoveFirstRoman">Pašalinti romėniškus skaitmenis iš pirmojo filmo</string>
+  <string name="RenameTitles">Pervardinti antraštes taip, kad serialus galima būtų sugrupuoti</string>
+  <string name="RottenMeter">RottenTomatoes TomatoMeter</string>
+  <string name="RottenAverage">RottenTomatoes vidutinis įvertinimas</string>
+  <string name="RottenTopCritics">RottenTomatoes top kritikos</string>
+  <string name="Resume">(Atnaujinti)</string>
   <!--S-->
+  <string name="ScraperOptionsTitle">IMDb+ skreperio pasirinkimai</string>
+  <string name="SecondaryDetails">Gauti papildomą informaciją šiai kalbai</string>
+  <string name="SecondaryDetailsHeader">Antroji kalba</string>
+  <string name="SecondaryLanguage01">Anglų</string>
+  <string name="SecondaryLanguage02">Vokiečių</string>
+  <string name="SecondaryLanguage03">Ispanų</string>
+  <string name="SecondaryLanguage04">Prancūzų</string>
+  <string name="SecondaryLanguage05">Italų</string>
+  <string name="SecondaryLanguage06">Portugalų</string>
+  <string name="SecondaryLanguage07">Švedų</string>
+  <string name="SecondaryLanguage08">Islandų</string>
+  <string name="SecondaryLanguage09">Olandų</string>
+  <string name="SecondarySummary">Grįžti prie angliškos santraukos jei nėra užsienietiškos.</string>
+  <string name="SecondaryEnglishTitle">Antroji angliška antraštė</string>
+  <string name="SingleScore">Vienintelio įverčio vertnimo sistema</string>
+  <string name="SpecialEditions">Specialiųjų leidimų antraščių pervadinimo palaikymas</string>
   <string name="SettingPluginEnabledName">Įskiepis įjungtas</string>
+  <string name="SettingPluginEnabledDescription">Įjungus/išjungus šį nustatymą, kad kontroliuoti IMDb+ įskiepio paleidimą kartu su MediaPortal.</string>
   <string name="SettingListedHomeName">Pagrindiniame ekrane</string>
+  <string name="SettingListedHomeDescription">Įgalinus šį nustatymą IMDb+ įskiepis bus rodomas pagrindiniame meniu lange.</string>
   <string name="SettingListedPluginsName">Rodomi Mano Įskiepiuose</string>
+  <string name="SettingListedPluginsDescription">Įjungus šį nustatymą IMDb+ įskiepis bus rodomas Mano Įskiepiai meniu lange.</string>
+  <string name="SettingsSyncIntervalName">Kiekis valandų iki sekančio atnaujinimo tikrinimo</string>
+  <string name="SettingsSyncIntervalDescription">Šis nustatymas numato kaip dažnai įskiepis tikrins internete atnaujintą skreperio scenarijų ir duomenu bazės atnaujinimus.</string>
+  <string name="SettingsSyncOnStartupName">Startuojant tikrinti atnaujinimus</string>
+  <string name="SettingsSyncOnStartupDescription">Šis nustatymas privers įskiepį tikrinti internete atnaujintą skreperio scenarijų ir duomenu bazės atnaujinimus kiekvieną kartą startavus MediaPortal.</string>
+  <string name="SettingsDisableNotificationsName">Išjungti pranešimus</string>
+  <string name="SettingsDisableNotificationsDescription">Šis nustatymas leis išjungti pranešimus, kurie atsiranda kiekvieną kartą pritaikius skreperio atnaujinimus.</string>
+  <string name="SelectSources">Pasirinkti šaltinius, kad konvertuoti į IMDb+</string>
+  <string name="StartsWith">Prasideda {0}</string>
+  <string name="SelectAlphas">Pasirinkti filmus prasidedančius...</string>
   <!--T-->
   <!--U-->
+  <string name="UkRating">Britų-anglų filmų antraštės</string>
+  <string name="UpdatedScraperScript">Moving Pictures buvo atnaujintas naudojat IMDb+ skreperio scenarijų v{0}</string>
   <string name="Update">Atnaujinti</string>
   <string name="UpdateAll">Atnaujinti viską</string>
+  <string name="UpdateReplacementOnly">Tiktai atnaujinti pakeitimus</string>
+  <string name="UpdateAlphas">Atnaujinti filmus prasidedančius...</string>
   <!--V-->
   <!--W-->
   <!--Y-->
