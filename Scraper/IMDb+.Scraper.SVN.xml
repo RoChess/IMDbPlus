@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="54" />
-		<published month="02" day="06" year="2016" />
+		<version major="4" minor="9" point="55" />
+		<published month="02" day="07" year="2016" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -704,7 +704,7 @@
 				<!-- Runtime -->
 				<set name="rx_runtime">
 					<![CDATA[
-					(?<movieRuntime>\d+) min\s*</time>\s*&
+					(?<movieRuntime>\d+) min\s*</time>
 					]]>
 				</set>
 				<parse name="runtime" input="${details_page}" regex="${rx_runtime}" />
@@ -1017,7 +1017,7 @@
 			<!-- Get imdb + metacritics votes/scores and fix to a scale of 10 if needed -->
 			<set name="rx_imdb_votes">
 				<![CDATA[
-				title="(?<imdbPopularity>[^\s]+) IMDb users\D+(?<imdbScore>\d+(?:.\d+)?)/10"(?:.+?Metascore:\s*<a[^>]+>\s*(?<metaScore>\d+)/100.+?"criticreviews[^>]+>\s*(?<metaPopularity>[^\s]+)\s*</a>)?|<span itemprop="ratingValue">(?<imdbScore>\d+(?:.\d+)?)</span>.+?<span class="small" itemprop="ratingCount">(?<imdbPopularity>[^<]+)</span>.+?<span itemprop="reviewCount">(?<metaPopularity>[^\s]+) crit[^<]+</span>.+?<div class="metacriticScore score_mixed titleReviewBarSubItem">\s*<span>(?<metaScore>\d+)</span>
+				title="(?<imdbPopularity>[^\s]+) IMDb users\D+(?<imdbScore>\d+(?:.\d+)?)/10"(?:.+?Metascore:\s*<a[^>]+>\s*(?<metaScore>\d+)/100.+?"criticreviews[^>]+>\s*(?<metaPopularity>[^\s]+)\s*</a>)?|<span itemprop="ratingValue">(?<imdbScore>\d+(?:.\d+)?)</span>.+?<span class="small" itemprop="ratingCount">(?<imdbPopularity>[^<]+)</span>(?:.+?<span itemprop="reviewCount">(?<metaPopularity>[^\s]+) crit[^<]+</span>.+?<div class="metacriticScore score_mixed titleReviewBarSubItem">\s*<span>(?<metaScore>\d+)</span>)?
 				]]>
 			</set>
 			<parse name="imdb_votes" input="${details_page}" regex="${rx_imdb_votes}" />
