@@ -6,7 +6,7 @@
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
 		<version major="4" minor="9" point="54" />
-		<published month="02" day="06" year="2015" />
+		<published month="02" day="06" year="2016" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
