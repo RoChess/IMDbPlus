@@ -1,8 +1,0 @@
-[main]
-host=https://www.transifex.com
-[MP1_CommunityPlugins.imdbplus]
-file_filter=..\<lang>.xml
-source_file=..\en-US.xml
-source_lang=en
-lang_map = en: en-US, pt_BR: pt-BR
-type=ANDROID

@@ -97,6 +97,237 @@
               <ZipFileName>Installer{CopyFile}\{dcb98c8e-bad3-4833-9319-80f5c95c287c}-it.xml</ZipFileName>
               <DestinationFilename>%Language%\IMDb+\it.xml</DestinationFilename>
             </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\ar.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{16763cca-ce44-43c3-b81b-76e965c9ebce}-ar.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\ar.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\bg.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{1606db4a-f4c2-43fe-9589-5c4077878166}-bg.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\bg.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\ca.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{f12d4b62-ff2e-454d-bc64-9414757e352c}-ca.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\ca.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\cs.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b6fce780-c153-4116-abe7-82e26f48a252}-cs.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\cs.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\da.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{7ef91d2c-fffb-4378-b153-dea5298a047e}-da.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\da.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\el.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{2462f310-0f4c-403d-aa92-627b2327f7b3}-el.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\el.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\et.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{08974d97-3677-491e-8311-b4ba51c00c35}-et.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\et.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\fi.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{de8c74a1-3e9c-4cb0-a591-fc26c7001b78}-fi.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\fi.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\he.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{e74df3ab-6dbe-4de6-964d-fd19c1c4ec73}-he.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\he.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\hi.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{afb541b6-94fe-4041-9fbd-092d6f200af2}-hi.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\hi.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\hr.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{eedda492-d73e-48f0-b9d8-3eac51025129}-hr.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\hr.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\hu.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{5d6769dd-5ba9-4d94-af42-3334632bc231}-hu.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\hu.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\id.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{d00a5d82-0275-4d41-b13e-9496a41fd0b8}-id.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\id.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\ko.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{681a054a-58fc-4c5c-ba59-e486397ddf47}-ko.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\ko.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\ku.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{394a67d6-706c-4a05-8575-cce3968877b0}-ku.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\ku.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\lt.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{0ec2db04-248d-4ba4-b3bb-ec168c264460}-lt.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\lt.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\nb.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{8ba76046-009b-48ce-b74a-43e2ba8084ab}-nb.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\nb.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\no.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{20a1cbf7-3384-4b1a-af37-e1c68e3751e9}-no.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\no.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\pl.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{68884f4b-1e46-436c-8dad-9cddd19d9f2a}-pl.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\pl.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\ro.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{80754350-e49f-4b14-8341-43dcb83dcbf3}-ro.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\ro.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\ru.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{593a1baa-396e-4c1f-9ee0-5b730e316642}-ru.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\ru.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\sk.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{bf459464-f61a-4fc8-bb98-80b0d6c70358}-sk.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\sk.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\sl.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{6c32dbb2-f0e9-47bf-bd08-998bc9268764}-sl.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\sl.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\sq.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{8bdad057-8af6-46e4-9e5d-71aa686a85bc}-sq.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\sq.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\sr.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b90d4539-b4df-4183-a35b-40d9db6f1f65}-sr.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\sr.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\tr.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{164e347a-77df-4e2c-b1e3-cee07d5d4e83}-tr.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\tr.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\uk.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{02ac1701-053c-400c-883e-7d700d439050}-uk.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\uk.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\vi.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{65f7c010-9066-462c-b212-717208ed6fda}-vi.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\vi.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\zh.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{3524a780-1468-4427-8abb-27a5fdeca138}-zh.xml</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\zh.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\Transifex\Init_User.bat</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{68655405-33b2-4159-a153-02992ddf8045}-Init_User.bat</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\Transifex\Init_User.bat</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\Transifex\Pull_From_Transifex.bat</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{3e512275-9872-4302-b793-34e4c77655c8}-Pull_From_Transifex.bat</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\Transifex\Pull_From_Transifex.bat</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\Transifex\tx.exe</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{49ba4ab2-b66d-457d-8c83-d4a8a3a84b45}-tx.exe</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\Transifex\tx.exe</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\IMDb+\Languages\Transifex\.tx\config</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{dfd22315-403f-4542-beef-bec8fda91c26}-config</ZipFileName>
+              <DestinationFilename>%Language%\IMDb+\Transifex\.tx\config</DestinationFilename>
+            </FileItem>
           </Items>
         </Files>
       </GroupItem>
@@ -232,7 +463,7 @@
       </GroupItem>
       <GroupItem Name="MediaInfo">
         <ParentGroup />
-        <DisplayName>MediaInfo v0.7.56.0</DisplayName>
+        <DisplayName>MediaInfo v0.7.82</DisplayName>
         <DefaulChecked>true</DefaulChecked>
         <Description>MediaInfo DLL library</Description>
         <Files>
@@ -632,25 +863,26 @@ public class Script
     <Name>IMDb+</Name>
     <Id>9d064213-0b4d-4cee-96a5-405812422b58</Id>
     <Author>RoChess</Author>
-    <HomePage>http://code.google.com/p/imdbplus/</HomePage>
-    <ForumPage>http://forum.team-mediaportal.com/moving-pictures-284/imdb-scraper--98978/</ForumPage>
-    <UpdateUrl>http://imdbplus.googlecode.com/svn/trunk/MPEI/update.xml</UpdateUrl>
+    <HomePage>https://github.com/RoChess/IMDbPlus</HomePage>
+    <ForumPage>http://forum.team-mediaportal.com/forums/imdb.554/</ForumPage>
+    <UpdateUrl>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/MPEI/update.xml</UpdateUrl>
     <Version>
       <Major>2</Major>
-      <Minor>0</Minor>
+      <Minor>1</Minor>
       <Build>0</Build>
-      <Revision>281</Revision>
+      <Revision>291</Revision>
     </Version>
     <ExtensionDescription>The IMDb+ plugin and scraper for MovingPictures will make your movie collection easier to use. The plugin will keep the scraper script up-to-date, and add powerful features such as rename and grouping of movie series. It also corrects English titles, allows RottenTomatoes ratings, and many other features.</ExtensionDescription>
-    <VersionDescription>* Updates MediaInfo to v0.7.56
-* Includes updated language files
+    <VersionDescription>* MediaInfo v0.7.82 included
 
-This version includes IMDb+ scraper-script v4.3.8 by default
+This version includes IMDb+ scraper-script v4.9.53 by default
+
 which will auto update once IMDb+ plugin runs for the first time
+
 and a new version is available.</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
-    <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v2.0.0.281.mpe1</OnlineLocation>
-    <ReleaseDate>2012-04-22T16:02:11</ReleaseDate>
+    <OnlineLocation>https://github.com/RoChess/IMDbPlus/releases/download/2.1.0/imdbplus.plugin.v2.1.0.291.mpe1</OnlineLocation>
+    <ReleaseDate>2016-02-06T19:21:51</ReleaseDate>
     <Tags>moving pictures, movies, scraper</Tags>
     <Location>.\Release\imdbplus.plugin.v[Version].mpe1</Location>
     <Params>
@@ -763,6 +995,237 @@ and a new version is available.</VersionDescription>
         <LocalFileName>..\IMDb+\Languages\it.xml</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{dcb98c8e-bad3-4833-9319-80f5c95c287c}-it.xml</ZipFileName>
         <DestinationFilename>%Language%\IMDb+\it.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\ar.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{16763cca-ce44-43c3-b81b-76e965c9ebce}-ar.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\ar.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\bg.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{1606db4a-f4c2-43fe-9589-5c4077878166}-bg.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\bg.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\ca.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{f12d4b62-ff2e-454d-bc64-9414757e352c}-ca.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\ca.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\cs.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b6fce780-c153-4116-abe7-82e26f48a252}-cs.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\cs.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\da.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{7ef91d2c-fffb-4378-b153-dea5298a047e}-da.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\da.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\el.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{2462f310-0f4c-403d-aa92-627b2327f7b3}-el.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\el.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\et.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{08974d97-3677-491e-8311-b4ba51c00c35}-et.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\et.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\fi.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{de8c74a1-3e9c-4cb0-a591-fc26c7001b78}-fi.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\fi.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\he.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{e74df3ab-6dbe-4de6-964d-fd19c1c4ec73}-he.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\he.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\hi.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{afb541b6-94fe-4041-9fbd-092d6f200af2}-hi.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\hi.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\hr.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{eedda492-d73e-48f0-b9d8-3eac51025129}-hr.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\hr.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\hu.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{5d6769dd-5ba9-4d94-af42-3334632bc231}-hu.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\hu.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\id.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{d00a5d82-0275-4d41-b13e-9496a41fd0b8}-id.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\id.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\ko.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{681a054a-58fc-4c5c-ba59-e486397ddf47}-ko.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\ko.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\ku.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{394a67d6-706c-4a05-8575-cce3968877b0}-ku.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\ku.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\lt.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{0ec2db04-248d-4ba4-b3bb-ec168c264460}-lt.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\lt.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\nb.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{8ba76046-009b-48ce-b74a-43e2ba8084ab}-nb.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\nb.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\no.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{20a1cbf7-3384-4b1a-af37-e1c68e3751e9}-no.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\no.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\pl.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{68884f4b-1e46-436c-8dad-9cddd19d9f2a}-pl.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\pl.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\ro.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{80754350-e49f-4b14-8341-43dcb83dcbf3}-ro.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\ro.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\ru.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{593a1baa-396e-4c1f-9ee0-5b730e316642}-ru.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\ru.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\sk.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{bf459464-f61a-4fc8-bb98-80b0d6c70358}-sk.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\sk.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\sl.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{6c32dbb2-f0e9-47bf-bd08-998bc9268764}-sl.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\sl.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\sq.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{8bdad057-8af6-46e4-9e5d-71aa686a85bc}-sq.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\sq.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\sr.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b90d4539-b4df-4183-a35b-40d9db6f1f65}-sr.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\sr.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\tr.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{164e347a-77df-4e2c-b1e3-cee07d5d4e83}-tr.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\tr.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\uk.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{02ac1701-053c-400c-883e-7d700d439050}-uk.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\uk.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\vi.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{65f7c010-9066-462c-b212-717208ed6fda}-vi.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\vi.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\zh.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{3524a780-1468-4427-8abb-27a5fdeca138}-zh.xml</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\zh.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\Transifex\Init_User.bat</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{68655405-33b2-4159-a153-02992ddf8045}-Init_User.bat</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\Transifex\Init_User.bat</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\Transifex\Pull_From_Transifex.bat</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{3e512275-9872-4302-b793-34e4c77655c8}-Pull_From_Transifex.bat</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\Transifex\Pull_From_Transifex.bat</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\Transifex\tx.exe</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{49ba4ab2-b66d-457d-8c83-d4a8a3a84b45}-tx.exe</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\Transifex\tx.exe</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\IMDb+\Languages\Transifex\.tx\config</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{dfd22315-403f-4542-beef-bec8fda91c26}-config</ZipFileName>
+        <DestinationFilename>%Language%\IMDb+\Transifex\.tx\config</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />

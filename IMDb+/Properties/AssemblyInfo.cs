@@ -11,7 +11,7 @@ using MediaPortal.Common.Utils;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("IMDb+")]
-[assembly: AssemblyCopyright("Copyright ©  2011")]
+[assembly: AssemblyCopyright("Copyright © 2011+")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

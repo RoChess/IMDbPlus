@@ -93,10 +93,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"$(ProjectDir)..\MPEI\Versioning\MPEI.Versioning.cmd" "$(ProjectName).xmp2" "http://imdbplus.googlecode.com/files/imdbplus.plugin.v" "$(ProjectDir)Properties\VersionInfo.cs"</PostBuildEvent>
+    <PostBuildEvent>"$(ProjectDir)..\MPEI\Versioning\MPEI.Versioning.cmd" "$(ProjectName).xmp2" "https://github.com/RoChess/IMDbPlus/releases/download/2.1.0/imdbplus.plugin.v" "$(ProjectDir)Properties\VersionInfo.cs"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
+    <PreBuildEvent>REM subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
