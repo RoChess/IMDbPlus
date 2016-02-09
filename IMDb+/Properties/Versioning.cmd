@@ -1,6 +1,6 @@
 @Echo Off
  ::
- :: Example of what to use via Projects Properties -> Build Events -> Post Build:
+ :: Example of what to use via Projects Properties -> Build Events -> Pre Build:
  ::
  ::	"$(ProjectDir)Properties\Versioning.cmd"
  ::
