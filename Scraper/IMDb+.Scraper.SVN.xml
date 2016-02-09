@@ -1,12 +1,12 @@
-<ScriptableScraper>
+﻿<ScriptableScraper>
 	<details>
 		<!-- These details are for display purposes only. -->
 		<name>IMDb+</name>
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="55" />
-		<published month="02" day="07" year="2016" />
+		<version major="4" minor="9" point="56" />
+		<published month="02" day="09" year="2016" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -56,7 +56,7 @@
 			-->
 			<set name="global_options_rotten_api_key" value="" />
 
-  		<!--
+  			<!--
 				There is now expanded support for other English based rating systems.
 				Before it was just USA/MPAA or UK/BBFC via the 'global_options_uk_rating' option.
 
@@ -1108,7 +1108,7 @@
 			<if test="${global_options_rotten_api_key}!=">
 				<set name="rotten_api_key" value="apikey=${global_options_rotten_api_key}&amp;" />
 			</if>
-  		<if test="${global_options_imdb_score}=false">
+  			<if test="${global_options_imdb_score}=false">
 				<!-- Adjust IMDb ID to be compatible with RottenTomatoes -->
 				<replace name="imdb_id_fixed" input="${movie.imdb_id}" pattern="tt" with='' />
 				<!-- Retrieve detail page from RottenTomatoes -->
@@ -1119,7 +1119,7 @@
 					]]>
 				</set>
 				<parse name="rotten_alternate" input="${rotten_json}" regex="${rx_rotten_alternate}" />
-  				<retrieve name="rotten_details" url="${rotten_alternate[0][0]}" />
+  				<retrieve name="rotten_details" url="http:${rotten_alternate[0][0]}" />
 
 				<set name="rx_rotten_tomatometer">
 					<![CDATA[
