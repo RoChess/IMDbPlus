@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="58" />
-		<published month="02" day="11" year="2016" />
+		<version major="4" minor="9" point="59" />
+		<published month="02" day="12" year="2016" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -17,7 +17,7 @@
 	<!--
 	To adjust the IMDb+ scraper-script options below, use the IMDb+ plugin available at:
 
-		http://code.google.com/p/imdbplus/
+		https://github.com/RoChess/IMDbPlus
 
 	The plugin not only allows you an easy way to control the options of this scraper,
 	but it also installs and keeps it up-to-date and offers additional features.
@@ -521,10 +521,16 @@
 				<!-- Release Date -->
 				<set name="rx_release_date">
 					<![CDATA[
-					<h4 class="inline">Release Date:</h4>\s*(?<releaseDate>(?:\d{1,2}\s*)?(?:[^\s]+\s*)?\d{4})
+					<h4 class="inline">Release Date:</h4>\s*(?<releaseDate>(?:\d{1,2}\s*)?[^\s]+\s*\d{4})
 					]]>
 				</set>
 				<parse name="release_date" input="${details_page}" regex="${rx_release_date}" />
+				<!-- If IMDb.com does not have a release date, then we will use the release year -->
+				<if test="${release_date[0][0]}=">
+					<if test="${movie.year}!=">
+						<set name="release_date" value="1/1/${movie.year}" />
+					</if>
+				</if>
 				<set name="movie.release_date" value="${release_date[0][0]}" />
 			</if>
 
