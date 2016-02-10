@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="57" />
-		<published month="02" day="10" year="2016" />
+		<version major="4" minor="9" point="58" />
+		<published month="02" day="11" year="2016" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -521,7 +521,7 @@
 				<!-- Release Date -->
 				<set name="rx_release_date">
 					<![CDATA[
-					<h4 class="inline">Release Date:</h4>\s*(?<releaseDate>(?:\d{1,2}\s*)?[^\s]+\s*\d{4})
+					<h4 class="inline">Release Date:</h4>\s*(?<releaseDate>(?:\d{1,2}\s*)?(?:[^\s]+\s*)?\d{4})
 					]]>
 				</set>
 				<parse name="release_date" input="${details_page}" regex="${rx_release_date}" />
