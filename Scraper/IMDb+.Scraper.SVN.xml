@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="59" />
-		<published month="02" day="12" year="2016" />
+		<version major="4" minor="9" point="60" />
+		<published month="02" day="13" year="2016" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -528,7 +528,7 @@
 				<!-- If IMDb.com does not have a release date, then we will use the release year -->
 				<if test="${release_date[0][0]}=">
 					<if test="${movie.year}!=">
-						<set name="release_date" value="1/1/${movie.year}" />
+						<set name="release_date[0][0]" value="1/1/${movie.year}" />
 					</if>
 				</if>
 				<set name="movie.release_date" value="${release_date[0][0]}" />
