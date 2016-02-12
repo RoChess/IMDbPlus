@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="60" />
-		<published month="02" day="13" year="2016" />
+		<version major="4" minor="9" point="61" />
+		<published month="02" day="14" year="2016" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1125,7 +1125,12 @@
 					]]>
 				</set>
 				<parse name="rotten_alternate" input="${rotten_json}" regex="${rx_rotten_alternate}" />
-  				<retrieve name="rotten_details" url="http:${rotten_alternate[0][0]}" />
+				<if test="${rotten_alternate[0][0]}!=">
+  					<retrieve name="rotten_details" url="http:${rotten_alternate[0][0]}" />
+  				</if>
+				<if test="${rotten_alternate[0][0]}=">
+					<log LogLevel="Info" Message="IMDb+ Scraper: RottenTomatoes is missing a reference for: ${movie.imdb_id} (consider contributing it)" />
+  				</if>
 
 				<set name="rx_rotten_tomatometer">
 					<![CDATA[
