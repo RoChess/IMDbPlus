@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="0" />
-		<published month="04" day="05" year="2015" />
+		<version major="1" minor="9" point="1" />
+		<published month="02" day="29" year="2016" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1544,6 +1544,7 @@
 	<rename id="tt0145487" title="Spider-Man I" collection="Spider-Man|» Superheroes" />
 	<rename id="tt0316654" title="Spider-Man II" collection="Spider-Man|» Superheroes" />
 	<rename id="tt0413300" title="Spider-Man III" collection="Spider-Man|» Superheroes" />
+	<rename id="tt1895587" title="Spotlight" collection="» Oscars for Best Picture" />
 	<rename id="tt0227538" title="Spy Kids I" />
 	<rename id="tt0287717" title="Spy Kids II: Island of Lost Dreams" />
 	<rename id="tt0338459" title="Spy Kids III: Game Over" />
