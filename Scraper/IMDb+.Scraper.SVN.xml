@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="62" />
-		<published month="03" day="18" year="2016" />
+		<version major="4" minor="9" point="63" />
+		<published month="03" day="21" year="2016" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -718,7 +718,7 @@
 				<if test="${runtime[0][1]:htmldecode}!=">
 					<if test="${runtime[0][2]:htmldecode}!=">
 						<multiply name="fix_hours_in_min" value1="${runtime[0][1]:htmldecode}" value2="60" result_type="int" />
-						<add name="${runtime[0][0]:htmldecode}" value1="${fix_hours_in_min}" value2="${runtime[0][2]:htmldecode}" />
+						<add name="runtime[0][0]" value1="${fix_hours_in_min}" value2="${runtime[0][2]:htmldecode}" />
 					</if>
 				</if>
 				<set name="movie.runtime" value="${runtime[0][0]:htmldecode}" />
@@ -951,7 +951,7 @@
 					</set>
 					<set name="rx_plot2">
 						<![CDATA[
-						<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:&\w+;)*)?\s*</p>|<div class="summary_text" itemprop="description">\s*(?<moviePlotShort>[^<]+?)\s*<
+						<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:&\w+;)*)?\s*</p>|<div class="summary_text" itemprop="description">\s*(?<moviePlotShort>.+?)\s*</div
 						]]>
 					</set>
 				</if>
