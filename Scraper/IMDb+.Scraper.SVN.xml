@@ -50,13 +50,13 @@
 			<set name="global_options_fix_missing_summary" value="false" />	<!-- Try to use reviews	| Keep summary as-is	-->
 			<set name="global_options_debug_imdb_sources" value="false" />	<!-- Log HTML sources	| Not needed normally	-->
 
-	 		<!--
+			<!--
 				RottenTomatoes has switched to a JSON system with API key.
 				Register for your own key @ http://developer.rottentomatoes.com/member/register
 			-->
 			<set name="global_options_rotten_api_key" value="" />
 
-  			<!--
+			<!--
 				There is now expanded support for other English based rating systems.
 				Before it was just USA/MPAA or UK/BBFC via the 'global_options_uk_rating' option.
 
@@ -513,7 +513,7 @@
 				</if>
 
 				<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
-  			<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
+				<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
 			</if>
 
 			<if test="${global_options_refresh_all_fields}=true"><set name="update_release_date" value="true" /></if><if test="${movie.release_date}="><set name="update_release_date" value="true" /></if>
@@ -1117,15 +1117,15 @@
 			</if>
 
 			<!-- RottenTomatoes -->
-	 		<set name="rotten_api_key" value="" />
+			<set name="rotten_api_key" value="" />
 			<if test="${global_options_rotten_api_key}!=">
 				<set name="rotten_api_key" value="apikey=${global_options_rotten_api_key}&amp;" />
 			</if>
-  			<if test="${global_options_imdb_score}=false">
+			<if test="${global_options_imdb_score}=false">
 				<!-- Adjust IMDb ID to be compatible with RottenTomatoes -->
 				<replace name="imdb_id_fixed" input="${movie.imdb_id}" pattern="tt" with='' />
 				<!-- Retrieve detail page from RottenTomatoes -->
-	 			<retrieve name="rotten_json" url="http://api.rottentomatoes.com/api/public/v1.0/movie_alias.json?${rotten_api_key}type=imdb&amp;id=${imdb_id_fixed}" />
+				<retrieve name="rotten_json" url="http://api.rottentomatoes.com/api/public/v1.0/movie_alias.json?${rotten_api_key}type=imdb&amp;id=${imdb_id_fixed}" />
 				<set name="rx_rotten_alternate">
 					<![CDATA[
 					"alternate":"([^"]+)"
@@ -1133,11 +1133,11 @@
 				</set>
 				<parse name="rotten_alternate" input="${rotten_json}" regex="${rx_rotten_alternate}" />
 				<if test="${rotten_alternate[0][0]}!=">
-  					<retrieve name="rotten_details" url="http:${rotten_alternate[0][0]}" />
-  				</if>
+					<retrieve name="rotten_details" url="http:${rotten_alternate[0][0]}" />
+				</if>
 				<if test="${rotten_alternate[0][0]}=">
 					<log LogLevel="Info" Message="IMDb+ Scraper: RottenTomatoes is missing a reference for: ${movie.imdb_id} (consider contributing it)" />
-  				</if>
+				</if>
 
 				<set name="rx_rotten_tomatometer">
 					<![CDATA[
@@ -1470,10 +1470,10 @@
 					<if test="${title_year[0][2]:htmldecode}!=${title_year[0][0]:htmldecode}">
 						<if test="${global_options_foreign_first}=true">
 							<set name="movie.title" value="${title_year[0][0]:htmldecode} (${title_year[0][2]:htmldecode})" />
-  						<if test="${title_year[0][2]:htmldecode}=">
+							<if test="${title_year[0][2]:htmldecode}=">
 								<!-- Fix empty English title -->
 								<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
-	 							<set name="movie_title" value="${title_year[0][0]:htmldecode}" />
+								<set name="movie_title" value="${title_year[0][0]:htmldecode}" />
 							</if>
 						</if>
 						<if test="${global_options_foreign_first}=false">
@@ -1481,7 +1481,7 @@
 							<if test="${title_year[0][2]:htmldecode}=">
 								<!-- Fix empty English title -->
 								<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
-	 							<set name="movie_title" value="${title_year[0][0]:htmldecode}" />
+								<set name="movie_title" value="${title_year[0][0]:htmldecode}" />
 							</if>
 						</if>
 					</if>
@@ -1495,7 +1495,7 @@
 					</if>
 					<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
 				</if>
-  		</if>
+			</if>
 
 			<!-- Details URL -->
 			<!-- This overwrites any special edition title abuse from search node as well -->
@@ -1551,7 +1551,7 @@
 							<if test="${fileRename[0][2]}!=">
 								<if test="${global_options_foreign_first}=true">
 									<set name="movie.title" value="${fileRename[0][2]:htmldecode} (${fileRename[0][0]:htmldecode})" />
-  							</if>
+								</if>
 								<if test="${global_options_foreign_first}=false">
 									<set name="movie.title" value="${fileRename[0][0]:htmldecode} (${fileRename[0][2]:htmldecode})" />
 								</if>
@@ -1756,7 +1756,7 @@
 							</loop>
 						</loop>
 
-	 					<!-- Add AKA results to the first match if none exists, or when this is a non-USA search -->
+						<!-- Add AKA results to the first match if none exists, or when this is a non-USA search -->
 						<if test="${movie[0].alternate_titles}="><set name="force_aka_to_first_match" value="true" /></if>
 						<if test="${movie[0].alternate_titles}!=">
 							<set name="rx_import_country">
@@ -1785,7 +1785,7 @@
 									<set name="movie[0].alternate_titles" value="${movie[0].alternate_titles}${currAka[1]:htmldecode}|" />
 								</loop>
 							</if>
-  					</if>
+						</if>
 
 					</if>
 				</if>
