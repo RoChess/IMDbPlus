@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="2" />
-		<published month="03" day="26" year="2016" />
+		<version major="1" minor="9" point="3" />
+		<published month="04" day="04" year="2016" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -182,7 +182,7 @@
 	<rename id="tt1823664" title="Annie (Remake)" />
 	<rename id="tt0075686" title="Annie Hall" collection="» Oscars for Best Picture" />
 	<rename id="tt0478970" sortby="Ant-Man I" collection="The Avengers|» Superheroes" />
-	<rename id="tt0478970" title="Ant-Man II: The Wasp" collection="The Avengers|» Superheroes" />
+	<rename id="tt5095030" title="Ant-Man II: The Wasp" collection="The Avengers|» Superheroes" />
 	<rename id="tt1477834" title="Aquaman" collection="The Justice League|» Superheroes" />
 	<rename id="tt0368578" sortby="Are We There Yet 1" collection="Are We There Yet" />	
 	<rename id="tt0422774" sortby="Are We There Yet 2" collection="Are We There Yet" />	
@@ -1582,7 +1582,7 @@
 	<rename id="tt1571243" title="Sniper IV: Reloaded" />
 	<rename id="tt3776288" title="Sniper V: Legacy" />
 	<rename id="tt1735898" title="Snow White and the Huntsman I" />
-	<rename id="tt2381991" title="Snow White and the Huntsman II" />
+	<rename id="tt2381991" title="Snow White and the Huntsman II: Winter's War" />
 	<rename id="tt0482603" title="Space Chimps I" />
 	<rename id="tt1537481" title="Space Chimps II: Zartog Strikes Back" />
 	<rename id="tt0120177" title="Spawn" collection="» Superheroes" />
@@ -1874,6 +1874,8 @@
 	<rename id="tt0093389" title="The Last Emperor" collection="» Oscars for Best Picture" />
 	<rename id="tt1320244" title="The Last Exorcism I" />
 	<rename id="tt2034139" title="The Last Exorcism II" />
+	<rename id="tt1618442" sortby="The Last Witch Hunter I" />
+	<rename id="tt4781660" title="The Last Witch Hunter II" />
 	<rename id="tt0311429" title="The League of Extraordinary Gentlemen" collection="» Superheroes" />
 	<rename id="tt1490017" title="The Lego Movie" sortby="The Lego Movie I" />
 	<rename id="tt3513498" title="The Lego Movie II" />
