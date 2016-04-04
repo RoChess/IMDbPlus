@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="63" />
-		<published month="03" day="21" year="2016" />
+		<version major="4" minor="9" point="64" />
+		<published month="04" day="04" year="2016" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1526,14 +1526,20 @@
 				<if test="${fileRename.count}=1">
 					<if test="${fileRename[0][1]}!=">
 						<set name="movie.collections" value="|${fileRename[0][1]:htmldecode}|" />
+						<if test="${imdb_top250[0]}!=">
+							<set name="movie.collections" value="|» IMDb Top 250|${movie.collections}|" />
+						</if>
 						<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection set to '${movie.collections}'" />
 					</if>
 					<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
 					<if test="${fileRename[0][0]}!=">
 						<if test="${fileRename[0][1]}=">
-							<parse name="collection_prefix" input="${fileRename[0][0]:htmldecode}" regex="^(.+?)(?:\s\([^\)]+\))?(?:(?:\:\s(?:Part|Volume))?\s[IVX\d]+)(?:\:|$)" />
+							<parse name="collection_prefix" input="${fileRename[0][0]:htmldecode}" regex="^(.+?)(?:\s\([^\)]+\))?(?:(?:\:\s(?:Part|Volume))?\s[IVX\d]+)(?:\:|\s\-\s|$)" />
 							<if test="${collection_prefix[0][0]}!=">
 								<set name="movie.collections" value="|${collection_prefix[0][0]}|" />
+								<if test="${imdb_top250[0]}!=">
+									<set name="movie.collections" value="|» IMDb Top 250|${movie.collections}|" />
+								</if>
 								<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection auto-set to '${movie.collections}'" />
 							</if>
 						</if>
@@ -1599,6 +1605,9 @@
 					</if>
 					<if test="${fileRename[0][1]}!=">
 						<set name="movie.collections" value="|${fileRename[0][1]:htmldecode}|" />
+						<if test="${imdb_top250[0]}!=">
+							<set name="movie.collections" value="|» IMDb Top 250|${movie.collections}|" />
+						</if>
 						<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection set to '${movie.collections}' via Custom Rename XML" />
 					</if>
 				</if>
