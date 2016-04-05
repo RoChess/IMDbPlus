@@ -30,8 +30,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="3" />
-		<published month="04" day="04" year="2016" />
+		<version major="1" minor="9" point="4" />
+		<published month="04" day="05" year="2016" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -647,7 +647,7 @@
 	<rename id="tt0414982" title="Final Destination III" />
 	<rename id="tt1144884" title="Final Destination IV: The Final Destination" />
 	<rename id="tt1622979" title="Final Destination V" />
-	<rename id="tt0266543" title="Finding Nemo I" collection="Finding Nemo" />	
+	<rename id="tt0266543" title="Finding Nemo I" />	
 	<rename id="tt2277860" title="Finding Nemo II: Finding Dory" />
 	<rename id="tt0050397" title="Fire Down Below (Classic)" />
 	<rename id="tt1137455" title="Fire Down Below (Cult)" />
@@ -790,10 +790,10 @@
 	<rename id="tt0373883" title="Halloween (Remake) I" sortby="Halloween X01" />
 	<rename id="tt1311067" title="Halloween (Remake) II" sortby="Halloween X02" />
 	<rename id="tt0040416" title="Hamlet" collection="» Oscars for Best Picture" />
-	<rename id="tt0448157" title="Hancock" sortby="Hancock I" collection="Hancock|» Superheroes" />
+	<rename id="tt0448157" sortby="Hancock I" collection="Hancock|» Superheroes" />
 	<rename id="tt1498780" title="Hancock II" collection="Hancock|» Superheroes" />
 	<rename id="tt0091474" title="Hannibal I: Manhunter" />
-	<rename id="tt0102926" title="Hannibal II: The Silence of the Lambs" collection="» Oscars for Best Picture" />
+	<rename id="tt0102926" title="Hannibal II: The Silence of the Lambs" collection="Hannibal|» Oscars for Best Picture" />
 	<rename id="tt0212985" title="Hannibal III: Hannibal" />
 	<rename id="tt0289765" title="Hannibal IV: Red Dragon" />
 	<rename id="tt0367959" title="Hannibal V: Hannibal Rising" />
@@ -1449,7 +1449,7 @@
 	<rename id="tt1620657" title="RoboCop IV: Meltdown" collection="RoboCop|» Superheroes" sortby="RoboCop 4b" />
 	<rename id="tt1620658" title="RoboCop IV: Resurrection" collection="RoboCop|» Superheroes" sortby="RoboCop 4c" />
 	<rename id="tt1234721" title="RoboCop (Remake) I" collection="RoboCop|» Superheroes" />
-	<rename id="tt0075148" title="Rocky I" collection="» Oscars for Best Picture" />
+	<rename id="tt0075148" title="Rocky I" collection="Rocky|» Oscars for Best Picture" />
 	<rename id="tt0079817" title="Rocky II" />
 	<rename id="tt0084602" title="Rocky III" />
 	<rename id="tt0089927" title="Rocky IV" />
