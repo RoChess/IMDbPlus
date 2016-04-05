@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="64" />
-		<published month="04" day="04" year="2016" />
+		<version major="4" minor="9" point="65" />
+		<published month="04" day="05" year="2016" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1518,7 +1518,7 @@
 				</set>
 				<set name="rx_rename_check_postfix">
 					<![CDATA[
-					"[\t\s]+(?:title="(?<renameTitle>[^"]+)")?(?:[\t\s]*collection="(?<renameCollection>[^"]+)")?(?:[\t\s]*foreign="(?<renameForeign>[^"]+)")?(?:[\t\s]*sortby="(?<renameSortBy>[^"]+)")?[\t\s]*/>
+					"[\t\s]+(?:title="(?<renameTitle>[^"]+)")?(?:[\t\s]*foreign="(?<renameForeign>[^"]+)")?(?:[\t\s]*sortby="(?<renameSortBy>[^"]+)")?(?:[\t\s]*collection="(?<renameCollection>[^"]+)")?[\t\s]*/>
 					]]>
 				</set>
 				<retrieve name="file" file="C:\Rename dBase IMDb+ Scraper.xml" encoding="UTF-8" />
@@ -1588,7 +1588,7 @@
 				</set>
 				<set name="rx_rename_check_postfix">
 					<![CDATA[
-					"[\t\s]+(?:title="(?<renameTitle>[^"]+)")?(?:[\t\s]*collection="(?<renameCollection>[^"]+)")?(?:[\t\s]*sortby="(?<renameSortBy>[^"]+)")?[\t\s]*/>
+					"[\t\s]+(?:title="(?<renameTitle>[^"]+)")?(?:[\t\s]*sortby="(?<renameSortBy>[^"]+)")?(?:[\t\s]*collection="(?<renameCollection>[^"]+)")?[\t\s]*/>
 					]]>
 				</set>
 				<retrieve name="file" file="C:\Rename dBase IMDb+ Scraper (Custom).xml" encoding="UTF-8" />
