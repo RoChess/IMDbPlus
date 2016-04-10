@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="5" />
-		<published month="04" day="06" year="2016" />
+		<version major="1" minor="9" point="6" />
+		<published month="04" day="09" year="2016" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1813,9 +1813,9 @@
 	<rename id="tt0065769" title="The Gendarme IV: ...Takes Off" />
 	<rename id="tt0079200" title="The Gendarme V: ...and the Creatures from Outer Space" />
 	<rename id="tt0083996" title="The Gendarme VI: ...Never Play Clever Again" />
-	<rename id="tt1132620" title="The Girl I: with the Dragon Tattoo" collection="Millennium Trilogy" foreign="Män som hatar kvinnor" />
-	<rename id="tt1216487" title="The Girl II: Who Played with Fire" collection="Millennium Trilogy" foreign="Flickan som lekte med elden" />
-	<rename id="tt1343097" title="The Girl III: Who Kicked the Hornet's Nest" collection="Millennium Trilogy" foreign="Luftslottet som sprängdes" />
+	<rename id="tt1132620" title="The Girl I: with the Dragon Tattoo" foreign="Män som hatar kvinnor" collection="Millennium Trilogy" />
+	<rename id="tt1216487" title="The Girl II: Who Played with Fire" foreign="Flickan som lekte med elden" collection="Millennium Trilogy" />
+	<rename id="tt1343097" title="The Girl III: Who Kicked the Hornet's Nest" foreign="Luftslottet som sprängdes" collection="Millennium Trilogy" />
 	<rename id="tt1568346" title="The Girl (Remake) I: with the Dragon Tattoo" collection="Millennium Trilogy" />
 	<rename id="tt1703246" title="The Girl (Remake) II: Who Played with Fire" collection="Millennium Trilogy" />
 	<rename id="tt2177761" title="The Girl (Remake) II: Who Kicked the Hornet's Nest" collection="Millennium Trilogy" />
