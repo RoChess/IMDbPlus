@@ -265,7 +265,7 @@ namespace IMDb
 
             // Check if scraper is first, if not
             // prompt user to change it
-            if (CheckIMDbScraperScriptPriorityIsFirst() == false && !PluginSettings.SkipWarningDlg)
+            if (CheckIMDbScraperScriptPriorityIsFirst() == false && !PluginSettings.SkipWarningDlg && !PluginSettings.DisableNotifications)
             {
                 if (GUIUtils.ShowYesNoDialog("IMDb+", Translation.ScraperNotFirstPrompt, true))
                 {
