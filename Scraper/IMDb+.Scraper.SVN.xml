@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="65" />
-		<published month="04" day="05" year="2016" />
+		<version major="4" minor="9" point="66" />
+		<published month="04" day="09" year="2016" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1524,8 +1524,8 @@
 				<retrieve name="file" file="C:\Rename dBase IMDb+ Scraper.xml" encoding="UTF-8" />
 				<parse name="fileRename" input="${file}" regex="${rx_rename_check_prefix}${movie.imdb_id}${rx_rename_check_postfix}" />
 				<if test="${fileRename.count}=1">
-					<if test="${fileRename[0][1]}!=">
-						<set name="movie.collections" value="|${fileRename[0][1]:htmldecode}|" />
+					<if test="${fileRename[0][3]}!=">
+						<set name="movie.collections" value="|${fileRename[0][3]:htmldecode}|" />
 						<if test="${imdb_top250[0]}!=">
 							<set name="movie.collections" value="|» IMDb Top 250|${movie.collections}|" />
 						</if>
@@ -1533,7 +1533,7 @@
 					</if>
 					<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
 					<if test="${fileRename[0][0]}!=">
-						<if test="${fileRename[0][1]}=">
+						<if test="${fileRename[0][3]}=">
 							<parse name="collection_prefix" input="${fileRename[0][0]:htmldecode}" regex="^(.+?)(?:\s\([^\)]+\))?(?:(?:\:\s(?:Part|Volume))?\s[IVX\d]+)(?:\:|\s\-\s|$)" />
 							<if test="${collection_prefix[0][0]}!=">
 								<set name="movie.collections" value="|${collection_prefix[0][0]}|" />
@@ -1554,15 +1554,15 @@
 							</if>
 						</if>
 						<if test="${global_options_foreign_title}=true">
-							<if test="${fileRename[0][2]}!=">
+							<if test="${fileRename[0][1]}!=">
 								<if test="${global_options_foreign_first}=true">
-									<set name="movie.title" value="${fileRename[0][2]:htmldecode} (${fileRename[0][0]:htmldecode})" />
+									<set name="movie.title" value="${fileRename[0][1]:htmldecode} (${fileRename[0][0]:htmldecode})" />
 								</if>
 								<if test="${global_options_foreign_first}=false">
-									<set name="movie.title" value="${fileRename[0][0]:htmldecode} (${fileRename[0][2]:htmldecode})" />
+									<set name="movie.title" value="${fileRename[0][0]:htmldecode} (${fileRename[0][1]:htmldecode})" />
 								</if>
 							</if>
-							<if test="${fileRename[0][2]}=">
+							<if test="${fileRename[0][1]}=">
 								<set name="movie.title" value="${fileRename[0][0]:htmldecode}" />
 							</if>
 						</if>
@@ -1571,8 +1571,8 @@
 						</if>
 						<log LogLevel="Info" Message="IMDb+ Scraper: Title adjusted via Default Rename XML for: ${movie.imdb_id}" />
 					</if>
-					<if test="${fileRename[0][3]}!=">
-						<set name="movie.sortby" value="${fileRename[0][3]:htmldecode}" />
+					<if test="${fileRename[0][1]}!=">
+						<set name="movie.sortby" value="${fileRename[0][1]:htmldecode}" />
 						<log LogLevel="Info" Message="IMDb+ Scraper: SortBy adjusted via Default Rename XML for: ${movie.imdb_id}" />
 					</if>
 				</if>
@@ -1599,12 +1599,12 @@
 						<set name="movie.title" value="${fileRename[0][0]:htmldecode}" />
 						<log LogLevel="Info" Message="IMDb+ Scraper: Title adjusted via Custom Rename XML for: ${movie.imdb_id}" />
 					</if>
-					<if test="${fileRename[0][2]}!=">
-						<set name="movie.sortby" value="${fileRename[0][2]:htmldecode}" />
+					<if test="${fileRename[0][1]}!=">
+						<set name="movie.sortby" value="${fileRename[0][1]:htmldecode}" />
 						<log LogLevel="Info" Message="IMDb+ Scraper: SortBy adjusted via Custom Rename XML for: ${movie.imdb_id}" />
 					</if>
-					<if test="${fileRename[0][1]}!=">
-						<set name="movie.collections" value="|${fileRename[0][1]:htmldecode}|" />
+					<if test="${fileRename[0][2]}!=">
+						<set name="movie.collections" value="|${fileRename[0][2]:htmldecode}|" />
 						<if test="${imdb_top250[0]}!=">
 							<set name="movie.collections" value="|» IMDb Top 250|${movie.collections}|" />
 						</if>
