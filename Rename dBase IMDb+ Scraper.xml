@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="6" />
-		<published month="04" day="09" year="2016" />
+		<version major="1" minor="9" point="7" />
+		<published month="04" day="14" year="2016" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -239,6 +239,7 @@
 	<rename id="tt0034492" title="Bambi I" />
 	<rename id="tt0303714" title="Barbershop I" />
 	<rename id="tt0337579" title="Barbershop II: Back in Business" />
+	<rename id="tt3628584" title="Barbershop III: The Next Cut" />
 	<rename id="tt0103772" title="Basic Instinct I" />
 	<rename id="tt0430912" title="Basic Instinct II" />
 	<rename id="tt0096895" title="Batman I: Batman" sortby="Batman 01" collection="Batman|» Superheroes" />
@@ -1599,6 +1600,7 @@
 	<rename id="tt0145487" title="Spider-Man I" collection="Spider-Man|» Superheroes" />
 	<rename id="tt0316654" title="Spider-Man II" collection="Spider-Man|» Superheroes" />
 	<rename id="tt0413300" title="Spider-Man III" collection="Spider-Man|» Superheroes" />
+	<rename id="tt2250912" title="Spider-Man (Reboot) I: Homecoming" collection="Spider-Man|» Superheroes" />
 	<rename id="tt1895587" title="Spotlight" collection="» Oscars for Best Picture" />
 	<rename id="tt0227538" title="Spy Kids I" />
 	<rename id="tt0287717" title="Spy Kids II: Island of Lost Dreams" />
@@ -1719,9 +1721,8 @@
 	<rename id="tt0983193" sortby="The Adventures of Tintin I" collection="The Adventures of Tintin" />	
 	<rename id="tt1037226" title="The Adventures of Tintin II: Prisoners of the Sun" />
 	<rename id="tt1204343" title="The Adventures of Tintin III" />
-	<rename id="tt0948470" title="The Amazing Spider-Man I" collection="The Amazing Spider-Man|» Superheroes" />
-	<rename id="tt1872181" title="The Amazing Spider-Man II" collection="The Amazing Spider-Man|» Superheroes" />
-	<rename id="tt2250912" title="The Amazing Spider-Man III" collection="The Amazing Spider-Man|» Superheroes" />
+	<rename id="tt0948470" title="The Amazing Spider-Man I" collection="The Amazing Spider-Man|Spider-Man|» Superheroes" />
+	<rename id="tt1872181" title="The Amazing Spider-Man II" collection="The Amazing Spider-Man|Spider-Man|» Superheroes" />
 	<rename id="tt0053604" title="The Apartment" collection="» Oscars for Best Picture" />
 	<rename id="tt0160009" title="The Art Of War I" />
 	<rename id="tt1233571" title="The Art Of War II: Betrayal" />
