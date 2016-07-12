@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="8" />
-		<published month="07" day="12" year="2016" />
+		<version major="1" minor="9" point="9" />
+		<published month="07" day="13" year="2016" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1355,7 +1355,7 @@
 	<rename id="tt0079714" title="Phantasm I" />
 	<rename id="tt0095863" title="Phantasm II" />
 	<rename id="tt0110823" title="Phantasm III: Lord of the Dead" />
-	<rename id="tt0138703" title="Phantasm IV: """ />
+	<rename id="tt0138703" title="Phantasm IV: Oblivion" />
 	<rename id="tt3627704" title="Phantasm V: Ravager" />
 	<rename id="tt0114137" title="Piranha (TV)" />
 	<rename id="tt0078087" title="Piranha I" />
