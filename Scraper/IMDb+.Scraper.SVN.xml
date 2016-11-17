@@ -1,12 +1,12 @@
-﻿<ScriptableScraper>
+<ScriptableScraper>
 	<details>
 		<!-- These details are for display purposes only. -->
 		<name>IMDb+</name>
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="66" />
-		<published month="04" day="09" year="2016" />
+		<version major="4" minor="9" point="67" />
+		<published month="11" day="16" year="2016" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -489,12 +489,12 @@
 						</set>
 						<set name="rx_tmp_infix">
 							<![CDATA[
-							".+?<h4 class="inline">Country:</h4>.+?<a[^>]+href="/country/
+							".+?<h4 class="inline">Country:</h4>.+?<a href="[^\?]+\?countries=
 							]]>
 						</set>
 						<set name="rx_tmp_addfix">
 							<![CDATA[
-							[^"]*".+?<h4 class="inline">Language:</h4>\s*<a[^>]+href="/language/
+							[^"]*".+?<h4 class="inline">Language:</h4>\s*<a href="[^&amp;]+&amp;languages=
 							]]>
 						</set>
 						<set name="rx_tmp_postfix">
@@ -760,7 +760,7 @@
 				<if test="${rx_language}=">
 					<set name="rx_language">
 						<![CDATA[
-						<a\s+(?:onclick="[^"]+"\s*)?href=./language/[^"]+"[^>]*>(?<movieLanguage>[^<]+)</a>
+						<a\s+href="[^&amp;]+&amp;languages=[^>]*>(?<movieLanguage>[^<]+)</a>
 						]]>
 					</set>
 					<parse name="language" input="${details_page}" regex="${rx_language}" />
