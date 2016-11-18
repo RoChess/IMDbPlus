@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="67" />
-		<published month="11" day="16" year="2016" />
+		<version major="4" minor="9" point="68" />
+		<published month="11" day="17" year="2016" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -157,6 +157,10 @@
 				<if test="${xml_option.count}=1"><set name="global_options_debug_imdb_sources" value="${xml_option[0].@value}" /></if>
 				<parse name="xml_option" input="${file}" xpath="//set[@id=20]" />
 				<if test="${xml_option.count}=1"><set name="global_options_rotten_api_key" value="${xml_option[0].@value}" /></if>
+				<parse name="xml_option" input="${file}" xpath="//set[@id=21]" />
+				<if test="${xml_option.count}=1"><set name="global_options_mpdb_user" value="${xml_option[0].@value}" /></if>
+				<parse name="xml_option" input="${file}" xpath="//set[@id=22]" />
+				<if test="${xml_option.count}=1"><set name="global_options_mpdb_key" value="${xml_option[0].@value}" /></if>
 
 				<parse name="xml_option" input="${file}" xpath="//set[@id=94]" />
 				<if test="${xml_option.count}=1"><set name="global_options_english_movie_rating" value="${xml_option[0].@value}" /></if>
@@ -254,22 +258,27 @@
 					</set>
 					<log LogLevel="Info" Message="IMDb+ Scraper: Spanish (imdb.es) used for some data on: ${movie.site_id}" />
 				</if>
-				<if test="${global_options_secondary_details}=(disabled)4">
-					<!-- Avatar = http://www.imdb.fr/title/tt0499549 -->
-					<set name="alt_site" value="http://www.imdb.fr/title/${movie.site_id}" />
-					<set name="rx_genres_block" value="&lt;h5&gt;Genre:&lt;/h5&gt;[^&gt;]+?&gt;\s+(.+?)\s+?&lt;/div&gt;" />
-					<set name="rx_genres" value="\s*([^\|]+)" />
-					<set name="rx_plot2">
-						<![CDATA[
-						<h5>Intrigue:</h5>[^>]+>\s+?(?<moviePlotShort>[^<]*)(?: \|)?\s+?<a
-						]]>
-					</set>
-					<set name="rx_language">
-						<![CDATA[
-						<h5>Langue:</h5>[^>]+>(?<movieLanguage>.+?)(?:\s\|[^<]+)?<
-						]]>
-					</set>
-					<log LogLevel="Info" Message="IMDb+ Scraper: French (imdb.fr) used for some data on: ${movie.site_id}" />
+				<if test="${global_options_secondary_details}=4">
+					<if test="${global_options_mpdb_user}!=">
+						<if test="${global_options_mpdb_key}!=">
+							<!-- Avatar = http://blixy.net/mp/mpdb/proxy.php?imdb=tt0499549&amp;user=[MPDB-USER]&amp;key=[MPDB-KEY] -->
+							<set name="alt_site" value="http://blixy.net/mp/mpdb/proxy.php?imdb=${movie.site_id}&amp;user=${global_options_mpdb_user}&amp;key=${global_options_mpdb_key}" />
+							<set name="rx_title_year">
+								<![CDATA[
+								<title>(?<movieTitle>[^<]+)</title>[^<]+<year>(?<movieYear>\d{4})</year>
+								]]>
+							</set>
+							<set name="rx_genres_block" value="&lt;genres&gt;(.+?)&lt;/genres&gt;" />
+							<set name="rx_genres" value="([^\|]+)" />
+							<set name="rx_plot2">
+								<![CDATA[
+								<plot>(?<moviePlotShort>[^<]+)</plot>
+								]]>
+							</set>
+							<!-- Use imdb.com language info -->
+							<log LogLevel="Info" Message="IMDb+ Scraper: French (mpdb.tv) used for some data on: ${movie.site_id}" />
+						</if>
+					</if>
 				</if>
 				<if test="${global_options_secondary_details}=(disabled)5">
 					<!-- Avatar = http://www.imdb.it/title/tt0499549 -->
