@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="68" />
-		<published month="11" day="17" year="2016" />
+		<version major="4" minor="9" point="69" />
+		<published month="12" day="05" year="2016" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1452,7 +1452,7 @@
 										<!-- Last resort by looking for (undefined) titles -->
 										<set name="rx_aka_english">
 											<![CDATA[
-											<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td></td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+											<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?generic.monitoring.set_twilight_info\(\s*"title[^"]+",\s*"US",.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td></td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 											]]>
 										</set>
 										<!-- TEST MOVIE: http://www.imdb.com/title/tt0061806/releaseinfo (Castle of Bloody Lust) -->
