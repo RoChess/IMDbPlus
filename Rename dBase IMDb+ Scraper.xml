@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="9" />
-		<published month="07" day="13" year="2016" />
+		<version major="1" minor="9" point="10" />
+		<published month="02" day="28" year="2017" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1236,6 +1236,7 @@
 	<rename id="tt0071853" title="Monty Python's I: The Holy Grail" sortby="Monty 02" />
 	<rename id="tt0079470" title="Monty Python's II: Life of Brian" sortby="Monty 03" />
 	<rename id="tt0085959" title="Monty Python's III: The Meaning of Life" sortby="Monty 04" />
+	<rename id="tt4975722" title="Moonlight" collection="» Oscars for Best Picture" />
 	<rename id="tt0033922" title="Mr. &amp; Mrs. Smith (Original)" />
 	<rename id="tt0054189" title="Mr. Ripley (Original) I: Purple Noon" foreign="Plein soleil" />
 	<rename id="tt0075675" title="Mr. Ripley (Original) II: The American Friend" foreign="Der amerikanische Freund" />
