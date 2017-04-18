@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="70" />
-		<published month="03" day="13" year="2016" />
+		<version major="4" minor="9" point="71" />
+		<published month="04" day="18" year="2017" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1580,8 +1580,8 @@
 						</if>
 						<log LogLevel="Info" Message="IMDb+ Scraper: Title adjusted via Default Rename XML for: ${movie.imdb_id}" />
 					</if>
-					<if test="${fileRename[0][1]}!=">
-						<set name="movie.sortby" value="${fileRename[0][1]:htmldecode}" />
+					<if test="${fileRename[0][2]}!=">
+						<set name="movie.sortby" value="${fileRename[0][2]:htmldecode}" />
 						<log LogLevel="Info" Message="IMDb+ Scraper: SortBy adjusted via Default Rename XML for: ${movie.imdb_id}" />
 					</if>
 				</if>
