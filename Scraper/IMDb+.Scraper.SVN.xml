@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="71" />
-		<published month="04" day="18" year="2017" />
+		<version major="4" minor="9" point="72" />
+		<published month="04" day="26" year="2017" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -110,7 +110,7 @@
 		<!-- and try different settings without the need to reimport the script. -->
 		<set name="rx_file_check">
 			<![CDATA[
-			(<imdbplus[^>]*>)(?:[\r\n\t\s\v]*(?:<set[\t\s]+id="\d+"[\t\s]+name="global_options_[^"]+"[\t\s]+value="(?:true|false|\w{12,})"[\t\s]*/>|<set[\t\s]+id="9[47]"[\t\s]+name="global_options_(?:english_movie_rating|secondary_details)"[\t\s]+value="\d{2}"[\t\s]*/>|<set[\t\s]+id="9[89]"[\t\s]+name="global_options_(?:country|language)_filter"[\t\s]+value="(?:\w{2}[|]?)*"[\t\s]*/>|<set[\t\s]+id="\d+"[\t\s]+name="[^_]+_options_sync_[^"]+"[^>]+>))*[\r\n\t\s\v]*</imdbplus>
+			(<imdbplus[^>]*>)(?:[\r\n\t\s\v]*(?:<set[\t\s]+id="\d+"[\t\s]+name="global_options_[^"]+"[\t\s]+value="(?:true|false|[\w-]{4,})"[\t\s]*/>|<set[\t\s]+id="9[47]"[\t\s]+name="global_options_(?:english_movie_rating|secondary_details)"[\t\s]+value="\d{2}"[\t\s]*/>|<set[\t\s]+id="9[89]"[\t\s]+name="global_options_(?:country|language)_filter"[\t\s]+value="(?:\w{2}[|]?)*"[\t\s]*/>|<set[\t\s]+id="\d+"[\t\s]+name="[^_]+_options_sync_[^"]+"[^>]+>))*[\r\n\t\s\v]*</imdbplus>
 			]]>
 		</set>
 		<retrieve name="file" file="C:\Options IMDb+ Scraper.xml" encoding="UTF-8" />
