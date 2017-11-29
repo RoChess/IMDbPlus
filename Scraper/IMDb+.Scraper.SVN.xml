@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="72" />
-		<published month="04" day="26" year="2017" />
+		<version major="4" minor="9" point="73" />
+		<published month="11" day="29" year="2017" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -955,12 +955,12 @@
 				<if test="${global_options_secondary_details}&lt;=6">
 					<set name="rx_plot">
 						<![CDATA[
-						<p class="plotpar">\s*(?<moviePlotLong>.*?)<i>.*?</i>.*?</p>|<h5>Plot Synopsis:</h5>[^>]+>\s*(?<moviePlotLong>(?!\s*<a[^>]+>This plot synopsis is empty[^<]+</a>).*?)\s*<a|<h2>Storyline</h2>[^>]+>\s*<p>\s*(?<moviePlotLong>[^<]+?)\s*</p>
+						<h4[^>]+>Summaries</h4>\s*<ul[^>]+>\s*<li[^>]+>\s*<p>(?<moviePlotLong>.+?)</p>
 						]]>
 					</set>
 					<set name="rx_plot2">
 						<![CDATA[
-						<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:&\w+;)*)?\s*</p>|<div class="summary_text" itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:&\w+;)*)?\s*</div
+						<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:\w+)*)?\s*</p>|<div class="summary_text" itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:\w+)*)?\s*</div
 						]]>
 					</set>
 				</if>
@@ -998,7 +998,7 @@
 						<if test="${global_options_secondary_summary}=true">
 							<set name="rx_plot2">
 								<![CDATA[
-								<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:&\w+;)*)?\s*</p>
+								<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:\w+)*)?\s*</p>
 								]]>
 							</set>
 							<parse name="summary2" input="${details_page}" regex="${rx_plot2}" />
