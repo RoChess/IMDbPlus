@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="10" />
-		<published month="02" day="28" year="2017" />
+		<version major="1" minor="9" point="11" />
+		<published month="12" day="20" year="2017" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -140,6 +140,7 @@
 	<rename id="tt0118583" title="Alien IV: Alien Resurrection" sortby="Alien 04" collection="Alien" />
 	<rename id="tt1446714" title="Alien (Reboot) I: Prometheus" sortby="Alien 05" collection="Alien" />
 	<rename id="tt2316204" title="Alien (Reboot) II: Covenant" sortby="Alien 06" collection="Alien" />
+	<rename id="tt6980596" title="Alien (Reboot) III" sortby="Alien 07" collection="Alien" />
 	<rename id="tt0370263" title="Aliens vs. Predator I" sortby="Alien X01" collection="Alien" />
 	<rename id="tt0758730" title="Aliens vs. Predator II: Requiem" sortby="Alien X02" collection="Alien" />
 	<rename id="tt1014759" title="Alice in Wonderland I" />
@@ -235,7 +236,7 @@
 	<rename id="tt1334515" title="Bad Company (UK)" />
 	<rename id="tt0068245" title="Bad Company (Western)" />
 	<rename id="tt0112443" title="Bad Company (Thriller)" />
-	<rename id="tt0307987" sortby="Bad Santa I" collection="Bad Santa" />	
+	<rename id="tt0307987" title="Bad Santa I" />	
 	<rename id="tt1798603" title="Bad Santa II" />
 	<rename id="tt0112453" title="Balto I" />
 	<rename id="tt0281634" title="Balto II: Wolf Quest" />
@@ -277,6 +278,7 @@
 	<rename id="tt0086960" title="Beverly Hills Cop I" />
 	<rename id="tt0092644" title="Beverly Hills Cop II" />
 	<rename id="tt0109254" title="Beverly Hills Cop III" />
+	<rename id="tt3083016" title="Beverly Hills Cop IV" />
 	<rename id="tt0208003" title="Big Momma's House I" />
 	<rename id="tt0421729" title="Big Momma's House II" />
 	<rename id="tt1464174" title="Big Momma's House III: Like Father, Like Son" />
@@ -462,7 +464,7 @@
 	<rename id="tt2564126" title="Clerks III" />
 	<rename id="tt0844471" title="Cloudy I: with a Chance of Meatballs" />
 	<rename id="tt1985966" title="Cloudy II: Revenge of the Leftovers" />
-	<rename id="tt1060277" title="Cloverfield" sortby="Cloverfield I" />
+	<rename id="tt1060277" title="Cloverfield I" />
 	<rename id="tt1179933" title="Cloverfield II: 10 Cloverfield Lane" />
 	<rename id="tt0088933" title="Cocoon I" />
 	<rename id="tt0094890" title="Cocoon II: The Return" />
@@ -506,6 +508,8 @@
 	<rename id="tt0042367" title="Cyrano de Bergerac (Original)" />
 	<rename id="tt0178361" title="Cyrano de Bergerac (TV)" />
 	<rename id="tt0472301" title="Cyrano de Bergerac (UK)" />
+	<rename id="tt1528854" title="Daddy's Home I" />
+	<rename id="tt5657846" title="Daddy's Home II" />
 	<rename id="tt0021775" title="Daddy Long Legs (Original)" />
 	<rename id="tt0099348" title="Dances with Wolves" collection="» Oscars for Best Picture" />
 	<rename id="tt0287978" title="Daredevil" collection="» Superheroes" />
@@ -533,6 +537,7 @@
 	<rename id="tt0089003" title="Death Wish III" />
 	<rename id="tt0092857" title="Death Wish IV: The Crackdown" />
 	<rename id="tt0109578" title="Death Wish V: The Face Of Death" />
+	<rename id="tt1137450" title="Death Wish (Reboot)" />
 	<rename id="tt0038462" title="Decoy (Classic)" />
 	<rename id="tt0073582" title="Deep Red" foreign="Profondo Rosso" />
 	<rename id="tt0839788" title="Déjà Vu (TV)" />
@@ -559,6 +564,7 @@
 	<rename id="tt0337978" title="Die Hard IV: Live Free or Die Hard" />
 	<rename id="tt1606378" title="Die Hard V: A Good Day to Die Hard" />
 	<rename id="tt2884178" title="Die Hard VI: Die Hardest" />
+	<rename id="tt5117432" title="Die Hard VII: Year One" />
 	<rename id="tt0066999" title="Dirty Harry I" />
 	<rename id="tt0070355" title="Dirty Harry II: Magnum Force" />
 	<rename id="tt0074483" title="Dirty Harry III: The Enforcer" />
@@ -780,8 +786,9 @@
 	<rename id="tt1077258" title="Grindhouse II: Planet Terror" />
 	<rename id="tt1375670" title="Grown Ups I" />
 	<rename id="tt2191701" title="Grown Ups II" />
-	<rename id="tt2015381" sortby="Guardians of the Galaxy I" collection="The Avengers|» Superheroes" />
+	<rename id="tt2015381" title="Guardians of the Galaxy I" collection="The Avengers|» Superheroes" />
 	<rename id="tt3896198" title="Guardians of the Galaxy II" collection="The Avengers|» Superheroes" />
+	<rename id="tt6791350" title="Guardians of the Galaxy III" collection="The Avengers|» Superheroes" />
 	<rename id="tt0489718" title="Gulliver's Travels (Cartoon)" />
 	<rename id="tt0031397" title="Gulliver's Travels (Original)" />
 	<rename id="tt0115195" title="Gulliver's Travels (TV)" />
@@ -1173,12 +1180,12 @@
 	<rename id="tt2002718" title="Machete II: Kills" />
 	<rename id="tt2002719" title="Machete III: Kills Again... In Space!" />
 	<rename id="tt1915581" title="Magic Mike I" />
-	<rename id="tt2268016" sortby="Magic Mike II" />
+	<rename id="tt2268016" title="Magic Mike II: XXL" />
 	<rename id="tt0079501" title="Mad Max I" />
 	<rename id="tt0082694" title="Mad Max II: The Road Warrior" />
 	<rename id="tt0089530" title="Mad Max III: Beyond Thunderdome" />
 	<rename id="tt1392190" title="Mad Max IV: Fury Road" />
-	<rename id="tt4575512" title="Mad Max IV: The Wasteland" />
+	<rename id="tt4575512" title="Mad Max V: The Wasteland" />
 	<rename id="tt0351283" title="Madagascar I" />
 	<rename id="tt0479952" title="Madagascar II: Escape 2 Africa" />
 	<rename id="tt1277953" title="Madagascar III: Europe's Most Wanted" />
@@ -1373,7 +1380,8 @@
 	<rename id="tt0134847" title="Pitch Black I" collection="The Chronicles of Riddick" />
 	<rename id="tt0407658" title="Pitch Black II: Dark Fury (Prequel)" sortby="Pitch Black Ib" collection="The Chronicles of Riddick" />
 	<rename id="tt0296572" title="Pitch Black II: The Chronicles Of Riddick" collection="The Chronicles of Riddick" />
-	<rename id="tt1411250" title="Pitch Black III: Dead Man Stalking" collection="The Chronicles of Riddick" />
+	<rename id="tt1411250" title="Pitch Black III: Riddick" collection="The Chronicles of Riddick" />
+	<rename id="tt5218270" title="Pitch Black IV: Furia" collection="The Chronicles of Riddick" />
 	<rename id="tt1981677" title="Pitch Perfect I" />
 	<rename id="tt2848292" title="Pitch Perfect II" />
 	<rename id="tt4765284" title="Pitch Perfect III" />
@@ -1533,6 +1541,7 @@
 	<rename id="tt1132626" title="Saw V" />
 	<rename id="tt1233227" title="Saw VI" />
 	<rename id="tt1477076" title="Saw VII: The Final Chapter" />
+	<rename id="tt3348730" title="Saw VIII: Jigsaw" />
 	<rename id="tt0175142" title="Scary Movie I" />
 	<rename id="tt0257106" title="Scary Movie II" />
 	<rename id="tt0306047" title="Scary Movie III" />
@@ -1634,6 +1643,8 @@
 	<rename id="tt0413300" title="Spider-Man III" collection="Spider-Man|» Superheroes" />
 	<rename id="tt2250912" title="Spider-Man (Reboot) I: Homecoming" collection="Spider-Man|» Superheroes" />
 	<rename id="tt1895587" title="Spotlight" collection="» Oscars for Best Picture" />
+	<rename id="tt3079380" title="Spy I" />
+	<rename id="tt5859072" title="Spy II" />
 	<rename id="tt0227538" title="Spy Kids I" />
 	<rename id="tt0287717" title="Spy Kids II: Island of Lost Dreams" />
 	<rename id="tt0338459" title="Spy Kids III: Game Over" />
@@ -1668,7 +1679,7 @@
 	<rename id="tt0080684" title="Star Wars V: The Empire Strikes Back" sortby="Star Wars 05" />
 	<rename id="tt0086190" title="Star Wars VI: Return of the Jedi" sortby="Star Wars 06" />
 	<rename id="tt2488496" title="Star Wars VII: The Force Awakens" sortby="Star Wars 07" />
-	<rename id="tt2527336" title="Star Wars VIII" sortby="Star Wars 08" />
+	<rename id="tt2527336" title="Star Wars VIII: The Last Jedi" sortby="Star Wars 08" />
 	<rename id="tt2527338" title="Star Wars IX" sortby="Star Wars 09" />
 	<rename id="tt0942903" title="Stargate SG-1 I: The Ark Of Truth" />
 	<rename id="tt0929629" title="Stargate SG-1 II: Continuum" />
@@ -1747,6 +1758,7 @@
 	<rename id="tt1340138" title="Terminator V: Genisys" />
 	<rename id="tt3171094" title="Terminator VI" />
 	<rename id="tt3171096" title="Terminator VII" />
+	<rename id="tt6450804" title="Terminator (Reboot)" sortby="Terminator X" />
 	<rename id="tt0086425" title="Terms of Endearment I" collection="Terms of Endearment|» Oscars for Best Picture" />
 	<rename id="tt0116240" title="Terms of Endearment II: The Evening Star" collection="Terms of Endearment" />
 	<rename id="tt0078243" title="The 36th Chamber I: ...of Shaolin" foreign="Shao Lin san shi liu fang" />
@@ -1835,7 +1847,7 @@
 	<rename id="tt1596343" title="The Fast and the Furious V: Fast Five" sortby="The Fast and the Furious 05" />
 	<rename id="tt1905041" title="The Fast and the Furious VI: Furious Six" sortby="The Fast and the Furious 06" />
 	<rename id="tt2820852" title="The Fast and the Furious VII: Furious Seven" sortby="The Fast and the Furious 07" />
-	<rename id="tt4630562" title="The Fast and the Furious VIII: Fast Eight" sortby="The Fast and the Furious 08" />
+	<rename id="tt4630562" title="The Fast and the Furious VIII: The Fate of the Furious" sortby="The Fast and the Furious 08" />
 	<rename id="tt5433138" title="The Fast and the Furious IX: Furious Nine" sortby="The Fast and the Furious 09" />
 	<rename id="tt5433140" title="The Fast and the Furious X: Furious Ten" sortby="The Fast and the Furious 10" />
 	<rename id="tt0059183" title="The Flight of the Phoenix (Original)" />
@@ -1963,6 +1975,7 @@
 	<rename id="tt0120616" title="The Mummy I" collection="The Mummy Trilogy" />
 	<rename id="tt0209163" title="The Mummy II: The Mummy Returns" collection="The Mummy Trilogy" />
 	<rename id="tt0859163" title="The Mummy III: Tomb of the Dragon Emperor" collection="The Mummy Trilogy" />
+	<rename id="tt2345759" title="The Mummy (Reboot)" />
 	<rename id="tt1204342" title="The Muppets I" />
 	<rename id="tt2281587" title="The Muppets II: Muppets Most Wanted" />
 	<rename id="tt0095705" title="The Naked Gun I: From the Files of Police Squad!" collection="The Naked Gun Trilogy" />
@@ -2114,6 +2127,8 @@
 	<rename id="tt0057590" title="Tom Jones" collection="» Oscars for Best Picture" />
 	<rename id="tt0808510" title="Tooth Fairy I" />
 	<rename id="tt1935929" title="Tooth Fairy II" />
+	<rename id="tt0092099" sortby="Top Gun I" />
+	<rename id="tt1745960" title="Top Gun II: Maverick" />
 	<rename id="tt1386703" title="Total Recall (Remake)" />
 	<rename id="tt1850374" title="Toy Story (Short): Hawaiian Vacation" sortby="Toy Story X01" collection="Toy Story" />
 	<rename id="tt2340678" title="Toy Story (Short): Partysaurus Rex" sortby="Toy Story X03" collection="Toy Story" />
@@ -2127,6 +2142,9 @@
 	<rename id="tt1399103" title="Transformers III: Dark of the Moon" />
 	<rename id="tt2109248" title="Transformers IV: Age of Extinction" />
 	<rename id="tt3371366" title="Transformers V: The Last Knight" />
+	<rename id="tt4701182" title="Transformers VI: Bumblebee" />
+	<rename id="tt5090564" title="Transformers VII" />
+	<rename id="tt5090568" title="Transformers VIII" />
 	<rename id="tt0100814" title="Tremors I" />
 	<rename id="tt0114720" title="Tremors II: Aftershocks" />
 	<rename id="tt0259685" title="Tremors III: Back to Perfection" />
@@ -2198,6 +2216,8 @@
 	<rename id="tt0416287" title="Venom (Indie)" />
 	<rename id="tt0084854" title="Venom (UK)" />
 	<rename id="tt0067934" title="Venom (UK/Cult)" />
+	<rename id="tt1224378" title="Viy I" />
+	<rename id="tt6218010" title="Viy II: Journey to China" />
 	<rename id="tt0070895" title="Walking Tall (Original)" />
 	<rename id="tt0351977" title="Walking Tall I" />
 	<rename id="tt0804550" title="Walking Tall II: The Payback" />
@@ -2208,9 +2228,9 @@
 	<rename id="tt0104361" title="Wallace &amp; Gromit I: A Grand Day Out" />
 	<rename id="tt0108598" title="Wallace &amp; Gromit II: The Wrong Trousers" />
 	<rename id="tt0112691" title="Wallace &amp; Gromit III: A Close Shave" />
-	<rename id="tt0339881" title="Wallace &amp; Gromit IV: Cracking Contraptions" />
-	<rename id="tt0312004" title="Wallace &amp; Gromit V: The Curse of the Were-Rabbit" />
-	<rename id="tt1118511" title="Wallace &amp; Gromit VI: A Matter of Loaf and Death" />
+	<rename id="tt0339881" title="Wallace &amp; Gromit IIIb: Cracking Contraptions" />
+	<rename id="tt0312004" title="Wallace &amp; Gromit IV: The Curse of the Were-Rabbit" />
+	<rename id="tt1118511" title="Wallace &amp; Gromit V: A Matter of Loaf and Death" />
 	<rename id="tt0281144" title="Wanderlust (Cult)" />
 	<rename id="tt0420313" title="Wanderlust (Docu)" />
 	<rename id="tt0493464" title="Wanted" collection="» Superheroes" />
@@ -2253,11 +2273,11 @@
 	<rename id="tt1276107" title="Without a Paddle II: Nature's Calling" />
 	<rename id="tt0458525" title="Wolverine I" collection="X-Men Origin|X-Men|» Superheroes" />
 	<rename id="tt1430132" title="Wolverine II" collection="X-Men Origin|X-Men|» Superheroes" />
-	<rename id="tt3315342" title="Wolverine III" collection="X-Men Origin|X-Men|» Superheroes" />
+	<rename id="tt3315342" title="Wolverine III: Logan" collection="X-Men Origin|X-Men|» Superheroes" />
 	<rename id="tt1247704" title="Women in Trouble I" />
 	<rename id="tt1340773" title="Women in Trouble II: Elektra Luxx" />
 	<rename id="tt1341342" title="Women in Trouble III: Women in Ecstasy" />
-	<rename id="tt0451279" title="Wonder Woman" collection="The Justice League|» Superheroes" />
+	<rename id="tt0451279" sortby="Wonder Woman I" collection="The Justice League|» Superheroes" />
 	<rename id="tt0295700" title="Wrong Turn I" />
 	<rename id="tt0804555" title="Wrong Turn II: Dead End" />
 	<rename id="tt1261978" title="Wrong Turn III: Left For Dead" />
@@ -2276,9 +2296,13 @@
 	<rename id="tt1270798" title="X-Men: First Class I" collection="X-Men Origin|X-Men|» Superheroes" />
 	<rename id="tt1877832" title="X-Men: First Class II: Days of Future Past" collection="X-Men Origin|X-Men|» Superheroes" />
 	<rename id="tt3385516" title="X-Men: Apocalypse" sortby="X-Men X01" collection="X-Men Origin|X-Men|» Superheroes" />
+	<rename id="tt4682266" title="X-Men: The New Mutants" sortby="X-Men X02" collection="X-Men|» Superheroes" />
+	<rename id="tt6565702" title="X-Men: Dark Phoenix" sortby="X-Men X03" collection="X-Men Origin|X-Men|» Superheroes" />
+	<rename id="tt3053198" title="X-Men: X-Force" sortby="X-Men X04" collection="X-Men|» Superheroes" />
 	<rename id="tt0295701" title="xXx I" />
 	<rename id="tt0329774" title="xXx II: State Of The Union" />
 	<rename id="tt1293847" title="xXx III: The Return of Xander Cage" />
+	<rename id="tt7039498" title="xXx IV" />
 	<rename id="tt0030993" title="You Can't Take It with You" collection="» Oscars for Best Picture" />
 	<rename id="tt0365957" title="You Got Served I" />
 	<rename id="tt1568139" title="You Got Served II: Beat the World" />
