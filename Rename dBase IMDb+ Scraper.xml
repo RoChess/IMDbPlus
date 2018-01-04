@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="11" />
-		<published month="12" day="20" year="2017" />
+		<version major="1" minor="9" point="12" />
+		<published month="1" day="3" year="2018" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -138,9 +138,9 @@
 	<rename id="tt0090605" title="Alien II: Aliens" sortby="Alien 02" />
 	<rename id="tt0103644" title="Alien III: Alien³" sortby="Alien 03" />
 	<rename id="tt0118583" title="Alien IV: Alien Resurrection" sortby="Alien 04" collection="Alien" />
-	<rename id="tt1446714" title="Alien (Reboot) I: Prometheus" sortby="Alien 05" collection="Alien" />
-	<rename id="tt2316204" title="Alien (Reboot) II: Covenant" sortby="Alien 06" collection="Alien" />
-	<rename id="tt6980596" title="Alien (Reboot) III" sortby="Alien 07" collection="Alien" />
+	<rename id="tt1446714" title="Alien (Prequel) I: Prometheus" sortby="Alien 05" collection="Alien" />
+	<rename id="tt2316204" title="Alien (Prequel) II: Covenant" sortby="Alien 06" collection="Alien" />
+	<rename id="tt6980596" title="Alien (Prequel) III" sortby="Alien 07" collection="Alien" />
 	<rename id="tt0370263" title="Aliens vs. Predator I" sortby="Alien X01" collection="Alien" />
 	<rename id="tt0758730" title="Aliens vs. Predator II: Requiem" sortby="Alien X02" collection="Alien" />
 	<rename id="tt1014759" title="Alice in Wonderland I" />
@@ -236,6 +236,8 @@
 	<rename id="tt1334515" title="Bad Company (UK)" />
 	<rename id="tt0068245" title="Bad Company (Western)" />
 	<rename id="tt0112443" title="Bad Company (Thriller)" />
+	<rename id="tt4651520" title="Bad Moms I" />	
+	<rename id="tt6359956" title="Bad Moms II: A Bad Moms Christmas" />	
 	<rename id="tt0307987" title="Bad Santa I" />	
 	<rename id="tt1798603" title="Bad Santa II" />
 	<rename id="tt0112453" title="Balto I" />
@@ -650,8 +652,10 @@
 	<rename id="tt0089118" title="F/X I" />
 	<rename id="tt0101846" title="F/X II" />
 	<rename id="tt3183660" title="Fantastic Beasts and Where to Find Them I" />
-	<rename id="tt4123430" title="Fantastic Beasts and Where to Find Them II" />
+	<rename id="tt4123430" title="Fantastic Beasts and Where to Find Them II: The Crimes of Grindelwald" />
 	<rename id="tt4123432" title="Fantastic Beasts and Where to Find Them III" />
+	<rename id="tt6149052" title="Fantastic Beasts and Where to Find Them IV" />
+	<rename id="tt6149054" title="Fantastic Beasts and Where to Find Them V" />
 	<rename id="tt0120667" title="Fantastic Four I" collection="Fantastic Four|» Superheroes" />
 	<rename id="tt0486576" title="Fantastic Four II: Rise of the Silver Surfer" collection="Fantastic Four|» Superheroes" />
 	<rename id="tt1502712" title="Fantastic Four (Reboot)" sortby="Fantastic Four (Reboot) I" collection="Fantastic Four|» Superheroes" />
@@ -680,6 +684,7 @@
 	<rename id="tt0814106" title="Flatland I" />
 	<rename id="tt2062960" title="Flatland II: Sphereland" />
 	<rename id="tt1595841" title="Flatland III: 3D" />
+	<rename id="tt2039338" title="Flatliners (Remake)" />
 	<rename id="tt0780516" title="Flawless (UK)" />
 	<rename id="tt0062979" title="Flesh I" />
 	<rename id="tt0066482" title="Flesh II: Trash" />
@@ -916,7 +921,7 @@
 	<rename id="tt0278487" title="Hotel (UK)" />
 	<rename id="tt0837562" title="Hotel Transylvania I" />
 	<rename id="tt2510894" title="Hotel Transylvania II" />
-	<rename id="tt5220122" title="Hotel Transylvania III" />
+	<rename id="tt5220122" title="Hotel Transylvania III: Summer Vacation" />
 	<rename id="tt0113342" title="House (Canada)" />
 	<rename id="tt0837796" title="House (Cult)" />
 	<rename id="tt0091223" title="House I" />
@@ -1084,7 +1089,7 @@
 	<rename id="tt0119567" title="Jurassic Park II: The Lost World" />
 	<rename id="tt0163025" title="Jurassic Park III: Return to the Island" />
 	<rename id="tt0369610" title="Jurassic Park IV: Jurassic World" />
-	<rename id="tt4881806" title="Jurassic Park V" />
+	<rename id="tt4881806" title="Jurassic Park V: Fallen Kingdom" />
 	<rename id="tt1250777" title="Kick-Ass I" collection="Kick-Ass|» Superheroes" />
 	<rename id="tt1650554" title="Kick-Ass II" collection="Kick-Ass|» Superheroes" />
 	<rename id="tt0097659" title="Kickboxer I" />
@@ -1134,6 +1139,7 @@
 	<rename id="tt2117905" title="Lake Placid IV: The Final Chapter" />
 	<rename id="tt0146316" title="Lara Croft: Tomb Raider I" />
 	<rename id="tt0325703" title="Lara Croft: Tomb Raider II (The Cradle of Life)" />
+	<rename id="tt1365519" title="Lara Croft: Tomb Raider (Reboot) I" />
 	<rename id="tt0119345" title="Last Summer I: I Know What You Did..." sortby="I Know What You Did Last Summer 01" />
 	<rename id="tt0130018" title="Last Summer II: I Still Know What You Did..." sortby="I Know What You Did Last Summer 02" />
 	<rename id="tt0469111" title="Last Summer III: I'll Always Know What You Did..." sortby="I Know What You Did Last Summer 03" />
@@ -1197,6 +1203,8 @@
 	<rename id="tt0822832" title="Marley &amp; Me I" />
 	<rename id="tt1704614" title="Marley &amp; Me II: The Puppy Years" />
 	<rename id="tt0048356" title="Marty" collection="» Oscars for Best Picture" />
+	<rename id="tt0795421" title="Mamma Mia! I" />
+	<rename id="tt6911608" title="Mamma Mia! II: Here We Go Again" />
 	<rename id="tt1790864" title="Maze Runner I" />
 	<rename id="tt4046784" title="Maze Runner II: The Scorch Trials" />
 	<rename id="tt4500922" title="Maze Runner III: The Death Cure" />
@@ -1294,6 +1302,7 @@
 	<rename id="tt0240772" title="Ocean's I: Eleven" collection="Ocean's Trilogy" />
 	<rename id="tt0349903" title="Ocean's II: Twelve" collection="Ocean's Trilogy" />
 	<rename id="tt0496806" title="Ocean's III: Thirteen" collection="Ocean's Trilogy" />
+	<rename id="tt5164214" title="Ocean's IV: Eight" collection="Ocean's Trilogy" />
 	<rename id="tt0076489" title="Oh, God! I" />
 	<rename id="tt0081268" title="Oh, God! II: Book II" />
 	<rename id="tt0087835" title="Oh, God! III: You Devil" />
@@ -1340,7 +1349,10 @@
 	<rename id="tt1623205" title="Oz the Great and Powerful I" />
 	<rename id="tt2761172" title="Oz the Great and Powerful II" />
 	<rename id="tt1663662" sortby="Pacific Rim I" />
-	<rename id="tt2557478" title="Pacific Rim II: Maelstrom" />
+	<rename id="tt2557478" title="Pacific Rim II: Uprising" />
+	<rename id="tt1109624" title="Paddington I" />
+	<rename id="tt4468740" title="Paddington II" />
+	<rename id="tt5822536" title="Paddington III" />
 	<rename id="tt1055300" title="Painted Skin I" foreign="Hua Pi" />
 	<rename id="tt2371411" title="Painted Skin II: The Resurrection" foreign="Hua Pi Er" />
 	<rename id="tt1179904" title="Paranormal Activity I" />
@@ -1486,6 +1498,7 @@
 	<rename id="tt0070608" title="Robin Hood (Cartoon)" />
 	<rename id="tt0013556" title="Robin Hood (Original)" />
 	<rename id="tt0102797" title="Robin Hood (TV)" />
+	<rename id="tt4532826" title="Robin Hood (Reboot)" />
 	<rename id="tt0093870" title="RoboCop I" sortby="RoboCop 1" collection="RoboCop|» Superheroes" />
 	<rename id="tt0100502" title="RoboCop II" sortby="RoboCop 2" collection="RoboCop|» Superheroes" />
 	<rename id="tt0107978" title="RoboCop III" sortby="RoboCop 3" collection="RoboCop|» Superheroes" />
@@ -1904,7 +1917,9 @@
 	<rename id="tt1190072" title="The Hunter (Iran)" />
 	<rename id="tt0887912" title="The Hurt Locker" collection="» Oscars for Best Picture" />
 	<rename id="tt0800080" title="The Incredible Hulk" collection="» Superheroes" />
-	<rename id="tt0317705" title="The Incredibles" collection="» Superheroes" />
+	<rename id="tt0317705" title="The Incredibles I" collection="The Incredibles|» Superheroes" />
+	<rename id="tt3606756" title="The Incredibles II" collection="The Incredibles|» Superheroes" />
+	<rename id="tt2388771" title="The Jungle Book (Reboot)" />
 	<rename id="tt0974015" title="The Justice League I: Part One" collection="The Justice League|» Superheroes" />
 	<rename id="tt4121026" title="The Justice League II: Part Two" collection="The Justice League|» Superheroes" />
 	<rename id="tt0087538" title="The Karate Kid I" />
@@ -2216,6 +2231,7 @@
 	<rename id="tt0416287" title="Venom (Indie)" />
 	<rename id="tt0084854" title="Venom (UK)" />
 	<rename id="tt0067934" title="Venom (UK/Cult)" />
+	<rename id="tt1270797" sortby="Venom I" collection="Spider-Man|» Superheroes" />
 	<rename id="tt1224378" title="Viy I" />
 	<rename id="tt6218010" title="Viy II: Journey to China" />
 	<rename id="tt0070895" title="Walking Tall (Original)" />
