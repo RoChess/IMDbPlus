@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="76" />
-		<published month="02" day="19" year="2018" />
+		<version major="4" minor="9" point="77" />
+		<published month="02" day="20" year="2018" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -493,7 +493,7 @@
 					<if test="${global_options_original_title}=false">
 						<set name="rx_tmp_prefix">
 							<![CDATA[
-							<title>(?:&#x27;)?(?<movieTitleEnglish>(?:(?=.+?generic.monitoring.set_twilight_info\(\s*"title",\s*"
+							(?i)<title>(?:&#x27;)?(?<movieTitleEnglish>(?:(?=.+?generic.monitoring.set_twilight_info\(\s*"title",\s*"
 							]]>
 						</set>
 						<set name="rx_tmp_infix">
@@ -503,7 +503,7 @@
 						</set>
 						<set name="rx_tmp_addfix">
 							<![CDATA[
-							[^"]*".+?<h4 class="inline">Language:</h4>\s*<a href="[^&amp;]+&amp;primary_language=
+							[^"]*".+?<h4 class="inline">Language:</h4>\s*<a href="[^"]+primary_language=
 							]]>
 						</set>
 						<set name="rx_tmp_postfix">
