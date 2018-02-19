@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="75" />
-		<published month="02" day="18" year="2018" />
+		<version major="4" minor="9" point="76" />
+		<published month="02" day="19" year="2018" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -498,12 +498,12 @@
 						</set>
 						<set name="rx_tmp_infix">
 							<![CDATA[
-							".+?<h4 class="inline">Country:</h4>.+?<a href="[^\?]+\?countries=
+							".+?<h4 class="inline">Country:</h4>.+?<a href="[^\?]+\?country_of_origin=
 							]]>
 						</set>
 						<set name="rx_tmp_addfix">
 							<![CDATA[
-							[^"]*".+?<h4 class="inline">Language:</h4>\s*<a href="[^&amp;]+&amp;languages=
+							[^"]*".+?<h4 class="inline">Language:</h4>\s*<a href="[^&amp;]+&amp;primary_language=
 							]]>
 						</set>
 						<set name="rx_tmp_postfix">
