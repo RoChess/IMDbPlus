@@ -719,7 +719,7 @@
 				<!-- Runtime -->
 				<set name="rx_runtime">
 					<![CDATA[
-					(?<movieRuntime>\d+) min\s*</time>|(?<movieRuntimeHours>\d+)h\s*(?<movieRuntimeMinutes>\d+)min\s*</time>
+					<h4[^>]+>Runtime:</h4>\s*<time[^>]+>(?<movieRuntime>\d+) min\s*</time>|(?<movieRuntimeHours>\d+)h\s*(?<movieRuntimeMinutes>\d+)min\s*</time>
 					]]>
 				</set>
 				<parse name="runtime" input="${details_page}" regex="${rx_runtime}" />
