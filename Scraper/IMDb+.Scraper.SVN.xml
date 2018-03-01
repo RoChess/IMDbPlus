@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="77" />
-		<published month="02" day="20" year="2018" />
+		<version major="4" minor="9" point="78" />
+		<published month="02" day="28" year="2018" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -764,17 +764,19 @@
 				<!-- Foreign page language -->
 				<if test="${rx_language}!=">
 					<parse name="language" input="${foreign_page}" regex="${rx_language}" />
+					<set name="movie.language" value="${language[0][0]:htmldecode}" />
 				</if>
 				<!-- Use imdb.com (USA) language is RegExp is not defined -->
 				<if test="${rx_language}=">
 					<set name="rx_language">
 						<![CDATA[
-						<a\s+href="[^&amp;]+&amp;languages=[^>]*>(?<movieLanguage>[^<]+)</a>
+						<h4[^>]+>Language:</h4>\s*(?<movieLanguage>.+?)(?:&nbsp;|<nobr>|See more|</div>)
 						]]>
 					</set>
 					<parse name="language" input="${details_page}" regex="${rx_language}" />
+					<set name="language_clean" value="|${language[0][0]:striptags}|" />
+					<replace name="movie.language" input="${language_clean:htmldecode}" pattern="\s*[|]+\s*" with="|" />
 				</if>
-				<set name="movie.language" value="${language[0][0]:htmldecode}" />
 			</if>
 
 		<!-- START: Certification -->
@@ -1326,7 +1328,7 @@
 				<if test="${movie.summary}=">
 					<set name="rx_user_reviews">
 						<![CDATA[
-						<h2>User Reviews</h2>.+?<div>\s*<p itemprop="description">(?<movieReview>.+?)</p>\s*</div>
+						<h2>User Reviews</h2>.+?<div>\s*<p itemprop="reviewBody">(?<movieReview>.+?)</p>\s*</div>
 						]]>
 					</set>
 					<parse name="user_reviews" input="${details_page}" regex="${rx_user_reviews}" />
