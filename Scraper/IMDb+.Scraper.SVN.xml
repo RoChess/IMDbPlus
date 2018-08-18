@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="83" />
-		<published month="07" day="08" year="2018" />
+		<version major="4" minor="9" point="84" />
+		<published month="08" day="18" year="2018" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -404,12 +404,12 @@
 				<!-- Directors -->
 				<set name="rx_directors_block">
 					<![CDATA[
-					Director[s]?:\s*</h4>[^<]*(?<directors_block>.*?)</div>
+					<script type="[^"]+json">.+?"director":.+?(?:\{.+?"name":\s*"(?<director>[^"]+)"\s*\}[,\s]*)+
 					]]>
 				</set>
 				<set name="rx_directors">
 					<![CDATA[
-					<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7}[^"]+"[^>]*>(?:<span[^>]+>)?(?<movieDirectors>[^<]+)(?:</span>)?</a>
+					(?<movieDirectors>.+?)
 					]]>
 				</set>
 				<parse name="directors_block" input="${details_page}" regex="${rx_directors_block}" />
@@ -458,12 +458,12 @@
 				<!-- Actors -->
 				<set name="rx_actors_block">
 					<![CDATA[
-					<h2>Cast</h2>(?<cast_block>.+?)<h2>Details</h2>
+					<script type="[^"]+json">.+?"actor":.+?(?:\{.+?"name":\s*"(?<actor>[^"]+)"\s*\}[,\s]*)+
 					]]>
 				</set>
 				<set name="rx_actors">
 					<![CDATA[
-					<td class="name"[^<]*<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7}[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieActors>.+?)\s*(?:</span>)?</a>|<span class="itemprop" itemprop="name"[^>]*>\s*(?<movieActors>[^<]+)</span>\s*</a>
+					(?<movieActors>.+?)
 					]]>
 				</set>
 				<parse name="actors_block" input="${details_page}" regex="${rx_actors_block}" />
@@ -1041,12 +1041,12 @@
 			<!-- Get imdb + metacritics votes/scores and fix to a scale of 10 if needed -->
 			<set name="rx_imdb_votes">
 				<![CDATA[
-				title="(?<imdbPopularity>[^\s]+) IMDb users\D+(?<imdbScore>\d+(?:.\d+)?)/10"(?:.+?Metascore:\s*<a[^>]+>\s*(?<metaScore>\d+)/100.+?"criticreviews[^>]+>\s*(?<metaPopularity>[^\s]+)\s*</a>)?|<span itemprop="ratingValue">(?<imdbScore>\d+(?:.\d+)?)</span>.+?<span class="small" itemprop="ratingCount">(?<imdbPopularity>[^<]+)</span>(?:.+?<span itemprop="reviewCount">(?<metaPopularity>[^\s]+) crit[^<]+</span>.+?<div class="metacriticScore score_mixed titleReviewBarSubItem">\s*<span>(?<metaScore>\d+)</span>)?
+				title="(?<imdbScore>\d+(?:.\d+)?) based on (?<imdbPopularity>[^\s]+) user ratings".+?<div class="metacriticScore score_mixed titleReviewBarSubItem">\s*<span>(?<metaScore>\d+)</span>.+?>(?<metaPopularity>[^\s]+) crit[^<]+</a>
 				]]>
 			</set>
 			<parse name="imdb_votes" input="${details_page}" regex="${rx_imdb_votes}" />
-			<set name="imdb_score" value="${imdb_votes[0][1]:htmldecode}" />
-			<replace name="imdb_votes_clean" input="${imdb_votes[0][0]:htmldecode}" pattern="[\,\.]" with='' />
+			<set name="imdb_score" value="${imdb_votes[0][0]:htmldecode}" />
+			<replace name="imdb_votes_clean" input="${imdb_votes[0][1]:htmldecode}" pattern="[\,\.]" with='' />
 			<if test="${math_node_test}=9.99">
 				<if test="${imdb_votes[0][2]:htmldecode}>0">
 					<divide name="metascore_score" value1="${imdb_votes[0][2]:htmldecode}" value2="10" result_type="float" />
