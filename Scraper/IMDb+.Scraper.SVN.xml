@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="87" />
-		<published month="08" day="21" year="2018" />
+		<version major="4" minor="9" point="88" />
+		<published month="12" day="12" year="2018" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -575,7 +575,7 @@
 					</set>
 					<set name="rx_genres">
 						<![CDATA[
-						<a\s+(?:onclick="[^"]+"\s*)?href="(?:/Sections)?/[Gg]enre[s]?/[^"]+"[^>]*>\s*(?<movieGenres>.+?)</a>
+						<a href="/search/title\?genre[^"]+"[^>]*\s*>\s*(?<movieGenres>.+?)</a>
 						]]>
 					</set>
 					<parse name="genres_block" input="${details_page}" regex="${rx_genres_block}" />
@@ -766,7 +766,7 @@
 					<parse name="language" input="${foreign_page}" regex="${rx_language}" />
 					<set name="movie.language" value="${language[0][0]:htmldecode}" />
 				</if>
-				<!-- Use imdb.com (USA) language is RegExp is not defined -->
+				<!-- Use imdb.com (USA) language if RegExp is not defined -->
 				<if test="${rx_language}=">
 					<set name="rx_language">
 						<![CDATA[
