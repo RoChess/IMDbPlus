@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="13" />
-		<published month="1" day="17" year="2019" />
+		<version major="1" minor="9" point="14" />
+		<published month="1" day="18" year="2019" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -190,8 +190,8 @@
 	<rename id="tt0207972" title="Annie (TV)" />
 	<rename id="tt1823664" title="Annie (Remake)" />
 	<rename id="tt0075686" title="Annie Hall" collection="» Oscars for Best Picture" />
-	<rename id="tt0478970" title="Ant-Man I" collection="The Avengers|» Superheroes" />
-	<rename id="tt5095030" title="Ant-Man II: The Wasp" collection="The Avengers|» Superheroes" />
+	<rename id="tt0478970" title="Ant-Man I" collection="Ant-Man|The Avengers|» Superheroes" />
+	<rename id="tt5095030" title="Ant-Man II: The Wasp" collection="Ant-Man|The Avengers|» Superheroes" />
 	<rename id="tt1477834" title="Aquaman" collection="The Justice League|» Superheroes" />
 	<rename id="tt0368578" sortby="Are We There Yet 1" collection="Are We There Yet" />	
 	<rename id="tt0422774" sortby="Are We There Yet 2" collection="Are We There Yet" />	
