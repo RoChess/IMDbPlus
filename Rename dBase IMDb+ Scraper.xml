@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="14" />
-		<published month="1" day="18" year="2019" />
+		<version major="1" minor="9" point="15" />
+		<published month="1" day="19" year="2019" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -468,6 +468,7 @@
 	<rename id="tt1985966" title="Cloudy II: Revenge of the Leftovers" />
 	<rename id="tt1060277" title="Cloverfield I" />
 	<rename id="tt1179933" title="Cloverfield II: 10 Cloverfield Lane" />
+	<rename id="tt2548396" title="Cloverfield III: The Cloverfield Paradox" />
 	<rename id="tt0088933" title="Cocoon I" />
 	<rename id="tt0094890" title="Cocoon II: The Return" />
 	<rename id="tt0017765" title="College (Classic)" />
@@ -576,6 +577,7 @@
 	<rename id="tt2908446" title="Divergent II: Insurgent" />
 	<rename id="tt3410834" title="Divergent III: Allegiant" />
 	<rename id="tt3663184" title="Divergent IV: Ascendant" />
+	<rename id="tt1606752" sortby="Doc Savage I" collection="» Superheroes" />
 	<rename id="tt0118998" title="Doctor Dolittle I" />
 	<rename id="tt0240462" title="Doctor Dolittle II" />
 	<rename id="tt0481513" title="Doctor Dolittle III" />
@@ -652,6 +654,9 @@
 	<rename id="tt0022854" title="Emma (Classic)" />
 	<rename id="tt0118308" title="Emma (TV)" />
 	<rename id="tt0362590" title="Employee of the Month (Cult)" />
+	<rename id="tt1211956" title="Escape Plan I" />
+	<rename id="tt6513656" title="Escape Plan II: Hades" />
+	<rename id="tt6772804" title="Escape Plan III: Devil's Station" />
 	<rename id="tt0089118" title="F/X I" />
 	<rename id="tt0101846" title="F/X II" />
 	<rename id="tt3183660" title="Fantastic Beasts and Where to Find Them I" />
@@ -1251,7 +1256,9 @@
 	<rename id="tt0317919" title="Mission: Impossible III" />
 	<rename id="tt1229238" title="Mission: Impossible IV - Ghost Protocol" />
 	<rename id="tt2381249" title="Mission: Impossible V - Rogue Nation" />
-	<rename id="tt4912910" title="Mission: Impossible VI" />
+	<rename id="tt4912910" title="Mission: Impossible VI - Fallout" />
+	<rename id="tt9603212" title="Mission: Impossible VII" />
+	<rename id="tt9603208" title="Mission: Impossible VIII" />
 	<rename id="tt0057591" title="Monsieur Gangster" foreign="Les tontons flingueurs" />
 	<rename id="tt0198781" sortby="Monsters Inc 01" collection="Monsters, Inc." />	
 	<rename id="tt1453405" sortby="Monsters Inc 02" collection="Monsters, Inc." />	
@@ -1444,6 +1451,7 @@
 	<rename id="tt0093773" title="Predator I" />
 	<rename id="tt0100403" title="Predator II" />
 	<rename id="tt1424381" title="Predator III: Predators" />
+	<rename id="tt3829266" title="Predator IV: The Predator" />
 	<rename id="tt0093304" title="Prison on Fire I" foreign="Gam yuk fung wan" />
 	<rename id="tt0103044" title="Prison on Fire II" foreign="Jian yu feng yun II: Tao fan" />
 	<rename id="tt0085127" title="Project A I" foreign="'A' gai wak" />
@@ -1523,6 +1531,7 @@
 	<rename id="tt0100507" title="Rocky V" />
 	<rename id="tt0479143" title="Rocky VI: Rocky Balboa" />
 	<rename id="tt3076658" title="Rocky VII: Creed" />
+	<rename id="tt6343314" title="Rocky VIII: Creed II" />
 	<rename id="tt0088011" title="Romancing the Stone I" />
 	<rename id="tt0089370" title="Romancing the Stone II: The Jewel of the Nile" />
 	<rename id="tt0152225" title="Romeo &amp; Juliet (Canada)" />
@@ -1554,6 +1563,8 @@
 	<rename id="tt0047444" title="Samurai I: Musashi Miyamoto" />
 	<rename id="tt0048579" title="Samurai II: Duel at Ichijoji Temple" />
 	<rename id="tt0049710" title="Samurai III: Duel at Ganryu Island" />
+	<rename id="tt2126355" sortby="San Andreas I" />
+	<rename id="tt5478534" title="San Andreas II" />
 	<rename id="tt0206275" title="Save the Last Dance I" />
 	<rename id="tt0486656" title="Save the Last Dance II" />
 	<rename id="tt0387564" title="Saw I" />
@@ -1636,6 +1647,8 @@
 	<rename id="tt0897387" title="Shrek (Short): Shrek The Halls" sortby="Shrek X03" collection="Shrek" />
 	<rename id="tt1830577" title="Shrek (Short): Donkey's Christmas Shrektacular" sortby="Shrek X04" collection="Shrek" />
 	<rename id="tt1725156" title="Shrek (Short): Scared Shrekless" sortby="Shrek X05" collection="Shrek" />
+	<rename id="tt3397884" title="Sicario I" />
+	<rename id="tt5052474" title="Sicario II: Day of the Soldado" />
 	<rename id="tt0401792" title="Sin City I" />
 	<rename id="tt0458481" title="Sin City II: A Dame to Kill For" />
 	<rename id="tt1922777" title="Sinister I" />
@@ -1929,7 +1942,7 @@
 	<rename id="tt0800080" title="The Incredible Hulk" collection="» Superheroes" />
 	<rename id="tt0317705" title="The Incredibles I" collection="The Incredibles|» Superheroes" />
 	<rename id="tt3606756" title="The Incredibles II" collection="The Incredibles|» Superheroes" />
-	<rename id="tt2388771" title="The Jungle Book (Reboot)" />
+	<rename id="tt2388771" title="The Jungle Book (Reboot) Mowgli: Legend of the Jungle" />
 	<rename id="tt0974015" title="The Justice League I: Part One" collection="The Justice League|» Superheroes" />
 	<rename id="tt4121026" title="The Justice League II: Part Two" collection="The Justice League|» Superheroes" />
 	<rename id="tt0087538" title="The Karate Kid I" />
@@ -2060,6 +2073,7 @@
 	<rename id="tt2184339" title="The Purge I" />
 	<rename id="tt2975578" title="The Purge II: Anarchy" />
 	<rename id="tt4094724" title="The Purge III: Election Year" />
+	<rename id="tt6133466" title="The Purge IV: The First Purge" />
 	<rename id="tt1899353" title="The Raid I: Redemption" />
 	<rename id="tt2265171" title="The Raid II: Retaliation" />
 	<rename id="tt3448656" title="The Raid III" />
@@ -2310,6 +2324,8 @@
 	<rename id="tt1340773" title="Women in Trouble II: Elektra Luxx" />
 	<rename id="tt1341342" title="Women in Trouble III: Women in Ecstasy" />
 	<rename id="tt0451279" sortby="Wonder Woman I" collection="The Justice League|» Superheroes" />
+	<rename id="tt1772341" title="Wreck-It Ralph I" />
+	<rename id="tt5848272" title="Wreck-It Ralph II: Ralph Breaks the Internet" />
 	<rename id="tt0295700" title="Wrong Turn I" />
 	<rename id="tt0804555" title="Wrong Turn II: Dead End" />
 	<rename id="tt1261978" title="Wrong Turn III: Left For Dead" />
