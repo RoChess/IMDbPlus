@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="15" />
-		<published month="1" day="19" year="2019" />
+		<version major="1" minor="9" point="16" />
+		<published month="2" day="25" year="2019" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -790,6 +790,7 @@
 	<rename id="tt0071576" title="Great Expectations (TV)" />
 	<rename id="tt0167187" title="Great Expectations (UK)" />
 	<rename id="tt1663633" title="Green Arrow (DC Showcase)" collection="» Superheroes" />
+	<rename id="tt6966692" title="Green Book" collection="» Oscars for Best Picture" />
 	<rename id="tt1133985" title="Green Lantern" collection="Green Lantern|» Superheroes" />
 	<rename id="tt1384590" title="Green Lantern (DC) I: First Flight" collection="Green Lantern|» Superheroes" />
 	<rename id="tt1683043" title="Green Lantern (DC) II: Emerald Knights" collection="Green Lantern|» Superheroes" />
