@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="88" />
-		<published month="12" day="12" year="2018" />
+		<version major="4" minor="9" point="89" />
+		<published month="05" day="10" year="2019" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1342,7 +1342,7 @@
 				<!-- AKA page -->
 				<set name="rx_aka">
 					<![CDATA[
-					<tr[^>]+>\s+?<td>([^<]+)</td>\s+?<td>([^<]+)?</td>\s+?</tr>
+					<tr[^>]+>\s+?<td[^>]+>([^<]+)</td>\s+?<td[^>]+>([^<]+)?</td>\s+?</tr>
 					]]>
 				</set>
 				<retrieve name="aka_page" url="${site}releaseinfo" />
@@ -1361,7 +1361,7 @@
 				<if test="${title_year[0][0]}!=">
 					<set name="rx_aka_english">
 						<![CDATA[
-						<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*?<td>[^<]*USA \(new title\)[^<]*</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+						<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*?<td[^>]+>[^<]*USA \(new title\)[^<]*</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 						]]>
 					</set>
 					<!-- TEST MOVIE: http://www.imdb.com/title/tt1415283/releaseinfo (Nanny McPhee Returns) -->
@@ -1380,7 +1380,7 @@
 						<!-- UK ratings are disabled so we check for USA title first -->
 						<set name="rx_aka_english">
 							<![CDATA[
-							<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td>USA</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+							<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td>USA</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 							]]>
 						</set>
 						<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
@@ -1389,7 +1389,7 @@
 					<if test="${global_options_uk_rating}=true">
 						<set name="rx_aka_english">
 							<![CDATA[
-							<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td>UK</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+							<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td[^>]+>UK</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 							]]>
 						</set>
 						<!-- TEST MOVIE: http://www.imdb.com/title/tt0241527/releaseinfo (Harry Potter) -->
@@ -1400,7 +1400,7 @@
 						<!-- Checking for International English title -->
 						<set name="rx_aka_english">
 							<![CDATA[
-							<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td>World-wide \(English title\)</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+							<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td[^>]+>World-wide \(English title\)</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 							]]>
 						</set>
 						<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
@@ -1410,7 +1410,7 @@
 							<!-- Locate English 'Hong Kong' title -->
 							<set name="rx_aka_english">
 								<![CDATA[
-								<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>Hong Kong[^<]*English[^<]*</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+								<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td[^>]+>Hong Kong[^<]*English[^<]*</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 								]]>
 							</set>
 							<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
@@ -1431,7 +1431,7 @@
 										<!-- Give USA title one last chance for British-English users -->
 										<set name="rx_aka_english">
 											<![CDATA[
-											<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td>USA</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+											<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td[^>]+>USA</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 											]]>
 										</set>
 										<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
@@ -1444,7 +1444,7 @@
 									<!-- Updated to look for last "(original title)" if one exists, due to Amazon/IMDb stupidity -->
 									<set name="rx_aka_english">
 										<![CDATA[
-										<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>\s*<table[^>]+>.+<td>\s*\(original title\)</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>
+										<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>\s*<table[^>]+>.+<td[^>]+>\s*\(original title\)</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>
 										]]>
 									</set>
 									<!-- TEST MOVIE: 4proxy.de on http://www.imdb.com/title/tt0465624/ (My Super Ex-Girlfriend) -->
@@ -1454,7 +1454,7 @@
 										<!-- Last resort by looking for (undefined) titles -->
 										<set name="rx_aka_english">
 											<![CDATA[
-											<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?generic.monitoring.set_twilight_info\(\s*"title[^"]+",\s*"US",.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td></td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+											<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?generic.monitoring.set_twilight_info\(\s*"title[^"]+",\s*"US",.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td[^>]+></td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 											]]>
 										</set>
 										<!-- TEST MOVIE: http://www.imdb.com/title/tt0061806/releaseinfo (Castle of Bloody Lust) -->
