@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="89" />
-		<published month="05" day="10" year="2019" />
+		<version major="4" minor="9" point="90" />
+		<published month="05" day="21" year="2019" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1875,7 +1875,7 @@
 			<!-- Get cover directly by manipulating details page thumbnail -->
 			<set name="rx_cover">
 				<![CDATA[
-				title="[^)]+\)\s*Poster"\s*src="([^_]+_V1)(?:\._CR[^_]+)?[^.]+([^"]+)"
+				content="(http[^_]+_V1)(?:\._CR[^_]+)?[^.]+([^"]+)"
 				]]>
 			</set>
 			<parse name="cover_src" input="${details_page}" regex="${rx_cover}" />
