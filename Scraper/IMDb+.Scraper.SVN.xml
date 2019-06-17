@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="90" />
-		<published month="05" day="21" year="2019" />
+		<version major="4" minor="9" point="91" />
+		<published month="06" day="17" year="2019" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -409,7 +409,7 @@
 				</set>
 				<set name="rx_directors">
 					<![CDATA[
-					<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7}[^"]+"[^>]*>(?:<span[^>]+>)?(?<movieDirectors>[^<]+)(?:</span>)?</a>
+					<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7,8}[^"]+"[^>]*>(?:<span[^>]+>)?(?<movieDirectors>[^<]+)(?:</span>)?</a>
 					]]>
 				</set>
 				<parse name="directors_block" input="${details_page}" regex="${rx_directors_block}" />
@@ -436,7 +436,7 @@
 				</set>
 				<set name="rx_writers">
 					<![CDATA[
-					<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7}[^"]+"[^>]*>(?:<span[^>]+>)?(?<movieWriters>[^<]+)(?:</span>)?</a>
+					<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7,8}[^"]+"[^>]*>(?:<span[^>]+>)?(?<movieWriters>[^<]+)(?:</span>)?</a>
 					]]>
 				</set>
 				<parse name="writers_block" input="${details_page}" regex="${rx_writers_block}" />
@@ -1655,7 +1655,7 @@
 
 			<set name="rx_imdb_results">
 				<![CDATA[
-				<title>(?:IMDb[\s-]*)?(?:&#x27;)?(.+?)(?:&#x27;)?\s*\(\D*(\d{4})[^)]*\).*?</title>.+?(tt\d{7})/fullcredits
+				<title>(?:IMDb[\s-]*)?(?:&#x27;)?(.+?)(?:&#x27;)?\s*\(\D*(\d{4})[^)]*\).*?</title>.+?(tt\d{7,8})/fullcredits
 				]]>
 			</set>
 
@@ -1757,7 +1757,7 @@
 
 						<set name="rx_search_results">
 							<![CDATA[
-							<tr\s*class="findResult[^>]+>(?:\s*<td\s*class="primary_photo">\s*<a[^>]+><img[^>]+></a>\s*</td>)?\s*<td\s*class="result_text">\s*<a\s*href="/title/(?<imdb_id>tt\d{7})[^"]+"\s*>(?<title>[^<]+)</a>(?:\s*\([\/IVX]*\))?\s*\((?<year>\d{4})[^)]*\)(?:(?:\s*<br/>aka\s*<i>")(?<aka>[^"]+)(?:"</i>\s*))?[^<]+</td>\s*</tr>
+							<tr\s*class="findResult[^>]+>(?:\s*<td\s*class="primary_photo">\s*<a[^>]+><img[^>]+></a>\s*</td>)?\s*<td\s*class="result_text">\s*<a\s*href="/title/(?<imdb_id>tt\d{7,8})[^"]+"\s*>(?<title>[^<]+)</a>(?:\s*\([\/IVX]*\))?\s*\((?<year>\d{4})[^)]*\)(?:(?:\s*<br/>aka\s*<i>")(?<aka>[^"]+)(?:"</i>\s*))?[^<]+</td>\s*</tr>
 							]]>
 						</set>
 
