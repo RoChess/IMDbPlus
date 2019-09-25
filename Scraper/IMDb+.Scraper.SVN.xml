@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="91" />
-		<published month="06" day="17" year="2019" />
+		<version major="4" minor="9" point="92" />
+		<published month="09" day="24" year="2019" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -790,7 +790,7 @@
 				<if test="${global_options_uk_rating}=true">
 					<set name="rx_certification">
 						<![CDATA[
-						UK:(?<movieCertification>(?:U)|(?:PG)|(?:12)|(?:12A)|(?:15)|(?:18)|(?:R18))</a>
+						United Kingdom:(?<movieCertification>(?:U)|(?:PG)|(?:12)|(?:12A)|(?:15)|(?:18)|(?:R18))</a>
 						]]>
 					</set>
 				</if>
@@ -799,7 +799,7 @@
 				<if test="${global_options_english_movie_rating}=2">
 					<set name="rx_certification">
 						<![CDATA[
-						UK:(?<movieCertification>(?:U)|(?:PG)|(?:12)|(?:12A)|(?:15)|(?:18)|(?:R18))</a>(?! <i>\(original rating\))
+						United Kingdom:(?<movieCertification>(?:U)|(?:PG)|(?:12)|(?:12A)|(?:15)|(?:18)|(?:R18))</a>(?! <i>\(original rating\))
 						]]>
 					</set>
 				</if>
