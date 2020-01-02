@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="16" />
-		<published month="2" day="25" year="2019" />
+		<version major="1" minor="9" point="17" />
+		<published month="1" day="1" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -410,6 +410,9 @@
 	<rename id="tt0041882" title="Charlie Chan XLVII: The Sky Dragon" sortby="Charlie Chan 47" />
 	<rename id="tt0067670" title="Charlie Chan XLVIII: The Return of Charlie Chan (TV)" sortby="Charlie Chan 48" />
 	<rename id="tt0082159" title="Charlie Chan XLIX: Charlie Chan and the Curse of the Dragon Queen" sortby="Charlie Chan 49" />
+	<rename id="tt0160127" title="Charlie's Angels I" />
+	<rename id="tt0305357" title="Charlie's Angels II: Full Throttle" />
+	<rename id="tt5033998" title="Charlie's Angels (Reboot)" sortby="Charlie's Angels (Reboot) I" />
 	<rename id="tt0070016" title="Charlotte's Web (Original) I" />
 	<rename id="tt0355315" title="Charlotte's Web (Original) II: Wilbur's Great Adventure" />
 	<rename id="tt0892255" title="Che I: The Argentine" />
@@ -775,7 +778,10 @@
 	<rename id="tt4824308" title="God's Not Dead II" />
 	<rename id="tt0047034" title="Godzilla (Original)" collection="Godzilla" />
 	<rename id="tt0120685" title="Godzilla" collection="Godzilla" />
-	<rename id="tt0831387" title="Godzilla (Remake)" collection="Godzilla" />
+	<rename id="tt0831387" title="Godzilla I" />
+	<rename id="tt3741700" title="Godzilla II: King of the Monsters" />
+	<rename id="tt5034838" title="Godzilla III: Godzilla vs. Kong" />
+	<rename id="tt3731562" title="Kong: Skull Island" sortby="Kong I: Skull Island" collection="Godzilla|King Kong" />
 	<rename id="tt0036872" title="Going My Way" collection="» Oscars for Best Picture" />
 	<rename id="tt0031381" title="Gone with the Wind" collection="» Oscars for Best Picture" />
 	<rename id="tt0092593" title="Goodbye, Children" foreign="Au Revoir Les Enfants" />
@@ -971,7 +977,7 @@
 	<rename id="tt0460780" title="In the Name of the King I: A Dungeon Siege Tale" />
 	<rename id="tt1767319" title="In the Name of the King II: Two Worlds" />
 	<rename id="tt2379386" title="In the Name of the King III: The Last Mission" />
-	<rename id="tt0116629" title="Independence Day" sortby="Independence Day I" />
+	<rename id="tt0116629" title="Independence Day I" />
 	<rename id="tt1628841" title="Independence Day II: Resurgence" />
 	<rename id="tt1628842" title="Independence Day III: ID Forever Part II" />
 	<rename id="tt0082971" title="Indiana Jones I: The Raiders of the Lost Ark" />
@@ -1008,6 +1014,8 @@
 	<rename id="tt1034314" title="Iron Sky I" />
 	<rename id="tt3038708" title="Iron Sky II: The Coming Race" />
 	<rename id="tt0025316" title="It Happened One Night" collection="» Oscars for Best Picture" />
+	<rename id="tt1396484" title="It I" />
+	<rename id="tt7349950" title="It II: Chapter Two" />
 	<rename id="tt1233301" title="Ironclad I" />
 	<rename id="tt2404583" title="Ironclad II: Battle for Blood" />
 	<rename id="tt0821787" title="Ivanhoe (Cartoon)" />
@@ -1083,6 +1091,7 @@
 	<rename id="tt0274166" title="Johnny English I" />
 	<rename id="tt1634122" title="Johnny English II: Reborn" />
 	<rename id="tt6921996" title="Johnny English III: Strikes Again" />
+	<rename id="tt7286456" title="Joker" collection="» Superheroes" />
 	<rename id="tt1606600" title="Jonah Hex (DC Showcase)" collection="» Superheroes" />
 	<rename id="tt1075747" title="Jonah Hex" collection="» Superheroes" />
 	<rename id="tt0373051" title="Journey I: To the Center of the Earth" />
@@ -1212,14 +1221,16 @@
 	<rename id="tt0097815" title="Major League I" />
 	<rename id="tt0110442" title="Major League II" />
 	<rename id="tt0120742" title="Major League III: Back to the Minors" />
-	<rename id="tt1587310" sortby="Maleficent I" />
-	<rename id="tt4777008" title="Maleficent II" />
+	<rename id="tt1587310" title="Maleficent I" />
+	<rename id="tt4777008" title="Maleficent II: Mistress of Evil" />
 	<rename id="tt0795421" title="Mamma Mia! I" />
 	<rename id="tt6911608" title="Mamma Mia! II: Here We Go Again" />
 	<rename id="tt0290747" title="Man-Thing" collection="» Superheroes" />
 	<rename id="tt0822832" title="Marley &amp; Me I" />
 	<rename id="tt1704614" title="Marley &amp; Me II: The Puppy Years" />
 	<rename id="tt0048356" title="Marty" collection="» Oscars for Best Picture" />
+	<rename id="tt3369806" title="Max I" />
+	<rename id="tt5843838" title="Max II: White House Hero" />
 	<rename id="tt1790864" title="Maze Runner I" />
 	<rename id="tt4046784" title="Maze Runner II: The Scorch Trials" />
 	<rename id="tt4500922" title="Maze Runner III: The Death Cure" />
@@ -1328,6 +1339,7 @@
 	<rename id="tt0063385" title="Oliver!" collection="» Oscars for Best Picture" />
 	<rename id="tt2302755" title="Olympus Has Fallen" sortby="Olympus Has Fallen I" collection="Olympus Has Fallen" />
 	<rename id="tt3300542" title="London Has Fallen" sortby="Olympus Has Fallen II" collection="Olympus Has Fallen" />
+	<rename id="tt6189022" title="Angel Has Fallen" sortby="Olympus Has Fallen III" collection="Olympus Has Fallen" />
 	<rename id="tt0047296" title="On the Waterfront" collection="» Oscars for Best Picture" />
 	<rename id="tt0103285" title="Once Upon a Time in China I" foreign="Wong Fei Hung" />
 	<rename id="tt0105839" title="Once Upon a Time in China II" foreign="Wong Fei Hung II: Nam yi dong ji keung" />
@@ -1487,6 +1499,7 @@
 	<rename id="tt0089880" title="Rambo II: First Blood II" />
 	<rename id="tt0095956" title="Rambo III: First Blood III" />
 	<rename id="tt0462499" title="Rambo IV: First Blood IV" />
+	<rename id="tt1206885" title="Rambo V: Last Blood" />
 	<rename id="tt1401143" title="Rare Exports: A Christmas Tale" />
 	<rename id="tt0433035" title="Real Steel" sortby="Real Steal I" />
 	<rename id="tt1896804" title="Real Steel II" />
@@ -1805,6 +1818,8 @@
 	<rename id="tt0983193" sortby="The Adventures of Tintin I" collection="The Adventures of Tintin" />	
 	<rename id="tt1037226" title="The Adventures of Tintin II: Prisoners of the Sun" />
 	<rename id="tt1204343" title="The Adventures of Tintin III" />
+	<rename id="tt1985949" title="The Angry Birds Movie I" />
+	<rename id="tt6095472" title="The Angry Birds Movie II" />
 	<rename id="tt0948470" title="The Amazing Spider-Man I" collection="The Amazing Spider-Man|Spider-Man|» Superheroes" />
 	<rename id="tt1872181" title="The Amazing Spider-Man II" collection="The Amazing Spider-Man|Spider-Man|» Superheroes" />
 	<rename id="tt0053604" title="The Apartment" collection="» Oscars for Best Picture" />
@@ -2366,6 +2381,8 @@
 	<rename id="tt1332128" title="Zeitgeist II: Addendum" />
 	<rename id="tt1781069" title="Zeitgeist III: Moving Forward" />
 	<rename id="tt1965308" title="Zeitgeist IV: Beyond the Pale" />
+	<rename id="tt1156398" title="Zombieland I" />
+	<rename id="tt1560220" title="Zombieland II: Double Tap" />
 	<rename id="tt0196229" title="Zoolander I" />
 	<rename id="tt1608290" title="Zoolander II" />
 	<rename id="tt0383060" title="Zoom" collection="» Superheroes" />
