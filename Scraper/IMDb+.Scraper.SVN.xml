@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="93" />
-		<published month="12" day="24" year="2019" />
+		<version major="4" minor="9" point="94" />
+		<published month="01" day="07" year="2020" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -783,7 +783,7 @@
 			<!-- USA/MPAA default certification expression -->
 			<set name="rx_certification">
 				<![CDATA[
-				(?:>\s*USA:|Rated\s*)(?<movieCertification>(?:G)|(?:PG)|(?:PG-13)|(?:R)|(?:X)|(?:NC-17))(?:</a>|\s*for)|<meta itemprop="contentRating" content="(?<movieCertification>[^"]+)">
+				(?:>\s*USA:|United States:|Rated\s*)(?<movieCertification>(?:G)|(?:PG)|(?:PG-13)|(?:R)|(?:X)|(?:NC-17))(?:</a>|\s*for)|<meta itemprop="contentRating" content="(?<movieCertification>[^"]+)">|"ContentRating":\s*"(?<movieCertification>[^"]+)"|<h4[^<]+>Certificate:</h4>\s*<span>(?<movieCertification>[^<]+)</span>
 				]]>
 			</set>
 			<if test="${global_options_english_movie_rating}&lt;=1">
