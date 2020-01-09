@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="95" />
-		<published month="01" day="08" year="2020" />
+		<version major="4" minor="9" point="96" />
+		<published month="01" day="09" year="2020" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -420,7 +420,8 @@
 				<if test="${global_options_one_writer_director}=false">
 					<set name="movie.directors" value="|" />
 					<loop name="currDirector" on="directors" limit="10">
-						<set name="movie.directors" value="${movie.directors}${currDirector[0]:htmldecode}|" />
+						<replace name="director_apostrophe" input="${currDirector[0]:htmldecode}" pattern="\\u0027" with="'" />
+						<set name="movie.directors" value="${movie.directors}${director_apostrophe}|" />
 					</loop>
 				</if>
 			</if>
@@ -447,7 +448,8 @@
 				<if test="${global_options_one_writer_director}=false">
 					<set name="movie.writers" value="|" />
 					<loop name="currWriter" on="writers" limit="10">
-						<set name="movie.writers" value="${movie.writers}${currWriter[0]:htmldecode}|" />
+						<replace name="writer_apostrophe" input="${currWriter[0]:htmldecode}" pattern="\\u0027" with="'" />
+						<set name="movie.writers" value="${movie.writers}${writer_apostrophe}|" />
 					</loop>
 				</if>
 			</if>
@@ -470,8 +472,8 @@
 				<parse name="actors" input="${actors_block}" regex="${rx_actors}" />
 				<set name="movie.actors" value="|" />
 				<loop name="currActor" on="actors" limit="30">
-					<replace name="actor_test_unicode" input="${currActor[0]:htmldecode}" pattern="\\u0027" with="'" />
-					<set name="movie.actors" value="${movie.actors}${currActor[0]:htmldecode}|" />
+					<replace name="actor_apostrophe" input="${currActor[0]:htmldecode}" pattern="\\u0027" with="'" />
+					<set name="movie.actors" value="${movie.actors}${actor_apostrophe}|" />
 				</loop>
 			</if>
 
