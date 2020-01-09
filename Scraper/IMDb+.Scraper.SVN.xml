@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="94" />
-		<published month="01" day="07" year="2020" />
+		<version major="4" minor="9" point="95" />
+		<published month="01" day="08" year="2020" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -52,7 +52,7 @@
 
 			<!--
 				RottenTomatoes has switched to a JSON system with API key.
-				Register for your own key @ http://developer.rottentomatoes.com/member/register
+				Register for your own key @ https://www.rottentomatoes.com/help_desk/proposalform
 			-->
 			<set name="global_options_rotten_api_key" value="" />
 
@@ -206,11 +206,11 @@
 			</if>
 
 			<if test="${global_options_secondary_details}&lt;=1">
-				<set name="site" value="http://akas.imdb.com/title/${movie.site_id}/" />
+				<set name="site" value="https://www.imdb.com/title/${movie.site_id}/" />
 			</if>
 			<if test="${global_options_secondary_details}>1">
 				<set name="alt_site_encoding" value="UTF-8" />
-				<set name="site" value="http://www.imdb.com/title/${movie.site_id}/" />
+				<set name="site" value="https://www.imdb.com/title/${movie.site_id}/" />
 
 				<!-- Reuse expression for all the foreign IMDb sites, and overwrite it for the non-IMDb ones -->
 				<set name="rx_title_year">
@@ -221,12 +221,12 @@
 
 				<!-- Temporary fix (hopefully) till IMDb restores localized data for DE/ES/FR/IT/PT -->
 				<if test="${global_options_secondary_details}&lt;=6">
-					<set name="alt_site" value="http://www.imdb.com/title/${movie.site_id}" />
+					<set name="alt_site" value="https://www.imdb.com/title/${movie.site_id}" />
 				</if>
 
 				<if test="${global_options_secondary_details}=(disabled)2">
-					<!-- Avatar = http://www.imdb.de/title/tt0499549 -->
-					<set name="alt_site" value="http://www.imdb.de/title/${movie.site_id}" />
+					<!-- Avatar = https://www.imdb.de/title/tt0499549 -->
+					<set name="alt_site" value="https://www.imdb.de/title/${movie.site_id}" />
 					<set name="rx_genres_block" value="&lt;h5&gt;Genre:&lt;/h5&gt;[^&gt;]+?&gt;\s+(.+?)\s+?&lt;/div&gt;" />
 					<set name="rx_genres" value="\s*([^\|]+)" />
 					<set name="rx_plot2">
@@ -242,8 +242,8 @@
 					<log LogLevel="Info" Message="IMDb+ Scraper: German (imdb.de) used for some data on: ${movie.site_id}" />
 				</if>
 				<if test="${global_options_secondary_details}=(disabled)3">
-					<!-- Avatar = http://www.imdb.es/title/tt0499549 -->
-					<set name="alt_site" value="http://www.imdb.es/title/${movie.site_id}" />
+					<!-- Avatar = https://www.imdb.es/title/tt0499549 -->
+					<set name="alt_site" value="https://www.imdb.es/title/${movie.site_id}" />
 					<set name="rx_genres_block" value="&lt;h5&gt;G&amp;#xE9;nero:&lt;/h5&gt;[^&gt;]+?&gt;\s+(.+?)\s+?&lt;/div&gt;" />
 					<set name="rx_genres" value="\s*([^\|]+)" />
 					<set name="rx_plot2">
@@ -261,8 +261,8 @@
 				<if test="${global_options_secondary_details}=4">
 					<if test="${global_options_mpdb_user}!=">
 						<if test="${global_options_mpdb_key}!=">
-							<!-- Avatar = http://blixy.net/mp/mpdb/proxy.php?imdb=tt0499549&amp;user=[MPDB-USER]&amp;key=[MPDB-KEY] -->
-							<set name="alt_site" value="http://blixy.net/mp/mpdb/proxy.php?imdb=${movie.site_id}&amp;user=${global_options_mpdb_user}&amp;key=${global_options_mpdb_key}" />
+							<!-- Avatar = https://rochess.com/mp/mpdb/proxy.php?imdb=tt0499549&amp;user=[MPDB-USER]&amp;key=[MPDB-KEY] -->
+							<set name="alt_site" value="https://rochess.com/mp/mpdb/proxy.php?imdb=${movie.site_id}&amp;user=${global_options_mpdb_user}&amp;key=${global_options_mpdb_key}" />
 							<set name="rx_title_year">
 								<![CDATA[
 								<title>(?<movieTitle>[^<]+)</title>[^<]+<year>(?<movieYear>\d{4})</year>
@@ -281,8 +281,8 @@
 					</if>
 				</if>
 				<if test="${global_options_secondary_details}=(disabled)5">
-					<!-- Avatar = http://www.imdb.it/title/tt0499549 -->
-					<set name="alt_site" value="http://www.imdb.it/title/${movie.site_id}" />
+					<!-- Avatar = https://www.imdb.it/title/tt0499549 -->
+					<set name="alt_site" value="https://www.imdb.it/title/${movie.site_id}" />
 					<set name="rx_genres_block" value="&lt;h5&gt;Genere:&lt;/h5&gt;[^&gt;]+?&gt;\s+(.+?)\s+?&lt;/div&gt;" />
 					<set name="rx_genres" value="\s*([^\|]+)" />
 					<set name="rx_plot2">
@@ -298,8 +298,8 @@
 					<log LogLevel="Info" Message="IMDb+ Scraper: Italian (imdb.it) used for some data on: ${movie.site_id}" />
 				</if>
 				<if test="${global_options_secondary_details}=(disabled)6">
-					<!-- Avatar = http://www.imdb.pt/title/tt0499549 -->
-					<set name="alt_site" value="http://www.imdb.pt/title/${movie.site_id}" />
+					<!-- Avatar = https://www.imdb.pt/title/tt0499549 -->
+					<set name="alt_site" value="https://www.imdb.pt/title/${movie.site_id}" />
 					<set name="rx_genres_block" value="&lt;h5&gt;G&amp;#xEA;nero:&lt;/h5&gt;[^&gt;]+?&gt;\s+(.+?)\s+?&lt;/div&gt;" />
 					<set name="rx_genres" value="\s*([^\|]+)" />
 					<set name="rx_plot2">
@@ -315,8 +315,8 @@
 					<log LogLevel="Info" Message="IMDb+ Scraper: Portugese (imdb.pt) used for some data on: ${movie.site_id}" />
 				</if>
 				<if test="${global_options_secondary_details}=7">
-					<!-- Avatar = http://www.nyheter24.se/filmtipset/imdb/tt0499549 -->
-					<set name="alt_site" value="http://www.nyheter24.se/filmtipset/imdb/${movie.site_id}" />
+					<!-- Avatar = https://www.nyheter24.se/filmtipset/imdb/tt0499549 -->
+					<set name="alt_site" value="https://www.nyheter24.se/filmtipset/imdb/${movie.site_id}" />
 					<set name="rx_title_year">
 						<![CDATA[
 						<h1>(?<movieTitle>[^<]+)</h1>.+?<b>Utgivnings&aring;r:</b></td><td align="left" valign="top">(?<movieYear>\d{4})</td>
@@ -333,9 +333,9 @@
 					<log LogLevel="Info" Message="IMDb+ Scraper: Swedish (filmtipset.se) used for some data on: ${movie.site_id}" />
 				</if>
 				<if test="${global_options_secondary_details}=8">
-					<!-- Avatar = http://kvikmyndir.is/xml/movingpictures/?id=0499549 -->
+					<!-- Avatar = https://kvikmyndir.is/xml/movingpictures/?id=0499549 -->
 					<replace name="imdb_id_fixed" input="${movie.imdb_id}" pattern="tt" with='' />
-					<set name="alt_site" value="http://kvikmyndir.is/xml/movingpictures/?id=${imdb_id_fixed}" />
+					<set name="alt_site" value="https://kvikmyndir.is/xml/movingpictures/?id=${imdb_id_fixed}" />
 					<set name="alt_site_encoding" value="ISO-8859-1" />
 					<set name="rx_title_year">
 						<![CDATA[
@@ -357,8 +357,8 @@
 					<log LogLevel="Info" Message="IMDb+ Scraper: Icelandic (kvikmyndir.is) used for some data on: ${movie.site_id}" />
 				</if>
 				<if test="${global_options_secondary_details}=9">
-					<!-- Avatar = http://blixy.net/mp/moviemeter/proxy.php?imdb=tt0499549 -->
-					<set name="alt_site" value="http://blixy.net/mp/moviemeter/proxy.php?imdb=${movie.site_id}" />
+					<!-- Avatar = https://rochess.com/mp/moviemeter/proxy.php?imdb=tt0499549 -->
+					<set name="alt_site" value="https://rochess.com/mp/moviemeter/proxy.php?imdb=${movie.site_id}" />
 					<set name="rx_title_year">
 						<![CDATA[
 						<title>(?<movieTitle>[^<]+)</title>[^<]+<year>(?<movieYear>\d{4})</year>
@@ -381,7 +381,7 @@
 					<log LogLevel="Debug" Message="###########################################################################" />
 				</if>
 			</if>
-			<retrieve name="details_page" url="${site}" />
+			<retrieve name="details_page" url="${site}" encoding="UTF-8" />
 			<if test="${global_options_debug_imdb_sources}=true">
 				<log LogLevel="Debug" Message="############################ IMDb+ HTML Source ############################" />
 				<log LogLevel="Debug" Message="##### details_page = ${details_page} #####" />
@@ -409,7 +409,7 @@
 				</set>
 				<set name="rx_directors">
 					<![CDATA[
-					<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7,8}[^"]+"[^>]*>(?:<span[^>]+>)?(?<movieDirectors>[^<]+)(?:</span>)?</a>
+					<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7,8}[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieDirectors>[^<]+)(?:</span>)?</a>
 					]]>
 				</set>
 				<parse name="directors_block" input="${details_page}" regex="${rx_directors_block}" />
@@ -436,7 +436,7 @@
 				</set>
 				<set name="rx_writers">
 					<![CDATA[
-					<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7,8}[^"]+"[^>]*>(?:<span[^>]+>)?(?<movieWriters>[^<]+)(?:</span>)?</a>
+					<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7,8}[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieWriters>[^<]+)(?:</span>)?</a>
 					]]>
 				</set>
 				<parse name="writers_block" input="${details_page}" regex="${rx_writers_block}" />
@@ -470,6 +470,7 @@
 				<parse name="actors" input="${actors_block}" regex="${rx_actors}" />
 				<set name="movie.actors" value="|" />
 				<loop name="currActor" on="actors" limit="30">
+					<replace name="actor_test_unicode" input="${currActor[0]:htmldecode}" pattern="\\u0027" with="'" />
 					<set name="movie.actors" value="${movie.actors}${currActor[0]:htmldecode}|" />
 				</loop>
 			</if>
@@ -525,7 +526,7 @@
 				<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
 			</if>
 
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_release_date" value="true" /></if><if test="${movie.release_date}="><set name="update_release_date" value="true" /></if>
+			<if test="${global_options_refresh_all_fields}=true"><set name="update_release_date" value="true" /></if><if test="${new_import}=true"><set name="update_release_date" value="true" /></if><if test="${movie.release_date}="><set name="update_release_date" value="true" /></if>
 			<if test="${update_release_date}=true">
 				<!-- Release Date -->
 				<set name="rx_release_date">
@@ -553,7 +554,7 @@
 				</set>
 				<set name="rx_studios">
 					<![CDATA[
-					<a[^>]+href="[^"]+"[^>]*>(?:<span[^>]+>)?(?<movieStudios>[^<]+)(?:</span>)?</a>
+					<a[^>]+href="[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieStudios>[^<]+)(?:</span>)?</a>
 					]]>
 				</set>
 				<parse name="studios_block" input="${details_page}" regex="${rx_studios_block}" />
@@ -866,7 +867,7 @@
 			<if test="${global_options_secondary_details}&lt;=1">
 				<set name="movie.certification" value="${certification_usa[0][0]:htmldecode}" />
 				<if test="${movie.certification}=">
-					<retrieve name="parentalguide_page" url="${site}parentalguide" />
+					<retrieve name="parentalguide_page" url="${site}parentalguide" encoding="UTF-8" />
 					<parse name="certification" input="${parentalguide_page}" regex="${rx_certification}" />
 					<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
 				</if>
@@ -971,7 +972,7 @@
 				<if test="${global_options_long_summary}=true">
 					<!-- imdb.com (USA) -->
 					<if test="${global_options_secondary_details}&lt;=1">
-						<retrieve name="summary_page" url="${site}plotsummary" />
+						<retrieve name="summary_page" url="${site}plotsummary" encoding="UTF-8" />
 						<parse name="summary" input="${summary_page}" regex="${rx_plot}" />
 						<set name="summary_clean" value="${summary[0][0]:striptags}" />
 						<set name="movie.summary" value="${summary_clean:htmldecode}" />
@@ -1136,7 +1137,7 @@
 				<!-- Adjust IMDb ID to be compatible with RottenTomatoes -->
 				<replace name="imdb_id_fixed" input="${movie.imdb_id}" pattern="tt" with='' />
 				<!-- Retrieve detail page from RottenTomatoes -->
-				<retrieve name="rotten_json" url="http://api.rottentomatoes.com/api/public/v1.0/movie_alias.json?${rotten_api_key}type=imdb&amp;id=${imdb_id_fixed}" />
+				<retrieve name="rotten_json" url="https://api.rottentomatoes.com/api/public/v1.0/movie_alias.json?${rotten_api_key}type=imdb&amp;id=${imdb_id_fixed}" />
 				<set name="rx_rotten_alternate">
 					<![CDATA[
 					"alternate":"([^"]+)"
@@ -1345,7 +1346,7 @@
 					<tr[^>]+>\s+?<td[^>]+>([^<]+)</td>\s+?<td[^>]+>([^<]+)?</td>\s+?</tr>
 					]]>
 				</set>
-				<retrieve name="aka_page" url="${site}releaseinfo" />
+				<retrieve name="aka_page" url="${site}releaseinfo" encoding="UTF-8" />
 				<if test="${global_options_debug_imdb_sources}=true">
 					<log LogLevel="Debug" Message="############################ IMDb+ HTML Source ############################" />
 					<log LogLevel="Debug" Message="##### aka_page = ${aka_page} #####" />
@@ -1364,7 +1365,7 @@
 						<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*?<td[^>]+>[^<]*USA \(new title\)[^<]*</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 						]]>
 					</set>
-					<!-- TEST MOVIE: http://www.imdb.com/title/tt1415283/releaseinfo (Nanny McPhee Returns) -->
+					<!-- TEST MOVIE: https://www.imdb.com/title/tt1415283/releaseinfo (Nanny McPhee Returns) -->
 					<parse name="rare_title_change" input="${aka_page}" regex="${rx_aka_english}" />
 					<if test="${rare_title_change[0][0]}!=">
 						<if test="${rare_title_change[0][0]}!=${title_year[0][0]}">
@@ -1383,7 +1384,7 @@
 							<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td>USA</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 							]]>
 						</set>
-						<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
+						<!-- TEST MOVIE: https://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
 						<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
 					</if>
 					<if test="${global_options_uk_rating}=true">
@@ -1392,7 +1393,7 @@
 							<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td[^>]+>UK</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 							]]>
 						</set>
-						<!-- TEST MOVIE: http://www.imdb.com/title/tt0241527/releaseinfo (Harry Potter) -->
+						<!-- TEST MOVIE: https://www.imdb.com/title/tt0241527/releaseinfo (Harry Potter) -->
 						<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
 					</if>
 
@@ -1403,7 +1404,7 @@
 							<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td[^>]+>World-wide \(English title\)</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 							]]>
 						</set>
-						<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
+						<!-- TEST MOVIE: https://www.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
 						<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
 
 						<if test="${title_year[0][0]}=">
@@ -1413,7 +1414,7 @@
 								<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td[^>]+>Hong Kong[^<]*English[^<]*</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 								]]>
 							</set>
-							<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
+							<!-- TEST MOVIE: https://www.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
 							<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
 
 							<if test="${title_year[0][0]}=">
@@ -1423,7 +1424,7 @@
 									<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>(?!.*?(?:Japan|Israel|Germany|Philippines|working title|short title|alternative spelling|promotional title|promotional abbreviation|informal title|teaser title|review title|IMAX))[^<]*English[^<]*</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 									]]>
 								</set>
-								<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
+								<!-- TEST MOVIE: https://www.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
 								<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
 
 								<if test="${global_options_uk_rating}=true">
@@ -1434,7 +1435,7 @@
 											<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td[^>]+>USA</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 											]]>
 										</set>
-										<!-- TEST MOVIE: http://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
+										<!-- TEST MOVIE: https://www.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
 										<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
 									</if>
 								</if>
@@ -1447,7 +1448,7 @@
 										<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>\s*<table[^>]+>.+<td[^>]+>\s*\(original title\)</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>
 										]]>
 									</set>
-									<!-- TEST MOVIE: 4proxy.de on http://www.imdb.com/title/tt0465624/ (My Super Ex-Girlfriend) -->
+									<!-- TEST MOVIE: 4proxy.de on https://www.imdb.com/title/tt0465624/ (My Super Ex-Girlfriend) -->
 									<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
 
 									<if test="${title_year[0][0]}=">
@@ -1457,7 +1458,7 @@
 											<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?generic.monitoring.set_twilight_info\(\s*"title[^"]+",\s*"US",.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td[^>]+></td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 											]]>
 										</set>
-										<!-- TEST MOVIE: http://www.imdb.com/title/tt0061806/releaseinfo (Castle of Bloody Lust) -->
+										<!-- TEST MOVIE: https://www.imdb.com/title/tt0061806/releaseinfo (Castle of Bloody Lust) -->
 										<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
 
 										<if test="${title_year[0][0]}=">
@@ -1515,7 +1516,7 @@
 			<!-- Rename titles for purpose of grouping, based on contents of default XML file -->
 			<if test="${global_options_rename_titles}=true">
 				<!-- Auto Collection System for IMDb Top 250 -->
-				<retrieve name="imdb_top250_page" url="http://www.imdb.com/chart/top" />
+				<retrieve name="imdb_top250_page" url="https://www.imdb.com/chart/top" encoding="UTF-8" />
 				<parse name="imdb_top250" input="${imdb_top250_page}" regex="&lt;a href=&quot;/title/${movie.imdb_id}/[^&quot;]+&quot;\s*title=&quot;[^&quot;]+&quot;\s*&gt;[^&lt;]+&lt;/a&gt;" />
 				<if test="${imdb_top250[0]}!=">
 					<set name="movie.collections" value="|» IMDb Top 250|" />
@@ -1676,7 +1677,7 @@
 
 			<!-- Retrieve result using IMDB id (if provided) -->
 			<if test="${search.imdb_id}!=">
-				<retrieve name="imdb_page" url="http://akas.imdb.com/title/${search.imdb_id}/" />
+				<retrieve name="imdb_page" url="https://www.imdb.com/title/${search.imdb_id}/" encoding="UTF-8" />
 				<parse name="imdb_results" input="${imdb_page}" regex="${rx_imdb_results}" />
 				<if test="${imdb_results[0][2]}!=">
 					<!-- Direct match found, let's get the results and be done with it -->
@@ -1719,7 +1720,7 @@
 				</set>
 
 				<!-- Retrieve results using just "Title" -->
-				<retrieve name="search_page" url="http://akas.imdb.com/find?s=tt&amp;q=${search.title:safe(UTF-8)}" />
+				<retrieve name="search_page" url="https://www.imdb.com/find?s=tt&amp;q=${search.title:safe(UTF-8)}" encoding="UTF-8" />
 
 				<parse name="details_page_block" input="${search_page}" regex="${rx_details_page_block}" />
 				<!-- loop gets skipped if no match is found -->
@@ -1732,7 +1733,7 @@
 					<set name="movie[${counter}].site_id" value="${imdb_results[0][2]}" />
 
 					<!-- AKA page --> 
-					<retrieve name="aka_page" url="http://akas.imdb.com/title/${imdb_results[0][2]}/releaseinfo" />
+					<retrieve name="aka_page" url="https://www.imdb.com/title/${imdb_results[0][2]}/releaseinfo" encoding="UTF-8" />
 					<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
 					<set name="movie[${counter}].alternate_titles" value="|" />
 					<loop name="currAka" on="akas" limit="50">
@@ -1792,7 +1793,7 @@
 						</if>
 
 						<if test="${force_aka_to_first_match}=true">
-							<retrieve name="aka_page" url="http://akas.imdb.com/title/${movie[0].imdb_id}/releaseinfo" />
+							<retrieve name="aka_page" url="https://www.imdb.com/title/${movie[0].imdb_id}/releaseinfo" encoding="UTF-8" />
 							<parse name="akas" input="${aka_page}" regex="${rx_aka_details}" />
 							<if test="${import_country[0][0]}!=US">
 								<if test="${akas[0][0]}=(original title)">
@@ -1870,7 +1871,7 @@
 			<log LogLevel="Info" Message="# IMDb+ Title    = ${movie.title} (${movie.year}) [(${movie.site_id})]" />
 
 			<!-- Retrieve details -->
-			<retrieve name="details_page" url="http://www.imdb.com/title/${movie.site_id}/" />
+			<retrieve name="details_page" url="https://www.imdb.com/title/${movie.site_id}/" encoding="UTF-8" />
 
 			<!-- Get cover directly by manipulating details page thumbnail -->
 			<set name="rx_cover">
