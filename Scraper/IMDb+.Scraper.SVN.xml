@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="96" />
-		<published month="01" day="09" year="2020" />
+		<version major="4" minor="9" point="97" />
+		<published month="01" day="15" year="2020" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1658,7 +1658,7 @@
 
 			<set name="rx_imdb_results">
 				<![CDATA[
-				<title>(?:IMDb[\s-]*)?(?:&#x27;)?(.+?)(?:&#x27;)?\s*\(\D*(\d{4})[^)]*\).*?</title>.+?(tt\d{7,8})/fullcredits
+				<title>(?:IMDb[\s-]*)?(?:&#x27;)?(.+?)(?:&#x27;)?\s*\(\D*(\d{4})[^)]*\).*?</title>.+?(tt\d+)/fullcredits
 				]]>
 			</set>
 
@@ -1760,7 +1760,7 @@
 
 						<set name="rx_search_results">
 							<![CDATA[
-							<tr\s*class="findResult[^>]+>(?:\s*<td\s*class="primary_photo">\s*<a[^>]+><img[^>]+></a>\s*</td>)?\s*<td\s*class="result_text">\s*<a\s*href="/title/(?<imdb_id>tt\d{7,8})[^"]+"\s*>(?<title>[^<]+)</a>(?:\s*\([\/IVX]*\))?\s*\((?<year>\d{4})[^)]*\)(?:(?:\s*<br/>aka\s*<i>")(?<aka>[^"]+)(?:"</i>\s*))?[^<]+</td>\s*</tr>
+							<tr\s*class="findResult[^>]+>(?:\s*<td\s*class="primary_photo">\s*<a[^>]+><img[^>]+></a>\s*</td>)?\s*<td\s*class="result_text">\s*<a\s*href="/title/(?<imdb_id>tt\d+)[^"]+"\s*>(?<title>[^<]+)</a>(?:\s*\([\/IVX]*\))?\s*\((?<year>\d{4})[^)]*\)(?:(?:\s*<br/>aka\s*<i>")(?<aka>[^"]+)(?:"</i>\s*))?[^<]+</td>\s*</tr>
 							]]>
 						</set>
 
