@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="97" />
-		<published month="01" day="15" year="2020" />
+		<version major="4" minor="9" point="98" />
+		<published month="01" day="16" year="2020" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -409,7 +409,7 @@
 				</set>
 				<set name="rx_directors">
 					<![CDATA[
-					<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7,8}[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieDirectors>[^<]+)(?:</span>)?</a>
+					<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d+[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieDirectors>[^<]+)(?:</span>)?</a>
 					]]>
 				</set>
 				<parse name="directors_block" input="${details_page}" regex="${rx_directors_block}" />
@@ -437,7 +437,7 @@
 				</set>
 				<set name="rx_writers">
 					<![CDATA[
-					<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d{7,8}[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieWriters>[^<]+)(?:</span>)?</a>
+					<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d+[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieWriters>[^<]+)(?:</span>)?</a>
 					]]>
 				</set>
 				<parse name="writers_block" input="${details_page}" regex="${rx_writers_block}" />
