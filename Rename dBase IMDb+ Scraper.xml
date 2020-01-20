@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="17" />
-		<published month="1" day="1" year="2020" />
+		<version major="1" minor="9" point="18" />
+		<published month="1" day="19" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1807,9 +1807,7 @@
 	<rename id="tt0181852" title="Terminator III: Rise Of The Machines" />
 	<rename id="tt0438488" title="Terminator IV: Terminator Salvation" />
 	<rename id="tt1340138" title="Terminator V: Genisys" />
-	<rename id="tt3171094" title="Terminator VI" />
-	<rename id="tt3171096" title="Terminator VII" />
-	<rename id="tt6450804" title="Terminator (Reboot)" sortby="Terminator X" />
+	<rename id="tt6450804" title="Terminator VI: Dark Fate" />
 	<rename id="tt0086425" title="Terms of Endearment I" collection="Terms of Endearment|» Oscars for Best Picture" />
 	<rename id="tt0116240" title="Terms of Endearment II: The Evening Star" collection="Terms of Endearment" />
 	<rename id="tt0078243" title="The 36th Chamber I: ...of Shaolin" foreign="Shao Lin san shi liu fang" />
