@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="18" />
-		<published month="1" day="19" year="2020" />
+		<version major="1" minor="9" point="19" />
+		<published month="1" day="21" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1064,7 +1064,7 @@
 	<rename id="tt0830515" title="James Bond XXII: Quantum Of Solace" sortby="James Bond 22" />
 	<rename id="tt1074638" title="James Bond XXIII: Skyfall" sortby="James Bond 23" />
 	<rename id="tt2379713" title="James Bond XXIV: Spectre" sortby="James Bond 24" />
-	<rename id="tt2382320" title="James Bond XXV" sortby="James Bond 25" />
+	<rename id="tt2382320" title="James Bond XXV: No Time to Die" sortby="James Bond 25" />
 	<rename id="tt0418763" title="Jarhead I" />
 	<rename id="tt3699508" title="Jarhead II: Field of Fire" />
 	<rename id="tt0217579" title="Jason and the Argonauts (TV)" />
@@ -2174,6 +2174,7 @@
 	<rename id="tt0800369" title="Thor I" collection="Thor|The Avengers|» Superheroes" />
 	<rename id="tt1981115" title="Thor II: The Dark World" collection="Thor|The Avengers|» Superheroes" />
 	<rename id="tt3501632" title="Thor III: Ragnarok" collection="Thor|The Avengers|» Superheroes" />
+	<rename id="tt10648342" title="Thor IV: Love and Thunder" collection="Thor|The Avengers|» Superheroes" />
 	<rename id="tt0111438" title="Timecop I" />
 	<rename id="tt0318763" title="Timecop II: The Berlin Decision" />
 	<rename id="tt0823671" title="Tinker Bell I" />
