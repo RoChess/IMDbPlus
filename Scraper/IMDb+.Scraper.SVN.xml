@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="98" />
-		<published month="01" day="16" year="2020" />
+		<version major="4" minor="9" point="99" />
+		<published month="01" day="26" year="2020" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -1525,6 +1525,19 @@
 					<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection auto-set to '${movie.collections}'" />
 				</if>
 
+				<!-- Auto Collection System fpr Oscars for Best Picture -->
+				<retrieve name="imdb_bestpicture_page" url="https://m.imdb.com/chart/bestpicture" encoding="UTF-8" />
+				<parse name="imdb_bestpicture" input="${imdb_bestpicture_page}" regex="&lt;a href=&quot;/title/${movie.imdb_id}/[^&quot;]+&quot;[^&gt;]+&gt;\s*&lt;[^&quot;]+&quot;[^&gt;]+&gt;\s*&lt;h4 class=&quot;best-picture" />
+				<if test="${imdb_bestpicture[0]}!=">
+					<if test="${imdb_top250[0]}=">
+						<set name="movie.collections" value="|» Oscars for Best Picture" />
+					</if>
+					<if test="${imdb_top250[0]}!=">
+						<set name="movie.collections" value="|» Oscars for Best Picture|» IMDb Top 250|" />
+					</if>
+					<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection auto-set to '${movie.collections}'" />
+				</if>
+
 				<set name="rx_rename_check_prefix">
 					<![CDATA[
 					<imdbplus>.+<rename[\t\s]+id="
@@ -1543,6 +1556,9 @@
 						<if test="${imdb_top250[0]}!=">
 							<set name="movie.collections" value="|» IMDb Top 250|${movie.collections}|" />
 						</if>
+						<if test="${imdb_bestpicture[0]}!=">
+							<set name="movie.collections" value="|» Oscars for Best Picture|${movie.collections}|" />
+						</if>
 						<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection set to '${movie.collections}'" />
 					</if>
 					<!-- Prevent title from getting cleared if only the sortby field is being adjusted -->
@@ -1553,6 +1569,9 @@
 								<set name="movie.collections" value="|${collection_prefix[0][0]}|" />
 								<if test="${imdb_top250[0]}!=">
 									<set name="movie.collections" value="|» IMDb Top 250|${movie.collections}|" />
+								</if>
+								<if test="${imdb_bestpicture[0]}!=">
+									<set name="movie.collections" value="|» Oscars for Best Picture|${movie.collections}|" />
 								</if>
 								<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection auto-set to '${movie.collections}'" />
 							</if>
