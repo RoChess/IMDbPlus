@@ -163,7 +163,7 @@ namespace IMDb
                 SyncOnStartup = xmlreader.GetValueAsBool(cSection, cSyncOnStartup, false);
                 SyncLastDateTime = xmlreader.GetValueAsString(cSection, cSyncLastDateTime, DateTime.MinValue.ToString());
                 DisableNotifications = xmlreader.GetValueAsBool(cSection, cDisableNotifications, false);
-                MoviesRefreshed = xmlreader.GetValueAsString(cSection, cMoviesRefreshed, string.Empty).FromJSONArray<string>().ToList();
+                MoviesRefreshed = xmlreader.GetValueAsString(cSection, cMoviesRefreshed, "[]").FromJSONArray<string>().ToList();
             }
             #endregion
 
