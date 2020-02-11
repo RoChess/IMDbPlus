@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="9" point="99" />
-		<published month="01" day="26" year="2020" />
+		<version major="4" minor="10" point="1" />
+		<published month="02" day="10" year="2020" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -496,25 +496,20 @@
 					<if test="${global_options_original_title}=false">
 						<set name="rx_tmp_prefix">
 							<![CDATA[
-							(?i)<title>(?:&#x27;)?(?<movieTitleEnglish>(?:(?=.+?generic.monitoring.set_twilight_info\(\s*"title",\s*"
+							(?i)<title>(?:&#x27;)?(?<movieTitleEnglish>(?:(?=.+?<h4 class="inline">Country:</h4>.+?<a href="[^\?]+\?country_of_origin=
 							]]>
 						</set>
 						<set name="rx_tmp_infix">
-							<![CDATA[
-							".+?<h4 class="inline">Country:</h4>.+?<a href="[^\?]+\?country_of_origin=
-							]]>
-						</set>
-						<set name="rx_tmp_addfix">
 							<![CDATA[
 							[^"]*".+?<h4 class="inline">Language:</h4>\s*<a href="[^"]+primary_language=
 							]]>
 						</set>
 						<set name="rx_tmp_postfix">
 							<![CDATA[
-							[^"]*")|(?!.+?<a[^>]+href="releaseinfo[^#]*#akas"[^>]*>)).+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>
+							[^"]*")|(?!.+?<a[^>]+href="releaseinfo[^#]{0,30}#akas")).+?)(?:&#x27;)?\s*\((?<movieYear>\d{4})[^)]*\).*?</title>
 							]]>
 						</set>
-						<set name="rx_title_year" value="${rx_tmp_prefix}(?:${global_options_country_filter})${rx_tmp_infix}(?:${global_options_country_filter})${rx_tmp_addfix}(?:${global_options_language_filter})${rx_tmp_postfix}" />
+						<set name="rx_title_year" value="${rx_tmp_prefix}(?:${global_options_country_filter})${rx_tmp_infix}(?:${global_options_language_filter})${rx_tmp_postfix}" />
 					</if>
 					<parse name="title_year" input="${details_page}" regex="${rx_title_year}" />
 				</if>
