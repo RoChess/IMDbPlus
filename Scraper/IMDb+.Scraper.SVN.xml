@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="10" point="2" />
-		<published month="02" day="16" year="2020" />
+		<version major="4" minor="10" point="3" />
+		<published month="02" day="17" year="2020" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -489,14 +489,14 @@
 					<if test="${global_options_original_title}=true">
 						<set name="rx_title_year">
 							<![CDATA[
-							<title>(?:&#x27;)?(?<movieTitle>.+)(?:&#x27;)?\s+\(\D*(?<movieYear>\d{4})[^)]*\)[^<]*</title>
+							<title>(?:&#x27;)?(?<movieTitle>[^(]+(?:\(\D+\))?)(?:&#x27;)?\s+\(\D*(?<movieYear>\d{4})[^)]*\)[^<]*</title>
 							]]>
 						</set>
 					</if>
 					<if test="${global_options_original_title}=false">
 						<set name="rx_title_year">
 							<![CDATA[
-							<meta property='og:title' content="(?:&#x27;)?(?<movieTitleEnglish>.+)(?:&#x27;)?\s+\(\D*(?<movieYear>\d{4})[^)]*\)[^"]*" />
+							<meta property='og:title' content="(?:&#x27;)?(?<movieTitleEnglish>[^(]+(?:\(\D+\))?)(?:&#x27;)?\s+\(\D*(?<movieYear>\d{4})[^)]*\)[^"]*" />
 							]]>
 						</set>
 					</if>
