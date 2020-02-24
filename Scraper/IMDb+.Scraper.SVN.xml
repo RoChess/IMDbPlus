@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="10" point="3" />
-		<published month="02" day="17" year="2020" />
+		<version major="4" minor="10" point="4" />
+		<published month="02" day="23" year="2020" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -770,7 +770,7 @@
 			<!-- USA/MPAA default certification expression -->
 			<set name="rx_certification">
 				<![CDATA[
-				(?:>\s*USA:|United States:|Rated\s*)(?<movieCertification>(?:G)|(?:PG)|(?:PG-13)|(?:R)|(?:X)|(?:NC-17))(?:</a>|\s*for)|<meta itemprop="contentRating" content="(?<movieCertification>[^"]+)">|"ContentRating":\s*"(?<movieCertification>[^"]+)"|<h4[^<]+>Certificate:</h4>\s*<span>(?<movieCertification>[^<]+)</span>
+				(?:>\s*USA:|United States:|Rated\s*)(?<movieCertification>(?:Unrated)|(?:G)|(?:PG)|(?:PG-13)|(?:R)|(?:X)|(?:NC-17))(?:</a>|\s*for)|<meta itemprop="contentRating" content="(?<movieCertification>[^"]+)">|"ContentRating":\s*"(?<movieCertification>[^"]+)"|<h4[^<]+>Certificate:</h4>\s*<span>(?<movieCertification>[^<]+)</span>
 				]]>
 			</set>
 			<if test="${global_options_english_movie_rating}&lt;=1">
@@ -847,15 +847,17 @@
 					</set>
 				</if>
 			</if>
-			<parse name="certification_usa" input="${details_page}" regex="${rx_certification}" />
+			<parse name="certification_usa_raw" input="${details_page}" regex="${rx_certification}" />
+			<replace name="certification_usa" input="${certification_usa_raw[0][0]:htmldecode}" pattern="Unrated" with="NR" />
 
 			<!-- imdb.com (USA) -->
 			<if test="${global_options_secondary_details}&lt;=1">
-				<set name="movie.certification" value="${certification_usa[0][0]:htmldecode}" />
+				<set name="movie.certification" value="${certification_usa}" />
 				<if test="${movie.certification}=">
 					<retrieve name="parentalguide_page" url="${site}parentalguide" encoding="UTF-8" />
-					<parse name="certification" input="${parentalguide_page}" regex="${rx_certification}" />
-					<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
+					<parse name="certification_raw" input="${parentalguide_page}" regex="${rx_certification}" />
+					<replace name="certification" input="${certification_raw[0][0]:htmldecode}" pattern="Unrated" with="NR" />
+					<set name="movie.certification" value="${certification}" />
 				</if>
 			</if>
 			<!-- imdb.de (German) -->
@@ -867,13 +869,14 @@
 			<!-- imdb.es (Spanish) -->
 			<if test="${global_options_secondary_details}=3">
 				<!-- Fix localized rating, forced to swap order, as 'G' gets replaced inside 'PG' and 'PG-13' otherwise -->
-				<replace name="certification1" input="${certification_usa[0][0]:htmldecode}" pattern="X" with="X" />
+				<replace name="certification1" input="${certification_usa}" pattern="X" with="X" />
 				<replace name="certification2" input="${certification1}" pattern="NC-17" with="+18" />
-				<replace name="certification3" input="${certification2}" pattern="R" with="+16" />
-				<replace name="certification4" input="${certification3}" pattern="PG-13" with="+13" />
-				<replace name="certification5" input="${certification4}" pattern="PG" with="+7" />
-				<replace name="certification6" input="${certification5}" pattern="G" with="TP" />
-				<set name="movie.certification" value="${certification6}" />
+				<replace name="certification3" input="${certification2}" pattern="NR" with="" />
+				<replace name="certification4" input="${certification3}" pattern="R" with="+16" />
+				<replace name="certification5" input="${certification4}" pattern="PG-13" with="+13" />
+				<replace name="certification6" input="${certification5}" pattern="PG" with="+7" />
+				<replace name="certification7" input="${certification6}" pattern="G" with="TP" />
+				<set name="movie.certification" value="${certification7}" />
 			</if>
 			<!-- imdb.fr (French) -->
 			<if test="${global_options_secondary_details}=4">
@@ -881,7 +884,7 @@
 				<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
 				<if test="${movie.certification}=">
 					<!-- Fix localized rating, forced to swap order, as 'G' gets replaced inside 'PG' and 'PG-13' otherwise -->
-					<replace name="certification1" input="${certification_usa[0][0]:htmldecode}" pattern="X" with="-18" />
+					<replace name="certification1" input="${certification_usa}" pattern="X" with="-18" />
 					<replace name="certification2" input="${certification1}" pattern="NC-17" with="-18" />
 					<replace name="certification3" input="${certification2}" pattern="R" with="-16" />
 					<replace name="certification4" input="${certification3}" pattern="PG-13" with="-12" />
@@ -896,13 +899,14 @@
 				<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
 				<if test="${movie.certification}=">
 					<!-- Fix localized rating, forced to swap order, as 'G' gets replaced inside 'PG' and 'PG-13' otherwise -->
-					<replace name="certification1" input="${certification_usa[0][0]:htmldecode}" pattern="X" with="X" />
+					<replace name="certification1" input="${certification_usa}" pattern="X" with="X" />
 					<replace name="certification2" input="${certification1}" pattern="NC-17" with="VM18" />
-					<replace name="certification3" input="${certification2}" pattern="R" with="VM14" />
-					<replace name="certification4" input="${certification3}" pattern="PG-13" with="VM12" />
-					<replace name="certification5" input="${certification4}" pattern="PG" with="VPA" />
-					<replace name="certification6" input="${certification5}" pattern="G" with="T" />
-					<set name="movie.certification" value="${certification6}" />
+					<replace name="certification3" input="${certification2}" pattern="NR" with="" />
+					<replace name="certification4" input="${certification3}" pattern="R" with="VM14" />
+					<replace name="certification5" input="${certification4}" pattern="PG-13" with="VM12" />
+					<replace name="certification6" input="${certification5}" pattern="PG" with="VPA" />
+					<replace name="certification7" input="${certification6}" pattern="G" with="T" />
+					<set name="movie.certification" value="${certification7}" />
 				</if>
 			</if>
 			<!-- imdb.pt (Portugese) -->
@@ -926,13 +930,14 @@
 					<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
 					<if test="${movie.certification}=">
 						<!-- Fix localized rating, forced to swap order, as 'G' gets replaced inside 'PG' and 'PG-13' otherwise -->
-						<replace name="certification1" input="${certification_usa[0][0]:htmldecode}" pattern="X" with="X" />
+						<replace name="certification1" input="${certification_usa}" pattern="X" with="X" />
 						<replace name="certification2" input="${certification1}" pattern="NC-17" with="16" />
-						<replace name="certification3" input="${certification2}" pattern="R" with="16" />
-						<replace name="certification4" input="${certification3}" pattern="PG-13" with="12" />
-						<replace name="certification5" input="${certification4}" pattern="PG" with="10" />
-						<replace name="certification6" input="${certification5}" pattern="G" with="L" />
-						<set name="movie.certification" value="${certification6}" />
+						<replace name="certification3" input="${certification2}" pattern="NR" with="16" />
+						<replace name="certification4" input="${certification3}" pattern="R" with="16" />
+						<replace name="certification5" input="${certification4}" pattern="PG-13" with="12" />
+						<replace name="certification6" input="${certification5}" pattern="PG" with="10" />
+						<replace name="certification7" input="${certification6}" pattern="G" with="L" />
+						<set name="movie.certification" value="${certification7}" />
 					</if>
 				</if>
 			</if>
@@ -1302,7 +1307,7 @@
 				<if test="${movie.certification}=">
 					<set name="rx_rotten_certification">
 						<![CDATA[
-						<td itemprop="contentRating">(?<rottenCertification>(?:G|PG-13|PG|R|NC-17))[^<]*</td>
+						"contentRating":"(?<rottenCertification>(?:G|PG-13|PG|R|NR|NC-17))"
 						]]>
 					</set>
 					<parse name="rotten_certification" input="${rotten_details}" regex="${rx_rotten_certification}" />
