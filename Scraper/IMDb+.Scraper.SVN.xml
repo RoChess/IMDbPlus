@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="10" point="4" />
-		<published month="02" day="23" year="2020" />
+		<version major="4" minor="10" point="5" />
+		<published month="02" day="24" year="2020" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -770,7 +770,7 @@
 			<!-- USA/MPAA default certification expression -->
 			<set name="rx_certification">
 				<![CDATA[
-				(?:>\s*USA:|United States:|Rated\s*)(?<movieCertification>(?:Unrated)|(?:G)|(?:PG)|(?:PG-13)|(?:R)|(?:X)|(?:NC-17))(?:</a>|\s*for)|<meta itemprop="contentRating" content="(?<movieCertification>[^"]+)">|"ContentRating":\s*"(?<movieCertification>[^"]+)"|<h4[^<]+>Certificate:</h4>\s*<span>(?<movieCertification>[^<]+)</span>
+				(?:>\s*USA:|United States:|Rated\s*)(?<movieCertification>(?:Not Rated)|(?:Unrated)|(?:G)|(?:PG)|(?:PG-13)|(?:R)|(?:X)|(?:NC-17))(?:</a>|\s*for)|<meta itemprop="contentRating" content="(?<movieCertification>[^"]+)">|"ContentRating":\s*"(?<movieCertification>[^"]+)"|<h4[^<]+>Certificate:</h4>\s*<span>(?<movieCertification>[^<]+)</span>
 				]]>
 			</set>
 			<if test="${global_options_english_movie_rating}&lt;=1">
@@ -848,7 +848,7 @@
 				</if>
 			</if>
 			<parse name="certification_usa_raw" input="${details_page}" regex="${rx_certification}" />
-			<replace name="certification_usa" input="${certification_usa_raw[0][0]:htmldecode}" pattern="Unrated" with="NR" />
+			<replace name="certification_usa" input="${certification_usa_raw[0][0]:htmldecode}" pattern="Unrated|Not Rated" with="NR" />
 
 			<!-- imdb.com (USA) -->
 			<if test="${global_options_secondary_details}&lt;=1">
@@ -856,7 +856,7 @@
 				<if test="${movie.certification}=">
 					<retrieve name="parentalguide_page" url="${site}parentalguide" encoding="UTF-8" />
 					<parse name="certification_raw" input="${parentalguide_page}" regex="${rx_certification}" />
-					<replace name="certification" input="${certification_raw[0][0]:htmldecode}" pattern="Unrated" with="NR" />
+					<replace name="certification" input="${certification_raw[0][0]:htmldecode}" pattern="Unrated|Not Rated" with="NR" />
 					<set name="movie.certification" value="${certification}" />
 				</if>
 			</if>
