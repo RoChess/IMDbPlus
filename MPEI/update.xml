@@ -86,9 +86,9 @@
         <Name>IMDb+</Name>
         <Id>9d064213-0b4d-4cee-96a5-405812422b58</Id>
         <Author>RoChess</Author>
-        <HomePage>http://code.google.com/p/imdbplus/</HomePage>
+        <HomePage>https://github.com/RoChess/IMDbPlus</HomePage>
         <ForumPage>http://forum.team-mediaportal.com/moving-pictures-284/imdb-scraper--98978/</ForumPage>
-        <UpdateUrl>http://imdbplus.googlecode.com/svn/trunk/MPEI/update.xml</UpdateUrl>
+        <UpdateUrl>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/MPEI/update.xml</UpdateUrl>
         <Version>
           <Major>1</Major>
           <Minor>0</Minor>
@@ -117,7 +117,7 @@
  If have .dll extension used like MP plugin configuration</Description>
             </SectionParam>
             <SectionParam Name="Online Screenshots">
-              <Value>http://blixy.net/mp/Plugin.IMDb+.jpg;http://blixy.net/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
+              <Value>https://rochess.com/mp/Plugin.IMDb+.jpg;https://rochess.com/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
               <ValueType>String</ValueType>
               <Description>Online stored screenshot urls separated by ; </Description>
             </SectionParam>
@@ -230,9 +230,9 @@
         <Name>IMDb+</Name>
         <Id>9d064213-0b4d-4cee-96a5-405812422b58</Id>
         <Author>RoChess</Author>
-        <HomePage>http://code.google.com/p/imdbplus/</HomePage>
+        <HomePage>https://github.com/RoChess/IMDbPlus</HomePage>
         <ForumPage>http://forum.team-mediaportal.com/moving-pictures-284/imdb-scraper--98978/</ForumPage>
-        <UpdateUrl>http://imdbplus.googlecode.com/svn/trunk/MPEI/update.xml</UpdateUrl>
+        <UpdateUrl>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/MPEI/update.xml</UpdateUrl>
         <Version>
           <Major>1</Major>
           <Minor>2</Minor>
@@ -249,7 +249,7 @@
         <Params>
           <Items>
             <SectionParam Name="Online Icon">
-              <Value>http://imdbplus.googlecode.com/svn/trunk/IMDb+/Images/imdb_icon.png</Value>
+              <Value>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/IMDb%2B/Images/imdb_icon.png</Value>
               <ValueType>String</ValueType>
               <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
             </SectionParam>
@@ -261,7 +261,7 @@
  If have .dll extension used like MP plugin configuration</Description>
             </SectionParam>
             <SectionParam Name="Online Screenshots">
-              <Value>http://blixy.net/mp/Plugin.IMDb+.jpg;http://blixy.net/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
+              <Value>https://rochess.com/mp/Plugin.IMDb+.jpg;https://rochess.com/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
               <ValueType>String</ValueType>
               <Description>Online stored screenshot urls separated by ; </Description>
             </SectionParam>
@@ -374,9 +374,9 @@
         <Name>IMDb+</Name>
         <Id>9d064213-0b4d-4cee-96a5-405812422b58</Id>
         <Author>RoChess</Author>
-        <HomePage>http://code.google.com/p/imdbplus/</HomePage>
+        <HomePage>https://github.com/RoChess/IMDbPlus</HomePage>
         <ForumPage>http://forum.team-mediaportal.com/moving-pictures-284/imdb-scraper--98978/</ForumPage>
-        <UpdateUrl>http://imdbplus.googlecode.com/svn/trunk/MPEI/update.xml</UpdateUrl>
+        <UpdateUrl>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/MPEI/update.xml</UpdateUrl>
         <Version>
           <Major>1</Major>
           <Minor>3</Minor>
@@ -396,7 +396,7 @@ Dutch language support for secondary scraper-script data.</VersionDescription>
         <Params>
           <Items>
             <SectionParam Name="Online Icon">
-              <Value>http://imdbplus.googlecode.com/svn/trunk/IMDb+/Images/imdb_icon.png</Value>
+              <Value>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/IMDb%2B/Images/imdb_icon.png</Value>
               <ValueType>String</ValueType>
               <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
             </SectionParam>
@@ -408,7 +408,7 @@ Dutch language support for secondary scraper-script data.</VersionDescription>
  If have .dll extension used like MP plugin configuration</Description>
             </SectionParam>
             <SectionParam Name="Online Screenshots">
-              <Value>http://blixy.net/mp/Plugin.IMDb+.jpg;http://blixy.net/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
+              <Value>https://rochess.com/mp/Plugin.IMDb+.jpg;https://rochess.com/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
               <ValueType>String</ValueType>
               <Description>Online stored screenshot urls separated by ; </Description>
             </SectionParam>
@@ -521,9 +521,9 @@ Dutch language support for secondary scraper-script data.</VersionDescription>
         <Name>IMDb+</Name>
         <Id>9d064213-0b4d-4cee-96a5-405812422b58</Id>
         <Author>RoChess</Author>
-        <HomePage>http://code.google.com/p/imdbplus/</HomePage>
+        <HomePage>https://github.com/RoChess/IMDbPlus</HomePage>
         <ForumPage>http://forum.team-mediaportal.com/moving-pictures-284/imdb-scraper--98978/</ForumPage>
-        <UpdateUrl>http://imdbplus.googlecode.com/svn/trunk/MPEI/update.xml</UpdateUrl>
+        <UpdateUrl>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/MPEI/update.xml</UpdateUrl>
         <Version>
           <Major>1</Major>
           <Minor>3</Minor>
@@ -540,7 +540,7 @@ Dutch language support for secondary scraper-script data.</VersionDescription>
         <Params>
           <Items>
             <SectionParam Name="Online Icon">
-              <Value>http://imdbplus.googlecode.com/svn/trunk/IMDb+/Images/imdb_icon.png</Value>
+              <Value>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/IMDb%2B/Images/imdb_icon.png</Value>
               <ValueType>String</ValueType>
               <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
             </SectionParam>
@@ -552,7 +552,7 @@ Dutch language support for secondary scraper-script data.</VersionDescription>
  If have .dll extension used like MP plugin configuration</Description>
             </SectionParam>
             <SectionParam Name="Online Screenshots">
-              <Value>http://blixy.net/mp/Plugin.IMDb+.jpg;http://blixy.net/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
+              <Value>https://rochess.com/mp/Plugin.IMDb+.jpg;https://rochess.com/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
               <ValueType>String</ValueType>
               <Description>Online stored screenshot urls separated by ; </Description>
             </SectionParam>
@@ -665,9 +665,9 @@ Dutch language support for secondary scraper-script data.</VersionDescription>
         <Name>IMDb+</Name>
         <Id>9d064213-0b4d-4cee-96a5-405812422b58</Id>
         <Author>RoChess</Author>
-        <HomePage>http://code.google.com/p/imdbplus/</HomePage>
+        <HomePage>https://github.com/RoChess/IMDbPlus</HomePage>
         <ForumPage>http://forum.team-mediaportal.com/moving-pictures-284/imdb-scraper--98978/</ForumPage>
-        <UpdateUrl>http://imdbplus.googlecode.com/svn/trunk/MPEI/update.xml</UpdateUrl>
+        <UpdateUrl>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/MPEI/update.xml</UpdateUrl>
         <Version>
           <Major>1</Major>
           <Minor>3</Minor>
@@ -684,7 +684,7 @@ Dutch language support for secondary scraper-script data.</VersionDescription>
         <Params>
           <Items>
             <SectionParam Name="Online Icon">
-              <Value>http://imdbplus.googlecode.com/svn/trunk/IMDb+/Images/imdb_icon.png</Value>
+              <Value>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/IMDb%2B/Images/imdb_icon.png</Value>
               <ValueType>String</ValueType>
               <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
             </SectionParam>
@@ -696,7 +696,7 @@ Dutch language support for secondary scraper-script data.</VersionDescription>
  If have .dll extension used like MP plugin configuration</Description>
             </SectionParam>
             <SectionParam Name="Online Screenshots">
-              <Value>http://blixy.net/mp/Plugin.IMDb+.jpg;http://blixy.net/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
+              <Value>https://rochess.com/mp/Plugin.IMDb+.jpg;https://rochess.com/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
               <ValueType>String</ValueType>
               <Description>Online stored screenshot urls separated by ; </Description>
             </SectionParam>
@@ -817,9 +817,9 @@ Dutch language support for secondary scraper-script data.</VersionDescription>
         <Name>IMDb+</Name>
         <Id>9d064213-0b4d-4cee-96a5-405812422b58</Id>
         <Author>RoChess</Author>
-        <HomePage>http://code.google.com/p/imdbplus/</HomePage>
+        <HomePage>https://github.com/RoChess/IMDbPlus</HomePage>
         <ForumPage>http://forum.team-mediaportal.com/moving-pictures-284/imdb-scraper--98978/</ForumPage>
-        <UpdateUrl>http://imdbplus.googlecode.com/svn/trunk/MPEI/update.xml</UpdateUrl>
+        <UpdateUrl>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/MPEI/update.xml</UpdateUrl>
         <Version>
           <Major>1</Major>
           <Minor>4</Minor>
@@ -836,7 +836,7 @@ Dutch language support for secondary scraper-script data.</VersionDescription>
         <Params>
           <Items>
             <SectionParam Name="Online Icon">
-              <Value>http://imdbplus.googlecode.com/svn/trunk/IMDb+/Images/imdb_icon.png</Value>
+              <Value>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/IMDb%2B/Images/imdb_icon.png</Value>
               <ValueType>String</ValueType>
               <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
             </SectionParam>
@@ -848,7 +848,7 @@ Dutch language support for secondary scraper-script data.</VersionDescription>
  If have .dll extension used like MP plugin configuration</Description>
             </SectionParam>
             <SectionParam Name="Online Screenshots">
-              <Value>http://blixy.net/mp/Plugin.IMDb+.jpg;http://blixy.net/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
+              <Value>https://rochess.com/mp/Plugin.IMDb+.jpg;https://rochess.com/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
               <ValueType>String</ValueType>
               <Description>Online stored screenshot urls separated by ; </Description>
             </SectionParam>
@@ -969,9 +969,9 @@ Dutch language support for secondary scraper-script data.</VersionDescription>
         <Name>IMDb+</Name>
         <Id>9d064213-0b4d-4cee-96a5-405812422b58</Id>
         <Author>RoChess</Author>
-        <HomePage>http://code.google.com/p/imdbplus/</HomePage>
+        <HomePage>https://github.com/RoChess/IMDbPlus</HomePage>
         <ForumPage>http://forum.team-mediaportal.com/moving-pictures-284/imdb-scraper--98978/</ForumPage>
-        <UpdateUrl>http://imdbplus.googlecode.com/svn/trunk/MPEI/update.xml</UpdateUrl>
+        <UpdateUrl>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/MPEI/update.xml</UpdateUrl>
         <Version>
           <Major>1</Major>
           <Minor>4</Minor>
@@ -983,14 +983,14 @@ Dutch language support for secondary scraper-script data.</VersionDescription>
 
 This version includes IMDb+ scraper-script v4.1.8 by default which will auto update once IMDb+ plugin runs for the first time and a new version is available.</VersionDescription>
         <DevelopmentStatus>Stable</DevelopmentStatus>
-        <OnlineLocation>http://imdbplus.googlecode.com/files/imdbplus.plugin.v1.4.0.239.mpe1</OnlineLocation>
+        <OnlineLocation>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/IMDb%2B/Images/imdb_icon.png</OnlineLocation>
         <ReleaseDate>2012-01-20T15:06:46</ReleaseDate>
         <Tags>moving pictures, movies, scraper</Tags>
         <Location>.\Release\imdbplus.plugin.v[Version].mpe1</Location>
         <Params>
           <Items>
             <SectionParam Name="Online Icon">
-              <Value>http://imdbplus.googlecode.com/svn/trunk/IMDb+/Images/imdb_icon.png</Value>
+              <Value>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/IMDb%2B/Images/imdb_icon.png</Value>
               <ValueType>String</ValueType>
               <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
             </SectionParam>
@@ -1002,7 +1002,7 @@ This version includes IMDb+ scraper-script v4.1.8 by default which will auto upd
  If have .dll extension used like MP plugin configuration</Description>
             </SectionParam>
             <SectionParam Name="Online Screenshots">
-              <Value>http://blixy.net/mp/Plugin.IMDb+.jpg;http://blixy.net/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
+              <Value>https://rochess.com/mp/Plugin.IMDb+.jpg;https://rochess.com/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
               <ValueType>String</ValueType>
               <Description>Online stored screenshot urls separated by ; </Description>
             </SectionParam>
@@ -1123,9 +1123,9 @@ This version includes IMDb+ scraper-script v4.1.8 by default which will auto upd
         <Name>IMDb+</Name>
         <Id>9d064213-0b4d-4cee-96a5-405812422b58</Id>
         <Author>RoChess</Author>
-        <HomePage>http://code.google.com/p/imdbplus/</HomePage>
+        <HomePage>https://github.com/RoChess/IMDbPlus</HomePage>
         <ForumPage>http://forum.team-mediaportal.com/moving-pictures-284/imdb-scraper--98978/</ForumPage>
-        <UpdateUrl>http://imdbplus.googlecode.com/svn/trunk/MPEI/update.xml</UpdateUrl>
+        <UpdateUrl>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/MPEI/update.xml</UpdateUrl>
         <Version>
           <Major>1</Major>
           <Minor>5</Minor>
@@ -1148,7 +1148,7 @@ and a new version is available.</VersionDescription>
         <Params>
           <Items>
             <SectionParam Name="Online Icon">
-              <Value>http://imdbplus.googlecode.com/svn/trunk/IMDb+/Images/imdb_icon.png</Value>
+              <Value>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/IMDb%2B/Images/imdb_icon.png</Value>
               <ValueType>String</ValueType>
               <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
             </SectionParam>
@@ -1160,7 +1160,7 @@ and a new version is available.</VersionDescription>
  If have .dll extension used like MP plugin configuration</Description>
             </SectionParam>
             <SectionParam Name="Online Screenshots">
-              <Value>http://blixy.net/mp/Plugin.IMDb+.jpg;http://blixy.net/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
+              <Value>https://rochess.com/mp/Plugin.IMDb+.jpg;https://rochess.com/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
               <ValueType>String</ValueType>
               <Description>Online stored screenshot urls separated by ; </Description>
             </SectionParam>
@@ -1289,9 +1289,9 @@ and a new version is available.</VersionDescription>
         <Name>IMDb+</Name>
         <Id>9d064213-0b4d-4cee-96a5-405812422b58</Id>
         <Author>RoChess</Author>
-        <HomePage>http://code.google.com/p/imdbplus/</HomePage>
+        <HomePage>https://github.com/RoChess/IMDbPlus</HomePage>
         <ForumPage>http://forum.team-mediaportal.com/moving-pictures-284/imdb-scraper--98978/</ForumPage>
-        <UpdateUrl>http://imdbplus.googlecode.com/svn/trunk/MPEI/update.xml</UpdateUrl>
+        <UpdateUrl>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/MPEI/update.xml</UpdateUrl>
         <Version>
           <Major>2</Major>
           <Minor>0</Minor>
@@ -1313,7 +1313,7 @@ and a new version is available.</VersionDescription>
         <Params>
           <Items>
             <SectionParam Name="Online Icon">
-              <Value>http://imdbplus.googlecode.com/svn/trunk/IMDb+/Images/imdb_icon.png</Value>
+              <Value>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/IMDb%2B/Images/imdb_icon.png</Value>
               <ValueType>String</ValueType>
               <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
             </SectionParam>
@@ -1325,7 +1325,7 @@ and a new version is available.</VersionDescription>
  If have .dll extension used like MP plugin configuration</Description>
             </SectionParam>
             <SectionParam Name="Online Screenshots">
-              <Value>http://blixy.net/mp/Plugin.IMDb+.jpg;http://blixy.net/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
+              <Value>https://rochess.com/mp/Plugin.IMDb+.jpg;https://rochess.com/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
               <ValueType>String</ValueType>
               <Description>Online stored screenshot urls separated by ; </Description>
             </SectionParam>
@@ -1479,7 +1479,7 @@ and a new version is available.</VersionDescription>
         <Params>
           <Items>
             <SectionParam Name="Online Icon">
-              <Value>http://imdbplus.googlecode.com/svn/trunk/IMDb+/Images/imdb_icon.png</Value>
+              <Value>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/IMDb%2B/Images/imdb_icon.png</Value>
               <ValueType>String</ValueType>
               <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
             </SectionParam>
@@ -1491,7 +1491,7 @@ and a new version is available.</VersionDescription>
  If have .dll extension used like MP plugin configuration</Description>
             </SectionParam>
             <SectionParam Name="Online Screenshots">
-              <Value>http://blixy.net/mp/Plugin.IMDb+.jpg;http://blixy.net/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
+              <Value>https://rochess.com/mp/Plugin.IMDb+.jpg;https://rochess.com/mp/Plugin.IMDb+.StreamedMP.jpg</Value>
               <ValueType>String</ValueType>
               <Description>Online stored screenshot urls separated by ; </Description>
             </SectionParam>
