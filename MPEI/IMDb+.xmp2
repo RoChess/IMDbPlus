@@ -893,7 +893,7 @@ and a new version is available.</VersionDescription>
           <Description>The icon file of the package (jpg,png,bmp)</Description>
         </SectionParam>
         <SectionParam Name="Online Icon">
-          <Value>https://github.com/RoChess/IMDbPlus/raw/master/IMDb%2B/Images/imdb_icon.png</Value>
+          <Value>https://raw.githubusercontent.com/RoChess/IMDbPlus/master/IMDb%2B/Images/imdb_icon.png</Value>
           <ValueType>String</ValueType>
           <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
         </SectionParam>
