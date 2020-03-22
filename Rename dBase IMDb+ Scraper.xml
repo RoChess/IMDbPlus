@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="20" />
-		<published month="1" day="26" year="2020" />
+		<version major="1" minor="9" point="21" />
+		<published month="3" day="21" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -759,6 +759,8 @@
 	<rename id="tt0092593" title="Goodbye, Children" foreign="Au Revoir Les Enfants" />
 	<rename id="tt0327804" title="Goodbye, Mr. Chips (TV)" />
 	<rename id="tt0031385" title="Goodbye, Mr. Chips (UK)" />
+	<rename id="tt1456635" title="Goon I" />
+	<rename id="tt2417712" title="Goon II: Last of the Enforcers" />
 	<rename id="tt0591381" title="Goosebumps #2.14 - The Scarecrow Walks at Midnight" />
 	<rename id="tt1051904" title="Goosebumps I" />
 	<rename id="tt5664636" title="Goosebumps II: Haunted Halloween" />
@@ -1673,7 +1675,7 @@
 	<rename id="tt0086190" title="Star Wars VI: Return of the Jedi" sortby="Star Wars 06" />
 	<rename id="tt2488496" title="Star Wars VII: The Force Awakens" sortby="Star Wars 07" />
 	<rename id="tt2527336" title="Star Wars VIII: The Last Jedi" sortby="Star Wars 08" />
-	<rename id="tt2527338" title="Star Wars IX" sortby="Star Wars 09" />
+	<rename id="tt2527338" title="Star Wars IX: The Rise of Skywalker" sortby="Star Wars 09" />
 	<rename id="tt0942903" title="Stargate SG-1 I: The Ark Of Truth" />
 	<rename id="tt0929629" title="Stargate SG-1 II: Continuum" />
 	<rename id="tt1483803" title="Stargate SG-1 III: Children of the Gods" />
