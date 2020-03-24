@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="21" />
-		<published month="3" day="21" year="2020" />
+		<version major="1" minor="9" point="22" />
+		<published month="3" day="23" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1075,6 +1075,9 @@
 	<rename id="tt1422674" title="Ju-on V: Black Ghost" foreign="Ju-on: Kuroi shôjo" />
 	<rename id="tt1422675" title="Ju-on VI: White Ghost" foreign="Ju-on: Shiroi rôjo" />
 	<rename id="tt0113492" title="Judge Dredd" collection="Judge Dredd|» Superheroes" />
+	<rename id="tt0113497" title="Jumanji I" />
+	<rename id="tt2283362" title="Jumanji II: Welcome to the Jungle" />
+	<rename id="tt7975244" title="Jumanji III: The Next Level" />
 	<rename id="tt0107290" title="Jurassic Park I" />
 	<rename id="tt0119567" title="Jurassic Park II: The Lost World" />
 	<rename id="tt0163025" title="Jurassic Park III: Return to the Island" />
