@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="22" />
-		<published month="3" day="23" year="2020" />
+		<version major="1" minor="9" point="23" />
+		<published month="3" day="24" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1056,6 +1056,7 @@
 	<rename id="tt4126340" title="Joe Dirt II: Beautiful Loser" />
 	<rename id="tt2911666" title="John Wick I" />
 	<rename id="tt4425200" title="John Wick II: Chapter Two" />
+	<rename id="tt6146586" title="John Wick III: Chapter Three - Parabellum" />
 	<rename id="tt0274166" title="Johnny English I" />
 	<rename id="tt1634122" title="Johnny English II: Reborn" />
 	<rename id="tt6921996" title="Johnny English III: Strikes Again" />
