@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="23" />
-		<published month="3" day="24" year="2020" />
+		<version major="1" minor="9" point="24" />
+		<published month="3" day="25" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -276,10 +276,12 @@
 	<rename id="tt1464174" title="Big Momma's House III: Like Father, Like Son" />
 	<rename id="tt0096928" title="Bill &amp; Ted's I: Excellent Adventure" />
 	<rename id="tt0101452" title="Bill &amp; Ted's II: Bogus Journey" />
+	<rename id="tt7713068" sortby="Birds of Prey I" collection="» Superheroes" />
 	<rename id="tt0071222" title="Black Christmas (Original)" />
 	<rename id="tt0115693" title="Black Mask I" />
 	<rename id="tt0264429" title="Black Mask II: City of Masks" />
 	<rename id="tt1825683" sortby="Black Panther I" collection="The Avengers|» Superheroes" />
+	<rename id="tt3480822" sortby="Black Widow I" collection="The Avengers|» Superheroes" />
 	<rename id="tt0120611" title="Blade I" collection="Blade Trilogy|» Superheroes" />
 	<rename id="tt0187738" title="Blade II" collection="Blade Trilogy|» Superheroes" />
 	<rename id="tt0359013" title="Blade III: Trinity" collection="Blade Trilogy|» Superheroes" />
@@ -615,6 +617,7 @@
 	<rename id="tt0116147" title="Drive (Classic)" />
 	<rename id="tt0080179" title="Drunken Master I" foreign="Jui Kuen" />
 	<rename id="tt0111512" title="Drunken Master II" foreign="Jui Kuen II" />
+	<rename id="tt1160419" title="Dune (Remake)" />
 	<rename id="tt0190374" title="Dungeons &amp; Dragons I" />
 	<rename id="tt0406728" title="Dungeons &amp; Dragons II: Wrath of the Dragon God" />
 	<rename id="tt1733125" title="Dungeons &amp; Dragons III: The Book of Vile Darkness" />
@@ -1112,6 +1115,7 @@
 	<rename id="tt0397501" title="King Solomon's Mines (TV)" />
 	<rename id="tt2802144" title="Kingsman I: The Secret Service" />
 	<rename id="tt4649466" title="Kingsman II: The Golden Circle" />
+	<rename id="tt6856242" title="Kingsman III: The King's Man" />
 	<rename id="tt0970862" title="Kiss Me Kate (Belgium)" />
 	<rename id="tt1871303" title="Kiss Me Kate (NL)" />
 	<rename id="tt0045963" title="Kiss Me Kate (Original)" />
@@ -1138,6 +1142,7 @@
 	<rename id="tt0469111" title="Last Summer III: I'll Always Know What You Did..." sortby="I Know What You Did Last Summer 03" />
 	<rename id="tt0250494" title="Legally Blonde I" />
 	<rename id="tt0333780" title="Legally Blonde II: Red, White &amp; Blonde" />
+	<rename id="tt8509238" title="Legally Blonde III" />
 	<rename id="tt0107387" title="Leprechaun I" />
 	<rename id="tt0110329" title="Leprechaun II" />
 	<rename id="tt0113636" title="Leprechaun III" />
@@ -1252,6 +1257,7 @@
 	<rename id="tt0134119" title="Mr. Ripley I: The Talented Mr. Ripley" />
 	<rename id="tt0265651" title="Mr. Ripley II: Ripley's Game" />
 	<rename id="tt0219171" title="Mr. Ripley III: Ripley Under Ground" />
+	<rename id="tt0120762" title="Mulan (Cartoon)" />
 	<rename id="tt0259446" title="My Big Fat Greek Wedding I" />
 	<rename id="tt3760922" title="My Big Fat Greek Wedding II" />
 	<rename id="tt0132347" title="Mystery Men" collection="» Superheroes" />
@@ -1618,6 +1624,8 @@
 	<rename id="tt0458481" title="Sin City II: A Dame to Kill For" />
 	<rename id="tt1922777" title="Sinister I" />
 	<rename id="tt2752772" title="Sinister II" />
+	<rename id="tt3470600" title="Sing I" />
+	<rename id="tt6467266" title="Sing II" />
 	<rename id="tt0405325" title="Sky High" collection="» Superheroes" />
 	<rename id="tt0475394" title="Smokin' Aces I" />
 	<rename id="tt1319743" title="Smokin' Aces II: Assassins' Ball" />
@@ -1802,6 +1810,7 @@
 	<rename id="tt1872184" title="The Chronicles of Narnia V: The Magician's Nephew" />
 	<rename id="tt1457767" title="The Conjuring I" />
 	<rename id="tt3065204" title="The Conjuring II" />
+	<rename id="tt7069210" title="The Conjuring III: The Devil Made Me Do It" />
 	<rename id="tt0481499" title="The Croods I" />
 	<rename id="tt2850386" title="The Croods II" />
 	<rename id="tt0109506" title="The Crow I" />
@@ -1840,7 +1849,7 @@
 	<rename id="tt1905041" title="The Fast and the Furious VI: Furious Six" sortby="The Fast and the Furious 06" />
 	<rename id="tt2820852" title="The Fast and the Furious VII: Furious Seven" sortby="The Fast and the Furious 07" />
 	<rename id="tt4630562" title="The Fast and the Furious VIII: The Fate of the Furious" sortby="The Fast and the Furious 08" />
-	<rename id="tt5433138" title="The Fast and the Furious IX: Furious Nine" sortby="The Fast and the Furious 09" />
+	<rename id="tt5433138" title="The Fast and the Furious IX: F9" sortby="The Fast and the Furious 09" />
 	<rename id="tt5433140" title="The Fast and the Furious X: Furious Ten" sortby="The Fast and the Furious 10" />
 	<rename id="tt0059183" title="The Flight of the Phoenix (Original)" />
 	<rename id="tt0091064" title="The Fly I" />
@@ -2115,7 +2124,7 @@
 	<rename id="tt1217213" title="Tinker Bell IV: Secret of the Wings" />
 	<rename id="tt0808510" title="Tooth Fairy I" />
 	<rename id="tt1935929" title="Tooth Fairy II" />
-	<rename id="tt0092099" sortby="Top Gun I" />
+	<rename id="tt0092099" title="Top Gun I" />
 	<rename id="tt1745960" title="Top Gun II: Maverick" />
 	<rename id="tt1386703" title="Total Recall (Remake)" />
 	<rename id="tt1850374" title="Toy Story (Short): Hawaiian Vacation" sortby="Toy Story X01" collection="Toy Story" />
@@ -2131,12 +2140,13 @@
 	<rename id="tt2109248" title="Transformers IV: Age of Extinction" />
 	<rename id="tt3371366" title="Transformers V: The Last Knight" />
 	<rename id="tt4701182" title="Transformers VI: Bumblebee" />
-	<rename id="tt5090564" title="Transformers VII" />
-	<rename id="tt5090568" title="Transformers VIII" />
+	<rename id="tt5090568" title="Transformers VII" />
 	<rename id="tt0100814" title="Tremors I" />
 	<rename id="tt0114720" title="Tremors II: Aftershocks" />
 	<rename id="tt0259685" title="Tremors III: Back to Perfection" />
 	<rename id="tt0334541" title="Tremors IV: The Legend Begins" />
+	<rename id="tt1679335" title="Trolls I" />
+	<rename id="tt6587640" title="Trolls II: World Tour" />
 	<rename id="tt0084827" title="TRON I" />
 	<rename id="tt1104001" title="TRON II: Legacy" />
 	<rename id="tt1865543" title="TRON III: The Next Day" />
@@ -2265,7 +2275,8 @@
 	<rename id="tt1247704" title="Women in Trouble I" />
 	<rename id="tt1340773" title="Women in Trouble II: Elektra Luxx" />
 	<rename id="tt1341342" title="Women in Trouble III: Women in Ecstasy" />
-	<rename id="tt0451279" sortby="Wonder Woman I" collection="The Justice League|» Superheroes" />
+	<rename id="tt0451279" title="Wonder Woman I" collection="The Justice League|» Superheroes" />
+	<rename id="tt7126948" title="Wonder Woman II: 1984" collection="The Justice League|» Superheroes" />
 	<rename id="tt1772341" title="Wreck-It Ralph I" />
 	<rename id="tt5848272" title="Wreck-It Ralph II: Ralph Breaks the Internet" />
 	<rename id="tt0295700" title="Wrong Turn I" />
