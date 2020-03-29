@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="24" />
-		<published month="3" day="25" year="2020" />
+		<version major="1" minor="9" point="25" />
+		<published month="3" day="29" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -221,9 +221,10 @@
 	<rename id="tt0099088" title="Back to the Future III" />
 	<rename id="tt1928330" title="Bad Ass I" />
 	<rename id="tt2996648" title="Bad Ass II: Bad Asses" />
-	<rename id="tt0112442" title="Bad Boys I" collection="Bad Boys Trilogy" />
-	<rename id="tt0172156" title="Bad Boys II" collection="Bad Boys Trilogy" />
-	<rename id="tt1502397" title="Bad Boys III" collection="Bad Boys Trilogy" />
+	<rename id="tt0112442" title="Bad Boys I" />
+	<rename id="tt0172156" title="Bad Boys II" />
+	<rename id="tt1502397" title="Bad Boys III: For Life" />
+	<rename id="tt4919268" title="Bad Boys IV" />
 	<rename id="tt1334515" title="Bad Company (UK)" />
 	<rename id="tt0068245" title="Bad Company (Western)" />
 	<rename id="tt0112443" title="Bad Company (Thriller)" />
