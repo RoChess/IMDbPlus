@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="25" />
-		<published month="3" day="29" year="2020" />
+		<version major="1" minor="9" point="26" />
+		<published month="6" day="28" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -66,9 +66,9 @@
 	<rename id="tt0498755" title="20,000 Leagues Under the Sea (Cartoon)" />
 	<rename id="tt0092263" title="A Better Tomorrow I" foreign="Ying hung boon sik" />
 	<rename id="tt0094357" title="A Better Tomorrow II" foreign="Ying hung boon sik II" />
-	<rename id="tt0098691" title="A Better Tomorrow III" foreign="Ying hung boon sik III jik yeung ji gor" /> 		
+	<rename id="tt0098691" title="A Better Tomorrow III" foreign="Ying hung boon sik III: jik yeung ji gor" /> 		
 	<rename id="tt0093978" title="A Chinese Ghost Story I" foreign="Sien nui yau wan" />
-	<rename id="tt0100625" title="A Chinese Ghost Story II" foreign="Sien nui yau wan II yan gaan do" />
+	<rename id="tt0100625" title="A Chinese Ghost Story II" foreign="Sien nui yau wan II: yan gaan do" />
 	<rename id="tt0102932" title="A Chinese Ghost Story III" foreign="Sien lui yau wan III: Do do do" />
 	<rename id="tt0112668" title="A Christmas Carol (Cartoon)" />
 	<rename id="tt0029992" title="A Christmas Carol (Original)" />
@@ -198,6 +198,8 @@
 	<rename id="tt0077180" title="As You Like It (TV)" />
 	<rename id="tt0103723" title="As You Like It (UK)" />
 	<rename id="tt0074156" title="Assault on Precinct 13 (Original)" />
+	<rename id="tt0230011" title="Atlantis I: The Lost Empire" />
+	<rename id="tt0344864" title="Atlantis II: Milo's Return" />
 	<rename id="tt0051380" title="Attack of the 50 Ft. Woman (Original)" />
 	<rename id="tt0118655" title="Austin Powers I: International Man of Mystery" />
 	<rename id="tt0145660" title="Austin Powers II: The Spy Who Shagged Me" />
@@ -514,6 +516,8 @@
 	<rename id="tt0106547" title="David Copperfield (Cartoon)" />
 	<rename id="tt0065615" title="David Copperfield (Original)" />
 	<rename id="tt0238768" title="David Copperfield (TV)" />
+	<rename id="tt0047977" title="Davy Crockett I: King of the Wild Frontier" />
+	<rename id="tt0049125" title="Davy Crockett II: ...and The River Pirates" />
 	<rename id="tt0103873" title="Dead Alive (Braindead)" />
 	<rename id="tt1431045" title="Deadpool I" collection="Deadpool|» Superheroes" />
 	<rename id="tt5463162" title="Deadpool II" collection="Deadpool|» Superheroes" />
@@ -628,7 +632,7 @@
 	<rename id="tt6823368" title="Eastrail 177: Glass" sortby=" Eastrail 3" collection="Eastrail #177 Trilogy|» Superheroes" />
 	<rename id="tt1291652" title="Easy Money I" foreign="Snabba cash" />
 	<rename id="tt1588342" title="Easy Money II: Hard to Kill" foreign="Snabba cash II" />
-	<rename id="tt2427502" title="Easy Money III: Life Deluxe" foreign="Snabba cash - Livet deluxe" />
+	<rename id="tt2427502" title="Easy Money III: Life Deluxe" foreign="Snabba cash III: Livet deluxe" />
 	<rename id="tt0085475" title="Eddie and the Cruisers I" />
 	<rename id="tt0097262" title="Eddie and the Cruisers II: Eddie Lives!" />
 	<rename id="tt0104815" title="El mariachi I" />
@@ -636,7 +640,7 @@
 	<rename id="tt0285823" title="El mariachi III: Once Upon a Time in Mexico" />
 	<rename id="tt0357277" title="Elektra" collection="» Superheroes" />
 	<rename id="tt0861739" title="Elite Squad I" foreign="Tropa de Elite" />
-	<rename id="tt1555149" title="Elite Squad II: The Enemy Within" foreign="Tropa de Elite 2 - O Inimigo Agora É Outro" />
+	<rename id="tt1555149" title="Elite Squad II: The Enemy Within" foreign="Tropa de Elite II: O Inimigo Agora É Outro" />
 	<rename id="tt0283332" title="Elizabeth (TV)" />
 	<rename id="tt0022854" title="Emma (Classic)" />
 	<rename id="tt0118308" title="Emma (TV)" />
@@ -665,7 +669,7 @@
 	<rename id="tt4465564" title="Fifty Shades Darker" sortby="Fifty Shades of Grey II" collection="Fifty Shades of Grey" />
 	<rename id="tt4477536" title="Fifty Shades Freed" sortby="Fifty Shades of Grey III" collection="Fifty Shades of Grey" />
 	<rename id="tt0103045" title="Fight Back to School I" foreign="Tao xue wei long" />
-	<rename id="tt0105534" title="Fight Back to School II" foreign="Tao xue wei long 2" />
+	<rename id="tt0105534" title="Fight Back to School II" foreign="Tao xue wei long II" />
 	<rename id="tt0195714" title="Final Destination I" />
 	<rename id="tt0309593" title="Final Destination II" />
 	<rename id="tt0414982" title="Final Destination III" />
@@ -687,6 +691,9 @@
 	<rename id="tt0434215" title="Flicka I" />
 	<rename id="tt1381767" title="Flicka II: Friends Forever" />
 	<rename id="tt2039339" title="Flicka III: Country Pride" />
+	<rename id="tt0054594" title="Flubber I: The Absent Minded Professor" />
+	<rename id="tt0057518" title="Flubber II: Son of Flubber" />
+	<rename id="tt0119137" title="Flubber (Remake)" />
 	<rename id="tt0087277" title="Footloose (Original)" />
 	<rename id="tt0106950" title="Fortress I" />
 	<rename id="tt0179183" title="Fortress II: Re-Entry" />
@@ -832,6 +839,8 @@
 	<rename id="tt0365302" title="Hansel and Gretel (UK)" />
 	<rename id="tt0308353" title="Happily N'Ever After I" />
 	<rename id="tt1235837" title="Happily N'Ever After II" />
+	<rename id="tt0366548" sortby="Happy Feet I" collection="Happy Feet" />
+	<rename id="tt1402488" sortby="Happy Feet II" collection="Happy Feet" />
 	<rename id="tt0366551" title="Harold &amp; Kumar I: Go to White Castle" />
 	<rename id="tt0481536" title="Harold &amp; Kumar II: Escape from Guantanamo Bay" />
 	<rename id="tt1278232" sortby="Harold &amp; Kumar II: Go to Amsterdam" collection="Harold &amp; Kumar" />	
@@ -875,6 +884,11 @@
 	<rename id="tt2150275" title="Henry V (TV)" />
 	<rename id="tt0097499" title="Henry V (UK)" />
 	<rename id="tt0079289" title="Henry V: The Life of Henry the Fifth" />
+	<rename id="tt0119571" title="Herbie I: The Love Bug" />
+	<rename id="tt0071607" title="Herbie II: Rides Again" />
+	<rename id="tt0076137" title="Herbie III: Goes to Monte Carlo" />
+	<rename id="tt0080861" title="Herbie IV: Goes Bananas" />
+	<rename id="tt0400497" title="Herbie V: Fully Loaded" />
 	<rename id="tt0475293" title="High School Musical I" />
 	<rename id="tt0810900" title="High School Musical II" />
 	<rename id="tt0962726" title="High School Musical III: Senior Year" />
@@ -976,7 +990,9 @@
 	<rename id="tt1220719" title="Ip Man I" foreign="Yip Man" />
 	<rename id="tt1386932" title="Ip Man II" foreign="Yip Man II" />
 	<rename id="tt2888046" title="Ip Man III" foreign="Yip Man III" />
-	<rename id="tt1641638" title="Ip Man III: Ip Man Zero" foreign="Yip Man chinchyun" />
+	<rename id="tt2076298" title="Ip Man IV: The Finale" foreign="Yip Man IV" />
+	<rename id="tt1641638" title="Ip Man (Remake) I: The Legend Is Born" foreign="Yip Man chin chyun" />
+	<rename id="tt2495118" title="Ip Man (Remake) II: The Final Fight" foreign="Yip Man: Jung gik yat zin" />
 	<rename id="tt0091278" title="Iron Eagle I" />
 	<rename id="tt0095382" title="Iron Eagle II" />
 	<rename id="tt0103617" title="Iron Eagle III" />
@@ -1074,11 +1090,13 @@
 	<rename id="tt1140941" title="Joy Ride II: Dead Ahead" />
 	<rename id="tt3138376" title="Joy Ride III: Roadkill" />
 	<rename id="tt0330500" title="Ju-on I: The Curse" foreign="Ju-on" />
-	<rename id="tt0330501" title="Ju-on II: The Curse II" foreign="Ju-on 2" />
-	<rename id="tt0364385" title="Ju-on III: The Grudge" foreign="Ju-on: Gekijô-ban" />
-	<rename id="tt0367913" title="Ju-on IV: The Grudge II" foreign="Ju-on 2: Gekijô-ban" />
-	<rename id="tt1422674" title="Ju-on V: Black Ghost" foreign="Ju-on: Kuroi shôjo" />
-	<rename id="tt1422675" title="Ju-on VI: White Ghost" foreign="Ju-on: Shiroi rôjo" />
+	<rename id="tt0330501" title="Ju-on II: The Curse II" foreign="Ju-on II" />
+	<rename id="tt0364385" title="Ju-on III: The Grudge" foreign="Ju-on III: Gekijô-ban" />
+	<rename id="tt0367913" title="Ju-on IV: The Grudge II" foreign="Ju-on IV: Gekijô-ban" />
+	<rename id="tt1422674" title="Ju-on V: Black Ghost" foreign="Ju-on V: Kuroi shôjo" />
+	<rename id="tt1422675" title="Ju-on VI: White Ghost" foreign="Ju-on VI: Shiroi rôjo" />
+	<rename id="tt3572132" title="Ju-on VII: The Curse" foreign="Ju-on VII: Owari no hajimari" />
+	<rename id="tt4458368" title="Ju-on VIII: The Curse II" foreign="Ju-on VIII: Za fainaru" />
 	<rename id="tt0113492" title="Judge Dredd" collection="Judge Dredd|» Superheroes" />
 	<rename id="tt0113497" title="Jumanji I" />
 	<rename id="tt2283362" title="Jumanji II: Welcome to the Jungle" />
@@ -1161,13 +1179,19 @@
 	<rename id="tt0348124" title="Lilo &amp; Stitch: Stitch! The Movie" sortby="Lilo 02" collection="Lilo &amp; Stitch" />
 	<rename id="tt0451213" title="Lilo &amp; Stitch: Stitch's Great Escape" sortby="Lilo 03" collection="Lilo &amp; Stitch" />
 	<rename id="tt0486761" title="Lilo &amp; Stitch: Leroy &amp; Stitch" sortby="Lilo 04" collection="Lilo &amp; Stitch" />
+	<rename id="tt0068815" title="Lone Wolf and Cub I: Sword of Vengeance" foreign="Kozure Ôkami I: Ko wo kashi ude kashi tsukamatsuru" />
+	<rename id="tt0068816" title="Lone Wolf and Cub II: Baby Cart at the River Styx" foreign="Kozure Ôkami II: Sanzu no kawa no ubaguruma" />
+	<rename id="tt0068817" title="Lone Wolf and Cub III: Baby Cart to Hades" foreign="Kozure Ôkami III: Shinikazeni mukau ubaguruma" />
+	<rename id="tt0143348" title="Lone Wolf and Cub IV: Baby Cart in Peril" foreign="Kozure Ôkami IV: Oya no kokoro ko no kokoro" />
+	<rename id="tt0143428" title="Lone Wolf and Cub V: Baby Cart in the Land of Demons" foreign="Kozure Ôkami V: Meifumadô" />
+	<rename id="tt0071695" title="Lone Wolf and Cub VI: White Heaven in Hell" foreign="Kozure Ôkami VI: Jigoku e ikuzo! Daigorô" />
 	<rename id="tt0096639" title="Lonesome Dove I: Lonesome Dove" />
 	<rename id="tt0106112" title="Lonesome Dove II: Return to Lonesome Dove" />
 	<rename id="tt0112041" title="Lonesome Dove III: Streets of Laredo" />
 	<rename id="tt0115238" title="Lonesome Dove IV: Dead Man's Walk" />
 	<rename id="tt0783328" title="Lonesome Dove V: Comanche Moon" />
 	<rename id="tt1737237" title="Lost on Journey I" foreign="Ren zai jiong tu" />
-	<rename id="tt2459022" title="Lost on Journey II: Lost in Thailand" foreign="Ren zai jiong tu zhi tai jiong" />
+	<rename id="tt2459022" title="Lost on Journey II: Lost in Thailand" foreign="Ren zai jiong tu II: zhi tai jiong" />
 	<rename id="tt0245712" title="Love's a Bitch" foreign="Amores perros" />
 	<rename id="tt0345591" title="Love Comes Softly I" sortby="Love Comes Softly 01" />
 	<rename id="tt0402348" title="Love Comes Softly II: Love's Enduring Promise" sortby="Love Comes Softly 02" />
@@ -1258,17 +1282,18 @@
 	<rename id="tt0134119" title="Mr. Ripley I: The Talented Mr. Ripley" />
 	<rename id="tt0265651" title="Mr. Ripley II: Ripley's Game" />
 	<rename id="tt0219171" title="Mr. Ripley III: Ripley Under Ground" />
-	<rename id="tt0120762" title="Mulan (Cartoon)" />
+	<rename id="tt0120762" title="Mulan (Cartoon) I" />
+	<rename id="tt0279967" title="Mulan (Cartoon) II" />
 	<rename id="tt0259446" title="My Big Fat Greek Wedding I" />
 	<rename id="tt3760922" title="My Big Fat Greek Wedding II" />
 	<rename id="tt0132347" title="Mystery Men" collection="» Superheroes" />
 	<rename id="tt0396752" title="Nanny McPhee I" />
 	<rename id="tt1415283" title="Nanny McPhee II: Returns" />
-	<rename id="tt0476680" title="Naruto I: Ninja Clash in the Land of Snow" foreign="Gekijô-ban Naruto: Daikatsugeki! Yukihime ninpôchô dattebayo!!" />
-	<rename id="tt0791188" title="Naruto II: Legend of the Stone of Gelel" foreign="Gekijô-ban Naruto: Daigekitotsu! Maboroshi no chitei iseki dattebayo!" />
-	<rename id="tt1071815" title="Naruto III: Guardians of the Crescent Moon Kingdom" foreign="Gekijô-ban Naruto: Daikôfun! Mikazukijima no animaru panikku dattebayo!" />
-	<rename id="tt0988982" title="Naruto IV: Shippuden" foreign="Gekijô-ban Naruto shippûden" />
-	<rename id="tt1160524" title="Naruto V: Shippuden Kizuna" foreign="Gekijô ban Naruto: Shippûden - Kizuna" />
+	<rename id="tt0476680" title="Naruto I: Ninja Clash in the Land of Snow" foreign="Gekijô-ban Naruto I: Daikatsugeki! Yukihime ninpôchô dattebayo!!" />
+	<rename id="tt0791188" title="Naruto II: Legend of the Stone of Gelel" foreign="Gekijô-ban Naruto II: Daigekitotsu! Maboroshi no chitei iseki dattebayo!" />
+	<rename id="tt1071815" title="Naruto III: Guardians of the Crescent Moon Kingdom" foreign="Gekijô-ban Naruto III: Daikôfun! Mikazukijima no animaru panikku dattebayo!" />
+	<rename id="tt0988982" title="Naruto IV: Shippuden" foreign="Gekijô-ban Naruto IV: Shippûden" />
+	<rename id="tt1160524" title="Naruto V: Shippuden Kizuna" foreign="Gekijô ban Naruto V: Shippûden Kizuna" />
 	<rename id="tt0368891" title="National Treasure I" />
 	<rename id="tt0465234" title="National Treasure II: Book of Secrets" />
 	<rename id="tt1197627" title="National Treasure III" />
@@ -1310,14 +1335,14 @@
 	<rename id="tt6189022" title="Angel Has Fallen" sortby="Olympus Has Fallen III" collection="Olympus Has Fallen" />
 	<rename id="tt0103285" title="Once Upon a Time in China I" foreign="Wong Fei Hung" />
 	<rename id="tt0105839" title="Once Upon a Time in China II" foreign="Wong Fei Hung II: Nam yi dong ji keung" />
-	<rename id="tt0108592" title="Once Upon a Time in China III" foreign="Wong Fei Hung ji saam: Si wong jaang ba" />
-	<rename id="tt0107162" title="Once Upon a Time in China IV" foreign="Wong Fei Hung ji sei: Wong je ji fung" />
-	<rename id="tt0110073" title="Once Upon a Time in China V" foreign="Wong Fei Hung chi neung: Lung shing chim pa" />
-	<rename id="tt0120530" title="Once Upon a Time in China VI: ...and America" foreign="Wong Fei Hung: Chi sai wik hung see" />
+	<rename id="tt0108592" title="Once Upon a Time in China III" foreign="Wong Fei Hung III: Si wong jaang ba" />
+	<rename id="tt0107162" title="Once Upon a Time in China IV" foreign="Wong Fei Hung IV: Wong je ji fung" />
+	<rename id="tt0110073" title="Once Upon a Time in China V" foreign="Wong Fei Hung V: Lung shing chim pa" />
+	<rename id="tt0120530" title="Once Upon a Time in China VI: ...and America" foreign="Wong Fei Hung VI: Chi sai wik hung see" />
 	<rename id="tt0064116" title="Once Upon a Time in the West" foreign="C'era una volta il West" />
 	<rename id="tt0366292" title="One Missed Call I" foreign="Chakushin ari" />
 	<rename id="tt0451010" title="One Missed Call II" foreign="Chakushin ari II" />
-	<rename id="tt0978797" title="One Missed Call III: Final Call" foreign="Chakushin ari final" />
+	<rename id="tt0978797" title="One Missed Call III: Final Call" foreign="Chakushin ari III: final" />
 	<rename id="tt0368909" title="Ong Bak I: Ong-Bak" />
 	<rename id="tt0785035" title="Ong Bak II: The Beginning" />
 	<rename id="tt1653690" title="Ong Bak III: The Final Battle" />
@@ -1338,7 +1363,7 @@
 	<rename id="tt1418712" title="Outpost II: Black Sun" />
 	<rename id="tt2241403" title="Outpost III: Rise of the Spetsnaz" />
 	<rename id="tt1462667" title="Outrage I" foreign="Autoreiji" />
-	<rename id="tt1724962" title="Outrage II: Beyond" foreign="Autoreiji: Biyondo" />
+	<rename id="tt1724962" title="Outrage II: Beyond" foreign="Autoreiji II: Biyondo" />
 	<rename id="tt1623205" title="Oz the Great and Powerful I" />
 	<rename id="tt2761172" title="Oz the Great and Powerful II" />
 	<rename id="tt1663662" title="Pacific Rim I" />
@@ -1347,7 +1372,7 @@
 	<rename id="tt4468740" title="Paddington II" />
 	<rename id="tt5822536" title="Paddington III" />
 	<rename id="tt1055300" title="Painted Skin I" foreign="Hua Pi" />
-	<rename id="tt2371411" title="Painted Skin II: The Resurrection" foreign="Hua Pi Er" />
+	<rename id="tt2371411" title="Painted Skin II: The Resurrection" foreign="Hua Pi II: Er" />
 	<rename id="tt1179904" title="Paranormal Activity I" />
 	<rename id="tt1536044" title="Paranormal Activity II" />
 	<rename id="tt1728179" title="Paranormal Activity II: Tokyo Night" foreign="Paranômaru akutibiti: Dai-2-shô" />
@@ -1400,6 +1425,8 @@
 	<rename id="tt1318514" title="Planet of the Apes (Remake) II: Rise of the..." sortby="Planet of the Apes X02" collection="Planet of the Apes" />
 	<rename id="tt2103281" title="Planet of the Apes (Remake) III: Dawn of the..." sortby="Planet of the Apes X03" collection="Planet of the Apes" />
 	<rename id="tt3450958" title="Planet of the Apes (Remake) IV: War for the..." sortby="Planet of the Apes X04" collection="Planet of the Apes" />
+	<rename id="tt0114148" title="Pocahontas I" />
+	<rename id="tt0143808" title="Pocahontas II: Journey to a New World" />
 	<rename id="tt0105156" title="Poison Ivy I" />
 	<rename id="tt0114151" title="Poison Ivy II" />
 	<rename id="tt0119908" title="Poison Ivy III: The New Seduction" />
@@ -1413,10 +1440,10 @@
 	<rename id="tt0110857" title="Police Academy VII: Mission to Moscow" />
 	<rename id="tt1332579" title="Police Academy VIII: Next Generation" />
 	<rename id="tt0089374" title="Police Story I" foreign="Ging chat goo si" />
-	<rename id="tt0095403" title="Police Story II" foreign="Ging chaat goo si juk jaap" />
-	<rename id="tt0104558" title="Police Story III: Super Cop" foreign="Ging chat goo si 3: Chiu kup ging chat" />
+	<rename id="tt0095403" title="Police Story II" foreign="Ging chaat goo si II: juk jaap" />
+	<rename id="tt0104558" title="Police Story III: Super Cop" foreign="Ging chat goo si III: Chiu kup ging chat" />
 	<rename id="tt0106544" title="Police Story III: Super Cop 2" foreign="Chao ji ji hua" />
-	<rename id="tt0116704" title="Police Story IV: First Strike" foreign="Ging chaat goo si 4: Ji gaan daan yam mo" />
+	<rename id="tt0116704" title="Police Story IV: First Strike" foreign="Ging chaat goo si IV: Ji gaan daan yam mo" />
 	<rename id="tt0386005" title="Police Story V: New Police Story" foreign="San ging caat goo si" />
 	<rename id="tt2599716" title="Police Story VI: Police Story 2013" foreign="Jing cha gu shi 2013" />
 	<rename id="tt0084522" title="Porky's I" />
@@ -1430,7 +1457,7 @@
 	<rename id="tt0093304" title="Prison on Fire I" foreign="Gam yuk fung wan" />
 	<rename id="tt0103044" title="Prison on Fire II" foreign="Jian yu feng yun II: Tao fan" />
 	<rename id="tt0085127" title="Project A I" foreign="'A' gai wak" />
-	<rename id="tt0092501" title="Project A II" foreign="'A' gai wak juk jap" />
+	<rename id="tt0092501" title="Project A II" foreign="'A' gai wak II: juk jap" />
 	<rename id="tt0114202" title="Public Enemies (Classic)" />
 	<rename id="tt0098143" title="Puppet Master I: Puppetmaster" sortby="Puppet Master 01" />
 	<rename id="tt0100438" title="Puppet Master II: His Unholy Creations" sortby="Puppet Master 02" />
@@ -1584,7 +1611,7 @@
 	<rename id="tt1261945" title="Sex and the City II" />
 	<rename id="tt0105287" title="Sex and Zen I" foreign="Yu pu tuan zhi: Tou qing bao jian" />
 	<rename id="tt0117605" title="Sex and Zen II" foreign="Yu pu tuan II: Yu nu xin jing" />
-	<rename id="tt0133196" title="Sex and Zen III" foreign="Yuk po tuen III goon yan ngoh yiu" />
+	<rename id="tt0133196" title="Sex and Zen III" foreign="Yuk po tuen III: Goon yan ngoh yiu" />
 	<rename id="tt1365048" title="Sex and Zen IV: Extreme Ecstasy (3D)" foreign="3D rou pu tuan zhi ji le bao jian" />
 	<rename id="tt0184894" title="Shanghai Noon I" />
 	<rename id="tt0300471" title="Shanghai Noon II: Shanghai Knights" />
@@ -1651,6 +1678,9 @@
 	<rename id="tt0413300" title="Spider-Man III" collection="Spider-Man|» Superheroes" />
 	<rename id="tt2250912" title="Spider-Man (Reboot) I: Homecoming" collection="Spider-Man|» Superheroes" />
 	<rename id="tt6320628" title="Spider-Man (Reboot) II: Far From Home" collection="Spider-Man|» Superheroes" />
+	<rename id="tt0345950" title="Spongebob SquarePants I: The Movie" />
+	<rename id="tt2279373" title="Spongebob SquarePants II: Sponge Out of Water" />
+	<rename id="tt4823776" title="Spongebob SquarePants II: Sponge On The Run" />
 	<rename id="tt3079380" title="Spy I" />
 	<rename id="tt5859072" title="Spy II" />
 	<rename id="tt0227538" title="Spy Kids I" />
@@ -1727,11 +1757,11 @@
 	<rename id="tt0084745" title="Swamp Thing I" collection="Swamp Thing|» Superheroes" />
 	<rename id="tt0098193" title="Swamp Thing II: The Return of Swamp Thing" collection="Swamp Thing|» Superheroes" />
 	<rename id="tt0250638" title="Tactical Unit I: PTU" />
-	<rename id="tt1256635" title="Tactical Unit II: The Code" foreign="Kei tung bou deui - Ging lai" />
-	<rename id="tt1401663" title="Tactical Unit III: No Way Out" foreign="Kei tung bou deui - Juet lou" />
-	<rename id="tt1401664" title="Tactical Unit IV: Human Nature" foreign="Kei tung bou deui - Yan sing" />
-	<rename id="tt1344008" title="Tactical Unit V: Comrades in Arms" foreign="Kei tung bou deui - Tung pou" />
-	<rename id="tt1403854" title="Tactical Unit VI: Partners" foreign="Kei tung bou deui - Fo pun" />
+	<rename id="tt1256635" title="Tactical Unit II: The Code" foreign="Kei tung bou deui II: Ging lai" />
+	<rename id="tt1401663" title="Tactical Unit III: No Way Out" foreign="Kei tung bou deui III: Juet lou" />
+	<rename id="tt1401664" title="Tactical Unit IV: Human Nature" foreign="Kei tung bou deui IV: Yan sing" />
+	<rename id="tt1344008" title="Tactical Unit V: Comrades in Arms" foreign="Kei tung bou deui V: Tung pou" />
+	<rename id="tt1403854" title="Tactical Unit VI: Partners" foreign="Kei tung bou deui VI: Fo pun" />
 	<rename id="tt1981080" title="Tai Chi I: Zero" />
 	<rename id="tt2296404" title="Tai Chi II: Hero" />
 	<rename id="tt2322276" title="Tai Chi III: Summit" />
@@ -1827,6 +1857,8 @@
 	<rename id="tt1422137" title="The Da Vinci Code IV: The Lost Symbol" />
 	<rename id="tt0435625" title="The Descent I" />
 	<rename id="tt1073105" title="The Descent II" />
+	<rename id="tt0120917" title="The Emperor's New Groove I" />
+	<rename id="tt0401398" title="The Emperor's New Groove II: Kronk's New Groove" />
 	<rename id="tt0455944" title="The Equalizer I" />
 	<rename id="tt3766354" title="The Equalizer II" />
 	<rename id="tt0083907" title="The Evil Dead I" />
@@ -1903,6 +1935,8 @@
 	<rename id="tt0800080" title="The Incredible Hulk" collection="» Superheroes" />
 	<rename id="tt0317705" title="The Incredibles I" collection="The Incredibles|» Superheroes" />
 	<rename id="tt3606756" title="The Incredibles II" collection="The Incredibles|» Superheroes" />
+	<rename id="tt0061852" title="The Jungle Book (Cartoon) I" />
+	<rename id="tt0283426" title="The Jungle Book (Cartoon) II" />
 	<rename id="tt2388771" title="The Jungle Book (Reboot) Mowgli: Legend of the Jungle" />
 	<rename id="tt0974015" title="The Justice League I: Part One" collection="The Justice League|» Superheroes" />
 	<rename id="tt4121026" title="The Justice League II: Part Two" collection="The Justice League|» Superheroes" />
@@ -1937,8 +1971,11 @@
 	<rename id="tt1146438" title="The Librarian III: The Curse of the Judas Chalice" />
 	<rename id="tt1111918" title="The Line" foreign="La Linea" />
 	<rename id="tt0110357" title="The Lion King I" />
-	<rename id="tt0120131" title="The Lion King II" />
+	<rename id="tt0120131" title="The Lion King II: Simba's Pride" />
 	<rename id="tt0318403" title="The Lion King III: Hakuna Matata (1½)" collection="The Lion King|Lilo &amp; Stitch" />
+	<rename id="tt0097757" title="The Little Mermaid I" />
+	<rename id="tt0240684" title="The Little Mermaid II: Return to the Sea" />
+	<rename id="tt0969647" title="The Little Mermaid III: Ariel's Beginning" />
 	<rename id="tt0110366" title="The Little Rascals I" />
 	<rename id="tt2490004" title="The Little Rascals II: Save the Day" />
 	<rename id="tt0120737" title="The Lord of the Rings I: Fellowship of the Ring" collection="The Lord of the Rings|» Tolkien's Middle-earth" />
@@ -2123,6 +2160,11 @@
 	<rename id="tt1216516" title="Tinker Bell II: ...and the Lost Treasure" />
 	<rename id="tt1216515" title="Tinker Bell III: ...and the Great Fairy Rescue" />
 	<rename id="tt1217213" title="Tinker Bell IV: Secret of the Wings" />
+	<rename id="tt1217213" title="Tinker Bell V: Secret of the Wings" />
+	<rename id="tt2483260" title="Tinker Bell VI: The Pirate Fairy" />
+	<rename id="tt3120408" title="Tinker Bell VII: ...and the Legend of the Neverbeast" />
+	<rename id="tt1450334" title="Tinker Bell (Short): Pixie Hollow Games" sortby="Tinker Bell X01" collection="Tinker Bell" />
+	<rename id="tt3717836" title="Tinker Bell (Short): Pixie Hollow Bake Off" sortby="Tinker Bell X02" collection="Tinker Bell" />
 	<rename id="tt0808510" title="Tooth Fairy I" />
 	<rename id="tt1935929" title="Tooth Fairy II" />
 	<rename id="tt0092099" title="Top Gun I" />
