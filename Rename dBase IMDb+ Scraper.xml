@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="26" />
-		<published month="6" day="28" year="2020" />
+		<version major="1" minor="9" point="27" />
+		<published month="6" day="29" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -2160,9 +2160,8 @@
 	<rename id="tt1216516" title="Tinker Bell II: ...and the Lost Treasure" />
 	<rename id="tt1216515" title="Tinker Bell III: ...and the Great Fairy Rescue" />
 	<rename id="tt1217213" title="Tinker Bell IV: Secret of the Wings" />
-	<rename id="tt1217213" title="Tinker Bell V: Secret of the Wings" />
-	<rename id="tt2483260" title="Tinker Bell VI: The Pirate Fairy" />
-	<rename id="tt3120408" title="Tinker Bell VII: ...and the Legend of the Neverbeast" />
+	<rename id="tt2483260" title="Tinker Bell V: The Pirate Fairy" />
+	<rename id="tt3120408" title="Tinker Bell VI: ...and the Legend of the Neverbeast" />
 	<rename id="tt1450334" title="Tinker Bell (Short): Pixie Hollow Games" sortby="Tinker Bell X01" collection="Tinker Bell" />
 	<rename id="tt3717836" title="Tinker Bell (Short): Pixie Hollow Bake Off" sortby="Tinker Bell X02" collection="Tinker Bell" />
 	<rename id="tt0808510" title="Tooth Fairy I" />
