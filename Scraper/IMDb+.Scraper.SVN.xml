@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="10" point="5" />
-		<published month="02" day="24" year="2020" />
+		<version major="4" minor="10" point="6" />
+		<published month="06" day="30" year="2020" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -375,1130 +375,1148 @@
 					<log LogLevel="Info" Message="IMDb+ Scraper: Dutch (moviemeter.nl) used for some data on: ${movie.site_id}" />
 				</if>
 				<retrieve name="foreign_page" url="${alt_site}" encoding="${alt_site_encoding}" allow_unsafe_header="true" timeout="10000" />
+				<if test="${foreign_page}=">
+					<log LogLevel="Warn" Message="###########################################################################" />
+					<log LogLevel="Warn" Message="##### IMDb+ FAILURE FOREIGN SOURCE = ${alt_site} #####" />
+					<log LogLevel="Warn" Message="###########################################################################" />
+				</if>
+				<if test="${foreign_page}!=">
+					<if test="${global_options_debug_imdb_sources}=true">
+						<log LogLevel="Debug" Message="############################ IMDb+ HTML Source ############################" />
+						<log LogLevel="Debug" Message="##### foreign_page = ${foreign_page} #####" />
+						<log LogLevel="Debug" Message="###########################################################################" />
+					</if>
+				</if>
+			</if>
+
+			<retrieve name="details_page" url="${site}" encoding="UTF-8" />
+			<if test="${details_page}=">
+				<log LogLevel="Warn" Message="###########################################################################" />
+				<log LogLevel="Warn" Message="##### IMDb+ ABORTING: FAILURE READING = ${site} #####" />
+				<log LogLevel="Warn" Message="###########################################################################" />
+			</if>
+
+		<!-- START: HTML Details Page -->
+			<if test="${details_page}!=">
 				<if test="${global_options_debug_imdb_sources}=true">
 					<log LogLevel="Debug" Message="############################ IMDb+ HTML Source ############################" />
-					<log LogLevel="Debug" Message="##### foreign_page = ${foreign_page} #####" />
+					<log LogLevel="Debug" Message="##### details_page = ${details_page} #####" />
 					<log LogLevel="Debug" Message="###########################################################################" />
 				</if>
-			</if>
-			<retrieve name="details_page" url="${site}" encoding="UTF-8" />
-			<if test="${global_options_debug_imdb_sources}=true">
-				<log LogLevel="Debug" Message="############################ IMDb+ HTML Source ############################" />
-				<log LogLevel="Debug" Message="##### details_page = ${details_page} #####" />
-				<log LogLevel="Debug" Message="###########################################################################" />
-			</if>
 
-			<set name="movie.imdb_id" value="${movie.site_id}" />
+				<set name="movie.imdb_id" value="${movie.site_id}" />
 
-			<!-- clear SortBy, so that it can be properly redone by the plugin afterwards -->
-			<!-- this is to ensure article removal when there is a forced English title change -->
-			<set name="sortby_backup" value="${movie.sortby}" />
-			<set name="movie.sortby" value='' />
+				<!-- clear SortBy, so that it can be properly redone by the plugin afterwards -->
+				<!-- this is to ensure article removal when there is a forced English title change -->
+				<set name="sortby_backup" value="${movie.sortby}" />
+				<set name="movie.sortby" value='' />
 
-			<!-- Title is now done after directors, writers and actors, to be able to detect between new import and refresh -->
+				<!-- Title is now done after directors, writers and actors, to be able to detect between new import and refresh -->
 
-			<!-- Verify conditional update. There is no AND or OR support, so this will have to do -->
-			<if test="${movie.directors}="><set name="update_directors" value="true" /><set name="new_import" value="true" /></if>
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_directors" value="true" /></if>
-			<if test="${update_directors}=true">
-				<!-- Directors -->
-				<set name="rx_directors_block">
-					<![CDATA[
-					Director[s]?:\s*</h4>[^<]*(?<directors_block>.*?)</div>
-					]]>
-				</set>
-				<set name="rx_directors">
-					<![CDATA[
-					<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d+[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieDirectors>[^<]+)(?:</span>)?</a>
-					]]>
-				</set>
-				<parse name="directors_block" input="${details_page}" regex="${rx_directors_block}" />
-				<parse name="directors" input="${directors_block}" regex="${rx_directors}" />
-				<if test="${global_options_one_writer_director}=true">
-					<set name="movie.directors" value="${directors[0][0]:htmldecode}" />
-				</if>
-				<if test="${global_options_one_writer_director}=false">
-					<set name="movie.directors" value="|" />
-					<loop name="currDirector" on="directors" limit="10">
-						<replace name="director_apostrophe" input="${currDirector[0]:htmldecode}" pattern="\\u0027" with="'" />
-						<set name="movie.directors" value="${movie.directors}${director_apostrophe}|" />
-					</loop>
-				</if>
-			</if>
-
-			<if test="${movie.writers}="><set name="update_writers" value="true" /><set name="new_import" value="true" /></if>
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_writers" value="true" /></if>
-			<if test="${update_writers}=true">
-				<!-- Writers -->
-				<set name="rx_writers_block">
-					<![CDATA[
-					Writer[s]?:\s*</h4>[^<]*(?<writers_block>.*?)</div>
-					]]>
-				</set>
-				<set name="rx_writers">
-					<![CDATA[
-					<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d+[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieWriters>[^<]+)(?:</span>)?</a>
-					]]>
-				</set>
-				<parse name="writers_block" input="${details_page}" regex="${rx_writers_block}" />
-				<parse name="writers" input="${writers_block}" regex="${rx_writers}" />
-				<if test="${global_options_one_writer_director}=true">
-					<set name="movie.writers" value="${writers[0][0]:htmldecode}" />
-				</if>
-				<if test="${global_options_one_writer_director}=false">
-					<set name="movie.writers" value="|" />
-					<loop name="currWriter" on="writers" limit="10">
-						<replace name="writer_apostrophe" input="${currWriter[0]:htmldecode}" pattern="\\u0027" with="'" />
-						<set name="movie.writers" value="${movie.writers}${writer_apostrophe}|" />
-					</loop>
-				</if>
-			</if>
-
-			<if test="${movie.actors}="><set name="update_actors" value="true" /><set name="new_import" value="true" /></if>
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_actors" value="true" /></if>
-			<if test="${update_actors}=true">
-				<!-- Actors -->
-				<set name="rx_actors_block">
-					<![CDATA[
-					<script type="[^"]+json">.+?"actor":.+?(?:\{.+?"name":\s*"(?<actor>[^"]+)"\s*\}[,\s]*)+
-					]]>
-				</set>
-				<set name="rx_actors">
-					<![CDATA[
-					"name":\s*"(?<movieActors>[^"]+)"\s
-					]]>
-				</set>
-				<parse name="actors_block" input="${details_page}" regex="${rx_actors_block}" />
-				<parse name="actors" input="${actors_block}" regex="${rx_actors}" />
-				<set name="movie.actors" value="|" />
-				<loop name="currActor" on="actors" limit="30">
-					<replace name="actor_apostrophe" input="${currActor[0]:htmldecode}" pattern="\\u0027" with="'" />
-					<set name="movie.actors" value="${movie.actors}${actor_apostrophe}|" />
-				</loop>
-			</if>
-
-			<if test="${new_import}=true"><set name="update_title_and_year" value="true" /></if>
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_title_and_year" value="true" /></if><if test="${movie.title}="><set name="update_title_and_year" value="true" /></if><if test="${movie.year}="><set name="update_title_and_year" value="true" /></if>
-			<!-- If UK certifications are enabled, we want UK title; so need to rely on the AKA title and skip this one -->
-			<if test="${global_options_uk_rating}=true"><set name="update_title_and_year" value="false" /></if>
-			<if test="${update_title_and_year}=true">
-				<!-- Title and Year -->
-				<if test="${global_options_secondary_details}&lt;=1"><set name="get_english_title" value="true" /></if>
-				<if test="${global_options_secondary_en_title}=true"><set name="get_english_title" value="true" /></if>
-				<if test="${get_english_title}=true">
-					<if test="${global_options_original_title}=true">
-						<set name="rx_title_year">
-							<![CDATA[
-							<title>(?:&#x27;)?(?<movieTitle>[^(]+(?:\(\D+\))?)(?:&#x27;)?\s+\(\D*(?<movieYear>\d{4})[^)]*\)[^<]*</title>
-							]]>
-						</set>
-					</if>
-					<if test="${global_options_original_title}=false">
-						<set name="rx_title_year">
-							<![CDATA[
-							<meta property='og:title' content="(?:&#x27;)?(?<movieTitleEnglish>[^(]+(?:\(\D+\))?)(?:&#x27;)?\s+\(\D*(?<movieYear>\d{4})[^)]*\)[^"]*" />
-							]]>
-						</set>
-					</if>
-					<parse name="title_year" input="${details_page}" regex="${rx_title_year}" />
-				</if>
-				<if test="${global_options_secondary_details}>1">
-					<if test="${get_english_title}!=true">
-						<parse name="title_year" input="${foreign_page}" regex="${rx_title_year}" />
-					</if>
-				</if>
-
-				<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
-				<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
-			</if>
-
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_release_date" value="true" /></if><if test="${new_import}=true"><set name="update_release_date" value="true" /></if><if test="${movie.release_date}="><set name="update_release_date" value="true" /></if>
-			<if test="${update_release_date}=true">
-				<!-- Release Date -->
-				<set name="rx_release_date">
-					<![CDATA[
-					<h4 class="inline">Release Date:</h4>\s*(?<releaseDate>(?:\d{1,2}\s*)?[^\s]+\s*\d{4})
-					]]>
-				</set>
-				<parse name="release_date" input="${details_page}" regex="${rx_release_date}" />
-				<!-- If IMDb.com does not have a release date, then we will use the release year -->
-				<if test="${release_date[0][0]}=">
-					<if test="${movie.year}!=">
-						<set name="release_date[0][0]" value="1/1/${movie.year}" />
-					</if>
-				</if>
-				<set name="movie.release_date" value="${release_date[0][0]}" />
-			</if>
-
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_studios" value="true" /></if><if test="${movie.studios}="><set name="update_studios" value="true" /></if>
-			<if test="${update_studios}=true">
-				<!-- Studios -->
-				<set name="rx_studios_block">
-					<![CDATA[
-					<h4 class="inline">Production Co:</h4>\s*(?<movieStudios>(?:[,]*\s*<span itemprop="creator"[^>]+>\s*)?(?:[^<]*<a[^>]+href="[^"]+"[^>]*>(?:<span[^>]+>)?[^<]+(?:</span></a></span>|</a>)))*
-					]]>
-				</set>
-				<set name="rx_studios">
-					<![CDATA[
-					<a[^>]+href="[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieStudios>[^<]+)(?:</span>)?</a>
-					]]>
-				</set>
-				<parse name="studios_block" input="${details_page}" regex="${rx_studios_block}" />
-				<parse name="studios" input="${studios_block}" regex="${rx_studios}" />
-				<set name="movie.studios" value="|" />
-				<loop name="currStudio" on="studios" limit="10">
-					<set name="movie.studios" value="${movie.studios}${currStudio[0]:htmldecode}|" />
-				</loop>
-			</if>
-
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_genres" value="true" /></if><if test="${movie.genres}="><set name="update_genres" value="true" /></if>
-			<if test="${update_genres}=true">
-				<!-- Genres -->
-				<if test="${global_options_secondary_details}&lt;=6">
-					<set name="rx_genres_block">
+				<!-- Verify conditional update. There is no AND or OR support, so this will have to do -->
+				<if test="${movie.directors}="><set name="update_directors" value="true" /><set name="new_import" value="true" /></if>
+				<if test="${global_options_refresh_all_fields}=true"><set name="update_directors" value="true" /></if>
+				<if test="${update_directors}=true">
+					<!-- Directors -->
+					<set name="rx_directors_block">
 						<![CDATA[
-						Genre[s]?:[^<]*</h4>(?<genres_block>.+?)</div>
+						Director[s]?:\s*</h4>[^<]*(?<directors_block>.*?)</div>
 						]]>
 					</set>
-					<set name="rx_genres">
+					<set name="rx_directors">
 						<![CDATA[
-						<a href="/search/title\?genre[^"]+"[^>]*\s*>\s*(?<movieGenres>.+?)</a>
+						<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d+[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieDirectors>[^<]+)(?:</span>)?</a>
 						]]>
 					</set>
-					<parse name="genres_block" input="${details_page}" regex="${rx_genres_block}" />
+					<parse name="directors_block" input="${details_page}" regex="${rx_directors_block}" />
+					<parse name="directors" input="${directors_block}" regex="${rx_directors}" />
+					<if test="${global_options_one_writer_director}=true">
+						<set name="movie.directors" value="${directors[0][0]:htmldecode}" />
+					</if>
+					<if test="${global_options_one_writer_director}=false">
+						<set name="movie.directors" value="|" />
+						<loop name="currDirector" on="directors" limit="10">
+							<replace name="director_apostrophe" input="${currDirector[0]:htmldecode}" pattern="\\u0027" with="'" />
+							<set name="movie.directors" value="${movie.directors}${director_apostrophe}|" />
+						</loop>
+					</if>
 				</if>
-				<if test="${global_options_secondary_details}>6">
-					<parse name="genres_block" input="${foreign_page}" regex="${rx_genres_block}" />
+
+				<if test="${movie.writers}="><set name="update_writers" value="true" /><set name="new_import" value="true" /></if>
+				<if test="${global_options_refresh_all_fields}=true"><set name="update_writers" value="true" /></if>
+				<if test="${update_writers}=true">
+					<!-- Writers -->
+					<set name="rx_writers_block">
+						<![CDATA[
+						Writer[s]?:\s*</h4>[^<]*(?<writers_block>.*?)</div>
+						]]>
+					</set>
+					<set name="rx_writers">
+						<![CDATA[
+						<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d+[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieWriters>[^<]+)(?:</span>)?</a>
+						]]>
+					</set>
+					<parse name="writers_block" input="${details_page}" regex="${rx_writers_block}" />
+					<parse name="writers" input="${writers_block}" regex="${rx_writers}" />
+					<if test="${global_options_one_writer_director}=true">
+						<set name="movie.writers" value="${writers[0][0]:htmldecode}" />
+					</if>
+					<if test="${global_options_one_writer_director}=false">
+						<set name="movie.writers" value="|" />
+						<loop name="currWriter" on="writers" limit="10">
+							<replace name="writer_apostrophe" input="${currWriter[0]:htmldecode}" pattern="\\u0027" with="'" />
+							<set name="movie.writers" value="${movie.writers}${writer_apostrophe}|" />
+						</loop>
+					</if>
 				</if>
 
-				<parse name="genres" input="${genres_block[0][0]}" regex="${rx_genres}" />
-				<set name="movie.genres" value="|" />
+				<if test="${movie.actors}="><set name="update_actors" value="true" /><set name="new_import" value="true" /></if>
+				<if test="${global_options_refresh_all_fields}=true"><set name="update_actors" value="true" /></if>
+				<if test="${update_actors}=true">
+					<!-- Actors -->
+					<set name="rx_actors_block">
+						<![CDATA[
+						<script type="[^"]+json">.+?"actor":.+?(?:\{.+?"name":\s*"(?<actor>[^"]+)"\s*\}[,\s]*)+
+						]]>
+					</set>
+					<set name="rx_actors">
+						<![CDATA[
+						"name":\s*"(?<movieActors>[^"]+)"\s
+						]]>
+					</set>
+					<parse name="actors_block" input="${details_page}" regex="${rx_actors_block}" />
+					<parse name="actors" input="${actors_block}" regex="${rx_actors}" />
+					<set name="movie.actors" value="|" />
+					<loop name="currActor" on="actors" limit="30">
+						<replace name="actor_apostrophe" input="${currActor[0]:htmldecode}" pattern="\\u0027" with="'" />
+						<set name="movie.actors" value="${movie.actors}${actor_apostrophe}|" />
+					</loop>
+				</if>
 
-				<loop name="currGenre" on="genres" limit="30">
-					<set name="movie.genres" value="${movie.genres}${currGenre[0]:htmldecode}|" />
-				</loop>
+				<if test="${new_import}=true"><set name="update_title_and_year" value="true" /></if>
+				<if test="${global_options_refresh_all_fields}=true"><set name="update_title_and_year" value="true" /></if><if test="${movie.title}="><set name="update_title_and_year" value="true" /></if><if test="${movie.year}="><set name="update_title_and_year" value="true" /></if>
+				<!-- If UK certifications are enabled, we want UK title; so need to rely on the AKA title and skip this one -->
+				<if test="${global_options_uk_rating}=true"><set name="update_title_and_year" value="false" /></if>
+				<if test="${update_title_and_year}=true">
+					<!-- Title and Year -->
+					<if test="${global_options_secondary_details}&lt;=1"><set name="get_english_title" value="true" /></if>
+					<if test="${global_options_secondary_en_title}=true"><set name="get_english_title" value="true" /></if>
+					<if test="${get_english_title}=true">
+						<if test="${global_options_original_title}=true">
+							<set name="rx_title_year">
+								<![CDATA[
+								<title>(?:&#x27;)?(?<movieTitle>[^(]+(?:\(\D+\))?)(?:&#x27;)?\s+\(\D*(?<movieYear>\d{4})[^)]*\)[^<]*</title>
+								]]>
+							</set>
+						</if>
+						<if test="${global_options_original_title}=false">
+							<set name="rx_title_year">
+								<![CDATA[
+								<meta property='og:title' content="(?:&#x27;)?(?<movieTitleEnglish>[^(]+(?:\(\D+\))?)(?:&#x27;)?\s+\(\D*(?<movieYear>\d{4})[^)]*\)[^"]*" />
+								]]>
+							</set>
+						</if>
+						<parse name="title_year" input="${details_page}" regex="${rx_title_year}" />
+					</if>
+					<if test="${global_options_secondary_details}>1">
+						<if test="${get_english_title}!=true">
+							<parse name="title_year" input="${foreign_page}" regex="${rx_title_year}" />
+						</if>
+					</if>
 
-				<!-- Temporary forced genre translation -->
-				<if test="${global_options_secondary_details}>1">
+					<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
+					<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
+				</if>
+
+				<if test="${global_options_refresh_all_fields}=true"><set name="update_release_date" value="true" /></if><if test="${new_import}=true"><set name="update_release_date" value="true" /></if><if test="${movie.release_date}="><set name="update_release_date" value="true" /></if>
+				<if test="${update_release_date}=true">
+					<!-- Release Date -->
+					<set name="rx_release_date">
+						<![CDATA[
+						<h4 class="inline">Release Date:</h4>\s*(?<releaseDate>(?:\d{1,2}\s*)?[^\s]+\s*\d{4})
+						]]>
+					</set>
+					<parse name="release_date" input="${details_page}" regex="${rx_release_date}" />
+					<!-- If IMDb.com does not have a release date, then we will use the release year -->
+					<if test="${release_date[0][0]}=">
+						<if test="${movie.year}!=">
+							<set name="release_date[0][0]" value="1/1/${movie.year}" />
+						</if>
+					</if>
+					<set name="movie.release_date" value="${release_date[0][0]}" />
+				</if>
+
+				<if test="${global_options_refresh_all_fields}=true"><set name="update_studios" value="true" /></if><if test="${movie.studios}="><set name="update_studios" value="true" /></if>
+				<if test="${update_studios}=true">
+					<!-- Studios -->
+					<set name="rx_studios_block">
+						<![CDATA[
+						<h4 class="inline">Production Co:</h4>\s*(?<movieStudios>(?:[,]*\s*<span itemprop="creator"[^>]+>\s*)?(?:[^<]*<a[^>]+href="[^"]+"[^>]*>(?:<span[^>]+>)?[^<]+(?:</span></a></span>|</a>)))*
+						]]>
+					</set>
+					<set name="rx_studios">
+						<![CDATA[
+						<a[^>]+href="[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieStudios>[^<]+)(?:</span>)?</a>
+						]]>
+					</set>
+					<parse name="studios_block" input="${details_page}" regex="${rx_studios_block}" />
+					<parse name="studios" input="${studios_block}" regex="${rx_studios}" />
+					<set name="movie.studios" value="|" />
+					<loop name="currStudio" on="studios" limit="10">
+						<set name="movie.studios" value="${movie.studios}${currStudio[0]:htmldecode}|" />
+					</loop>
+				</if>
+
+				<if test="${global_options_refresh_all_fields}=true"><set name="update_genres" value="true" /></if><if test="${movie.genres}="><set name="update_genres" value="true" /></if>
+				<if test="${update_genres}=true">
+					<!-- Genres -->
 					<if test="${global_options_secondary_details}&lt;=6">
-						<!-- imdb.de (German) -->
-						<if test="${global_options_secondary_details}=2">
-							<if test="${movie.genres}!=">
-								<replace name="movie.genres" input="${movie.genres}" pattern="Adventure" with="Abenteuer" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Animation" with="Zeichentrick" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Biography" with="Biographie" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="Komödie" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Crime" with="Krimi" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Documentary" with="Dokumentation" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Family" with="Familie" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Film-Noir" with="Kriminalfilm" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Spielshow" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Geschichte" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Musik|" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Nachrichten" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="Romanze" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Kurzfilm" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Krieg" />
+						<set name="rx_genres_block">
+							<![CDATA[
+							Genre[s]?:[^<]*</h4>(?<genres_block>.+?)</div>
+							]]>
+						</set>
+						<set name="rx_genres">
+							<![CDATA[
+							<a href="/search/title\?genre[^"]+"[^>]*\s*>\s*(?<movieGenres>.+?)</a>
+							]]>
+						</set>
+						<parse name="genres_block" input="${details_page}" regex="${rx_genres_block}" />
+					</if>
+					<if test="${global_options_secondary_details}>6">
+						<parse name="genres_block" input="${foreign_page}" regex="${rx_genres_block}" />
+					</if>
+
+					<parse name="genres" input="${genres_block[0][0]}" regex="${rx_genres}" />
+					<set name="movie.genres" value="|" />
+
+					<loop name="currGenre" on="genres" limit="30">
+						<set name="movie.genres" value="${movie.genres}${currGenre[0]:htmldecode}|" />
+					</loop>
+
+					<!-- Temporary forced genre translation -->
+					<if test="${global_options_secondary_details}>1">
+						<if test="${global_options_secondary_details}&lt;=6">
+							<!-- imdb.de (German) -->
+							<if test="${global_options_secondary_details}=2">
+								<if test="${movie.genres}!=">
+									<replace name="movie.genres" input="${movie.genres}" pattern="Adventure" with="Abenteuer" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Animation" with="Zeichentrick" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Biography" with="Biographie" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="Komödie" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Crime" with="Krimi" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Documentary" with="Dokumentation" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Family" with="Familie" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Film-Noir" with="Kriminalfilm" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Spielshow" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Geschichte" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Musik|" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Nachrichten" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="Romanze" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Kurzfilm" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Krieg" />
+								</if>
 							</if>
-						</if>
-						<!-- imdb.es (Spanish) -->
-						<if test="${global_options_secondary_details}=3">
-							<if test="${movie.genres}!=">
-								<replace name="movie.genres" input="${movie.genres}" pattern="Action" with="Acción" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Adventure" with="Aventuras" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Animation" with="Animación" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Biography" with="Biografía" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="Comedia" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Crime" with="Crimen" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Documentary" with="Documental" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Family" with="Familiar" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Fantasy" with="Fantasía" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Film-Noir" with="Cine Negro" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Concurso TV" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Historia" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Horror" with="Terror" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Música|" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Mystery" with="Misterio" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Noticias" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Reality Show" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="Romántica" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Sci-Fi" with="Ciencia Ficción" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Cortometrage" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Sport" with="Deportes" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Talk-Show" with="Debate" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Bélico" />
+							<!-- imdb.es (Spanish) -->
+							<if test="${global_options_secondary_details}=3">
+								<if test="${movie.genres}!=">
+									<replace name="movie.genres" input="${movie.genres}" pattern="Action" with="Acción" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Adventure" with="Aventuras" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Animation" with="Animación" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Biography" with="Biografía" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="Comedia" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Crime" with="Crimen" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Documentary" with="Documental" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Family" with="Familiar" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Fantasy" with="Fantasía" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Film-Noir" with="Cine Negro" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Concurso TV" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Historia" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Horror" with="Terror" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Música|" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Mystery" with="Misterio" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Noticias" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Reality Show" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="Romántica" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Sci-Fi" with="Ciencia Ficción" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Cortometrage" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Sport" with="Deportes" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Talk-Show" with="Debate" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Bélico" />
+								</if>
 							</if>
-						</if>
-						<!-- imdb.fr (French) -->
-						<if test="${global_options_secondary_details}=4">
-							<if test="${movie.genres}!=">
-								<replace name="movie.genres" input="${movie.genres}" pattern="Adventure" with="Aventure" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Biography" with="Biographie" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="Comédie" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Crime" with="Policier" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Documentary" with="Documentaire" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Drama" with="Drame" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Family" with="Famille" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Fantasy" with="Fantastique" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Emissions TV" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Historique" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Horror" with="Horreur" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Musique|" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Mystery" with="Mistérieux" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Journaux" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Tv-Réalité" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Court Métrage" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Guerre" />
+							<!-- imdb.fr (French) -->
+							<if test="${global_options_secondary_details}=4">
+								<if test="${movie.genres}!=">
+									<replace name="movie.genres" input="${movie.genres}" pattern="Adventure" with="Aventure" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Biography" with="Biographie" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="Comédie" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Crime" with="Policier" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Documentary" with="Documentaire" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Drama" with="Drame" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Family" with="Famille" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Fantasy" with="Fantastique" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Emissions TV" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Historique" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Horror" with="Horreur" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Musique|" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Mystery" with="Mistérieux" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Journaux" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Tv-Réalité" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Court Métrage" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Guerre" />
+								</if>
 							</if>
-						</if>
-						<!-- imdb.it (Italian) -->
-						<if test="${global_options_secondary_details}=5">
-							<if test="${movie.genres}!=">
-								<replace name="movie.genres" input="${movie.genres}" pattern="Action" with="Azione" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Adventure" with="Avventura" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Animation" with="Animazione" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Biography" with="Biografia" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="Commedia" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Crime" with="Crimine" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Documentary" with="Documentario" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Drama" with="Drammatico" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Family" with="Famiglia" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Storico" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Musica|" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="Romantico" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Sci-Fi" with="Fantascienza" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Cortometraggio" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Guerra" />
+							<!-- imdb.it (Italian) -->
+							<if test="${global_options_secondary_details}=5">
+								<if test="${movie.genres}!=">
+									<replace name="movie.genres" input="${movie.genres}" pattern="Action" with="Azione" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Adventure" with="Avventura" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Animation" with="Animazione" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Biography" with="Biografia" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="Commedia" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Crime" with="Crimine" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Documentary" with="Documentario" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Drama" with="Drammatico" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Family" with="Famiglia" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Storico" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Musica|" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Romance" with="Romantico" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Sci-Fi" with="Fantascienza" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Cortometraggio" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Guerra" />
+								</if>
 							</if>
-						</if>
-						<!-- imdb.pt (Portugese) -->
-						<if test="${global_options_secondary_details}=6">
-							<if test="${movie.genres}!=">
-								<replace name="movie.genres" input="${movie.genres}" pattern="Action" with="Acção" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Adventure" with="Aventura" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Animation" with="Animação" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Biography" with="Biografia" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="Comédia" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Documentary" with="Documentário" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Family" with="Familiar" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Fantasy" with="Fantasia" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Film-Noir" with="Cinema Negro" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Concurso" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Histórico" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Horror" with="Terror" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Musica|" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Mystery" with="Mistério" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Noticias" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Reality Show" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Sci-Fi" with="Ficção Científica" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Curta Metragem" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Sport" with="Desporto" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="Talk-Show" with="Entrevista/Debate" />
-								<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Guerra" />
+							<!-- imdb.pt (Portugese) -->
+							<if test="${global_options_secondary_details}=6">
+								<if test="${movie.genres}!=">
+									<replace name="movie.genres" input="${movie.genres}" pattern="Action" with="Acção" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Adventure" with="Aventura" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Animation" with="Animação" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Biography" with="Biografia" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Comedy" with="Comédia" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Documentary" with="Documentário" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Family" with="Familiar" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Fantasy" with="Fantasia" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Film-Noir" with="Cinema Negro" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Game-Show" with="Concurso" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="History" with="Histórico" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Horror" with="Terror" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Music\|" with="Musica|" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Mystery" with="Mistério" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="News" with="Noticias" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Reality-TV" with="Reality Show" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Sci-Fi" with="Ficção Científica" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Short" with="Curta Metragem" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Sport" with="Desporto" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="Talk-Show" with="Entrevista/Debate" />
+									<replace name="movie.genres" input="${movie.genres}" pattern="War" with="Guerra" />
+								</if>
 							</if>
 						</if>
 					</if>
 				</if>
-			</if>
-	
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_runtime" value="true" /></if><if test="${movie.runtime}=0"><set name="update_runtime" value="true" /></if>
-			<if test="${update_runtime}=true">
-				<!-- Runtime -->
-				<set name="rx_runtime">
-					<![CDATA[
-					<h4[^>]+>Runtime:</h4>\s*<time[^>]+>(?<movieRuntime>\d+) min\s*</time>|(?<movieRuntimeHours>\d+)h\s*(?<movieRuntimeMinutes>\d+)min\s*</time>
-					]]>
-				</set>
-				<parse name="runtime" input="${details_page}" regex="${rx_runtime}" />
-				<!-- Fix a 1h30m runtime into 90 minutes -->
-				<if test="${runtime[0][1]:htmldecode}!=">
-					<if test="${runtime[0][2]:htmldecode}!=">
-						<multiply name="fix_hours_in_min" value1="${runtime[0][1]:htmldecode}" value2="60" result_type="int" />
-						<add name="runtime[0][0]" value1="${fix_hours_in_min}" value2="${runtime[0][2]:htmldecode}" />
+
+				<if test="${global_options_refresh_all_fields}=true"><set name="update_runtime" value="true" /></if><if test="${movie.runtime}=0"><set name="update_runtime" value="true" /></if>
+				<if test="${update_runtime}=true">
+					<!-- Runtime -->
+					<set name="rx_runtime">
+						<![CDATA[
+						<h4[^>]+>Runtime:</h4>\s*<time[^>]+>(?<movieRuntime>\d+) min\s*</time>|(?<movieRuntimeHours>\d+)h\s*(?<movieRuntimeMinutes>\d+)min\s*</time>
+						]]>
+					</set>
+					<parse name="runtime" input="${details_page}" regex="${rx_runtime}" />
+					<!-- Fix a 1h30m runtime into 90 minutes -->
+					<if test="${runtime[0][1]:htmldecode}!=">
+						<if test="${runtime[0][2]:htmldecode}!=">
+							<multiply name="fix_hours_in_min" value1="${runtime[0][1]:htmldecode}" value2="60" result_type="int" />
+							<add name="runtime[0][0]" value1="${fix_hours_in_min}" value2="${runtime[0][2]:htmldecode}" />
+						</if>
+					</if>
+					<set name="movie.runtime" value="${runtime[0][0]:htmldecode}" />
+				</if>
+
+				<if test="${global_options_refresh_all_fields}=true"><set name="update_tagline" value="true" /></if><if test="${movie.tagline}="><set name="update_tagline" value="true" /></if>
+				<if test="${update_tagline}=true">
+					<!-- Tagline -->
+					<set name="rx_tagline">
+						<![CDATA[
+						Tagline[s]?:</h4>[\s\f\r]*(?<movieTagline>[^<]+)
+						]]>
+					</set>
+					<parse name="tagline" input="${details_page}" regex="${rx_tagline}" />
+					<set name="tagline_clean" value="${tagline[0][0]:striptags}" />
+					<set name="movie.tagline" value="${tagline_clean:htmldecode}" />
+				</if>
+
+				<if test="${global_options_refresh_all_fields}=true"><set name="update_plotkeywords" value="true" /></if><if test="${movie.plotkeywords}="><set name="update_plotkeywords" value="true" /></if>
+				<if test="${update_plotkeywords}=true">
+					<!-- Plot Keywords -->
+					<set name="rx_plotkeywords">
+						<![CDATA[
+						<h4[^>]+>Plot Keywords:</h4>\s*(?<moviePlotKeywords>.+?)(?:&nbsp;|<nobr>|See more|</div>)
+						]]>
+					</set>
+					<parse name="plotkeywords" input="${details_page}" regex="${rx_plotkeywords}" />
+					<set name="plotkeywords_clean" value="|${plotkeywords[0][0]:striptags}|" />
+					<replace name="movie.plotkeywords" input="${plotkeywords_clean:htmldecode}" pattern="\s*[|]+\s*" with="|" />
+				</if>
+
+				<if test="${global_options_refresh_all_fields}=true"><set name="update_language" value="true" /></if><if test="${movie.language}="><set name="update_language" value="true" /></if>
+				<if test="${update_language}=true">
+					<!-- Foreign page language -->
+					<if test="${rx_language}!=">
+						<parse name="language" input="${foreign_page}" regex="${rx_language}" />
+						<set name="movie.language" value="${language[0][0]:htmldecode}" />
+					</if>
+					<!-- Use imdb.com (USA) language if RegExp is not defined -->
+					<if test="${rx_language}=">
+						<set name="rx_language">
+							<![CDATA[
+							<h4[^>]+>Language:</h4>\s*(?<movieLanguage>.+?)(?:&nbsp;|<nobr>|See more|</div>)
+							]]>
+						</set>
+						<parse name="language" input="${details_page}" regex="${rx_language}" />
+						<set name="language_clean" value="|${language[0][0]:striptags}|" />
+						<replace name="movie.language" input="${language_clean:htmldecode}" pattern="\s*[|]+\s*" with="|" />
 					</if>
 				</if>
-				<set name="movie.runtime" value="${runtime[0][0]:htmldecode}" />
-			</if>
 
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_tagline" value="true" /></if><if test="${movie.tagline}="><set name="update_tagline" value="true" /></if>
-			<if test="${update_tagline}=true">
-				<!-- Tagline -->
-				<set name="rx_tagline">
+			<!-- START: Certification -->
+				<!-- USA/MPAA default certification expression -->
+				<set name="rx_certification">
 					<![CDATA[
-					Tagline[s]?:</h4>[\s\f\r]*(?<movieTagline>[^<]+)
+					(?:>\s*USA:|United States:|Rated\s*)(?<movieCertification>(?:Not Rated)|(?:Unrated)|(?:G)|(?:PG)|(?:PG-13)|(?:R)|(?:X)|(?:NC-17))(?:</a>|\s*for)|<meta itemprop="contentRating" content="(?<movieCertification>[^"]+)">|"ContentRating":\s*"(?<movieCertification>[^"]+)"|<h4[^<]+>Certificate:</h4>\s*<span>(?<movieCertification>[^<]+)</span>
 					]]>
 				</set>
-				<parse name="tagline" input="${details_page}" regex="${rx_tagline}" />
-				<set name="tagline_clean" value="${tagline[0][0]:striptags}" />
-				<set name="movie.tagline" value="${tagline_clean:htmldecode}" />
-			</if>
+				<if test="${global_options_english_movie_rating}&lt;=1">
+					<if test="${global_options_uk_rating}=true">
+						<set name="rx_certification">
+							<![CDATA[
+							United Kingdom:(?<movieCertification>(?:U)|(?:PG)|(?:12)|(?:12A)|(?:15)|(?:18)|(?:R18))</a>
+							]]>
+						</set>
+					</if>
+				</if>
+				<if test="${global_options_english_movie_rating}>1">
+					<if test="${global_options_english_movie_rating}=2">
+						<set name="rx_certification">
+							<![CDATA[
+							United Kingdom:(?<movieCertification>(?:U)|(?:PG)|(?:12)|(?:12A)|(?:15)|(?:18)|(?:R18))</a>(?! <i>\(original rating\))
+							]]>
+						</set>
+					</if>
+					<if test="${global_options_english_movie_rating}=3">
+						<set name="rx_certification">
+							<![CDATA[
+							Canada:(?<movieCertification>(?:G)|(?:PG)|(?:AA)|(?:14A)|(?:18A)|(?:R))</a> <i>\([^(]*Alberta[^(]*\)
+							]]>
+						</set>
+					</if>
+					<if test="${global_options_english_movie_rating}=4">
+						<set name="rx_certification">
+							<![CDATA[
+							Canada:(?<movieCertification>(?:G)|(?:PG)|(?:14A)|(?:18A)|(?:R))</a> <i>\([^(]*British Columbia[^(]*\)
+							]]>
+						</set>
+					</if>
+					<if test="${global_options_english_movie_rating}=5">
+						<set name="rx_certification">
+							<![CDATA[
+							Canada:(?<movieCertification>(?:G)|(?:PG)|(?:14A)|(?:18A)|(?:R))</a> <i>\([^(]*Manitoba[^(]*\)
+							]]>
+						</set>
+					</if>
+					<if test="${global_options_english_movie_rating}=6">
+						<set name="rx_certification">
+							<![CDATA[
+							Canada:(?<movieCertification>(?:G)|(?:PG)|(?:1[48][A]?)|(?:R)|(?:A))</a> <i>\([^(]*Nova Scotia[^(]*\)
+							]]>
+						</set>
+					</if>
+					<if test="${global_options_english_movie_rating}=7">
+						<set name="rx_certification">
+							<![CDATA[
+							Canada:(?<movieCertification>(?:G)|(?:PG)|(?:AA)|(?:14A)|(?:18A)|(?:R))</a> <i>\([^(]*Ontario[^(]*\)
+							]]>
+						</set>
+					</if>
+					<if test="${global_options_english_movie_rating}=8">
+						<set name="rx_certification">
+							<![CDATA[
+							Canada:(?<movieCertification>(?:G)|(?:13[+]?)|(?:16[+]?)|(?:18[+]?))</a> <i>\([^(]*Quebec[^(]*\)
+							]]>
+						</set>
+					</if>
+					<if test="${global_options_english_movie_rating}=9">
+						<set name="rx_certification">
+							<![CDATA[
+							Australia:(?<movieCertification>(?:E)|(?:G)|(?:PG)|(?:M)|(?:MA15[+]?)|(?:R18[+]?)|(?:X18[+]?)|(?:RC))</a>(?! <i>\(original rating\))
+							]]>
+						</set>
+					</if>
+					<if test="${global_options_english_movie_rating}=10">
+						<set name="rx_certification">
+							<![CDATA[
+							New Zealand:(?<movieCertification>(?:G)|(?:PG)|(?:M)|(?:[RP]*1[3568])|(?:R))</a>(?! <i>\(original rating\))
+							]]>
+						</set>
+					</if>
+				</if>
+				<parse name="certification_usa_raw" input="${details_page}" regex="${rx_certification}" />
+				<replace name="certification_usa" input="${certification_usa_raw[0][0]:htmldecode}" pattern="Unrated|Not Rated" with="NR" />
 
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_plotkeywords" value="true" /></if><if test="${movie.plotkeywords}="><set name="update_plotkeywords" value="true" /></if>
-			<if test="${update_plotkeywords}=true">
-				<!-- Plot Keywords -->
-				<set name="rx_plotkeywords">
-					<![CDATA[
-					<h4[^>]+>Plot Keywords:</h4>\s*(?<moviePlotKeywords>.+?)(?:&nbsp;|<nobr>|See more|</div>)
-					]]>
-				</set>
-				<parse name="plotkeywords" input="${details_page}" regex="${rx_plotkeywords}" />
-				<set name="plotkeywords_clean" value="|${plotkeywords[0][0]:striptags}|" />
-				<replace name="movie.plotkeywords" input="${plotkeywords_clean:htmldecode}" pattern="\s*[|]+\s*" with="|" />
-			</if>
-
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_language" value="true" /></if><if test="${movie.language}="><set name="update_language" value="true" /></if>
-			<if test="${update_language}=true">
-				<!-- Foreign page language -->
-				<if test="${rx_language}!=">
-					<parse name="language" input="${foreign_page}" regex="${rx_language}" />
-					<set name="movie.language" value="${language[0][0]:htmldecode}" />
+				<!-- imdb.com (USA) -->
+				<if test="${global_options_secondary_details}&lt;=1">
+					<set name="movie.certification" value="${certification_usa}" />
+					<if test="${movie.certification}=">
+						<retrieve name="parentalguide_page" url="${site}parentalguide" encoding="UTF-8" />
+						<parse name="certification_raw" input="${parentalguide_page}" regex="${rx_certification}" />
+						<replace name="certification" input="${certification_raw[0][0]:htmldecode}" pattern="Unrated|Not Rated" with="NR" />
+						<set name="movie.certification" value="${certification}" />
+					</if>
 				</if>
-				<!-- Use imdb.com (USA) language if RegExp is not defined -->
-				<if test="${rx_language}=">
-					<set name="rx_language">
-						<![CDATA[
-						<h4[^>]+>Language:</h4>\s*(?<movieLanguage>.+?)(?:&nbsp;|<nobr>|See more|</div>)
-						]]>
-					</set>
-					<parse name="language" input="${details_page}" regex="${rx_language}" />
-					<set name="language_clean" value="|${language[0][0]:striptags}|" />
-					<replace name="movie.language" input="${language_clean:htmldecode}" pattern="\s*[|]+\s*" with="|" />
+				<!-- imdb.de (German) -->
+				<if test="${global_options_secondary_details}=2">
+					<parse name="certification" input="${foreign_page}" regex="Germany:(\d+|o\.Al\.)" />
+					<replace name="certification1" input="${certification[0][0]:htmldecode}" pattern="o\.Al\." with="0" />
+					<set name="movie.certification" value="${certification1}" />
 				</if>
-			</if>
-
-		<!-- START: Certification -->
-			<!-- USA/MPAA default certification expression -->
-			<set name="rx_certification">
-				<![CDATA[
-				(?:>\s*USA:|United States:|Rated\s*)(?<movieCertification>(?:Not Rated)|(?:Unrated)|(?:G)|(?:PG)|(?:PG-13)|(?:R)|(?:X)|(?:NC-17))(?:</a>|\s*for)|<meta itemprop="contentRating" content="(?<movieCertification>[^"]+)">|"ContentRating":\s*"(?<movieCertification>[^"]+)"|<h4[^<]+>Certificate:</h4>\s*<span>(?<movieCertification>[^<]+)</span>
-				]]>
-			</set>
-			<if test="${global_options_english_movie_rating}&lt;=1">
-				<if test="${global_options_uk_rating}=true">
-					<set name="rx_certification">
-						<![CDATA[
-						United Kingdom:(?<movieCertification>(?:U)|(?:PG)|(?:12)|(?:12A)|(?:15)|(?:18)|(?:R18))</a>
-						]]>
-					</set>
-				</if>
-			</if>
-			<if test="${global_options_english_movie_rating}>1">
-				<if test="${global_options_english_movie_rating}=2">
-					<set name="rx_certification">
-						<![CDATA[
-						United Kingdom:(?<movieCertification>(?:U)|(?:PG)|(?:12)|(?:12A)|(?:15)|(?:18)|(?:R18))</a>(?! <i>\(original rating\))
-						]]>
-					</set>
-				</if>
-				<if test="${global_options_english_movie_rating}=3">
-					<set name="rx_certification">
-						<![CDATA[
-						Canada:(?<movieCertification>(?:G)|(?:PG)|(?:AA)|(?:14A)|(?:18A)|(?:R))</a> <i>\([^(]*Alberta[^(]*\)
-						]]>
-					</set>
-				</if>
-				<if test="${global_options_english_movie_rating}=4">
-					<set name="rx_certification">
-						<![CDATA[
-						Canada:(?<movieCertification>(?:G)|(?:PG)|(?:14A)|(?:18A)|(?:R))</a> <i>\([^(]*British Columbia[^(]*\)
-						]]>
-					</set>
-				</if>
-				<if test="${global_options_english_movie_rating}=5">
-					<set name="rx_certification">
-						<![CDATA[
-						Canada:(?<movieCertification>(?:G)|(?:PG)|(?:14A)|(?:18A)|(?:R))</a> <i>\([^(]*Manitoba[^(]*\)
-						]]>
-					</set>
-				</if>
-				<if test="${global_options_english_movie_rating}=6">
-					<set name="rx_certification">
-						<![CDATA[
-						Canada:(?<movieCertification>(?:G)|(?:PG)|(?:1[48][A]?)|(?:R)|(?:A))</a> <i>\([^(]*Nova Scotia[^(]*\)
-						]]>
-					</set>
-				</if>
-				<if test="${global_options_english_movie_rating}=7">
-					<set name="rx_certification">
-						<![CDATA[
-						Canada:(?<movieCertification>(?:G)|(?:PG)|(?:AA)|(?:14A)|(?:18A)|(?:R))</a> <i>\([^(]*Ontario[^(]*\)
-						]]>
-					</set>
-				</if>
-				<if test="${global_options_english_movie_rating}=8">
-					<set name="rx_certification">
-						<![CDATA[
-						Canada:(?<movieCertification>(?:G)|(?:13[+]?)|(?:16[+]?)|(?:18[+]?))</a> <i>\([^(]*Quebec[^(]*\)
-						]]>
-					</set>
-				</if>
-				<if test="${global_options_english_movie_rating}=9">
-					<set name="rx_certification">
-						<![CDATA[
-						Australia:(?<movieCertification>(?:E)|(?:G)|(?:PG)|(?:M)|(?:MA15[+]?)|(?:R18[+]?)|(?:X18[+]?)|(?:RC))</a>(?! <i>\(original rating\))
-						]]>
-					</set>
-				</if>
-				<if test="${global_options_english_movie_rating}=10">
-					<set name="rx_certification">
-						<![CDATA[
-						New Zealand:(?<movieCertification>(?:G)|(?:PG)|(?:M)|(?:[RP]*1[3568])|(?:R))</a>(?! <i>\(original rating\))
-						]]>
-					</set>
-				</if>
-			</if>
-			<parse name="certification_usa_raw" input="${details_page}" regex="${rx_certification}" />
-			<replace name="certification_usa" input="${certification_usa_raw[0][0]:htmldecode}" pattern="Unrated|Not Rated" with="NR" />
-
-			<!-- imdb.com (USA) -->
-			<if test="${global_options_secondary_details}&lt;=1">
-				<set name="movie.certification" value="${certification_usa}" />
-				<if test="${movie.certification}=">
-					<retrieve name="parentalguide_page" url="${site}parentalguide" encoding="UTF-8" />
-					<parse name="certification_raw" input="${parentalguide_page}" regex="${rx_certification}" />
-					<replace name="certification" input="${certification_raw[0][0]:htmldecode}" pattern="Unrated|Not Rated" with="NR" />
-					<set name="movie.certification" value="${certification}" />
-				</if>
-			</if>
-			<!-- imdb.de (German) -->
-			<if test="${global_options_secondary_details}=2">
-				<parse name="certification" input="${foreign_page}" regex="Germany:(\d+|o\.Al\.)" />
-				<replace name="certification1" input="${certification[0][0]:htmldecode}" pattern="o\.Al\." with="0" />
-				<set name="movie.certification" value="${certification1}" />
-			</if>
-			<!-- imdb.es (Spanish) -->
-			<if test="${global_options_secondary_details}=3">
-				<!-- Fix localized rating, forced to swap order, as 'G' gets replaced inside 'PG' and 'PG-13' otherwise -->
-				<replace name="certification1" input="${certification_usa}" pattern="X" with="X" />
-				<replace name="certification2" input="${certification1}" pattern="NC-17" with="+18" />
-				<replace name="certification3" input="${certification2}" pattern="NR" with="" />
-				<replace name="certification4" input="${certification3}" pattern="R" with="+16" />
-				<replace name="certification5" input="${certification4}" pattern="PG-13" with="+13" />
-				<replace name="certification6" input="${certification5}" pattern="PG" with="+7" />
-				<replace name="certification7" input="${certification6}" pattern="G" with="TP" />
-				<set name="movie.certification" value="${certification7}" />
-			</if>
-			<!-- imdb.fr (French) -->
-			<if test="${global_options_secondary_details}=4">
-				<parse name="certification" input="${foreign_page}" regex="France:(-\d+|U)" />
-				<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
-				<if test="${movie.certification}=">
-					<!-- Fix localized rating, forced to swap order, as 'G' gets replaced inside 'PG' and 'PG-13' otherwise -->
-					<replace name="certification1" input="${certification_usa}" pattern="X" with="-18" />
-					<replace name="certification2" input="${certification1}" pattern="NC-17" with="-18" />
-					<replace name="certification3" input="${certification2}" pattern="R" with="-16" />
-					<replace name="certification4" input="${certification3}" pattern="PG-13" with="-12" />
-					<replace name="certification5" input="${certification4}" pattern="PG" with="-10" />
-					<replace name="certification6" input="${certification5}" pattern="G" with="U" />
-					<set name="movie.certification" value="${certification6}" />
-				</if>
-			</if>
-			<!-- imdb.it (Italian) -->
-			<if test="${global_options_secondary_details}=5">
-				<parse name="certification" input="${foreign_page}" regex="Italy:((?:T)|(?:VPA)|(?:VM\d+)|(?:X))" />
-				<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
-				<if test="${movie.certification}=">
+				<!-- imdb.es (Spanish) -->
+				<if test="${global_options_secondary_details}=3">
 					<!-- Fix localized rating, forced to swap order, as 'G' gets replaced inside 'PG' and 'PG-13' otherwise -->
 					<replace name="certification1" input="${certification_usa}" pattern="X" with="X" />
-					<replace name="certification2" input="${certification1}" pattern="NC-17" with="VM18" />
+					<replace name="certification2" input="${certification1}" pattern="NC-17" with="+18" />
 					<replace name="certification3" input="${certification2}" pattern="NR" with="" />
-					<replace name="certification4" input="${certification3}" pattern="R" with="VM14" />
-					<replace name="certification5" input="${certification4}" pattern="PG-13" with="VM12" />
-					<replace name="certification6" input="${certification5}" pattern="PG" with="VPA" />
-					<replace name="certification7" input="${certification6}" pattern="G" with="T" />
+					<replace name="certification4" input="${certification3}" pattern="R" with="+16" />
+					<replace name="certification5" input="${certification4}" pattern="PG-13" with="+13" />
+					<replace name="certification6" input="${certification5}" pattern="PG" with="+7" />
+					<replace name="certification7" input="${certification6}" pattern="G" with="TP" />
 					<set name="movie.certification" value="${certification7}" />
 				</if>
-			</if>
-			<!-- imdb.pt (Portugese) -->
-			<if test="${global_options_secondary_details}=6">
-				<parse name="certification" input="${foreign_page}" regex="Portugal:([^\s]+)" />
-				<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
-			</if>
-			<!-- filmtipset.se (Swedish) -->
-			<if test="${global_options_secondary_details}=7">
-				<retrieve name="parentalguide_page" url="${site}parentalguide" />
-				<parse name="certification" input="${parentalguide_page}" regex="Sweden:(\d+|(?:Banned)|(?:Btl))" />
-				<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
-			</if>
-			<!-- kvikmyndir.is (Icelandic) -->
-			<if test="${global_options_secondary_details}=8">
-				<parse name="certification" input="${foreign_page}" regex="&lt;certificate&gt;(\d+)[^&lt;]+&lt;/certificate&gt;" />
-				<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
-				<if test="${movie.certification}=">
-					<retrieve name="parentalguide_page" url="${site}parentalguide" />
-					<parse name="certification" input="${parentalguide_page}" regex="Iceland:(\d+|L)" />
+				<!-- imdb.fr (French) -->
+				<if test="${global_options_secondary_details}=4">
+					<parse name="certification" input="${foreign_page}" regex="France:(-\d+|U)" />
+					<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
+					<if test="${movie.certification}=">
+						<!-- Fix localized rating, forced to swap order, as 'G' gets replaced inside 'PG' and 'PG-13' otherwise -->
+						<replace name="certification1" input="${certification_usa}" pattern="X" with="-18" />
+						<replace name="certification2" input="${certification1}" pattern="NC-17" with="-18" />
+						<replace name="certification3" input="${certification2}" pattern="R" with="-16" />
+						<replace name="certification4" input="${certification3}" pattern="PG-13" with="-12" />
+						<replace name="certification5" input="${certification4}" pattern="PG" with="-10" />
+						<replace name="certification6" input="${certification5}" pattern="G" with="U" />
+						<set name="movie.certification" value="${certification6}" />
+					</if>
+				</if>
+				<!-- imdb.it (Italian) -->
+				<if test="${global_options_secondary_details}=5">
+					<parse name="certification" input="${foreign_page}" regex="Italy:((?:T)|(?:VPA)|(?:VM\d+)|(?:X))" />
 					<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
 					<if test="${movie.certification}=">
 						<!-- Fix localized rating, forced to swap order, as 'G' gets replaced inside 'PG' and 'PG-13' otherwise -->
 						<replace name="certification1" input="${certification_usa}" pattern="X" with="X" />
-						<replace name="certification2" input="${certification1}" pattern="NC-17" with="16" />
-						<replace name="certification3" input="${certification2}" pattern="NR" with="16" />
-						<replace name="certification4" input="${certification3}" pattern="R" with="16" />
-						<replace name="certification5" input="${certification4}" pattern="PG-13" with="12" />
-						<replace name="certification6" input="${certification5}" pattern="PG" with="10" />
-						<replace name="certification7" input="${certification6}" pattern="G" with="L" />
+						<replace name="certification2" input="${certification1}" pattern="NC-17" with="VM18" />
+						<replace name="certification3" input="${certification2}" pattern="NR" with="" />
+						<replace name="certification4" input="${certification3}" pattern="R" with="VM14" />
+						<replace name="certification5" input="${certification4}" pattern="PG-13" with="VM12" />
+						<replace name="certification6" input="${certification5}" pattern="PG" with="VPA" />
+						<replace name="certification7" input="${certification6}" pattern="G" with="T" />
 						<set name="movie.certification" value="${certification7}" />
 					</if>
 				</if>
-			</if>
-		<!-- END: Certification -->
-
-		<!-- START: global_options_long_summary -->
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_summary" value="true" /></if><if test="${movie.summary}="><set name="update_summary" value="true" /></if>
-			<if test="${update_summary}=true">
-				<if test="${global_options_secondary_details}&lt;=6">
-					<set name="rx_plot">
-						<![CDATA[
-						<h4[^>]+>Summaries</h4>\s*<ul[^>]+>\s*<li[^>]+>\s*<p>(?<moviePlotLong>.+?)</p>|<h2>Storyline</h2>\s*<div[^>]*>\s*<p>\s*<span[^>]+>\s*(?<moviePlotLong>.+?)</span>
-						]]>
-					</set>
-					<set name="rx_plot2">
-						<![CDATA[
-						<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:\w+)*)?\s*</p>|<div class="summary_text"[^>]*>(?:\s*<em>[^>]+>\s*is a movie(?:[^,]+,){1,2}[^.]+.)?\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>[^<]*)?\s*</div
-						]]>
-					</set>
+				<!-- imdb.pt (Portugese) -->
+				<if test="${global_options_secondary_details}=6">
+					<parse name="certification" input="${foreign_page}" regex="Portugal:([^\s]+)" />
+					<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
 				</if>
-
-				<!-- Long Plot Summary -->
-				<if test="${global_options_long_summary}=true">
-					<!-- imdb.com (USA) -->
-					<if test="${global_options_secondary_details}&lt;=1">
-						<retrieve name="summary_page" url="${site}plotsummary" encoding="UTF-8" />
-						<parse name="summary" input="${summary_page}" regex="${rx_plot}" />
-						<set name="summary_clean" value="${summary[0][0]:striptags}" />
-						<set name="movie.summary" value="${summary_clean:htmldecode}" />
-					</if>
-					<if test="${global_options_secondary_details}>1">
-						<!-- Only supporting foreign short plots for now -->
-						<set name="grab_short_summary" value="true" />
-					</if>
-
-					<!-- Use short Plot Summary if no long plot exists -->
-					<if test="${movie.summary}="><set name="grab_short_summary" value="true" /></if>
+				<!-- filmtipset.se (Swedish) -->
+				<if test="${global_options_secondary_details}=7">
+					<retrieve name="parentalguide_page" url="${site}parentalguide" />
+					<parse name="certification" input="${parentalguide_page}" regex="Sweden:(\d+|(?:Banned)|(?:Btl))" />
+					<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
 				</if>
-
-				<!-- Short Plot Summary -->
-				<if test="${global_options_long_summary}=false"><set name="grab_short_summary" value="true" /></if>
-				<if test="${grab_short_summary}=true">
-					<!-- imdb.com (USA) -->
-					<if test="${global_options_secondary_details}&lt;=1">
-						<parse name="summary2" input="${details_page}" regex="${rx_plot2}" />
-					</if>
-					<if test="${global_options_secondary_details}>1">
-						<parse name="summary2" input="${foreign_page}" regex="${rx_plot2}" />
-					</if>
-					<!-- Fallback to English if no foreign summary exists -->
-					<if test="${summary2[0][0]}=">
-						<if test="${global_options_secondary_summary}=true">
-							<set name="rx_plot2">
-								<![CDATA[
-								<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:\w+)*)?\s*</p>
-								]]>
-							</set>
-							<parse name="summary2" input="${details_page}" regex="${rx_plot2}" />
-							<log LogLevel="Warn" Message="IMDb+ Scraper WARNING: English summary used, because no foreign one exists for: ${movie.site_id}" />
+				<!-- kvikmyndir.is (Icelandic) -->
+				<if test="${global_options_secondary_details}=8">
+					<parse name="certification" input="${foreign_page}" regex="&lt;certificate&gt;(\d+)[^&lt;]+&lt;/certificate&gt;" />
+					<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
+					<if test="${movie.certification}=">
+						<retrieve name="parentalguide_page" url="${site}parentalguide" />
+						<parse name="certification" input="${parentalguide_page}" regex="Iceland:(\d+|L)" />
+						<set name="movie.certification" value="${certification[0][0]:htmldecode}" />
+						<if test="${movie.certification}=">
+							<!-- Fix localized rating, forced to swap order, as 'G' gets replaced inside 'PG' and 'PG-13' otherwise -->
+							<replace name="certification1" input="${certification_usa}" pattern="X" with="X" />
+							<replace name="certification2" input="${certification1}" pattern="NC-17" with="16" />
+							<replace name="certification3" input="${certification2}" pattern="NR" with="16" />
+							<replace name="certification4" input="${certification3}" pattern="R" with="16" />
+							<replace name="certification5" input="${certification4}" pattern="PG-13" with="12" />
+							<replace name="certification6" input="${certification5}" pattern="PG" with="10" />
+							<replace name="certification7" input="${certification6}" pattern="G" with="L" />
+							<set name="movie.certification" value="${certification7}" />
 						</if>
 					</if>
-					<set name="summary_clean" value="${summary2[0][0]:striptags}" />
-					<set name="movie.summary" value="${summary_clean:htmldecode}" />
 				</if>
-			</if>
-		<!-- END: global_options_long_summary -->
+			<!-- END: Certification -->
 
-			<!-- Test to make sure the OS does not use a (comma) for floating point results -->
-			<divide name="math_node_test" value1="19.98" value2="2" result_type="float" />
-			<if test="${math_node_test}!=9.99">
-				<if test="${global_options_single_score}=false">
-					<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node test FAILED - Forcing Single Score system" />
-					<set name="global_options_single_score" value="true" />
+			<!-- START: global_options_long_summary -->
+				<if test="${global_options_refresh_all_fields}=true"><set name="update_summary" value="true" /></if><if test="${movie.summary}="><set name="update_summary" value="true" /></if>
+				<if test="${update_summary}=true">
+					<if test="${global_options_secondary_details}&lt;=6">
+						<set name="rx_plot">
+							<![CDATA[
+							<h4[^>]+>Summaries</h4>\s*<ul[^>]+>\s*<li[^>]+>\s*<p>(?<moviePlotLong>.+?)</p>|<h2>Storyline</h2>\s*<div[^>]*>\s*<p>\s*<span[^>]+>\s*(?<moviePlotLong>.+?)</span>
+							]]>
+						</set>
+						<set name="rx_plot2">
+							<![CDATA[
+							<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:\w+)*)?\s*</p>|<div class="summary_text"[^>]*>(?:\s*<em>[^>]+>\s*is a movie(?:[^,]+,){1,2}[^.]+.)?\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>[^<]*)?\s*</div
+							]]>
+						</set>
+					</if>
+
+					<!-- Long Plot Summary -->
+					<if test="${global_options_long_summary}=true">
+						<!-- imdb.com (USA) -->
+						<if test="${global_options_secondary_details}&lt;=1">
+							<retrieve name="summary_page" url="${site}plotsummary" encoding="UTF-8" />
+							<parse name="summary" input="${summary_page}" regex="${rx_plot}" />
+							<set name="summary_clean" value="${summary[0][0]:striptags}" />
+							<set name="movie.summary" value="${summary_clean:htmldecode}" />
+						</if>
+						<if test="${global_options_secondary_details}>1">
+							<!-- Only supporting foreign short plots for now -->
+							<set name="grab_short_summary" value="true" />
+						</if>
+
+						<!-- Use short Plot Summary if no long plot exists -->
+						<if test="${movie.summary}="><set name="grab_short_summary" value="true" /></if>
+					</if>
+
+					<!-- Short Plot Summary -->
+					<if test="${global_options_long_summary}=false"><set name="grab_short_summary" value="true" /></if>
+					<if test="${grab_short_summary}=true">
+						<!-- imdb.com (USA) -->
+						<if test="${global_options_secondary_details}&lt;=1">
+							<parse name="summary2" input="${details_page}" regex="${rx_plot2}" />
+						</if>
+						<if test="${global_options_secondary_details}>1">
+							<parse name="summary2" input="${foreign_page}" regex="${rx_plot2}" />
+						</if>
+						<!-- Fallback to English if no foreign summary exists -->
+						<if test="${summary2[0][0]}=">
+							<if test="${global_options_secondary_summary}=true">
+								<set name="rx_plot2">
+									<![CDATA[
+									<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:\w+)*)?\s*</p>
+									]]>
+								</set>
+								<parse name="summary2" input="${details_page}" regex="${rx_plot2}" />
+								<log LogLevel="Warn" Message="IMDb+ Scraper WARNING: English summary used, because no foreign one exists for: ${movie.site_id}" />
+							</if>
+						</if>
+						<set name="summary_clean" value="${summary2[0][0]:striptags}" />
+						<set name="movie.summary" value="${summary_clean:htmldecode}" />
+					</if>
 				</if>
+			<!-- END: global_options_long_summary -->
+
+				<!-- Test to make sure the OS does not use a (comma) for floating point results -->
+				<divide name="math_node_test" value1="19.98" value2="2" result_type="float" />
+				<if test="${math_node_test}!=9.99">
+					<if test="${global_options_single_score}=false">
+						<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node test FAILED - Forcing Single Score system" />
+						<set name="global_options_single_score" value="true" />
+					</if>
+					<if test="${global_options_imdb_score}=true">
+						<if test="${global_options_imdb_metascore}=true">
+							<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node test FAILED - Forcing imdb.com score (MetaScore disabled)" />
+							<set name="global_options_imdb_metascore" value="false" />
+						</if>
+					</if>
+					<if test="${global_options_imdb_score}=false">
+						<if test="${global_options_rotten_meter}=false">
+							<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node test FAILED - Forcing RottenTomatoes critics score (Audience disabled)" />
+							<set name="global_options_rotten_meter" value="true" />
+						</if>
+						<if test="${global_options_rotten_average}=false">
+							<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node test FAILED - Forcing RottenTomatoes critics average rating (Percentile disabled)" />
+							<set name="global_options_rotten_average" value="true" />
+						</if>
+					</if>
+				</if>
+
+				<!-- Get imdb + metacritics votes/scores and fix to a scale of 10 if needed -->
+				<set name="rx_imdb_votes">
+					<![CDATA[
+					title="(?<imdbScore>\d+(?:.\d+)?) based on (?<imdbPopularity>[^\s]+) user ratings"(?:.+?<div class="metacriticScore[^"]+">\s*<span>(?<metaScore>\d+)</span>.+?>(?<metaPopularity>[^\s]+) crit[^<]+</a>)?
+					]]>
+				</set>
+				<parse name="imdb_votes" input="${details_page}" regex="${rx_imdb_votes}" />
+				<set name="imdb_score" value="${imdb_votes[0][0]:htmldecode}" />
+				<replace name="imdb_votes_clean" input="${imdb_votes[0][1]:htmldecode}" pattern="[\,\.]" with='' />
+				<if test="${math_node_test}=9.99">
+					<if test="${imdb_votes[0][2]:htmldecode}>0">
+						<divide name="metascore_score" value1="${imdb_votes[0][2]:htmldecode}" value2="10" result_type="float" />
+					</if>
+					<replace name="metascore_votes_clean" input="${imdb_votes[0][3]:htmldecode}" pattern="[\,\.]" with='' />
+				</if>
+
+				<!-- Fix empty votes to make the math 'add' node for popularity not freak out later on -->
+				<if test="${imdb_votes_clean}&lt;=0">
+					<set name="imdb_votes_clean" value="0" />
+				</if>
+				<if test="${metascore_votes_clean}&lt;=0">
+					<set name="metascore_votes_clean" value="0" />
+				</if>
+
+				<set name="votes_sub_total" value="0" />
+				<add name="votes_sub_total" value1="${imdb_votes_clean}" value2="${metascore_votes_clean}" />
+
+			<!-- START: global_options_imdb_score -->
+
+				<!-- IMDb -->
 				<if test="${global_options_imdb_score}=true">
-					<if test="${global_options_imdb_metascore}=true">
-						<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node test FAILED - Forcing imdb.com score (MetaScore disabled)" />
-						<set name="global_options_imdb_metascore" value="false" />
+					<if test="${global_options_single_score}=true">
+						<!-- metacritics.com metascore + votes -->
+						<if test="${global_options_imdb_metascore}=true">
+							<set name="movie.score" value="${metascore_score}" />
+							<set name="movie.popularity" value="${metascore_votes_clean}" />
+						</if>
+						<!-- imdb.com score + votes -->
+						<if test="${global_options_imdb_metascore}=false">
+							<set name="movie.score" value="${imdb_score}" />
+							<set name="movie.popularity" value="${imdb_votes_clean}" />
+						</if>
 					</if>
-				</if>
-				<if test="${global_options_imdb_score}=false">
-					<if test="${global_options_rotten_meter}=false">
-						<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node test FAILED - Forcing RottenTomatoes critics score (Audience disabled)" />
-						<set name="global_options_rotten_meter" value="true" />
-					</if>
-					<if test="${global_options_rotten_average}=false">
-						<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node test FAILED - Forcing RottenTomatoes critics average rating (Percentile disabled)" />
-						<set name="global_options_rotten_average" value="true" />
-					</if>
-				</if>
-			</if>
-
-			<!-- Get imdb + metacritics votes/scores and fix to a scale of 10 if needed -->
-			<set name="rx_imdb_votes">
-				<![CDATA[
-				title="(?<imdbScore>\d+(?:.\d+)?) based on (?<imdbPopularity>[^\s]+) user ratings"(?:.+?<div class="metacriticScore[^"]+">\s*<span>(?<metaScore>\d+)</span>.+?>(?<metaPopularity>[^\s]+) crit[^<]+</a>)?
-				]]>
-			</set>
-			<parse name="imdb_votes" input="${details_page}" regex="${rx_imdb_votes}" />
-			<set name="imdb_score" value="${imdb_votes[0][0]:htmldecode}" />
-			<replace name="imdb_votes_clean" input="${imdb_votes[0][1]:htmldecode}" pattern="[\,\.]" with='' />
-			<if test="${math_node_test}=9.99">
-				<if test="${imdb_votes[0][2]:htmldecode}>0">
-					<divide name="metascore_score" value1="${imdb_votes[0][2]:htmldecode}" value2="10" result_type="float" />
-				</if>
-				<replace name="metascore_votes_clean" input="${imdb_votes[0][3]:htmldecode}" pattern="[\,\.]" with='' />
-			</if>
-
-			<!-- Fix empty votes to make the math 'add' node for popularity not freak out later on -->
-			<if test="${imdb_votes_clean}&lt;=0">
-				<set name="imdb_votes_clean" value="0" />
-			</if>
-			<if test="${metascore_votes_clean}&lt;=0">
-				<set name="metascore_votes_clean" value="0" />
-			</if>
-
-			<set name="votes_sub_total" value="0" />
-			<add name="votes_sub_total" value1="${imdb_votes_clean}" value2="${metascore_votes_clean}" />
-
-		<!-- START: global_options_imdb_score -->
-
-			<!-- IMDb -->
-			<if test="${global_options_imdb_score}=true">
-				<if test="${global_options_single_score}=true">
-					<!-- metacritics.com metascore + votes -->
-					<if test="${global_options_imdb_metascore}=true">
-						<set name="movie.score" value="${metascore_score}" />
-						<set name="movie.popularity" value="${metascore_votes_clean}" />
-					</if>
-					<!-- imdb.com score + votes -->
-					<if test="${global_options_imdb_metascore}=false">
-						<set name="movie.score" value="${imdb_score}" />
-						<set name="movie.popularity" value="${imdb_votes_clean}" />
-					</if>
-				</if>
-				<if test="${global_options_single_score}=false">
-					<!-- Averaging imdb and metacritics.com metascore, and totalling their votes -->
-					<if test="${global_options_min_imdb_votes}=true">
-						<if test="${metascore_score}>0">
-							<!-- Make sure that the imdb score has at least 100 votes -->
-							<if test="${imdb_votes_clean}>19">
+					<if test="${global_options_single_score}=false">
+						<!-- Averaging imdb and metacritics.com metascore, and totalling their votes -->
+						<if test="${global_options_min_imdb_votes}=true">
+							<if test="${metascore_score}>0">
+								<!-- Make sure that the imdb score has at least 100 votes -->
+								<if test="${imdb_votes_clean}>19">
+									<add name="rating_total" value1="${imdb_score}" value2="${metascore_score}" result_type="float" />
+									<if test="${rating_total}>0">
+										<divide name="movie.score" value1="${rating_total}" value2="2" result_type="float" />
+										<if test="${movie.score}>10">
+											<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node bug #1 detected on &lt;divide&gt; node." />
+										</if>
+									</if>
+								</if>
+								<if test="${imdb_votes_clean}&lt;=19">
+									<set name="movie.score" value="${metascore_score}" />
+								</if>
+							</if>
+							<if test="${metascore_score}&lt;=0">
+								<if test="${imdb_votes_clean}>19">
+									<set name="movie.score" value="${imdb_score}" />
+								</if>
+								<if test="${imdb_votes_clean}&lt;=19">
+									<set name="movie.score" value="0" />
+								</if>
+							</if>
+						</if>
+						<if test="${global_options_min_imdb_votes}=false">
+							<!-- Before we average lets make sure that there is a Metacritics metascore -->
+							<if test="${metascore_score}>0">
 								<add name="rating_total" value1="${imdb_score}" value2="${metascore_score}" result_type="float" />
 								<if test="${rating_total}>0">
 									<divide name="movie.score" value1="${rating_total}" value2="2" result_type="float" />
 									<if test="${movie.score}>10">
-										<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node bug #1 detected on &lt;divide&gt; node." />
+										<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node bug #2 detected on &lt;divide&gt; node." />
 									</if>
 								</if>
 							</if>
-							<if test="${imdb_votes_clean}&lt;=19">
-								<set name="movie.score" value="${metascore_score}" />
-							</if>
-						</if>
-						<if test="${metascore_score}&lt;=0">
-							<if test="${imdb_votes_clean}>19">
+							<if test="${metascore_score}&lt;=0">
 								<set name="movie.score" value="${imdb_score}" />
 							</if>
-							<if test="${imdb_votes_clean}&lt;=19">
-								<set name="movie.score" value="0" />
-							</if>
 						</if>
+						<set name="movie.popularity" value="${votes_sub_total}" />
 					</if>
-					<if test="${global_options_min_imdb_votes}=false">
-						<!-- Before we average lets make sure that there is a Metacritics metascore -->
-						<if test="${metascore_score}>0">
-							<add name="rating_total" value1="${imdb_score}" value2="${metascore_score}" result_type="float" />
-							<if test="${rating_total}>0">
-								<divide name="movie.score" value1="${rating_total}" value2="2" result_type="float" />
-								<if test="${movie.score}>10">
-									<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node bug #2 detected on &lt;divide&gt; node." />
-								</if>
-							</if>
-						</if>
-						<if test="${metascore_score}&lt;=0">
-							<set name="movie.score" value="${imdb_score}" />
-						</if>
+				</if>
+
+				<!-- RottenTomatoes -->
+				<set name="rotten_api_key" value="" />
+				<if test="${global_options_rotten_api_key}!=">
+					<set name="rotten_api_key" value="apikey=${global_options_rotten_api_key}&amp;" />
+				</if>
+				<if test="${global_options_imdb_score}=false">
+					<!-- Adjust IMDb ID to be compatible with RottenTomatoes -->
+					<replace name="imdb_id_fixed" input="${movie.imdb_id}" pattern="tt" with='' />
+					<!-- Retrieve detail page from RottenTomatoes -->
+					<retrieve name="rotten_json" url="https://api.rottentomatoes.com/api/public/v1.0/movie_alias.json?${rotten_api_key}type=imdb&amp;id=${imdb_id_fixed}" />
+					<set name="rx_rotten_alternate">
+						<![CDATA[
+						"alternate":"([^"]+)"
+						]]>
+					</set>
+					<parse name="rotten_alternate" input="${rotten_json}" regex="${rx_rotten_alternate}" />
+					<if test="${rotten_alternate[0][0]}!=">
+						<retrieve name="rotten_details" url="http:${rotten_alternate[0][0]}" />
 					</if>
-					<set name="movie.popularity" value="${votes_sub_total}" />
-				</if>
-			</if>
+					<if test="${rotten_alternate[0][0]}=">
+						<log LogLevel="Info" Message="IMDb+ Scraper: RottenTomatoes is missing a reference for: ${movie.imdb_id} (consider contributing it)" />
+					</if>
 
-			<!-- RottenTomatoes -->
-			<set name="rotten_api_key" value="" />
-			<if test="${global_options_rotten_api_key}!=">
-				<set name="rotten_api_key" value="apikey=${global_options_rotten_api_key}&amp;" />
-			</if>
-			<if test="${global_options_imdb_score}=false">
-				<!-- Adjust IMDb ID to be compatible with RottenTomatoes -->
-				<replace name="imdb_id_fixed" input="${movie.imdb_id}" pattern="tt" with='' />
-				<!-- Retrieve detail page from RottenTomatoes -->
-				<retrieve name="rotten_json" url="https://api.rottentomatoes.com/api/public/v1.0/movie_alias.json?${rotten_api_key}type=imdb&amp;id=${imdb_id_fixed}" />
-				<set name="rx_rotten_alternate">
-					<![CDATA[
-					"alternate":"([^"]+)"
-					]]>
-				</set>
-				<parse name="rotten_alternate" input="${rotten_json}" regex="${rx_rotten_alternate}" />
-				<if test="${rotten_alternate[0][0]}!=">
-					<retrieve name="rotten_details" url="http:${rotten_alternate[0][0]}" />
-				</if>
-				<if test="${rotten_alternate[0][0]}=">
-					<log LogLevel="Info" Message="IMDb+ Scraper: RottenTomatoes is missing a reference for: ${movie.imdb_id} (consider contributing it)" />
-				</if>
+					<set name="rx_rotten_tomatometer">
+						<![CDATA[
+						(?:<div id="all-critics-numbers".+?<span itemprop="ratingValue[^>]+>(?<rtAllPercentage>\d{1,3}?)</span>.+?<div id="scoreStats[^>]+>\D*(?<rtAllAverage>\d+(?:\.\d+)?)/10\D*(?<rtAllVotes>\d+).+?<span itemprop="ratingValue[^>]+>(?:(?<rtTopPercentage>\d{1,3}?)|No Score Yet...)</span>.+?<div id="scoreStats[^>]+>(?:\D*(?<rtTopAverage>\d+(?:\.\d+)?)/10|.+?N/A</span>)\D*(?<rtTopVotes>\d+).+?<span itemprop="ratingValue[^>]+>(?<rtPercentage>\d{1,3}?)[%]*</span>.+?)?<div class="audience-info[^>]+>(?:\D*(?<rtAverage>\d+(?:\.\d+)?)/5)?\D*(?<rtVotes>[\d,.]+)
+						]]>
+					</set>
+					<parse name="rotten_rating" input="${rotten_details}" regex="${rx_rotten_tomatometer}" />
 
-				<set name="rx_rotten_tomatometer">
-					<![CDATA[
-					(?:<div id="all-critics-numbers".+?<span itemprop="ratingValue[^>]+>(?<rtAllPercentage>\d{1,3}?)</span>.+?<div id="scoreStats[^>]+>\D*(?<rtAllAverage>\d+(?:\.\d+)?)/10\D*(?<rtAllVotes>\d+).+?<span itemprop="ratingValue[^>]+>(?:(?<rtTopPercentage>\d{1,3}?)|No Score Yet...)</span>.+?<div id="scoreStats[^>]+>(?:\D*(?<rtTopAverage>\d+(?:\.\d+)?)/10|.+?N/A</span>)\D*(?<rtTopVotes>\d+).+?<span itemprop="ratingValue[^>]+>(?<rtPercentage>\d{1,3}?)[%]*</span>.+?)?<div class="audience-info[^>]+>(?:\D*(?<rtAverage>\d+(?:\.\d+)?)/5)?\D*(?<rtVotes>[\d,.]+)
-					]]>
-				</set>
-				<parse name="rotten_rating" input="${rotten_details}" regex="${rx_rotten_tomatometer}" />
-
-				<if test="${global_options_single_score}=true">
-					<!-- Obtain TomatoMeter rating -->
-					<if test="${global_options_rotten_meter}=true">
-						<!-- Obtain TomatoMeter average rating -->
-						<if test="${global_options_rotten_average}=true">
-							<if test="${global_options_rotten_top_critics}=true">
-								<set name="movie.score" value="${rotten_rating[0][4]:htmldecode}" />
-								<set name="votes" value="${rotten_rating[0][5]:htmldecode}" />
-							</if>
-							<if test="${global_options_rotten_top_critics}=false">
-								<set name="movie.score" value="${rotten_rating[0][1]:htmldecode}" />
-								<set name="votes" value="${rotten_rating[0][2]:htmldecode}" />
-							</if>
-						</if>
-
-						<!-- Obtain TomatoMeter percentage rating -->
-						<if test="${global_options_rotten_average}=false">
-							<!-- Avoid divide by zero problem -->
-							<if test="${rotten_rating}!=">
+					<if test="${global_options_single_score}=true">
+						<!-- Obtain TomatoMeter rating -->
+						<if test="${global_options_rotten_meter}=true">
+							<!-- Obtain TomatoMeter average rating -->
+							<if test="${global_options_rotten_average}=true">
 								<if test="${global_options_rotten_top_critics}=true">
-									<!-- Fix TomatoMeter to scale of 10 -->
-									<divide name="rotten_rating_float" value1="${rotten_rating[0][3]:htmldecode}" value2="10" result_type="float" />
+									<set name="movie.score" value="${rotten_rating[0][4]:htmldecode}" />
 									<set name="votes" value="${rotten_rating[0][5]:htmldecode}" />
 								</if>
 								<if test="${global_options_rotten_top_critics}=false">
-									<!-- Fix TomatoMeter to scale of 10 -->
-									<divide name="rotten_rating_float" value1="${rotten_rating[0][0]:htmldecode}" value2="10" result_type="float" />
+									<set name="movie.score" value="${rotten_rating[0][1]:htmldecode}" />
 									<set name="votes" value="${rotten_rating[0][2]:htmldecode}" />
 								</if>
-								<set name="movie.score" value="${rotten_rating_float}" />
-								<if test="${movie.score}>10">
-									<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node bug #3 detected on &lt;divide&gt; node." />
+							</if>
+
+							<!-- Obtain TomatoMeter percentage rating -->
+							<if test="${global_options_rotten_average}=false">
+								<!-- Avoid divide by zero problem -->
+								<if test="${rotten_rating}!=">
+									<if test="${global_options_rotten_top_critics}=true">
+										<!-- Fix TomatoMeter to scale of 10 -->
+										<divide name="rotten_rating_float" value1="${rotten_rating[0][3]:htmldecode}" value2="10" result_type="float" />
+										<set name="votes" value="${rotten_rating[0][5]:htmldecode}" />
+									</if>
+									<if test="${global_options_rotten_top_critics}=false">
+										<!-- Fix TomatoMeter to scale of 10 -->
+										<divide name="rotten_rating_float" value1="${rotten_rating[0][0]:htmldecode}" value2="10" result_type="float" />
+										<set name="votes" value="${rotten_rating[0][2]:htmldecode}" />
+									</if>
+									<set name="movie.score" value="${rotten_rating_float}" />
+									<if test="${movie.score}>10">
+										<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node bug #3 detected on &lt;divide&gt; node." />
+									</if>
 								</if>
 							</if>
+
+							<!-- Popularity RottenTomatoes TomatoMeter -->
+							<replace name="votes_clean" input="${votes}" pattern="[\,\.]" with='' />
+							<set name="movie.popularity" value="${votes_clean}" />
 						</if>
 
-						<!-- Popularity RottenTomatoes TomatoMeter -->
-						<replace name="votes_clean" input="${votes}" pattern="[\,\.]" with='' />
-						<set name="movie.popularity" value="${votes_clean}" />
-					</if>
+						<!-- Obtain Audience rating -->
+						<if test="${global_options_rotten_meter}=false">
+							<!-- Obtain Audience average rating -->
+							<if test="${global_options_rotten_average}=true">
+								<!-- Score (multiplied by 2 to match IMDb rating of 10) -->
+								<multiply name="score_fixed" value1="${rotten_rating[0][7]:htmldecode}" value2="2" result_type="float" />
+								<set name="movie.score" value="${score_fixed}" />
+							</if>
 
-					<!-- Obtain Audience rating -->
-					<if test="${global_options_rotten_meter}=false">
-						<!-- Obtain Audience average rating -->
-						<if test="${global_options_rotten_average}=true">
-							<!-- Score (multiplied by 2 to match IMDb rating of 10) -->
-							<multiply name="score_fixed" value1="${rotten_rating[0][7]:htmldecode}" value2="2" result_type="float" />
-							<set name="movie.score" value="${score_fixed}" />
-						</if>
-
-						<!-- Obtain Audience percentage rating -->
-						<if test="${global_options_rotten_average}=false">
-							<if test="${rotten_rating}!=">
-								<!-- Fix TomatoMeter to scale of 10 -->
-								<divide name="rotten_rating_float" value1="${rotten_rating[0][6]:htmldecode}" value2="10" result_type="float" />
-								<set name="movie.score" value="${rotten_rating_float}" />
-								<if test="${movie.score}>10">
-									<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node bug #4 detected on &lt;divide&gt; node." />
+							<!-- Obtain Audience percentage rating -->
+							<if test="${global_options_rotten_average}=false">
+								<if test="${rotten_rating}!=">
+									<!-- Fix TomatoMeter to scale of 10 -->
+									<divide name="rotten_rating_float" value1="${rotten_rating[0][6]:htmldecode}" value2="10" result_type="float" />
+									<set name="movie.score" value="${rotten_rating_float}" />
+									<if test="${movie.score}>10">
+										<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node bug #4 detected on &lt;divide&gt; node." />
+									</if>
 								</if>
 							</if>
+
+							<!-- Popularity RottenTomatoes Audience -->
+							<replace name="votes_clean" input="${rotten_rating[0][8]:htmldecode}" pattern="[\,\.]" with='' />
+							<set name="movie.popularity" value="${votes_clean}" />
 						</if>
-
-						<!-- Popularity RottenTomatoes Audience -->
-						<replace name="votes_clean" input="${rotten_rating[0][8]:htmldecode}" pattern="[\,\.]" with='' />
-						<set name="movie.popularity" value="${votes_clean}" />
 					</if>
-				</if>
-				<if test="${global_options_single_score}=false">
-					<!-- Averaging imdb + metascore + RT, and totalling their votes -->
-					<set name="score_sub_total" value="0" />
-					<set name="score_sub_divider" value="0" />
+					<if test="${global_options_single_score}=false">
+						<!-- Averaging imdb + metascore + RT, and totalling their votes -->
+						<set name="score_sub_total" value="0" />
+						<set name="score_sub_divider" value="0" />
 
-					<if test="${global_options_min_imdb_votes}=false"><set name="include_imdb_vote" value="true" /></if><if test="${global_options_min_imdb_votes}=true"><if test="${imdb_votes_clean}>19"><set name="include_imdb_vote" value="true" /></if></if>
-					<if test="${include_imdb_vote}=true">
-						<if test="${imdb_score}>0">
-							<add name="score_sub_total" value1="${score_sub_total}" value2="${imdb_score}" result_type="float" />
+						<if test="${global_options_min_imdb_votes}=false"><set name="include_imdb_vote" value="true" /></if><if test="${global_options_min_imdb_votes}=true"><if test="${imdb_votes_clean}>19"><set name="include_imdb_vote" value="true" /></if></if>
+						<if test="${include_imdb_vote}=true">
+							<if test="${imdb_score}>0">
+								<add name="score_sub_total" value1="${score_sub_total}" value2="${imdb_score}" result_type="float" />
+								<add name="score_sub_divider" value1="${score_sub_divider}" value2="1" />
+							</if>
+						</if>
+						<if test="${metascore_score}>0">
+							<add name="score_sub_total" value1="${score_sub_total}" value2="${metascore_score}" result_type="float" />
 							<add name="score_sub_divider" value1="${score_sub_divider}" value2="1" />
 						</if>
-					</if>
-					<if test="${metascore_score}>0">
-						<add name="score_sub_total" value1="${score_sub_total}" value2="${metascore_score}" result_type="float" />
-						<add name="score_sub_divider" value1="${score_sub_divider}" value2="1" />
-					</if>
-					<if test="${rotten_rating[0][1]:htmldecode}>0">
-						<add name="score_sub_total" value1="${score_sub_total}" value2="${rotten_rating[0][1]:htmldecode}" result_type="float" />
-						<add name="score_sub_divider" value1="${score_sub_divider}" value2="1" />
-					</if>
-					<if test="${rotten_rating[0][4]:htmldecode}>0">
-						<add name="score_sub_total" value1="${score_sub_total}" value2="${rotten_rating[0][4]:htmldecode}" result_type="float" />
-						<add name="score_sub_divider" value1="${score_sub_divider}" value2="1" />
-					</if>
-					<if test="${rotten_rating[0][7]:htmldecode}>0">
-						<multiply name="rotten_rating_float" value1="${rotten_rating[0][7]:htmldecode}" value2="2" result_type="float" />
-						<add name="score_sub_total" value1="${score_sub_total}" value2="${rotten_rating_float}" result_type="float" />
-						<add name="score_sub_divider" value1="${score_sub_divider}" value2="1" />
-					</if>
-					<!-- Use RottenTomatoes Audience score if we do not have any score yet. -->
-					<if test="${score_sub_total}=0">
-						<if test="${rotten_rating[0][6]:htmldecode}>0">
-							<divide name="rotten_rating_float" value1="${rotten_rating[0][6]:htmldecode}" value2="10" result_type="float" />
+						<if test="${rotten_rating[0][1]:htmldecode}>0">
+							<add name="score_sub_total" value1="${score_sub_total}" value2="${rotten_rating[0][1]:htmldecode}" result_type="float" />
+							<add name="score_sub_divider" value1="${score_sub_divider}" value2="1" />
+						</if>
+						<if test="${rotten_rating[0][4]:htmldecode}>0">
+							<add name="score_sub_total" value1="${score_sub_total}" value2="${rotten_rating[0][4]:htmldecode}" result_type="float" />
+							<add name="score_sub_divider" value1="${score_sub_divider}" value2="1" />
+						</if>
+						<if test="${rotten_rating[0][7]:htmldecode}>0">
+							<multiply name="rotten_rating_float" value1="${rotten_rating[0][7]:htmldecode}" value2="2" result_type="float" />
 							<add name="score_sub_total" value1="${score_sub_total}" value2="${rotten_rating_float}" result_type="float" />
 							<add name="score_sub_divider" value1="${score_sub_divider}" value2="1" />
 						</if>
+						<!-- Use RottenTomatoes Audience score if we do not have any score yet. -->
+						<if test="${score_sub_total}=0">
+							<if test="${rotten_rating[0][6]:htmldecode}>0">
+								<divide name="rotten_rating_float" value1="${rotten_rating[0][6]:htmldecode}" value2="10" result_type="float" />
+								<add name="score_sub_total" value1="${score_sub_total}" value2="${rotten_rating_float}" result_type="float" />
+								<add name="score_sub_divider" value1="${score_sub_divider}" value2="1" />
+							</if>
+						</if>
+						<if test="${score_sub_divider}>0">
+							<divide name="movie.score" value1="${score_sub_total}" value2="${score_sub_divider}" result_type="float" />
+							<if test="${movie.score}>10">
+								<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node bug #5 detected on &lt;divide&gt; node." />
+							</if>
+						</if>
+
+						<replace name="votes_clean" input="${rotten_rating[0][2]:htmldecode}" pattern="[\,\.]" with='' />
+						<if test="${votes_clean}>0">
+							<add name="votes_sub_total" value1="${votes_sub_total}" value2="${votes_clean}" />
+						</if>
+						<replace name="votes_clean" input="${rotten_rating[0][5]:htmldecode}" pattern="[\,\.]" with='' />
+						<if test="${votes_clean}>0">
+							<add name="votes_sub_total" value1="${votes_sub_total}" value2="${votes_clean}" />
+						</if>
+						<replace name="votes_clean" input="${rotten_rating[0][8]:htmldecode}" pattern="[\,\.]" with='' />
+						<if test="${votes_clean}>0">
+							<add name="votes_sub_total" value1="${votes_sub_total}" value2="${votes_clean}" />
+						</if>
+						<set name="movie.popularity" value="${votes_sub_total}" />
 					</if>
-					<if test="${score_sub_divider}>0">
-						<divide name="movie.score" value1="${score_sub_total}" value2="${score_sub_divider}" result_type="float" />
-						<if test="${movie.score}>10">
-							<log LogLevel="Warn" Message="IMDb+ Scraper ERROR: Math node bug #5 detected on &lt;divide&gt; node." />
+
+					<!-- Since we already have the RottenTomatoes results, lets use their summary if imdb.com did not have one -->
+					<if test="${movie.summary}=">
+						<if test="${global_options_secondary_details}&lt;=6">
+							<if test="${global_options_long_summary}=true">
+								<set name="rx_rotten_summary">
+									<![CDATA[
+									<div id="movieSynopsis"[^>]+>\s*(?<rottenSummary>[^<]+?)\s*(?:\(C\)[^<]+)?\s*<
+									]]>
+								</set>
+								<parse name="rotten_summary" input="${rotten_details}" regex="${rx_rotten_summary}" />
+								<set name="rotten_summary_clean" value="${rotten_summary[0][0]:striptags}" />
+								<set name="movie.summary" value="${rotten_summary_clean:htmldecode}" />
+							</if>
 						</if>
 					</if>
-
-					<replace name="votes_clean" input="${rotten_rating[0][2]:htmldecode}" pattern="[\,\.]" with='' />
-					<if test="${votes_clean}>0">
-						<add name="votes_sub_total" value1="${votes_sub_total}" value2="${votes_clean}" />
-					</if>
-					<replace name="votes_clean" input="${rotten_rating[0][5]:htmldecode}" pattern="[\,\.]" with='' />
-					<if test="${votes_clean}>0">
-						<add name="votes_sub_total" value1="${votes_sub_total}" value2="${votes_clean}" />
-					</if>
-					<replace name="votes_clean" input="${rotten_rating[0][8]:htmldecode}" pattern="[\,\.]" with='' />
-					<if test="${votes_clean}>0">
-						<add name="votes_sub_total" value1="${votes_sub_total}" value2="${votes_clean}" />
-					</if>
-					<set name="movie.popularity" value="${votes_sub_total}" />
-				</if>
-
-				<!-- Since we already have the RottenTomatoes results, lets use their summary if imdb.com did not have one -->
-				<if test="${movie.summary}=">
-					<if test="${global_options_secondary_details}&lt;=6">
-						<if test="${global_options_long_summary}=true">
-							<set name="rx_rotten_summary">
-								<![CDATA[
-								<div id="movieSynopsis"[^>]+>\s*(?<rottenSummary>[^<]+?)\s*(?:\(C\)[^<]+)?\s*<
-								]]>
-							</set>
-							<parse name="rotten_summary" input="${rotten_details}" regex="${rx_rotten_summary}" />
-							<set name="rotten_summary_clean" value="${rotten_summary[0][0]:striptags}" />
-							<set name="movie.summary" value="${rotten_summary_clean:htmldecode}" />
-						</if>
-					</if>
-				</if>
-				<!-- Might as well verify the runtime -->
-				<if test="${movie.runtime}=0">
-					<set name="rx_rotten_runtime">
-						<![CDATA[
-						<time[^>]+>\s*(?<runtimeHours>\d+) hr. (?<runtimeMinutes>\d+) min.\s*</time>
-						]]>
-					</set>
-					<parse name="rotten_runtime" input="${rotten_details}" regex="${rx_rotten_runtime}" />
-					<!-- Time for some math to get runtime in minutes -->
-					<multiply name="runtime_minutes" value1="60" value2="${rotten_runtime[0][0]}" result_type="int" />
-					<add name="runtime_minutes" value1="${runtime_minutes}" value2="${rotten_runtime[0][1]}" />
-					<set name="movie.runtime" value="${runtime_minutes}" />
-				</if>
-				<!-- and Certification -->
-				<if test="${movie.certification}=">
-					<set name="rx_rotten_certification">
-						<![CDATA[
-						"contentRating":"(?<rottenCertification>(?:G|PG-13|PG|R|NR|NC-17))"
-						]]>
-					</set>
-					<parse name="rotten_certification" input="${rotten_details}" regex="${rx_rotten_certification}" />
-					<set name="movie.certification" value="${rotten_certification[0][0]:htmldecode}" />
-				</if>
-			</if>
-		<!-- END: global_options_imdb_score -->
-
-			<if test="${global_options_fix_missing_summary}=true">
-				<if test="${movie.summary}=">
-					<set name="rx_user_reviews">
-						<![CDATA[
-						<h2>User Reviews</h2>.+?<div>\s*<p itemprop="reviewBody">(?<movieReview>.+?)</p>\s*</div>
-						]]>
-					</set>
-					<parse name="user_reviews" input="${details_page}" regex="${rx_user_reviews}" />
-					<set name="summary_clean" value="${user_reviews[0][0]:striptags}" />
-					<set name="movie.summary" value="${summary_clean:htmldecode}" />
-				</if>
-			</if>
-
-			<if test="${global_options_refresh_all_fields}=true"><set name="update_this" value="true" /></if><if test="${movie.alternate_titles}="><set name="update_this" value="true" /></if><if test="${movie.title}="><set name="update_this" value="true" /></if><if test="${movie.year}="><set name="update_this" value="true" /></if>
-			<if test="${update_this}=true">
-				<!-- AKA page -->
-				<set name="rx_aka">
-					<![CDATA[
-					<tr[^>]+>\s+?<td[^>]+>([^<]+)</td>\s+?<td[^>]+>([^<]+)?</td>\s+?</tr>
-					]]>
-				</set>
-				<retrieve name="aka_page" url="${site}releaseinfo" encoding="UTF-8" />
-				<if test="${global_options_debug_imdb_sources}=true">
-					<log LogLevel="Debug" Message="############################ IMDb+ HTML Source ############################" />
-					<log LogLevel="Debug" Message="##### aka_page = ${aka_page} #####" />
-					<log LogLevel="Debug" Message="###########################################################################" />
-				</if>
-				<parse name="akas" input="${aka_page}" regex="${rx_aka}" />
-				<set name="movie.alternate_titles" value="|" />
-				<loop name="currAka" on="akas" limit="50">
-					<set name="movie.alternate_titles" value="${movie.alternate_titles}${currAka[1]:htmldecode}|" />
-				</loop>
-
-				<!-- Test for rare case when an English movie gets a new title -->
-				<if test="${title_year[0][0]}!=">
-					<set name="rx_aka_english">
-						<![CDATA[
-						<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*?<td[^>]+>[^<]*USA \(new title\)[^<]*</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
-						]]>
-					</set>
-					<!-- TEST MOVIE: https://www.imdb.com/title/tt1415283/releaseinfo (Nanny McPhee Returns) -->
-					<parse name="rare_title_change" input="${aka_page}" regex="${rx_aka_english}" />
-					<if test="${rare_title_change[0][0]}!=">
-						<if test="${rare_title_change[0][0]}!=${title_year[0][0]}">
-							<set name="title_year[0][0]" value='' />
-						</if>
-					</if>
-				</if>
-
-				<!-- Find English title on AKA page if we failed to get one at the beginning -->
-				<if test="${title_year[0][0]}=">
-					<!-- Sort out pure British-English titles first, so we can re-use the same last-resort English code later -->
-					<if test="${global_options_uk_rating}=false">
-						<!-- UK ratings are disabled so we check for USA title first -->
-						<set name="rx_aka_english">
+					<!-- Might as well verify the runtime -->
+					<if test="${movie.runtime}=0">
+						<set name="rx_rotten_runtime">
 							<![CDATA[
-							<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td>USA</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+							<time[^>]+>\s*(?<runtimeHours>\d+) hr. (?<runtimeMinutes>\d+) min.\s*</time>
 							]]>
 						</set>
-						<!-- TEST MOVIE: https://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
-						<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
+						<parse name="rotten_runtime" input="${rotten_details}" regex="${rx_rotten_runtime}" />
+						<!-- Time for some math to get runtime in minutes -->
+						<multiply name="runtime_minutes" value1="60" value2="${rotten_runtime[0][0]}" result_type="int" />
+						<add name="runtime_minutes" value1="${runtime_minutes}" value2="${rotten_runtime[0][1]}" />
+						<set name="movie.runtime" value="${runtime_minutes}" />
 					</if>
-					<if test="${global_options_uk_rating}=true">
-						<set name="rx_aka_english">
+					<!-- and Certification -->
+					<if test="${movie.certification}=">
+						<set name="rx_rotten_certification">
 							<![CDATA[
-							<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td[^>]+>UK</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+							"contentRating":"(?<rottenCertification>(?:G|PG-13|PG|R|NR|NC-17))"
 							]]>
 						</set>
-						<!-- TEST MOVIE: https://www.imdb.com/title/tt0241527/releaseinfo (Harry Potter) -->
-						<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
+						<parse name="rotten_certification" input="${rotten_details}" regex="${rx_rotten_certification}" />
+						<set name="movie.certification" value="${rotten_certification[0][0]:htmldecode}" />
+					</if>
+				</if>
+			<!-- END: global_options_imdb_score -->
+
+				<if test="${global_options_fix_missing_summary}=true">
+					<if test="${movie.summary}=">
+						<set name="rx_user_reviews">
+							<![CDATA[
+							<h2>User Reviews</h2>.+?<div>\s*<p itemprop="reviewBody">(?<movieReview>.+?)</p>\s*</div>
+							]]>
+						</set>
+						<parse name="user_reviews" input="${details_page}" regex="${rx_user_reviews}" />
+						<set name="summary_clean" value="${user_reviews[0][0]:striptags}" />
+						<set name="movie.summary" value="${summary_clean:htmldecode}" />
+					</if>
+				</if>
+
+				<if test="${global_options_refresh_all_fields}=true"><set name="update_this" value="true" /></if><if test="${movie.alternate_titles}="><set name="update_this" value="true" /></if><if test="${movie.title}="><set name="update_this" value="true" /></if><if test="${movie.year}="><set name="update_this" value="true" /></if>
+				<if test="${update_this}=true">
+					<!-- AKA page -->
+					<set name="rx_aka">
+						<![CDATA[
+						<tr[^>]+>\s+?<td[^>]+>([^<]+)</td>\s+?<td[^>]+>([^<]+)?</td>\s+?</tr>
+						]]>
+					</set>
+					<retrieve name="aka_page" url="${site}releaseinfo" encoding="UTF-8" />
+					<if test="${global_options_debug_imdb_sources}=true">
+						<log LogLevel="Debug" Message="############################ IMDb+ HTML Source ############################" />
+						<log LogLevel="Debug" Message="##### aka_page = ${aka_page} #####" />
+						<log LogLevel="Debug" Message="###########################################################################" />
+					</if>
+					<parse name="akas" input="${aka_page}" regex="${rx_aka}" />
+					<set name="movie.alternate_titles" value="|" />
+					<loop name="currAka" on="akas" limit="50">
+						<set name="movie.alternate_titles" value="${movie.alternate_titles}${currAka[1]:htmldecode}|" />
+					</loop>
+
+					<!-- Test for rare case when an English movie gets a new title -->
+					<if test="${title_year[0][0]}!=">
+						<set name="rx_aka_english">
+							<![CDATA[
+							<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*?<td[^>]+>[^<]*USA \(new title\)[^<]*</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+							]]>
+						</set>
+						<!-- TEST MOVIE: https://www.imdb.com/title/tt1415283/releaseinfo (Nanny McPhee Returns) -->
+						<parse name="rare_title_change" input="${aka_page}" regex="${rx_aka_english}" />
+						<if test="${rare_title_change[0][0]}!=">
+							<if test="${rare_title_change[0][0]}!=${title_year[0][0]}">
+								<set name="title_year[0][0]" value='' />
+							</if>
+						</if>
 					</if>
 
+					<!-- Find English title on AKA page if we failed to get one at the beginning -->
 					<if test="${title_year[0][0]}=">
-						<!-- Checking for International English title -->
-						<set name="rx_aka_english">
-							<![CDATA[
-							<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td[^>]+>World-wide \(English title\)</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
-							]]>
-						</set>
-						<!-- TEST MOVIE: https://www.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
-						<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
-
-						<if test="${title_year[0][0]}=">
-							<!-- Locate English 'Hong Kong' title -->
+						<!-- Sort out pure British-English titles first, so we can re-use the same last-resort English code later -->
+						<if test="${global_options_uk_rating}=false">
+							<!-- UK ratings are disabled so we check for USA title first -->
 							<set name="rx_aka_english">
 								<![CDATA[
-								<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td[^>]+>Hong Kong[^<]*English[^<]*</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+								<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td>USA</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+								]]>
+							</set>
+							<!-- TEST MOVIE: https://akas.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
+							<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
+						</if>
+						<if test="${global_options_uk_rating}=true">
+							<set name="rx_aka_english">
+								<![CDATA[
+								<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td[^>]+>UK</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+								]]>
+							</set>
+							<!-- TEST MOVIE: https://www.imdb.com/title/tt0241527/releaseinfo (Harry Potter) -->
+							<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
+						</if>
+
+						<if test="${title_year[0][0]}=">
+							<!-- Checking for International English title -->
+							<set name="rx_aka_english">
+								<![CDATA[
+								<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td[^>]+>World-wide \(English title\)</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 								]]>
 							</set>
 							<!-- TEST MOVIE: https://www.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
 							<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
 
 							<if test="${title_year[0][0]}=">
-								<!-- Accepting any remaining English title -->
+								<!-- Locate English 'Hong Kong' title -->
 								<set name="rx_aka_english">
 									<![CDATA[
-									<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>(?!.*?(?:Japan|Israel|Germany|Philippines|working title|short title|alternative spelling|promotional title|promotional abbreviation|informal title|teaser title|review title|IMAX))[^<]*English[^<]*</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+									<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td[^>]+>Hong Kong[^<]*English[^<]*</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 									]]>
 								</set>
 								<!-- TEST MOVIE: https://www.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
 								<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
 
-								<if test="${global_options_uk_rating}=true">
-									<if test="${title_year[0][0]}=">
-										<!-- Give USA title one last chance for British-English users -->
-										<set name="rx_aka_english">
-											<![CDATA[
-											<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td[^>]+>USA</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
-											]]>
-										</set>
-										<!-- TEST MOVIE: https://www.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
-										<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
-									</if>
-								</if>
-
 								<if test="${title_year[0][0]}=">
-									<!-- Grab first "(original title)" as this is the English title for foreign users if no valid 'USA' title was found above -->
-									<!-- Updated to look for last "(original title)" if one exists, due to Amazon/IMDb stupidity -->
+									<!-- Accepting any remaining English title -->
 									<set name="rx_aka_english">
 										<![CDATA[
-										<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>\s*<table[^>]+>.+<td[^>]+>\s*\(original title\)</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>
+										<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td>(?!.*?(?:Japan|Israel|Germany|Philippines|working title|short title|alternative spelling|promotional title|promotional abbreviation|informal title|teaser title|review title|IMAX))[^<]*English[^<]*</td>\s*<td>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 										]]>
 									</set>
-									<!-- TEST MOVIE: 4proxy.de on https://www.imdb.com/title/tt0465624/ (My Super Ex-Girlfriend) -->
+									<!-- TEST MOVIE: https://www.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
 									<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
 
+									<if test="${global_options_uk_rating}=true">
+										<if test="${title_year[0][0]}=">
+											<!-- Give USA title one last chance for British-English users -->
+											<set name="rx_aka_english">
+												<![CDATA[
+												<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.*<td[^>]+>USA</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+												]]>
+											</set>
+											<!-- TEST MOVIE: https://www.imdb.com/title/tt0089374/releaseinfo (Police Story) -->
+											<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
+										</if>
+									</if>
+
 									<if test="${title_year[0][0]}=">
-										<!-- Last resort by looking for (undefined) titles -->
+										<!-- Grab first "(original title)" as this is the English title for foreign users if no valid 'USA' title was found above -->
+										<!-- Updated to look for last "(original title)" if one exists, due to Amazon/IMDb stupidity -->
 										<set name="rx_aka_english">
 											<![CDATA[
-											<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?generic.monitoring.set_twilight_info\(\s*"title[^"]+",\s*"US",.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td[^>]+></td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
+											<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>\s*<table[^>]+>.+<td[^>]+>\s*\(original title\)</td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>
 											]]>
 										</set>
-										<!-- TEST MOVIE: https://www.imdb.com/title/tt0061806/releaseinfo (Castle of Bloody Lust) -->
+										<!-- TEST MOVIE: 4proxy.de on https://www.imdb.com/title/tt0465624/ (My Super Ex-Girlfriend) -->
 										<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
 
 										<if test="${title_year[0][0]}=">
-											<!-- Giving up, and using the AKA title -->
+											<!-- Last resort by looking for (undefined) titles -->
 											<set name="rx_aka_english">
 												<![CDATA[
-												<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.*?<meta name="title" content="(?:&#x27;)?(?<movieTitleEnglish>[^\(]+?)(?:&#x27;)?\s*\(
+												<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.+?generic.monitoring.set_twilight_info\(\s*"title[^"]+",\s*"US",.+?<h4[^>]+>Also Known As \(AKA\)[^<]+</h4>.+?<td[^>]+></td>\s*<td[^>]+>(?<movieTitleEnglish>[^<]+)</td>.*?</table>
 												]]>
 											</set>
+											<!-- TEST MOVIE: https://www.imdb.com/title/tt0061806/releaseinfo (Castle of Bloody Lust) -->
 											<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
+
+											<if test="${title_year[0][0]}=">
+												<!-- Giving up, and using the AKA title -->
+												<set name="rx_aka_english">
+													<![CDATA[
+													<title>(?:&#x27;)?(?<movieTitleOriginal>[^\(]+?)(?:&#x27;)?\s*\(\D*(?<movieYear>\d{4})[^)]*\).*?</title>.*?<meta name="title" content="(?:&#x27;)?(?<movieTitleEnglish>[^\(]+?)(?:&#x27;)?\s*\(
+													]]>
+												</set>
+												<parse name="title_year" input="${aka_page}" regex="${rx_aka_english}" />
+											</if>
 										</if>
 									</if>
 								</if>
 							</if>
 						</if>
 					</if>
-				</if>
-				<!-- the title_year array is in reverse on the AKA page -->
-				<if test="${global_options_foreign_title}=true">
-					<!-- prevent title duplicate on some foreign movies with English titles -->
-					<if test="${title_year[0][2]:htmldecode}!=${title_year[0][0]:htmldecode}">
-						<if test="${global_options_foreign_first}=true">
-							<set name="movie.title" value="${title_year[0][0]:htmldecode} (${title_year[0][2]:htmldecode})" />
-							<if test="${title_year[0][2]:htmldecode}=">
-								<!-- Fix empty English title -->
-								<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
-								<set name="movie_title" value="${title_year[0][0]:htmldecode}" />
+					<!-- the title_year array is in reverse on the AKA page -->
+					<if test="${global_options_foreign_title}=true">
+						<!-- prevent title duplicate on some foreign movies with English titles -->
+						<if test="${title_year[0][2]:htmldecode}!=${title_year[0][0]:htmldecode}">
+							<if test="${global_options_foreign_first}=true">
+								<set name="movie.title" value="${title_year[0][0]:htmldecode} (${title_year[0][2]:htmldecode})" />
+								<if test="${title_year[0][2]:htmldecode}=">
+									<!-- Fix empty English title -->
+									<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
+									<set name="movie_title" value="${title_year[0][0]:htmldecode}" />
+								</if>
+							</if>
+							<if test="${global_options_foreign_first}=false">
+								<set name="movie.title" value="${title_year[0][2]:htmldecode} (${title_year[0][0]:htmldecode})" />
+								<if test="${title_year[0][2]:htmldecode}=">
+									<!-- Fix empty English title -->
+									<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
+									<set name="movie_title" value="${title_year[0][0]:htmldecode}" />
+								</if>
 							</if>
 						</if>
-						<if test="${global_options_foreign_first}=false">
-							<set name="movie.title" value="${title_year[0][2]:htmldecode} (${title_year[0][0]:htmldecode})" />
-							<if test="${title_year[0][2]:htmldecode}=">
-								<!-- Fix empty English title -->
-								<set name="movie.title" value="${title_year[0][0]:htmldecode}" />
-								<set name="movie_title" value="${title_year[0][0]:htmldecode}" />
-							</if>
+						<if test="${title_year[0][2]:htmldecode}=${title_year[0][0]:htmldecode}">
+							<set name="movie.title" value="${title_year[0][2]:htmldecode}" />
 						</if>
 					</if>
-					<if test="${title_year[0][2]:htmldecode}=${title_year[0][0]:htmldecode}">
-						<set name="movie.title" value="${title_year[0][2]:htmldecode}" />
+					<if test="${title_year[0][2]:htmldecode}!=">
+						<if test="${global_options_foreign_title}=false">
+							<set name="movie.title" value="${title_year[0][2]:htmldecode}" />
+						</if>
+						<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
 					</if>
-				</if>
-				<if test="${title_year[0][2]:htmldecode}!=">
-					<if test="${global_options_foreign_title}=false">
-						<set name="movie.title" value="${title_year[0][2]:htmldecode}" />
-					</if>
-					<set name="movie.year" value="${title_year[0][1]:htmldecode}" />
 				</if>
 			</if>
+		<!-- END: HTML Details Page -->
 
 			<!-- Details URL -->
 			<!-- This overwrites any special edition title abuse from search node as well -->
@@ -1514,7 +1532,7 @@
 					<log LogLevel="Debug" Message="IMDb+ Scraper: Movie collection auto-set to '${movie.collections}'" />
 				</if>
 
-				<!-- Auto Collection System fpr Oscars for Best Picture -->
+				<!-- Auto Collection System handling Oscars for Best Picture -->
 				<retrieve name="imdb_bestpicture_page" url="https://m.imdb.com/chart/bestpicture" encoding="UTF-8" />
 				<parse name="imdb_bestpicture" input="${imdb_bestpicture_page}" regex="&lt;a href=&quot;/title/${movie.imdb_id}/[^&quot;]+&quot;[^&gt;]+&gt;\s*&lt;[^&quot;]+&quot;[^&gt;]+&gt;\s*&lt;h4 class=&quot;best-picture" />
 				<if test="${imdb_bestpicture[0]}!=">
