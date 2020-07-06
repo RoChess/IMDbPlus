@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="27" />
-		<published month="6" day="29" year="2020" />
+		<version major="1" minor="9" point="28" />
+		<published month="7" day="6" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -726,7 +726,10 @@
 	<rename id="tt0097390" title="Fright Night II" />
 	<rename id="tt1438176" title="Fright Night (Remake) I" />
 	<rename id="tt2486630" title="Fright Night (Remake) II" />
-	<rename id="tt2294629" title="Frozen (Cartoon)" />
+	<rename id="tt2294629" title="Frozen (Cartoon) I" />
+	<rename id="tt4520988" title="Frozen (Cartoon) II" />
+	<rename id="tt4007502" title="Frozen (Short) I: Frozen Fever" collection="Frozen (Cartoon)" />
+	<rename id="tt5452780" title="Frozen (Short) II: Olaf's Frozen Adventure" collection="Frozen (Cartoon)" />
 	<rename id="tt0376606" title="Frozen (UK)" />
 	<rename id="tt0076059" title="Fun with Dick and Jane (Original)" />
 	<rename id="tt0076061" title="Funny People I" />
@@ -756,7 +759,7 @@
 	<rename id="tt1071875" title="Ghost Rider II: Spirit of Vengeance" collection="Ghost Rider|» Superheroes" />
 	<rename id="tt0087332" title="Ghostbusters I" />
 	<rename id="tt0097428" title="Ghostbusters II" />
-	<rename id="tt1289401" title="Ghostbusters III" />
+	<rename id="tt4513678" title="Ghostbusters III: Afterlife" />
 	<rename id="tt1289401" title="Ghostbusters (Reboot) I" collection="Ghostbusters" />
 	<rename id="tt0104346" title="Gladiator (Cult)" />
 	<rename id="tt2528814" title="God's Not Dead I" />
@@ -839,8 +842,8 @@
 	<rename id="tt0365302" title="Hansel and Gretel (UK)" />
 	<rename id="tt0308353" title="Happily N'Ever After I" />
 	<rename id="tt1235837" title="Happily N'Ever After II" />
-	<rename id="tt0366548" sortby="Happy Feet I" collection="Happy Feet" />
-	<rename id="tt1402488" sortby="Happy Feet II" collection="Happy Feet" />
+	<rename id="tt0366548" title="Happy Feet I" />
+	<rename id="tt1402488" title="Happy Feet II" />
 	<rename id="tt0366551" title="Harold &amp; Kumar I: Go to White Castle" />
 	<rename id="tt0481536" title="Harold &amp; Kumar II: Escape from Guantanamo Bay" />
 	<rename id="tt1278232" sortby="Harold &amp; Kumar II: Go to Amsterdam" collection="Harold &amp; Kumar" />	
@@ -884,7 +887,7 @@
 	<rename id="tt2150275" title="Henry V (TV)" />
 	<rename id="tt0097499" title="Henry V (UK)" />
 	<rename id="tt0079289" title="Henry V: The Life of Henry the Fifth" />
-	<rename id="tt0119571" title="Herbie I: The Love Bug" />
+	<rename id="tt0064603" title="Herbie I: The Love Bug" />
 	<rename id="tt0071607" title="Herbie II: Rides Again" />
 	<rename id="tt0076137" title="Herbie III: Goes to Monte Carlo" />
 	<rename id="tt0080861" title="Herbie IV: Goes Bananas" />
@@ -1269,8 +1272,8 @@
 	<rename id="tt9603212" title="Mission: Impossible VII" />
 	<rename id="tt9603208" title="Mission: Impossible VIII" />
 	<rename id="tt0057591" title="Monsieur Gangster" foreign="Les tontons flingueurs" />
-	<rename id="tt0198781" sortby="Monsters Inc 01" collection="Monsters, Inc." />	
-	<rename id="tt1453405" sortby="Monsters Inc 02" collection="Monsters, Inc." />	
+	<rename id="tt0198781" title="Monsters, Inc. I" />	
+	<rename id="tt1453405" title="Monsters, Inc. II: University" />	
 	<rename id="tt1542599" title="Monsters vs Aliens: B.O.B.'s Big Break" />
 	<rename id="tt0066765" title="Monty Python's I: And Now for Something Completely Different" sortby="Monty 01" />
 	<rename id="tt0071853" title="Monty Python's I: The Holy Grail" sortby="Monty 02" />
