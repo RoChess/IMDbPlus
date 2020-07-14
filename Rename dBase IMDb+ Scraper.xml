@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="29" />
-		<published month="7" day="13" year="2020" />
+		<version major="1" minor="9" point="30" />
+		<published month="7" day="14" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -119,6 +119,9 @@
 	<rename id="tt0358349" title="Agent Cody Banks II: Destination London" />
 	<rename id="tt0080339" title="Airplane! I" />
 	<rename id="tt0083530" title="Airplane! II: The Sequel" />
+	<rename id="tt0103639" title="Aladdin I" />
+	<rename id="tt0107952" title="Aladdin II: The Return of Jafar" />
+	<rename id="tt0115491" title="Aladdin III: ...and the King of Thieves" />
 	<rename id="tt0119468" title="Alex Cross I: Kiss the Girls" />
 	<rename id="tt0164334" title="Alex Cross II: Along Came a Spider" />
 	<rename id="tt1712170" title="Alex Cross III: Alex Cross" />
