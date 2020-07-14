@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="28" />
-		<published month="7" day="6" year="2020" />
+		<version major="1" minor="9" point="29" />
+		<published month="7" day="13" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -167,6 +167,9 @@
 	<rename id="tt0974959" title="American Pie VI: Beta House" />
 	<rename id="tt1407050" title="American Pie VII: The Book of Love" />
 	<rename id="tt1605630" title="American Pie VIII: Reunion" />
+	<rename id="tt3322940" title="Annabelle I" />
+	<rename id="tt5140878" title="Annabelle II: Creation" />
+	<rename id="tt8350360" title="Annabelle III: Comes Home" />
 	<rename id="tt0118615" title="Anaconda I" />
 	<rename id="tt0366174" title="Anaconda II: The Hunt for the Blood Orchid" />
 	<rename id="tt1137996" title="Anaconda III: The Offspring" />
@@ -984,6 +987,7 @@
 	<rename id="tt1591095" title="Insidious I" />
 	<rename id="tt2226417" title="Insidious II: Chapter 2" />
 	<rename id="tt3195644" title="Insidious III: Chapter 3" />
+	<rename id="tt5726086" title="Insidious IV: The Last Key" />
 	<rename id="tt0378109" title="Into the Blue I" />
 	<rename id="tt0865907" title="Into the Blue II: The Reef " />
 	<rename id="tt0049366" title="Invasion of the Body Snatchers (Original)" />
@@ -1255,6 +1259,8 @@
 	<rename id="tt2293640" title="Minions" collection="Despicable Me" />
 	<rename id="tt0790686" title="Mirrors I" />
 	<rename id="tt1576699" title="Mirrors II" />
+	<rename id="tt0212346" title="Miss Congeniality I" />
+	<rename id="tt0385307" title="Miss Congeniality II: Armed &amp; Fabulous" />
 	<rename id="tt0055205" title="Miss Marple I: Murder She Said" />
 	<rename id="tt0057334" title="Miss Marple II: Murder at the Gallop" />
 	<rename id="tt0058383" title="Miss Marple III: Murder Most Foul" />
@@ -1449,6 +1455,10 @@
 	<rename id="tt0116704" title="Police Story IV: First Strike" foreign="Ging chaat goo si IV: Ji gaan daan yam mo" />
 	<rename id="tt0386005" title="Police Story V: New Police Story" foreign="San ging caat goo si" />
 	<rename id="tt2599716" title="Police Story VI: Police Story 2013" foreign="Jing cha gu shi 2013" />
+	<rename id="tt0084516" title="Poltergeist I" />
+	<rename id="tt0091778" title="Poltergeist II: The Other Side" />
+	<rename id="tt0095889" title="Poltergeist III: The Final Chapter" />
+	<rename id="tt1029360" title="Poltergeist (Remake)" />
 	<rename id="tt0084522" title="Porky's I" />
 	<rename id="tt0086129" title="Porky's II: The Next Day" />
 	<rename id="tt0089826" title="Porky's III: Revenge" />
