@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="30" />
-		<published month="7" day="14" year="2020" />
+		<version major="1" minor="9" point="31" />
+		<published month="7" day="15" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -206,6 +206,8 @@
 	<rename id="tt0074156" title="Assault on Precinct 13 (Original)" />
 	<rename id="tt0230011" title="Atlantis I: The Lost Empire" />
 	<rename id="tt0344864" title="Atlantis II: Milo's Return" />
+	<rename id="tt2406566" sortby="Atomic Blonde I" />
+	<rename id="tt8390502" title="Atomic Blonde II" />
 	<rename id="tt0051380" title="Attack of the 50 Ft. Woman (Original)" />
 	<rename id="tt0118655" title="Austin Powers I: International Man of Mystery" />
 	<rename id="tt0145660" title="Austin Powers II: The Spy Who Shagged Me" />
@@ -2039,6 +2041,7 @@
 	<rename id="tt0144528" title="The Nutty Professor II: The Klumps" />
 	<rename id="tt0063374" title="The Odd Couple I" />
 	<rename id="tt0120773" title="The Odd Couple II" />
+	<rename id="tt7556122" sortby="The Old Guard I" />
 	<rename id="tt0075005" title="The Omen I" />
 	<rename id="tt0077394" title="The Omen II: Damien" />
 	<rename id="tt0082377" title="The Omen III: The Final Conflict" />
