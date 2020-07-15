@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="31" />
-		<published month="7" day="15" year="2020" />
+		<version major="1" minor="9" point="32" />
+		<published month="7" day="16" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1398,6 +1398,42 @@
 	<rename id="tt3450650" title="Paul Blart: Mall Cop II" />
 	<rename id="tt0814255" title="Percy Jackson &amp; the Olympians I: The Lightning Thief" />
 	<rename id="tt1854564" title="Percy Jackson &amp; the Olympians II: Sea of Monsters" />
+	<rename id="tt0024958" title="Perry Mason (Classic) I: The Case of the Howling Dog" sortby="Perry Mason C01" collection="Perry Mason" />
+	<rename id="tt0026184" title="Perry Mason (Classic) II: The Case of the Curious Bride" sortby="Perry Mason C02" collection="Perry Mason" />
+	<rename id="tt0026185" title="Perry Mason (Classic) III: The Case of the Lucky Legs" sortby="Perry Mason C03" collection="Perry Mason" />
+	<rename id="tt0027429" title="Perry Mason (Classic) IV: The Case of the Velvet Claws" sortby="Perry Mason C04" collection="Perry Mason" />
+	<rename id="tt0027428" title="Perry Mason (Classic) V: The Case of the Black Cat" sortby="Perry Mason C05" collection="Perry Mason" />
+	<rename id="tt0028695" title="Perry Mason (Classic) VI: The Case of the Stuttering Bishop" sortby="Perry Mason C06" collection="Perry Mason" />
+	<rename id="tt0089801" title="Perry Mason I: Returns" sortby="Perry Mason X01" />
+	<rename id="tt0091749" title="Perry Mason II: The Case of the Notorious Nun" sortby="Perry Mason X02" />
+	<rename id="tt0091750" title="Perry Mason III: The Case of the Shooting Star" sortby="Perry Mason X03" />
+	<rename id="tt0093722" title="Perry Mason IV: The Case of the Lost Love" sortby="Perry Mason X04" />
+	<rename id="tt0093725" title="Perry Mason V: The Case of the Sinister Spirit" sortby="Perry Mason X05" />
+	<rename id="tt0093723" title="Perry Mason VI: The Case of the Murdered Madam" sortby="Perry Mason X06" />
+	<rename id="tt0093724" title="Perry Mason VII: The Case of the Scandalous Scoundrel" sortby="Perry Mason X07" />
+	<rename id="tt0095854" title="Perry Mason VIII: The Case of the Avenging Ace" sortby="Perry Mason X08" />
+	<rename id="tt0095855" title="Perry Mason IX: The Case of the Lady in the Lake" sortby="Perry Mason X09" />
+	<rename id="tt0098082" title="Perry Mason X: The Case of the Lethal Lesson" sortby="Perry Mason X10" />
+	<rename id="tt0098083" title="Perry Mason XI: The Case of the Musical Murder" sortby="Perry Mason X11" />
+	<rename id="tt0098081" title="Perry Mason XII: The Case of the All-Star Assassin" sortby="Perry Mason X12" />
+	<rename id="tt0100351" title="Perry Mason XIII: The Case of the Poisoned Pen" sortby="Perry Mason X13" />
+	<rename id="tt0100350" title="Perry Mason XIV: The Case of the Desperate Deception" sortby="Perry Mason X14" />
+	<rename id="tt0100352" title="Perry Mason XV: The Case of the Silenced Singer" sortby="Perry Mason X15" />
+	<rename id="tt0100349" title="Perry Mason XVI: The Case of the Defiant Daughter" sortby="Perry Mason X16" />
+	<rename id="tt0102661" title="Perry Mason XVII: The Case of the Ruthless Reporter" sortby="Perry Mason X17" />
+	<rename id="tt0102660" title="Perry Mason XVIII: The Case of the Maligned Mobster" sortby="Perry Mason X18" />
+	<rename id="tt0102659" title="Perry Mason XIX: The Case of the Glass Coffin" sortby="Perry Mason X19" />
+	<rename id="tt0102658" title="Perry Mason XX: The Case of the Fatal Fashion" sortby="Perry Mason X20" />
+	<rename id="tt0105124" title="Perry Mason XXI: The Case of the Fatal Framing" sortby="Perry Mason X21" />
+	<rename id="tt0105126" title="Perry Mason XXII: The Case of the Reckless Romeo" sortby="Perry Mason X22" />
+	<rename id="tt0105125" title="Perry Mason XXIII: The Case of the Heartbroken Bride" sortby="Perry Mason X23" />
+	<rename id="tt0107812" title="Perry Mason XXIV: The Case of the Skin-Deep Scandal" sortby="Perry Mason X24" />
+	<rename id="tt0107813" title="Perry Mason XXV: The Case of the Telltale Talk Show Host" sortby="Perry Mason X25" />
+	<rename id="tt0107811" title="Perry Mason XXVI: The Case of the Killer Kiss" sortby="Perry Mason X26" />
+	<rename id="tt0107810" title="Perry Mason Mystery I: The Case of the Wicked Wives" sortby="Perry Mason Y01" collection="Perry Mason" />
+	<rename id="tt0110813" title="Perry Mason Mystery II: The Case of the Lethal Lifestyle" sortby="Perry Mason Y02" collection="Perry Mason" />
+	<rename id="tt0110812" title="Perry Mason Mystery III: The Case of the Grimacing Governor" sortby="Perry Mason Y03" collection="Perry Mason" />
+	<rename id="tt0114116" title="Perry Mason Mystery IV: The Case of the Jealous Jokester" sortby="Perry Mason Y04" collection="Perry Mason" />
 	<rename id="tt0046183" title="Peter Pan (Cartoon) I" />
 	<rename id="tt0280030" title="Peter Pan (Cartoon) II: Return to Never Land" />
 	<rename id="tt1711375" title="Peter Pan (Musical)" />
