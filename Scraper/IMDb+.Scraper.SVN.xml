@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="10" point="6" />
-		<published month="06" day="30" year="2020" />
+		<version major="4" minor="10" point="7" />
+		<published month="07" day="22" year="2020" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -474,18 +474,12 @@
 				<if test="${global_options_refresh_all_fields}=true"><set name="update_actors" value="true" /></if>
 				<if test="${update_actors}=true">
 					<!-- Actors -->
-					<set name="rx_actors_block">
-						<![CDATA[
-						<script type="[^"]+json">.+?"actor":.+?(?:\{.+?"name":\s*"(?<actor>[^"]+)"\s*\}[,\s]*)+
-						]]>
-					</set>
 					<set name="rx_actors">
 						<![CDATA[
-						"name":\s*"(?<movieActors>[^"]+)"\s
+						<a href="/name/nm\d+[^"]+[^<]+<img height[^\s]+ width[^\s]+ alt="[^"]+" title="(?<movieActors>[^"]+)"
 						]]>
 					</set>
-					<parse name="actors_block" input="${details_page}" regex="${rx_actors_block}" />
-					<parse name="actors" input="${actors_block}" regex="${rx_actors}" />
+					<parse name="actors" input="${details_page}" regex="${rx_actors}" />
 					<set name="movie.actors" value="|" />
 					<loop name="currActor" on="actors" limit="30">
 						<replace name="actor_apostrophe" input="${currActor[0]:htmldecode}" pattern="\\u0027" with="'" />
