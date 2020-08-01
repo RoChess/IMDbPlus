@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="32" />
-		<published month="7" day="16" year="2020" />
+		<version major="1" minor="9" point="33" />
+		<published month="8" day="1" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -100,6 +100,8 @@
 	<rename id="tt0329101" title="A Nightmare on Elm Street VIII: Freddy vs. Jason" collection="A Nightmare on Elm Street|Friday the 13th" />
 	<rename id="tt1179056" title="A Nightmare on Elm Street (Remake) I" sortby="A Nightmare on Elm Street X01" />
 	<rename id="tt1650038" title="A Nightmare on Elm Street (Remake) II" sortby="A Nightmare on Elm Street X02" />
+	<rename id="tt6644200" sortby="A Quiet Place I" />
+	<rename id="tt8332922" title="A Quiet Place II" />
 	<rename id="tt1025103" title="A Room with a View (TV)" />
 	<rename id="tt0047522" title="A Star Is Born (Musical/Original)" />
 	<rename id="tt0075265" title="A Star Is Born (Musical/Remake)" />
@@ -259,6 +261,7 @@
 	<rename id="tt0468569" title="Batman VI: The Dark Knight" sortby="Batman 06" collection="Batman|» Superheroes" />
 	<rename id="tt1345836" title="Batman VII: The Dark Knight Rises" sortby="Batman 07" collection="Batman|» Superheroes" />
 	<rename id="tt2975590" sortby="Batman v Superman I: Dawn of Justice" collection="Batman|Superman|The Justice League|» Superheroes" />
+	<rename id="tt1877830" sortby="The Batman I" collection="Batman|The Justice League|» Superheroes" />
 	<rename id="tt0101414" title="Beauty and the Beast (Cartoon)" />
 	<rename id="tt0055781" title="Beauty and the Beast (Original)" />
 	<rename id="tt0338769" title="Beauty and the Beast: Blood of Beasts" />
@@ -291,7 +294,8 @@
 	<rename id="tt0071222" title="Black Christmas (Original)" />
 	<rename id="tt0115693" title="Black Mask I" />
 	<rename id="tt0264429" title="Black Mask II: City of Masks" />
-	<rename id="tt1825683" sortby="Black Panther I" collection="The Avengers|» Superheroes" />
+	<rename id="tt1825683" sortby="Black Panther I" collection="Black Panther|The Avengers|» Superheroes" />
+	<rename id="tt9114286" title="Black Panther II" collection="Black Panther|The Avengers|» Superheroes" />
 	<rename id="tt3480822" sortby="Black Widow I" collection="The Avengers|» Superheroes" />
 	<rename id="tt0120611" title="Blade I" collection="Blade Trilogy|» Superheroes" />
 	<rename id="tt0187738" title="Blade II" collection="Blade Trilogy|» Superheroes" />
@@ -541,6 +545,9 @@
 	<rename id="tt0109578" title="Death Wish V: The Face Of Death" />
 	<rename id="tt1137450" title="Death Wish (Reboot)" />
 	<rename id="tt0038462" title="Decoy (Classic)" />
+	<rename id="tt0149261" title="Deep Blue Sea I" />
+	<rename id="tt7086706" title="Deep Blue Sea II" />
+	<rename id="tt11946300" title="Deep Blue Sea III" />
 	<rename id="tt0073582" title="Deep Red" foreign="Profondo Rosso" />
 	<rename id="tt0839788" title="Déjà Vu (TV)" />
 	<rename id="tt0089065" title="Déjà Vu (UK)" />
@@ -1089,6 +1096,7 @@
 	<rename id="tt2911666" title="John Wick I" />
 	<rename id="tt4425200" title="John Wick II: Chapter Two" />
 	<rename id="tt6146586" title="John Wick III: Chapter Three - Parabellum" />
+	<rename id="tt10366206" title="John Wick IV: Chapter Four" />
 	<rename id="tt0274166" title="Johnny English I" />
 	<rename id="tt1634122" title="Johnny English II: Reborn" />
 	<rename id="tt6921996" title="Johnny English III: Strikes Again" />
@@ -1118,6 +1126,7 @@
 	<rename id="tt0163025" title="Jurassic Park III: Return to the Island" />
 	<rename id="tt0369610" title="Jurassic Park IV: Jurassic World" />
 	<rename id="tt4881806" title="Jurassic Park V: Fallen Kingdom" />
+	<rename id="tt8041270" title="Jurassic Park VI: Dominion" />
 	<rename id="tt1250777" title="Kick-Ass I" collection="Kick-Ass|» Superheroes" />
 	<rename id="tt1650554" title="Kick-Ass II" collection="Kick-Ass|» Superheroes" />
 	<rename id="tt0097659" title="Kickboxer I" />
@@ -1512,6 +1521,9 @@
 	<rename id="tt0103044" title="Prison on Fire II" foreign="Jian yu feng yun II: Tao fan" />
 	<rename id="tt0085127" title="Project A I" foreign="'A' gai wak" />
 	<rename id="tt0092501" title="Project A II" foreign="'A' gai wak II: juk jap" />
+	<rename id="tt3142346" title="Psych: The Musical" collection="Psych" />
+	<rename id="tt6868216" title="Psych I: The Movie" />
+	<rename id="tt9792884" title="Psych II: Lassie Come Home" />
 	<rename id="tt0114202" title="Public Enemies (Classic)" />
 	<rename id="tt0098143" title="Puppet Master I: Puppetmaster" sortby="Puppet Master 01" />
 	<rename id="tt0100438" title="Puppet Master II: His Unholy Creations" sortby="Puppet Master 02" />
@@ -1938,6 +1950,7 @@
 	<rename id="tt4630562" title="The Fast and the Furious VIII: The Fate of the Furious" sortby="The Fast and the Furious 08" />
 	<rename id="tt5433138" title="The Fast and the Furious IX: F9" sortby="The Fast and the Furious 09" />
 	<rename id="tt5433140" title="The Fast and the Furious X: Furious Ten" sortby="The Fast and the Furious 10" />
+	<rename id="tt0439572" sortby="The Flash I" collection="The Justice League|» Superheroes" />
 	<rename id="tt0059183" title="The Flight of the Phoenix (Original)" />
 	<rename id="tt0091064" title="The Fly I" />
 	<rename id="tt0097368" title="The Fly II" />
@@ -1993,6 +2006,7 @@
 	<rename id="tt0283426" title="The Jungle Book (Cartoon) II" />
 	<rename id="tt2388771" title="The Jungle Book (Reboot) Mowgli: Legend of the Jungle" />
 	<rename id="tt0974015" title="The Justice League I: Part One" collection="The Justice League|» Superheroes" />
+	<rename id="tt12361974" title="The Justice League I: Part One (Snyder's Cut)" collection="The Justice League|» Superheroes" />
 	<rename id="tt4121026" title="The Justice League II: Part Two" collection="The Justice League|» Superheroes" />
 	<rename id="tt0087538" title="The Karate Kid I" />
 	<rename id="tt0091326" title="The Karate Kid II" />
@@ -2000,6 +2014,9 @@
 	<rename id="tt0110657" title="The Karate Kid IV: The Next Karate Kid" />
 	<rename id="tt1155076" title="The Karate Kid (Remake) I" />
 	<rename id="tt1674782" title="The Karate Kid (Remake) II" />
+	<rename id="tt3799232" title="The Kissing Booth I" />
+	<rename id="tt9784456" title="The Kissing Booth II" />
+	<rename id="tt12783454" title="The Kissing Booth III" />
 	<rename id="tt0095489" title="The Land Before Time I" sortby="The Land Before Time 01" />
 	<rename id="tt0110300" title="The Land Before Time II: The Great Valley Adventure" sortby="The Land Before Time 02" />
 	<rename id="tt0113596" title="The Land Before Time III: The Time of the Great Giving" sortby="The Land Before Time 03" />
@@ -2164,6 +2181,8 @@
 	<rename id="tt1186371" title="The Storm Riders II: Storm Warriors" foreign="Fung wan II" />
 	<rename id="tt0482606" title="The Strangers I" />
 	<rename id="tt1285009" title="The Strangers II" />
+	<rename id="tt1386697" collection="Suicide Squad|» Superheroes" />
+	<rename id="tt6334354" sortby="The Suicide Squad I" collection="Suicide Squad|» Superheroes" />
 	<rename id="tt0072251" sortby="The Taking of Pelham (Original)" />	
 	<rename id="tt0072271" title="The Texas Chain Saw Massacre I" />
 	<rename id="tt0092076" title="The Texas Chain Saw Massacre II" />
@@ -2309,7 +2328,8 @@
 	<rename id="tt0416287" title="Venom (Indie)" />
 	<rename id="tt0084854" title="Venom (UK)" />
 	<rename id="tt0067934" title="Venom (UK/Cult)" />
-	<rename id="tt1270797" sortby="Venom I" collection="Spider-Man|» Superheroes" />
+	<rename id="tt1270797" sortby="Venom I" collection="Venom|Spider-Man|» Superheroes" />
+	<rename id="tt7097896" title="Venom II: Let There Be Carnage" collection="Venom|Spider-Man|» Superheroes" />
 	<rename id="tt1224378" title="Viy I" />
 	<rename id="tt6218010" title="Viy II: Journey to China" />
 	<rename id="tt0070895" title="Walking Tall (Original)" />
