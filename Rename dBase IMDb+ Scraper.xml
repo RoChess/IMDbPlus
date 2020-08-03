@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="33" />
-		<published month="8" day="1" year="2020" />
+		<version major="1" minor="9" point="34" />
+		<published month="8" day="3" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1258,6 +1258,8 @@
 	<rename id="tt0419954" title="McDull II: Prince de la Bun" foreign="Mai dou bo luo you wang zi" />
 	<rename id="tt0499525" title="McDull III: The Alumni" foreign="Chun tian hua hua tong xue hui" />
 	<rename id="tt1430622" title="McDull IV: Kung Fu Kindergarten" foreign="Mai dou xiang dang dang" />
+	<rename id="tt0377092" title="Mean Girls I" />
+	<rename id="tt1679235" title="Mean Girls II" />
 	<rename id="tt0212338" title="Meet the Parents I" />
 	<rename id="tt0290002" title="Meet the Parents II: Meet the Fockers" />
 	<rename id="tt0970866" title="Meet the Parents III: Little Fockers" />
@@ -1267,7 +1269,7 @@
 	<rename id="tt0119654" title="Men in Black I" />
 	<rename id="tt0120912" title="Men in Black II" />
 	<rename id="tt1409024" title="Men in Black III" />
-	<rename id="tt2283336" title="Men in Black IV" />
+	<rename id="tt2283336" title="Men in Black IV: International" />
 	<rename id="tt1259014" title="Mesrine I: Killer Instinct" foreign="L'instinct de mort" />
 	<rename id="tt0411272" title="Mesrine II: Public Enemy #1" foreign="L'ennemi public n°1" />
 	<rename id="tt2293640" title="Minions" collection="Despicable Me" />
