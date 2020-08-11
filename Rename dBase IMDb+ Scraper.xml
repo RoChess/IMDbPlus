@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="34" />
-		<published month="8" day="3" year="2020" />
+		<version major="1" minor="9" point="35" />
+		<published month="8" day="11" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -538,6 +538,7 @@
 	<rename id="tt0452608" title="Death Race I" />
 	<rename id="tt1500491" title="Death Race II" />
 	<rename id="tt1988591" title="Death Race III: Inferno" />
+	<rename id="tt3807900" title="Death Race IV: Beyond Anarchy" />
 	<rename id="tt0071402" title="Death Wish I" />
 	<rename id="tt0082250" title="Death Wish II" />
 	<rename id="tt0089003" title="Death Wish III" />
@@ -2060,6 +2061,9 @@
 	<rename id="tt0419946" title="The Marine I" />
 	<rename id="tt1266027" title="The Marine II" />
 	<rename id="tt2334841" title="The Marine III: Homefront" />
+	<rename id="tt3528666" title="The Marine IV: Moving Target" />
+	<rename id="tt5781798" title="The Marine V: Battleground" />
+	<rename id="tt7668724" title="The Marine VI: Close Quarters" />
 	<rename id="tt0110475" title="The Mask I" collection="The Mask|» Superheroes" />
 	<rename id="tt0362165" title="The Mask II: The Son of the Mask" collection="The Mask|» Superheroes" />
 	<rename id="tt0120746" title="The Mask of Zorro I" collection="Zorro|» Superheroes" />
@@ -2114,13 +2118,17 @@
 	<rename id="tt0086101" title="The Phantom of the Opera (Remake)" />
 	<rename id="tt0100361" title="The Phantom of the Opera (TV)" />
 	<rename id="tt0117331" title="The Phantom" collection="» Superheroes" />
-	<rename id="tt0057413" title="The Pink Panther I" sortby="The Pink Panther (Sellers) 01" />
-	<rename id="tt0058586" title="The Pink Panther II: A Shot in the Dark" sortby="The Pink Panther (Sellers) 02" />
-	<rename id="tt0072081" title="The Pink Panther III: The Return of the Pink Panther" sortby="The Pink Panther (Sellers) 03" />
-	<rename id="tt0075066" title="The Pink Panther IV: The Pink Panther Strikes Again" sortby="The Pink Panther (Sellers) 04" />
-	<rename id="tt0078163" title="The Pink Panther V: Revenge of the Pink Panther" sortby="The Pink Panther (Sellers) 05" />
-	<rename id="tt0383216" title="The Pink Panther I" />
-	<rename id="tt0838232" title="The Pink Panther II" />
+	<rename id="tt0063135" title="The Pink Panther: Inspector Clouseau" />
+	<rename id="tt0057413" title="The Pink Panther I" />
+	<rename id="tt0058586" title="The Pink Panther II: A Shot in the Dark" />
+	<rename id="tt0072081" title="The Pink Panther III: The Return of the Pink Panther" />
+	<rename id="tt0075066" title="The Pink Panther IV: The Pink Panther Strikes Again" />
+	<rename id="tt0078163" title="The Pink Panther V: Revenge of the Pink Panther" />
+	<rename id="tt0084814" title="The Pink Panther VI: Trail of the Pink Panther" />
+	<rename id="tt0085384" title="The Pink Panther VII: Curse of the Pink Panther" />
+	<rename id="tt0108187" title="The Pink Panther VIII: Son of the Pink Panther" />
+	<rename id="tt0383216" title="The Pink Panther (Remake) I" />
+	<rename id="tt0838232" title="The Pink Panther (Remake) II" />
 	<rename id="tt0337697" title="The Prince &amp; Me I" />
 	<rename id="tt0477072" title="The Prince &amp; Me II" />
 	<rename id="tt1094198" title="The Prince &amp; Me III: A Royal Honeymoon" />
