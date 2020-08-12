@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="35" />
-		<published month="8" day="11" year="2020" />
+		<version major="1" minor="9" point="36" />
+		<published month="8" day="12" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -2118,7 +2118,7 @@
 	<rename id="tt0086101" title="The Phantom of the Opera (Remake)" />
 	<rename id="tt0100361" title="The Phantom of the Opera (TV)" />
 	<rename id="tt0117331" title="The Phantom" collection="» Superheroes" />
-	<rename id="tt0063135" title="The Pink Panther: Inspector Clouseau" />
+	<rename id="tt0063135" title="The Pink Panther - Inspector Clouseau" />
 	<rename id="tt0057413" title="The Pink Panther I" />
 	<rename id="tt0058586" title="The Pink Panther II: A Shot in the Dark" />
 	<rename id="tt0072081" title="The Pink Panther III: The Return of the Pink Panther" />
