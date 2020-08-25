@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="36" />
-		<published month="8" day="12" year="2020" />
+		<version major="1" minor="9" point="37" />
+		<published month="8" day="25" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1820,6 +1820,8 @@
 	<rename id="tt1398941" title="Superman/Batman I: Public Enemies" collection="» Superheroes" />
 	<rename id="tt1673430" title="Superman/Batman II: Apocalypse" collection="» Superheroes" />
 	<rename id="tt1701223" title="Superman/Shazam!: The Return of Black Adam (DC Showcase)" collection="» Superheroes" />
+	<rename id="tt0390521" title="Super Size Me I" />
+	<rename id="tt7215262" title="Super Size Me II: Holy Chicken" />
 	<rename id="tt0247745" title="Super Troopers I" />
 	<rename id="tt0859635" title="Super Troopers II" />
 	<rename id="tt8820258" title="Super Troopers III: Winter Soldiers" />
@@ -2260,6 +2262,9 @@
 	<rename id="tt0120363" title="Toy Story II" />
 	<rename id="tt0435761" title="Toy Story III" />
 	<rename id="tt1979376" title="Toy Story IV" />
+	<rename id="tt3845670" title="Train to Busan (CG): Seoul Station" foreign="Seoulyeok" />
+	<rename id="tt5700672" title="Train to Busan I" foreign="Busanhaeng" />
+	<rename id="tt8850222" title="Train to Busan II: Peninsula" />
 	<rename id="tt0418279" title="Transformers I" />
 	<rename id="tt1055369" title="Transformers II: Revenge of the Fallen" />
 	<rename id="tt1399103" title="Transformers III: Dark of the Moon" />
