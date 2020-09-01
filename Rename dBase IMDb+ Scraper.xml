@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="37" />
-		<published month="8" day="25" year="2020" />
+		<version major="1" minor="9" point="38" />
+		<published month="8" day="31" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -533,6 +533,7 @@
 	<rename id="tt0103873" title="Dead Alive (Braindead)" />
 	<rename id="tt1431045" title="Deadpool I" collection="Deadpool|» Superheroes" />
 	<rename id="tt5463162" title="Deadpool II" collection="Deadpool|» Superheroes" />
+	<rename id="tt6263850" title="Deadpool III" collection="Deadpool|» Superheroes" />
 	<rename id="tt0795368" title="Death at a Funeral (UK)" />
 	<rename id="tt1321509" title="Death at a Funeral (US)" />
 	<rename id="tt0452608" title="Death Race I" />
@@ -1084,14 +1085,16 @@
 	<rename id="tt0263488" title="Jeepers Creepers I" />
 	<rename id="tt0301470" title="Jeepers Creepers II" />
 	<rename id="tt1139592" title="Jeepers Creepers III: Cathedral" />
-	<rename id="tt0431420" title="Jesse Stone I: Stone Cold" />
-	<rename id="tt0498360" title="Jesse Stone II: Night Passage" />
-	<rename id="tt0800095" title="Jesse Stone III: Death in Paradise" />
-	<rename id="tt0905345" title="Jesse Stone IV: Sea Change" />
-	<rename id="tt1064884" title="Jesse Stone V: Thin Ice" />
-	<rename id="tt1315216" title="Jesse Stone VI: No Remorse" />
-	<rename id="tt1710573" title="Jesse Stone VII: Innocents Lost" />
-	<rename id="tt2004262" title="Jesse Stone VIII: Benefit of the Doubt" />
+	<rename id="tt0431420" title="Jesse Stone I: Stone Cold" sortby="Jesse Stone 01" />
+	<rename id="tt0498360" title="Jesse Stone II: Night Passage"  sortby="Jesse Stone 02" />
+	<rename id="tt0800095" title="Jesse Stone III: Death in Paradise"  sortby="Jesse Stone 03" />
+	<rename id="tt0905345" title="Jesse Stone IV: Sea Change"  sortby="Jesse Stone 04" />
+	<rename id="tt1064884" title="Jesse Stone V: Thin Ice"  sortby="Jesse Stone 05" />
+	<rename id="tt1315216" title="Jesse Stone VI: No Remorse"  sortby="Jesse Stone 06" />
+	<rename id="tt1710573" title="Jesse Stone VII: Innocents Lost"  sortby="Jesse Stone 07" />
+	<rename id="tt2004262" title="Jesse Stone VIII: Benefit of the Doubt"  sortby="Jesse Stone 08" />
+	<rename id="tt4505830" title="Jesse Stone IX: Lost in Paradise" sortby="Jesse Stone 09" />
+	<rename id="tt5031218" title="Jesse Stone X" sortby="Jesse Stone 10" />
 	<rename id="tt0245686" title="Joe Dirt I" />
 	<rename id="tt4126340" title="Joe Dirt II: Beautiful Loser" />
 	<rename id="tt2911666" title="John Wick I" />
@@ -1167,6 +1170,8 @@
 	<rename id="tt2267968" title="Kung Fu Panda III" />
 	<rename id="tt1287845" title="Kung Fu Panda (Short) I: Secrets of the Furious Five" sortby="Kung Fu Panda X01" collection="Kung Fu Panda" />
 	<rename id="tt1702433" title="Kung Fu Panda (Short) II: Holiday Special" sortby="Kung Fu Panda X02" collection="Kung Fu Panda" />
+	<rename id="tt3472226" title="Kung Fury I" />
+	<rename id="tt5765844" title="Kung Fury II" />
 	<rename id="tt0048280" title="Lady and the Tramp I" />
 	<rename id="tt0249677" title="Lady and the Tramp II: Scamp's Adventure" />
 	<rename id="tt1228933" title="Laid to Rest I" />
@@ -1914,7 +1919,7 @@
 	<rename id="tt3065204" title="The Conjuring II" />
 	<rename id="tt7069210" title="The Conjuring III: The Devil Made Me Do It" />
 	<rename id="tt0481499" title="The Croods I" />
-	<rename id="tt2850386" title="The Croods II" />
+	<rename id="tt2850386" title="The Croods II: A New Age" />
 	<rename id="tt0109506" title="The Crow I" />
 	<rename id="tt0115986" title="The Crow II: City of Angels" />
 	<rename id="tt0132910" title="The Crow III: Salvation" />
@@ -1992,6 +1997,8 @@
 	<rename id="tt0089274" title="The Hills Have Eyes II" />
 	<rename id="tt0454841" title="The Hills Have Eyes (Remake) I" />
 	<rename id="tt0800069" title="The Hills Have Eyes (Remake) II" />
+	<rename id="tt1959563" sortby="The Hitman's Bodyguard I" />
+	<rename id="tt8385148" title="The Hitman's Bodyguard II: ...Wife's Bodyguard" />
 	<rename id="tt0903624" title="The Hobbit I: An Unexpected Journey" sortby="The Lord of the Rings IVa" collection="The Hobbit|» Tolkien's Middle-earth" />
 	<rename id="tt1170358" title="The Hobbit II: The Desolation of Smaug" sortby="The Lord of the Rings IVb" collection="The Hobbit|» Tolkien's Middle-earth" />
 	<rename id="tt2310332" title="The Hobbit III: The Battle of the Five Armies" sortby="The Lord of the Rings IVc" collection="The Hobbit|» Tolkien's Middle-earth" />
