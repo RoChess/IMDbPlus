@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="38" />
-		<published month="8" day="31" year="2020" />
+		<version major="1" minor="9" point="39" />
+		<published month="9" day="23" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -226,6 +226,8 @@
 	<rename id="tt2150163" title="Baby Geniuses III: Mystery of the Crown Jewels" />
 	<rename id="tt2287250" title="Baby Geniuses IV: Space Baby" />
 	<rename id="tt2287238" title="Baby Geniuses V: Treasures of Egypt" />
+	<rename id="tt4225622" title="Babysitter I" />
+	<rename id="tt11024272" title="Babysitter II: Killer Queen" />
 	<rename id="tt0086927" title="Bachelor Party I" />
 	<rename id="tt0954541" title="Bachelor Party II: The Last Temptation" />
 	<rename id="tt0088763" title="Back to the Future I" />
