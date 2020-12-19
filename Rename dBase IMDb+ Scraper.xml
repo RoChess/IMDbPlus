@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="41" />
-		<published month="12" day="19" year="2020" />
+		<version major="1" minor="9" point="42" />
+		<published month="12" day="20" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -445,6 +445,7 @@
 	<rename id="tt0177625" title="Children of the Corn VI: Isaac's Return" />
 	<rename id="tt0279730" title="Children of the Corn VII: Revelation" />
 	<rename id="tt1745672" title="Children of the Corn VIII: Genesis" />
+	<rename id="tt5565634" title="Children of the Corn IX: Runaway" sortby="Children of the Corn VIX" />
 	<rename id="tt0094868" title="Chocolat (France)" />
 	<rename id="tt0265118" title="Choke (Cult)" />
 	<rename id="tt0251637" title="Choke (Docu)" />
@@ -1933,6 +1934,8 @@
 	<rename id="tt0082136" title="The Cannonball Run I" />
 	<rename id="tt0087032" title="The Cannonball Run II" />
 	<rename id="tt0098369" title="The Cannonball Run III: Speed Zone!" />
+	<rename id="tt2990140" title="The Christmas Chronicles I" />
+	<rename id="tt11057644" title="The Christmas Chronicles II: Part Two" />
 	<rename id="tt0363771" title="The Chronicles of Narnia I: The Lion, the Witch and the Wardrobe" />
 	<rename id="tt0499448" title="The Chronicles of Narnia II: Prince Caspian" />
 	<rename id="tt0980970" title="The Chronicles of Narnia III: The Voyage of the Dawn Treader" />
