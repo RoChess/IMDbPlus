@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="40" />
-		<published month="9" day="26" year="2020" />
+		<version major="1" minor="9" point="41" />
+		<published month="12" day="19" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -44,7 +44,6 @@
 	<rename id="tt1649444" title="[Rec] III: Génesis" collection="Quarantine &amp; [Rec]" />
 	<rename id="tt1649443" title="[Rec] IV: Apocalypse" collection="Quarantine &amp; [Rec]" />
 	<rename id="tt0103594" title="1492: Conquest of Paradise" />
-	<rename id="tt0112950" title="Empire Records" />
 	<rename id="tt0050086" title="3:10 to Yuma (Original)" />
 	<rename id="tt0443424" title="9 (Original)" />
 	<rename id="tt1160368" title="12 Rounds I" />
@@ -358,6 +357,9 @@
 	<rename id="tt0317219" title="Cars I" />
 	<rename id="tt1216475" title="Cars II" />
 	<rename id="tt3606752" title="Cars III" />
+	<rename id="tt0239395" title="Cats &amp; Dogs I" />
+	<rename id="tt1287468" title="Cats &amp; Dogs II: The Revenge of Kitty Galore" />
+	<rename id="tt12745164" title="Cats &amp; Dogs III: Paws Unite" />
 	<rename id="tt0327554" title="Catwoman" collection="» Superheroes" />
 	<rename id="tt0449472" title="Champion (Docu)" />
 	<rename id="tt0325165" title="Champion (Korea)" />
@@ -557,10 +559,6 @@
 	<rename id="tt1323594" title="Despicable Me I" />
 	<rename id="tt1690953" title="Despicable Me II" />
 	<rename id="tt3469046" title="Despicable Me III" />
-	<rename id="tt1814643" title="Despicable Me: Banana" sortby="Despicable Me X01" collection="Despicable Me" />
-	<rename id="tt1830633" title="Despicable Me: Home Makeover" sortby="Despicable Me X02" collection="Despicable Me" />
-	<rename id="tt1830748" title="Despicable Me: Orientation Day" sortby="Despicable Me X03" collection="Despicable Me" />
-	<rename id="tt2755518" title="Despicable Me: Minion Mayhem 3D" sortby="Despicable Me X04" collection="Despicable Me" />
 	<rename id="tt0037638" title="Detour (Original)" />
 	<rename id="tt0104093" title="Detour (Remake)" />
 	<rename id="tt0319495" title="Detour (Video)" />
@@ -661,10 +659,16 @@
 	<rename id="tt0283332" title="Elizabeth (TV)" />
 	<rename id="tt0022854" title="Emma (Classic)" />
 	<rename id="tt0118308" title="Emma (TV)" />
+	<rename id="tt0112950" title="Empire Records" />
 	<rename id="tt0362590" title="Employee of the Month (Cult)" />
 	<rename id="tt1211956" title="Escape Plan I" />
 	<rename id="tt6513656" title="Escape Plan II: Hades" />
 	<rename id="tt6772804" title="Escape Plan III: Devil's Station" />
+	<rename id="tt3467412" title="Extinction (Welcome to Harmony)" />
+	<rename id="tt4382872" title="Extraction (Operation Condor)" />
+	<rename id="tt2823574" title="Extraction (Cult)" />
+	<rename id="tt8936646" title="Extraction" sortby="Extraction I" />
+	<rename id="tt12263384" title="Extraction II" />
 	<rename id="tt0089118" title="F/X I" />
 	<rename id="tt0101846" title="F/X II" />
 	<rename id="tt3183660" title="Fantastic Beasts and Where to Find Them I" />
@@ -1206,6 +1210,12 @@
 	<rename id="tt0348124" title="Lilo &amp; Stitch: Stitch! The Movie" sortby="Lilo 02" collection="Lilo &amp; Stitch" />
 	<rename id="tt0451213" title="Lilo &amp; Stitch: Stitch's Great Escape" sortby="Lilo 03" collection="Lilo &amp; Stitch" />
 	<rename id="tt0486761" title="Lilo &amp; Stitch: Leroy &amp; Stitch" sortby="Lilo 04" collection="Lilo &amp; Stitch" />
+	<rename id="tt0219883" title="Little Women (UK)" />
+	<rename id="tt0009309" title="Little Women (Original)" />
+	<rename id="tt0024264" title="Little Women (Classic)" />
+	<rename id="tt0041594" title="Little Women (Remake)" />
+	<rename id="tt0110367" title="Little Women (Readaptation)" />
+	<rename id="tt6495094" title="Little Women (Retelling)" />
 	<rename id="tt0068815" title="Lone Wolf and Cub I: Sword of Vengeance" foreign="Kozure Ôkami I: Ko wo kashi ude kashi tsukamatsuru" />
 	<rename id="tt0068816" title="Lone Wolf and Cub II: Baby Cart at the River Styx" foreign="Kozure Ôkami II: Sanzu no kawa no ubaguruma" />
 	<rename id="tt0068817" title="Lone Wolf and Cub III: Baby Cart to Hades" foreign="Kozure Ôkami III: Shinikazeni mukau ubaguruma" />
@@ -1278,7 +1288,14 @@
 	<rename id="tt2283336" title="Men in Black IV: International" />
 	<rename id="tt1259014" title="Mesrine I: Killer Instinct" foreign="L'instinct de mort" />
 	<rename id="tt0411272" title="Mesrine II: Public Enemy #1" foreign="L'ennemi public n°1" />
-	<rename id="tt2293640" title="Minions" collection="Despicable Me" />
+	<rename id="tt2293640" title="Minions I" collection="Despicable Me" />
+	<rename id="tt5113044" title="Minions II: The Rise of Gru" collection="Despicable Me" />
+	<rename id="tt1814643" title="Minions (Short) I: Banana" collection="Despicable Me" />
+	<rename id="tt1830633" title="Minions (Short) I: Home Makeover" collection="Despicable Me" />
+	<rename id="tt1830748" title="Minions (Short) I: Orientation Day" collection="Despicable Me" />
+	<rename id="tt2755518" title="Minions (Short) I: Mayhem 3D" collection="Despicable Me" />
+	<rename id="tt5223342" title="Minions (Short) I: Competition" collection="Despicable Me" />
+	<rename id="tt5242320" title="Minions (Short) I: Binky Nelson Unpacified" collection="Despicable Me" />
 	<rename id="tt0790686" title="Mirrors I" />
 	<rename id="tt1576699" title="Mirrors II" />
 	<rename id="tt0212346" title="Miss Congeniality I" />
@@ -1570,6 +1587,7 @@
 	<rename id="tt1821694" title="Red II" />
 	<rename id="tt1174954" title="Resident Evil (CG) I: Degeneration" sortby="Resident Evil Zort (CG) I" />
 	<rename id="tt1753496" title="Resident Evil (CG) II: Damnation" sortby="Resident Evil Zort (CG) II" />
+	<rename id="tt5776208" title="Resident Evil (CG) III: Vendetta" sortby="Resident Evil Zort (CG) III" />
 	<rename id="tt0120804" title="Resident Evil I" />
 	<rename id="tt0318627" title="Resident Evil II: Apocalypse" />
 	<rename id="tt0432021" title="Resident Evil III: Extinction" />
@@ -1729,6 +1747,9 @@
 	<rename id="tt3470600" title="Sing I" />
 	<rename id="tt6467266" title="Sing II" />
 	<rename id="tt0405325" title="Sky High" collection="» Superheroes" />
+	<rename id="tt1564585" title="Skyline I" />
+	<rename id="tt1724970" title="Skyline II: Beyond Skyline" />
+	<rename id="tt9387250" title="Skyline III: Skylines" />
 	<rename id="tt0475394" title="Smokin' Aces I" />
 	<rename id="tt1319743" title="Smokin' Aces II: Assassins' Ball" />
 	<rename id="tt0108171" title="Sniper I" />
@@ -1920,6 +1941,8 @@
 	<rename id="tt1457767" title="The Conjuring I" />
 	<rename id="tt3065204" title="The Conjuring II" />
 	<rename id="tt7069210" title="The Conjuring III: The Devil Made Me Do It" />
+	<rename id="tt0115963" title="The Craft I" />
+	<rename id="tt4685762" title="The Craft II: Legacy" />
 	<rename id="tt0481499" title="The Croods I" />
 	<rename id="tt2850386" title="The Croods II: A New Age" />
 	<rename id="tt0109506" title="The Crow I" />
@@ -2178,6 +2201,10 @@
 	<rename id="tt1104123" title="The Scorpion King II: Rise of a Warrior" />
 	<rename id="tt1781896" title="The Scorpion King III: Battle for Redemption" />
 	<rename id="tt3086386" title="The Scorpion King IV: The Lost Throne" />
+	<rename id="tt0010674" title="The Secret Garden (Old)" />
+	<rename id="tt0041855" title="The Secret Garden (Original)" />
+	<rename id="tt0108071" title="The Secret Garden (Remake)" />
+	<rename id="tt7334352" title="The Secret Garden (Steampunk)" />
 	<rename id="tt2709768" title="The Secret Life of Pets I" />
 	<rename id="tt5113040" title="The Secret Life of Pets II" />
 	<rename id="tt0084649" title="The Secret of NIMH I" />
@@ -2241,6 +2268,7 @@
 	<rename id="tt0310775" title="The Vengeance I: Sympathy for Mr. Vengeance" foreign="Boksuneun naui geot" />
 	<rename id="tt0364569" title="The Vengeance II: Oldboy" foreign="Oldeuboi" />
 	<rename id="tt0451094" title="The Vengeance III: Lady Vengeance" foreign="Chinjeolhan geumjassi" />
+	<rename id="tt0805647" title="The Witches (Remake)" />
 	<rename id="tt1596365" title="The Woman in Black I" />
 	<rename id="tt2339741" title="The Woman in Black II: Angel of Death" />
 	<rename id="tt0120902" title="The X-Files I: Fight the Future" />
