@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="42" />
-		<published month="12" day="20" year="2020" />
+		<version major="1" minor="9" point="43" />
+		<published month="12" day="21" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -1291,12 +1291,15 @@
 	<rename id="tt0411272" title="Mesrine II: Public Enemy #1" foreign="L'ennemi public n°1" />
 	<rename id="tt2293640" title="Minions I" collection="Despicable Me" />
 	<rename id="tt5113044" title="Minions II: The Rise of Gru" collection="Despicable Me" />
-	<rename id="tt1814643" title="Minions (Short) I: Banana" collection="Despicable Me" />
-	<rename id="tt1830633" title="Minions (Short) I: Home Makeover" collection="Despicable Me" />
-	<rename id="tt1830748" title="Minions (Short) I: Orientation Day" collection="Despicable Me" />
-	<rename id="tt2755518" title="Minions (Short) I: Mayhem 3D" collection="Despicable Me" />
-	<rename id="tt5223342" title="Minions (Short) I: Competition" collection="Despicable Me" />
-	<rename id="tt5242320" title="Minions (Short) I: Binky Nelson Unpacified" collection="Despicable Me" />
+	<rename id="tt1814643" title="Minions (Short): Banana" collection="Despicable Me" />
+	<rename id="tt1830633" title="Minions (Short): Home Makeover" collection="Despicable Me" />
+	<rename id="tt1830748" title="Minions (Short): Orientation Day" collection="Despicable Me" />
+	<rename id="tt2755518" title="Minions (Short): Mayhem 3D" collection="Despicable Me" />
+	<rename id="tt3425332" title="Minions (Short): Panic in the Mailroom" collection="Despicable Me" />
+	<rename id="tt3454066" title="Minions (Short): Training Wheels" collection="Despicable Me" />
+	<rename id="tt5223342" title="Minions (Short): Competition" collection="Despicable Me" />
+	<rename id="tt5242320" title="Minions (Short): Binky Nelson Unpacified" collection="Despicable Me" />
+	<rename id="tt5242396" title="Minions (Short): Cro Minion" collection="Despicable Me" />
 	<rename id="tt0790686" title="Mirrors I" />
 	<rename id="tt1576699" title="Mirrors II" />
 	<rename id="tt0212346" title="Miss Congeniality I" />
