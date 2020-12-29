@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="43" />
-		<published month="12" day="21" year="2020" />
+		<version major="1" minor="9" point="44" />
+		<published month="12" day="29" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -451,6 +451,7 @@
 	<rename id="tt0251637" title="Choke (Docu)" />
 	<rename id="tt1706593" title="Chronicle" sortby="Chronicle I" />
 	<rename id="tt2298281" title="Chronicle II" />
+	<rename id="tt10155932" title="Cinderella (Musical)" />
 	<rename id="tt0845442" title="Cinderella (Korea)" />
 	<rename id="tt0003772" title="Cinderella (Original)" />
 	<rename id="tt0128996" title="Cinderella (TV)" />
@@ -591,12 +592,15 @@
 	<rename id="tt1024724" title="Doctor Dolittle IV: Tail to the Chief" />
 	<rename id="tt1080926" title="Doctor Dolittle V: Million Dollar Mutts" />
 	<rename id="tt1211837" sortby="Doctor Strange I" collection="The Avengers|» Superheroes" />
+	<rename id="tt9419884" title="Doctor Strange II: in the Multiverse of Madness" collection="The Avengers|» Superheroes" />
 	<rename id="tt0324937" title="Doctor Zhivago (TV)" />
 	<rename id="tt0330229" title="Dolls (Japan)" />
 	<rename id="tt0798780" title="Don (NL)" />
 	<rename id="tt0077451" title="Don (Original)" />
 	<rename id="tt0461936" title="Don I" />
 	<rename id="tt1285241" title="Don II" />
+	<rename id="tt4160708" sortby="Don't Breathe I" />
+	<rename id="tt6246322" title="Don't Breathe II" />
 	<rename id="tt0064247" title="Don't Drink the Water (Original)" />
 	<rename id="tt0033547" title="Double Cross (Classic)" />
 	<rename id="tt0486968" title="Double Cross (TV)" />
@@ -844,7 +848,8 @@
 	<rename id="tt0113253" title="Halloween VI: The Curse of Michael Myers" />
 	<rename id="tt0120694" title="Halloween VII: 20 Years Later (H20)" />
 	<rename id="tt0220506" title="Halloween VIII: Resurrection" />
-	<rename id="tt1502407" title="Halloween IX: Halloween (H40)" />
+	<rename id="tt1502407" title="Halloween IX: Halloween (H40)" sortby="Halloween XIX" />
+	<rename id="tt10665338" title="Halloween X: Halloween Kills" sortby="Halloween XX" />
 	<rename id="tt0373883" title="Halloween (Remake) I" sortby="Halloween X01" />
 	<rename id="tt1311067" title="Halloween (Remake) II" sortby="Halloween X02" />
 	<rename id="tt0448157" sortby="Hancock I" collection="Hancock|» Superheroes" />
@@ -914,6 +919,8 @@
 	<rename id="tt0076137" title="Herbie III: Goes to Monte Carlo" />
 	<rename id="tt0080861" title="Herbie IV: Goes Bananas" />
 	<rename id="tt0400497" title="Herbie V: Fully Loaded" />
+	<rename id="tt3402236" title="Hercules Peroit I: Murder on the Orient Express" />
+	<rename id="tt7657566" title="Hercules Peroit II: Death on the Nile" />
 	<rename id="tt0475293" title="High School Musical I" />
 	<rename id="tt0810900" title="High School Musical II" />
 	<rename id="tt0962726" title="High School Musical III: Senior Year" />
@@ -954,6 +961,7 @@
 	<rename id="tt0837562" title="Hotel Transylvania I" />
 	<rename id="tt2510894" title="Hotel Transylvania II" />
 	<rename id="tt5220122" title="Hotel Transylvania III: Summer Vacation" />
+	<rename id="tt9848626" title="Hotel Transylvania IV" />
 	<rename id="tt0113342" title="House (Canada)" />
 	<rename id="tt0837796" title="House (Cult)" />
 	<rename id="tt0091223" title="House I" />
@@ -1053,6 +1061,7 @@
 	<rename id="tt1117523" sortby="Jackass II: Number Two and a Half" collection="Jackass" />	
 	<rename id="tt1116184" title="Jackass III: 3D" />
 	<rename id="tt1753968" sortby="Jackass III: 3D and a Half" collection="Jackass" />	
+	<rename id="tt11466222" title="Jackass IV: Jackass" />
 	<rename id="tt0055928" title="James Bond I: Dr. No" sortby="James Bond 01" />
 	<rename id="tt0057076" title="James Bond II: From Russia with Love" sortby="James Bond 02" />
 	<rename id="tt0058150" title="James Bond III: Goldfinger" sortby="James Bond 03" />
@@ -1261,6 +1270,9 @@
 	<rename id="tt0120742" title="Major League III: Back to the Minors" />
 	<rename id="tt1587310" title="Maleficent I" />
 	<rename id="tt4777008" title="Maleficent II: Mistress of Evil" />
+	<rename id="tt0095583" title="Maniac Cop I" />
+	<rename id="tt0100107" title="Maniac Cop II" />
+	<rename id="tt0104808" title="Maniac Cop III: Badge of Silence" />
 	<rename id="tt0795421" title="Mamma Mia! I" />
 	<rename id="tt6911608" title="Mamma Mia! II: Here We Go Again" />
 	<rename id="tt0290747" title="Man-Thing" collection="» Superheroes" />
@@ -1300,6 +1312,7 @@
 	<rename id="tt5223342" title="Minions (Short): Competition" collection="Despicable Me" />
 	<rename id="tt5242320" title="Minions (Short): Binky Nelson Unpacified" collection="Despicable Me" />
 	<rename id="tt5242396" title="Minions (Short): Cro Minion" collection="Despicable Me" />
+	<rename id="tt3405276" title="Minions (Short): Puppy!" collection="Despicable Me" />
 	<rename id="tt0790686" title="Mirrors I" />
 	<rename id="tt1576699" title="Mirrors II" />
 	<rename id="tt0212346" title="Miss Congeniality I" />
@@ -1477,6 +1490,8 @@
 	<rename id="tt1711375" title="Peter Pan (Musical)" />
 	<rename id="tt1632586" title="Peter Pan (Musical/Original)" />
 	<rename id="tt0015224" title="Peter Pan (Original)" />
+	<rename id="tt5117670" sortby="Peter Rabbit I" />
+	<rename id="tt8376234" title="Peter Rabbit II: The Runaway" />
 	<rename id="tt0079714" title="Phantasm I" />
 	<rename id="tt0095863" title="Phantasm II" />
 	<rename id="tt0110823" title="Phantasm III: Lord of the Dead" />
@@ -1655,7 +1670,7 @@
 	<rename id="tt2324606" title="Rush Hour IV" />
 	<rename id="tt0114319" title="Sabrina (Remake)" />
 	<rename id="tt0120051" title="Safe House (Original)" />
-	<rename id="tt0944835" title="Salt I" />
+	<rename id="tt0944835" sortby="Salt I" />
 	<rename id="tt1958011" title="Salt II" />
 	<rename id="tt0047444" title="Samurai I: Musashi Miyamoto" />
 	<rename id="tt0048579" title="Samurai II: Duel at Ichijoji Temple" />
@@ -1748,7 +1763,7 @@
 	<rename id="tt0458481" title="Sin City II: A Dame to Kill For" />
 	<rename id="tt1922777" title="Sinister I" />
 	<rename id="tt2752772" title="Sinister II" />
-	<rename id="tt3470600" title="Sing I" />
+	<rename id="tt3470600" sortby="Sing I" />
 	<rename id="tt6467266" title="Sing II" />
 	<rename id="tt0405325" title="Sky High" collection="» Superheroes" />
 	<rename id="tt1564585" title="Skyline I" />
@@ -1765,6 +1780,8 @@
 	<rename id="tt2381991" title="Snow White and the Huntsman II: Winter's War" />
 	<rename id="tt0482603" title="Space Chimps I" />
 	<rename id="tt1537481" title="Space Chimps II: Zartog Strikes Back" />
+	<rename id="tt0117705" sortby="Space Jam I" />
+	<rename id="tt3554046" title="Space Jam II: A New Legacy" />
 	<rename id="tt0120177" title="Spawn" collection="» Superheroes" />
 	<rename id="tt0114508" title="Species I" />
 	<rename id="tt0120841" title="Species II" />
@@ -1777,6 +1794,7 @@
 	<rename id="tt0413300" title="Spider-Man III" collection="Spider-Man|» Superheroes" />
 	<rename id="tt2250912" title="Spider-Man (Reboot) I: Homecoming" collection="Spider-Man|» Superheroes" />
 	<rename id="tt6320628" title="Spider-Man (Reboot) II: Far From Home" collection="Spider-Man|» Superheroes" />
+	<rename id="tt10872600" title="Spider-Man (Reboot) III" collection="Spider-Man|» Superheroes" />
 	<rename id="tt0345950" title="Spongebob SquarePants I: The Movie" />
 	<rename id="tt2279373" title="Spongebob SquarePants II: Sponge Out of Water" />
 	<rename id="tt4823776" title="Spongebob SquarePants II: Sponge On The Run" />
@@ -1902,8 +1920,10 @@
 	<rename id="tt0078243" title="The 36th Chamber I: ...of Shaolin" foreign="Shao Lin san shi liu fang" />
 	<rename id="tt0081494" title="The 36th Chamber II: Return to..." foreign="Shao Lin da peng da shi" />
 	<rename id="tt0089029" title="The 36th Chamber III: Disciples of..." foreign="Pi li shi jie" />
+	<rename id="tt1620981" sortby="The Addams Family I" />
+	<rename id="tt11125620" title="The Addams Family II" />
 	<rename id="tt0983193" sortby="The Adventures of Tintin I" collection="The Adventures of Tintin" />	
-	<rename id="tt1037226" title="The Adventures of Tintin II: Prisoners of the Sun" />
+	<rename id="tt1037226" title="The Adventures of Tintin II: Red Rackham's Treasure" />
 	<rename id="tt1204343" title="The Adventures of Tintin III" />
 	<rename id="tt1985949" title="The Angry Birds Movie I" />
 	<rename id="tt6095472" title="The Angry Birds Movie II" />
@@ -1925,6 +1945,8 @@
 	<rename id="tt0102782" title="The Blue Lagoon II: Return to the Blue Lagoon" />
 	<rename id="tt0144117" title="The Boondock Saints I" />
 	<rename id="tt1300851" title="The Boondock Saints II: All Saints Day" />
+	<rename id="tt3874544" sortby="The Boss Baby I" />
+	<rename id="tt6932874" title="The Boss Baby II: Family Business" />
 	<rename id="tt0258463" title="The Bourne I: Identity" collection="The Bourne Series" />
 	<rename id="tt0372183" title="The Bourne II: Supremacy" collection="The Bourne Series" />
 	<rename id="tt0440963" title="The Bourne III: Ultimatum" collection="The Bourne Series" />
@@ -1934,6 +1956,7 @@
 	<rename id="tt0289879" title="The Butterfly Effect I" />
 	<rename id="tt0457297" title="The Butterfly Effect II" />
 	<rename id="tt1234541" title="The Butterfly Effect III: Revelations" />
+	<rename id="tt0103919" title="The Candyman (Original)" />
 	<rename id="tt0082136" title="The Cannonball Run I" />
 	<rename id="tt0087032" title="The Cannonball Run II" />
 	<rename id="tt0098369" title="The Cannonball Run III: Speed Zone!" />
@@ -2078,6 +2101,8 @@
 	<rename id="tt1618442" sortby="The Last Witch Hunter I" />
 	<rename id="tt4781660" title="The Last Witch Hunter II" />
 	<rename id="tt0311429" title="The League of Extraordinary Gentlemen" collection="» Superheroes" />
+	<rename id="tt4116284" sortby="The Lego Batman Movie I" />
+	<rename id="tt9673190" title="The Lego Batman Movie II" />
 	<rename id="tt1490017" title="The Lego Movie I" />
 	<rename id="tt3513498" title="The Lego Movie II: The Second Part" />
 	<rename id="tt0412915" title="The Librarian I: Quest For the Spear" />
@@ -2111,6 +2136,7 @@
 	<rename id="tt0133093" title="The Matrix I" collection="The Matrix Trilogy" />
 	<rename id="tt0234215" title="The Matrix II: Reloaded" collection="The Matrix Trilogy" />
 	<rename id="tt0242653" title="The Matrix III: Revolutions" collection="The Matrix Trilogy" />
+	<rename id="tt10838180" title="The Matrix IV" collection="The Matrix Trilogy" />
 	<rename id="tt0472399" title="The Mechanic I" />
 	<rename id="tt3522806" title="The Mechanic II: Resurrection" />
 	<rename id="tt0107563" title="The Meteor Man" collection="» Superheroes" />
@@ -2134,8 +2160,8 @@
 	<rename id="tt0100240" title="The NeverEnding Story II: The Next Chapter" />
 	<rename id="tt0110647" title="The NeverEnding Story III: Escape from Fantasia" />
 	<rename id="tt1386664" title="The NeverEnding Story (Remake)" />
-	<rename id="tt1821658" sortby="The Nut Job I" />
-	<rename id="tt3486626" title="The Nut Job II" />
+	<rename id="tt1821658" title="The Nut Job I" />
+	<rename id="tt3486626" title="The Nut Job II: Nutty by Nature" />
 	<rename id="tt0117218" title="The Nutty Professor I" />
 	<rename id="tt0144528" title="The Nutty Professor II: The Klumps" />
 	<rename id="tt0063374" title="The Odd Couple I" />
@@ -2190,6 +2216,7 @@
 	<rename id="tt2975578" title="The Purge II: Anarchy" />
 	<rename id="tt4094724" title="The Purge III: Election Year" />
 	<rename id="tt6133466" title="The Purge IV: The First Purge" />
+	<rename id="tt10327252" title="The Purge V: The Forever Purge" />
 	<rename id="tt1899353" title="The Raid I: Redemption" />
 	<rename id="tt2265171" title="The Raid II: Retaliation" />
 	<rename id="tt3448656" title="The Raid III" />
@@ -2254,8 +2281,6 @@
 	<rename id="tt1754720" title="The Thin Man (Remake) I" sortby="The Thin Man X01" />
 	<rename id="tt0905372" title="The Thing (Remake)" />
 	<rename id="tt0063688" title="The Thomas Crown Affair (Original)" />
-	<rename id="tt0155267" title="The Thomas Crown Affair" sortby="The Thomas Crown Affair I" />
-	<rename id="tt0433100" title="The Thomas Crown Affair II" />
 	<rename id="tt0076786" title="The Three Mothers I: Suspiria" />
 	<rename id="tt0080923" title="The Three Mothers II: Inferno" />
 	<rename id="tt0804507" title="The Three Mothers III: Mother of Tears - The Third Mother" />
@@ -2335,7 +2360,7 @@
 	<rename id="tt1324999" title="Twilight IV: Breaking Dawn (Part 1)" sortby="Twilight 04a" collection="The Twilight Saga" />
 	<rename id="tt1673434" title="Twilight IV: Breaking Dawn (Part 2)" sortby="Twilight 04b" collection="The Twilight Saga" />
 	<rename id="tt0096320" sortby="Twins 01" collection="Twins" />
-	<rename id="tt2334867" sortby="Twins 02" collection="Twins" />
+	<rename id="tt2334867" title="Twins II: Triplets" sortby="Twins 02" collection="Twins" />
 	<rename id="tt0195366" title="U.S. Seals I" />
 	<rename id="tt0283652" title="U.S. Seals II: The Ultimate Force" />
 	<rename id="tt0293166" title="U.S. Seals III: Dead or Alive" />
