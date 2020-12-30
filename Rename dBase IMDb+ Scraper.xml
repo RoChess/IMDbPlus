@@ -34,8 +34,8 @@
 		<name>IMDb+ Scraper Script Rename dBase</name>
 		<author>Ron (RoChess)</author>
 		<description>For use in MovingPictures plugin for MediaPortal</description>
-		<version major="1" minor="9" point="45" />
-		<published month="12" day="30" year="2020" />
+		<version major="1" minor="9" point="46" />
+		<published month="12" day="31" year="2020" />
 		<type>RenameDefault</type>
 		<language>en</language>
 	</details>
@@ -919,8 +919,8 @@
 	<rename id="tt0076137" title="Herbie III: Goes to Monte Carlo" />
 	<rename id="tt0080861" title="Herbie IV: Goes Bananas" />
 	<rename id="tt0400497" title="Herbie V: Fully Loaded" />
-	<rename id="tt3402236" title="Hercule Peroit I: Murder on the Orient Express" />
-	<rename id="tt7657566" title="Hercule Peroit II: Death on the Nile" />
+	<rename id="tt3402236" title="Hercule Poirot I: Murder on the Orient Express" />
+	<rename id="tt7657566" title="Hercule Poirot II: Death on the Nile" />
 	<rename id="tt0475293" title="High School Musical I" />
 	<rename id="tt0810900" title="High School Musical II" />
 	<rename id="tt0962726" title="High School Musical III: Senior Year" />
