@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="10" point="7" />
-		<published month="07" day="22" year="2020" />
+		<version major="4" minor="10" point="8" />
+		<published month="05" day="29" year="2021" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -420,12 +420,12 @@
 					<!-- Directors -->
 					<set name="rx_directors_block">
 						<![CDATA[
-						Director[s]?:\s*</h4>[^<]*(?<directors_block>.*?)</div>
+						Director[s]?(?::\s*</h4>[^<]*(?<directors_block>.*?)</div>|</span><div[^>]+><ul[^>]+>(?<directors_block>.*?)</ul>)
 						]]>
 					</set>
 					<set name="rx_directors">
 						<![CDATA[
-						<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d+[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieDirectors>[^<]+)(?:</span>)?</a>
+						<a\s+(?:onclick="[^"]+"\s*)?(?:class="[^"]+" rel="[^"]*" )?href="/name/nm\d+[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieDirectors>[^<]+)(?:</span>)?</a>
 						]]>
 					</set>
 					<parse name="directors_block" input="${details_page}" regex="${rx_directors_block}" />
@@ -448,12 +448,12 @@
 					<!-- Writers -->
 					<set name="rx_writers_block">
 						<![CDATA[
-						Writer[s]?:\s*</h4>[^<]*(?<writers_block>.*?)</div>
+						Writer[s]?(?::\s*</h4>[^<]*(?<writers_block>.*?)</div>|</span><div[^>]+><ul[^>]+>(?<writers_block>.*?)</ul>)
 						]]>
 					</set>
 					<set name="rx_writers">
 						<![CDATA[
-						<a\s+(?:onclick="[^"]+"\s*)?href="/name/nm\d+[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieWriters>[^<]+)(?:</span>)?</a>
+						<a\s+(?:onclick="[^"]+"\s*)?(?:class="[^"]+" rel="[^"]*" )?href="/name/nm\d+[^"]+"[^>]*>(?:<span[^>]+>)?\s*(?<movieWriters>[^<]+)(?:</span>)?</a>
 						]]>
 					</set>
 					<parse name="writers_block" input="${details_page}" regex="${rx_writers_block}" />
@@ -476,7 +476,7 @@
 					<!-- Actors -->
 					<set name="rx_actors">
 						<![CDATA[
-						<a href="/name/nm\d+[^"]+[^<]+<img height[^\s]+ width[^\s]+ alt="[^"]+" title="(?<movieActors>[^"]+)"
+						<a[^/]+/name/nm\d+[^"]+(?:[^>]+>(?<movieActors>[^<]+)</a>|[^<]+<img (?:[^\s]+\s){3,7})title="(?<movieActors>[^"]+)"
 						]]>
 					</set>
 					<parse name="actors" input="${details_page}" regex="${rx_actors}" />
@@ -506,7 +506,7 @@
 						<if test="${global_options_original_title}=false">
 							<set name="rx_title_year">
 								<![CDATA[
-								<meta property='og:title' content="(?:&#x27;)?(?<movieTitleEnglish>[^(]+(?:\(\D+\))?)(?:&#x27;)?\s+\(\D*(?<movieYear>\d{4})[^)]*\)[^"]*" />
+								<meta property=['"]og:title['"] content="(?:&#x27;)?(?<movieTitleEnglish>[^(]+(?:\(\D+\))?)(?:&#x27;)?\s+\(\D*(?<movieYear>\d{4})[^)]*\)[^"]*"\s*/>
 								]]>
 							</set>
 						</if>
@@ -527,7 +527,7 @@
 					<!-- Release Date -->
 					<set name="rx_release_date">
 						<![CDATA[
-						<h4 class="inline">Release Date:</h4>\s*(?<releaseDate>(?:\d{1,2}\s*)?[^\s]+\s*\d{4})
+						<h4 class="inline">Release Date:</h4>\s*(?<releaseDate>(?:\d{1,2}\s*)?[^\s]+\s*\d{4})|<a[^>]+>Release Date</a><div[^>]+><ul[^>]+><li[^>]+><a[^>]+>(?<releaseDate>[^,]+, \d{4})
 						]]>
 					</set>
 					<parse name="release_date" input="${details_page}" regex="${rx_release_date}" />
@@ -545,7 +545,7 @@
 					<!-- Studios -->
 					<set name="rx_studios_block">
 						<![CDATA[
-						<h4 class="inline">Production Co:</h4>\s*(?<movieStudios>(?:[,]*\s*<span itemprop="creator"[^>]+>\s*)?(?:[^<]*<a[^>]+href="[^"]+"[^>]*>(?:<span[^>]+>)?[^<]+(?:</span></a></span>|</a>)))*
+						<h4 class="inline">Production Co:</h4>\s*(?<studios_block>(?:[,]*\s*<span itemprop="creator"[^>]+>\s*)?(?:[^<]*<a[^>]+href="[^"]+"[^>]*>(?:<span[^>]+>)?[^<]+(?:</span></a></span>|</a>)))*|Production Comp[^<]+</a><div[^>]+><ul[^>]+>(?<studios_block>.*?)</ul>
 						]]>
 					</set>
 					<set name="rx_studios">
@@ -567,12 +567,12 @@
 					<if test="${global_options_secondary_details}&lt;=6">
 						<set name="rx_genres_block">
 							<![CDATA[
-							Genre[s]?:[^<]*</h4>(?<genres_block>.+?)</div>
+							Genre[s]?(?::[^<]*</h4>(?<genres_block>.+?)</div>|[^<]+</span><div[^>]+><ul[^>]+>(?<genres_block>.*?)</ul>)
 							]]>
 						</set>
 						<set name="rx_genres">
 							<![CDATA[
-							<a href="/search/title\?genre[^"]+"[^>]*\s*>\s*(?<movieGenres>.+?)</a>
+							<a(?:(?:[^=]+=){1,3})"/search/title/\?genre[^"]+"[^>]*\s*>\s*(?<movieGenres>.+?)</a>
 							]]>
 						</set>
 						<parse name="genres_block" input="${details_page}" regex="${rx_genres_block}" />
@@ -716,7 +716,7 @@
 					<!-- Runtime -->
 					<set name="rx_runtime">
 						<![CDATA[
-						<h4[^>]+>Runtime:</h4>\s*<time[^>]+>(?<movieRuntime>\d+) min\s*</time>|(?<movieRuntimeHours>\d+)h\s*(?<movieRuntimeMinutes>\d+)min\s*</time>
+						<h4[^>]+>Runtime:</h4>\s*<time[^>]+>(?<movieRuntime>\d+) min\s*</time>|(?<movieRuntimeHours>\d+)h\s*(?<movieRuntimeMinutes>\d+)min\s*</
 						]]>
 					</set>
 					<parse name="runtime" input="${details_page}" regex="${rx_runtime}" />
@@ -735,7 +735,7 @@
 					<!-- Tagline -->
 					<set name="rx_tagline">
 						<![CDATA[
-						Tagline[s]?:</h4>[\s\f\r]*(?<movieTagline>[^<]+)
+						Tagline[s]?(?::</h4>[\s\f\r]*|</span><div[^>]+><div[^>]+><ul[^>]+><li[^>]+><span[^>]+>)(?<movieTagline>[^<]+)
 						]]>
 					</set>
 					<parse name="tagline" input="${details_page}" regex="${rx_tagline}" />
@@ -752,8 +752,9 @@
 						]]>
 					</set>
 					<parse name="plotkeywords" input="${details_page}" regex="${rx_plotkeywords}" />
-					<set name="plotkeywords_clean" value="|${plotkeywords[0][0]:striptags}|" />
-					<replace name="movie.plotkeywords" input="${plotkeywords_clean:htmldecode}" pattern="\s*[|]+\s*" with="|" />
+					<replace name="plotkeywords_fix" input="${plotkeywords[0][0]:htmldecode}" pattern="&lt;/span&gt;&lt;/a&gt;&lt;a" with="|&lt;a" />
+					<set name="plotkeywords_clean" value="|${plotkeywords_fix[0][0]:striptags}|" />
+					<replace name="movie.plotkeywords" input="${plotkeywords_clean}" pattern="\s*[|]+\s*" with="|" />
 				</if>
 
 				<if test="${global_options_refresh_all_fields}=true"><set name="update_language" value="true" /></if><if test="${movie.language}="><set name="update_language" value="true" /></if>
@@ -771,7 +772,8 @@
 							]]>
 						</set>
 						<parse name="language" input="${details_page}" regex="${rx_language}" />
-						<set name="language_clean" value="|${language[0][0]:striptags}|" />
+						<replace name="language_fix" input="${language[0][0]:htmldecode}" pattern="&lt;/a&gt;&lt;/li&gt;&lt;li" with="|&lt;li" />
+						<set name="language_clean" value="|${language_fix[0][0]:striptags}|" />
 						<replace name="movie.language" input="${language_clean:htmldecode}" pattern="\s*[|]+\s*" with="|" />
 					</if>
 				</if>
@@ -959,12 +961,12 @@
 					<if test="${global_options_secondary_details}&lt;=6">
 						<set name="rx_plot">
 							<![CDATA[
-							<h4[^>]+>Summaries</h4>\s*<ul[^>]+>\s*<li[^>]+>\s*<p>(?<moviePlotLong>.+?)</p>|<h2>Storyline</h2>\s*<div[^>]*>\s*<p>\s*<span[^>]+>\s*(?<moviePlotLong>.+?)</span>
+							<h4[^>]+>Summaries</h4>\s*<ul[^>]+>\s*<li[^>]+>\s*<p>(?<moviePlotLong>.+?)\s*<div|<h2>Storyline</h2>\s*<div[^>]*>\s*<p>\s*<span[^>]+>\s*(?<moviePlotLong>.+?)</span>
 							]]>
 						</set>
 						<set name="rx_plot2">
 							<![CDATA[
-							<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:\w+)*)?\s*</p>|<div class="summary_text"[^>]*>(?:\s*<em>[^>]+>\s*is a movie(?:[^,]+,){1,2}[^.]+.)?\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>[^<]*)?\s*</div
+							<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:\w+)*)?\s*</p>|<div class="summary_text"[^>]*>(?:\s*<em>[^>]+>\s*is a movie(?:[^,]+,){1,2}[^.]+.)?\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>[^<]*)?\s*</div|<h4[^>]+>Summaries</h4>\s*<ul[^>]+>\s*<li[^>]+>\s*<p>(?<moviePlotShort>.+?)</p>
 							]]>
 						</set>
 					</if>
@@ -1043,7 +1045,7 @@
 				<!-- Get imdb + metacritics votes/scores and fix to a scale of 10 if needed -->
 				<set name="rx_imdb_votes">
 					<![CDATA[
-					title="(?<imdbScore>\d+(?:.\d+)?) based on (?<imdbPopularity>[^\s]+) user ratings"(?:.+?<div class="metacriticScore[^"]+">\s*<span>(?<metaScore>\d+)</span>.+?>(?<metaPopularity>[^\s]+) crit[^<]+</a>)?
+					title="(?<imdbScore>\d+(?:.\d+)?) based on (?<imdbPopularity>[^\s]+) user ratings"(?:.+?<div class="metacriticScore[^"]+">\s*<span>(?<metaScore>\d+)</span>.+?>(?<metaPopularity>[^\s]+) crit[^<]+</a>)?|"aggregateRating":\{"@type":"AggregateRating","ratingCount":(?<imdbPopularity>\d+),"bestRating":\d+,"worstRating":\d+,"ratingValue":(?<imdbScore>\d+(?:.\d+)?)}.+?<span[^>]+>(?<metaPopularity>\d+)</span><span[^>]+>Critic reviews</span></span></a></li><li[^>]+><a[^>]+><span[^>]+><span[^>]+><span[^>]+>(?<metaScore>\d+)</span></span><span[^>]+>Metascore</span>
 					]]>
 				</set>
 				<parse name="imdb_votes" input="${details_page}" regex="${rx_imdb_votes}" />
