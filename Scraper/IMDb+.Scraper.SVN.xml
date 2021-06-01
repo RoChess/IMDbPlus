@@ -5,8 +5,8 @@
 		<author>Ron (RoChess)</author>
 		<description>Combination scraper, using the best data from IMDb and RottenTomatoes.</description>
 		<id>314159265</id>
-		<version major="4" minor="10" point="8" />
-		<published month="05" day="29" year="2021" />
+		<version major="4" minor="10" point="9" />
+		<published month="06" day="01" year="2021" />
 		<type>MovieDetailsFetcher|MovieCoverFetcher</type>
 		<language>various</language>
 	</details>
@@ -476,7 +476,7 @@
 					<!-- Actors -->
 					<set name="rx_actors">
 						<![CDATA[
-						<a[^/]+/name/nm\d+[^"]+(?:[^>]+>(?<movieActors>[^<]+)</a>|[^<]+<img (?:[^\s]+\s){3,7})title="(?<movieActors>[^"]+)"
+						<a[^/]+/name/nm\d+[^"]+(?:[^>]+>(?<movieActors>[^<]+)</a>|[^<]+<img (?:[^\s]+\s){3,7})title="(?<movieActors>[^"]+")
 						]]>
 					</set>
 					<parse name="actors" input="${details_page}" regex="${rx_actors}" />
@@ -567,7 +567,7 @@
 					<if test="${global_options_secondary_details}&lt;=6">
 						<set name="rx_genres_block">
 							<![CDATA[
-							Genre[s]?(?::[^<]*</h4>(?<genres_block>.+?)</div>|[^<]+</span><div[^>]+><ul[^>]+>(?<genres_block>.*?)</ul>)
+							Genre[s]?(?::[^<]*</h4>(?<genres_block>.+?)</div>|</span><div[^>]+><ul[^>]+>(?<genres_block>.*?)</ul>)
 							]]>
 						</set>
 						<set name="rx_genres">
@@ -748,11 +748,11 @@
 					<!-- Plot Keywords -->
 					<set name="rx_plotkeywords">
 						<![CDATA[
-						<h4[^>]+>Plot Keywords:</h4>\s*(?<moviePlotKeywords>.+?)(?:&nbsp;|<nobr>|See more|</div>)
+						<h4[^>]+>Plot Keywords:</h4>\s*(?<moviePlotKeywords>.+?)(?:&nbsp;|<nobr>|See more|</div>)|"keywords":"(?<moviePlotKeywords>[^"]+)"
 						]]>
 					</set>
 					<parse name="plotkeywords" input="${details_page}" regex="${rx_plotkeywords}" />
-					<replace name="plotkeywords_fix" input="${plotkeywords[0][0]:htmldecode}" pattern="&lt;/span&gt;&lt;/a&gt;&lt;a" with="|&lt;a" />
+					<replace name="plotkeywords_fix" input="${plotkeywords[0][0]:htmldecode}" pattern="," with="|" />
 					<set name="plotkeywords_clean" value="|${plotkeywords_fix[0][0]:striptags}|" />
 					<replace name="movie.plotkeywords" input="${plotkeywords_clean}" pattern="\s*[|]+\s*" with="|" />
 				</if>
@@ -768,7 +768,7 @@
 					<if test="${rx_language}=">
 						<set name="rx_language">
 							<![CDATA[
-							<h4[^>]+>Language:</h4>\s*(?<movieLanguage>.+?)(?:&nbsp;|<nobr>|See more|</div>)
+							<h4[^>]+>Language:</h4>\s*(?<movieLanguage>.+?)(?:&nbsp;|<nobr>|See more|</div>)|Language</span><div[^>]+><ul[^>]+>(?<movieLanguage><li[^>]+><a[^>]+>[^<]+</a></li>){1,}
 							]]>
 						</set>
 						<parse name="language" input="${details_page}" regex="${rx_language}" />
@@ -966,7 +966,7 @@
 						</set>
 						<set name="rx_plot2">
 							<![CDATA[
-							<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:\w+)*)?\s*</p>|<div class="summary_text"[^>]*>(?:\s*<em>[^>]+>\s*is a movie(?:[^,]+,){1,2}[^.]+.)?\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>[^<]*)?\s*</div|<h4[^>]+>Summaries</h4>\s*<ul[^>]+>\s*<li[^>]+>\s*<p>(?<moviePlotShort>.+?)</p>
+							<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:\w+)*)?\s*</p>|<div class="summary_text"[^>]*>(?:\s*<em>[^>]+>\s*is a movie(?:[^,]+,){1,2}[^.]+.)?\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>[^<]*)?\s*</div|<h4[^>]+>Summaries</h4>\s*<ul[^>]+>\s*<li[^>]+>\s*<p>(?<moviePlotShort>.+?)</p>|"description":"(?<moviePlotShort>[^"]+)"
 							]]>
 						</set>
 					</if>
@@ -1004,7 +1004,7 @@
 							<if test="${global_options_secondary_summary}=true">
 								<set name="rx_plot2">
 									<![CDATA[
-									<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:\w+)*)?\s*</p>
+									<p itemprop="description">\s*(?<moviePlotShort>(?!\s*<a[^>]+>Add a Plot</a>).+?)(?:\s*<a[^>]+>See full [^<]+</a>(?:\w+)*)?\s*</p>|"description":"(?<moviePlotShort>[^"]+)"
 									]]>
 								</set>
 								<parse name="summary2" input="${details_page}" regex="${rx_plot2}" />
